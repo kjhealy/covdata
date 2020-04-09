@@ -1,0 +1,12 @@
+Package: covdata
+Type: Package
+Title: COVID-19 Data
+Version: 0.0.0.9000
+Author: Kieran Healy
+Maintainer: Kieran Healy <kjhealy@gmail.com>
+Description: COVID-19 data downloaded from the ECDC and packaged for R.
+Depends: R (>= 2.10)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
