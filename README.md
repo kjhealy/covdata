@@ -9,6 +9,7 @@ output: github_document
 # covdata
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/kjhealy/covdata.svg?branch=master)](https://travis-ci.com/kjhealy/covdata)
 <!-- badges: end -->
 
 The goal of covdata is to make COVID-19 case data easily available.
