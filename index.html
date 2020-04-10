@@ -68,12 +68,40 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p><code>covdata</code> is not available on CRAN. You can install it with <code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("kjheay/covdata")</a></code>.</p>
+<p>There are two ways to install the <code>covdata</code> package.</p>
+<div id="install-direct-from-github" class="section level3">
+<h3 class="hasAnchor">
+<a href="#install-direct-from-github" class="anchor"></a>Install direct from GitHub</h3>
+<p>You can install the beta version of congress from <a href="https://github.com/kjhealy/congress">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"kjhealy/covdata"</span>)</pre></div>
 </div>
-<div id="country-level-data" class="section level2">
+<div id="installation-using-drat" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installation-using-drat" class="anchor"></a>Installation using <code>drat</code>
+</h3>
+<p>While using <code>install_github()</code> works just fine, it would be nicer to be able to just type <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("covdata")</a></code> or <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages("covdata")</a></code> in the ordinary way. We can do this using Dirk Eddelbuettel’s <a href="http://eddelbuettel.github.io/drat/DratForPackageUsers.html">drat</a> package. Drat provides a convenient way to make R aware of package repositories other than CRAN.</p>
+<p>First, install <code>drat</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st">"drat"</span>)) {
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"drat"</span>)
+    <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"drat"</span>)
+}</pre></div>
+<p>Then use <code>drat</code> to tell R about the repository where <code>covdata</code> is hosted:</p>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="kw pkg">drat</span><span class="kw ns">::</span><span class="fu">addRepo</span>(<span class="st">"kjhealy"</span>)</pre></div>
+<p>You can now install <code>covdata</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"covdata"</span>)</pre></div>
+<p>To ensure that the <code>covdata</code> repository is always available, you can add the following line to your <code>.Rprofile</code> or <code>.Rprofile.site</code> file:</p>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="kw pkg">drat</span><span class="kw ns">::</span><span class="fu">addRepo</span>(<span class="st">"kjhealy"</span>)</pre></div>
+<p>With that in place you’ll be able to do <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("covdata")</a></code> or <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages("covdata")</a></code> and have everything work as you’d expect.</p>
+<p>Note that my drat repository only contains data packages that are not on CRAN, so you will never be in danger of grabbing the wrong version of any other package.</p>
+</div>
+</div>
+<div id="loading-the-data" class="section level2">
 <h2 class="hasAnchor">
-<a href="#country-level-data" class="anchor"></a>Country-level Data</h2>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
+<a href="#loading-the-data" class="anchor"></a>Loading the Data</h2>
+<div id="country-level-table" class="section level3">
+<h3 class="hasAnchor">
+<a href="#country-level-table" class="anchor"></a>Country-Level Table</h3>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
 
 <span class="co">## National level tibble</span>
@@ -93,7 +121,7 @@
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
 <span class="co">#&gt; # … with 9,643 more rows</span></pre></div>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co">## Countries to highlight</span>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="co">## Countries to highlight</span>
 <span class="no">focus_cn</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"CHN"</span>, <span class="st">"DEU"</span>, <span class="st">"GBR"</span>, <span class="st">"USA"</span>, <span class="st">"IRN"</span>, <span class="st">"JPN"</span>,
               <span class="st">"KOR"</span>, <span class="st">"ITA"</span>, <span class="st">"FRA"</span>, <span class="st">"ESP"</span>, <span class="st">"CHE"</span>, <span class="st">"TUR"</span>)
 
@@ -137,10 +165,10 @@
 <span class="co">#&gt; Warning: Removed 2634 rows containing missing values (geom_text_repel).</span></pre></div>
 <p><img src="reference/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%"></p>
 </div>
-<div id="u-s--states" class="section level2">
-<h2 class="hasAnchor">
-<a href="#u-s--states" class="anchor"></a>U.S. States</h2>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="co">## US state tibble</span>
+<div id="data-for-u-s--states" class="section level3">
+<h3 class="hasAnchor">
+<a href="#data-for-u-s--states" class="anchor"></a>Data for U.S. States</h3>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="co">## US state tibble</span>
 <span class="no">covus</span>
 <span class="co">#&gt; # A tibble: 27,216 x 11</span>
 <span class="co">#&gt;    date       state fips  measure count pos_neg death_increase hospitalized_in… negative_increa… positive_increa…</span>
@@ -156,7 +184,7 @@
 <span class="co">#&gt;  9 2020-04-09 AK    02    on_ven…    NA    7223              0                0              146                9</span>
 <span class="co">#&gt; 10 2020-04-09 AK    02    recove…    49    7223              0                0              146                9</span>
 <span class="co">#&gt; # … with 27,206 more rows, and 1 more variable: total_test_results_increase &lt;dbl&gt;</span></pre></div>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
+<div class="sourceCode" id="cb9"><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
 <span class="no">top_n_states</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">data</span>, <span class="no">n</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="no">measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
   <span class="no">meas</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span>(<span class="no">measure</span>)
   <span class="no">data</span> <span class="kw">%&gt;%</span>
@@ -198,6 +226,7 @@
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 1650 rows containing missing values (geom_text_repel).</span></pre></div>
 <p><img src="reference/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%"></p>
+</div>
 </div>
 </div>
   </div>
