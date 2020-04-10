@@ -27,11 +27,16 @@ knitr::opts_chunk$set(
 
 
 ## Country-level Data
-
-```{r example, fig.height=10, fig.width=8, dpi=300}
+```{r load}
 library(tidyverse)
 library(covdata)
 
+## National level tibble
+covnat
+
+```
+
+```{r example, fig.height=10, fig.width=8, dpi=300}
 ## Countries to highlight
 focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
               "KOR", "ITA", "FRA", "ESP", "CHE", "TUR")
@@ -77,6 +82,12 @@ covnat %>%
 
 
 ## U.S. States
+
+```{r states}
+## US state tibble
+covus
+```
+
 
 ```{r us-example, fig.height=10, fig.width=8, dpi=300}
 ## Which n states are leading the count of positive cases or deaths?
