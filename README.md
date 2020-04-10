@@ -35,6 +35,7 @@ covnat %>%
                                TRUE ~ NA_character_), 
          cgroup = case_when(iso3 %in% focus_cn ~ iso3, 
                             TRUE ~ "ZZOTHER")) %>%
+  filter(cu_cases > 99) %>%
   ggplot(mapping = aes(x = days_elapsed, y = cu_cases, 
          color = cgroup, label = end_label, 
          group = cname)) + 
@@ -50,12 +51,10 @@ covnat %>%
        y = "Cumulative Number of Reported Cases (log2 scale)", 
        title = "Cumulative Reported Cases of COVID-19, Selected Countries", 
        subtitle = paste("ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
-       caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") 
+       caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
+  theme_minimal()
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
-#> Warning: Transformation introduced infinite values in continuous y-axis
-
-#> Warning: Transformation introduced infinite values in continuous y-axis
-#> Warning: Removed 9641 rows containing missing values (geom_text_repel).
+#> Warning: Removed 2634 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
