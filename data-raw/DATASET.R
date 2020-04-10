@@ -20,7 +20,7 @@ get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/casedist
   target <- url
   message("target: ", target)
 
-  destination <- fs::path(here::here("data"), paste0(fname, writedate), ext = ext)
+  destination <- fs::path(here::here("data-raw/data"), paste0(fname, writedate), ext = ext)
   message("saving to: ", destination)
 
   tf <- tempfile(fileext = ext)
@@ -141,7 +141,6 @@ covid_raw <- get_ecdc_csv()
 
 covid_raw
 
-## on 3/27/20 they changed the contents of the file too, including the date format
 covid <- covid_raw %>%
   mutate(date = lubridate::dmy(date_rep),
          iso2 = geo_id)
@@ -181,7 +180,6 @@ anti_join(covid, cname_table) %>%
   select(geo_id, countries_and_territories, iso2, iso3, cname) %>%
   distinct()
 
-
 covnat <- covid %>%
   select(date, cname, iso3, cases, deaths, pop_data2018) %>%
   rename(pop_2018 = pop_data2018) %>%
@@ -189,17 +187,7 @@ covnat <- covid %>%
   group_by(iso3) %>%
   arrange(date) %>%
   mutate(cu_cases = cumsum(cases),
-         cu_deaths = cumsum(deaths)) %>%
-  mutate(days_elapsed = date - min(date),
-         end_label = ifelse(date == max(date), cname, NA),
-         end_label = recode(end_label, `United States` = "USA",
-                            `Iran, Islamic Republic of` = "Iran",
-                            `Korea, Republic of` = "South Korea",
-                            `United Kingdom` = "UK"),
-         cname = recode(cname, `United States` = "USA",
-                        `Iran, Islamic Republic of` = "Iran",
-                        `Korea, Republic of` = "South Korea",
-                        `United Kingdom` = "UK"))
+         cu_deaths = cumsum(deaths))
 
 covnat
 

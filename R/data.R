@@ -2,7 +2,7 @@
 #'
 #' A dataset containing national-level ECDC data on COVID-19
 #'
-#' @format A tibble with 9,653 rows and 10 columns
+#' @format A tibble with 9,653 rows and 9 columns
 #' \describe{
 #'   \item{date}{date in YYYY-MM-DD format}
 #'   \item{cname}{Name of country (character)}
@@ -12,8 +12,6 @@
 #'   \item{pop_2018}{Country population in 2018}
 #'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this date}
 #'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this date}
-#'   \item{days_elapsed}{Days elapsed since first reported event (duration)}
-#'   \item{end_label}{Country name for most recent date only, else NA (character)}
 #' }
 #' @source \url{http://ecdc.europa.eu/}
 "covnat"

@@ -15,7 +15,7 @@ The goal of covdata is to make COVID-19 case data easily available.
 `covdata` is not available on CRAN. You can install it with `remotes::install_github("kjheay/covdata")`.
 
 
-## Example
+## Country-level Data
 
 
 ```r
@@ -29,13 +29,22 @@ focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
 ## Colors
 cgroup_cols <- c(prismatic::clr_darken(paletteer_d("ggsci::category20_d3"), 0.2)[1:length(focus_cn)], "gray70")
 
-
 covnat %>%
-  mutate(end_label = case_when(iso3 %in% focus_cn ~ end_label,
+  filter(cu_cases > 99) %>%
+  mutate(days_elapsed = date - min(date),
+        end_label = ifelse(date == max(date), cname, NA),
+        end_label = recode(end_label, `United States` = "USA",
+                            `Iran, Islamic Republic of` = "Iran",
+                            `Korea, Republic of` = "South Korea",
+                            `United Kingdom` = "UK"),
+         cname = recode(cname, `United States` = "USA",
+                        `Iran, Islamic Republic of` = "Iran",
+                        `Korea, Republic of` = "South Korea",
+                        `United Kingdom` = "UK"),
+         end_label = case_when(iso3 %in% focus_cn ~ end_label,
                                TRUE ~ NA_character_), 
          cgroup = case_when(iso3 %in% focus_cn ~ iso3, 
                             TRUE ~ "ZZOTHER")) %>%
-  filter(cu_cases > 99) %>%
   ggplot(mapping = aes(x = days_elapsed, y = cu_cases, 
          color = cgroup, label = end_label, 
          group = cname)) + 
@@ -58,6 +67,9 @@ covnat %>%
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+
+
+## U.S. States
 
 
 ```r
