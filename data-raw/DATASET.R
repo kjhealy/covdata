@@ -202,7 +202,16 @@ covus <- cov_us_raw %>%
   select(date, state, fips, measure, count, everything())
 
 
+### NYT county data
+nytcovcounty <- read_csv("data-raw/data/nyt-us-counties.csv")
+
+### NYT state data
+nytcovstate <- read_csv("data-raw/data/nyt-us-states.csv")
+
 ## write data
 usethis::use_data(covnat, overwrite = TRUE)
 usethis::use_data(covus, overwrite = TRUE)
+usethis::use_data(nytcovcounty, overwrite = TRUE)
+usethis::use_data(nytcovstate, overwrite = TRUE)
+
 

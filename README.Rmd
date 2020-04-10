@@ -19,7 +19,14 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.com/kjhealy/covdata.svg?branch=master)](https://travis-ci.com/kjhealy/covdata)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides COVID-19 case data from two sources: national level data from the [ECDC](https://www.ecdc.europa.eu/en), and state-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). Data are current through `r format(Sys.Date(), "%A, %B %e, %Y")`.
+`covdata` is a data package for R. It provides COVID-19 case data from three sources: 
+
+- National level data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
+- State-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
+- State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data). 
+
+
+Data are current through `r format(Sys.Date(), "%A, %B %e, %Y")`.
 
 ## Installation
 
@@ -70,15 +77,13 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ## Loading the Data
 
-### Country-Level Table
+### Country-Level Data from the ECDC
 
 ```{r load}
 library(tidyverse)
 library(covdata)
 
-## National level tibble
 covnat
-
 ```
 
 ### Draw a log-linear graph of cumulative reported cases
@@ -128,14 +133,13 @@ covnat %>%
 ```
 
 
-### U.S. State table
+### State-Level Data from the COVID Tracking Project
 
 ```{r states}
-## US state tibble
 covus
 ```
 
-### Draw a log-linear graph of reported US cases
+### Draw a log-linear graph of cumulative reported US cases
 
 ```{r us-example, fig.height=10, fig.width=8, dpi=300}
 ## Which n states are leading the count of positive cases or deaths?
@@ -176,5 +180,37 @@ covus %>%
        caption = "Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy") + 
   theme_minimal()
 ```
+
+
+### State-Level and County-Level (Cumulative) Data from the _New York Times_
+
+```{r nyt1}
+nytcovstate
+```
+
+```{r}
+nytcovcounty
+```
+
+### Draw a log-linear graph of cumulative US cases by county
+
+```{r nytplot,  fig.height=15, fig.width=8, dpi=300}
+nytcovcounty %>%
+  mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
+  group_by(uniq_name) %>%
+  mutate(days_elapsed = date - min(date)) %>%
+  ggplot(aes(x = days_elapsed, y = cases, group = uniq_name)) + 
+  geom_line(size = 0.25, color = "gray20") + 
+  scale_y_log10(labels = scales::label_number_si()) + 
+  guides(color = FALSE) + 
+  facet_wrap(~ state, ncol = 5) + 
+  labs(title = "COVID-19 Cumulative Recorded Cases by US County",
+       subtitle = paste("New York is bundled into a single area in this data.\nData as of", format(max(nytcovcounty$date), "%A, %B %e, %Y")),
+       x = "Days since first case", y = "Count of Cases (log 10 scale)", 
+       caption = "Data: The New York Times | Graph: @kjhealy") + 
+  theme_minimal()
+
+```
+
 
 Mask icon in hex logo by [Freepik](https://www.flaticon.com/authors/freepik).
