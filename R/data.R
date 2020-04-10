@@ -51,7 +51,7 @@
 #' \item{deaths}{Cumulative N reported deaths}
 #' }
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data}
-#' For details on the methods and limitations see \\url{https://github.com/nytimes/covid-19-data}.
+#' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
 #' For county data, note in particular:
 #' - New York: All cases for the five boroughs of New York City (New York, Kings, Queens, Bronx and Richmond counties) are assigned to a single area called New York City. There is a large jump in the number of deaths on April 6th due to switching from data from New York City to data from New York state for deaths. For all New York state counties, starting on April 8th we are reporting deaths by place of fatality instead of residence of individual.
 #' - Kansas City, Mo: Four counties (Cass, Clay, Jackson and Platte) overlap the municipality of Kansas City, Mo. The cases and deaths that we show for these four counties are only for the portions exclusive of Kansas City. Cases and deaths for Kansas City are reported as their own line.
