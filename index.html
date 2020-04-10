@@ -89,6 +89,7 @@
                                <span class="fl">TRUE</span> ~ <span class="fl">NA_character_</span>),
          <span class="kw">cgroup</span> <span class="kw">=</span> <span class="fu">case_when</span>(<span class="no">iso3</span> <span class="kw">%in%</span> <span class="no">focus_cn</span> ~ <span class="no">iso3</span>,
                             <span class="fl">TRUE</span> ~ <span class="st">"ZZOTHER"</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">cu_cases</span> <span class="kw">&gt;</span> <span class="fl">99</span>) <span class="kw">%&gt;%</span>
   <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">days_elapsed</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">cu_cases</span>,
          <span class="kw">color</span> <span class="kw">=</span> <span class="no">cgroup</span>, <span class="kw">label</span> <span class="kw">=</span> <span class="no">end_label</span>,
          <span class="kw">group</span> <span class="kw">=</span> <span class="no">cname</span>)) +
@@ -104,12 +105,10 @@
        <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Cumulative Number of Reported Cases (log2 scale)"</span>,
        <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Cumulative Reported Cases of COVID-19, Selected Countries"</span>,
        <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covnat</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>)
+       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) +
+  <span class="fu">theme_minimal</span>()
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
-
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
-<span class="co">#&gt; Warning: Removed 9641 rows containing missing values (geom_text_repel).</span></pre></div>
+<span class="co">#&gt; Warning: Removed 2634 rows containing missing values (geom_text_repel).</span></pre></div>
 <p><img src="reference/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%"></p>
 </div>
 </div>
