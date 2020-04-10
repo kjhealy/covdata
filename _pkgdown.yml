@@ -1,1 +1,20 @@
 destination: docs
+authors:
+  Kieran Healy:
+    href: http://kieranhealy.org
+template:
+  params:
+    bootswatch: cosmo
+reference:
+  - title: "Datasets"
+    desc: >
+      Included datasets.
+    contents:
+      - covnat
+      - covus
+      - nytcovcounty
+      - nytcovstate
+navbar:
+  right:
+   - icon: fa-github
+     href: https://github.com/kjhealy/covdata
