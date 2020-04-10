@@ -58,3 +58,51 @@ covnat %>%
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+
+
+```r
+## Which n states are leading the count of positive cases or deaths?
+top_n_states <- function(data, n = 5, measure = c("positive", "death")) {
+  meas <- match.arg(measure)
+  data %>%
+  group_by(state) %>%
+  filter(measure == meas, date == max(date)) %>%
+  drop_na() %>%
+  ungroup() %>%
+  top_n(n, wt = count) %>%
+  pull(state)
+}
+
+state_cols <- c("gray70", 
+                prismatic::clr_darken(paletteer_d("ggsci::category20_d3"), 0.2))
+
+covus %>%
+  group_by(state) %>%
+  mutate(core = case_when(state %nin% top_n_states(covus) ~ "",
+                          TRUE ~ state),
+         end_label = ifelse(date == max(date), core, NA)) %>%
+  arrange(date) %>%
+  filter(measure == "positive", date > "2020-03-09") %>%
+  ggplot(aes(x = date, y = count, group = state, color = core, label = end_label)) + 
+  geom_line(size = 0.5) + 
+  geom_text_repel(segment.color = NA, nudge_x = 0.2, nudge_y = 0.1) + 
+  scale_color_manual(values = state_cols) + 
+  scale_x_date(date_breaks = "3 days", date_labels = "%b %e" ) + 
+  scale_y_continuous(trans = "log2",
+                     labels = scales::comma_format(accuracy = 1),
+                     breaks = 2^c(seq(1, 17, 1))) +
+  guides(color = FALSE) + 
+  coord_equal() + 
+  labs(title = "COVID-19 Cumulative Recorded Cases by US State",
+       subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y")),
+       x = "Date", y = "Count of Cases (log 2 scale)", 
+       caption = "Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy") + 
+  theme_minimal()
+#> Warning: Transformation introduced infinite values in continuous y-axis
+
+#> Warning: Transformation introduced infinite values in continuous y-axis
+#> Warning: Removed 1650 rows containing missing values (geom_text_repel).
+```
+
+<img src="man/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%" />
+
