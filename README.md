@@ -12,10 +12,59 @@
 
 ## Installation
 
-`covdata` is not available on CRAN. You can install it with `remotes::install_github("kjheay/covdata")`.
+There are two ways to install the `covdata` package. 
+
+### Install direct from GitHub
+
+You can install the beta version of congress from [GitHub](https://github.com/kjhealy/congress) with:
+
+``` r
+remotes::install_github("kjhealy/covdata")
+```
+
+### Installation using `drat`
+
+While using `install_github()` works just fine, it would be nicer to be able to just type `install.packages("covdata")` or `update.packages("covdata")` in the ordinary way. We can do this using Dirk Eddelbuettel's [drat](http://eddelbuettel.github.io/drat/DratForPackageUsers.html) package. Drat provides a convenient way to make R aware of package repositories other than CRAN.
+
+First, install `drat`:
 
 
-## Country-level Data
+```r
+if (!require("drat")) {
+    install.packages("drat")
+    library("drat")
+}
+```
+
+Then use `drat` to tell R about the repository where `covdata` is hosted:
+
+
+```r
+drat::addRepo("kjhealy")
+```
+
+You can now install `covdata`:
+
+
+```r
+install.packages("covdata")
+```
+
+To ensure that the `covdata` repository is always available, you can add the following line to your `.Rprofile` or `.Rprofile.site` file:
+
+
+```r
+drat::addRepo("kjhealy")
+```
+
+With that in place you'll be able to do `install.packages("covdata")` or `update.packages("covdata")` and have everything work as you'd expect. 
+
+Note that my drat repository only contains data packages that are not on CRAN, so you will never be in danger of grabbing the wrong version of any other package.
+
+## Loading the Data
+
+### Country-Level Table
+
 
 ```r
 library(tidyverse)
@@ -89,7 +138,7 @@ covnat %>%
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
 
 
-## U.S. States
+### Data for U.S. States
 
 
 ```r
