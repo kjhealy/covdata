@@ -122,6 +122,10 @@
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
 <span class="co">#&gt; # … with 9,643 more rows</span></pre></div>
+</div>
+<div id="draw-a-log-linear-graph-of-cumulative-reported-cases" class="section level3">
+<h3 class="hasAnchor">
+<a href="#draw-a-log-linear-graph-of-cumulative-reported-cases" class="anchor"></a>Draw a log-linear graph of cumulative reported cases</h3>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="co">## Countries to highlight</span>
 <span class="no">focus_cn</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"CHN"</span>, <span class="st">"DEU"</span>, <span class="st">"GBR"</span>, <span class="st">"USA"</span>, <span class="st">"IRN"</span>, <span class="st">"JPN"</span>,
               <span class="st">"KOR"</span>, <span class="st">"ITA"</span>, <span class="st">"FRA"</span>, <span class="st">"ESP"</span>, <span class="st">"CHE"</span>, <span class="st">"TUR"</span>)
@@ -166,9 +170,9 @@
 <span class="co">#&gt; Warning: Removed 2634 rows containing missing values (geom_text_repel).</span></pre></div>
 <p><img src="reference/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%"></p>
 </div>
-<div id="data-for-u-s--states" class="section level3">
+<div id="u-s--state-table" class="section level3">
 <h3 class="hasAnchor">
-<a href="#data-for-u-s--states" class="anchor"></a>Data for U.S. States</h3>
+<a href="#u-s--state-table" class="anchor"></a>U.S. State table</h3>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="co">## US state tibble</span>
 <span class="no">covus</span>
 <span class="co">#&gt; # A tibble: 27,216 x 11</span>
@@ -185,6 +189,10 @@
 <span class="co">#&gt;  9 2020-04-09 AK    02    on_ven…    NA    7223              0                0              146                9</span>
 <span class="co">#&gt; 10 2020-04-09 AK    02    recove…    49    7223              0                0              146                9</span>
 <span class="co">#&gt; # … with 27,206 more rows, and 1 more variable: total_test_results_increase &lt;dbl&gt;</span></pre></div>
+</div>
+<div id="draw-a-log-linear-graph-of-reported-us-cases" class="section level3">
+<h3 class="hasAnchor">
+<a href="#draw-a-log-linear-graph-of-reported-us-cases" class="anchor"></a>Draw a log-linear graph of reported US cases</h3>
 <div class="sourceCode" id="cb9"><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
 <span class="no">top_n_states</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">data</span>, <span class="no">n</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="no">measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
   <span class="no">meas</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span>(<span class="no">measure</span>)
