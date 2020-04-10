@@ -65,7 +65,14 @@
 </h1></div>
 <!-- badges: start -->
 
-<p><code>covdata</code> is a data package for R. It provides COVID-19 case data from two sources: national level data from the <a href="https://www.ecdc.europa.eu/en">ECDC</a>, and state-level data for the United States from the <a href="https://covidtracking.com">COVID Tracking Project</a>. Data are current through Friday, April 10, 2020.</p>
+<p><code>covdata</code> is a data package for R. It provides COVID-19 case data from three sources:</p>
+<ul>
+<li>National level data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.<br>
+</li>
+<li>State-level data for the United States from the <a href="https://covidtracking.com">COVID Tracking Project</a>.</li>
+<li>State-level and county-level data for the United States from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
+</ul>
+<p>Data are current through Friday, April 10, 2020.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -99,13 +106,12 @@
 <div id="loading-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#loading-the-data" class="anchor"></a>Loading the Data</h2>
-<div id="country-level-table" class="section level3">
+<div id="country-level-data-from-the-ecdc" class="section level3">
 <h3 class="hasAnchor">
-<a href="#country-level-table" class="anchor"></a>Country-Level Table</h3>
+<a href="#country-level-data-from-the-ecdc" class="anchor"></a>Country-Level Data from the ECDC</h3>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
 
-<span class="co">## National level tibble</span>
 <span class="no">covnat</span>
 <span class="co">#&gt; # A tibble: 9,858 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [205]</span>
@@ -170,11 +176,10 @@
 <span class="co">#&gt; Warning: Removed 2761 rows containing missing values (geom_text_repel).</span></pre></div>
 <p><img src="reference/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%"></p>
 </div>
-<div id="u-s--state-table" class="section level3">
+<div id="state-level-data-from-the-covid-tracking-project" class="section level3">
 <h3 class="hasAnchor">
-<a href="#u-s--state-table" class="anchor"></a>U.S. State table</h3>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="co">## US state tibble</span>
-<span class="no">covus</span>
+<a href="#state-level-data-from-the-covid-tracking-project" class="anchor"></a>State-Level Data from the COVID Tracking Project</h3>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span>
 <span class="co">#&gt; # A tibble: 27,216 x 11</span>
 <span class="co">#&gt;    date       state fips  measure count pos_neg death_increase hospitalized_in… negative_increa… positive_increa…</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;</span>
@@ -190,9 +195,9 @@
 <span class="co">#&gt; 10 2020-04-09 AK    02    recove…    49    7223              0                0              146                9</span>
 <span class="co">#&gt; # … with 27,206 more rows, and 1 more variable: total_test_results_increase &lt;dbl&gt;</span></pre></div>
 </div>
-<div id="draw-a-log-linear-graph-of-reported-us-cases" class="section level3">
+<div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases" class="section level3">
 <h3 class="hasAnchor">
-<a href="#draw-a-log-linear-graph-of-reported-us-cases" class="anchor"></a>Draw a log-linear graph of reported US cases</h3>
+<a href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases" class="anchor"></a>Draw a log-linear graph of cumulative reported US cases</h3>
 <div class="sourceCode" id="cb9"><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
 <span class="no">top_n_states</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">data</span>, <span class="no">n</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="no">measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
   <span class="no">meas</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span>(<span class="no">measure</span>)
@@ -235,6 +240,62 @@
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 1650 rows containing missing values (geom_text_repel).</span></pre></div>
 <p><img src="reference/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%"></p>
+</div>
+<div id="state-level-and-county-level-cumulative-data-from-the-new-york-times" class="section level3">
+<h3 class="hasAnchor">
+<a href="#state-level-and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>State-Level and County-Level (Cumulative) Data from the <em>New York Times</em>
+</h3>
+<div class="sourceCode" id="cb10"><pre class="r"><span class="no">nytcovstate</span>
+<span class="co">#&gt; # A tibble: 2,105 x 5</span>
+<span class="co">#&gt;    date       state      fips  cases deaths</span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
+<span class="co">#&gt;  2 2020-01-22 Washington 53        1      0</span>
+<span class="co">#&gt;  3 2020-01-23 Washington 53        1      0</span>
+<span class="co">#&gt;  4 2020-01-24 Illinois   17        1      0</span>
+<span class="co">#&gt;  5 2020-01-24 Washington 53        1      0</span>
+<span class="co">#&gt;  6 2020-01-25 California 06        1      0</span>
+<span class="co">#&gt;  7 2020-01-25 Illinois   17        1      0</span>
+<span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
+<span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
+<span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
+<span class="co">#&gt; # … with 2,095 more rows</span></pre></div>
+<div class="sourceCode" id="cb11"><pre class="r"><span class="no">nytcovcounty</span>
+<span class="co">#&gt; # A tibble: 45,880 x 6</span>
+<span class="co">#&gt;    date       county      state      fips  cases deaths</span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt;  2 2020-01-22 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt;  3 2020-01-23 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt;  4 2020-01-24 Cook        Illinois   17031     1      0</span>
+<span class="co">#&gt;  5 2020-01-24 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt;  6 2020-01-25 Orange      California 06059     1      0</span>
+<span class="co">#&gt;  7 2020-01-25 Cook        Illinois   17031     1      0</span>
+<span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
+<span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
+<span class="co">#&gt; # … with 45,870 more rows</span></pre></div>
+</div>
+<div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county" class="section level3">
+<h3 class="hasAnchor">
+<a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county</h3>
+<div class="sourceCode" id="cb12"><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
+  <span class="fu">group_by</span>(<span class="no">uniq_name</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">days_elapsed</span> <span class="kw">=</span> <span class="no">date</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">date</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">days_elapsed</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">cases</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">uniq_name</span>)) +
+  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.25</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray20"</span>) +
+  <span class="fu">scale_y_log10</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu">label_number_si</span>()) +
+  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
+  <span class="fu">facet_wrap</span>(~ <span class="no">state</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">5</span>) +
+  <span class="fu">labs</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
+       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">nytcovcounty</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
+       <span class="kw">x</span> <span class="kw">=</span> <span class="st">"Days since first case"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>,
+       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span>) +
+  <span class="fu">theme_minimal</span>()
+<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
+<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></pre></div>
+<p><img src="reference/figures/README-nytplot-1.png" title="plot of chunk nytplot" alt="plot of chunk nytplot" width="100%"></p>
 <p>Mask icon in hex logo by <a href="https://www.flaticon.com/authors/freepik">Freepik</a>.</p>
 </div>
 </div>
