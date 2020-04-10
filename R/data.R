@@ -1,8 +1,8 @@
-#' International COVID-19 cases and deaths to April 9th 2020
+#' International COVID-19 cases and deaths, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
 #'
 #' A dataset containing national-level ECDC data on COVID-19
 #'
-#' @format A tibble with 9,653 rows and 9 columns
+#' @format A tibble with `r nrow(covnat)` rows and `r ncol(covnat)` columns
 #' \describe{
 #'   \item{date}{date in YYYY-MM-DD format}
 #'   \item{cname}{Name of country (character)}
@@ -16,11 +16,11 @@
 #' @source \url{http://ecdc.europa.eu/}
 "covnat"
 
-#' COVID-19 data for the USA to April 9th 2020
+#' COVID-19 data for the USA, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
 #'
 #' A dataset containing US state-level data on COVID-19
 #'
-#' @format A tibble with 27,216 rows and 11 columns
+#' @format A tibble with `r nrow(covus)` rows and `r ncol(covus)` columns
 #' \describe{
 #' \item{date}{Date in YYYY-MM-DD format (date)}
 #' \item{state}{Two letter State abbreviation (character)}

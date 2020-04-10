@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.com/kjhealy/covdata.svg?branch=master)](https://travis-ci.com/kjhealy/covdata)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides COVID-19 case data from two sources: national level data from the [ECDC](https://www.ecdc.europa.eu/en), and state-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). Data are current through April 9th, 2020.
+`covdata` is a data package for R. It provides COVID-19 case data from two sources: national level data from the [ECDC](https://www.ecdc.europa.eu/en), and state-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). Data are current through `r format(Sys.Date(), "%A, %B %e, %Y")`.
 
 ## Installation
 

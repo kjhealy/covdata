@@ -8,7 +8,7 @@
 [![Travis build status](https://travis-ci.com/kjhealy/covdata.svg?branch=master)](https://travis-ci.com/kjhealy/covdata)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides COVID-19 case data from two sources: national level data from the [ECDC](https://www.ecdc.europa.eu/en), and state-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). Data are current through April 9th, 2020.
+`covdata` is a data package for R. It provides COVID-19 case data from two sources: national level data from the [ECDC](https://www.ecdc.europa.eu/en), and state-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). Data are current through Friday, April 10, 2020.
 
 ## Installation
 
@@ -72,8 +72,8 @@ library(covdata)
 
 ## National level tibble
 covnat
-#> # A tibble: 9,653 x 8
-#> # Groups:   iso3 [204]
+#> # A tibble: 9,858 x 8
+#> # Groups:   iso3 [205]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
 #>  1 2019-12-31 Afghanistan AFG       0      0  37172386        0         0
@@ -86,7 +86,7 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 9,643 more rows
+#> # … with 9,848 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported cases
@@ -134,7 +134,7 @@ covnat %>%
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
-#> Warning: Removed 2634 rows containing missing values (geom_text_repel).
+#> Warning: Removed 2761 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
