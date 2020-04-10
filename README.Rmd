@@ -174,3 +174,4 @@ covus %>%
   theme_minimal()
 ```
 
+Mask icon in hex logo by [Freepik](https://www.flaticon.com/authors/freepik).

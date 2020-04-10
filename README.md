@@ -208,3 +208,4 @@ covus %>%
 
 <img src="man/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%" />
 
+Mask icon in hex logo by [Freepik](https://www.flaticon.com/authors/freepik).
