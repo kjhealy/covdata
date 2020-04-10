@@ -27,25 +27,38 @@ The goal of covdata is to make COVID-19 case data easily available.
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
+```{r example, fig.height=10, fig.width=8, dpi=300}
+library(tidyverse)
 library(covdata)
-## basic example code
+
+## Countries to highlight
+focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
+              "KOR", "ITA", "FRA", "ESP", "CHE", "TUR")
+
+## Colors
+cgroup_cols <- c(prismatic::clr_darken(paletteer_d("ggsci::category20_d3"), 0.2)[1:length(focus_cn)], "gray70")
+
+
+covnat %>%
+  mutate(end_label = case_when(iso3 %in% focus_cn ~ end_label,
+                               TRUE ~ NA_character_), 
+         cgroup = case_when(iso3 %in% focus_cn ~ iso3, 
+                            TRUE ~ "ZZOTHER")) %>%
+  ggplot(mapping = aes(x = days_elapsed, y = cu_cases, 
+         color = cgroup, label = end_label, 
+         group = cname)) + 
+  geom_line(size = 0.5) + 
+  geom_text_repel(nudge_x = 0.75,
+                  segment.color = NA) + 
+  guides(color = FALSE) + 
+  scale_color_manual(values = cgroup_cols) +
+  scale_y_continuous(labels = scales::comma_format(accuracy = 1), 
+                     breaks = 2^seq(4, 19, 1),
+                     trans = "log2") + 
+  labs(x = "Days Since 100th Confirmed Case", 
+       y = "Cumulative Number of Reported Cases (log2 scale)", 
+       title = "Cumulative Reported Cases of COVID-19, Selected Countries", 
+       subtitle = paste("ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") 
+
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
