@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# covdata
+# covdata <img src="man/figures/hex-covdata.png" align="right" width="240">
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/kjhealy/covdata.svg?branch=master)](https://travis-ci.com/kjhealy/covdata)
