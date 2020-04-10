@@ -81,6 +81,8 @@ covnat
 
 ```
 
+### Draw a log-linear graph of cumulative reported cases
+
 ```{r example, fig.height=10, fig.width=8, dpi=300}
 ## Countries to highlight
 focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
@@ -126,13 +128,14 @@ covnat %>%
 ```
 
 
-### Data for U.S. States
+### U.S. State table
 
 ```{r states}
 ## US state tibble
 covus
 ```
 
+### Draw a log-linear graph of reported US cases
 
 ```{r us-example, fig.height=10, fig.width=8, dpi=300}
 ## Which n states are leading the count of positive cases or deaths?

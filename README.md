@@ -89,6 +89,8 @@ covnat
 #> # … with 9,643 more rows
 ```
 
+### Draw a log-linear graph of cumulative reported cases
+
 
 ```r
 ## Countries to highlight
@@ -138,7 +140,7 @@ covnat %>%
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
 
 
-### Data for U.S. States
+### U.S. State table
 
 
 ```r
@@ -160,6 +162,7 @@ covus
 #> # … with 27,206 more rows, and 1 more variable: total_test_results_increase <dbl>
 ```
 
+### Draw a log-linear graph of reported US cases
 
 
 ```r
