@@ -4,7 +4,7 @@ Title: COVID-19 Data
 Version: 0.0.0.9000
 Author: Kieran Healy
 Maintainer: Kieran Healy <kjhealy@gmail.com>
-Description: COVID-19 data downloaded from the ECDC and the COVID-19 Tracking Project, packaged for R.
+Description: COVID-19 data downloaded from the ECDC, the COVID-19 Tracking Project, and the New York Times, packaged for R.
 Depends: R (>= 2.10)
 License: MIT + file LICENSE
 Encoding: UTF-8
