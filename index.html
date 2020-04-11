@@ -66,6 +66,13 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
+<hr>
+<div id="output-github_document" class="section level2">
+<h2 class="hasAnchor">
+<a href="#output-github_document" class="anchor"></a>output: github_document</h2>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+</div>
 <div id="covdata" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#covdata" class="anchor"></a>covdata <img src="reference/figures/hex-covdata.png" align="right" width="240">
@@ -79,7 +86,7 @@
 <li>State-level data for the United States from the <a href="https://covidtracking.com">COVID Tracking Project</a>.</li>
 <li>State-level and county-level data for the United States from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
 </ul>
-<p>Data are current through Friday, April 10, 2020.</p>
+<p>Data are current through Saturday, April 11, 2020.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -139,12 +146,23 @@
 <div id="draw-a-log-linear-graph-of-cumulative-reported-cases" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-reported-cases" class="anchor"></a>Draw a log-linear graph of cumulative reported cases</h3>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="co">## Countries to highlight</span>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="co">## Libraries for the graphs</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggrepel</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">paletteer</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">prismatic</span>)
+
+<span class="co">## Convenince "Not in" operator</span>
+<span class="st">"%nin%"</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">y</span>) {
+  <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>( !(<span class="no">x</span> <span class="kw">%in%</span> <span class="no">y</span>) )
+}
+
+
+<span class="co">## Countries to highlight</span>
 <span class="no">focus_cn</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"CHN"</span>, <span class="st">"DEU"</span>, <span class="st">"GBR"</span>, <span class="st">"USA"</span>, <span class="st">"IRN"</span>, <span class="st">"JPN"</span>,
               <span class="st">"KOR"</span>, <span class="st">"ITA"</span>, <span class="st">"FRA"</span>, <span class="st">"ESP"</span>, <span class="st">"CHE"</span>, <span class="st">"TUR"</span>)
 
 <span class="co">## Colors</span>
-<span class="no">cgroup_cols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw pkg">prismatic</span><span class="kw ns">::</span><span class="fu">clr_darken</span>(<span class="fu">paletteer_d</span>(<span class="st">"ggsci::category20_d3"</span>), <span class="fl">0.2</span>)[<span class="fl">1</span>:<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">focus_cn</span>)], <span class="st">"gray70"</span>)
+<span class="no">cgroup_cols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu">clr_darken</span>(<span class="fu">paletteer_d</span>(<span class="st">"ggsci::category20_d3"</span>), <span class="fl">0.2</span>)[<span class="fl">1</span>:<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">focus_cn</span>)], <span class="st">"gray70"</span>)
 
 <span class="no">covnat</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">cu_cases</span> <span class="kw">&gt;</span> <span class="fl">99</span>) <span class="kw">%&gt;%</span>
@@ -307,6 +325,7 @@
 </div>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
