@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -15,7 +19,7 @@
 - State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data). 
 
 
-Data are current through Friday, April 10, 2020.
+Data are current through Saturday, April 11, 2020.
 
 ## Installation
 
@@ -99,12 +103,23 @@ covnat
 
 
 ```r
+## Libraries for the graphs
+library(ggrepel)
+library(paletteer)
+library(prismatic)
+
+## Convenince "Not in" operator
+"%nin%" <- function(x, y) {
+  return( !(x %in% y) )
+}
+
+
 ## Countries to highlight
 focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
               "KOR", "ITA", "FRA", "ESP", "CHE", "TUR")
 
 ## Colors
-cgroup_cols <- c(prismatic::clr_darken(paletteer_d("ggsci::category20_d3"), 0.2)[1:length(focus_cn)], "gray70")
+cgroup_cols <- c(clr_darken(paletteer_d("ggsci::category20_d3"), 0.2)[1:length(focus_cn)], "gray70")
 
 covnat %>%
   filter(cu_cases > 99) %>%

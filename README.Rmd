@@ -89,12 +89,23 @@ covnat
 ### Draw a log-linear graph of cumulative reported cases
 
 ```{r example, fig.height=10, fig.width=8, dpi=300}
+## Libraries for the graphs
+library(ggrepel)
+library(paletteer)
+library(prismatic)
+
+## Convenince "Not in" operator
+"%nin%" <- function(x, y) {
+  return( !(x %in% y) )
+}
+
+
 ## Countries to highlight
 focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
               "KOR", "ITA", "FRA", "ESP", "CHE", "TUR")
 
 ## Colors
-cgroup_cols <- c(prismatic::clr_darken(paletteer_d("ggsci::category20_d3"), 0.2)[1:length(focus_cn)], "gray70")
+cgroup_cols <- c(clr_darken(paletteer_d("ggsci::category20_d3"), 0.2)[1:length(focus_cn)], "gray70")
 
 covnat %>%
   filter(cu_cases > 99) %>%
