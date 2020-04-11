@@ -12,7 +12,10 @@
 
 - National level data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
-- State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data). 
+- State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
+
+
+The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
 
 Data are current through Saturday, April 11, 2020.
