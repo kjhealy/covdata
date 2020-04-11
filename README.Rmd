@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 - National level data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
-- State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data). 
+- State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 
 
 Data are current through `r format(Sys.Date(), "%A, %B %e, %Y")`.
