@@ -10,8 +10,16 @@ reference:
     desc: >
       Included datasets.
     contents:
+      - cdc_catchments
+      - cdc_deaths_by_age
+      - cdc_deaths_by_sex
+      - cdc_deaths_by_state
+      - cdc_deaths_by_week
+      - cdc_hospitalizations
       - covnat
       - covus
+      - nssp_covid_er_nat
+      - nssp_covid_er_reg
       - nytcovcounty
       - nytcovstate
 navbar:
