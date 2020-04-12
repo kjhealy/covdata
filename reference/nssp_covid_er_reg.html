@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for the US states, current as of Sunday, April 12, 2020 — nytcovstate • covdata</title>
+<title>NSSP Regional COVID ER Visits — nssp_covid_er_reg • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Sunday, April 12, 2020 — nytcovstate" />
-<meta property="og:description" content="A dataset containing US state-level data on COVID-19, collected by the New York Times." />
+<meta property="og:title" content="NSSP Regional COVID ER Visits — nssp_covid_er_reg" />
+<meta property="og:description" content="Regional Syndromic Surveillance Program (NSSP):
+Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)" />
 
 
 
@@ -108,33 +109,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for the US states, current as of Sunday, April 12, 2020</h1>
+    <h1>NSSP Regional COVID ER Visits</h1>
     
-    <div class="hidden name"><code>nytcovstate.Rd</code></div>
+    <div class="hidden name"><code>nssp_covid_er_reg.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing US state-level data on COVID-19, collected by the New York Times.</p>
+    <p>Regional Syndromic Surveillance Program (NSSP):
+Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)</p>
     </div>
 
-    <pre class="usage"><span class='no'>nytcovstate</span></pre>
+    <pre class="usage"><span class='no'>nssp_covid_er_reg</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 2105 rows and 5 columns</p><dl'>
-<dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
-<dt>state</dt><dd><p>State name (character)</p></dd>
-<dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
-<dt>cases</dt><dd><p>Cumulative N  reported cases</p></dd>
-<dt>deaths</dt><dd><p>Cumulative N reported deaths</p></dd>
+    <p>A data frame with 538 rows and 9 variables:</p><dl'>
+<dt><code>week</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+<dt><code>num_fac</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+<dt><code>total_ed_visits</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
+<dt><code>visits</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+<dt><code>pct_visits</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
+<dt><code>visit_type</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
+<dt><code>region</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
+<dt><code>source</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
+<dt><code>year</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>The New York Times <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.
-For details on the methods and limitations see <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.</p>
+    <p>Courtesy of Bob Rudis's cdccovidview package</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The U.S. Centers for Disease Control provides weekly
+summary and interpretation of key indicators that have been adapted
+to track the COVID-19 pandemic in the United States. Data is
+retrieved using the cdccovidview package from both COVIDView
+(<a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a>)
+and COVID-NET
+(<a href='https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html'>https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html</a>).</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

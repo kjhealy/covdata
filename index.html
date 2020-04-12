@@ -66,18 +66,26 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
+<hr>
+<div id="output-github_document" class="section level2">
+<h2 class="hasAnchor">
+<a href="#output-github_document" class="anchor"></a>output: github_document</h2>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+</div>
 <div id="covdata" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#covdata" class="anchor"></a>covdata <img src="reference/figures/hex-covdata.png" align="right" width="240">
 </h1></div>
 <!-- badges: start -->
 
-<p><code>covdata</code> is a data package for R. It provides COVID-19 case data from three sources:</p>
+<p><code>covdata</code> is a data package for R. It provides COVID-19 case data from four sources:</p>
 <ul>
 <li>National level data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.<br>
 </li>
 <li>State-level data for the United States from the <a href="https://covidtracking.com">COVID Tracking Project</a>.</li>
 <li>State-level and county-level data for the United States from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
+<li>Data from the US Centers for Disease Control’s <a href="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html">Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network</a> (COVID-NET). This network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
 <p>Data are current through Sunday, April 12, 2020.</p>
@@ -118,16 +126,6 @@
 <h3 class="hasAnchor">
 <a href="#country-level-data-from-the-ecdc" class="anchor"></a>Country-Level Data from the ECDC</h3>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
-<span class="co">#&gt; ── Attaching packages ────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</span>
-<span class="co">#&gt; ✓ ggplot2 3.3.0     ✓ purrr   0.3.3</span>
-<span class="co">#&gt; ✓ tibble  3.0.0     ✓ dplyr   0.8.5</span>
-<span class="co">#&gt; ✓ tidyr   1.0.2     ✓ stringr 1.4.0</span>
-<span class="co">#&gt; ✓ readr   1.3.1     ✓ forcats 0.5.0</span>
-<span class="co">#&gt; ── Conflicts ───────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──</span>
-<span class="co">#&gt; x dplyr::filter()  masks stats::filter()</span>
-<span class="co">#&gt; x purrr::is_null() masks testthat::is_null()</span>
-<span class="co">#&gt; x dplyr::lag()     masks stats::lag()</span>
-<span class="co">#&gt; x dplyr::matches() masks tidyr::matches(), testthat::matches()</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
 
 <span class="no">covnat</span>
@@ -327,10 +325,109 @@
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></pre></div>
 <p><img src="reference/figures/README-nytplot-1.png" title="plot of chunk nytplot" alt="plot of chunk nytplot" width="100%"></p>
 </div>
+<div id="us-cdc-surveillance-network-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#us-cdc-surveillance-network-data" class="anchor"></a>US CDC Surveillance Network Data</h3>
+<p>Thanks to Bob Rudis’s (<code>cdccovidview</code>)[<a href="https://github.com/hrbrmstr/cdccovidview" class="uri">https://github.com/hrbrmstr/cdccovidview</a>] package for making these data tractable to include.</p>
+<div class="sourceCode" id="cb13"><pre class="r"><span class="no">cdc_hospitalizations</span>
+<span class="co">#&gt; # A tibble: 4,590 x 8</span>
+<span class="co">#&gt;    catchment      network   year  mmwr_year mmwr_week age_category cumulative_rate weekly_rate</span>
+<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;       &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 Entire Network COVID-NET 2020  2020      10        0-4 yr                   0           0  </span>
+<span class="co">#&gt;  2 Entire Network COVID-NET 2020  2020      11        0-4 yr                   0           0  </span>
+<span class="co">#&gt;  3 Entire Network COVID-NET 2020  2020      12        0-4 yr                   0           0  </span>
+<span class="co">#&gt;  4 Entire Network COVID-NET 2020  2020      13        0-4 yr                   0.3         0.3</span>
+<span class="co">#&gt;  5 Entire Network COVID-NET 2020  2020      14        0-4 yr                   0.6         0.3</span>
+<span class="co">#&gt;  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                  NA          NA  </span>
+<span class="co">#&gt;  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                  NA          NA  </span>
+<span class="co">#&gt;  8 Entire Network COVID-NET 2020  2020      17        0-4 yr                  NA          NA  </span>
+<span class="co">#&gt;  9 Entire Network COVID-NET 2020  2020      18        0-4 yr                  NA          NA  </span>
+<span class="co">#&gt; 10 Entire Network COVID-NET 2020  2020      19        0-4 yr                  NA          NA  </span>
+<span class="co">#&gt; # … with 4,580 more rows</span>
+
+<span class="no">cdc_catchments</span>
+<span class="co">#&gt; # A tibble: 17 x 2</span>
+<span class="co">#&gt;    name      area          </span>
+<span class="co">#&gt;  * &lt;chr&gt;     &lt;chr&gt;         </span>
+<span class="co">#&gt;  1 COVID-NET Entire Network</span>
+<span class="co">#&gt;  2 EIP       California    </span>
+<span class="co">#&gt;  3 EIP       Colorado      </span>
+<span class="co">#&gt;  4 EIP       Connecticut   </span>
+<span class="co">#&gt;  5 EIP       Entire Network</span>
+<span class="co">#&gt;  6 EIP       Georgia       </span>
+<span class="co">#&gt;  7 EIP       Maryland      </span>
+<span class="co">#&gt;  8 EIP       Minnesota     </span>
+<span class="co">#&gt;  9 EIP       New Mexico    </span>
+<span class="co">#&gt; 10 EIP       New York      </span>
+<span class="co">#&gt; 11 EIP       Oregon        </span>
+<span class="co">#&gt; 12 EIP       Tennessee     </span>
+<span class="co">#&gt; 13 IHSP      Entire Network</span>
+<span class="co">#&gt; 14 IHSP      Iowa          </span>
+<span class="co">#&gt; 15 IHSP      Michigan      </span>
+<span class="co">#&gt; 16 IHSP      Ohio          </span>
+<span class="co">#&gt; 17 IHSP      Utah</span>
+
+<span class="no">cdc_deaths_by_state</span>
+<span class="co">#&gt; # A tibble: 53 x 7</span>
+<span class="co">#&gt;    state      covid_deaths total_deaths percent_expected_d… pneumonia_deaths pneumonia_and_cov… all_influenza_deat…</span>
+<span class="co">#&gt;    &lt;chr&gt;             &lt;int&gt;        &lt;int&gt;               &lt;dbl&gt;            &lt;int&gt;              &lt;int&gt;               &lt;int&gt;</span>
+<span class="co">#&gt;  1 Alabama              14         9220                0.87              539                  4                  75</span>
+<span class="co">#&gt;  2 Alaska                1          627                0.75               31                  1                   3</span>
+<span class="co">#&gt;  3 Arizona              26        11862                0.97              748                 13                  95</span>
+<span class="co">#&gt;  4 Arkansas              3         5938                0.92              372                  2                  62</span>
+<span class="co">#&gt;  5 California          175        52505                0.94             4170                 96                 511</span>
+<span class="co">#&gt;  6 Colorado             62         7787                0.98              493                 33                  77</span>
+<span class="co">#&gt;  7 Connectic…            0            0                0                   0                  0                   0</span>
+<span class="co">#&gt;  8 Delaware              1         1333                0.71               65                  1                   9</span>
+<span class="co">#&gt;  9 District …            4         1074                0.88               91                  4                   5</span>
+<span class="co">#&gt; 10 Florida             145        41586                0.97             2722                 83                 249</span>
+<span class="co">#&gt; # … with 43 more rows</span>
+
+<span class="no">nssp_covid_er_reg</span>
+<span class="co">#&gt; # A tibble: 538 x 9</span>
+<span class="co">#&gt;     week num_fac total_ed_visits visits pct_visits visit_type region   source                 year</span>
+<span class="co">#&gt;    &lt;int&gt;   &lt;int&gt; &lt;chr&gt;            &lt;int&gt;      &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;                 &lt;int&gt;</span>
+<span class="co">#&gt;  1    41     202 130377             814    0.006   ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  2    42     202 132385             912    0.00700 ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  3    43     202 131866             883    0.00700 ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  4    44     203 128256             888    0.00700 ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  5    45     203 127466             979    0.008   ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  6    46     202 125306            1188    0.009   ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  7    47     202 128877            1235    0.01    ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  8    48     202 124781            1451    0.012   ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt;  9    49     202 125939            1362    0.011   ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt; 10    50     202 130430            1405    0.011   ili        Region 1 Emergency Departments  2019</span>
+<span class="co">#&gt; # … with 528 more rows</span></pre></div>
+<div class="sourceCode" id="cb14"><pre class="r">
+<span class="no">age_f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+  <span class="st">"0-4 yr"</span>, <span class="st">"5-17 yr"</span>, <span class="st">"18-49 yr"</span>,
+  <span class="st">"50-64 yr"</span>, <span class="st">"65+ yr"</span>, <span class="st">"65-74 yr"</span>,
+  <span class="st">"75-84 yr"</span>, <span class="st">"85+"</span>)
+
+<span class="no">cdc_hospitalizations</span> <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">start</span> <span class="kw">=</span> <span class="kw pkg">cdccovidview</span><span class="kw ns">::</span><span class="fu">mmwr_week_to_date</span>(<span class="no">mmwr_year</span>, <span class="no">mmwr_week</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(!<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">weekly_rate</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">catchment</span> <span class="kw">==</span> <span class="st">"Entire Network"</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">select</span>(<span class="no">start</span>, <span class="no">network</span>, <span class="no">age_category</span>, <span class="no">weekly_rate</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">age_category</span> <span class="kw">!=</span> <span class="st">"Overall"</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">age_category</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">age_category</span>, <span class="kw">levels</span> <span class="kw">=</span> <span class="no">age_f</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu">ggplot</span>() +
+  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="no">start</span>, <span class="no">weekly_rate</span>)) +
+  <span class="fu">scale_x_date</span>(
+    <span class="kw">date_breaks</span> <span class="kw">=</span> <span class="st">"2 weeks"</span>, <span class="kw">date_labels</span> <span class="kw">=</span> <span class="st">"%b\n%d"</span>
+  ) +
+  <span class="fu">facet_grid</span>(<span class="no">network</span> ~ <span class="no">age_category</span>) +
+  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Rates per 100,000 pop"</span>,
+    <span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-NET Weekly Rates by Network and Age Group"</span>,
+    <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Courtesy Bob Rudis's cdccovidview"</span>,
+    <span class="kw">caption</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span>(<span class="st">"Source: COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention.\n&lt;https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html&gt;; Accessed on %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span>())) +
+  <span class="fu">theme_minimal</span>()</pre></div>
+<p><img src="reference/figures/README-cdc-example-1.png" title="plot of chunk cdc-example" alt="plot of chunk cdc-example" width="100%"></p>
+</div>
 <div id="citing-the-package" class="section level3">
 <h3 class="hasAnchor">
 <a href="#citing-the-package" class="anchor"></a>Citing the package</h3>
-<div class="sourceCode" id="cb13"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
+<div class="sourceCode" id="cb15"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
@@ -350,6 +447,7 @@
 </div>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

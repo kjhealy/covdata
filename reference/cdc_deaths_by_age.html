@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for the US states, current as of Sunday, April 12, 2020 — nytcovstate • covdata</title>
+<title>CDC Surveillance Network Death Counts by Age — cdc_deaths_by_age • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Sunday, April 12, 2020 — nytcovstate" />
-<meta property="og:description" content="A dataset containing US state-level data on COVID-19, collected by the New York Times." />
+<meta property="og:title" content="CDC Surveillance Network Death Counts by Age — cdc_deaths_by_age" />
+<meta property="og:description" content="Provisional Death Counts for Coronavirus Disease (COVID-19)" />
 
 
 
@@ -108,33 +108,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for the US states, current as of Sunday, April 12, 2020</h1>
+    <h1>CDC Surveillance Network Death Counts by Age</h1>
     
-    <div class="hidden name"><code>nytcovstate.Rd</code></div>
+    <div class="hidden name"><code>cdc_deaths_by_age.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing US state-level data on COVID-19, collected by the New York Times.</p>
+    <p>Provisional Death Counts for Coronavirus Disease (COVID-19)</p>
     </div>
 
-    <pre class="usage"><span class='no'>nytcovstate</span></pre>
+    <pre class="usage"><span class='no'>cdc_deaths_by_age</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 2105 rows and 5 columns</p><dl'>
-<dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
-<dt>state</dt><dd><p>State name (character)</p></dd>
-<dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
-<dt>cases</dt><dd><p>Cumulative N  reported cases</p></dd>
-<dt>deaths</dt><dd><p>Cumulative N reported deaths</p></dd>
+    <p>A data frame with 12 rows and 7 variables:</p><dl'>
+<dt><code>age_group</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
+<dt><code>covid_deaths</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+<dt><code>total_deaths</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+<dt><code>percent_expected_deaths</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
+<dt><code>pneumonia_deaths</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+<dt><code>pneumonia_and_covid_deaths</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+<dt><code>all_influenza_deaths_j09_j11</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>The New York Times <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.
-For details on the methods and limitations see <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.</p>
+    <p>Courtesy of Bob Rudis's cdccovidview package</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The U.S. Centers for Disease Control provides weekly
+summary and interpretation of key indicators that have been adapted
+to track the COVID-19 pandemic in the United States. Data is
+retrieved using the cdccovidview package from both COVIDView
+(<a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a>)
+and COVID-NET
+(<a href='https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html'>https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html</a>). Please see the indicated reference for all the caveats and precise meanings for each field.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&amp;bom=true&amp;format=true'>https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&amp;bom=true&amp;format=true</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
