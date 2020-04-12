@@ -10,5 +10,6 @@ citEntry(
   year     = "2020",
   note = "R package version 0.1.0",
   url      = "http://kjhealy.github.io/covdata",
-  key = "covdata20"
+  textVersion = paste("Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>."
+  )
 )
