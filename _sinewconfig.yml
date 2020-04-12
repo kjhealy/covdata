@@ -1,0 +1,5 @@
+add_fields: ["author", "source","references"] # appending
+set_fields: ["details","examples","seealso"] # resetting 
+author: 'Kieran Healy'
+source: 'http://'
+references: ''
