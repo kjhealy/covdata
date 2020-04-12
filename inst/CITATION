@@ -1,0 +1,14 @@
+citHeader("To cite the package `covdata` in publications use:")
+
+citEntry(
+  entry    = "manual",
+  title    = "covdata: COVID-19 Case and Mortality Time Series",
+  author   = person(given = "Kieran",
+                      family = "Healy",
+                      role = c("aut", "cre"),
+                      email = "kjhealy@soc.duke.edu"),
+  year     = "2020",
+  note = "R package version 0.1.0",
+  url      = "http://kjhealy.github.io/covdata",
+  key = "covdata20"
+)
