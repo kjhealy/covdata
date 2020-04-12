@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -8,12 +12,21 @@
 [![Travis build status](https://travis-ci.com/kjhealy/covdata.svg?branch=master)](https://travis-ci.com/kjhealy/covdata)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides COVID-19 case data from three sources: 
+`covdata` is a data package for R. It provides COVID-19 case data from four sources: 
 
 - National level data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
-
+- Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). This network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people).  Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for
+patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate
+age-specific hospitalization rates on a weekly basis and describe characteristics of persons
+hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2
+testing. Therefore, the unadjusted rates provided are likely to be underestimated as
+COVID-19-associated hospitalizations can be missed due to test availability and provider or facility
+testing practices.  COVID-NET hospitalization data are preliminary and subject to change as more data
+become available. All incidence rates are unadjusted. Please use the following citation when
+referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers
+for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
@@ -78,16 +91,6 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
-#> ✓ ggplot2 3.3.0     ✓ purrr   0.3.3
-#> ✓ tibble  3.0.0     ✓ dplyr   0.8.5
-#> ✓ tidyr   1.0.2     ✓ stringr 1.4.0
-#> ✓ readr   1.3.1     ✓ forcats 0.5.0
-#> ── Conflicts ───────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-#> x dplyr::filter()  masks stats::filter()
-#> x purrr::is_null() masks testthat::is_null()
-#> x dplyr::lag()     masks stats::lag()
-#> x dplyr::matches() masks tidyr::matches(), testthat::matches()
 library(covdata)
 
 covnat
@@ -305,6 +308,114 @@ nytcovcounty %>%
 ```
 
 <img src="man/figures/README-nytplot-1.png" title="plot of chunk nytplot" alt="plot of chunk nytplot" width="100%" />
+
+### US CDC Surveillance Network Data
+Thanks to Bob Rudis's (`cdccovidview`)[https://github.com/hrbrmstr/cdccovidview] package for making these data tractable to include. 
+
+
+```r
+cdc_hospitalizations
+#> # A tibble: 4,590 x 8
+#>    catchment      network   year  mmwr_year mmwr_week age_category cumulative_rate weekly_rate
+#>    <chr>          <chr>     <chr> <chr>     <chr>     <chr>                  <dbl>       <dbl>
+#>  1 Entire Network COVID-NET 2020  2020      10        0-4 yr                   0           0  
+#>  2 Entire Network COVID-NET 2020  2020      11        0-4 yr                   0           0  
+#>  3 Entire Network COVID-NET 2020  2020      12        0-4 yr                   0           0  
+#>  4 Entire Network COVID-NET 2020  2020      13        0-4 yr                   0.3         0.3
+#>  5 Entire Network COVID-NET 2020  2020      14        0-4 yr                   0.6         0.3
+#>  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                  NA          NA  
+#>  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                  NA          NA  
+#>  8 Entire Network COVID-NET 2020  2020      17        0-4 yr                  NA          NA  
+#>  9 Entire Network COVID-NET 2020  2020      18        0-4 yr                  NA          NA  
+#> 10 Entire Network COVID-NET 2020  2020      19        0-4 yr                  NA          NA  
+#> # … with 4,580 more rows
+
+cdc_catchments
+#> # A tibble: 17 x 2
+#>    name      area          
+#>  * <chr>     <chr>         
+#>  1 COVID-NET Entire Network
+#>  2 EIP       California    
+#>  3 EIP       Colorado      
+#>  4 EIP       Connecticut   
+#>  5 EIP       Entire Network
+#>  6 EIP       Georgia       
+#>  7 EIP       Maryland      
+#>  8 EIP       Minnesota     
+#>  9 EIP       New Mexico    
+#> 10 EIP       New York      
+#> 11 EIP       Oregon        
+#> 12 EIP       Tennessee     
+#> 13 IHSP      Entire Network
+#> 14 IHSP      Iowa          
+#> 15 IHSP      Michigan      
+#> 16 IHSP      Ohio          
+#> 17 IHSP      Utah
+
+cdc_deaths_by_state
+#> # A tibble: 53 x 7
+#>    state      covid_deaths total_deaths percent_expected_d… pneumonia_deaths pneumonia_and_cov… all_influenza_deat…
+#>    <chr>             <int>        <int>               <dbl>            <int>              <int>               <int>
+#>  1 Alabama              14         9220                0.87              539                  4                  75
+#>  2 Alaska                1          627                0.75               31                  1                   3
+#>  3 Arizona              26        11862                0.97              748                 13                  95
+#>  4 Arkansas              3         5938                0.92              372                  2                  62
+#>  5 California          175        52505                0.94             4170                 96                 511
+#>  6 Colorado             62         7787                0.98              493                 33                  77
+#>  7 Connectic…            0            0                0                   0                  0                   0
+#>  8 Delaware              1         1333                0.71               65                  1                   9
+#>  9 District …            4         1074                0.88               91                  4                   5
+#> 10 Florida             145        41586                0.97             2722                 83                 249
+#> # … with 43 more rows
+
+nssp_covid_er_reg
+#> # A tibble: 538 x 9
+#>     week num_fac total_ed_visits visits pct_visits visit_type region   source                 year
+#>    <int>   <int> <chr>            <int>      <dbl> <chr>      <chr>    <chr>                 <int>
+#>  1    41     202 130377             814    0.006   ili        Region 1 Emergency Departments  2019
+#>  2    42     202 132385             912    0.00700 ili        Region 1 Emergency Departments  2019
+#>  3    43     202 131866             883    0.00700 ili        Region 1 Emergency Departments  2019
+#>  4    44     203 128256             888    0.00700 ili        Region 1 Emergency Departments  2019
+#>  5    45     203 127466             979    0.008   ili        Region 1 Emergency Departments  2019
+#>  6    46     202 125306            1188    0.009   ili        Region 1 Emergency Departments  2019
+#>  7    47     202 128877            1235    0.01    ili        Region 1 Emergency Departments  2019
+#>  8    48     202 124781            1451    0.012   ili        Region 1 Emergency Departments  2019
+#>  9    49     202 125939            1362    0.011   ili        Region 1 Emergency Departments  2019
+#> 10    50     202 130430            1405    0.011   ili        Region 1 Emergency Departments  2019
+#> # … with 528 more rows
+```
+
+
+
+```r
+
+age_f <- c(
+  "0-4 yr", "5-17 yr", "18-49 yr", 
+  "50-64 yr", "65+ yr", "65-74 yr", 
+  "75-84 yr", "85+")
+
+cdc_hospitalizations %>%
+  mutate(start = cdccovidview::mmwr_week_to_date(mmwr_year, mmwr_week)) %>% 
+  filter(!is.na(weekly_rate)) %>% 
+  filter(catchment == "Entire Network") %>% 
+  select(start, network, age_category, weekly_rate) %>%  
+  filter(age_category != "Overall") %>% 
+  mutate(age_category = factor(age_category, levels = age_f)) %>% 
+  ggplot() +
+  geom_line(aes(start, weekly_rate)) +
+  scale_x_date(
+    date_breaks = "2 weeks", date_labels = "%b\n%d"
+  ) +
+  facet_grid(network ~ age_category) +
+  labs(x = NULL, y = "Rates per 100,000 pop",
+    title = "COVID-NET Weekly Rates by Network and Age Group",
+    subtitle = "Courtesy Bob Rudis's cdccovidview",
+    caption = sprintf("Source: COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention.\n<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>; Accessed on %s", Sys.Date())) +
+  theme_minimal()
+```
+
+<img src="man/figures/README-cdc-example-1.png" title="plot of chunk cdc-example" alt="plot of chunk cdc-example" width="100%" />
+
 
 ### Citing the package
 

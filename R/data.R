@@ -78,3 +78,189 @@
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
 "nytcovstate"
 
+
+#' @title CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US
+#' @description Courtesy of Bob Rudis's cdccovidview package
+#' @format A data frame with 4590 rows and 8 variables:
+#' \describe{
+#'   \item{\code{catchment}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{network}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{year}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{mmwr_year}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{mmwr_week}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{age_category}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{cumulative_rate}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{weekly_rate}}{double COLUMN_DESCRIPTION} 
+#'}
+#' @details The U.S. Centers for Disease Control provides weekly
+#' summary and interpretation of key indicators that have been adapted
+#' to track the COVID-19 pandemic in the United States. Data is
+#' retrieved using the cdccovidview package from both COVIDView
+#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
+#' and COVID-NET
+#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>).
+#' @source Courtesy of Bob Rudis's cdccovidview package
+#' @references <https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>
+#' @author Kieran Healy
+"cdc_hospitalizations"
+
+
+#' @title CDC Provisional death counts by week
+#' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
+#' @format A data frame with 10 rows and 7 variables:
+#' \describe{
+#'   \item{\code{week}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'}
+#' @details The U.S. Centers for Disease Control provides weekly
+#' summary and interpretation of key indicators that have been adapted
+#' to track the COVID-19 pandemic in the United States. Data is
+#' retrieved using the cdccovidview package from both COVIDView
+#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
+#' and COVID-NET
+#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>). Please see the indicated reference for all the caveats and precise meanings for each field.
+#' @references <https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&bom=true&format=true>
+#' @source Courtesy of Bob Rudis's cdccovidview package
+#' @author Kieran Healy
+"cdc_deaths_by_week"
+
+#' @title CDC Surveillance Network Death Counts by Age
+#' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
+#' @format A data frame with 12 rows and 7 variables:
+#' \describe{
+#'   \item{\code{age_group}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'}
+#' @details The U.S. Centers for Disease Control provides weekly
+#' summary and interpretation of key indicators that have been adapted
+#' to track the COVID-19 pandemic in the United States. Data is
+#' retrieved using the cdccovidview package from both COVIDView
+#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
+#' and COVID-NET
+#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>). Please see the indicated reference for all the caveats and precise meanings for each field.
+#' @references <https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&bom=true&format=true>
+#' @source Courtesy of Bob Rudis's cdccovidview package
+#' @author Kieran Healy
+"cdc_deaths_by_age"
+
+#' @title CDC provisional death counts by sex
+#' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
+#' @format A data frame with 3 rows and 7 variables:
+#' \describe{
+#'   \item{\code{sex}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'}
+#' @details The U.S. Centers for Disease Control provides weekly
+#' summary and interpretation of key indicators that have been adapted
+#' to track the COVID-19 pandemic in the United States. Data is
+#' retrieved using the cdccovidview package from both COVIDView
+#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
+#' and COVID-NET
+#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>). Please see the indicated reference for all the caveats and precise meanings for each field.
+#' @references <https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&bom=true&format=true>
+#' @source Courtesy of Bob Rudis's cdccovidview package
+#' @author Kieran Healy
+"cdc_deaths_by_sex"
+
+#' @title CDC provisional death counts by state
+#' @description CDC Surveillance Network provisional death counts
+#' @format A data frame with 53 rows and 7 variables:
+#' \describe{
+#'   \item{\code{state}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'}
+#' @details The U.S. Centers for Disease Control provides weekly
+#' summary and interpretation of key indicators that have been adapted
+#' to track the COVID-19 pandemic in the United States. Data is
+#' retrieved using the cdccovidview package from both COVIDView
+#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
+#' and COVID-NET. Please see the indicated reference for all the caveats and precise meanings for each field.
+#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>).
+#' @references <https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&bom=true&format=true>
+#' @author Kieran Healy
+"cdc_deaths_by_state"
+
+#' @title CDC surveillance network and network catchment area
+#' @description What the CDC surveillance network covers
+#' @format A data frame with 17 rows and 2 variables: \describe{ \item{\code{name}}{character COLUMN_DESCRIPTION} \item{\code{area}}{character COLUMN_DESCRIPTION} }
+#' @details The Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+#' @source Courtesy of Bob Rudis's cdccovidview package
+#' @references <https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>
+#' @author Kieran Healy
+"cdc_catchments"
+
+#' @title NSSP National COVID-related ER Visits
+#' @description National Syndromic Surveillance Program (NSSP):
+#' Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
+#' @format A data frame with 54 rows and 9 variables:
+#' \describe{
+#'   \item{\code{week}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{num_fac}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{total_ed_visits}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{visits}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{pct_visits}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{visit_type}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{region}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{source}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{year}}{integer COLUMN_DESCRIPTION} 
+#'}
+#' @details The U.S. Centers for Disease Control provides weekly
+#' summary and interpretation of key indicators that have been adapted
+#' to track the COVID-19 pandemic in the United States. Data is
+#' retrieved using the cdccovidview package from both COVIDView
+#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
+#' and COVID-NET
+#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>).
+#' @source Courtesy of Bob Rudis's cdccovidview package
+#' @references <https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html>
+#' @author Kieran Healy
+"nssp_covid_er_nat"
+
+#' @title NSSP Regional COVID ER Visits
+#' @description Regional Syndromic Surveillance Program (NSSP):
+#' Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
+#' @format A data frame with 538 rows and 9 variables:
+#' \describe{
+#'   \item{\code{week}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{num_fac}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{total_ed_visits}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{visits}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{pct_visits}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{visit_type}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{region}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{source}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{year}}{integer COLUMN_DESCRIPTION} 
+#'}
+#' @details The U.S. Centers for Disease Control provides weekly
+#' summary and interpretation of key indicators that have been adapted
+#' to track the COVID-19 pandemic in the United States. Data is
+#' retrieved using the cdccovidview package from both COVIDView
+#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
+#' and COVID-NET
+#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>).
+#' @references <https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html>
+#' @source Courtesy of Bob Rudis's cdccovidview package
+#' @author Kieran Healy
+"nssp_covid_er_reg"
+
+
