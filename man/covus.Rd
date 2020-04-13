@@ -5,19 +5,13 @@
 \alias{covus}
 \title{COVID-19 data for the USA, current as of Monday, April 13, 2020}
 \format{
-A tibble with 28784 rows and 11 columns
+A tibble with 38016 rows and 5 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
 \item{fips}{State FIPS code (character)}
 \item{measure}{Outcome measure for this date}
 \item{count}{Count of measure}
-\item{pos_neg}{}
-\item{death_increase}{}
-\item{hospitalized_increase}{}
-\item{negative_increase}{}
-\item{positive_increase}{}
-\item{total_test_results_increase}{}
 }
 }
 \source{
@@ -28,5 +22,27 @@ covus
 }
 \description{
 A dataset containing US state-level data on COVID-19
+}
+\details{
+The measures tracked by the COVID tracking project are as follows:
+\itemize{
+\item \code{positive} Total cumulative positive test results.
+\item \code{positive_increase} Increase in positive cases from the day before.
+\item \code{negative} Total cumulative negative test results.
+\item \code{negative_increase} Increase in negative cases from the day before.
+\item \code{pending} Tests that have been submitted to a lab but no results have been reported yet.
+\item \code{hospitalized_currently} Total number of people hospitalized on date.
+\item \code{hospitalized_cumulative} Total cumulative number of people hospitalized by date.
+\item \code{in_icu_currently}  Total number of people in intensive care unit on date.
+\item \code{in_icu_cumulative} Total cumulative number of people in intensive care unit by date.
+\item \code{on_ventilator_currently}  Total number of people on ventilator on date.
+\item \code{on_ventilator_cumulative} Total cumulative number of people on ventilator by date.
+\item \code{recovered} Total number recovered.
+\item \code{death} Total number of deaths.
+\item \code{death_increase} Increase in deaths from the day before.
+\item \code{total_test_results} Calculated value (positive + negative) of total test results.
+\item \code{total_test_results_increase} Increase in total test results from the day before
+Not all measures are reported by all states.
+}
 }
 \keyword{datasets}

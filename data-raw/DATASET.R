@@ -16,19 +16,24 @@ get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/casedist
                          writedate = lubridate::today(),
                          fname = "ecdc-cumulative-",
                          ext = "csv",
-                         dest = "data-raw/data") {
+                         dest = "data-raw/data",
+                         save_file = c("y", "n")) {
 
   target <- url
   message("target: ", target)
+  save_file <- match.arg(save_file)
 
   destination <- fs::path(here::here("data-raw/data"), paste0(fname, writedate), ext = ext)
-  message("saving to: ", destination)
 
   tf <- tempfile(fileext = ext)
   curl::curl_download(target, tf)
-  fs::file_copy(tf, destination)
+
+  switch(save_file,
+    y = fs::file_copy(tf, destination),
+    n = NULL)
 
   janitor::clean_names(readr::read_csv(tf))
+
 }
 
 
@@ -40,18 +45,21 @@ get_uscovid_data <- function(url = "https://covidtracking.com/api/",
                              fname = "-",
                              date = lubridate::today(),
                              ext = "csv",
-                             dest = "data-raw/data") {
+                             dest = "data-raw/data",
+                             save_file = c("y", "n")) {
   unit <- match.arg(unit)
   target <-  paste0(url, unit, "/", "daily.", ext)
   message("target: ", target)
 
   destination <- fs::path(here::here("data-raw/data"),
                           paste0(unit, "_daily_", date), ext = ext)
-  message("saving to: ", destination)
 
   tf <- tempfile(fileext = ext)
   curl::curl_download(target, tf)
-  fs::file_copy(tf, destination)
+
+  switch(save_file,
+         y = fs::file_copy(tf, destination),
+         n = NULL)
 
   janitor::clean_names(read_csv(tf))
 }
@@ -143,7 +151,7 @@ oceania <- c("ASM", "AUS", "NZL", "COK", "FJI", "PYF", "GUM", "KIR", "MNP", "MHL
 
 
 ### Get and clean cross-national data
-covid_raw <- get_ecdc_csv()
+covid_raw <- get_ecdc_csv(save = FALSE)
 
 covid_raw
 
@@ -188,17 +196,17 @@ covnat ## Data object
 
 ### Get US Data from the COVID Tracking Project
 ## US state data
-cov_us_raw <- get_uscovid_data()
+cov_us_raw <- get_uscovid_data(save_file = "n")
 
 covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
   select(-hash, -date_checked) %>%
-  pivot_longer(positive:total_test_results,
+  select(date, state, fips, everything()) %>%
+  pivot_longer(positive:total_test_results_increase,
                names_to = "measure", values_to = "count") %>%
-  select(date, state, fips, measure, count, everything())
+  filter(measure %nin% c("pos_neg", "total"))
 
-
-### Get US county dta from the NYT
+### Get US county data from the NYT
 
 ## NYT county data
 nytcovcounty <- read_csv("data-raw/data/nyt-us-counties.csv")

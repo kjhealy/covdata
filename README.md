@@ -81,7 +81,7 @@ library(tidyverse)
 library(covdata)
 
 covnat
-#> # A tibble: 10,268 x 8
+#> # A tibble: 10,473 x 8
 #> # Groups:   iso3 [205]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -95,7 +95,7 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 10,258 more rows
+#> # … with 10,463 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported cases
@@ -154,7 +154,7 @@ covnat %>%
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
-#> Warning: Removed 3018 rows containing missing values (geom_text_repel).
+#> Warning: Removed 3147 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
@@ -165,20 +165,20 @@ covnat %>%
 
 ```r
 covus
-#> # A tibble: 28,784 x 11
-#>    date       state fips  measure count pos_neg death_increase hospitalized_in… negative_increa… positive_increa…
-#>    <date>     <chr> <chr> <chr>   <dbl>   <dbl>          <dbl>            <dbl>            <dbl>            <dbl>
-#>  1 2020-04-11 AK    02    positi…   257    7732              1                3              289               11
-#>  2 2020-04-11 AK    02    negati…  7475    7732              1                3              289               11
-#>  3 2020-04-11 AK    02    pending    NA    7732              1                3              289               11
-#>  4 2020-04-11 AK    02    hospit…    NA    7732              1                3              289               11
-#>  5 2020-04-11 AK    02    hospit…    31    7732              1                3              289               11
-#>  6 2020-04-11 AK    02    in_icu…    NA    7732              1                3              289               11
-#>  7 2020-04-11 AK    02    in_icu…    NA    7732              1                3              289               11
-#>  8 2020-04-11 AK    02    on_ven…    NA    7732              1                3              289               11
-#>  9 2020-04-11 AK    02    on_ven…    NA    7732              1                3              289               11
-#> 10 2020-04-11 AK    02    recove…    63    7732              1                3              289               11
-#> # … with 28,774 more rows, and 1 more variable: total_test_results_increase <dbl>
+#> # A tibble: 38,016 x 5
+#>    date       state fips  measure                  count
+#>    <date>     <chr> <chr> <chr>                    <dbl>
+#>  1 2020-04-12 AK    02    positive                   272
+#>  2 2020-04-12 AK    02    negative                  7766
+#>  3 2020-04-12 AK    02    pending                     NA
+#>  4 2020-04-12 AK    02    hospitalized_currently      NA
+#>  5 2020-04-12 AK    02    hospitalized_cumulative     31
+#>  6 2020-04-12 AK    02    in_icu_currently            NA
+#>  7 2020-04-12 AK    02    in_icu_cumulative           NA
+#>  8 2020-04-12 AK    02    on_ventilator_currently     NA
+#>  9 2020-04-12 AK    02    on_ventilator_cumulative    NA
+#> 10 2020-04-12 AK    02    recovered                   66
+#> # … with 38,006 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported US cases
@@ -226,7 +226,7 @@ covus %>%
 
 #> Warning: Transformation introduced infinite values in continuous y-axis
 #> Warning: Removed 15 row(s) containing missing values (geom_path).
-#> Warning: Removed 1762 rows containing missing values (geom_text_repel).
+#> Warning: Removed 1818 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%" />

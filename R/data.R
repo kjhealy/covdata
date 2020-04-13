@@ -27,13 +27,25 @@
 #' \item{fips}{State FIPS code (character)}
 #' \item{measure}{Outcome measure for this date}
 #' \item{count}{Count of measure}
-#' \item{pos_neg}{}
-#' \item{death_increase}{}
-#' \item{hospitalized_increase}{}
-#' \item{negative_increase}{}
-#' \item{positive_increase}{}
-#' \item{total_test_results_increase}{}
 #' }
+#' @details The measures tracked by the COVID tracking project are as follows:
+#' - `positive` Total cumulative positive test results.
+#' - `positive_increase` Increase in positive cases from the day before.
+#' - `negative` Total cumulative negative test results.
+#' - `negative_increase` Increase in negative cases from the day before.
+#' - `pending` Tests that have been submitted to a lab but no results have been reported yet.
+#' - `hospitalized_currently` Total number of people hospitalized on date.
+#' - `hospitalized_cumulative` Total cumulative number of people hospitalized by date.
+#' - `in_icu_currently`  Total number of people in intensive care unit on date.
+#' - `in_icu_cumulative` Total cumulative number of people in intensive care unit by date.
+#' - `on_ventilator_currently`  Total number of people on ventilator on date.
+#' - `on_ventilator_cumulative` Total cumulative number of people on ventilator by date.
+#' - `recovered` Total number recovered.
+#' - `death` Total number of deaths.
+#' - `death_increase` Increase in deaths from the day before.
+#' - `total_test_results` Calculated value (positive + negative) of total test results.
+#' - `total_test_results_increase` Increase in total test results from the day before
+#' Not all measures are reported by all states.
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"
 
@@ -90,7 +102,7 @@
 #'   \item{\code{mmwr_week}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{age_category}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{cumulative_rate}}{double COLUMN_DESCRIPTION}
-#'   \item{\code{weekly_rate}}{double COLUMN_DESCRIPTION} 
+#'   \item{\code{weekly_rate}}{double COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -115,7 +127,7 @@
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -139,7 +151,7 @@
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -163,7 +175,7 @@
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -187,7 +199,7 @@
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} 
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -222,7 +234,7 @@
 #'   \item{\code{visit_type}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{region}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{source}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{year}}{integer COLUMN_DESCRIPTION} 
+#'   \item{\code{year}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -249,7 +261,7 @@
 #'   \item{\code{visit_type}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{region}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{source}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{year}}{integer COLUMN_DESCRIPTION} 
+#'   \item{\code{year}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
