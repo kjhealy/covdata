@@ -5,7 +5,7 @@
 # covdata <img src="man/figures/hex-covdata.png" align="right" width="240">
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/kjhealy/covdata.svg?branch=master)](https://travis-ci.com/kjhealy/covdata)
+[![R build status](https://github.com/kjhealy/covdata/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/covdata/actions)
 <!-- badges: end -->
 
 `covdata` is a data package for R. It provides COVID-19 case data from four sources: 
