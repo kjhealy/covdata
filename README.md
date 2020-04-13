@@ -308,7 +308,7 @@ become available. All incidence rates are unadjusted. Please use the following c
 referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers
 for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
 
-Thanks to Bob Rudis's (`cdccovidview`)[https://github.com/hrbrmstr/cdccovidview] package for making these data tractable to include. 
+Thanks to Bob Rudis's [`cdccovidview`](https://github.com/hrbrmstr/cdccovidview) package for making these data tractable to include. 
 
 
 ```r
