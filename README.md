@@ -13,21 +13,12 @@
 - National level data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
-- Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). This network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people).  Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for
-patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate
-age-specific hospitalization rates on a weekly basis and describe characteristics of persons
-hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2
-testing. Therefore, the unadjusted rates provided are likely to be underestimated as
-COVID-19-associated hospitalizations can be missed due to test availability and provider or facility
-testing practices.  COVID-NET hospitalization data are preliminary and subject to change as more data
-become available. All incidence rates are unadjusted. Please use the following citation when
-referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers
-for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+- Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
 
-Data are current through Sunday, April 12, 2020.
+Data are current through Monday, April 13, 2020.
 
 ## Installation
 
@@ -306,6 +297,17 @@ nytcovcounty %>%
 <img src="man/figures/README-nytplot-1.png" title="plot of chunk nytplot" alt="plot of chunk nytplot" width="100%" />
 
 ### US CDC Surveillance Network Data
+This US Centers for Disase Control surveillance network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people).  Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for
+patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate
+age-specific hospitalization rates on a weekly basis and describe characteristics of persons
+hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2
+testing. Therefore, the unadjusted rates provided are likely to be underestimated as
+COVID-19-associated hospitalizations can be missed due to test availability and provider or facility
+testing practices.  COVID-NET hospitalization data are preliminary and subject to change as more data
+become available. All incidence rates are unadjusted. Please use the following citation when
+referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers
+for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+
 Thanks to Bob Rudis's (`cdccovidview`)[https://github.com/hrbrmstr/cdccovidview] package for making these data tractable to include. 
 
 
