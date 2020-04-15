@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for US counties, current as of Wednesday, April 15, 2020 — nytcovcounty • covdata</title>
+<title>NYT COVID-19 data for the US, current as of Wednesday, April 15, 2020 — nytcovus • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for US counties, current as of Wednesday, April 15, 2020 — nytcovcounty" />
-<meta property="og:description" content="A dataset containing US county-level data on COVID-19, collected by the New York Times." />
+<meta property="og:title" content="NYT COVID-19 data for the US, current as of Wednesday, April 15, 2020 — nytcovus" />
+<meta property="og:description" content="A dataset containing US national-level data on COVID-19, collected by the New York Times." />
 
 
 
@@ -108,43 +108,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for US counties, current as of Wednesday, April 15, 2020</h1>
+    <h1>NYT COVID-19 data for the US, current as of Wednesday, April 15, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>nytcovcounty.Rd</code></div>
+    <div class="hidden name"><code>nytcovus.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing US county-level data on COVID-19, collected by the New York Times.</p>
+    <p>A dataset containing US national-level data on COVID-19, collected by the New York Times.</p>
     </div>
 
-    <pre class="usage"><span class='no'>nytcovcounty</span></pre>
+    <pre class="usage"><span class='no'>nytcovus</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 59249 rows and 6 columns</p><dl'>
+    <p>A tibble with 85 rows and 3 columns</p><dl'>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
-<dt>county</dt><dd><p>County name (character)</p></dd>
-<dt>state</dt><dd><p>State name (character)</p></dd>
-<dt>fips</dt><dd><p>County FIPS code (character)</p></dd>
-<dt>cases</dt><dd><p>Cumulative N reported cases</p></dd>
+<dt>cases</dt><dd><p>Cumulative N  reported cases</p></dd>
 <dt>deaths</dt><dd><p>Cumulative N reported deaths</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>The New York Times <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>
-For details on the methods and limitations see <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.
-For county data, note in particular:</p><ul>
-<li><p>New York: All cases for the five boroughs of New York City (New York, Kings, Queens, Bronx and Richmond counties) are assigned to a single area called New York City. There is a large jump in the number of deaths on April 6th due to switching from data from New York City to data from New York state for deaths. For all New York state counties, starting on April 8th we are reporting deaths by place of fatality instead of residence of individual.</p></li>
-<li><p>Kansas City, Mo: Four counties (Cass, Clay, Jackson and Platte) overlap the municipality of Kansas City, Mo. The cases and deaths that we show for these four counties are only for the portions exclusive of Kansas City. Cases and deaths for Kansas City are reported as their own line.</p></li>
-<li><p>Alameda County, Calif: Counts for Alameda County include cases and deaths from Berkeley and the Grand Princess cruise ship.</p></li>
-<li><p>Douglas County, Neb. Counts for Douglas County include cases brought to the state from the Diamond Princess cruise ship.</p></li>
-<li><p>Chicago: All cases and deaths for Chicago are reported as part of Cook County.</p></li>
-<li><p>Guam: Counts for Guam include cases reported from the USS Theodore Roosevelt.</p></li>
-</ul>
-
+    <p>The New York Times <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.
+For details on the methods and limitations see <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
