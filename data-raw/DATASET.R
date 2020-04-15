@@ -151,7 +151,7 @@ oceania <- c("ASM", "AUS", "NZL", "COK", "FJI", "PYF", "GUM", "KIR", "MNP", "MHL
 
 
 ### Get and clean cross-national data
-covid_raw <- get_ecdc_csv(save = FALSE)
+covid_raw <- get_ecdc_csv(save = "n")
 
 covid_raw
 
@@ -206,6 +206,8 @@ covus <- cov_us_raw %>%
                names_to = "measure", values_to = "count") %>%
   filter(measure %nin% c("pos_neg", "total"))
 
+covus
+
 ### Get US county data from the NYT
 
 ## NYT county data
@@ -214,9 +216,12 @@ nytcovcounty <- read_csv("data-raw/data/nyt-us-counties.csv")
 ### NYT state data
 nytcovstate <- read_csv("data-raw/data/nyt-us-states.csv")
 
+### NYt national (US only) data
+nytcovus <- read_csv("data-raw/data/nyt-us.csv")
+
+
 ## Get CDC Surveillance Data
 ## Courtesy of Bob Rudis's cdccovidview package
-
 cdc_hospitalizations <- cdccovidview::laboratory_confirmed_hospitalizations()
 cdc_death_counts <- cdccovidview::provisional_death_counts()
 
@@ -236,9 +241,10 @@ usethis::use_data(covus, overwrite = TRUE)
 
 usethis::use_data(nytcovcounty, overwrite = TRUE)
 usethis::use_data(nytcovstate, overwrite = TRUE)
+usethis::use_data(nytcovus, overwrite = TRUE)
+
 
 usethis::use_data(cdc_hospitalizations, overwrite = TRUE)
-usethis::use_data(cdc_death_counts, overwrite = TRUE)
 usethis::use_data(cdc_deaths_by_week, overwrite = TRUE)
 usethis::use_data(cdc_deaths_by_age, overwrite = TRUE)
 usethis::use_data(cdc_deaths_by_sex, overwrite = TRUE)

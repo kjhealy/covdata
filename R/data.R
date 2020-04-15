@@ -90,6 +90,21 @@
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
 "nytcovstate"
 
+#' NYT COVID-19 data for the US, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
+#'
+#' A dataset containing US national-level data on COVID-19, collected by the New York Times.
+#'
+#' @format A tibble with `r nrow(nytcovus)` rows and `r ncol(nytcovus)` columns
+#' \describe{
+#' \item{date}{Date in YYYY-MM-DD format (date)}
+#' \item{cases}{Cumulative N  reported cases}
+#' \item{deaths}{Cumulative N reported deaths}
+#' }
+#'
+#' @source The New York Times \url{https://github.com/nytimes/covid-19-data}.
+#' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
+"nytcovus"
+
 
 #' @title CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US
 #' @description Courtesy of Bob Rudis's cdccovidview package
