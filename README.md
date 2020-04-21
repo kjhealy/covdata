@@ -15,6 +15,7 @@
 - State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
 - Data from [Apple](http://apple.com/covid19) on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.
+- Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
@@ -436,6 +437,37 @@ apple_mobility %>%
 ```
 
 <img src="man/figures/README-apple-example-1.png" title="plot of chunk apple-example" alt="plot of chunk apple-example" width="100%" />
+
+### Google Mobility Reports
+These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential. Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area. These datasets show how visits and length of stay at different places change compared to a baseline. Changes for each day are compared to a baseline value for that day of the week:
+
+- The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.
+- The datasets show trends over several months.
+- What data is included in the calculation depends on user settings, connectivity, and whether it meets Google's privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day. 
+
+
+```r
+google_mobility %>% 
+  filter(country_region_code == "US", !is.na(sub_region_1), is.na(sub_region_2)) %>%
+  mutate(type = tools::toTitleCase(type)) %>%
+  ggplot(mapping = aes(x = date, y = pct_diff, 
+                       group = sub_region_1)) + 
+  geom_line(size = 0.5, color = "gray80") + 
+  geom_smooth(aes(color = type, group = 1), se = FALSE) + 
+  facet_wrap(~ type, ncol = 2) + 
+  labs(x = "Date", y = "Percent Change from Baseline", title = "Relative Trends in Mobility for Kinds of Location in the US, by State", 
+                              subtitle = "Data are relative to median activity between Jan 3rd and Feb 6th",
+       color = "Location Type", 
+       caption = "Data: Google. Graph: @kjhealy") + 
+  theme_minimal() + 
+  theme(legend.position = "top", 
+        strip.text = element_text(size = rel(1.3)))
+#> `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+```
+
+<img src="man/figures/README-google-example-1.png" title="plot of chunk google-example" alt="plot of chunk google-example" width="100%" />
+
+
 
 ### Citing the package
 

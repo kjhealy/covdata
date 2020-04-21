@@ -240,24 +240,47 @@ apple_mobility <- read_csv("data-raw/data/applemobilitytrends-2020-04-19.csv") %
   pivot_longer(`2020-01-13`:`2020-04-19`, names_to = "date", values_to = "index") %>%
   mutate(date = as_date(date))
 
+## Google Mobility Data
+gm_spec <- cols(country_region_code = col_character(),
+                country_region = col_character(),
+                sub_region_1 = col_character(),
+                sub_region_2 = col_character(),
+                date = col_date(),
+                retail_and_recreation_percent_change_from_baseline = col_integer(),
+                grocery_and_pharmacy_percent_change_from_baseline = col_integer(),
+                parks_percent_change_from_baseline = col_integer(),
+                transit_stations_percent_change_from_baseline = col_integer(),
+                workplaces_percent_change_from_baseline = col_integer(),
+                residential_percent_change_from_baseline = col_integer())
+
+google_mobility <- read_csv("data-raw/data/google-global-mobility-report.csv",
+                            col_types = gm_spec) %>%
+  rename(retail = retail_and_recreation_percent_change_from_baseline,
+         grocery = grocery_and_pharmacy_percent_change_from_baseline,
+         parks = parks_percent_change_from_baseline,
+         transit = transit_stations_percent_change_from_baseline,
+         workplaces = workplaces_percent_change_from_baseline,
+         residential = residential_percent_change_from_baseline) %>%
+  pivot_longer(retail:residential, names_to = "type", values_to = "pct_diff")
+
 ## write data
-usethis::use_data(covnat, overwrite = TRUE)
-usethis::use_data(covus, overwrite = TRUE)
+usethis::use_data(covnat, overwrite = TRUE, compress = "xz")
+usethis::use_data(covus, overwrite = TRUE, compress = "xz")
 
-usethis::use_data(nytcovcounty, overwrite = TRUE)
-usethis::use_data(nytcovstate, overwrite = TRUE)
-usethis::use_data(nytcovus, overwrite = TRUE)
+usethis::use_data(nytcovcounty, overwrite = TRUE, compress = "xz")
+usethis::use_data(nytcovstate, overwrite = TRUE, compress = "xz")
+usethis::use_data(nytcovus, overwrite = TRUE, compress = "xz")
 
 
-usethis::use_data(cdc_hospitalizations, overwrite = TRUE)
-usethis::use_data(cdc_deaths_by_week, overwrite = TRUE)
-usethis::use_data(cdc_deaths_by_age, overwrite = TRUE)
-usethis::use_data(cdc_deaths_by_sex, overwrite = TRUE)
-usethis::use_data(cdc_deaths_by_state, overwrite = TRUE)
-usethis::use_data(cdc_catchments, overwrite = TRUE)
-usethis::use_data(nssp_covid_er_nat, overwrite = TRUE)
-usethis::use_data(nssp_covid_er_reg, overwrite = TRUE)
+usethis::use_data(cdc_hospitalizations, overwrite = TRUE, compress = "xz")
+usethis::use_data(cdc_deaths_by_week, overwrite = TRUE, compress = "xz")
+usethis::use_data(cdc_deaths_by_age, overwrite = TRUE, compress = "xz")
+usethis::use_data(cdc_deaths_by_sex, overwrite = TRUE, compress = "xz")
+usethis::use_data(cdc_deaths_by_state, overwrite = TRUE, compress = "xz")
+usethis::use_data(cdc_catchments, overwrite = TRUE, compress = "xz")
+usethis::use_data(nssp_covid_er_nat, overwrite = TRUE, compress = "xz")
+usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 
-usethis::use_data(apple_mobility, overwrite = TRUE)
-
+usethis::use_data(apple_mobility, overwrite = TRUE, compress = "xz")
+usethis::use_data(google_mobility, overwrite = TRUE, compress = "xz")
 
