@@ -166,20 +166,20 @@ covnat %>%
 
 ```r
 covus
-#> # A tibble: 46,152 x 5
+#> # A tibble: 47,160 x 5
 #>    date       state fips  measure                  count
 #>    <date>     <chr> <chr> <chr>                    <dbl>
-#>  1 2020-04-20 AK    02    positive                   321
-#>  2 2020-04-20 AK    02    negative                  9803
-#>  3 2020-04-20 AK    02    pending                     NA
-#>  4 2020-04-20 AK    02    hospitalized_currently      46
-#>  5 2020-04-20 AK    02    hospitalized_cumulative     36
-#>  6 2020-04-20 AK    02    in_icu_currently            NA
-#>  7 2020-04-20 AK    02    in_icu_cumulative           NA
-#>  8 2020-04-20 AK    02    on_ventilator_currently     NA
-#>  9 2020-04-20 AK    02    on_ventilator_cumulative    NA
-#> 10 2020-04-20 AK    02    recovered                  161
-#> # … with 46,142 more rows
+#>  1 2020-04-21 AK    02    positive                   329
+#>  2 2020-04-21 AK    02    negative                 10790
+#>  3 2020-04-21 AK    02    pending                     NA
+#>  4 2020-04-21 AK    02    hospitalized_currently      42
+#>  5 2020-04-21 AK    02    hospitalized_cumulative     36
+#>  6 2020-04-21 AK    02    in_icu_currently            NA
+#>  7 2020-04-21 AK    02    in_icu_cumulative           NA
+#>  8 2020-04-21 AK    02    on_ventilator_currently     NA
+#>  9 2020-04-21 AK    02    on_ventilator_cumulative    NA
+#> 10 2020-04-21 AK    02    recovered                  168
+#> # … with 47,150 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported US cases
@@ -227,7 +227,7 @@ covus %>%
 
 #> Warning: Transformation introduced infinite values in continuous y-axis
 #> Warning: Removed 15 row(s) containing missing values (geom_path).
-#> Warning: Removed 2266 rows containing missing values (geom_text_repel).
+#> Warning: Removed 2322 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%" />
