@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CDC surveillance network and network catchment area — cdc_catchments • covdata</title>
+<title>Apple Mobility Data — apple_mobility • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="CDC surveillance network and network catchment area — cdc_catchments" />
-<meta property="og:description" content="What the CDC surveillance network covers" />
+<meta property="og:title" content="Apple Mobility Data — apple_mobility" />
+<meta property="og:description" content="Apple Mobility Data" />
 
 
 
@@ -108,35 +108,38 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>CDC surveillance network and network catchment area</h1>
+    <h1>Apple Mobility Data</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>cdc_catchments.Rd</code></div>
+    <div class="hidden name"><code>apple_mobility.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>What the CDC surveillance network covers</p>
+    <p>Apple Mobility Data</p>
     </div>
 
-    <pre class="usage"><span class='no'>cdc_catchments</span></pre>
+    <pre class="usage"><span class='no'>apple_mobility</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 17 rows and 2 variables:</p><dl'>
-<dt><code>name</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
-<dt><code>area</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
+    <p>A data frame with 38710 rows and 5 variables:</p><dl'>
+<dt><code>geo_type</code></dt><dd><p>character Type geographical unit. Values: city or country/region</p></dd>
+<dt><code>region</code></dt><dd><p>character Name of geographical unit.</p></dd>
+<dt><code>transportation_type</code></dt><dd><p>character Mode of transport. Values: Driving, Transit, or Walking</p></dd>
+<dt><code>date</code></dt><dd><p>double Date in yyyy-mm-dddd format</p></dd>
+<dt><code>index</code></dt><dd><p>double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Courtesy of Bob Rudis's cdccovidview package</p>
+    <p>https://www.apple.com/covid19/mobility</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.</p>
+    <p>Data made available by Apple, Inc. at <a href='https://www.apple.com/covid19/mobility'>https://www.apple.com/covid19/mobility</a>, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p><a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a></p>
+    <p>See https://www.apple.com/covid19/mobility for detailed terms of use.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
