@@ -8,7 +8,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "kjhealy@gmail.com",
            comment = c(ORCID = "https://orcid.org/0000-0001-9114-981X"))
-Description: COVID-19 data downloaded from the ECDC, the COVID-19 Tracking Project, and the New York Times, packaged for R.
+Description: COVID-19 related data from the ECDC, the COVID-19 Tracking Project, the New York Times, and Apple, packaged for R.
 Depends: R (>= 2.10)
 License: MIT + file LICENSE
 Encoding: UTF-8

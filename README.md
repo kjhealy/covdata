@@ -8,7 +8,7 @@
 [![R build status](https://github.com/kjhealy/covdata/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/covdata/actions)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides COVID-19 related data from four sources: 
+`covdata` is a data package for R. It provides COVID-19 related data from the following sources: 
 
 - National level case and morality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
