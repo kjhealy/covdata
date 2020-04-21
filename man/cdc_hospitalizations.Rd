@@ -5,7 +5,7 @@
 \alias{cdc_hospitalizations}
 \title{CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US}
 \format{
-A data frame with 4590 rows and 1
+A data frame with 4,590 rows and 1
 1
 1
 1

@@ -1,8 +1,44 @@
+#' @title fmt_nc
+#' @description Format fmt_nc in df
+#' @param x df
+#' @return formatted string
+#' @details use in fn documentation
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname fmt_nc
+#' @author Kieran Healy
+fmt_nc <- function(x){
+  prettyNum(ncol(x), big.mark=",", scientific=FALSE)
+}
+
+
+#' @title fmt_nr
+#' @description Format fmt_nr in df
+#' @param x df
+#' @return formatted string
+#' @details use in fn documentation
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname fmt_nc
+#' @author Kieran Healy
+fmt_nr <- function(x){
+  prettyNum(nrow(x), big.mark=",", scientific=FALSE)
+}
+
+
 #' International COVID-19 cases and deaths, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
 #'
 #' A dataset containing national-level ECDC data on COVID-19
 #'
-#' @format A tibble with `r nrow(covnat)` rows and `r ncol(covnat)` columns
+#' @format A tibble with `r fmt_nr(covnat)` rows and `r fmt_nc(covnat)` columns
 #' \describe{
 #'   \item{date}{date in YYYY-MM-DD format}
 #'   \item{cname}{Name of country (character)}
@@ -20,7 +56,7 @@
 #'
 #' A dataset containing US state-level data on COVID-19
 #'
-#' @format A tibble with `r nrow(covus)` rows and `r ncol(covus)` columns
+#' @format A tibble with `r fmt_nr(covus)` rows and `r fmt_nc(covus)` columns
 #' \describe{
 #' \item{date}{Date in YYYY-MM-DD format (date)}
 #' \item{state}{Two letter State abbreviation (character)}
@@ -53,7 +89,7 @@
 #'
 #' A dataset containing US county-level data on COVID-19, collected by the New York Times.
 #'
-#' @format A tibble with `r nrow(nytcovcounty)` rows and `r ncol(nytcovcounty)` columns
+#' @format A tibble with `r fmt_nr(nytcovcounty)` rows and `r fmt_nc(nytcovcounty)` columns
 #' \describe{
 #' \item{date}{Date in YYYY-MM-DD format (date)}
 #' \item{county}{County name (character)}
@@ -77,7 +113,7 @@
 #'
 #' A dataset containing US state-level data on COVID-19, collected by the New York Times.
 #'
-#' @format A tibble with `r nrow(nytcovstate)` rows and `r ncol(nytcovstate)` columns
+#' @format A tibble with `r fmt_nr(nytcovstate)` rows and `r fmt_nc(nytcovstate)` columns
 #' \describe{
 #' \item{date}{Date in YYYY-MM-DD format (date)}
 #' \item{state}{State name (character)}
@@ -94,7 +130,7 @@
 #'
 #' A dataset containing US national-level data on COVID-19, collected by the New York Times.
 #'
-#' @format A tibble with `r nrow(nytcovus)` rows and `r ncol(nytcovus)` columns
+#' @format A tibble with `r fmt_nr(nytcovus)` rows and `r fmt_nc(nytcovus)` columns
 #' \describe{
 #' \item{date}{Date in YYYY-MM-DD format (date)}
 #' \item{cases}{Cumulative N  reported cases}
@@ -108,7 +144,7 @@
 
 #' @title CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US
 #' @description Courtesy of Bob Rudis's cdccovidview package
-#' @format A data frame with `r nrow(cdc_hospitalizations)` rows and `r col(cdc_hospitalizations)` variables:
+#' @format A data frame with `r fmt_nr(cdc_hospitalizations)` rows and `r col(cdc_hospitalizations)` variables:
 #' \describe{
 #'   \item{\code{catchment}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{network}}{character COLUMN_DESCRIPTION}
@@ -134,7 +170,7 @@
 
 #' @title CDC Provisional death counts by week
 #' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
-#' @format A data frame with `r nrow(cdc_deaths_by_week)` rows and `r ncol(cdc_deaths_by_week)` variables:
+#' @format A data frame with `r fmt_nr(cdc_deaths_by_week)` rows and `r fmt_nc(cdc_deaths_by_week)` variables:
 #' \describe{
 #'   \item{\code{week}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
@@ -158,7 +194,7 @@
 
 #' @title CDC Surveillance Network Death Counts by Age
 #' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
-#' @format A data frame with `r nrow(cdc_deaths_by_age)` rows and `r ncol(cdc_deaths_by_age)` variables:
+#' @format A data frame with `r fmt_nr(cdc_deaths_by_age)` rows and `r fmt_nc(cdc_deaths_by_age)` variables:
 #' \describe{
 #'   \item{\code{age_group}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
@@ -182,7 +218,7 @@
 
 #' @title CDC provisional death counts by sex
 #' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
-#' @format A data frame with `r nrow(cdc_deaths_by_sex)` rows and `r ncol(cdc_deaths_by_sex)` variables:
+#' @format A data frame with `r fmt_nr(cdc_deaths_by_sex)` rows and `r fmt_nc(cdc_deaths_by_sex)` variables:
 #' \describe{
 #'   \item{\code{sex}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
@@ -206,7 +242,7 @@
 
 #' @title CDC provisional death counts by state
 #' @description CDC Surveillance Network provisional death counts
-#' @format A data frame with `r nrow(cdc_deaths_by_state)` rows and `r ncol(cdc_deaths_by_state)` variables:
+#' @format A data frame with `r fmt_nr(cdc_deaths_by_state)` rows and `r fmt_nc(cdc_deaths_by_state)` variables:
 #' \describe{
 #'   \item{\code{state}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
@@ -229,7 +265,7 @@
 
 #' @title CDC surveillance network and network catchment area
 #' @description What the CDC surveillance network covers
-#' @format A data frame with `r nrow(cdc_catchments)` rows and `r ncol(cdc_catchments)` variables:
+#' @format A data frame with `r fmt_nr(cdc_catchments)` rows and `r fmt_nc(cdc_catchments)` variables:
 #' \describe{
 #' \item{\code{name}}{character COLUMN_DESCRIPTION}
 #' \item{\code{area}}{character COLUMN_DESCRIPTION}
@@ -243,7 +279,7 @@
 #' @title NSSP National COVID-related ER Visits
 #' @description National Syndromic Surveillance Program (NSSP):
 #' Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
-#' @format A data frame with `r nrow(nssp_covid_er_nat)` rows and `r ncol(nssp_covid_er_nat)` variables:
+#' @format A data frame with `r fmt_nr(nssp_covid_er_nat)` rows and `r fmt_nc(nssp_covid_er_nat)` variables:
 #' \describe{
 #'   \item{\code{week}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{num_fac}}{integer COLUMN_DESCRIPTION}
@@ -270,7 +306,7 @@
 #' @title NSSP Regional COVID ER Visits
 #' @description Regional Syndromic Surveillance Program (NSSP):
 #' Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
-#' @format A data frame with `r nrow(nssp_covid_er_reg)` rows and `r ncol(nssp_covid_er_reg)` variables:
+#' @format A data frame with `r fmt_nr(nssp_covid_er_reg)` rows and `r fmt_nc(nssp_covid_er_reg)` variables:
 #' \describe{
 #'   \item{\code{week}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{num_fac}}{integer COLUMN_DESCRIPTION}
@@ -297,7 +333,7 @@
 ## Apple Mobility Data
 #' @title Apple Mobility Data
 #' @description Data from Apple Maps on relative changes in mobility from January to April 2020
-#' @format A data frame with `r nrow(apple_mobility)` rows and `r ncol(apple_mobility)` variables:
+#' @format A data frame with `r fmt_nr(apple_mobility)` rows and `r fmt_nc(apple_mobility)` variables:
 #' \describe{
 #'   \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
 #'   \item{\code{region}}{character Name of geographical unit.}
@@ -315,7 +351,7 @@
 ## Google Mobility Data
 #' @title Google Mobility Data
 #' @description Data from Google's Community Mobility Reports on relative changes in movement trends by location type
-#' @format A data frame with `r nrow(google_mobility)` rows and `r nrow(google_mobility)` variables:
+#' @format A data frame with `r fmt_nr(google_mobility)` rows and `r fmt_nc(google_mobility)` variables:
 #' \describe{
 #'   \item{\code{country_region_code}}{character Country Code}
 #'   \item{\code{country_region}}{character Country or Region name}
