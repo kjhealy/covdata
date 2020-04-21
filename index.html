@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4.9000</span>
       </span>
     </div>
 
@@ -80,6 +80,7 @@
 <li>State-level and county-level case and mortality data for the United States from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
 <li>Data from the US Centers for Disease Control’s <a href="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html">Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network</a> (COVID-NET). See below for details about this network and the scope of its coverage.</li>
 <li>Data from <a href="http://apple.com/covid19">Apple</a> on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.</li>
+<li>Data from <a href="https://www.google.com/covid19/mobility/data_documentation.html">Google</a> on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
 <p>Data are current through Tuesday, April 21, 2020.</p>
@@ -439,10 +440,37 @@
   <span class="fu">theme_minimal</span>()</pre></div>
 <p><img src="reference/figures/README-apple-example-1.png" title="plot of chunk apple-example" alt="plot of chunk apple-example" width="100%"></p>
 </div>
+<div id="google-mobility-reports" class="section level3">
+<h3 class="hasAnchor">
+<a href="#google-mobility-reports" class="anchor"></a>Google Mobility Reports</h3>
+<p>These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential. Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area. These datasets show how visits and length of stay at different places change compared to a baseline. Changes for each day are compared to a baseline value for that day of the week:</p>
+<ul>
+<li>The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.</li>
+<li>The datasets show trends over several months.</li>
+<li>What data is included in the calculation depends on user settings, connectivity, and whether it meets Google’s privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day.</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="r"><span class="no">google_mobility</span> <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">country_region_code</span> <span class="kw">==</span> <span class="st">"US"</span>, !<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">sub_region_1</span>), <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">sub_region_2</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">type</span> <span class="kw">=</span> <span class="kw pkg">tools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/tools/toTitleCase.html">toTitleCase</a></span>(<span class="no">type</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pct_diff</span>,
+                       <span class="kw">group</span> <span class="kw">=</span> <span class="no">sub_region_1</span>)) +
+  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray80"</span>) +
+  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="no">type</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="fl">1</span>), <span class="kw">se</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
+  <span class="fu">facet_wrap</span>(~ <span class="no">type</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">2</span>) +
+  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Percent Change from Baseline"</span>, <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Relative Trends in Mobility for Kinds of Location in the US, by State"</span>,
+                              <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Data are relative to median activity between Jan 3rd and Feb 6th"</span>,
+       <span class="kw">color</span> <span class="kw">=</span> <span class="st">"Location Type"</span>,
+       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: Google. Graph: @kjhealy"</span>) +
+  <span class="fu">theme_minimal</span>() +
+  <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"top"</span>,
+        <span class="kw">strip.text</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)))
+<span class="co">#&gt; `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'</span></pre></div>
+<p><img src="reference/figures/README-google-example-1.png" title="plot of chunk google-example" alt="plot of chunk google-example" width="100%"></p>
+</div>
 <div id="citing-the-package" class="section level3">
 <h3 class="hasAnchor">
 <a href="#citing-the-package" class="anchor"></a>Citing the package</h3>
-<div class="sourceCode" id="cb16"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
+<div class="sourceCode" id="cb17"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
