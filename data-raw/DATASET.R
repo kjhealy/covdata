@@ -235,6 +235,11 @@ cdc_catchments <- cdccovidview::surveillance_areas()
 nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
+## Apple Mobility Data
+apple_mobility <- read_csv("data-raw/data/applemobilitytrends-2020-04-19.csv") %>%
+  pivot_longer(`2020-01-13`:`2020-04-19`, names_to = "date", values_to = "index") %>%
+  mutate(date = as_date(date))
+
 ## write data
 usethis::use_data(covnat, overwrite = TRUE)
 usethis::use_data(covus, overwrite = TRUE)
@@ -253,5 +258,6 @@ usethis::use_data(cdc_catchments, overwrite = TRUE)
 usethis::use_data(nssp_covid_er_nat, overwrite = TRUE)
 usethis::use_data(nssp_covid_er_reg, overwrite = TRUE)
 
+usethis::use_data(apple_mobility, overwrite = TRUE)
 
 

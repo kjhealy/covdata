@@ -3,7 +3,7 @@
 \docType{data}
 \name{nytcovus}
 \alias{nytcovus}
-\title{NYT COVID-19 data for the US, current as of Wednesday, April 15, 2020}
+\title{NYT COVID-19 data for the US, current as of Tuesday, April 21, 2020}
 \format{
 A tibble with 85 rows and 3 columns
 \describe{

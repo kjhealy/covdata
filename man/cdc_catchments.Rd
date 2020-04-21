@@ -5,7 +5,11 @@
 \alias{cdc_catchments}
 \title{CDC surveillance network and network catchment area}
 \format{
-A data frame with 17 rows and 2 variables: \describe{ \item{\code{name}}{character COLUMN_DESCRIPTION} \item{\code{area}}{character COLUMN_DESCRIPTION} }
+A data frame with 17 rows and 2 variables:
+\describe{
+\item{\code{name}}{character COLUMN_DESCRIPTION}
+\item{\code{area}}{character COLUMN_DESCRIPTION}
+}
 }
 \source{
 Courtesy of Bob Rudis's cdccovidview package

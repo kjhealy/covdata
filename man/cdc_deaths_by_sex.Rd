@@ -5,7 +5,7 @@
 \alias{cdc_deaths_by_sex}
 \title{CDC provisional death counts by sex}
 \format{
-A data frame with 3 rows and 7 variables:
+A data frame with 4 rows and 11 variables:
 \describe{
 \item{\code{sex}}{character COLUMN_DESCRIPTION}
 \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}

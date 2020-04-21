@@ -5,7 +5,7 @@
 \alias{cdc_deaths_by_age}
 \title{CDC Surveillance Network Death Counts by Age}
 \format{
-A data frame with 12 rows and 7 variables:
+A data frame with 12 rows and 11 variables:
 \describe{
 \item{\code{age_group}}{character COLUMN_DESCRIPTION}
 \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}

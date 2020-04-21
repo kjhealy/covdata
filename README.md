@@ -8,17 +8,17 @@
 [![R build status](https://github.com/kjhealy/covdata/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/covdata/actions)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides COVID-19 case data from four sources: 
+`covdata` is a data package for R. It provides COVID-19 related data from four sources: 
 
-- National level data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
-- State-level data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
-- State-level and county-level data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
+- National level case and morality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
+- State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
+- State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
+- Data from [Apple](http://apple.com/covid19) on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-
-Data are current through Monday, April 20, 2020.
+Data are current through Tuesday, April 21, 2020.
 
 ## Installation
 
@@ -81,7 +81,7 @@ library(tidyverse)
 library(covdata)
 
 covnat
-#> # A tibble: 11,917 x 8
+#> # A tibble: 12,122 x 8
 #> # Groups:   iso3 [205]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -95,7 +95,7 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 11,907 more rows
+#> # … with 12,112 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported cases
@@ -154,7 +154,7 @@ covnat %>%
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
-#> Warning: Removed 4077 rows containing missing values (geom_text_repel).
+#> Warning: Removed 4213 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
@@ -165,20 +165,20 @@ covnat %>%
 
 ```r
 covus
-#> # A tibble: 45,144 x 5
+#> # A tibble: 46,152 x 5
 #>    date       state fips  measure                  count
 #>    <date>     <chr> <chr> <chr>                    <dbl>
-#>  1 2020-04-19 AK    02    positive                   319
-#>  2 2020-04-19 AK    02    negative                  9576
-#>  3 2020-04-19 AK    02    pending                     NA
-#>  4 2020-04-19 AK    02    hospitalized_currently      37
-#>  5 2020-04-19 AK    02    hospitalized_cumulative     36
-#>  6 2020-04-19 AK    02    in_icu_currently            NA
-#>  7 2020-04-19 AK    02    in_icu_cumulative           NA
-#>  8 2020-04-19 AK    02    on_ventilator_currently     NA
-#>  9 2020-04-19 AK    02    on_ventilator_cumulative    NA
-#> 10 2020-04-19 AK    02    recovered                  153
-#> # … with 45,134 more rows
+#>  1 2020-04-20 AK    02    positive                   321
+#>  2 2020-04-20 AK    02    negative                  9803
+#>  3 2020-04-20 AK    02    pending                     NA
+#>  4 2020-04-20 AK    02    hospitalized_currently      46
+#>  5 2020-04-20 AK    02    hospitalized_cumulative     36
+#>  6 2020-04-20 AK    02    in_icu_currently            NA
+#>  7 2020-04-20 AK    02    in_icu_cumulative           NA
+#>  8 2020-04-20 AK    02    on_ventilator_currently     NA
+#>  9 2020-04-20 AK    02    on_ventilator_cumulative    NA
+#> 10 2020-04-20 AK    02    recovered                  161
+#> # … with 46,142 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported US cases
@@ -226,7 +226,7 @@ covus %>%
 
 #> Warning: Transformation introduced infinite values in continuous y-axis
 #> Warning: Removed 15 row(s) containing missing values (geom_path).
-#> Warning: Removed 2210 rows containing missing values (geom_text_repel).
+#> Warning: Removed 2266 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%" />
@@ -351,20 +351,20 @@ cdc_catchments
 #> 17 IHSP      Utah
 
 cdc_deaths_by_state
-#> # A tibble: 53 x 7
-#>    state                covid_deaths total_deaths percent_expected_deaths pneumonia_deaths pneumonia_and_covid_deaths all_influenza_deaths_j09_j11
-#>    <chr>                       <int>        <int>                   <dbl>            <int>                      <int>                        <int>
-#>  1 Alabama                        47        10346                    0.89              610                         15                           79
-#>  2 Alaska                          3          747                    0.81               36                          2                            3
-#>  3 Arizona                        62        13201                    0.98              870                         37                           99
-#>  4 Arkansas                       12         6616                    0.93              436                          2                           64
-#>  5 California                    452        58637                    0.96             4788                        246                          527
-#>  6 Colorado                      211         8873                    1.01              670                        131                           85
-#>  7 Connecticut                     0            0                    0                   0                          0                            0
-#>  8 Delaware                        8         1517                    0.74               74                          4                           10
-#>  9 District of Columbia           21         1196                    0.9               118                         21                            6
-#> 10 Florida                       405        46261                    0.99             3232                        239                          266
-#> # … with 43 more rows
+#> # A tibble: 54 x 11
+#>    state     covid_deaths         total_deaths        percent_expected_deat… pneumonia_deaths pneumonia_and_covid_deat… all_influenza_deaths_j09_j…    NA    NA    NA    NA
+#>    <chr>     <chr>                <chr>               <chr>                  <chr>                                <int>                       <int> <dbl> <int> <int> <int>
+#>  1 4/17/2020 United States        Total US            2/1/2020               4/18/2020                            17229                      615428  0.9  49013  7676  5411
+#>  2 4/17/2020 Alabama              Alabama             2/1/2020               4/18/2020                               57                       10777  0.85   650    19    81
+#>  3 4/17/2020 Alaska               Alaska              2/1/2020               4/18/2020                                3                         766  0.76    37     2     3
+#>  4 4/17/2020 Arizona              Arizona             2/1/2020               4/18/2020                              105                       14169  0.97   965    62   102
+#>  5 4/17/2020 Arkansas             Arkansas            2/1/2020               4/18/2020                               15                        6955  0.9    468     3    64
+#>  6 4/17/2020 California           California          2/1/2020               4/18/2020                              575                       61390  0.93  5068   311   534
+#>  7 4/17/2020 Colorado             Colorado            2/1/2020               4/18/2020                              270                        9338  0.98   743   174    88
+#>  8 4/17/2020 Connecticut          Connecticut         2/1/2020               4/18/2020                                0                           0  0        0     0     0
+#>  9 4/17/2020 Delaware             Delaware            2/1/2020               4/18/2020                                9                        1665  0.74    82     4    11
+#> 10 4/17/2020 District of Columbia District of Columb… 2/1/2020               4/18/2020                               24                        1265  0.87   123    24     6
+#> # … with 44 more rows
 
 nssp_covid_er_reg
 #> # A tibble: 538 x 9
@@ -414,6 +414,28 @@ cdc_hospitalizations %>%
 
 <img src="man/figures/README-cdc-example-1.png" title="plot of chunk cdc-example" alt="plot of chunk cdc-example" width="100%" />
 
+### Apple Mobility Data
+Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
+
+
+```r
+apple_mobility %>% 
+  filter(geo_type == "city", transportation_type == "driving") %>%
+  mutate(over_under = index < 100) %>%
+  ggplot(mapping = aes(x = date, y = index, 
+                       group = region, color = over_under)) + 
+  geom_hline(yintercept = 100, color = "gray40") + 
+  geom_line(size = 0.5) + 
+  scale_color_manual(values = c("firebrick", "steelblue")) + 
+  facet_wrap(~ region, ncol = 8) + 
+  guides(color = FALSE) + 
+  labs(x = "Date", y = "Relative Mobility", title = "Relative Trends in Apple Maps Usage for Driving, Selected Cities", 
+                              subtitle = "Data are indexed to 100 for each city's usage on January 13th 2020", 
+       caption = "Data: Apple. Graph: @kjhealy") + 
+  theme_minimal()
+```
+
+<img src="man/figures/README-apple-example-1.png" title="plot of chunk apple-example" alt="plot of chunk apple-example" width="100%" />
 
 ### Citing the package
 
@@ -423,8 +445,7 @@ citation("covdata")
 #> 
 #> To cite the package `covdata` in publications use:
 #> 
-#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0,
-#>   <http://kjhealy.github.io/covdata>.
+#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 

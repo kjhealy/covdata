@@ -5,7 +5,7 @@
 \alias{cdc_deaths_by_state}
 \title{CDC provisional death counts by state}
 \format{
-A data frame with 53 rows and 7 variables:
+A data frame with 54 rows and 11 variables:
 \describe{
 \item{\code{state}}{character COLUMN_DESCRIPTION}
 \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
