@@ -10,6 +10,7 @@ reference:
     desc: >
       Included datasets.
     contents:
+      - apple_mobility
       - cdc_catchments
       - cdc_deaths_by_age
       - cdc_deaths_by_sex
@@ -18,6 +19,7 @@ reference:
       - cdc_hospitalizations
       - covnat
       - covus
+      - google_mobility
       - nssp_covid_er_nat
       - nssp_covid_er_reg
       - nytcovcounty
