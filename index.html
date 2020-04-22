@@ -66,13 +66,6 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
-<hr>
-<div id="output-github_document" class="section level2">
-<h2 class="hasAnchor">
-<a href="#output-github_document" class="anchor"></a>output: github_document</h2>
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-</div>
 <div id="covdata-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#covdata-" class="anchor"></a>covdata <img src="reference/figures/hex-covdata.png" align="right" width="240">
@@ -81,7 +74,7 @@
 
 <p><code>covdata</code> is a data package for R. It provides COVID-19 related data from the following sources:</p>
 <ul>
-<li>National level case and morality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.<br>
+<li>National level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.<br>
 </li>
 <li>State-level case and mortality data for the United States from the <a href="https://covidtracking.com">COVID Tracking Project</a>.</li>
 <li>State-level and county-level case and mortality data for the United States from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
@@ -90,7 +83,7 @@
 <li>Data from <a href="https://www.google.com/covid19/mobility/data_documentation.html">Google</a> on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
-<p>Data are current through Tuesday, April 21, 2020.</p>
+<p>Data are current through Wednesday, April 22, 2020.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -334,19 +327,19 @@
 <p>Thanks to Bob Rudis’s <a href="https://github.com/hrbrmstr/cdccovidview"><code>cdccovidview</code></a> package for making these data tractable to include.</p>
 <div class="sourceCode" id="cb13"><pre class="r"><span class="no">cdc_hospitalizations</span>
 <span class="co">#&gt; # A tibble: 4,590 x 8</span>
-<span class="co">#&gt;    catchment      network   year  mmwr_year mmwr_week age_category cumulative_rate weekly_rate</span>
-<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;       &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Entire Network COVID-NET 2020  2020      10        0-4 yr                   0           0  </span>
-<span class="co">#&gt;  2 Entire Network COVID-NET 2020  2020      11        0-4 yr                   0           0  </span>
-<span class="co">#&gt;  3 Entire Network COVID-NET 2020  2020      12        0-4 yr                   0           0  </span>
-<span class="co">#&gt;  4 Entire Network COVID-NET 2020  2020      13        0-4 yr                   0.4         0.4</span>
-<span class="co">#&gt;  5 Entire Network COVID-NET 2020  2020      14        0-4 yr                   0.8         0.4</span>
-<span class="co">#&gt;  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                   1.1         0.3</span>
-<span class="co">#&gt;  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                  NA          NA  </span>
-<span class="co">#&gt;  8 Entire Network COVID-NET 2020  2020      17        0-4 yr                  NA          NA  </span>
-<span class="co">#&gt;  9 Entire Network COVID-NET 2020  2020      18        0-4 yr                  NA          NA  </span>
-<span class="co">#&gt; 10 Entire Network COVID-NET 2020  2020      19        0-4 yr                  NA          NA  </span>
-<span class="co">#&gt; # … with 4,580 more rows</span>
+<span class="co">#&gt;    catchment network year  mmwr_year mmwr_week age_category cumulative_rate</span>
+<span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 Entire N… COVID-… 2020  2020      10        0-4 yr                   0  </span>
+<span class="co">#&gt;  2 Entire N… COVID-… 2020  2020      11        0-4 yr                   0  </span>
+<span class="co">#&gt;  3 Entire N… COVID-… 2020  2020      12        0-4 yr                   0  </span>
+<span class="co">#&gt;  4 Entire N… COVID-… 2020  2020      13        0-4 yr                   0.4</span>
+<span class="co">#&gt;  5 Entire N… COVID-… 2020  2020      14        0-4 yr                   0.8</span>
+<span class="co">#&gt;  6 Entire N… COVID-… 2020  2020      15        0-4 yr                   1.1</span>
+<span class="co">#&gt;  7 Entire N… COVID-… 2020  2020      16        0-4 yr                  NA  </span>
+<span class="co">#&gt;  8 Entire N… COVID-… 2020  2020      17        0-4 yr                  NA  </span>
+<span class="co">#&gt;  9 Entire N… COVID-… 2020  2020      18        0-4 yr                  NA  </span>
+<span class="co">#&gt; 10 Entire N… COVID-… 2020  2020      19        0-4 yr                  NA  </span>
+<span class="co">#&gt; # … with 4,580 more rows, and 1 more variable: weekly_rate &lt;dbl&gt;</span>
 
 <span class="no">cdc_catchments</span>
 <span class="co">#&gt; # A tibble: 17 x 2</span>
@@ -372,35 +365,36 @@
 
 <span class="no">cdc_deaths_by_state</span>
 <span class="co">#&gt; # A tibble: 54 x 11</span>
-<span class="co">#&gt;    state     covid_deaths         total_deaths        percent_expected_deat… pneumonia_deaths pneumonia_and_covid_deat… all_influenza_deaths_j09_j…    NA    NA    NA    NA</span>
-<span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;                &lt;chr&gt;               &lt;chr&gt;                  &lt;chr&gt;                                &lt;int&gt;                       &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;</span>
-<span class="co">#&gt;  1 4/17/2020 United States        Total US            2/1/2020               4/18/2020                            17229                      615428  0.9  49013  7676  5411</span>
-<span class="co">#&gt;  2 4/17/2020 Alabama              Alabama             2/1/2020               4/18/2020                               57                       10777  0.85   650    19    81</span>
-<span class="co">#&gt;  3 4/17/2020 Alaska               Alaska              2/1/2020               4/18/2020                                3                         766  0.76    37     2     3</span>
-<span class="co">#&gt;  4 4/17/2020 Arizona              Arizona             2/1/2020               4/18/2020                              105                       14169  0.97   965    62   102</span>
-<span class="co">#&gt;  5 4/17/2020 Arkansas             Arkansas            2/1/2020               4/18/2020                               15                        6955  0.9    468     3    64</span>
-<span class="co">#&gt;  6 4/17/2020 California           California          2/1/2020               4/18/2020                              575                       61390  0.93  5068   311   534</span>
-<span class="co">#&gt;  7 4/17/2020 Colorado             Colorado            2/1/2020               4/18/2020                              270                        9338  0.98   743   174    88</span>
-<span class="co">#&gt;  8 4/17/2020 Connecticut          Connecticut         2/1/2020               4/18/2020                                0                           0  0        0     0     0</span>
-<span class="co">#&gt;  9 4/17/2020 Delaware             Delaware            2/1/2020               4/18/2020                                9                        1665  0.74    82     4    11</span>
-<span class="co">#&gt; 10 4/17/2020 District of Columbia District of Columb… 2/1/2020               4/18/2020                               24                        1265  0.87   123    24     6</span>
-<span class="co">#&gt; # … with 44 more rows</span>
+<span class="co">#&gt;    state covid_deaths total_deaths percent_expecte… pneumonia_deaths</span>
+<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;           </span>
+<span class="co">#&gt;  1 4/17… United Stat… Total US     2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  2 4/17… Alabama      Alabama      2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  3 4/17… Alaska       Alaska       2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  4 4/17… Arizona      Arizona      2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  5 4/17… Arkansas     Arkansas     2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  6 4/17… California   California   2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  7 4/17… Colorado     Colorado     2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  8 4/17… Connecticut  Connecticut  2/1/2020         4/18/2020       </span>
+<span class="co">#&gt;  9 4/17… Delaware     Delaware     2/1/2020         4/18/2020       </span>
+<span class="co">#&gt; 10 4/17… District of… District of… 2/1/2020         4/18/2020       </span>
+<span class="co">#&gt; # … with 44 more rows, and 6 more variables: pneumonia_and_covid_deaths &lt;int&gt;,</span>
+<span class="co">#&gt; #   all_influenza_deaths_j09_j11 &lt;int&gt;, NA &lt;dbl&gt;, NA &lt;int&gt;, NA &lt;int&gt;, NA &lt;int&gt;</span>
 
 <span class="no">nssp_covid_er_reg</span>
 <span class="co">#&gt; # A tibble: 538 x 9</span>
-<span class="co">#&gt;     week num_fac total_ed_visits visits pct_visits visit_type region   source                 year</span>
-<span class="co">#&gt;    &lt;int&gt;   &lt;int&gt; &lt;chr&gt;            &lt;int&gt;      &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;                 &lt;int&gt;</span>
-<span class="co">#&gt;  1    41     202 130377             814    0.006   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  2    42     202 132385             912    0.00700 ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  3    43     202 131866             883    0.00700 ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  4    44     203 128256             888    0.00700 ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  5    45     203 127466             979    0.008   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  6    46     202 125306            1188    0.009   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  7    47     202 128877            1235    0.01    ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  8    48     202 124781            1451    0.012   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  9    49     202 125939            1362    0.011   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt; 10    50     202 130430            1405    0.011   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt; # … with 528 more rows</span></pre></div>
+<span class="co">#&gt;     week num_fac total_ed_visits visits pct_visits visit_type region source</span>
+<span class="co">#&gt;    &lt;int&gt;   &lt;int&gt; &lt;chr&gt;            &lt;int&gt;      &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt; </span>
+<span class="co">#&gt;  1    41     202 130377             814    0.006   ili        Regio… Emerg…</span>
+<span class="co">#&gt;  2    42     202 132385             912    0.00700 ili        Regio… Emerg…</span>
+<span class="co">#&gt;  3    43     202 131866             883    0.00700 ili        Regio… Emerg…</span>
+<span class="co">#&gt;  4    44     203 128256             888    0.00700 ili        Regio… Emerg…</span>
+<span class="co">#&gt;  5    45     203 127466             979    0.008   ili        Regio… Emerg…</span>
+<span class="co">#&gt;  6    46     202 125306            1188    0.009   ili        Regio… Emerg…</span>
+<span class="co">#&gt;  7    47     202 128877            1235    0.01    ili        Regio… Emerg…</span>
+<span class="co">#&gt;  8    48     202 124781            1451    0.012   ili        Regio… Emerg…</span>
+<span class="co">#&gt;  9    49     202 125939            1362    0.011   ili        Regio… Emerg…</span>
+<span class="co">#&gt; 10    50     202 130430            1405    0.011   ili        Regio… Emerg…</span>
+<span class="co">#&gt; # … with 528 more rows, and 1 more variable: year &lt;int&gt;</span></pre></div>
 <div class="sourceCode" id="cb14"><pre class="r">
 <span class="no">age_f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
   <span class="st">"0-4 yr"</span>, <span class="st">"5-17 yr"</span>, <span class="st">"18-49 yr"</span>,
@@ -486,7 +480,8 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt;   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, &lt;http://kjhealy.github.io/covdata&gt;.</span>
+<span class="co">#&gt;   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series.</span>
+<span class="co">#&gt;   R package version 0.1.0, &lt;http://kjhealy.github.io/covdata&gt;.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
@@ -501,7 +496,6 @@
 </div>
 </div>
 </div>
-
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
