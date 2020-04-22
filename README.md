@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -420,14 +424,19 @@ Apple has made aggregated data available on relative trends in use of its Maps d
 
 
 ```r
+vec_brks <- c(-50, 0, 50)
+vec_labs <- vec_brks + 100
+
 apple_mobility %>% 
   filter(geo_type == "city", transportation_type == "driving") %>%
-  mutate(over_under = index < 100) %>%
+  mutate(over_under = index < 100, 
+         index = index - 100) %>%
   ggplot(mapping = aes(x = date, y = index, 
                        group = region, color = over_under)) + 
-  geom_hline(yintercept = 100, color = "gray40") + 
-  geom_line(size = 0.5) + 
-  scale_color_manual(values = c("firebrick", "steelblue")) + 
+  geom_hline(yintercept = 0, color = "gray40") + 
+  geom_col() + 
+  scale_y_continuous(breaks = vec_brks, labels = vec_labs) + 
+  scale_color_manual(values = c("firebrick", "steelblue")) +
   facet_wrap(~ region, ncol = 8) + 
   guides(color = FALSE) + 
   labs(x = "Date", y = "Relative Mobility", title = "Relative Trends in Apple Maps Usage for Driving, Selected Cities", 
