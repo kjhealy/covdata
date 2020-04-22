@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -14,7 +10,7 @@ output: github_document
 
 `covdata` is a data package for R. It provides COVID-19 related data from the following sources: 
 
-- National level case and morality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
+- National level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
@@ -23,7 +19,7 @@ output: github_document
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Tuesday, April 21, 2020.
+Data are current through Wednesday, April 22, 2020.
 
 ## Installation
 
@@ -319,19 +315,19 @@ Thanks to Bob Rudis's [`cdccovidview`](https://github.com/hrbrmstr/cdccovidview)
 ```r
 cdc_hospitalizations
 #> # A tibble: 4,590 x 8
-#>    catchment      network   year  mmwr_year mmwr_week age_category cumulative_rate weekly_rate
-#>    <chr>          <chr>     <chr> <chr>     <chr>     <chr>                  <dbl>       <dbl>
-#>  1 Entire Network COVID-NET 2020  2020      10        0-4 yr                   0           0  
-#>  2 Entire Network COVID-NET 2020  2020      11        0-4 yr                   0           0  
-#>  3 Entire Network COVID-NET 2020  2020      12        0-4 yr                   0           0  
-#>  4 Entire Network COVID-NET 2020  2020      13        0-4 yr                   0.4         0.4
-#>  5 Entire Network COVID-NET 2020  2020      14        0-4 yr                   0.8         0.4
-#>  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                   1.1         0.3
-#>  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                  NA          NA  
-#>  8 Entire Network COVID-NET 2020  2020      17        0-4 yr                  NA          NA  
-#>  9 Entire Network COVID-NET 2020  2020      18        0-4 yr                  NA          NA  
-#> 10 Entire Network COVID-NET 2020  2020      19        0-4 yr                  NA          NA  
-#> # … with 4,580 more rows
+#>    catchment network year  mmwr_year mmwr_week age_category cumulative_rate
+#>    <chr>     <chr>   <chr> <chr>     <chr>     <chr>                  <dbl>
+#>  1 Entire N… COVID-… 2020  2020      10        0-4 yr                   0  
+#>  2 Entire N… COVID-… 2020  2020      11        0-4 yr                   0  
+#>  3 Entire N… COVID-… 2020  2020      12        0-4 yr                   0  
+#>  4 Entire N… COVID-… 2020  2020      13        0-4 yr                   0.4
+#>  5 Entire N… COVID-… 2020  2020      14        0-4 yr                   0.8
+#>  6 Entire N… COVID-… 2020  2020      15        0-4 yr                   1.1
+#>  7 Entire N… COVID-… 2020  2020      16        0-4 yr                  NA  
+#>  8 Entire N… COVID-… 2020  2020      17        0-4 yr                  NA  
+#>  9 Entire N… COVID-… 2020  2020      18        0-4 yr                  NA  
+#> 10 Entire N… COVID-… 2020  2020      19        0-4 yr                  NA  
+#> # … with 4,580 more rows, and 1 more variable: weekly_rate <dbl>
 
 cdc_catchments
 #> # A tibble: 17 x 2
@@ -357,35 +353,36 @@ cdc_catchments
 
 cdc_deaths_by_state
 #> # A tibble: 54 x 11
-#>    state     covid_deaths         total_deaths        percent_expected_deat… pneumonia_deaths pneumonia_and_covid_deat… all_influenza_deaths_j09_j…    NA    NA    NA    NA
-#>    <chr>     <chr>                <chr>               <chr>                  <chr>                                <int>                       <int> <dbl> <int> <int> <int>
-#>  1 4/17/2020 United States        Total US            2/1/2020               4/18/2020                            17229                      615428  0.9  49013  7676  5411
-#>  2 4/17/2020 Alabama              Alabama             2/1/2020               4/18/2020                               57                       10777  0.85   650    19    81
-#>  3 4/17/2020 Alaska               Alaska              2/1/2020               4/18/2020                                3                         766  0.76    37     2     3
-#>  4 4/17/2020 Arizona              Arizona             2/1/2020               4/18/2020                              105                       14169  0.97   965    62   102
-#>  5 4/17/2020 Arkansas             Arkansas            2/1/2020               4/18/2020                               15                        6955  0.9    468     3    64
-#>  6 4/17/2020 California           California          2/1/2020               4/18/2020                              575                       61390  0.93  5068   311   534
-#>  7 4/17/2020 Colorado             Colorado            2/1/2020               4/18/2020                              270                        9338  0.98   743   174    88
-#>  8 4/17/2020 Connecticut          Connecticut         2/1/2020               4/18/2020                                0                           0  0        0     0     0
-#>  9 4/17/2020 Delaware             Delaware            2/1/2020               4/18/2020                                9                        1665  0.74    82     4    11
-#> 10 4/17/2020 District of Columbia District of Columb… 2/1/2020               4/18/2020                               24                        1265  0.87   123    24     6
-#> # … with 44 more rows
+#>    state covid_deaths total_deaths percent_expecte… pneumonia_deaths
+#>    <chr> <chr>        <chr>        <chr>            <chr>           
+#>  1 4/17… United Stat… Total US     2/1/2020         4/18/2020       
+#>  2 4/17… Alabama      Alabama      2/1/2020         4/18/2020       
+#>  3 4/17… Alaska       Alaska       2/1/2020         4/18/2020       
+#>  4 4/17… Arizona      Arizona      2/1/2020         4/18/2020       
+#>  5 4/17… Arkansas     Arkansas     2/1/2020         4/18/2020       
+#>  6 4/17… California   California   2/1/2020         4/18/2020       
+#>  7 4/17… Colorado     Colorado     2/1/2020         4/18/2020       
+#>  8 4/17… Connecticut  Connecticut  2/1/2020         4/18/2020       
+#>  9 4/17… Delaware     Delaware     2/1/2020         4/18/2020       
+#> 10 4/17… District of… District of… 2/1/2020         4/18/2020       
+#> # … with 44 more rows, and 6 more variables: pneumonia_and_covid_deaths <int>,
+#> #   all_influenza_deaths_j09_j11 <int>, NA <dbl>, NA <int>, NA <int>, NA <int>
 
 nssp_covid_er_reg
 #> # A tibble: 538 x 9
-#>     week num_fac total_ed_visits visits pct_visits visit_type region   source                 year
-#>    <int>   <int> <chr>            <int>      <dbl> <chr>      <chr>    <chr>                 <int>
-#>  1    41     202 130377             814    0.006   ili        Region 1 Emergency Departments  2019
-#>  2    42     202 132385             912    0.00700 ili        Region 1 Emergency Departments  2019
-#>  3    43     202 131866             883    0.00700 ili        Region 1 Emergency Departments  2019
-#>  4    44     203 128256             888    0.00700 ili        Region 1 Emergency Departments  2019
-#>  5    45     203 127466             979    0.008   ili        Region 1 Emergency Departments  2019
-#>  6    46     202 125306            1188    0.009   ili        Region 1 Emergency Departments  2019
-#>  7    47     202 128877            1235    0.01    ili        Region 1 Emergency Departments  2019
-#>  8    48     202 124781            1451    0.012   ili        Region 1 Emergency Departments  2019
-#>  9    49     202 125939            1362    0.011   ili        Region 1 Emergency Departments  2019
-#> 10    50     202 130430            1405    0.011   ili        Region 1 Emergency Departments  2019
-#> # … with 528 more rows
+#>     week num_fac total_ed_visits visits pct_visits visit_type region source
+#>    <int>   <int> <chr>            <int>      <dbl> <chr>      <chr>  <chr> 
+#>  1    41     202 130377             814    0.006   ili        Regio… Emerg…
+#>  2    42     202 132385             912    0.00700 ili        Regio… Emerg…
+#>  3    43     202 131866             883    0.00700 ili        Regio… Emerg…
+#>  4    44     203 128256             888    0.00700 ili        Regio… Emerg…
+#>  5    45     203 127466             979    0.008   ili        Regio… Emerg…
+#>  6    46     202 125306            1188    0.009   ili        Regio… Emerg…
+#>  7    47     202 128877            1235    0.01    ili        Regio… Emerg…
+#>  8    48     202 124781            1451    0.012   ili        Regio… Emerg…
+#>  9    49     202 125939            1362    0.011   ili        Regio… Emerg…
+#> 10    50     202 130430            1405    0.011   ili        Regio… Emerg…
+#> # … with 528 more rows, and 1 more variable: year <int>
 ```
 
 
@@ -486,7 +483,8 @@ citation("covdata")
 #> 
 #> To cite the package `covdata` in publications use:
 #> 
-#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.
+#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series.
+#>   R package version 0.1.0, <http://kjhealy.github.io/covdata>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 

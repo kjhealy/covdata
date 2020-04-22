@@ -27,7 +27,6 @@ fmt_nc <- function(x){
 #'  #EXAMPLE1
 #'  }
 #' }
-#' @rdname fmt_nc
 #' @author Kieran Healy
 fmt_nr <- function(x){
   prettyNum(nrow(x), big.mark=",", scientific=FALSE)
