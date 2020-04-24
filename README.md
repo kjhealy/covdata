@@ -19,7 +19,7 @@
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Wednesday, April 22, 2020.
+Data are current through Friday, April 24, 2020.
 
 ## Installation
 
@@ -27,7 +27,7 @@ There are two ways to install the `covdata` package.
 
 ### Install direct from GitHub
 
-You can install the beta version of covdata from [GitHub](https://github.com/kjhealy/covdata) with:
+You can install the beta version of congress from [GitHub](https://github.com/kjhealy/congress) with:
 
 ``` r
 remotes::install_github("kjhealy/covdata")
@@ -82,7 +82,7 @@ library(tidyverse)
 library(covdata)
 
 covnat
-#> # A tibble: 12,122 x 8
+#> # A tibble: 12,737 x 8
 #> # Groups:   iso3 [205]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -96,7 +96,7 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 12,112 more rows
+#> # … with 12,727 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported cases
@@ -155,7 +155,7 @@ covnat %>%
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
-#> Warning: Removed 4213 rows containing missing values (geom_text_repel).
+#> Warning: Removed 4630 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
@@ -166,20 +166,20 @@ covnat %>%
 
 ```r
 covus
-#> # A tibble: 47,160 x 5
+#> # A tibble: 49,842 x 5
 #>    date       state fips  measure                  count
 #>    <date>     <chr> <chr> <chr>                    <dbl>
-#>  1 2020-04-21 AK    02    positive                   329
-#>  2 2020-04-21 AK    02    negative                 10790
-#>  3 2020-04-21 AK    02    pending                     NA
-#>  4 2020-04-21 AK    02    hospitalized_currently      42
-#>  5 2020-04-21 AK    02    hospitalized_cumulative     36
-#>  6 2020-04-21 AK    02    in_icu_currently            NA
-#>  7 2020-04-21 AK    02    in_icu_cumulative           NA
-#>  8 2020-04-21 AK    02    on_ventilator_currently     NA
-#>  9 2020-04-21 AK    02    on_ventilator_cumulative    NA
-#> 10 2020-04-21 AK    02    recovered                  168
-#> # … with 47,150 more rows
+#>  1 2020-04-23 AK    02    positive                   337
+#>  2 2020-04-23 AK    02    negative                 11824
+#>  3 2020-04-23 AK    02    pending                     NA
+#>  4 2020-04-23 AK    02    hospitalized_currently      42
+#>  5 2020-04-23 AK    02    hospitalized_cumulative     NA
+#>  6 2020-04-23 AK    02    in_icu_currently            NA
+#>  7 2020-04-23 AK    02    in_icu_cumulative           NA
+#>  8 2020-04-23 AK    02    on_ventilator_currently     NA
+#>  9 2020-04-23 AK    02    on_ventilator_cumulative    NA
+#> 10 2020-04-23 AK    02    recovered                  209
+#> # … with 49,832 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported US cases
@@ -227,7 +227,7 @@ covus %>%
 
 #> Warning: Transformation introduced infinite values in continuous y-axis
 #> Warning: Removed 15 row(s) containing missing values (geom_path).
-#> Warning: Removed 2322 rows containing missing values (geom_text_repel).
+#> Warning: Removed 2434 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%" />
@@ -238,7 +238,7 @@ covus %>%
 
 ```r
 nytcovstate
-#> # A tibble: 2,385 x 5
+#> # A tibble: 2,833 x 5
 #>    date       state      fips  cases deaths
 #>    <date>     <chr>      <chr> <dbl>  <dbl>
 #>  1 2020-01-21 Washington 53        1      0
@@ -251,13 +251,13 @@ nytcovstate
 #>  8 2020-01-25 Washington 53        1      0
 #>  9 2020-01-26 Arizona    04        1      0
 #> 10 2020-01-26 California 06        2      0
-#> # … with 2,375 more rows
+#> # … with 2,823 more rows
 ```
 
 
 ```r
 nytcovcounty
-#> # A tibble: 59,249 x 6
+#> # A tibble: 81,340 x 6
 #>    date       county      state      fips  cases deaths
 #>    <date>     <chr>       <chr>      <chr> <dbl>  <dbl>
 #>  1 2020-01-21 Snohomish   Washington 53061     1      0
@@ -270,7 +270,7 @@ nytcovcounty
 #>  8 2020-01-25 Snohomish   Washington 53061     1      0
 #>  9 2020-01-26 Maricopa    Arizona    04013     1      0
 #> 10 2020-01-26 Los Angeles California 06037     1      0
-#> # … with 59,239 more rows
+#> # … with 81,330 more rows
 ```
 
 ### Draw a log-linear graph of cumulative US cases by county
@@ -315,19 +315,19 @@ Thanks to Bob Rudis's [`cdccovidview`](https://github.com/hrbrmstr/cdccovidview)
 ```r
 cdc_hospitalizations
 #> # A tibble: 4,590 x 8
-#>    catchment network year  mmwr_year mmwr_week age_category cumulative_rate
-#>    <chr>     <chr>   <chr> <chr>     <chr>     <chr>                  <dbl>
-#>  1 Entire N… COVID-… 2020  2020      10        0-4 yr                   0  
-#>  2 Entire N… COVID-… 2020  2020      11        0-4 yr                   0  
-#>  3 Entire N… COVID-… 2020  2020      12        0-4 yr                   0  
-#>  4 Entire N… COVID-… 2020  2020      13        0-4 yr                   0.4
-#>  5 Entire N… COVID-… 2020  2020      14        0-4 yr                   0.8
-#>  6 Entire N… COVID-… 2020  2020      15        0-4 yr                   1.1
-#>  7 Entire N… COVID-… 2020  2020      16        0-4 yr                  NA  
-#>  8 Entire N… COVID-… 2020  2020      17        0-4 yr                  NA  
-#>  9 Entire N… COVID-… 2020  2020      18        0-4 yr                  NA  
-#> 10 Entire N… COVID-… 2020  2020      19        0-4 yr                  NA  
-#> # … with 4,580 more rows, and 1 more variable: weekly_rate <dbl>
+#>    catchment      network   year  mmwr_year mmwr_week age_category cumulative_rate weekly_rate
+#>    <chr>          <chr>     <chr> <chr>     <chr>     <chr>                  <dbl>       <dbl>
+#>  1 Entire Network COVID-NET 2020  2020      10        0-4 yr                   0           0  
+#>  2 Entire Network COVID-NET 2020  2020      11        0-4 yr                   0           0  
+#>  3 Entire Network COVID-NET 2020  2020      12        0-4 yr                   0           0  
+#>  4 Entire Network COVID-NET 2020  2020      13        0-4 yr                   0.4         0.4
+#>  5 Entire Network COVID-NET 2020  2020      14        0-4 yr                   0.8         0.4
+#>  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                   1.1         0.3
+#>  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                  NA          NA  
+#>  8 Entire Network COVID-NET 2020  2020      17        0-4 yr                  NA          NA  
+#>  9 Entire Network COVID-NET 2020  2020      18        0-4 yr                  NA          NA  
+#> 10 Entire Network COVID-NET 2020  2020      19        0-4 yr                  NA          NA  
+#> # … with 4,580 more rows
 
 cdc_catchments
 #> # A tibble: 17 x 2
@@ -352,37 +352,36 @@ cdc_catchments
 #> 17 IHSP      Utah
 
 cdc_deaths_by_state
-#> # A tibble: 54 x 11
-#>    state covid_deaths total_deaths percent_expecte… pneumonia_deaths
-#>    <chr> <chr>        <chr>        <chr>            <chr>           
-#>  1 4/17… United Stat… Total US     2/1/2020         4/18/2020       
-#>  2 4/17… Alabama      Alabama      2/1/2020         4/18/2020       
-#>  3 4/17… Alaska       Alaska       2/1/2020         4/18/2020       
-#>  4 4/17… Arizona      Arizona      2/1/2020         4/18/2020       
-#>  5 4/17… Arkansas     Arkansas     2/1/2020         4/18/2020       
-#>  6 4/17… California   California   2/1/2020         4/18/2020       
-#>  7 4/17… Colorado     Colorado     2/1/2020         4/18/2020       
-#>  8 4/17… Connecticut  Connecticut  2/1/2020         4/18/2020       
-#>  9 4/17… Delaware     Delaware     2/1/2020         4/18/2020       
-#> 10 4/17… District of… District of… 2/1/2020         4/18/2020       
-#> # … with 44 more rows, and 6 more variables: pneumonia_and_covid_deaths <int>,
-#> #   all_influenza_deaths_j09_j11 <int>, NA <dbl>, NA <int>, NA <int>, NA <int>
+#> # A tibble: 54 x 13
+#>    state       covid_deaths    total_deaths    percent_expected_… pneumonia_deaths   pneumonia_and_cov… all_influenza_deat…    NA    NA    NA    NA NA    NA                                  
+#>    <chr>       <chr>           <chr>           <chr>              <chr>                           <int>               <int> <dbl> <int> <int> <int> <chr> <chr>                               
+#>  1 2020-04-24… United States   Total US        2020-02-01T00:00:… 2020-04-18T00:00:…              24555              654798  0.96 54962 11070  5571 <NA>  <NA>                                
+#>  2 2020-04-24… Alabama         Alabama         2020-02-01T00:00:… 2020-04-18T00:00:…                113               11553  0.9    714    34    83 <NA>  <NA>                                
+#>  3 2020-04-24… Alaska          Alaska          2020-02-01T00:00:… 2020-04-18T00:00:…                 NA                 789  0.78    37    NA    NA <NA>  One or more data cells have counts …
+#>  4 2020-04-24… Arizona         Arizona         2020-02-01T00:00:… 2020-04-18T00:00:…                156               14756  1.01  1034    85   103 <NA>  <NA>                                
+#>  5 2020-04-24… Arkansas        Arkansas        2020-02-01T00:00:… 2020-04-18T00:00:…                 19                7245  0.94   485    NA    66 <NA>  One or more data cells have counts …
+#>  6 2020-04-24… California      California      2020-02-01T00:00:… 2020-04-18T00:00:…                813               64633  0.97  5437   450   541 <NA>  <NA>                                
+#>  7 2020-04-24… Colorado        Colorado        2020-02-01T00:00:… 2020-04-18T00:00:…                392                9936  1.03   838   243    90 <NA>  <NA>                                
+#>  8 2020-04-24… Connecticut     Connecticut     2020-02-01T00:00:… 2020-04-18T00:00:…                 NA                 461  0       29     0    NA <NA>  One or more data cells have counts …
+#>  9 2020-04-24… Delaware        Delaware        2020-02-01T00:00:… 2020-04-18T00:00:…                 28                1939  0.77   108    14    14 <NA>  <NA>                                
+#> 10 2020-04-24… District of Co… District of Co… 2020-02-01T00:00:… 2020-04-18T00:00:…                 44                1331  0.89   146    44    NA <NA>  One or more data cells have counts …
+#> # … with 44 more rows
 
 nssp_covid_er_reg
 #> # A tibble: 538 x 9
-#>     week num_fac total_ed_visits visits pct_visits visit_type region source
-#>    <int>   <int> <chr>            <int>      <dbl> <chr>      <chr>  <chr> 
-#>  1    41     202 130377             814    0.006   ili        Regio… Emerg…
-#>  2    42     202 132385             912    0.00700 ili        Regio… Emerg…
-#>  3    43     202 131866             883    0.00700 ili        Regio… Emerg…
-#>  4    44     203 128256             888    0.00700 ili        Regio… Emerg…
-#>  5    45     203 127466             979    0.008   ili        Regio… Emerg…
-#>  6    46     202 125306            1188    0.009   ili        Regio… Emerg…
-#>  7    47     202 128877            1235    0.01    ili        Regio… Emerg…
-#>  8    48     202 124781            1451    0.012   ili        Regio… Emerg…
-#>  9    49     202 125939            1362    0.011   ili        Regio… Emerg…
-#> 10    50     202 130430            1405    0.011   ili        Regio… Emerg…
-#> # … with 528 more rows, and 1 more variable: year <int>
+#>     week num_fac total_ed_visits visits pct_visits visit_type region   source                 year
+#>    <int>   <int> <chr>            <int>      <dbl> <chr>      <chr>    <chr>                 <int>
+#>  1    41     202 130377             814    0.006   ili        Region 1 Emergency Departments  2019
+#>  2    42     202 132385             912    0.00700 ili        Region 1 Emergency Departments  2019
+#>  3    43     202 131866             883    0.00700 ili        Region 1 Emergency Departments  2019
+#>  4    44     203 128256             888    0.00700 ili        Region 1 Emergency Departments  2019
+#>  5    45     203 127466             979    0.008   ili        Region 1 Emergency Departments  2019
+#>  6    46     202 125306            1188    0.009   ili        Region 1 Emergency Departments  2019
+#>  7    47     202 128877            1235    0.01    ili        Region 1 Emergency Departments  2019
+#>  8    48     202 124781            1451    0.012   ili        Region 1 Emergency Departments  2019
+#>  9    49     202 125939            1362    0.011   ili        Region 1 Emergency Departments  2019
+#> 10    50     202 130430            1405    0.011   ili        Region 1 Emergency Departments  2019
+#> # … with 528 more rows
 ```
 
 
@@ -483,8 +482,7 @@ citation("covdata")
 #> 
 #> To cite the package `covdata` in publications use:
 #> 
-#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series.
-#>   R package version 0.1.0, <http://kjhealy.github.io/covdata>.
+#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
