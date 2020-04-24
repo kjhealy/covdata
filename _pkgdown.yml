@@ -19,6 +19,7 @@ reference:
       - cdc_hospitalizations
       - covnat
       - covus
+      - countries
       - google_mobility
       - nssp_covid_er_nat
       - nssp_covid_er_reg

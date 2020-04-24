@@ -33,6 +33,20 @@ fmt_nr <- function(x){
 }
 
 
+#' @title Country Names and ISO codes
+#' @description Convenience table of country names and their abbreviated names
+#' @format A data frame with `r fmt_nr(countries)` rows and `r fmt_nc(countries)` variables:
+#' \describe{
+#'   \item{\code{cname}}{character Country name}
+#'   \item{\code{iso3}}{character ISO 3 designation}
+#'   \item{\code{iso2}}{character ISO 2 designation}
+#'}
+#' @details Produced from the ECDC tables in the covdata package
+#' @author Kieran Healy
+#' @source
+#' @references
+"countries"
+
 #' International COVID-19 cases and deaths, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
 #'
 #' A dataset containing national-level ECDC data on COVID-19

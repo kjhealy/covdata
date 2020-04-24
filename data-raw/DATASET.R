@@ -15,7 +15,6 @@ ifelse(!dir.exists(here("data-raw/data")),
 
 
 ### Data-getting functions
-
 ## Download today's CSV file, saving it to data/ and also read it in
 get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/casedistribution/csv",
                          date = lubridate::today(),
@@ -93,6 +92,8 @@ get_google_data <- function(url = "https://www.gstatic.com/covid19/mobility/",
          y = fs::file_copy(tf, destination),
          n = NULL)
 
+  ## Need a colspec for the Google data because it's so large
+  ## read_csv's guesses fail for some columns.
   gm_spec <- cols(country_region_code = col_character(),
                   country_region = col_character(),
                   sub_region_1 = col_character(),
@@ -110,7 +111,7 @@ get_google_data <- function(url = "https://www.gstatic.com/covid19/mobility/",
 }
 
 
-## Get NYT data
+## Get NYT data from their repo
 get_nyt_county <- function(url = "https://github.com/nytimes/covid-19-data/raw/master/",
                            fname = "us-counties",
                            date = lubridate::today(),
@@ -186,8 +187,7 @@ get_nyt_us <- function(url = "https://github.com/nytimes/covid-19-data/raw/maste
 }
 
 
-## Get apple data
-## f***ing apple always squirrelly
+## Get Apple data
 get_apple_data <- function(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2006HotfixDev13/v1/en-us",
                              fname = "applemobilitytrends-",
                              date = lubridate::today(),
@@ -343,6 +343,11 @@ covnat <- covid %>%
 
 covnat ## Data object
 
+
+countries <- covnat %>%
+  distinct(cname, iso3) %>%
+  left_join(cname_table)
+
 ### Get US Data from the COVID Tracking Project
 ## US state data
 cov_us_raw <- get_uscovid_data(save_file = "n")
@@ -404,14 +409,20 @@ google_mobility <- get_google_data() %>%
   pivot_longer(retail:residential, names_to = "type", values_to = "pct_diff")
 
 ## write data
+
+## COVID Tracking Project
 usethis::use_data(covnat, overwrite = TRUE, compress = "xz")
 usethis::use_data(covus, overwrite = TRUE, compress = "xz")
 
+## NYT
 usethis::use_data(nytcovcounty, overwrite = TRUE, compress = "xz")
 usethis::use_data(nytcovstate, overwrite = TRUE, compress = "xz")
 usethis::use_data(nytcovus, overwrite = TRUE, compress = "xz")
 
+## Country codes
+usethis::use_data(countries, overwrite = TRUE, compress = "xz")
 
+## CDC surveillance
 usethis::use_data(cdc_hospitalizations, overwrite = TRUE, compress = "xz")
 usethis::use_data(cdc_deaths_by_week, overwrite = TRUE, compress = "xz")
 usethis::use_data(cdc_deaths_by_age, overwrite = TRUE, compress = "xz")
@@ -421,6 +432,7 @@ usethis::use_data(cdc_catchments, overwrite = TRUE, compress = "xz")
 usethis::use_data(nssp_covid_er_nat, overwrite = TRUE, compress = "xz")
 usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 
+## Apple and Google
 usethis::use_data(apple_mobility, overwrite = TRUE, compress = "xz")
 usethis::use_data(google_mobility, overwrite = TRUE, compress = "xz")
 
