@@ -27,7 +27,7 @@ There are two ways to install the `covdata` package.
 
 ### Install direct from GitHub
 
-You can install the beta version of congress from [GitHub](https://github.com/kjhealy/congress) with:
+You can install the beta version of covdata from [GitHub](https://github.com/kjhealy/covdata) with:
 
 ``` r
 remotes::install_github("kjhealy/covdata")
