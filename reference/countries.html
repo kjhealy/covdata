@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • covdata</title>
+<title>Country Names and ISO codes — countries • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Country Names and ISO codes — countries" />
+<meta property="og:description" content="Convenience table of country names and their abbreviated names" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,126 +106,44 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Country Names and ISO codes</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>countries.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Convenience table of country names and their abbreviated names</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='no'>countries</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-datasets" class="hasAnchor"><a href="#section-datasets" class="anchor"></a>Datasets</h2>
-          <p class="section-desc"><p>Included datasets.</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="apple_mobility.html">apple_mobility</a></code> </p>
-        </td>
-        <td><p>Apple Mobility Data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cdc_catchments.html">cdc_catchments</a></code> </p>
-        </td>
-        <td><p>CDC surveillance network and network catchment area</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cdc_deaths_by_age.html">cdc_deaths_by_age</a></code> </p>
-        </td>
-        <td><p>CDC Surveillance Network Death Counts by Age</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cdc_deaths_by_sex.html">cdc_deaths_by_sex</a></code> </p>
-        </td>
-        <td><p>CDC provisional death counts by sex</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cdc_deaths_by_state.html">cdc_deaths_by_state</a></code> </p>
-        </td>
-        <td><p>CDC provisional death counts by state</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cdc_deaths_by_week.html">cdc_deaths_by_week</a></code> </p>
-        </td>
-        <td><p>CDC Provisional death counts by week</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cdc_hospitalizations.html">cdc_hospitalizations</a></code> </p>
-        </td>
-        <td><p>CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="covnat.html">covnat</a></code> </p>
-        </td>
-        <td><p>International COVID-19 cases and deaths, current as of Friday, April 24, 2020</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="covus.html">covus</a></code> </p>
-        </td>
-        <td><p>COVID-19 data for the USA, current as of Friday, April 24, 2020</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="countries.html">countries</a></code> </p>
-        </td>
-        <td><p>Country Names and ISO codes</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="google_mobility.html">google_mobility</a></code> </p>
-        </td>
-        <td><p>Google Mobility Data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nssp_covid_er_nat.html">nssp_covid_er_nat</a></code> </p>
-        </td>
-        <td><p>NSSP National COVID-related ER Visits</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nssp_covid_er_reg.html">nssp_covid_er_reg</a></code> </p>
-        </td>
-        <td><p>NSSP Regional COVID ER Visits</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nytcovcounty.html">nytcovcounty</a></code> </p>
-        </td>
-        <td><p>NYT COVID-19 data for US counties, current as of Friday, April 24, 2020</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nytcovstate.html">nytcovstate</a></code> </p>
-        </td>
-        <td><p>NYT COVID-19 data for the US states, current as of Friday, April 24, 2020</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A data frame with 205 rows and 3 variables:</p><dl>
+<dt><code>cname</code></dt><dd><p>character Country name</p></dd>
+<dt><code>iso3</code></dt><dd><p>character ISO 3 designation</p></dd>
+<dt><code>iso2</code></dt><dd><p>character ISO 2 designation</p></dd>
+
+</dl>
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    
+
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Produced from the ECDC tables in the covdata package</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    
+
+
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
