@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -238,7 +242,7 @@ covus %>%
 
 ```r
 nytcovstate
-#> # A tibble: 2,833 x 5
+#> # A tibble: 2,889 x 5
 #>    date       state      fips  cases deaths
 #>    <date>     <chr>      <chr> <dbl>  <dbl>
 #>  1 2020-01-21 Washington 53        1      0
@@ -251,13 +255,13 @@ nytcovstate
 #>  8 2020-01-25 Washington 53        1      0
 #>  9 2020-01-26 Arizona    04        1      0
 #> 10 2020-01-26 California 06        2      0
-#> # … with 2,823 more rows
+#> # … with 2,879 more rows
 ```
 
 
 ```r
 nytcovcounty
-#> # A tibble: 81,340 x 6
+#> # A tibble: 84,143 x 6
 #>    date       county      state      fips  cases deaths
 #>    <date>     <chr>       <chr>      <chr> <dbl>  <dbl>
 #>  1 2020-01-21 Snohomish   Washington 53061     1      0
@@ -270,7 +274,7 @@ nytcovcounty
 #>  8 2020-01-25 Snohomish   Washington 53061     1      0
 #>  9 2020-01-26 Maricopa    Arizona    04013     1      0
 #> 10 2020-01-26 Los Angeles California 06037     1      0
-#> # … with 81,330 more rows
+#> # … with 84,133 more rows
 ```
 
 ### Draw a log-linear graph of cumulative US cases by county

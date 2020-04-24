@@ -188,35 +188,30 @@ get_nyt_us <- function(url = "https://github.com/nytimes/covid-19-data/raw/maste
 
 ## Get apple data
 ## f***ing apple always squirrelly
-# get_apple_data <- function(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2006HotfixDev13/v1/en-us",
-#                              fname = "applemobilitytrends-",
-#                              date = lubridate::today(),
-#                              ext = "csv",
-#                              dest = "data-raw/data",
-#                              save_file = c("y", "n")) {
-#
-#   target <-  paste0(url, "/", fname, date, ".", ext)
-#   message("target: ", target)
-#
-#   destination <- fs::path(here::here("data-raw/data"),
-#                           paste0("apple_mobility", "_daily_", date), ext = ext)
-#
-#   tf <- tempfile(fileext = ext)
-#   h <- curl::new_handle(verbose = TRUE)
-#   curl::handle_setheaders(h,
-#     "Upgrade-Insecure-Requests" = "1",
-#     "DNT" = "1",
-#     "User-Agent" = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36",
-#     "Referer" = "https://www.apple.com/covid19/mobility")
-#
-#   curl::curl_download(target, handle = h, destfile = tf)
-#
-#   switch(save_file,
-#          y = fs::file_copy(tf, destination),
-#          n = NULL)
-#
-#   janitor::clean_names(read_csv(tf))
-# }
+get_apple_data <- function(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2006HotfixDev13/v1/en-us",
+                             fname = "applemobilitytrends-",
+                             date = lubridate::today(),
+                             ext = "csv",
+                             dest = "data-raw/data",
+                             save_file = c("n", "y")) {
+
+  save_file <- match.arg(save_file)
+  target <-  paste0(url, "/", fname, date, ".", ext)
+  message("target: ", target)
+
+  destination <- fs::path(here::here("data-raw/data"),
+                          paste0("apple_mobility", "_daily_", date), ext = ext)
+
+  tf <- tempfile(fileext = ext)
+
+  curl::curl_download(target, tf)
+
+  switch(save_file,
+         y = fs::file_copy(tf, destination),
+         n = NULL)
+
+  janitor::clean_names(read_csv(tf))
+}
 
 
 ### Data munging functions
@@ -390,9 +385,12 @@ nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
 ## Apple Mobility Data
-apple_mobility <- read_csv(here("data-raw/data/applemobilitytrends-2020-04-22.csv")) %>%
-  pivot_longer(`2020-01-13`:`2020-04-21`, names_to = "date", values_to = "index") %>%
-  mutate(date = as_date(date))
+apple_mobility <- get_apple_data(date = "2020-04-22") %>%
+  pivot_longer(x2020_01_13:x2020_04_22, names_to = "date", values_to = "index") %>%
+  mutate(
+    date = stringr::str_remove(date, "x"),
+    date = stringr::str_replace_all(date, "_", "-"),
+    date = as_date(date))
 
 ## Google Mobility Data
 
