@@ -1,7 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
-
 # covdata <img src="man/figures/hex-covdata.png" align="right" width="240">
 
 <!-- badges: start -->
