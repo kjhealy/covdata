@@ -125,10 +125,10 @@
     <p>A tibble with 10,712 rows and 33 variables:</p><dl>
 <dt><code>record_id</code></dt><dd><p>character Unique identifier for each unique policy record</p></dd>
 <dt><code>policy_id</code></dt><dd><p>double Identifier linking new policies with subsequent updates to policies</p></dd>
-<dt><code>recorded_date</code></dt><dd><p>double When the record was entered into the dataset</p></dd>
-<dt><code>date_announced</code></dt><dd><p>double When the policy was announced</p></dd>
-<dt><code>date_start</code></dt><dd><p>double When the policy went into effect</p></dd>
-<dt><code>date_end</code></dt><dd><p>double When the policy ended (if it has an explicit end date)</p></dd>
+<dt><code>recorded_date</code></dt><dd><p>date-time When the record was entered into the dataset</p></dd>
+<dt><code>date_announced</code></dt><dd><p>date When the policy was announced</p></dd>
+<dt><code>date_start</code></dt><dd><p>date When the policy went into effect</p></dd>
+<dt><code>date_end</code></dt><dd><p>date When the policy ended (if it has an explicit end date)</p></dd>
 <dt><code>entry_type</code></dt><dd><p>character Whether the record is new, meaning no restriction had been in place before, or an update (restriction was in place but changed). Corrections are corrections to previous entries.</p></dd>
 <dt><code>event_description</code></dt><dd><p>character A short description of the policy change</p></dd>
 <dt><code>domestic_policy</code></dt><dd><p>double Indicates where policy targets an area within the initiating country (i.e. is domestic in nature)</p></dd>
