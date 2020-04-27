@@ -1,5 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+
+
 # covdata <img src="man/figures/hex-covdata.png" align="right" width="240">
 
 <!-- badges: start -->
@@ -14,10 +16,11 @@
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
 - Data from [Apple](http://apple.com/covid19) on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.
 - Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.
+- Data from the [CoronaNet Research Project](https://coronanet-project.org), providing event-based tracking of governmental policy responses to the corona virus. 
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Friday, April 24, 2020.
+Data are current through Monday, April 27, 2020.
 
 ## Installation
 
@@ -80,8 +83,8 @@ library(tidyverse)
 library(covdata)
 
 covnat
-#> # A tibble: 12,737 x 8
-#> # Groups:   iso3 [205]
+#> # A tibble: 13,354 x 8
+#> # Groups:   iso3 [206]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
 #>  1 2019-12-31 Afghanistan AFG       0      0  37172386        0         0
@@ -94,7 +97,7 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 12,727 more rows
+#> # … with 13,344 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported cases
@@ -153,7 +156,7 @@ covnat %>%
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
-#> Warning: Removed 4630 rows containing missing values (geom_text_repel).
+#> Warning: Removed 5055 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
@@ -164,20 +167,20 @@ covnat %>%
 
 ```r
 covus
-#> # A tibble: 49,842 x 5
+#> # A tibble: 52,722 x 5
 #>    date       state fips  measure                  count
 #>    <date>     <chr> <chr> <chr>                    <dbl>
-#>  1 2020-04-23 AK    02    positive                   337
-#>  2 2020-04-23 AK    02    negative                 11824
-#>  3 2020-04-23 AK    02    pending                     NA
-#>  4 2020-04-23 AK    02    hospitalized_currently      42
-#>  5 2020-04-23 AK    02    hospitalized_cumulative     NA
-#>  6 2020-04-23 AK    02    in_icu_currently            NA
-#>  7 2020-04-23 AK    02    in_icu_cumulative           NA
-#>  8 2020-04-23 AK    02    on_ventilator_currently     NA
-#>  9 2020-04-23 AK    02    on_ventilator_cumulative    NA
-#> 10 2020-04-23 AK    02    recovered                  209
-#> # … with 49,832 more rows
+#>  1 2020-04-26 AK    02    positive                   341
+#>  2 2020-04-26 AK    02    negative                 15836
+#>  3 2020-04-26 AK    02    pending                     NA
+#>  4 2020-04-26 AK    02    hospitalized_currently      14
+#>  5 2020-04-26 AK    02    hospitalized_cumulative     NA
+#>  6 2020-04-26 AK    02    in_icu_currently            NA
+#>  7 2020-04-26 AK    02    in_icu_cumulative           NA
+#>  8 2020-04-26 AK    02    on_ventilator_currently     NA
+#>  9 2020-04-26 AK    02    on_ventilator_cumulative    NA
+#> 10 2020-04-26 AK    02    recovered                  217
+#> # … with 52,712 more rows
 ```
 
 ### Draw a log-linear graph of cumulative reported US cases
@@ -225,7 +228,7 @@ covus %>%
 
 #> Warning: Transformation introduced infinite values in continuous y-axis
 #> Warning: Removed 15 row(s) containing missing values (geom_path).
-#> Warning: Removed 2434 rows containing missing values (geom_text_repel).
+#> Warning: Removed 2600 rows containing missing values (geom_text_repel).
 ```
 
 <img src="man/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%" />
@@ -236,7 +239,7 @@ covus %>%
 
 ```r
 nytcovstate
-#> # A tibble: 2,889 x 5
+#> # A tibble: 3,039 x 5
 #>    date       state      fips  cases deaths
 #>    <date>     <chr>      <chr> <dbl>  <dbl>
 #>  1 2020-01-21 Washington 53        1      0
@@ -249,13 +252,13 @@ nytcovstate
 #>  8 2020-01-25 Washington 53        1      0
 #>  9 2020-01-26 Arizona    04        1      0
 #> 10 2020-01-26 California 06        2      0
-#> # … with 2,879 more rows
+#> # … with 3,029 more rows
 ```
 
 
 ```r
 nytcovcounty
-#> # A tibble: 84,143 x 6
+#> # A tibble: 92,592 x 6
 #>    date       county      state      fips  cases deaths
 #>    <date>     <chr>       <chr>      <chr> <dbl>  <dbl>
 #>  1 2020-01-21 Snohomish   Washington 53061     1      0
@@ -268,7 +271,7 @@ nytcovcounty
 #>  8 2020-01-25 Snohomish   Washington 53061     1      0
 #>  9 2020-01-26 Maricopa    Arizona    04013     1      0
 #> 10 2020-01-26 Los Angeles California 06037     1      0
-#> # … with 84,133 more rows
+#> # … with 92,582 more rows
 ```
 
 ### Draw a log-linear graph of cumulative US cases by county
@@ -320,8 +323,8 @@ cdc_hospitalizations
 #>  3 Entire Network COVID-NET 2020  2020      12        0-4 yr                   0           0  
 #>  4 Entire Network COVID-NET 2020  2020      13        0-4 yr                   0.4         0.4
 #>  5 Entire Network COVID-NET 2020  2020      14        0-4 yr                   0.8         0.4
-#>  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                   1.1         0.3
-#>  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                  NA          NA  
+#>  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                   1.2         0.5
+#>  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                   1.5         0.3
 #>  8 Entire Network COVID-NET 2020  2020      17        0-4 yr                  NA          NA  
 #>  9 Entire Network COVID-NET 2020  2020      18        0-4 yr                  NA          NA  
 #> 10 Entire Network COVID-NET 2020  2020      19        0-4 yr                  NA          NA  
@@ -353,16 +356,16 @@ cdc_deaths_by_state
 #> # A tibble: 54 x 13
 #>    state       covid_deaths    total_deaths    percent_expected_… pneumonia_deaths   pneumonia_and_cov… all_influenza_deat…    NA    NA    NA    NA NA    NA                                  
 #>    <chr>       <chr>           <chr>           <chr>              <chr>                           <int>               <int> <dbl> <int> <int> <int> <chr> <chr>                               
-#>  1 2020-04-24… United States   Total US        2020-02-01T00:00:… 2020-04-18T00:00:…              24555              654798  0.96 54962 11070  5571 <NA>  <NA>                                
-#>  2 2020-04-24… Alabama         Alabama         2020-02-01T00:00:… 2020-04-18T00:00:…                113               11553  0.9    714    34    83 <NA>  <NA>                                
-#>  3 2020-04-24… Alaska          Alaska          2020-02-01T00:00:… 2020-04-18T00:00:…                 NA                 789  0.78    37    NA    NA <NA>  One or more data cells have counts …
-#>  4 2020-04-24… Arizona         Arizona         2020-02-01T00:00:… 2020-04-18T00:00:…                156               14756  1.01  1034    85   103 <NA>  <NA>                                
-#>  5 2020-04-24… Arkansas        Arkansas        2020-02-01T00:00:… 2020-04-18T00:00:…                 19                7245  0.94   485    NA    66 <NA>  One or more data cells have counts …
-#>  6 2020-04-24… California      California      2020-02-01T00:00:… 2020-04-18T00:00:…                813               64633  0.97  5437   450   541 <NA>  <NA>                                
-#>  7 2020-04-24… Colorado        Colorado        2020-02-01T00:00:… 2020-04-18T00:00:…                392                9936  1.03   838   243    90 <NA>  <NA>                                
-#>  8 2020-04-24… Connecticut     Connecticut     2020-02-01T00:00:… 2020-04-18T00:00:…                 NA                 461  0       29     0    NA <NA>  One or more data cells have counts …
-#>  9 2020-04-24… Delaware        Delaware        2020-02-01T00:00:… 2020-04-18T00:00:…                 28                1939  0.77   108    14    14 <NA>  <NA>                                
-#> 10 2020-04-24… District of Co… District of Co… 2020-02-01T00:00:… 2020-04-18T00:00:…                 44                1331  0.89   146    44    NA <NA>  One or more data cells have counts …
+#>  1 2020-04-27… United States   Total US        2020-02-01T00:00:… 2020-04-25T00:00:…              27674              673580  0.91 57480 12398  5668 <NA>  <NA>                                
+#>  2 2020-04-27… Alabama         Alabama         2020-02-01T00:00:… 2020-04-25T00:00:…                127               11783  0.87   735    38    82 <NA>  <NA>                                
+#>  3 2020-04-27… Alaska          Alaska          2020-02-01T00:00:… 2020-04-25T00:00:…                 NA                 789  0.73    37    NA    NA <NA>  One or more data cells have counts …
+#>  4 2020-04-27… Arizona         Arizona         2020-02-01T00:00:… 2020-04-25T00:00:…                193               14940  0.95  1063   101   104 <NA>  <NA>                                
+#>  5 2020-04-27… Arkansas        Arkansas        2020-02-01T00:00:… 2020-04-25T00:00:…                 19                7514  0.91   500    NA    67 <NA>  One or more data cells have counts …
+#>  6 2020-04-27… California      California      2020-02-01T00:00:… 2020-04-25T00:00:…                820               65913  0.93  5519   456   543 <NA>  <NA>                                
+#>  7 2020-04-27… Colorado        Colorado        2020-02-01T00:00:… 2020-04-25T00:00:…                392               10114  0.98   849   243    90 <NA>  <NA>                                
+#>  8 2020-04-27… Connecticut     Connecticut     2020-02-01T00:00:… 2020-04-25T00:00:…                 NA                 461  0.06    29     0    NA <NA>  One or more data cells have counts …
+#>  9 2020-04-27… Delaware        Delaware        2020-02-01T00:00:… 2020-04-25T00:00:…                 28                1958  0.81   109    14    14 <NA>  <NA>                                
+#> 10 2020-04-27… District of Co… District of Co… 2020-02-01T00:00:… 2020-04-25T00:00:…                 48                1369  0.87   153    48    NA <NA>  One or more data cells have counts …
 #> # … with 44 more rows
 
 nssp_covid_er_reg
@@ -471,8 +474,46 @@ google_mobility %>%
 <img src="man/figures/README-google-example-1.png" title="plot of chunk google-example" alt="plot of chunk google-example" width="100%" />
 
 
+### CoronaNet Research Project Data
 
-### Citing the package
+The [CoronaNet Research Project](https://coronanet-project.org/index.html) tracks policy responses to the COVID-19 pandemic. This includes not only gathering information about which governments are responding to the coronavirus, but who they are targeting the policies toward (e.g. other countries), how they are doing it (e.g. travel restrictions, banning exports of masks) and when they are doing it. The effort of more than 220 political, social and public health science scholars from all over the world, the data included here are the initial, beta release of a large hand-coded dataset of more than 10,000 separate policy announcements from governments around the world visible since December 31st 2019. The data yields detailed information on 
+
+- The level of government responding to the corona virus crisis (e.g. national, regional/state, local/municipal)
+- Specific actions taken (e.g. travel bans, investments in the public health sector, etc.)
+- Geographical areas targeted by these measures
+- Who or what they are targeting (e.g. foreigners, ventilators)
+- Compliance mechanisms (e.g. mandatory or voluntary)
+- Timing of policy responses.
+
+To cite this dataset: 
+
+Cheng, Cindy, Joan Barcelo, Allison Hartnett, Robert Kubinec, and Luca Messerschmidt. 2020. “Coronanet: A Dyadic Dataset of Government Responses to the COVID-19 Pandemic.” BETAVersion 1.0. https://www.coronanet-project.org.
+
+
+
+```r
+coronanet
+#> # A tibble: 10,712 x 33
+#>    record_id policy_id recorded_date       date_announced date_start date_end   entry_type event_descripti… domestic_policy type  type_sub_cat type_text index_high_est index_med_est
+#>    <chr>         <dbl> <dttm>              <date>         <date>     <date>     <chr>      <chr>                      <dbl> <chr> <chr>            <dbl>          <dbl>         <dbl>
+#>  1 1000775Be   1342691 2020-04-04 15:43:15 2020-03-14     2020-03-14 NA         update     "Chile extends …               0 Quar… Self-Quaran…        NA           48.3          47.2
+#>  2 1000775Ba   1342691 2020-04-04 15:43:15 2020-03-14     2020-03-14 NA         update     "Chile extends …               0 Quar… Quarantine …        NA           48.3          47.2
+#>  3 1003875NA   1003875 2020-04-15 11:04:50 2020-04-07     2020-04-07 NA         new_entry  "On April 7th, …               1 Othe… <NA>                NA           56.9          50.7
+#>  4 1004681NA   2575122 2020-04-03 08:33:25 2020-03-22     2020-03-25 NA         update     "On 22nd March,…               0 Exte… <NA>                NA           48.2          47.8
+#>  5 4866080NA   4866080 2020-03-30 05:21:44 2020-03-20     2020-03-21 NA         correction "Italy is enfor…               1 Soci… <NA>                NA           49.7          47.9
+#>  6 1011795NA   4951252 2020-04-03 03:29:36 2020-03-08     2020-03-08 NA         update     "On March 08, 2…               1 Othe… <NA>                NA           47.4          46.8
+#>  7 1012765NA   1012765 2020-04-05 07:35:13 2020-04-04     2020-04-04 NA         new_entry  "On April 4, th…               1 Heal… <NA>                NA           49.4          48.7
+#>  8 1014171NA   1014171 2020-04-01 07:31:20 2020-02-10     2020-02-10 NA         new_entry  "On February 10…               1 Publ… <NA>                NA           48.3          46.6
+#>  9 1014978NA   1014978 2020-04-05 09:34:00 2020-03-30     2020-03-31 NA         new_entry  "Georgia banned…               1 Rest… <NA>                NA           47.8          46.9
+#> 10 1017233NA   1017233 2020-04-04 06:44:27 2020-03-29     2020-03-29 NA         new_entry  "On the 29 Marc…               1 Rest… <NA>                NA           48.5          47.5
+#> # … with 10,702 more rows, and 19 more variables: index_low_est <dbl>, index_country_rank <dbl>, country <chr>, init_country_level <chr>, province <chr>, target_country <chr>,
+#> #   target_geog_level <chr>, target_region <chr>, target_province <chr>, target_city <chr>, target_other <lgl>, target_who_what <chr>, target_direction <chr>, travel_mechanism <chr>,
+#> #   compliance <chr>, enforcer <chr>, link <chr>, iso3 <chr>, iso2 <chr>
+```
+
+### Citing the `covdata` package
+
+To cite the package use the following:
 
 
 ```r
@@ -492,6 +533,8 @@ citation("covdata")
 #>     url = {http://kjhealy.github.io/covdata},
 #>   }
 ```
+
+Please be sure to also cite the specific data sources, as described in the help page for each dataset. 
 
 
 Mask icon in hex logo by [Freepik](https://www.flaticon.com/authors/freepik).

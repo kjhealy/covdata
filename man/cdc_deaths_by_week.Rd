@@ -5,7 +5,7 @@
 \alias{cdc_deaths_by_week}
 \title{CDC Provisional death counts by week}
 \format{
-A data frame with 12 rows and 13 variables:
+A data frame with 13 rows and 13 variables:
 \describe{
 \item{\code{week}}{double COLUMN_DESCRIPTION}
 \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}

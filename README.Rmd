@@ -27,6 +27,7 @@ knitr::opts_chunk$set(
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
 - Data from [Apple](http://apple.com/covid19) on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.
 - Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.
+- Data from the [CoronaNet Research Project](https://coronanet-project.org), providing event-based tracking of governmental policy responses to the corona virus. 
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
@@ -333,12 +334,35 @@ google_mobility %>%
 ```
 
 
+### CoronaNet Research Project Data
 
-### Citing the package
+The [CoronaNet Research Project](https://coronanet-project.org/index.html) tracks policy responses to the COVID-19 pandemic. This includes not only gathering information about which governments are responding to the coronavirus, but who they are targeting the policies toward (e.g. other countries), how they are doing it (e.g. travel restrictions, banning exports of masks) and when they are doing it. The effort of more than 220 political, social and public health science scholars from all over the world, the data included here are the initial, beta release of a large hand-coded dataset of more than 10,000 separate policy announcements from governments around the world visible since December 31st 2019. The data yields detailed information on 
+
+- The level of government responding to the corona virus crisis (e.g. national, regional/state, local/municipal)
+- Specific actions taken (e.g. travel bans, investments in the public health sector, etc.)
+- Geographical areas targeted by these measures
+- Who or what they are targeting (e.g. foreigners, ventilators)
+- Compliance mechanisms (e.g. mandatory or voluntary)
+- Timing of policy responses.
+
+To cite this dataset: 
+
+Cheng, Cindy, Joan Barcelo, Allison Hartnett, Robert Kubinec, and Luca Messerschmidt. 2020. “Coronanet: A Dyadic Dataset of Government Responses to the COVID-19 Pandemic.” BETAVersion 1.0. https://www.coronanet-project.org.
+
+
+```{r coronanet}
+coronanet
+```
+
+### Citing the `covdata` package
+
+To cite the package use the following:
 
 ```{r citation}
 citation("covdata")
 ```
+
+Please be sure to also cite the specific data sources, as described in the help page for each dataset. 
 
 
 Mask icon in hex logo by [Freepik](https://www.flaticon.com/authors/freepik).

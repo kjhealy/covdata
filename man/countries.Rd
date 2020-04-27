@@ -5,7 +5,7 @@
 \alias{countries}
 \title{Country Names and ISO codes}
 \format{
-A data frame with 205 rows and 3 variables:
+A data frame with 206 rows and 3 variables:
 \describe{
 \item{\code{cname}}{character Country name}
 \item{\code{iso3}}{character ISO 3 designation}
