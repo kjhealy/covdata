@@ -9,10 +9,10 @@ A tibble with 10,712 rows and 33 variables:
 \describe{
 \item{\code{record_id}}{character Unique identifier for each unique policy record}
 \item{\code{policy_id}}{double Identifier linking new policies with subsequent updates to policies}
-\item{\code{recorded_date}}{double When the record was entered into the dataset}
-\item{\code{date_announced}}{double When the policy was announced}
-\item{\code{date_start}}{double When the policy went into effect}
-\item{\code{date_end}}{double When the policy ended (if it has an explicit end date)}
+\item{\code{recorded_date}}{date-time When the record was entered into the dataset}
+\item{\code{date_announced}}{date When the policy was announced}
+\item{\code{date_start}}{date When the policy went into effect}
+\item{\code{date_end}}{date When the policy ended (if it has an explicit end date)}
 \item{\code{entry_type}}{character Whether the record is new, meaning no restriction had been in place before, or an update (restriction was in place but changed). Corrections are corrections to previous entries.}
 \item{\code{event_description}}{character A short description of the policy change}
 \item{\code{domestic_policy}}{double Indicates where policy targets an area within the initiating country (i.e. is domestic in nature)}
