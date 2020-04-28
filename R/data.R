@@ -1,38 +1,3 @@
-#' @title fmt_nc
-#' @description Format fmt_nc in df
-#' @param x df
-#' @return formatted string
-#' @details use in fn documentation
-#' @examples
-#' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
-#' }
-#' @rdname fmt_nc
-#' @author Kieran Healy
-fmt_nc <- function(x){
-  prettyNum(ncol(x), big.mark=",", scientific=FALSE)
-}
-
-
-#' @title fmt_nr
-#' @description Format fmt_nr in df
-#' @param x df
-#' @return formatted string
-#' @details use in fn documentation
-#' @examples
-#' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
-#' }
-#' @author Kieran Healy
-fmt_nr <- function(x){
-  prettyNum(nrow(x), big.mark=",", scientific=FALSE)
-}
-
-
 #' @title Country Names and ISO codes
 #' @description Convenience table of country names and their abbreviated names
 #' @format A data frame with `r fmt_nr(countries)` rows and `r fmt_nc(countries)` variables:
@@ -351,6 +316,7 @@ fmt_nr <- function(x){
 #'   \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
 #'   \item{\code{region}}{character Name of geographical unit.}
 #'   \item{\code{transportation_type}}{character Mode of transport. Values: Driving, Transit, or Walking}
+#'   \item{\code{alternative_name}}{character Name of `region` in local language}
 #'   \item{\code{date}}{double Date in yyyy-mm-dddd format}
 #'   \item{\code{index}}{double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.}
 #'}

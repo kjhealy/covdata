@@ -1,0 +1,164 @@
+---
+title: "Case and Mortality Data for the United States"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{us-data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tidyverse)
+library(covdata)
+library(ggrepel)
+```
+
+Data for the United States come from a variety of sources:
+
+- State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
+- State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
+- Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance 
+
+
+## COVID Tracking Project data
+
+```{r states}
+covus
+```
+
+Draw a log-linear graph of cumulative reported US cases.
+
+```{r us-example, fig.height=8, fig.width=10, dpi=100}
+## Which n states are leading the count of positive cases or deaths?
+top_n_states <- function(data, n = 5, measure = c("positive", "death")) {
+  meas <- match.arg(measure)
+  data %>%
+  group_by(state) %>%
+  filter(measure == meas, date == max(date)) %>%
+  drop_na() %>%
+  ungroup() %>%
+  top_n(n, wt = count) %>%
+  pull(state)
+}
+
+state_cols <- c("gray70", "#195F90FF", "#D76500FF", "#238023FF", "#AB1F20FF", "#7747A3FF", 
+                "#70453CFF", "#D73EA8FF", "#666666FF", "#96971BFF", "#1298A6FF", "#6F9BD6FF", 
+                "#FF952DFF", "#66CF51FF", "#FF4945FF", "#A07DBAFF", "#AC7368FF", "#EF69A2FF", 
+                "#9F9F9FFF", "#CACA56FF", "#61C3D5FF")
+
+covus %>%
+  group_by(state) %>%
+  mutate(core = case_when(state %nin% top_n_states(covus) ~ "",
+                          TRUE ~ state),
+         end_label = ifelse(date == max(date), core, NA)) %>%
+  arrange(date) %>%
+  filter(measure == "positive", date > "2020-03-09") %>%
+  ggplot(aes(x = date, y = count, group = state, color = core, label = end_label)) + 
+  geom_line(size = 0.5) + 
+  geom_text_repel(segment.color = NA, nudge_x = 0.2, nudge_y = 0.1) + 
+  scale_color_manual(values = state_cols) + 
+  scale_x_date(date_breaks = "3 days", date_labels = "%b %e" ) + 
+  scale_y_continuous(trans = "log2",
+                     labels = scales::comma_format(accuracy = 1),
+                     breaks = 2^c(seq(1, 17, 1))) +
+  guides(color = FALSE) + 
+  labs(title = "COVID-19 Cumulative Recorded Cases by US State",
+       subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y")),
+       x = "Date", y = "Count of Cases (log 2 scale)", 
+       caption = "Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy") + 
+  theme_minimal()
+```
+
+
+## State-Level and County-Level (Cumulative) Data from the _New York Times_
+
+```{r nyt1}
+nytcovstate
+```
+
+```{r}
+nytcovcounty
+```
+
+Draw a log-linear graph of cumulative US cases by county.
+
+```{r nytplot,  fig.height=15, fig.width=8, dpi=150}
+nytcovcounty %>%
+  mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
+  group_by(uniq_name) %>%
+  mutate(days_elapsed = date - min(date)) %>%
+  ggplot(aes(x = days_elapsed, y = cases, group = uniq_name)) + 
+  geom_line(size = 0.25, color = "gray20") + 
+  scale_y_log10(labels = scales::label_number_si()) + 
+  guides(color = FALSE) + 
+  facet_wrap(~ state, ncol = 5) + 
+  labs(title = "COVID-19 Cumulative Recorded Cases by US County",
+       subtitle = paste("New York is bundled into a single area in this data.\nData as of", format(max(nytcovcounty$date), "%A, %B %e, %Y")),
+       x = "Days since first case", y = "Count of Cases (log 10 scale)", 
+       caption = "Data: The New York Times | Graph: @kjhealy") + 
+  theme_minimal()
+
+```
+
+## US CDC Surveillance Network Data
+
+This US Centers for Disase Control surveillance network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people).  Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for
+patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate
+age-specific hospitalization rates on a weekly basis and describe characteristics of persons
+hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2
+testing. Therefore, the unadjusted rates provided are likely to be underestimated as
+COVID-19-associated hospitalizations can be missed due to test availability and provider or facility
+testing practices.  COVID-NET hospitalization data are preliminary and subject to change as more data
+become available. All incidence rates are unadjusted. Please use the following citation when
+referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers
+for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+
+Thanks to Bob Rudis's [`cdccovidview`](https://github.com/hrbrmstr/cdccovidview) package for making these data tractable to include. 
+
+```{r cdc-hosp}
+cdc_hospitalizations
+
+cdc_catchments
+
+cdc_deaths_by_state
+
+nssp_covid_er_reg
+```
+
+Summary view of CDC Surveillance Network Data
+
+```{r cdc-example, fig.height=5, fig.width=9, dpi=150}
+
+age_f <- c(
+  "0-4 yr", "5-17 yr", "18-49 yr", 
+  "50-64 yr", "65+ yr", "65-74 yr", 
+  "75-84 yr", "85+")
+
+cdc_hospitalizations %>%
+  mutate(start = mmwr_week_to_date(mmwr_year, mmwr_week)) %>% 
+  filter(!is.na(weekly_rate)) %>% 
+  filter(catchment == "Entire Network") %>% 
+  select(start, network, age_category, weekly_rate) %>%  
+  filter(age_category != "Overall") %>% 
+  mutate(age_category = factor(age_category, levels = age_f)) %>% 
+  ggplot() +
+  geom_line(aes(start, weekly_rate)) +
+  scale_x_date(
+    date_breaks = "2 weeks", date_labels = "%b\n%d"
+  ) +
+  facet_grid(network ~ age_category) +
+  labs(x = NULL, y = "Rates per 100,000 pop",
+    title = "COVID-NET Weekly Rates by Network and Age Group",
+    subtitle = "Courtesy Bob Rudis's cdccovidview",
+    caption = sprintf("Source: COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention.\n<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>; Accessed on %s", Sys.Date())) +
+  theme_minimal()
+
+```
+

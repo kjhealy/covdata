@@ -1,0 +1,73 @@
+---
+title: "Mobility Data from Apple and Google"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mobility-data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tidyverse)
+library(covdata)
+```
+
+### Apple Mobility Data
+Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
+
+```{r apple-example, fig.height=12, fig.width=10, dpi=150}
+vec_brks <- c(-50, 0, 50)
+vec_labs <- vec_brks + 100
+
+apple_mobility %>% 
+  filter(geo_type == "city", transportation_type == "driving") %>%
+  mutate(over_under = index < 100, 
+         index = index - 100) %>%
+  ggplot(mapping = aes(x = date, y = index, 
+                       group = region, color = over_under)) + 
+  geom_hline(yintercept = 0, color = "gray40") + 
+  geom_col() + 
+  scale_y_continuous(breaks = vec_brks, labels = vec_labs) + 
+  scale_color_manual(values = c("firebrick", "steelblue")) +
+  facet_wrap(~ region, ncol = 8) + 
+  guides(color = FALSE) + 
+  labs(x = "Date", y = "Relative Mobility", title = "Relative Trends in Apple Maps Usage for Driving, Selected Cities", 
+                              subtitle = "Data are indexed to 100 for each city's usage on January 13th 2020", 
+       caption = "Data: Apple. Graph: @kjhealy") + 
+  theme_minimal()
+  
+```
+
+### Google Mobility Reports
+These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential. Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area. These datasets show how visits and length of stay at different places change compared to a baseline. Changes for each day are compared to a baseline value for that day of the week:
+
+- The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.
+- The datasets show trends over several months.
+- What data is included in the calculation depends on user settings, connectivity, and whether it meets Google's privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day. 
+
+```{r google-example, fig.height=6, fig.width=6, dpi=150}
+google_mobility %>% 
+  filter(country_region_code == "US", !is.na(sub_region_1), is.na(sub_region_2)) %>%
+  mutate(type = tools::toTitleCase(type)) %>%
+  ggplot(mapping = aes(x = date, y = pct_diff, 
+                       group = sub_region_1)) + 
+  geom_line(size = 0.5, color = "gray80") + 
+  geom_smooth(aes(color = type, group = 1), se = FALSE) + 
+  facet_wrap(~ type, ncol = 2) + 
+  labs(x = "Date", y = "Percent Change from Baseline", title = "Relative Trends in Mobility for Kinds of Location in the US, by State", 
+                              subtitle = "Data are relative to median activity between Jan 3rd and Feb 6th",
+       color = "Location Type", 
+       caption = "Data: Google. Graph: @kjhealy") + 
+  theme_minimal() + 
+  theme(legend.position = "top", 
+        strip.text = element_text(size = rel(1.3)))
+  
+```
+

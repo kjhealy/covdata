@@ -26,7 +26,33 @@ reference:
       - nssp_covid_er_reg
       - nytcovcounty
       - nytcovstate
+
+articles:
+- title: Datasets
+  navbar: ~
+  contents:
+  - ecdc-data
+  - us-data
+  - mobility-data
+  - coronanet-data
+
+- title: Developer
+  desc: Vignettes aimed at package developers
+  contents:
+  - programming
+  - packages
+
 navbar:
   right:
    - icon: fa-github
      href: https://github.com/kjhealy/covdata
+
+figures:
+  dev: grDevices::png
+  dpi: 200
+  dev.args: []
+  fig.ext: png
+  fig.width: 7.2916667
+  fig.height: ~
+  fig.retina: 2
+  fig.asp: 1.618

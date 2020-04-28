@@ -188,7 +188,7 @@ get_nyt_us <- function(url = "https://github.com/nytimes/covid-19-data/raw/maste
 
 
 ## Get Apple data
-get_apple_data <- function(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2006HotfixDev17/v1/en-us",
+get_apple_data <- function(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2006HotfixDev19/v2/en-us",
                              fname = "applemobilitytrends-",
                              date = lubridate::today(),
                              ext = "csv",
@@ -434,8 +434,9 @@ nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
 ## Apple Mobility Data
-apple_mobility <- get_apple_data(date = "2020-04-25") %>%
-  pivot_longer(x2020_01_13:x2020_04_25, names_to = "date", values_to = "index") %>%
+apple_mobility <- get_apple_data(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2006HotfixDev19/v2/en-us",
+                                 date = "2020-04-26") %>%
+  pivot_longer(x2020_01_13:x2020_04_26, names_to = "date", values_to = "index") %>%
   mutate(
     date = stringr::str_remove(date, "x"),
     date = stringr::str_replace_all(date, "_", "-"),

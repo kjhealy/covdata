@@ -5,11 +5,12 @@
 \alias{apple_mobility}
 \title{Apple Mobility Data}
 \format{
-A data frame with 41,080 rows and 5 variables:
+A data frame with 121,590 rows and 6 variables:
 \describe{
 \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
 \item{\code{region}}{character Name of geographical unit.}
 \item{\code{transportation_type}}{character Mode of transport. Values: Driving, Transit, or Walking}
+\item{\code{alternative_name}}{character Name of \code{region} in local language}
 \item{\code{date}}{double Date in yyyy-mm-dddd format}
 \item{\code{index}}{double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.}
 }

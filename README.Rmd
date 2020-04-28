@@ -82,277 +82,27 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ## Loading the Data
 
-### Country-Level Data from the ECDC
-
 ```{r load}
-library(tidyverse)
+library(tidyverse) # Optional but strongly recommended
 library(covdata)
 
 covnat
 ```
 
-### Draw a log-linear graph of cumulative reported cases
-
-```{r example, fig.height=10, fig.width=8, dpi=300}
-## Libraries for the graphs
-library(ggrepel)
-library(paletteer)
-library(prismatic)
-
-## Convenince "Not in" operator
-"%nin%" <- function(x, y) {
-  return( !(x %in% y) )
-}
-
-
-## Countries to highlight
-focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
-              "KOR", "ITA", "FRA", "ESP", "CHE", "TUR")
-
-## Colors
-cgroup_cols <- c(clr_darken(paletteer_d("ggsci::category20_d3"), 0.2)[1:length(focus_cn)], "gray70")
-
-covnat %>%
-  filter(cu_cases > 99) %>%
-  mutate(days_elapsed = date - min(date),
-        end_label = ifelse(date == max(date), cname, NA),
-        end_label = recode(end_label, `United States` = "USA",
-                            `Iran, Islamic Republic of` = "Iran",
-                            `Korea, Republic of` = "South Korea",
-                            `United Kingdom` = "UK"),
-         cname = recode(cname, `United States` = "USA",
-                        `Iran, Islamic Republic of` = "Iran",
-                        `Korea, Republic of` = "South Korea",
-                        `United Kingdom` = "UK"),
-         end_label = case_when(iso3 %in% focus_cn ~ end_label,
-                               TRUE ~ NA_character_), 
-         cgroup = case_when(iso3 %in% focus_cn ~ iso3, 
-                            TRUE ~ "ZZOTHER")) %>%
-  ggplot(mapping = aes(x = days_elapsed, y = cu_cases, 
-         color = cgroup, label = end_label, 
-         group = cname)) + 
-  geom_line(size = 0.5) + 
-  geom_text_repel(nudge_x = 0.75,
-                  segment.color = NA) + 
-  guides(color = FALSE) + 
-  scale_color_manual(values = cgroup_cols) +
-  scale_y_continuous(labels = scales::comma_format(accuracy = 1), 
-                     breaks = 2^seq(4, 19, 1),
-                     trans = "log2") + 
-  labs(x = "Days Since 100th Confirmed Case", 
-       y = "Cumulative Number of Reported Cases (log2 scale)", 
-       title = "Cumulative Reported Cases of COVID-19, Selected Countries", 
-       subtitle = paste("ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
-       caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
-  theme_minimal()
-
-```
-
-
-### State-Level Data from the COVID Tracking Project
-
-```{r states}
-covus
-```
-
-### Draw a log-linear graph of cumulative reported US cases
-
-```{r us-example, fig.height=10, fig.width=8, dpi=300}
-## Which n states are leading the count of positive cases or deaths?
-top_n_states <- function(data, n = 5, measure = c("positive", "death")) {
-  meas <- match.arg(measure)
-  data %>%
-  group_by(state) %>%
-  filter(measure == meas, date == max(date)) %>%
-  drop_na() %>%
-  ungroup() %>%
-  top_n(n, wt = count) %>%
-  pull(state)
-}
-
-state_cols <- c("gray70", 
-                prismatic::clr_darken(paletteer_d("ggsci::category20_d3"), 0.2))
-
-covus %>%
-  group_by(state) %>%
-  mutate(core = case_when(state %nin% top_n_states(covus) ~ "",
-                          TRUE ~ state),
-         end_label = ifelse(date == max(date), core, NA)) %>%
-  arrange(date) %>%
-  filter(measure == "positive", date > "2020-03-09") %>%
-  ggplot(aes(x = date, y = count, group = state, color = core, label = end_label)) + 
-  geom_line(size = 0.5) + 
-  geom_text_repel(segment.color = NA, nudge_x = 0.2, nudge_y = 0.1) + 
-  scale_color_manual(values = state_cols) + 
-  scale_x_date(date_breaks = "3 days", date_labels = "%b %e" ) + 
-  scale_y_continuous(trans = "log2",
-                     labels = scales::comma_format(accuracy = 1),
-                     breaks = 2^c(seq(1, 17, 1))) +
-  guides(color = FALSE) + 
-  coord_equal() + 
-  labs(title = "COVID-19 Cumulative Recorded Cases by US State",
-       subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y")),
-       x = "Date", y = "Count of Cases (log 2 scale)", 
-       caption = "Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy") + 
-  theme_minimal()
-```
-
-
-### State-Level and County-Level (Cumulative) Data from the _New York Times_
-
-```{r nyt1}
-nytcovstate
+```{r}
+apple_mobility %>%
+  filter(region == "New York City", transportation_type == "walking")
 ```
 
 ```{r}
-nytcovcounty
-```
-
-### Draw a log-linear graph of cumulative US cases by county
-
-```{r nytplot,  fig.height=15, fig.width=8, dpi=300}
-nytcovcounty %>%
-  mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
-  group_by(uniq_name) %>%
-  mutate(days_elapsed = date - min(date)) %>%
-  ggplot(aes(x = days_elapsed, y = cases, group = uniq_name)) + 
-  geom_line(size = 0.25, color = "gray20") + 
-  scale_y_log10(labels = scales::label_number_si()) + 
-  guides(color = FALSE) + 
-  facet_wrap(~ state, ncol = 5) + 
-  labs(title = "COVID-19 Cumulative Recorded Cases by US County",
-       subtitle = paste("New York is bundled into a single area in this data.\nData as of", format(max(nytcovcounty$date), "%A, %B %e, %Y")),
-       x = "Days since first case", y = "Count of Cases (log 10 scale)", 
-       caption = "Data: The New York Times | Graph: @kjhealy") + 
-  theme_minimal()
-
-```
-
-### US CDC Surveillance Network Data
-This US Centers for Disase Control surveillance network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people).  Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for
-patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate
-age-specific hospitalization rates on a weekly basis and describe characteristics of persons
-hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2
-testing. Therefore, the unadjusted rates provided are likely to be underestimated as
-COVID-19-associated hospitalizations can be missed due to test availability and provider or facility
-testing practices.  COVID-NET hospitalization data are preliminary and subject to change as more data
-become available. All incidence rates are unadjusted. Please use the following citation when
-referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers
-for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
-
-Thanks to Bob Rudis's [`cdccovidview`](https://github.com/hrbrmstr/cdccovidview) package for making these data tractable to include. 
-
-```{r cdc-hosp}
-cdc_hospitalizations
-
-cdc_catchments
-
-cdc_deaths_by_state
-
-nssp_covid_er_reg
+covus %>% 
+  filter(measure == "positive", 
+         date == "2020-04-27", 
+         state == "NJ")
 ```
 
 
-```{r cdc-example, fig.height=8, fig.width=10, dpi=300}
-
-age_f <- c(
-  "0-4 yr", "5-17 yr", "18-49 yr", 
-  "50-64 yr", "65+ yr", "65-74 yr", 
-  "75-84 yr", "85+")
-
-cdc_hospitalizations %>%
-  mutate(start = cdccovidview::mmwr_week_to_date(mmwr_year, mmwr_week)) %>% 
-  filter(!is.na(weekly_rate)) %>% 
-  filter(catchment == "Entire Network") %>% 
-  select(start, network, age_category, weekly_rate) %>%  
-  filter(age_category != "Overall") %>% 
-  mutate(age_category = factor(age_category, levels = age_f)) %>% 
-  ggplot() +
-  geom_line(aes(start, weekly_rate)) +
-  scale_x_date(
-    date_breaks = "2 weeks", date_labels = "%b\n%d"
-  ) +
-  facet_grid(network ~ age_category) +
-  labs(x = NULL, y = "Rates per 100,000 pop",
-    title = "COVID-NET Weekly Rates by Network and Age Group",
-    subtitle = "Courtesy Bob Rudis's cdccovidview",
-    caption = sprintf("Source: COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention.\n<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>; Accessed on %s", Sys.Date())) +
-  theme_minimal()
-
-```
-
-### Apple Mobility Data
-Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
-
-```{r apple-example, fig.height=20, fig.width=10, dpi=300}
-vec_brks <- c(-50, 0, 50)
-vec_labs <- vec_brks + 100
-
-apple_mobility %>% 
-  filter(geo_type == "city", transportation_type == "driving") %>%
-  mutate(over_under = index < 100, 
-         index = index - 100) %>%
-  ggplot(mapping = aes(x = date, y = index, 
-                       group = region, color = over_under)) + 
-  geom_hline(yintercept = 0, color = "gray40") + 
-  geom_col() + 
-  scale_y_continuous(breaks = vec_brks, labels = vec_labs) + 
-  scale_color_manual(values = c("firebrick", "steelblue")) +
-  facet_wrap(~ region, ncol = 8) + 
-  guides(color = FALSE) + 
-  labs(x = "Date", y = "Relative Mobility", title = "Relative Trends in Apple Maps Usage for Driving, Selected Cities", 
-                              subtitle = "Data are indexed to 100 for each city's usage on January 13th 2020", 
-       caption = "Data: Apple. Graph: @kjhealy") + 
-  theme_minimal()
-  
-```
-
-### Google Mobility Reports
-These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential. Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area. These datasets show how visits and length of stay at different places change compared to a baseline. Changes for each day are compared to a baseline value for that day of the week:
-
-- The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.
-- The datasets show trends over several months.
-- What data is included in the calculation depends on user settings, connectivity, and whether it meets Google's privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day. 
-
-```{r google-example, fig.height=12, fig.width=10, dpi=300}
-google_mobility %>% 
-  filter(country_region_code == "US", !is.na(sub_region_1), is.na(sub_region_2)) %>%
-  mutate(type = tools::toTitleCase(type)) %>%
-  ggplot(mapping = aes(x = date, y = pct_diff, 
-                       group = sub_region_1)) + 
-  geom_line(size = 0.5, color = "gray80") + 
-  geom_smooth(aes(color = type, group = 1), se = FALSE) + 
-  facet_wrap(~ type, ncol = 2) + 
-  labs(x = "Date", y = "Percent Change from Baseline", title = "Relative Trends in Mobility for Kinds of Location in the US, by State", 
-                              subtitle = "Data are relative to median activity between Jan 3rd and Feb 6th",
-       color = "Location Type", 
-       caption = "Data: Google. Graph: @kjhealy") + 
-  theme_minimal() + 
-  theme(legend.position = "top", 
-        strip.text = element_text(size = rel(1.3)))
-  
-```
-
-
-### CoronaNet Research Project Data
-
-The [CoronaNet Research Project](https://coronanet-project.org/index.html) tracks policy responses to the COVID-19 pandemic. This includes not only gathering information about which governments are responding to the coronavirus, but who they are targeting the policies toward (e.g. other countries), how they are doing it (e.g. travel restrictions, banning exports of masks) and when they are doing it. The effort of more than 220 political, social and public health science scholars from all over the world, the data included here are the initial, beta release of a large hand-coded dataset of more than 10,000 separate policy announcements from governments around the world visible since December 31st 2019. The data yields detailed information on 
-
-- The level of government responding to the corona virus crisis (e.g. national, regional/state, local/municipal)
-- Specific actions taken (e.g. travel bans, investments in the public health sector, etc.)
-- Geographical areas targeted by these measures
-- Who or what they are targeting (e.g. foreigners, ventilators)
-- Compliance mechanisms (e.g. mandatory or voluntary)
-- Timing of policy responses.
-
-To cite this dataset: 
-
-Cheng, Cindy, Joan Barcelo, Allison Hartnett, Robert Kubinec, and Luca Messerschmidt. 2020. “Coronanet: A Dyadic Dataset of Government Responses to the COVID-19 Pandemic.” BETAVersion 1.0. https://www.coronanet-project.org.
-
-
-```{r coronanet}
-coronanet
-```
+To learn more about the different datasets available, consult the vignettes or, equivalently, the [articles on the package website](https://kjhealy.github.io/covata/articles). 
 
 ### Citing the `covdata` package
 
@@ -362,7 +112,7 @@ To cite the package use the following:
 citation("covdata")
 ```
 
-Please be sure to also cite the specific data sources, as described in the help page for each dataset. 
+Please be sure to also cite the specific data sources, as described in the documentation for each dataset. 
 
 
 Mask icon in hex logo by [Freepik](https://www.flaticon.com/authors/freepik).
