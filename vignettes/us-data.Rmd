@@ -67,7 +67,7 @@ covus %>%
   scale_x_date(date_breaks = "3 days", date_labels = "%b %e" ) + 
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
-                     breaks = 2^c(seq(1, 17, 1))) +
+                     breaks = 2^c(seq(1, 18, 1))) +
   guides(color = FALSE) + 
   labs(title = "COVID-19 Cumulative Recorded Cases by US State",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y")),
