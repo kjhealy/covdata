@@ -102,7 +102,7 @@ covus %>%
 ```
 
 
-To learn more about the different datasets available, consult the vignettes or, equivalently, the [articles on the package website](https://kjhealy.github.io/covata/articles). 
+To learn more about the different datasets available, consult the vignettes or, equivalently, the [articles on the package website](https://kjhealy.github.io/covdata/articles/index.html). 
 
 ### Citing the `covdata` package
 

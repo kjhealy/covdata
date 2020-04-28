@@ -36,12 +36,6 @@ articles:
   - mobility-data
   - coronanet-data
 
-- title: Developer
-  desc: Vignettes aimed at package developers
-  contents:
-  - programming
-  - packages
-
 navbar:
   right:
    - icon: fa-github
