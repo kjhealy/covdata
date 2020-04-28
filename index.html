@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6.9000</span>
       </span>
     </div>
 
@@ -45,6 +45,31 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/ecdc-data.html">The ECDC Data</a>
+    </li>
+    <li>
+      <a href="articles/us-data.html">Case and Mortality Data for the United States</a>
+    </li>
+    <li>
+      <a href="articles/mobility-data.html">Mobility Data from Apple and Google</a>
+    </li>
+    <li>
+      <a href="articles/coronanet-data.html">CoronaNet Data</a>
+    </li>
+    <li class="divider">
+    <li>
+      <a href="articles/index.html">More...</a>
+    </li>
+  </ul>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -84,7 +109,7 @@
 <li>Data from the <a href="https://coronanet-project.org">CoronaNet Research Project</a>, providing event-based tracking of governmental policy responses to the corona virus.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
-<p>Data are current through Monday, April 27, 2020.</p>
+<p>Data are current through Tuesday, April 28, 2020.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -118,14 +143,11 @@
 <div id="loading-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#loading-the-data" class="anchor"></a>Loading the Data</h2>
-<div id="country-level-data-from-the-ecdc" class="section level3">
-<h3 class="hasAnchor">
-<a href="#country-level-data-from-the-ecdc" class="anchor"></a>Country-Level Data from the ECDC</h3>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
+<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>) <span class="co"># Optional but strongly recommended</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
 
 <span class="no">covnat</span>
-<span class="co">#&gt; # A tibble: 13,354 x 8</span>
+<span class="co">#&gt; # A tibble: 13,559 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [206]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
@@ -139,377 +161,37 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
-<span class="co">#&gt; # … with 13,344 more rows</span></pre></div>
-</div>
-<div id="draw-a-log-linear-graph-of-cumulative-reported-cases" class="section level3">
-<h3 class="hasAnchor">
-<a href="#draw-a-log-linear-graph-of-cumulative-reported-cases" class="anchor"></a>Draw a log-linear graph of cumulative reported cases</h3>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="co">## Libraries for the graphs</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggrepel</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">paletteer</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">prismatic</span>)
-
-<span class="co">## Convenince "Not in" operator</span>
-<span class="st">"%nin%"</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">y</span>) {
-  <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>( !(<span class="no">x</span> <span class="kw">%in%</span> <span class="no">y</span>) )
-}
-
-
-<span class="co">## Countries to highlight</span>
-<span class="no">focus_cn</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"CHN"</span>, <span class="st">"DEU"</span>, <span class="st">"GBR"</span>, <span class="st">"USA"</span>, <span class="st">"IRN"</span>, <span class="st">"JPN"</span>,
-              <span class="st">"KOR"</span>, <span class="st">"ITA"</span>, <span class="st">"FRA"</span>, <span class="st">"ESP"</span>, <span class="st">"CHE"</span>, <span class="st">"TUR"</span>)
-
-<span class="co">## Colors</span>
-<span class="no">cgroup_cols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu">clr_darken</span>(<span class="fu">paletteer_d</span>(<span class="st">"ggsci::category20_d3"</span>), <span class="fl">0.2</span>)[<span class="fl">1</span>:<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">focus_cn</span>)], <span class="st">"gray70"</span>)
-
-<span class="no">covnat</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">cu_cases</span> <span class="kw">&gt;</span> <span class="fl">99</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">days_elapsed</span> <span class="kw">=</span> <span class="no">date</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">date</span>),
-        <span class="kw">end_label</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="no">date</span> <span class="kw">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">date</span>), <span class="no">cname</span>, <span class="fl">NA</span>),
-        <span class="kw">end_label</span> <span class="kw">=</span> <span class="fu">recode</span>(<span class="no">end_label</span>, <span class="kw">`United States`</span> <span class="kw">=</span> <span class="st">"USA"</span>,
-                            <span class="kw">`Iran, Islamic Republic of`</span> <span class="kw">=</span> <span class="st">"Iran"</span>,
-                            <span class="kw">`Korea, Republic of`</span> <span class="kw">=</span> <span class="st">"South Korea"</span>,
-                            <span class="kw">`United Kingdom`</span> <span class="kw">=</span> <span class="st">"UK"</span>),
-         <span class="kw">cname</span> <span class="kw">=</span> <span class="fu">recode</span>(<span class="no">cname</span>, <span class="kw">`United States`</span> <span class="kw">=</span> <span class="st">"USA"</span>,
-                        <span class="kw">`Iran, Islamic Republic of`</span> <span class="kw">=</span> <span class="st">"Iran"</span>,
-                        <span class="kw">`Korea, Republic of`</span> <span class="kw">=</span> <span class="st">"South Korea"</span>,
-                        <span class="kw">`United Kingdom`</span> <span class="kw">=</span> <span class="st">"UK"</span>),
-         <span class="kw">end_label</span> <span class="kw">=</span> <span class="fu">case_when</span>(<span class="no">iso3</span> <span class="kw">%in%</span> <span class="no">focus_cn</span> ~ <span class="no">end_label</span>,
-                               <span class="fl">TRUE</span> ~ <span class="fl">NA_character_</span>),
-         <span class="kw">cgroup</span> <span class="kw">=</span> <span class="fu">case_when</span>(<span class="no">iso3</span> <span class="kw">%in%</span> <span class="no">focus_cn</span> ~ <span class="no">iso3</span>,
-                            <span class="fl">TRUE</span> ~ <span class="st">"ZZOTHER"</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">days_elapsed</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">cu_cases</span>,
-         <span class="kw">color</span> <span class="kw">=</span> <span class="no">cgroup</span>, <span class="kw">label</span> <span class="kw">=</span> <span class="no">end_label</span>,
-         <span class="kw">group</span> <span class="kw">=</span> <span class="no">cname</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>) +
-  <span class="fu">geom_text_repel</span>(<span class="kw">nudge_x</span> <span class="kw">=</span> <span class="fl">0.75</span>,
-                  <span class="kw">segment.color</span> <span class="kw">=</span> <span class="fl">NA</span>) +
-  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">scale_color_manual</span>(<span class="kw">values</span> <span class="kw">=</span> <span class="no">cgroup_cols</span>) +
-  <span class="fu">scale_y_continuous</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu">comma_format</span>(<span class="kw">accuracy</span> <span class="kw">=</span> <span class="fl">1</span>),
-                     <span class="kw">breaks</span> <span class="kw">=</span> <span class="fl">2</span>^<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">4</span>, <span class="fl">19</span>, <span class="fl">1</span>),
-                     <span class="kw">trans</span> <span class="kw">=</span> <span class="st">"log2"</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Days Since 100th Confirmed Case"</span>,
-       <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Cumulative Number of Reported Cases (log2 scale)"</span>,
-       <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Cumulative Reported Cases of COVID-19, Selected Countries"</span>,
-       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covnat</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) +
-  <span class="fu">theme_minimal</span>()
-<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Removed 5055 rows containing missing values (geom_text_repel).</span></pre></div>
-<p><img src="reference/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%"></p>
-</div>
-<div id="state-level-data-from-the-covid-tracking-project" class="section level3">
-<h3 class="hasAnchor">
-<a href="#state-level-data-from-the-covid-tracking-project" class="anchor"></a>State-Level Data from the COVID Tracking Project</h3>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span>
-<span class="co">#&gt; # A tibble: 52,722 x 5</span>
-<span class="co">#&gt;    date       state fips  measure                  count</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-04-26 AK    02    positive                   341</span>
-<span class="co">#&gt;  2 2020-04-26 AK    02    negative                 15836</span>
-<span class="co">#&gt;  3 2020-04-26 AK    02    pending                     NA</span>
-<span class="co">#&gt;  4 2020-04-26 AK    02    hospitalized_currently      14</span>
-<span class="co">#&gt;  5 2020-04-26 AK    02    hospitalized_cumulative     NA</span>
-<span class="co">#&gt;  6 2020-04-26 AK    02    in_icu_currently            NA</span>
-<span class="co">#&gt;  7 2020-04-26 AK    02    in_icu_cumulative           NA</span>
-<span class="co">#&gt;  8 2020-04-26 AK    02    on_ventilator_currently     NA</span>
-<span class="co">#&gt;  9 2020-04-26 AK    02    on_ventilator_cumulative    NA</span>
-<span class="co">#&gt; 10 2020-04-26 AK    02    recovered                  217</span>
-<span class="co">#&gt; # … with 52,712 more rows</span></pre></div>
-</div>
-<div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases" class="section level3">
-<h3 class="hasAnchor">
-<a href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases" class="anchor"></a>Draw a log-linear graph of cumulative reported US cases</h3>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
-<span class="no">top_n_states</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">data</span>, <span class="no">n</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="no">measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
-  <span class="no">meas</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span>(<span class="no">measure</span>)
-  <span class="no">data</span> <span class="kw">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="no">state</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="no">meas</span>, <span class="no">date</span> <span class="kw">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">date</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">drop_na</span>() <span class="kw">%&gt;%</span>
-  <span class="fu">ungroup</span>() <span class="kw">%&gt;%</span>
-  <span class="fu">top_n</span>(<span class="no">n</span>, <span class="kw">wt</span> <span class="kw">=</span> <span class="no">count</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">pull</span>(<span class="no">state</span>)
-}
-
-<span class="no">state_cols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gray70"</span>,
-                <span class="kw pkg">prismatic</span><span class="kw ns">::</span><span class="fu">clr_darken</span>(<span class="fu">paletteer_d</span>(<span class="st">"ggsci::category20_d3"</span>), <span class="fl">0.2</span>))
-
-<span class="no">covus</span> <span class="kw">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="no">state</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">core</span> <span class="kw">=</span> <span class="fu">case_when</span>(<span class="no">state</span> <span class="kw">%nin%</span> <span class="fu">top_n_states</span>(<span class="no">covus</span>) ~ <span class="st">""</span>,
-                          <span class="fl">TRUE</span> ~ <span class="no">state</span>),
-         <span class="kw">end_label</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="no">date</span> <span class="kw">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">date</span>), <span class="no">core</span>, <span class="fl">NA</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">arrange</span>(<span class="no">date</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"positive"</span>, <span class="no">date</span> <span class="kw">&gt;</span> <span class="st">"2020-03-09"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">count</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">state</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="no">core</span>, <span class="kw">label</span> <span class="kw">=</span> <span class="no">end_label</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>) +
-  <span class="fu">geom_text_repel</span>(<span class="kw">segment.color</span> <span class="kw">=</span> <span class="fl">NA</span>, <span class="kw">nudge_x</span> <span class="kw">=</span> <span class="fl">0.2</span>, <span class="kw">nudge_y</span> <span class="kw">=</span> <span class="fl">0.1</span>) +
-  <span class="fu">scale_color_manual</span>(<span class="kw">values</span> <span class="kw">=</span> <span class="no">state_cols</span>) +
-  <span class="fu">scale_x_date</span>(<span class="kw">date_breaks</span> <span class="kw">=</span> <span class="st">"3 days"</span>, <span class="kw">date_labels</span> <span class="kw">=</span> <span class="st">"%b %e"</span> ) +
-  <span class="fu">scale_y_continuous</span>(<span class="kw">trans</span> <span class="kw">=</span> <span class="st">"log2"</span>,
-                     <span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu">comma_format</span>(<span class="kw">accuracy</span> <span class="kw">=</span> <span class="fl">1</span>),
-                     <span class="kw">breaks</span> <span class="kw">=</span> <span class="fl">2</span>^<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">1</span>, <span class="fl">17</span>, <span class="fl">1</span>))) +
-  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">coord_equal</span>() +
-  <span class="fu">labs</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US State"</span>,
-       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covus</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       <span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Count of Cases (log 2 scale)"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy"</span>) +
-  <span class="fu">theme_minimal</span>()
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
-
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
-<span class="co">#&gt; Warning: Removed 15 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 2600 rows containing missing values (geom_text_repel).</span></pre></div>
-<p><img src="reference/figures/README-us-example-1.png" title="plot of chunk us-example" alt="plot of chunk us-example" width="100%"></p>
-</div>
-<div id="state-level-and-county-level-cumulative-data-from-the-new-york-times" class="section level3">
-<h3 class="hasAnchor">
-<a href="#state-level-and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>State-Level and County-Level (Cumulative) Data from the <em>New York Times</em>
-</h3>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="no">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 3,039 x 5</span>
-<span class="co">#&gt;    date       state      fips  cases deaths</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
-<span class="co">#&gt;  2 2020-01-22 Washington 53        1      0</span>
-<span class="co">#&gt;  3 2020-01-23 Washington 53        1      0</span>
-<span class="co">#&gt;  4 2020-01-24 Illinois   17        1      0</span>
-<span class="co">#&gt;  5 2020-01-24 Washington 53        1      0</span>
-<span class="co">#&gt;  6 2020-01-25 California 06        1      0</span>
-<span class="co">#&gt;  7 2020-01-25 Illinois   17        1      0</span>
-<span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
-<span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
-<span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 3,029 more rows</span></pre></div>
-<div class="sourceCode" id="cb11"><pre class="r"><span class="no">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 92,592 x 6</span>
-<span class="co">#&gt;    date       county      state      fips  cases deaths</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  2 2020-01-22 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  3 2020-01-23 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  4 2020-01-24 Cook        Illinois   17031     1      0</span>
-<span class="co">#&gt;  5 2020-01-24 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  6 2020-01-25 Orange      California 06059     1      0</span>
-<span class="co">#&gt;  7 2020-01-25 Cook        Illinois   17031     1      0</span>
-<span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
-<span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 92,582 more rows</span></pre></div>
-</div>
-<div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county" class="section level3">
-<h3 class="hasAnchor">
-<a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county</h3>
-<div class="sourceCode" id="cb12"><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
-  <span class="fu">group_by</span>(<span class="no">uniq_name</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">days_elapsed</span> <span class="kw">=</span> <span class="no">date</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">date</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">days_elapsed</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">cases</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">uniq_name</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.25</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray20"</span>) +
-  <span class="fu">scale_y_log10</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu">label_number_si</span>()) +
-  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">facet_wrap</span>(~ <span class="no">state</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">5</span>) +
-  <span class="fu">labs</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
-       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">nytcovcounty</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       <span class="kw">x</span> <span class="kw">=</span> <span class="st">"Days since first case"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span>) +
-  <span class="fu">theme_minimal</span>()
-<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></pre></div>
-<p><img src="reference/figures/README-nytplot-1.png" title="plot of chunk nytplot" alt="plot of chunk nytplot" width="100%"></p>
-</div>
-<div id="us-cdc-surveillance-network-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#us-cdc-surveillance-network-data" class="anchor"></a>US CDC Surveillance Network Data</h3>
-<p>This US Centers for Disase Control surveillance network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.</p>
-<p>Thanks to Bob Rudis’s <a href="https://github.com/hrbrmstr/cdccovidview"><code>cdccovidview</code></a> package for making these data tractable to include.</p>
-<div class="sourceCode" id="cb13"><pre class="r"><span class="no">cdc_hospitalizations</span>
-<span class="co">#&gt; # A tibble: 4,590 x 8</span>
-<span class="co">#&gt;    catchment      network   year  mmwr_year mmwr_week age_category cumulative_rate weekly_rate</span>
-<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;       &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Entire Network COVID-NET 2020  2020      10        0-4 yr                   0           0  </span>
-<span class="co">#&gt;  2 Entire Network COVID-NET 2020  2020      11        0-4 yr                   0           0  </span>
-<span class="co">#&gt;  3 Entire Network COVID-NET 2020  2020      12        0-4 yr                   0           0  </span>
-<span class="co">#&gt;  4 Entire Network COVID-NET 2020  2020      13        0-4 yr                   0.4         0.4</span>
-<span class="co">#&gt;  5 Entire Network COVID-NET 2020  2020      14        0-4 yr                   0.8         0.4</span>
-<span class="co">#&gt;  6 Entire Network COVID-NET 2020  2020      15        0-4 yr                   1.2         0.5</span>
-<span class="co">#&gt;  7 Entire Network COVID-NET 2020  2020      16        0-4 yr                   1.5         0.3</span>
-<span class="co">#&gt;  8 Entire Network COVID-NET 2020  2020      17        0-4 yr                  NA          NA  </span>
-<span class="co">#&gt;  9 Entire Network COVID-NET 2020  2020      18        0-4 yr                  NA          NA  </span>
-<span class="co">#&gt; 10 Entire Network COVID-NET 2020  2020      19        0-4 yr                  NA          NA  </span>
-<span class="co">#&gt; # … with 4,580 more rows</span>
-
-<span class="no">cdc_catchments</span>
-<span class="co">#&gt; # A tibble: 17 x 2</span>
-<span class="co">#&gt;    name      area          </span>
-<span class="co">#&gt;  * &lt;chr&gt;     &lt;chr&gt;         </span>
-<span class="co">#&gt;  1 COVID-NET Entire Network</span>
-<span class="co">#&gt;  2 EIP       California    </span>
-<span class="co">#&gt;  3 EIP       Colorado      </span>
-<span class="co">#&gt;  4 EIP       Connecticut   </span>
-<span class="co">#&gt;  5 EIP       Entire Network</span>
-<span class="co">#&gt;  6 EIP       Georgia       </span>
-<span class="co">#&gt;  7 EIP       Maryland      </span>
-<span class="co">#&gt;  8 EIP       Minnesota     </span>
-<span class="co">#&gt;  9 EIP       New Mexico    </span>
-<span class="co">#&gt; 10 EIP       New York      </span>
-<span class="co">#&gt; 11 EIP       Oregon        </span>
-<span class="co">#&gt; 12 EIP       Tennessee     </span>
-<span class="co">#&gt; 13 IHSP      Entire Network</span>
-<span class="co">#&gt; 14 IHSP      Iowa          </span>
-<span class="co">#&gt; 15 IHSP      Michigan      </span>
-<span class="co">#&gt; 16 IHSP      Ohio          </span>
-<span class="co">#&gt; 17 IHSP      Utah</span>
-
-<span class="no">cdc_deaths_by_state</span>
-<span class="co">#&gt; # A tibble: 54 x 13</span>
-<span class="co">#&gt;    state       covid_deaths    total_deaths    percent_expected_… pneumonia_deaths   pneumonia_and_cov… all_influenza_deat…    NA    NA    NA    NA NA    NA                                  </span>
-<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;           &lt;chr&gt;           &lt;chr&gt;              &lt;chr&gt;                           &lt;int&gt;               &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;                               </span>
-<span class="co">#&gt;  1 2020-04-27… United States   Total US        2020-02-01T00:00:… 2020-04-25T00:00:…              27674              673580  0.91 57480 12398  5668 &lt;NA&gt;  &lt;NA&gt;                                </span>
-<span class="co">#&gt;  2 2020-04-27… Alabama         Alabama         2020-02-01T00:00:… 2020-04-25T00:00:…                127               11783  0.87   735    38    82 &lt;NA&gt;  &lt;NA&gt;                                </span>
-<span class="co">#&gt;  3 2020-04-27… Alaska          Alaska          2020-02-01T00:00:… 2020-04-25T00:00:…                 NA                 789  0.73    37    NA    NA &lt;NA&gt;  One or more data cells have counts …</span>
-<span class="co">#&gt;  4 2020-04-27… Arizona         Arizona         2020-02-01T00:00:… 2020-04-25T00:00:…                193               14940  0.95  1063   101   104 &lt;NA&gt;  &lt;NA&gt;                                </span>
-<span class="co">#&gt;  5 2020-04-27… Arkansas        Arkansas        2020-02-01T00:00:… 2020-04-25T00:00:…                 19                7514  0.91   500    NA    67 &lt;NA&gt;  One or more data cells have counts …</span>
-<span class="co">#&gt;  6 2020-04-27… California      California      2020-02-01T00:00:… 2020-04-25T00:00:…                820               65913  0.93  5519   456   543 &lt;NA&gt;  &lt;NA&gt;                                </span>
-<span class="co">#&gt;  7 2020-04-27… Colorado        Colorado        2020-02-01T00:00:… 2020-04-25T00:00:…                392               10114  0.98   849   243    90 &lt;NA&gt;  &lt;NA&gt;                                </span>
-<span class="co">#&gt;  8 2020-04-27… Connecticut     Connecticut     2020-02-01T00:00:… 2020-04-25T00:00:…                 NA                 461  0.06    29     0    NA &lt;NA&gt;  One or more data cells have counts …</span>
-<span class="co">#&gt;  9 2020-04-27… Delaware        Delaware        2020-02-01T00:00:… 2020-04-25T00:00:…                 28                1958  0.81   109    14    14 &lt;NA&gt;  &lt;NA&gt;                                </span>
-<span class="co">#&gt; 10 2020-04-27… District of Co… District of Co… 2020-02-01T00:00:… 2020-04-25T00:00:…                 48                1369  0.87   153    48    NA &lt;NA&gt;  One or more data cells have counts …</span>
-<span class="co">#&gt; # … with 44 more rows</span>
-
-<span class="no">nssp_covid_er_reg</span>
-<span class="co">#&gt; # A tibble: 538 x 9</span>
-<span class="co">#&gt;     week num_fac total_ed_visits visits pct_visits visit_type region   source                 year</span>
-<span class="co">#&gt;    &lt;int&gt;   &lt;int&gt; &lt;chr&gt;            &lt;int&gt;      &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;                 &lt;int&gt;</span>
-<span class="co">#&gt;  1    41     202 130377             814    0.006   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  2    42     202 132385             912    0.00700 ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  3    43     202 131866             883    0.00700 ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  4    44     203 128256             888    0.00700 ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  5    45     203 127466             979    0.008   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  6    46     202 125306            1188    0.009   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  7    47     202 128877            1235    0.01    ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  8    48     202 124781            1451    0.012   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt;  9    49     202 125939            1362    0.011   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt; 10    50     202 130430            1405    0.011   ili        Region 1 Emergency Departments  2019</span>
-<span class="co">#&gt; # … with 528 more rows</span></pre></div>
-<div class="sourceCode" id="cb14"><pre class="r">
-<span class="no">age_f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
-  <span class="st">"0-4 yr"</span>, <span class="st">"5-17 yr"</span>, <span class="st">"18-49 yr"</span>,
-  <span class="st">"50-64 yr"</span>, <span class="st">"65+ yr"</span>, <span class="st">"65-74 yr"</span>,
-  <span class="st">"75-84 yr"</span>, <span class="st">"85+"</span>)
-
-<span class="no">cdc_hospitalizations</span> <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">start</span> <span class="kw">=</span> <span class="kw pkg">cdccovidview</span><span class="kw ns">::</span><span class="fu">mmwr_week_to_date</span>(<span class="no">mmwr_year</span>, <span class="no">mmwr_week</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(!<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">weekly_rate</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">catchment</span> <span class="kw">==</span> <span class="st">"Entire Network"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">start</span>, <span class="no">network</span>, <span class="no">age_category</span>, <span class="no">weekly_rate</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">age_category</span> <span class="kw">!=</span> <span class="st">"Overall"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">age_category</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">age_category</span>, <span class="kw">levels</span> <span class="kw">=</span> <span class="no">age_f</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>() +
-  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="no">start</span>, <span class="no">weekly_rate</span>)) +
-  <span class="fu">scale_x_date</span>(
-    <span class="kw">date_breaks</span> <span class="kw">=</span> <span class="st">"2 weeks"</span>, <span class="kw">date_labels</span> <span class="kw">=</span> <span class="st">"%b\n%d"</span>
-  ) +
-  <span class="fu">facet_grid</span>(<span class="no">network</span> ~ <span class="no">age_category</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Rates per 100,000 pop"</span>,
-    <span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-NET Weekly Rates by Network and Age Group"</span>,
-    <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Courtesy Bob Rudis's cdccovidview"</span>,
-    <span class="kw">caption</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span>(<span class="st">"Source: COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention.\n&lt;https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html&gt;; Accessed on %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span>())) +
-  <span class="fu">theme_minimal</span>()</pre></div>
-<p><img src="reference/figures/README-cdc-example-1.png" title="plot of chunk cdc-example" alt="plot of chunk cdc-example" width="100%"></p>
-</div>
-<div id="apple-mobility-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#apple-mobility-data" class="anchor"></a>Apple Mobility Data</h3>
-<p>Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
-<div class="sourceCode" id="cb15"><pre class="r"><span class="no">vec_brks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span>)
-<span class="no">vec_labs</span> <span class="kw">&lt;-</span> <span class="no">vec_brks</span> + <span class="fl">100</span>
-
-<span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">geo_type</span> <span class="kw">==</span> <span class="st">"city"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"driving"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">over_under</span> <span class="kw">=</span> <span class="no">index</span> <span class="kw">&lt;</span> <span class="fl">100</span>,
-         <span class="kw">index</span> <span class="kw">=</span> <span class="no">index</span> - <span class="fl">100</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">index</span>,
-                       <span class="kw">group</span> <span class="kw">=</span> <span class="no">region</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="no">over_under</span>)) +
-  <span class="fu">geom_hline</span>(<span class="kw">yintercept</span> <span class="kw">=</span> <span class="fl">0</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray40"</span>) +
-  <span class="fu">geom_col</span>() +
-  <span class="fu">scale_y_continuous</span>(<span class="kw">breaks</span> <span class="kw">=</span> <span class="no">vec_brks</span>, <span class="kw">labels</span> <span class="kw">=</span> <span class="no">vec_labs</span>) +
-  <span class="fu">scale_color_manual</span>(<span class="kw">values</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"firebrick"</span>, <span class="st">"steelblue"</span>)) +
-  <span class="fu">facet_wrap</span>(~ <span class="no">region</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">8</span>) +
-  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Relative Mobility"</span>, <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Relative Trends in Apple Maps Usage for Driving, Selected Cities"</span>,
-                              <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Data are indexed to 100 for each city's usage on January 13th 2020"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: Apple. Graph: @kjhealy"</span>) +
-  <span class="fu">theme_minimal</span>()</pre></div>
-<p><img src="reference/figures/README-apple-example-1.png" title="plot of chunk apple-example" alt="plot of chunk apple-example" width="100%"></p>
-</div>
-<div id="google-mobility-reports" class="section level3">
-<h3 class="hasAnchor">
-<a href="#google-mobility-reports" class="anchor"></a>Google Mobility Reports</h3>
-<p>These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential. Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area. These datasets show how visits and length of stay at different places change compared to a baseline. Changes for each day are compared to a baseline value for that day of the week:</p>
-<ul>
-<li>The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.</li>
-<li>The datasets show trends over several months.</li>
-<li>What data is included in the calculation depends on user settings, connectivity, and whether it meets Google’s privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day.</li>
-</ul>
-<div class="sourceCode" id="cb16"><pre class="r"><span class="no">google_mobility</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">country_region_code</span> <span class="kw">==</span> <span class="st">"US"</span>, !<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">sub_region_1</span>), <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">sub_region_2</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">type</span> <span class="kw">=</span> <span class="kw pkg">tools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/tools/toTitleCase.html">toTitleCase</a></span>(<span class="no">type</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pct_diff</span>,
-                       <span class="kw">group</span> <span class="kw">=</span> <span class="no">sub_region_1</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray80"</span>) +
-  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="no">type</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="fl">1</span>), <span class="kw">se</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">facet_wrap</span>(~ <span class="no">type</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">2</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Percent Change from Baseline"</span>, <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Relative Trends in Mobility for Kinds of Location in the US, by State"</span>,
-                              <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Data are relative to median activity between Jan 3rd and Feb 6th"</span>,
-       <span class="kw">color</span> <span class="kw">=</span> <span class="st">"Location Type"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: Google. Graph: @kjhealy"</span>) +
-  <span class="fu">theme_minimal</span>() +
-  <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"top"</span>,
-        <span class="kw">strip.text</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)))
-<span class="co">#&gt; `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'</span></pre></div>
-<p><img src="reference/figures/README-google-example-1.png" title="plot of chunk google-example" alt="plot of chunk google-example" width="100%"></p>
-</div>
-<div id="coronanet-research-project-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#coronanet-research-project-data" class="anchor"></a>CoronaNet Research Project Data</h3>
-<p>The <a href="https://coronanet-project.org/index.html">CoronaNet Research Project</a> tracks policy responses to the COVID-19 pandemic. This includes not only gathering information about which governments are responding to the coronavirus, but who they are targeting the policies toward (e.g. other countries), how they are doing it (e.g. travel restrictions, banning exports of masks) and when they are doing it. The effort of more than 220 political, social and public health science scholars from all over the world, the data included here are the initial, beta release of a large hand-coded dataset of more than 10,000 separate policy announcements from governments around the world visible since December 31st 2019. The data yields detailed information on</p>
-<ul>
-<li>The level of government responding to the corona virus crisis (e.g. national, regional/state, local/municipal)</li>
-<li>Specific actions taken (e.g. travel bans, investments in the public health sector, etc.)</li>
-<li>Geographical areas targeted by these measures</li>
-<li>Who or what they are targeting (e.g. foreigners, ventilators)</li>
-<li>Compliance mechanisms (e.g. mandatory or voluntary)</li>
-<li>Timing of policy responses.</li>
-</ul>
-<p>To cite this dataset:</p>
-<p>Cheng, Cindy, Joan Barcelo, Allison Hartnett, Robert Kubinec, and Luca Messerschmidt. 2020. “Coronanet: A Dyadic Dataset of Government Responses to the COVID-19 Pandemic.” BETAVersion 1.0. <a href="https://www.coronanet-project.org" class="uri">https://www.coronanet-project.org</a>.</p>
-<div class="sourceCode" id="cb17"><pre class="r"><span class="no">coronanet</span>
-<span class="co">#&gt; # A tibble: 10,712 x 33</span>
-<span class="co">#&gt;    record_id policy_id recorded_date       date_announced date_start date_end   entry_type event_descripti… domestic_policy type  type_sub_cat type_text index_high_est index_med_est</span>
-<span class="co">#&gt;    &lt;chr&gt;         &lt;dbl&gt; &lt;dttm&gt;              &lt;date&gt;         &lt;date&gt;     &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;          &lt;dbl&gt;         &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 1000775Be   1342691 2020-04-04 15:43:15 2020-03-14     2020-03-14 NA         update     "Chile extends …               0 Quar… Self-Quaran…        NA           48.3          47.2</span>
-<span class="co">#&gt;  2 1000775Ba   1342691 2020-04-04 15:43:15 2020-03-14     2020-03-14 NA         update     "Chile extends …               0 Quar… Quarantine …        NA           48.3          47.2</span>
-<span class="co">#&gt;  3 1003875NA   1003875 2020-04-15 11:04:50 2020-04-07     2020-04-07 NA         new_entry  "On April 7th, …               1 Othe… &lt;NA&gt;                NA           56.9          50.7</span>
-<span class="co">#&gt;  4 1004681NA   2575122 2020-04-03 08:33:25 2020-03-22     2020-03-25 NA         update     "On 22nd March,…               0 Exte… &lt;NA&gt;                NA           48.2          47.8</span>
-<span class="co">#&gt;  5 4866080NA   4866080 2020-03-30 05:21:44 2020-03-20     2020-03-21 NA         correction "Italy is enfor…               1 Soci… &lt;NA&gt;                NA           49.7          47.9</span>
-<span class="co">#&gt;  6 1011795NA   4951252 2020-04-03 03:29:36 2020-03-08     2020-03-08 NA         update     "On March 08, 2…               1 Othe… &lt;NA&gt;                NA           47.4          46.8</span>
-<span class="co">#&gt;  7 1012765NA   1012765 2020-04-05 07:35:13 2020-04-04     2020-04-04 NA         new_entry  "On April 4, th…               1 Heal… &lt;NA&gt;                NA           49.4          48.7</span>
-<span class="co">#&gt;  8 1014171NA   1014171 2020-04-01 07:31:20 2020-02-10     2020-02-10 NA         new_entry  "On February 10…               1 Publ… &lt;NA&gt;                NA           48.3          46.6</span>
-<span class="co">#&gt;  9 1014978NA   1014978 2020-04-05 09:34:00 2020-03-30     2020-03-31 NA         new_entry  "Georgia banned…               1 Rest… &lt;NA&gt;                NA           47.8          46.9</span>
-<span class="co">#&gt; 10 1017233NA   1017233 2020-04-04 06:44:27 2020-03-29     2020-03-29 NA         new_entry  "On the 29 Marc…               1 Rest… &lt;NA&gt;                NA           48.5          47.5</span>
-<span class="co">#&gt; # … with 10,702 more rows, and 19 more variables: index_low_est &lt;dbl&gt;, index_country_rank &lt;dbl&gt;, country &lt;chr&gt;, init_country_level &lt;chr&gt;, province &lt;chr&gt;, target_country &lt;chr&gt;,</span>
-<span class="co">#&gt; #   target_geog_level &lt;chr&gt;, target_region &lt;chr&gt;, target_province &lt;chr&gt;, target_city &lt;chr&gt;, target_other &lt;lgl&gt;, target_who_what &lt;chr&gt;, target_direction &lt;chr&gt;, travel_mechanism &lt;chr&gt;,</span>
-<span class="co">#&gt; #   compliance &lt;chr&gt;, enforcer &lt;chr&gt;, link &lt;chr&gt;, iso3 &lt;chr&gt;, iso2 &lt;chr&gt;</span></pre></div>
-</div>
+<span class="co">#&gt; # … with 13,549 more rows</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"New York City"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"walking"</span>)
+<span class="co">#&gt; # A tibble: 105 x 6</span>
+<span class="co">#&gt;    geo_type region        transportation_type alternative_name date       index</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;date&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 city     New York City walking             NYC              2020-01-13 100  </span>
+<span class="co">#&gt;  2 city     New York City walking             NYC              2020-01-14  96.1</span>
+<span class="co">#&gt;  3 city     New York City walking             NYC              2020-01-15 106. </span>
+<span class="co">#&gt;  4 city     New York City walking             NYC              2020-01-16 102. </span>
+<span class="co">#&gt;  5 city     New York City walking             NYC              2020-01-17 117. </span>
+<span class="co">#&gt;  6 city     New York City walking             NYC              2020-01-18 115. </span>
+<span class="co">#&gt;  7 city     New York City walking             NYC              2020-01-19 110. </span>
+<span class="co">#&gt;  8 city     New York City walking             NYC              2020-01-20  88.6</span>
+<span class="co">#&gt;  9 city     New York City walking             NYC              2020-01-21  91.1</span>
+<span class="co">#&gt; 10 city     New York City walking             NYC              2020-01-22  98.5</span>
+<span class="co">#&gt; # … with 95 more rows</span></pre></div>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"positive"</span>,
+         <span class="no">date</span> <span class="kw">==</span> <span class="st">"2020-04-27"</span>,
+         <span class="no">state</span> <span class="kw">==</span> <span class="st">"NJ"</span>)
+<span class="co">#&gt; # A tibble: 1 x 5</span>
+<span class="co">#&gt;   date       state fips  measure   count</span>
+<span class="co">#&gt;   &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 2020-04-27 NJ    34    positive 111188</span></pre></div>
+<p>To learn more about the different datasets available, consult the vignettes or, equivalently, the <a href="https://kjhealy.github.io/covata/articles">articles on the package website</a>.</p>
 <div id="citing-the-covdata-package" class="section level3">
 <h3 class="hasAnchor">
 <a href="#citing-the-covdata-package" class="anchor"></a>Citing the <code>covdata</code> package</h3>
 <p>To cite the package use the following:</p>
-<div class="sourceCode" id="cb18"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
+<div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
@@ -524,7 +206,7 @@
 <span class="co">#&gt;     note = {R package version 0.1.0},</span>
 <span class="co">#&gt;     url = {http://kjhealy.github.io/covdata},</span>
 <span class="co">#&gt;   }</span></pre></div>
-<p>Please be sure to also cite the specific data sources, as described in the help page for each dataset.</p>
+<p>Please be sure to also cite the specific data sources, as described in the documentation for each dataset.</p>
 <p>Mask icon in hex logo by <a href="https://www.flaticon.com/authors/freepik">Freepik</a>.</p>
 </div>
 </div>

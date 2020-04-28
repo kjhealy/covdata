@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Citation and Authors • covdata</title>
+<title>Articles • covdata</title>
 
 
 <!-- jquery -->
@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
-<link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script>
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -33,13 +33,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Citation and Authors" />
+<meta property="og:title" content="Articles" />
 
 
 
@@ -58,7 +58,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-citation-authors">
+    <div class="container template-article-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -70,7 +70,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">covdata</a>
+        <a class="navbar-link" href="../index.html">covdata</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6.9000</span>
       </span>
     </div>
@@ -78,13 +78,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -94,20 +94,20 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/ecdc-data.html">The ECDC Data</a>
+      <a href="../articles/ecdc-data.html">The ECDC Data</a>
     </li>
     <li>
-      <a href="articles/us-data.html">Case and Mortality Data for the United States</a>
+      <a href="../articles/us-data.html">Case and Mortality Data for the United States</a>
     </li>
     <li>
-      <a href="articles/mobility-data.html">Mobility Data from Apple and Google</a>
+      <a href="../articles/mobility-data.html">Mobility Data from Apple and Google</a>
     </li>
     <li>
-      <a href="articles/coronanet-data.html">CoronaNet Data</a>
+      <a href="../articles/coronanet-data.html">CoronaNet Data</a>
     </li>
     <li class="divider"></li>
     <li>
-      <a href="articles/index.html">More...</a>
+      <a href="../articles/index.html">More...</a>
     </li>
   </ul>
 </li>
@@ -130,36 +130,35 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Citation</h1>
-      <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/inst/CITATION'><code>inst/CITATION</code></a></small>
+      <h1>Articles</h1>
     </div>
 
-    <p>Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.</p>
-    <pre>@Manual{,
-  title = {covdata: COVID-19 Case and Mortality Time Series},
-  author = {Kieran Healy},
-  year = {2020},
-  note = {R package version 0.1.0},
-  url = {http://kjhealy.github.io/covdata},
-}</pre>
+    <div class="section ">
+      <h3>Datasets</h3>
+      <p class="section-desc"></p>
 
-    <div class="page-header">
-      <h1>Authors</h1>
+      <dl>
+        <dt><a href="ecdc-data.html">The ECDC Data</a></dt>
+        <dd></dt>
+        <dt><a href="us-data.html">Case and Mortality Data for the United States</a></dt>
+        <dd></dt>
+        <dt><a href="mobility-data.html">Mobility Data from Apple and Google</a></dt>
+        <dd></dt>
+        <dt><a href="coronanet-data.html">CoronaNet Data</a></dt>
+        <dd></dt>
+      </dl>
     </div>
+    <div class="section ">
+      <h3>Developer</h3>
+      <p class="section-desc"><p>Vignettes aimed at package developers</p></p>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong><a href='http://kieranhealy.org'>Kieran Healy</a></strong>. Author, maintainer. <a href='https://orcid.org/https://orcid.org/0000-0001-9114-981X' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
-        </p>
-      </li>
-    </ul>
-
+      <dl>
+      </dl>
+    </div>
   </div>
-
 </div>
-
 
 
       <footer>
