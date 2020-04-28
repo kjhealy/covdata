@@ -43,7 +43,7 @@ for(i in 1:5){
   geom_col() + 
   scale_y_continuous(breaks = vec_brks, labels = vec_labs) + 
   scale_color_manual(values = c("firebrick", "steelblue")) +
-  facet_wrap_paginate(~ region, nrow = 6, ncol = 5, page = i) + 
+  facet_wrap_paginate(~ region, nrow = 5, ncol = 6, page = i) + 
   guides(color = FALSE) + 
   labs(x = "Date", y = "Relative Mobility", title = "Relative Trends in Apple Maps Usage for Driving, Selected Cities", 
                               subtitle = "Data are indexed to 100 for each city's usage on January 13th 2020", 
