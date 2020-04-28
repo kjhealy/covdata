@@ -34,8 +34,14 @@ articles:
   - ecdc-data
   - us-data
   - mobility-data
+  - new-york-times
   - coronanet-data
 
+- title: Other Material
+  desc: Other COVID-19 Data Resources
+  contents:
+  - platforms
+  
 navbar:
   right:
    - icon: fa-github
