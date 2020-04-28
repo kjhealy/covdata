@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(covdata)
+library(tidyverse)
 ```
 
 ## National, State- and County-Level (Cumulative) Data from the _New York Times_
