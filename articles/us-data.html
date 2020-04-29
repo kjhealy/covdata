@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7.9000</span>
       </span>
     </div>
 
@@ -126,20 +126,20 @@
 <h2 class="hasAnchor">
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">covus</span>
-<span class="co">#&gt; # A tibble: 53,730 x 5</span>
+<span class="co">#&gt; # A tibble: 54,738 x 5</span>
 <span class="co">#&gt;    date       state fips  measure                  count</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-04-27 AK    02    positive                   345</span>
-<span class="co">#&gt;  2 2020-04-27 AK    02    negative                 15911</span>
-<span class="co">#&gt;  3 2020-04-27 AK    02    pending                     NA</span>
-<span class="co">#&gt;  4 2020-04-27 AK    02    hospitalized_currently      10</span>
-<span class="co">#&gt;  5 2020-04-27 AK    02    hospitalized_cumulative     NA</span>
-<span class="co">#&gt;  6 2020-04-27 AK    02    in_icu_currently            NA</span>
-<span class="co">#&gt;  7 2020-04-27 AK    02    in_icu_cumulative           NA</span>
-<span class="co">#&gt;  8 2020-04-27 AK    02    on_ventilator_currently     NA</span>
-<span class="co">#&gt;  9 2020-04-27 AK    02    on_ventilator_cumulative    NA</span>
-<span class="co">#&gt; 10 2020-04-27 AK    02    recovered                  218</span>
-<span class="co">#&gt; # … with 53,720 more rows</span></pre></body></html></div>
+<span class="co">#&gt;  1 2020-04-28 AK    02    positive                   351</span>
+<span class="co">#&gt;  2 2020-04-28 AK    02    negative                 16738</span>
+<span class="co">#&gt;  3 2020-04-28 AK    02    pending                     NA</span>
+<span class="co">#&gt;  4 2020-04-28 AK    02    hospitalized_currently      16</span>
+<span class="co">#&gt;  5 2020-04-28 AK    02    hospitalized_cumulative     NA</span>
+<span class="co">#&gt;  6 2020-04-28 AK    02    in_icu_currently            NA</span>
+<span class="co">#&gt;  7 2020-04-28 AK    02    in_icu_cumulative           NA</span>
+<span class="co">#&gt;  8 2020-04-28 AK    02    on_ventilator_currently     NA</span>
+<span class="co">#&gt;  9 2020-04-28 AK    02    on_ventilator_cumulative    NA</span>
+<span class="co">#&gt; 10 2020-04-28 AK    02    recovered                  228</span>
+<span class="co">#&gt; # … with 54,728 more rows</span></pre></body></html></div>
 <p>Draw a log-linear graph of cumulative reported US cases.</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
 <span class="no">top_n_states</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">data</span>, <span class="no">n</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="no">measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
@@ -183,15 +183,30 @@
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 15 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 2656 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
+<span class="co">#&gt; Warning: Removed 2712 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1000"></p>
+<p>Draw a graph of cumulative reported US deaths, aggregated to the national level</p>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"death"</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">group_by</span>(<span class="no">date</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">summarize</span>(<span class="kw">count</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">count</span>, <span class="kw">na.rm</span> <span class="kw">=</span> <span class="fl">TRUE</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">count</span>)) +
+  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.75</span>) +
+  <span class="fu">scale_x_date</span>(<span class="kw">date_breaks</span> <span class="kw">=</span> <span class="st">"1 week"</span>, <span class="kw">date_labels</span> <span class="kw">=</span> <span class="st">"%b %e"</span> ) +
+  <span class="fu">scale_y_continuous</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="no"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>) +
+  <span class="fu">labs</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
+       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covus</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>), <span class="st">"Recorded counts underestimate total mortality."</span>),
+       <span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Count of Deaths"</span>,
+       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy"</span>) +
+  <span class="fu">theme_minimal</span>()</pre></body></html></div>
+<p><img src="us-data_files/figure-html/us-example-2-1.png" width="1000"></p>
 </div>
 <div id="state-level-and-county-level-cumulative-data-from-the-new-york-times" class="section level2">
 <h2 class="hasAnchor">
 <a href="#state-level-and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>State-Level and County-Level (Cumulative) Data from the <em>New York Times</em>
 </h2>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 3,094 x 5</span>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">nytcovstate</span>
+<span class="co">#&gt; # A tibble: 3,149 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -204,9 +219,9 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 3,084 more rows</span></pre></body></html></div>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 95,420 x 6</span>
+<span class="co">#&gt; # … with 3,139 more rows</span></pre></body></html></div>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">nytcovcounty</span>
+<span class="co">#&gt; # A tibble: 98,262 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -219,9 +234,9 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 95,410 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 98,252 more rows</span></pre></body></html></div>
 <p>Draw a log-linear graph of cumulative US cases by county.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
   <span class="fu">group_by</span>(<span class="no">uniq_name</span>) <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">days_elapsed</span> <span class="kw">=</span> <span class="no">date</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">date</span>)) <span class="kw">%&gt;%</span>
@@ -244,7 +259,7 @@
 <a href="#us-cdc-surveillance-network-data" class="anchor"></a>US CDC Surveillance Network Data</h2>
 <p>This US Centers for Disase Control surveillance network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.</p>
 <p>Thanks to Bob Rudis’s <a href="https://github.com/hrbrmstr/cdccovidview"><code>cdccovidview</code></a> package for making these data tractable to include.</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">cdc_hospitalizations</span>
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">cdc_hospitalizations</span>
 <span class="co">#&gt; # A tibble: 4,590 x 8</span>
 <span class="co">#&gt;    catchment network year  mmwr_year mmwr_week age_category cumulative_rate</span>
 <span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;</span>
@@ -316,7 +331,7 @@
 <span class="co">#&gt; 10    50     202 130430            1405    0.011   ili        Regio… Emerg…</span>
 <span class="co">#&gt; # … with 528 more rows, and 1 more variable: year &lt;int&gt;</span></pre></body></html></div>
 <p>Summary view of CDC Surveillance Network Data</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r">
+<div class="sourceCode" id="cb9"><html><body><pre class="r">
 <span class="no">age_f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
   <span class="st">"0-4 yr"</span>, <span class="st">"5-17 yr"</span>, <span class="st">"18-49 yr"</span>,
   <span class="st">"50-64 yr"</span>, <span class="st">"65+ yr"</span>, <span class="st">"65-74 yr"</span>,
@@ -359,7 +374,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

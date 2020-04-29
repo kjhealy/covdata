@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7.9000</span>
       </span>
     </div>
 
@@ -120,7 +120,7 @@
 <a href="#national-state--and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>National, State- and County-Level (Cumulative) Data from the <em>New York Times</em>
 </h2>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">nytcovus</span>
-<span class="co">#&gt; # A tibble: 98 x 3</span>
+<span class="co">#&gt; # A tibble: 99 x 3</span>
 <span class="co">#&gt;    date       cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21     1      0</span>
@@ -133,9 +133,9 @@
 <span class="co">#&gt;  8 2020-01-28     5      0</span>
 <span class="co">#&gt;  9 2020-01-29     5      0</span>
 <span class="co">#&gt; 10 2020-01-30     6      0</span>
-<span class="co">#&gt; # … with 88 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 89 more rows</span></pre></body></html></div>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 3,094 x 5</span>
+<span class="co">#&gt; # A tibble: 3,149 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -148,9 +148,9 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 3,084 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 3,139 more rows</span></pre></body></html></div>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 95,420 x 6</span>
+<span class="co">#&gt; # A tibble: 98,262 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -163,7 +163,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 95,410 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 98,252 more rows</span></pre></body></html></div>
 <p>Draw a log-linear graph of cumulative US cases by county.</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
@@ -200,7 +200,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
