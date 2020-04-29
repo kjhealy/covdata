@@ -126,20 +126,20 @@
 <h2 class="hasAnchor">
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">covus</span>
-<span class="co">#&gt; # A tibble: 54,738 x 5</span>
+<span class="co">#&gt; # A tibble: 55,746 x 5</span>
 <span class="co">#&gt;    date       state fips  measure                  count</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-04-28 AK    02    positive                   351</span>
-<span class="co">#&gt;  2 2020-04-28 AK    02    negative                 16738</span>
-<span class="co">#&gt;  3 2020-04-28 AK    02    pending                     NA</span>
-<span class="co">#&gt;  4 2020-04-28 AK    02    hospitalized_currently      16</span>
-<span class="co">#&gt;  5 2020-04-28 AK    02    hospitalized_cumulative     NA</span>
-<span class="co">#&gt;  6 2020-04-28 AK    02    in_icu_currently            NA</span>
-<span class="co">#&gt;  7 2020-04-28 AK    02    in_icu_cumulative           NA</span>
-<span class="co">#&gt;  8 2020-04-28 AK    02    on_ventilator_currently     NA</span>
-<span class="co">#&gt;  9 2020-04-28 AK    02    on_ventilator_cumulative    NA</span>
-<span class="co">#&gt; 10 2020-04-28 AK    02    recovered                  228</span>
-<span class="co">#&gt; # … with 54,728 more rows</span></pre></body></html></div>
+<span class="co">#&gt;  1 2020-04-29 AK    02    positive                   355</span>
+<span class="co">#&gt;  2 2020-04-29 AK    02    negative                 18764</span>
+<span class="co">#&gt;  3 2020-04-29 AK    02    pending                     NA</span>
+<span class="co">#&gt;  4 2020-04-29 AK    02    hospitalized_currently      14</span>
+<span class="co">#&gt;  5 2020-04-29 AK    02    hospitalized_cumulative     NA</span>
+<span class="co">#&gt;  6 2020-04-29 AK    02    in_icu_currently            NA</span>
+<span class="co">#&gt;  7 2020-04-29 AK    02    in_icu_cumulative           NA</span>
+<span class="co">#&gt;  8 2020-04-29 AK    02    on_ventilator_currently     NA</span>
+<span class="co">#&gt;  9 2020-04-29 AK    02    on_ventilator_cumulative    NA</span>
+<span class="co">#&gt; 10 2020-04-29 AK    02    recovered                  240</span>
+<span class="co">#&gt; # … with 55,736 more rows</span></pre></body></html></div>
 <p>Draw a log-linear graph of cumulative reported US cases.</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
 <span class="no">top_n_states</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">data</span>, <span class="no">n</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="no">measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
@@ -183,7 +183,7 @@
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 15 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 2712 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
+<span class="co">#&gt; Warning: Removed 2768 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1000"></p>
 <p>Draw a graph of cumulative reported US deaths, aggregated to the national level</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
@@ -193,7 +193,7 @@
   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">count</span>)) +
   <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.75</span>) +
   <span class="fu">scale_x_date</span>(<span class="kw">date_breaks</span> <span class="kw">=</span> <span class="st">"1 week"</span>, <span class="kw">date_labels</span> <span class="kw">=</span> <span class="st">"%b %e"</span> ) +
-  <span class="fu">scale_y_continuous</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="no"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>) +
+  <span class="fu">scale_y_continuous</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="no"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, <span class="kw">breaks</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">60000</span>, <span class="fl">10000</span>)) +
   <span class="fu">labs</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
        <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covus</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>), <span class="st">"Recorded counts underestimate total mortality."</span>),
        <span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Count of Deaths"</span>,
