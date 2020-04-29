@@ -86,7 +86,7 @@ covus %>%
   ggplot(aes(x = date, y = count)) + 
   geom_line(size = 0.75) + 
   scale_x_date(date_breaks = "1 week", date_labels = "%b %e" ) + 
-  scale_y_continuous(labels = scales::comma) + 
+  scale_y_continuous(labels = scales::comma, breaks = seq(0, 60000, 10000)) + 
   labs(title = "COVID-19 Cumulative Recorded Deaths in the United States",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y"), "Recorded counts underestimate total mortality."),
        x = "Date", y = "Count of Deaths", 

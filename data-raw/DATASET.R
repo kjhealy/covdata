@@ -394,7 +394,7 @@ countries <- covnat %>%
 
 ### Get US Data from the COVID Tracking Project
 ## US state data
-cov_us_raw <- get_uscovid_data(save_file = "n")
+cov_us_raw <- get_uscovid_data(url = "https://covidtracking.com/api/v1/", save_file = "n")
 
 covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
@@ -477,8 +477,10 @@ coronanet <- coronanet_raw %>%
 
 ## Write data
 
-## COVID Tracking Project
+## ECDC
 usethis::use_data(covnat, overwrite = TRUE, compress = "xz")
+
+## COVID Tracking Project
 usethis::use_data(covus, overwrite = TRUE, compress = "xz")
 
 ## NYT
