@@ -76,6 +76,23 @@ covus %>%
   theme_minimal()
 ```
 
+Draw a graph of cumulative reported US deaths, aggregated to the national level
+
+```{r us-example-2, fig.height=8, fig.width=10, dpi=100}
+covus %>%
+  filter(measure == "death") %>%
+  group_by(date) %>%
+  summarize(count = sum(count, na.rm = TRUE)) %>%
+  ggplot(aes(x = date, y = count)) + 
+  geom_line(size = 0.75) + 
+  scale_x_date(date_breaks = "1 week", date_labels = "%b %e" ) + 
+  scale_y_continuous(labels = scales::comma) + 
+  labs(title = "COVID-19 Cumulative Recorded Deaths in the United States",
+       subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y"), "Recorded counts underestimate total mortality."),
+       x = "Date", y = "Count of Deaths", 
+       caption = "Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy") + 
+  theme_minimal()
+```
 
 ## State-Level and County-Level (Cumulative) Data from the _New York Times_
 

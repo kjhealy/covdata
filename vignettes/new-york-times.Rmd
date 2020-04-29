@@ -25,7 +25,6 @@ library(tidyverse)
 nytcovus
 ```
 
-
 ```{r nyt-state}
 nytcovstate
 ```
