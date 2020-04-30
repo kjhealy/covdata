@@ -14,18 +14,21 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Load the Data
+
 ```{r setup}
 library(covdata)
 library(tidyverse)
 ```
 
 
-National level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).
+## National level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).
 
 ```{r}
 covnat
 ```
 
+### Plot national cases over time, highlighting specific countries of interest
 
 ```{r ecdc-example, fig.height=5, fig.width=8, dpi=100}
 ## Libraries for the graphs
