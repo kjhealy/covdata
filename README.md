@@ -20,7 +20,7 @@
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Tuesday, April 28, 2020.
+Data are current through Thursday, April 30, 2020.
 
 ## Installation
 
@@ -78,25 +78,10 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ```r
 library(tidyverse) # Optional but strongly recommended
-#> ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
-#> ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
-#> ✓ tibble  3.0.1     ✓ dplyr   0.8.5
-#> ✓ tidyr   1.0.2     ✓ stringr 1.4.0
-#> ✓ readr   1.3.1     ✓ forcats 0.5.0
-#> ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-#> x dplyr::filter()  masks stats::filter()
-#> x purrr::is_null() masks testthat::is_null()
-#> x dplyr::lag()     masks stats::lag()
-#> x dplyr::matches() masks tidyr::matches(), testthat::matches()
 library(covdata)
-#> 
-#> Attaching package: 'covdata'
-#> The following object is masked from 'package:kjhutils':
-#> 
-#>     %nin%
 
 covnat
-#> # A tibble: 13,559 x 8
+#> # A tibble: 13,765 x 8
 #> # Groups:   iso3 [206]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -110,14 +95,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 13,549 more rows
+#> # … with 13,755 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 105 x 6
+#> # A tibble: 106 x 6
 #>    geo_type region        transportation_type alternative_name date       index
 #>    <chr>    <chr>         <chr>               <chr>            <date>     <dbl>
 #>  1 city     New York City walking             NYC              2020-01-13 100  
@@ -130,7 +115,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              2020-01-20  88.6
 #>  9 city     New York City walking             NYC              2020-01-21  91.1
 #> 10 city     New York City walking             NYC              2020-01-22  98.5
-#> # … with 95 more rows
+#> # … with 96 more rows
 ```
 
 
@@ -146,7 +131,7 @@ covus %>%
 ```
 
 
-To learn more about the different datasets available, consult the vignettes or, equivalently, the [articles on the package website](https://kjhealy.github.io/covdata/articles/index.html). 
+To learn more about the different datasets available, consult the vignettes or, equivalently, the [the package website](https://kjhealy.github.io/covdata/articles/covdata.html). 
 
 ### Citing the `covdata` package
 

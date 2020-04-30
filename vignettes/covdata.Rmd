@@ -1,0 +1,40 @@
+---
+title: "Get Started with covdata"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{covdata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Loading the Package
+
+The `covdata` package aims to make data related to the COVID-19 pandemic easily accessible to users of R. Once the package is installed, load it in the usual way:
+
+```{r setup}
+library(tidyverse) 
+library(covdata)
+```
+
+This makes a variety of datasets available for use as tibbles. The use of the `tidyverse` package is strongly recommended but not required. 
+
+## Exploring the Data
+
+Individual datasets are documented, including information about properly citing the source of the data and, in some cases, the terms of use under which it is provided. The vignettes in the package provide a brief overview of several of the datasets. These include:
+
+- For the ECDC data: `vignette("ecdc-data")`
+- For the US data: `vignette("us-data")`
+- For the New York Times data: `vignette("new-york-times")`
+- For the global mobility data: `vignette("mobility-data")`
+- For the CoronaNet Project data: `vignette("coronanet-data")`
+
+## Other Data Sources and Platforms
+
+- [Philip Cohen](https://familyinequality.wordpress.com) has released several datasets and code for STATA users. These can be found (at his website)[https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/]

@@ -2,9 +2,13 @@ destination: docs
 authors:
   Kieran Healy:
     href: http://kieranhealy.org
+
+url: https://kjhealy.github.io/covdata
+
 template:
   params:
     bootswatch: cosmo
+
 reference:
   - title: "Datasets"
     desc: >
@@ -37,11 +41,6 @@ articles:
   - new-york-times
   - coronanet-data
 
-- title: Other Material
-  desc: Other COVID-19 Data Resources
-  contents:
-  - platforms
-  
 navbar:
   right:
    - icon: fa-github
