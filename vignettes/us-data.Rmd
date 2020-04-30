@@ -14,6 +14,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Load the Data
+
 ```{r setup}
 library(tidyverse)
 library(covdata)
@@ -33,7 +35,7 @@ Data for the United States come from a variety of sources:
 covus
 ```
 
-Draw a log-linear graph of cumulative reported US cases.
+### Draw a log-linear graph of cumulative reported US cases.
 
 ```{r us-example, fig.height=8, fig.width=10, dpi=100}
 ## Which n states are leading the count of positive cases or deaths?
@@ -76,7 +78,7 @@ covus %>%
   theme_minimal()
 ```
 
-Draw a graph of cumulative reported US deaths, aggregated to the national level
+### Draw a graph of cumulative reported US deaths, aggregated to the national level
 
 ```{r us-example-2, fig.height=8, fig.width=10, dpi=100}
 covus %>%
@@ -96,15 +98,20 @@ covus %>%
 
 ## State-Level and County-Level (Cumulative) Data from the _New York Times_
 
+
+### State-level table
+
 ```{r nyt1}
 nytcovstate
 ```
+
+### County-level table
 
 ```{r}
 nytcovcounty
 ```
 
-Draw a log-linear graph of cumulative US cases by county.
+### Draw a log-linear graph of cumulative US cases by county.
 
 ```{r nytplot,  fig.height=15, fig.width=8, dpi=150}
 nytcovcounty %>%
@@ -149,7 +156,7 @@ cdc_deaths_by_state
 nssp_covid_er_reg
 ```
 
-Summary view of CDC Surveillance Network Data
+### Summary view of CDC Surveillance Network Data
 
 ```{r cdc-example, fig.height=5, fig.width=9, dpi=150}
 
