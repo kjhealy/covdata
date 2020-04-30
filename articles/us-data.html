@@ -105,6 +105,9 @@
 
     
     
+<div id="load-the-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#load-the-data" class="anchor"></a>Load the Data</h2>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.0     ✔ purrr   0.3.4</span>
@@ -122,6 +125,7 @@
 <li>State-level and county-level case and mortality data for the United States from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
 <li>Data from the US Centers for Disease Control’s [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance</li>
 </ul>
+</div>
 <div id="covid-tracking-project-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
@@ -140,7 +144,9 @@
 <span class="co">#&gt;  9 2020-04-29 AK    02    on_ventilator_cumulative    NA</span>
 <span class="co">#&gt; 10 2020-04-29 AK    02    recovered                  240</span>
 <span class="co">#&gt; # … with 55,736 more rows</span></pre></body></html></div>
-<p>Draw a log-linear graph of cumulative reported US cases.</p>
+<div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="anchor"></a>Draw a log-linear graph of cumulative reported US cases.</h3>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
 <span class="no">top_n_states</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">data</span>, <span class="no">n</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="no">measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
   <span class="no">meas</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span>(<span class="no">measure</span>)
@@ -185,7 +191,10 @@
 <span class="co">#&gt; Warning: Removed 15 row(s) containing missing values (geom_path).</span>
 <span class="co">#&gt; Warning: Removed 2768 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1000"></p>
-<p>Draw a graph of cumulative reported US deaths, aggregated to the national level</p>
+</div>
+<div id="draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="section level3">
+<h3 class="hasAnchor">
+<a href="#draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="anchor"></a>Draw a graph of cumulative reported US deaths, aggregated to the national level</h3>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"death"</span>) <span class="kw">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="no">date</span>) <span class="kw">%&gt;%</span>
@@ -201,10 +210,14 @@
   <span class="fu">theme_minimal</span>()</pre></body></html></div>
 <p><img src="us-data_files/figure-html/us-example-2-1.png" width="1000"></p>
 </div>
+</div>
 <div id="state-level-and-county-level-cumulative-data-from-the-new-york-times" class="section level2">
 <h2 class="hasAnchor">
 <a href="#state-level-and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>State-Level and County-Level (Cumulative) Data from the <em>New York Times</em>
 </h2>
+<div id="state-level-table" class="section level3">
+<h3 class="hasAnchor">
+<a href="#state-level-table" class="anchor"></a>State-level table</h3>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">nytcovstate</span>
 <span class="co">#&gt; # A tibble: 3,149 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
@@ -220,6 +233,10 @@
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
 <span class="co">#&gt; # … with 3,139 more rows</span></pre></body></html></div>
+</div>
+<div id="county-level-table" class="section level3">
+<h3 class="hasAnchor">
+<a href="#county-level-table" class="anchor"></a>County-level table</h3>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">nytcovcounty</span>
 <span class="co">#&gt; # A tibble: 98,262 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
@@ -235,7 +252,10 @@
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
 <span class="co">#&gt; # … with 98,252 more rows</span></pre></body></html></div>
-<p>Draw a log-linear graph of cumulative US cases by county.</p>
+</div>
+<div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county.</h3>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
   <span class="fu">group_by</span>(<span class="no">uniq_name</span>) <span class="kw">%&gt;%</span>
@@ -253,6 +273,7 @@
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></pre></body></html></div>
 <p><img src="us-data_files/figure-html/nytplot-1.png" width="1200"></p>
+</div>
 </div>
 <div id="us-cdc-surveillance-network-data" class="section level2">
 <h2 class="hasAnchor">
@@ -330,7 +351,9 @@
 <span class="co">#&gt;  9    49     202 125939            1362    0.011   ili        Regio… Emerg…</span>
 <span class="co">#&gt; 10    50     202 130430            1405    0.011   ili        Regio… Emerg…</span>
 <span class="co">#&gt; # … with 528 more rows, and 1 more variable: year &lt;int&gt;</span></pre></body></html></div>
-<p>Summary view of CDC Surveillance Network Data</p>
+<div id="summary-view-of-cdc-surveillance-network-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#summary-view-of-cdc-surveillance-network-data" class="anchor"></a>Summary view of CDC Surveillance Network Data</h3>
 <div class="sourceCode" id="cb9"><html><body><pre class="r">
 <span class="no">age_f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
   <span class="st">"0-4 yr"</span>, <span class="st">"5-17 yr"</span>, <span class="st">"18-49 yr"</span>,
@@ -356,6 +379,7 @@
     <span class="kw">caption</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span>(<span class="st">"Source: COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention.\n&lt;https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html&gt;; Accessed on %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span>())) +
   <span class="fu">theme_minimal</span>()</pre></body></html></div>
 <p><img src="us-data_files/figure-html/cdc-example-1.png" width="1350"></p>
+</div>
 </div>
   </div>
 

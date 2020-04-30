@@ -115,10 +115,19 @@
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></pre></body></html></div>
-<div id="national-state--and-county-level-cumulative-data-from-the-new-york-times" class="section level2">
+<div id="u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times" class="section level2">
 <h2 class="hasAnchor">
-<a href="#national-state--and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>National, State- and County-Level (Cumulative) Data from the <em>New York Times</em>
+<a href="#u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>U.S. National, State- and County-Level (Cumulative) Data from the <em>New York Times</em>
 </h2>
+<p>These data tables are taken from <a href="https://github.com/nytimes/covid-19-data">the GitHub repository</a> maintained by <em>New York Times</em> staff. The information in this article mostly repeats the content of their <a href="https://github.com/nytimes/covid-19-data/blob/master/README.md">REAME</a> file.</p>
+<p>The data begins with the first reported coronavirus case in Washington State on Jan. 21, 2020.</p>
+<p>Data on cumulative coronavirus cases and deaths can be found in three files, one for each of these geographic levels: U.S., states and counties.</p>
+<p>Each row of data reports cumulative counts based on our best reporting up to the moment we publish an update. We do our best to revise earlier entries in the data when we receive new information. If a county is not listed for a date, then there were zero reported confirmed cases and deaths.</p>
+<p>State and county files contain FIPS codes, a standard geographic identifier, to make it easier for an analyst to combine this data with other data sets like a map file or population data.</p>
+<p>In some cases, the geographies where cases are reported do not map to standard county boundaries. See the list of <a href="#geographic-exceptions">geographic exceptions</a> for more detail on these.</p>
+<div id="u-s--national-table" class="section level3">
+<h3 class="hasAnchor">
+<a href="#u-s--national-table" class="anchor"></a>U.S. National Table</h3>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">nytcovus</span>
 <span class="co">#&gt; # A tibble: 99 x 3</span>
 <span class="co">#&gt;    date       cases deaths</span>
@@ -134,6 +143,10 @@
 <span class="co">#&gt;  9 2020-01-29     5      0</span>
 <span class="co">#&gt; 10 2020-01-30     6      0</span>
 <span class="co">#&gt; # … with 89 more rows</span></pre></body></html></div>
+</div>
+<div id="u-s--state-table" class="section level3">
+<h3 class="hasAnchor">
+<a href="#u-s--state-table" class="anchor"></a>U.S. State Table</h3>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">nytcovstate</span>
 <span class="co">#&gt; # A tibble: 3,149 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
@@ -149,6 +162,10 @@
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
 <span class="co">#&gt; # … with 3,139 more rows</span></pre></body></html></div>
+</div>
+<div id="u-s--county-table" class="section level3">
+<h3 class="hasAnchor">
+<a href="#u-s--county-table" class="anchor"></a>U.S. County Table</h3>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">nytcovcounty</span>
 <span class="co">#&gt; # A tibble: 98,262 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
@@ -164,7 +181,10 @@
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
 <span class="co">#&gt; # … with 98,252 more rows</span></pre></body></html></div>
-<p>Draw a log-linear graph of cumulative US cases by county.</p>
+</div>
+<div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county.</h3>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
   <span class="fu">group_by</span>(<span class="no">uniq_name</span>) <span class="kw">%&gt;%</span>
@@ -182,6 +202,124 @@
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></pre></body></html></div>
 <p><img src="new-york-times_files/figure-html/nytplot-1.png" width="1200"></p>
+</div>
+</div>
+<div id="methodology-and-definitions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#methodology-and-definitions" class="anchor"></a>Methodology and Definitions</h2>
+<p>The data is the product of dozens of journalists working across several time zones to monitor news conferences, analyze data releases and seek clarification from public officials on how they categorize cases.</p>
+<p>It is also a response to a fragmented American public health system in which overwhelmed public servants at the state, county and territorial level have sometimes struggled to report information accurately, consistently and speedily. On several occasions, officials have corrected information hours or days after first reporting it. At times, cases have disappeared from a local government database, or officials have moved a patient first identified in one state or county to another, often with no explanation. In those instances, which have become more common as the number of cases has grown, our team has made every effort to update the data to reflect the most current, accurate information while ensuring that every known case is counted.</p>
+<p>When the information is available, we count patients where they are being treated, not necessarily where they live.</p>
+<p>In most instances, the process of recording cases has been straightforward. But because of the patchwork of reporting methods for this data across more than 50 state and territorial governments and hundreds of local health departments, our journalists sometimes had to make difficult interpretations about how to count and record cases.</p>
+<p>For those reasons, our data will in some cases not exactly match with the information reported by states and counties. Those differences include these cases: When the federal government arranged flights to the United States for Americans exposed to the coronavirus in China and Japan, our team recorded those cases in the states where the patients subsequently were treated, even though local health departments generally did not. When a resident of Florida died in Los Angeles, we recorded her death as having occurred in California rather than Florida, though officials in Florida counted her case in their own records. And when officials in some states reported new cases without immediately identifying where the patients were being treated, we attempted to add information about their locations later, once it became available.</p>
+<ul>
+<li>Confirmed Cases</li>
+</ul>
+<p>Confirmed cases are patients who test positive for the coronavirus. We consider a case confirmed when it is reported by a federal, state, territorial or local government agency.</p>
+<ul>
+<li>“Probable” Cases and Deaths</li>
+</ul>
+<p>On April 5, the Council of State and Territorial Epidemiologists Centers <a href="https://int.nyt.com/data/documenthelper/6908-cste-interim-20-id-01-covid-19/85d47e89b637cd643d50/optimized/full.pdf">advised states</a> to include both confirmed cases, based on laboratory testing, and probable cases, based on specific criteria for symptoms and exposure. The Centers for Disease Control adopted these definitions and national CDC data began including confirmed and probable cases on April 14.</p>
+<p>Some states and counties are starting to report these “probable” Covid-19 cases and deaths. For the time being, we are attempting to continue only counting lab-confirmed cases and deaths while we explore the possibility of switching methodologies or reporting both numbers separately.</p>
+<p>Please see the Geographic Exceptions section below for more details.</p>
+<ul>
+<li>Dates</li>
+</ul>
+<p>For each date, we show the cumulative number of confirmed cases and deaths as reported that day in that county or state. All cases and deaths are counted on the date they are first announced.</p>
+<ul>
+<li>Declining Counts</li>
+</ul>
+<p>In some cases, the number of cases or deaths for a state or county will decline. This can occur when a state or county corrects an error in the number of cases or deaths they’ve reported in the past, or when a state moves cases from one county to another. When we are able, we will historically revise counts for all impacted dates. In other cases, this will be reflected in a single-day drop in the number of cases or deaths.</p>
+<ul>
+<li>Counties</li>
+</ul>
+<p>In some instances, we report data from multiple counties or other non-county geographies as a single county. For instance, we report a single value for New York City, comprising the cases for New York, Kings, Queens, Bronx and Richmond Counties. In these instances the FIPS code field will be empty. (We may assign FIPS codes to these geographies in the future.) See the list of <a href="#geographic-exceptions">geographic exceptions</a>.</p>
+<p>Cities like St. Louis and Baltimore that are administered separately from an adjacent county of the same name are counted separately.</p>
+<ul>
+<li>“Unknown” Counties</li>
+</ul>
+<p>Many state health departments choose to report cases separately when the patient’s county of residence is unknown or pending determination. In these instances, we record the county name as “Unknown.” As more information about these cases becomes available, the cumulative number of cases in “Unknown” counties may fluctuate.</p>
+<p>Sometimes, cases are first reported in one county and then moved to another county. As a result, the cumulative number of cases may change for a given county.</p>
+<div id="geographic-exceptions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#geographic-exceptions" class="anchor"></a>Geographic Exceptions</h3>
+<ul>
+<li>New York</li>
+</ul>
+<p>All cases for the five boroughs of New York City (New York, Kings, Queens, Bronx and Richmond counties) are assigned to a single area called New York City. There is a large jump in the number of deaths on April 6th due to switching from data from New York City to data from New York state for deaths. We are not currently including the probable deaths reported by New York City.</p>
+<p>For all New York state counties, starting on April 8th we are reporting deaths by place of fatality instead of residence of individual. There were no new deaths reported by the state on April 17th or April 18th.</p>
+<ul>
+<li>Georgia</li>
+</ul>
+<p>Starting April 12th, our case count excludes cases labeled by the state as “Non-Georgia Resident” leading to a one day drop in cases. These cases were previously included as cases with “Unknown” county.</p>
+<ul>
+<li>Alabama</li>
+</ul>
+<p>Alabama’s numbers for April 17th contained an <a href="https://twitter.com/ALPublicHealth/status/1251531524958289920">error</a> in reporting of lab test results that the state is working to correct. The number of deaths drops on April 23rd for an unknown reason.</p>
+<ul>
+<li>Kansas City, Mo.</li>
+</ul>
+<p>Four counties (Cass, Clay, Jackson and Platte) overlap the municipality of Kansas City, Mo. The cases and deaths that we show for these four counties are only for the portions exclusive of Kansas City. Cases and deaths for Kansas City are reported as their own line.</p>
+<ul>
+<li>Alameda County, Calif.</li>
+</ul>
+<p>Counts for Alameda County include cases and deaths from Berkeley and the Grand Princess cruise ship.</p>
+<ul>
+<li>Douglas County, Neb.</li>
+</ul>
+<p>Counts for Douglas County include cases brought to the state from the Diamond Princess cruise ship.</p>
+<ul>
+<li>Chicago</li>
+</ul>
+<p>All cases and deaths for Chicago are reported as part of Cook County.</p>
+<ul>
+<li>Guam</li>
+</ul>
+<p>Counts for Guam include cases reported from the USS Theodore Roosevelt.</p>
+<ul>
+<li>Puerto Rico</li>
+</ul>
+<p>On April 21st, the territory’s health department revised their number of cases downward, saying they had been double counting some coronavirus patients in official reports, leading to a higher number of cases reported than actually confirmed.</p>
+<p>Additionally, from approximately April 12th through April 18th, the count of deaths for Puerto Rico include some probable Covid-19 related deaths that were not lab-confirmed. Starting April 19th these have been removed. We will revise the numbers for the 12th to 18th as possible.</p>
+<div id="probable-cases-and-deaths" class="section level4">
+<h4 class="hasAnchor">
+<a href="#probable-cases-and-deaths" class="anchor"></a>Probable Cases and Deaths</h4>
+<ul>
+<li>Colorado</li>
+</ul>
+<p>Numbers reflect the combined number of lab-confirmed and probable cases and deaths as reported by the state. On April 25th, the state revised downward the number of deaths after removing “about 29 duplicates” from the number of “probable deaths” included in the total.</p>
+<ul>
+<li>Idaho</li>
+</ul>
+<p>The total cases number includes only lab-confirmed cases, but the deaths number does include the deaths of probable Covid-19 cases.</p>
+<ul>
+<li>Louisiana</li>
+</ul>
+<p>The total cases number and total deaths number include only lab-confirmed cases and deaths. The state appears to be reporting the deaths of probable Covid-19 cases separately from the total number of deaths statewide or in each parish but we are not yet including those cases in our numbers.</p>
+<ul>
+<li>Ohio</li>
+</ul>
+<p>The state reports lab-confirmed and probable cases and deaths separately at the state level but combine lab-confirmed and probable cases and deaths at the county level. Our statewide and county numbers combine both case types.</p>
+<ul>
+<li>Pennsylvania</li>
+</ul>
+<p>The total cases number includes lab-confirmed and probable cases starting around April 16th, but the deaths number does not include probable deaths, except for on April 21st and April 22nd when it does.</p>
+<ul>
+<li>Virginia</li>
+</ul>
+<p>The state reports lab-confirmed and probable cases and deaths separately at the state level but combine lab-confirmed and probable cases and deaths at the county level. Our statewide and county numbers combine both case types.</p>
+</div>
+</div>
+</div>
+<div id="license-and-attribution" class="section level2">
+<h2 class="hasAnchor">
+<a href="#license-and-attribution" class="anchor"></a>License and Attribution</h2>
+<p>In general, we are making this data publicly available for broad, noncommercial public use including by medical and public health researchers, policymakers, analysts and local news media.</p>
+<p>If you use this data, you must attribute it to “The New York Times” in any publication. If you would like a more expanded description of the data, you could say “Data from The New York Times, based on reports from state and local health agencies.”</p>
+<p>If you use it in an online presentation, please link to the New York Times’s U.S. tracking page at <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html">https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html</a>.</p>
+<p>If you use this data, please send a note to <a href="mailto:covid-data@nytimes.com" class="email">covid-data@nytimes.com</a> to that effect.</p>
+<p>See the <a href="https://github.com/nytimes/covid-19-data/blob/master/LICENSE">LICENSE</a> for the full terms of use for this data.</p>
+<p>This license is co-extensive with the Creative Commons Attribution-NonCommercial 4.0 International license, and licensees should refer to that license (<a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode">CC BY-NC</a>) if they have questions about the scope of the license.</p>
 </div>
   </div>
 
