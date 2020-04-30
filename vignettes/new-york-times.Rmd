@@ -21,7 +21,7 @@ library(tidyverse)
 
 ## U.S. National, State- and County-Level (Cumulative) Data from the _New York Times_
 
-These data tables are taken from [the GitHub repository](https://github.com/nytimes/covid-19-data) maintained by _New York Times_ staff. The information in this article mostly repeats the content of their [REAME](https://github.com/nytimes/covid-19-data/blob/master/README.md) file.
+These data tables are taken from [the GitHub repository](https://github.com/nytimes/covid-19-data) maintained by _New York Times_ staff. The information in this article mostly repeats the content of their [README](https://github.com/nytimes/covid-19-data/blob/master/README.md) file.
 
 The data begins with the first reported coronavirus case in Washington State on Jan. 21, 2020. 
 
