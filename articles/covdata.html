@@ -118,12 +118,12 @@
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)</pre></body></html></div>
-<p>This makes a variety of datasets available for use as tibbles. The use of the <code>tidyverse</code> package is strongly recommended but not required.</p>
+<p>Loading the package makes a variety of datasets available for use. Because the data are in tibbles, the use of the <code>tidyverse</code> suite of packages is strongly recommended, though it is not required. If use the data objects as dataframes (i.e., without loading the <code>tidyverse</code> packages) you will need to re-encode some variables, most importantly <code>date</code> and <code>date-time</code> columns, for them to behave as expected.</p>
 </div>
 <div id="exploring-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#exploring-the-data" class="anchor"></a>Exploring the Data</h2>
-<p>Individual datasets are documented, including information about properly citing the source of the data and, in some cases, the terms of use under which it is provided. The vignettes in the package provide a brief overview of several of the datasets. These include:</p>
+<p>Individual datasets are documented on their help pages. The documentation includes details on properly citing the source of the data and, in some cases, the terms of use under which it is provided. The vignettes in the package provide a brief overview of several of the datasets. These include:</p>
 <ul>
 <li>For the ECDC data: <code><a href="../articles/ecdc-data.html">vignette("ecdc-data")</a></code>
 </li>
@@ -137,12 +137,13 @@
 </li>
 </ul>
 </div>
-<div id="other-data-sources-and-platforms" class="section level2">
+<div id="other-data-sources" class="section level2">
 <h2 class="hasAnchor">
-<a href="#other-data-sources-and-platforms" class="anchor"></a>Other Data Sources and Platforms</h2>
+<a href="#other-data-sources" class="anchor"></a>Other Data Sources</h2>
 <ul>
 <li>
-<a href="https://familyinequality.wordpress.com">Philip Cohen</a> has released several datasets and code for STATA users. These can be found (at his website)[<a href="https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/" class="uri">https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/</a>]</li>
+<a href="https://familyinequality.wordpress.com">Philip Cohen</a> has released several datasets and code for STATA users. These can be found <a href="https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/">at his website</a>
+</li>
 </ul>
 </div>
   </div>
