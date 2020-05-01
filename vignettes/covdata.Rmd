@@ -23,11 +23,11 @@ library(tidyverse)
 library(covdata)
 ```
 
-This makes a variety of datasets available for use as tibbles. The use of the `tidyverse` package is strongly recommended but not required. 
+Loading the package makes a variety of datasets available for use. Because the data are in tibbles, the use of the `tidyverse` suite of packages is strongly recommended, though it is not required. If use the data objects as dataframes (i.e., without loading the `tidyverse` packages) you will need to re-encode some variables, most importantly `date` and `date-time` columns, for them to behave as expected.
 
 ## Exploring the Data
 
-Individual datasets are documented, including information about properly citing the source of the data and, in some cases, the terms of use under which it is provided. The vignettes in the package provide a brief overview of several of the datasets. These include:
+Individual datasets are documented on their help pages. The documentation includes details on properly citing the source of the data and, in some cases, the terms of use under which it is provided. The vignettes in the package provide a brief overview of several of the datasets. These include:
 
 - For the ECDC data: `vignette("ecdc-data")`
 - For the US data: `vignette("us-data")`
@@ -35,6 +35,6 @@ Individual datasets are documented, including information about properly citing 
 - For the global mobility data: `vignette("mobility-data")`
 - For the CoronaNet Project data: `vignette("coronanet-data")`
 
-## Other Data Sources and Platforms
+## Other Data Sources
 
-- [Philip Cohen](https://familyinequality.wordpress.com) has released several datasets and code for STATA users. These can be found (at his website)[https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/]
+- [Philip Cohen](https://familyinequality.wordpress.com) has released several datasets and code for STATA users. These can be found [at his website](https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/)
