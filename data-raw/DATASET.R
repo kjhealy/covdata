@@ -398,7 +398,7 @@ cov_us_raw <- get_uscovid_data(url = "https://covidtracking.com/api/v1/", save_f
 
 covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
-  select(-hash, -date_checked) %>%
+  select(!data_quality_grade:date_checked) %>%
   select(date, state, fips, everything()) %>%
   pivot_longer(positive:total_test_results_increase,
                names_to = "measure", values_to = "count") %>%
@@ -434,9 +434,9 @@ nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
 ## Apple Mobility Data
-apple_mobility <- get_apple_data(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2007HotfixDev47/v2/en-us",
-                                 date = "2020-05-03") %>%
-  pivot_longer(x2020_01_13:x2020_05_03, names_to = "date", values_to = "index") %>%
+apple_mobility <- get_apple_data(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2007HotfixDev48/v2/en-us",
+                                 date = "2020-05-04") %>%
+  pivot_longer(x2020_01_13:x2020_05_04, names_to = "date", values_to = "index") %>%
   mutate(
     date = stringr::str_remove(date, "x"),
     date = stringr::str_replace_all(date, "_", "-"),

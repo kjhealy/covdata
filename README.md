@@ -20,7 +20,7 @@
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Monday, May  4, 2020.
+Data are current through Wednesday, May  6, 2020.
 
 ## Installation
 
@@ -78,10 +78,25 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ```r
 library(tidyverse) # Optional but strongly recommended
+#> ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
+#> ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
+#> ✓ tibble  3.0.1     ✓ dplyr   0.8.5
+#> ✓ tidyr   1.0.2     ✓ stringr 1.4.0
+#> ✓ readr   1.3.1     ✓ forcats 0.5.0
+#> ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> x dplyr::filter()  masks stats::filter()
+#> x purrr::is_null() masks testthat::is_null()
+#> x dplyr::lag()     masks stats::lag()
+#> x dplyr::matches() masks tidyr::matches(), testthat::matches()
 library(covdata)
+#> 
+#> Attaching package: 'covdata'
+#> The following object is masked from 'package:kjhutils':
+#> 
+#>     %nin%
 
 covnat
-#> # A tibble: 14,802 x 8
+#> # A tibble: 15,218 x 8
 #> # Groups:   iso3 [208]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -95,27 +110,27 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 14,792 more rows
+#> # … with 15,208 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 108 x 10
-#>    geo_type region        transportation_type alternative_name x2020_04_30 x2020_05_01 x2020_05_02 x2020_05_03 date       index
-#>    <chr>    <chr>         <chr>               <chr>                  <dbl>       <dbl>       <dbl>       <dbl> <date>     <dbl>
-#>  1 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-13 100  
-#>  2 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-14  96.1
-#>  3 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-15 106. 
-#>  4 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-16 102. 
-#>  5 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-17 117. 
-#>  6 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-18 115. 
-#>  7 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-19 110. 
-#>  8 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-20  88.6
-#>  9 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-21  91.1
-#> 10 city     New York City walking             NYC                     25.9        32.7        42.7        36.2 2020-01-22  98.5
-#> # … with 98 more rows
+#> # A tibble: 113 x 6
+#>    geo_type region        transportation_type alternative_name date       index
+#>    <chr>    <chr>         <chr>               <chr>            <date>     <dbl>
+#>  1 city     New York City walking             NYC              2020-01-13 100  
+#>  2 city     New York City walking             NYC              2020-01-14  96.1
+#>  3 city     New York City walking             NYC              2020-01-15 106. 
+#>  4 city     New York City walking             NYC              2020-01-16 102. 
+#>  5 city     New York City walking             NYC              2020-01-17 117. 
+#>  6 city     New York City walking             NYC              2020-01-18 115. 
+#>  7 city     New York City walking             NYC              2020-01-19 110. 
+#>  8 city     New York City walking             NYC              2020-01-20  88.6
+#>  9 city     New York City walking             NYC              2020-01-21  91.1
+#> 10 city     New York City walking             NYC              2020-01-22  98.5
+#> # … with 103 more rows
 ```
 
 
