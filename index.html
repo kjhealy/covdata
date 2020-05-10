@@ -111,7 +111,7 @@
 <li>Data from the <a href="https://coronanet-project.org">CoronaNet Research Project</a>, providing event-based tracking of governmental policy responses to the corona virus.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
-<p>Data are current through Saturday, May 9, 2020.</p>
+<p>Data are current through Sunday, May 10, 2020.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -119,7 +119,7 @@
 <div id="install-direct-from-github" class="section level3">
 <h3 class="hasAnchor">
 <a href="#install-direct-from-github" class="anchor"></a>Install direct from GitHub</h3>
-<p>You can install the beta version of congress from <a href="https://github.com/kjhealy/congress">GitHub</a> with:</p>
+<p>You can install covdata from <a href="https://github.com/kjhealy/covdata">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"kjhealy/covdata"</span>)</pre></div>
 </div>
 <div id="installation-using-drat" class="section level3">
@@ -146,16 +146,6 @@
 <h2 class="hasAnchor">
 <a href="#loading-the-data" class="anchor"></a>Loading the Data</h2>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>) <span class="co"># Optional but strongly recommended</span>
-<span class="co">#&gt; ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</span>
-<span class="co">#&gt; ✓ ggplot2 3.3.0     ✓ purrr   0.3.4</span>
-<span class="co">#&gt; ✓ tibble  3.0.1     ✓ dplyr   0.8.5</span>
-<span class="co">#&gt; ✓ tidyr   1.0.2     ✓ stringr 1.4.0</span>
-<span class="co">#&gt; ✓ readr   1.3.1     ✓ forcats 0.5.0</span>
-<span class="co">#&gt; ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──</span>
-<span class="co">#&gt; x dplyr::filter()  masks stats::filter()</span>
-<span class="co">#&gt; x purrr::is_null() masks testthat::is_null()</span>
-<span class="co">#&gt; x dplyr::lag()     masks stats::lag()</span>
-<span class="co">#&gt; x dplyr::matches() masks tidyr::matches(), testthat::matches()</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
@@ -212,7 +202,8 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt;   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, &lt;http://kjhealy.github.io/covdata&gt;.</span>
+<span class="co">#&gt;   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series.</span>
+<span class="co">#&gt;   R package version 0.1.0, &lt;http://kjhealy.github.io/covdata&gt;.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
