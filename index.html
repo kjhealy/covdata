@@ -111,7 +111,7 @@
 <li>Data from the <a href="https://coronanet-project.org">CoronaNet Research Project</a>, providing event-based tracking of governmental policy responses to the corona virus.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
-<p>Data are current through Sunday, May 10, 2020.</p>
+<p>Data are current through Wednesday, May 13, 2020.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -147,14 +147,9 @@
 <a href="#loading-the-data" class="anchor"></a>Loading the Data</h2>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>) <span class="co"># Optional but strongly recommended</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'covdata'</span>
-<span class="co">#&gt; The following object is masked from 'package:kjhutils':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     %nin%</span>
 
 <span class="no">covnat</span>
-<span class="co">#&gt; # A tibble: 15,842 x 8</span>
+<span class="co">#&gt; # A tibble: 16,677 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [208]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
@@ -168,10 +163,10 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
-<span class="co">#&gt; # … with 15,832 more rows</span></pre></div>
+<span class="co">#&gt; # … with 16,667 more rows</span></pre></div>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"New York City"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"walking"</span>)
-<span class="co">#&gt; # A tibble: 116 x 6</span>
+<span class="co">#&gt; # A tibble: 121 x 6</span>
 <span class="co">#&gt;    geo_type region        transportation_type alternative_name date       index</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 city     New York City walking             NYC              2020-01-13 100  </span>
@@ -184,7 +179,7 @@
 <span class="co">#&gt;  8 city     New York City walking             NYC              2020-01-20  88.6</span>
 <span class="co">#&gt;  9 city     New York City walking             NYC              2020-01-21  91.1</span>
 <span class="co">#&gt; 10 city     New York City walking             NYC              2020-01-22  98.5</span>
-<span class="co">#&gt; # … with 106 more rows</span></pre></div>
+<span class="co">#&gt; # … with 111 more rows</span></pre></div>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"positive"</span>,
          <span class="no">date</span> <span class="kw">==</span> <span class="st">"2020-04-27"</span>,
@@ -202,8 +197,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt;   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series.</span>
-<span class="co">#&gt;   R package version 0.1.0, &lt;http://kjhealy.github.io/covdata&gt;.</span>
+<span class="co">#&gt;   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, &lt;http://kjhealy.github.io/covdata&gt;.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
