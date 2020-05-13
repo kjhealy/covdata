@@ -433,9 +433,9 @@ nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
 ## Apple Mobility Data
-apple_mobility <- get_apple_data(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2007HotfixDev51/v2/en-us",
-                                 date = "2020-05-07") %>%
-  pivot_longer(x2020_01_13:x2020_05_07, names_to = "date", values_to = "index") %>%
+apple_mobility <- get_apple_data(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2007HotfixDev58/v2/en-us",
+                                 date = "2020-05-12") %>%
+  pivot_longer(x2020_01_13:x2020_05_12, names_to = "date", values_to = "index") %>%
   mutate(
     date = stringr::str_remove(date, "x"),
     date = stringr::str_replace_all(date, "_", "-"),
