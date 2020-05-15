@@ -111,7 +111,7 @@
 <li>Data from the <a href="https://coronanet-project.org">CoronaNet Research Project</a>, providing event-based tracking of governmental policy responses to the corona virus.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
-<p>Data are current through Wednesday, May 13, 2020.</p>
+<p>Data are current through Friday, May 15, 2020.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -149,8 +149,8 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
 
 <span class="no">covnat</span>
-<span class="co">#&gt; # A tibble: 16,677 x 8</span>
-<span class="co">#&gt; # Groups:   iso3 [208]</span>
+<span class="co">#&gt; # A tibble: 17,094 x 8</span>
+<span class="co">#&gt; # Groups:   iso3 [209]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2019-12-31 Afghanistan AFG       0      0  37172386        0         0</span>
@@ -163,10 +163,10 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
-<span class="co">#&gt; # … with 16,667 more rows</span></pre></div>
+<span class="co">#&gt; # … with 17,084 more rows</span></pre></div>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"New York City"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"walking"</span>)
-<span class="co">#&gt; # A tibble: 121 x 6</span>
+<span class="co">#&gt; # A tibble: 122 x 6</span>
 <span class="co">#&gt;    geo_type region        transportation_type alternative_name date       index</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 city     New York City walking             NYC              2020-01-13 100  </span>
@@ -179,7 +179,7 @@
 <span class="co">#&gt;  8 city     New York City walking             NYC              2020-01-20  88.6</span>
 <span class="co">#&gt;  9 city     New York City walking             NYC              2020-01-21  91.1</span>
 <span class="co">#&gt; 10 city     New York City walking             NYC              2020-01-22  98.5</span>
-<span class="co">#&gt; # … with 111 more rows</span></pre></div>
+<span class="co">#&gt; # … with 112 more rows</span></pre></div>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"positive"</span>,
          <span class="no">date</span> <span class="kw">==</span> <span class="st">"2020-04-27"</span>,
@@ -188,12 +188,29 @@
 <span class="co">#&gt;   date       state fips  measure   count</span>
 <span class="co">#&gt;   &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 2020-04-27 NJ    34    positive 111188</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
+  <span class="fu">group_by</span>(<span class="no">uniq_name</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">days_elapsed</span> <span class="kw">=</span> <span class="no">date</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">date</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">days_elapsed</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">cases</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">uniq_name</span>)) +
+  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.25</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray20"</span>) +
+  <span class="fu">scale_y_log10</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span>()) +
+  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
+  <span class="fu">facet_wrap</span>(~ <span class="no">state</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">5</span>) +
+  <span class="fu">labs</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
+       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">nytcovcounty</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
+       <span class="kw">x</span> <span class="kw">=</span> <span class="st">"Days since first case"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>,
+       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span>) +
+  <span class="fu">theme_minimal</span>()
+<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
+<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></pre></div>
+<p><img src="reference/figures/README-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%"></p>
 <p>To learn more about the different datasets available, consult the vignettes or, equivalently, the <a href="https://kjhealy.github.io/covdata/articles/covdata.html">the package website</a>.</p>
 <div id="citing-the-covdata-package" class="section level3">
 <h3 class="hasAnchor">
 <a href="#citing-the-covdata-package" class="anchor"></a>Citing the <code>covdata</code> package</h3>
 <p>To cite the package use the following:</p>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
+<div class="sourceCode" id="cb10"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
