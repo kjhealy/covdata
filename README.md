@@ -20,7 +20,7 @@
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Wednesday, May 13, 2020.
+Data are current through Friday, May 15, 2020.
 
 ## Installation
 
@@ -81,8 +81,8 @@ library(tidyverse) # Optional but strongly recommended
 library(covdata)
 
 covnat
-#> # A tibble: 16,677 x 8
-#> # Groups:   iso3 [208]
+#> # A tibble: 17,094 x 8
+#> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
 #>  1 2019-12-31 Afghanistan AFG       0      0  37172386        0         0
@@ -95,14 +95,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 16,667 more rows
+#> # … with 17,084 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 121 x 6
+#> # A tibble: 122 x 6
 #>    geo_type region        transportation_type alternative_name date       index
 #>    <chr>    <chr>         <chr>               <chr>            <date>     <dbl>
 #>  1 city     New York City walking             NYC              2020-01-13 100  
@@ -115,7 +115,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              2020-01-20  88.6
 #>  9 city     New York City walking             NYC              2020-01-21  91.1
 #> 10 city     New York City walking             NYC              2020-01-22  98.5
-#> # … with 111 more rows
+#> # … with 112 more rows
 ```
 
 
@@ -129,6 +129,29 @@ covus %>%
 #>   <date>     <chr> <chr> <chr>     <dbl>
 #> 1 2020-04-27 NJ    34    positive 111188
 ```
+
+
+```r
+nytcovcounty %>%
+  mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
+  group_by(uniq_name) %>%
+  mutate(days_elapsed = date - min(date)) %>%
+  ggplot(aes(x = days_elapsed, y = cases, group = uniq_name)) + 
+  geom_line(size = 0.25, color = "gray20") + 
+  scale_y_log10(labels = scales::label_number_si()) + 
+  guides(color = FALSE) + 
+  facet_wrap(~ state, ncol = 5) + 
+  labs(title = "COVID-19 Cumulative Recorded Cases by US County",
+       subtitle = paste("New York is bundled into a single area in this data.\nData as of", format(max(nytcovcounty$date), "%A, %B %e, %Y")),
+       x = "Days since first case", y = "Count of Cases (log 10 scale)", 
+       caption = "Data: The New York Times | Graph: @kjhealy") + 
+  theme_minimal()
+#> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
+#> Warning: Transformation introduced infinite values in continuous y-axis
+```
+
+<img src="man/figures/README-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%" />
+
 
 
 To learn more about the different datasets available, consult the vignettes or, equivalently, the [the package website](https://kjhealy.github.io/covdata/articles/covdata.html). 
