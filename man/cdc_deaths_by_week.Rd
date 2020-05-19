@@ -5,7 +5,7 @@
 \alias{cdc_deaths_by_week}
 \title{CDC Provisional death counts by week}
 \format{
-A data frame with 13 rows and 11 variables:
+A data frame with 13 rows and 10 variables:
 \describe{
 \item{\code{data_as_of}}{date When the data were most recently recorded}
 \item{\code{start_week}}{date Start week}
