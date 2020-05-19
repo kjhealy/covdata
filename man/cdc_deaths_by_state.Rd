@@ -5,16 +5,18 @@
 \alias{cdc_deaths_by_state}
 \title{CDC provisional death counts by state}
 \format{
-A data frame with 54 rows and 13 variables:
+A data frame with 53 rows and 10 variables:
 \describe{
-\item{\code{state}}{character COLUMN_DESCRIPTION}
-\item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
-\item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+\item{\code{data_as_of}}{date Date most recently updated}
+\item{\code{state}}{character State name}
+\item{\code{start_week}}{date Start week}
+\item{\code{end_week}}{double End week}
+\item{\code{covid_deaths}}{integer COVID Deaths}
+\item{\code{total_deaths}}{integer Total deaths}
 \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-\item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
-}
+\item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} #'}
 }
 \usage{
 cdc_deaths_by_state

@@ -150,13 +150,16 @@
 #' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
 #' @format A data frame with `r fmt_nr(cdc_deaths_by_week)` rows and `r fmt_nc(cdc_deaths_by_week)` variables:
 #' \describe{
-#'   \item{\code{week}}{double COLUMN_DESCRIPTION}
-#'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{data_as_of}}{date When the data were most recently recorded}
+#'   \item{\code{start_week}}{date Start week}
+#'   \item{\code{end_week}}{double End week}
+#'   \item{\code{covid_deaths}}{integer COVID deaths}
+#'   \item{\code{total_deaths}}{integer Total deaths}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{pneumonia_influenza_and_covid_19_deaths}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -174,7 +177,10 @@
 #' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
 #' @format A data frame with `r fmt_nr(cdc_deaths_by_age)` rows and `r fmt_nc(cdc_deaths_by_age)` variables:
 #' \describe{
-#'   \item{\code{age_group}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{data_as_of}}{date When the data were most recently recorded}
+#'   \item{\code{age_group}}{character Age range}
+#'   \item{\code{start_week}}{date Start week}
+#'   \item{\code{end_week}}{date End week}
 #'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
@@ -198,9 +204,12 @@
 #' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
 #' @format A data frame with `r fmt_nr(cdc_deaths_by_sex)` rows and `r fmt_nc(cdc_deaths_by_sex)` variables:
 #' \describe{
-#'   \item{\code{sex}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{data_as_of}}{date Date most recently updated}
+#'   \item{\code{sex}}{character Sex}
+#'   \item{\code{start_week}}{date Beginning week}
+#'   \item{\code{end_week}}{date Ending week}
+#'   \item{\code{covid_deaths}}{integer COVID deaths}
+#'   \item{\code{total_deaths}}{integer Total deaths}
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
@@ -222,14 +231,16 @@
 #' @description CDC Surveillance Network provisional death counts
 #' @format A data frame with `r fmt_nr(cdc_deaths_by_state)` rows and `r fmt_nc(cdc_deaths_by_state)` variables:
 #' \describe{
-#'   \item{\code{state}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{data_as_of}}{date Date most recently updated}
+#'   \item{\code{state}}{character State name}
+#'   \item{\code{start_week}}{date Start week}
+#'   \item{\code{end_week}}{double End week}
+#'   \item{\code{covid_deaths}}{integer COVID Deaths}
+#'   \item{\code{total_deaths}}{integer Total deaths}
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
-#'}
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} #'}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
@@ -317,6 +328,8 @@
 #'   \item{\code{region}}{character Name of geographical unit.}
 #'   \item{\code{transportation_type}}{character Mode of transport. Values: Driving, Transit, or Walking}
 #'   \item{\code{alternative_name}}{character Name of `region` in local language}
+#'   \item{\code{sub_region}}{character Subregion}
+#'   \item{\code{country}}{character Country name (not provided for all countries)}
 #'   \item{\code{date}}{double Date in yyyy-mm-dddd format}
 #'   \item{\code{index}}{double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.}
 #'}

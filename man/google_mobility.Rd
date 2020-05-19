@@ -17,7 +17,7 @@ A data frame with 2,012,778 rows and 7 variables:
 }
 }
 \source{
-Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-05-15
+Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-05-19
 }
 \usage{
 google_mobility

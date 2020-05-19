@@ -5,11 +5,14 @@
 \alias{cdc_deaths_by_sex}
 \title{CDC provisional death counts by sex}
 \format{
-A data frame with 4 rows and 13 variables:
+A data frame with 3 rows and 10 variables:
 \describe{
-\item{\code{sex}}{character COLUMN_DESCRIPTION}
-\item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
-\item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
+\item{\code{data_as_of}}{date Date most recently updated}
+\item{\code{sex}}{character Sex}
+\item{\code{start_week}}{date Beginning week}
+\item{\code{end_week}}{date Ending week}
+\item{\code{covid_deaths}}{integer COVID deaths}
+\item{\code{total_deaths}}{integer Total deaths}
 \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}

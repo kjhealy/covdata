@@ -5,15 +5,18 @@
 \alias{cdc_deaths_by_week}
 \title{CDC Provisional death counts by week}
 \format{
-A data frame with 13 rows and 13 variables:
+A data frame with 13 rows and 11 variables:
 \describe{
-\item{\code{week}}{double COLUMN_DESCRIPTION}
-\item{\code{covid_deaths}}{integer COLUMN_DESCRIPTION}
-\item{\code{total_deaths}}{integer COLUMN_DESCRIPTION}
-\item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+\item{\code{data_as_of}}{date When the data were most recently recorded}
+\item{\code{start_week}}{date Start week}
+\item{\code{end_week}}{double End week}
+\item{\code{covid_deaths}}{integer COVID deaths}
+\item{\code{total_deaths}}{integer Total deaths}
 \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
 \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
+\item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
+\item{\code{pneumonia_influenza_and_covid_19_deaths}}{integer COLUMN_DESCRIPTION}
 }
 }
 \source{
