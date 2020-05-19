@@ -5,7 +5,7 @@
 \alias{cdc_deaths_by_age}
 \title{CDC Surveillance Network Death Counts by Age}
 \format{
-A data frame with 12 rows and 11 variables:
+A data frame with 12 rows and 10 variables:
 \describe{
 \item{\code{data_as_of}}{date When the data were most recently recorded}
 \item{\code{age_group}}{character Age range}
