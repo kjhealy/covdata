@@ -321,7 +321,7 @@
 
 ## Apple Mobility Data
 #' @title Apple Mobility Data
-#' @description Data from Apple Maps on relative changes in mobility from January to April 2020
+#' @description Data from Apple Maps on relative changes in mobility in various cities and countries.
 #' @format A data frame with `r fmt_nr(apple_mobility)` rows and `r fmt_nc(apple_mobility)` variables:
 #' \describe{
 #'   \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
@@ -342,7 +342,7 @@
 
 ## Google Mobility Data
 #' @title Google Mobility Data
-#' @description Data from Google's Community Mobility Reports on relative changes in movement trends by location type
+#' @description Data from Google's Community Mobility Reports on relative changes in movement trends by location type.
 #' @format A data frame with `r fmt_nr(google_mobility)` rows and `r fmt_nc(google_mobility)` variables:
 #' \describe{
 #'   \item{\code{country_region_code}}{character Country Code}
