@@ -122,7 +122,7 @@
 
 #' @title CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US
 #' @description Courtesy of Bob Rudis's cdccovidview package
-#' @format A data frame with `r fmt_nr(cdc_hospitalizations)` rows and `r col(cdc_hospitalizations)` variables:
+#' @format A data frame with `r fmt_nr(cdc_hospitalizations)` rows and `r fmt_nc(cdc_hospitalizations)` variables:
 #' \describe{
 #'   \item{\code{catchment}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{network}}{character COLUMN_DESCRIPTION}
@@ -240,7 +240,7 @@
 #'   \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} #'}
+#'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}}
 #' @details The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is

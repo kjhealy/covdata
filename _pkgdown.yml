@@ -10,26 +10,41 @@ template:
     bootswatch: cosmo
 
 reference:
-  - title: "Datasets"
-    desc: >
-      Included datasets.
+  - title: "Activity Data"
+    desc: Data from Apple and Google.
     contents:
       - apple_mobility
+      - google_mobility
+  - title: "CDC Data"
+    desc: Data from the Centers for Disease Control's surveillance network.
+    contents:
       - cdc_catchments
       - cdc_deaths_by_age
       - cdc_deaths_by_sex
       - cdc_deaths_by_state
       - cdc_deaths_by_week
       - cdc_hospitalizations
-      - covnat
-      - covus
-      - coronanet
-      - countries
-      - google_mobility
       - nssp_covid_er_nat
       - nssp_covid_er_reg
+  - title: "COVID Tracking Project"
+    desc: US State-level Data from the COVID Tracking Project.
+    contents:
+      - covus
+  - title: "ECDC Data"
+    desc: Cross-national Data from the European Centers for Disease Control.
+    contents:
+      - covnat
+  - title: "New York Times Data"
+    desc: US State- and County-level Data from the New york Times.
+    contents:
       - nytcovcounty
       - nytcovstate
+  - title: "Policy Data"
+    desc: Cross-national Data from the Coronanet project.
+      - coronanet
+  - title: "Other"
+    desc: Other tables
+      - countries
 
 articles:
 - title: Datasets

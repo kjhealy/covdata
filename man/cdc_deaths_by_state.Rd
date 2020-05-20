@@ -16,7 +16,7 @@ A data frame with 53 rows and 10 variables:
 \item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
-\item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION} #'}
+\item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}}
 }
 \usage{
 cdc_deaths_by_state
