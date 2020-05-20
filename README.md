@@ -20,7 +20,7 @@
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Tuesday, May 19, 2020.
+Data are current through Wednesday, May 20, 2020.
 
 ## Installation
 
@@ -83,8 +83,7 @@ library(covdata)
 #> Attaching package: 'covdata'
 #> The following objects are masked _by_ '.GlobalEnv':
 #> 
-#>     apple_mobility, cdc_deaths_by_age, cdc_deaths_by_sex, cdc_deaths_by_state, cdc_deaths_by_week, cdc_hospitalizations, covnat, covus, nytcovcounty,
-#>     nytcovstate, nytcovus
+#>     apple_mobility, cdc_deaths_by_age, cdc_deaths_by_week, covnat, covus, google_mobility
 #> The following object is masked from 'package:socviz':
 #> 
 #>     %nin%
@@ -93,7 +92,7 @@ library(covdata)
 #>     %nin%
 
 covnat
-#> # A tibble: 17,930 x 8
+#> # A tibble: 18,139 x 8
 #> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -107,14 +106,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 17,920 more rows
+#> # … with 18,129 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 126 x 8
+#> # A tibble: 127 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -127,7 +126,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 116 more rows
+#> # … with 117 more rows
 ```
 
 

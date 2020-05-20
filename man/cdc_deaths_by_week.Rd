@@ -12,10 +12,10 @@ A data frame with 13 rows and 10 variables:
 \item{\code{end_week}}{double End week}
 \item{\code{covid_deaths}}{integer COVID deaths}
 \item{\code{total_deaths}}{integer Total deaths}
+\item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
 \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
-\item{\code{percent_expected_deaths}}{double COLUMN_DESCRIPTION}
 \item{\code{pneumonia_influenza_and_covid_19_deaths}}{integer COLUMN_DESCRIPTION}
 }
 }
