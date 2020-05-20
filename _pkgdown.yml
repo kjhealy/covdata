@@ -41,9 +41,11 @@ reference:
       - nytcovstate
   - title: "Policy Data"
     desc: Cross-national Data from the Coronanet project.
+    contents:
       - coronanet
   - title: "Other"
     desc: Other tables
+    contents:
       - countries
 
 articles:
