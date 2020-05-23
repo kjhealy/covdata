@@ -193,7 +193,7 @@ get_apple_target <- function(cdn_url = "https://covid19-static.cdn-apple.com",
   tf <- tempfile(fileext = ".json")
   curl::curl_download(paste0(cdn_url, "/", json_file), tf)
   json_data <- jsonlite::fromJSON(tf)
-  paste0(cdn_url, target$basePath, target$regions$`en-us`$csvPath)
+  paste0(cdn_url, json_data$basePath, json_data$regions$`en-us`$csvPath)
 }
 
 ## 2. Get the data and return a tibble
