@@ -5,7 +5,7 @@
 \alias{google_mobility}
 \title{Google Mobility Data}
 \format{
-A data frame with 2,105,946 rows and 7 variables:
+A data frame with 2,175,294 rows and 7 variables:
 \describe{
 \item{\code{country_region_code}}{character Country Code}
 \item{\code{country_region}}{character Country or Region name}
@@ -17,7 +17,7 @@ A data frame with 2,105,946 rows and 7 variables:
 }
 }
 \source{
-Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-05-20
+Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-05-23
 }
 \usage{
 google_mobility
