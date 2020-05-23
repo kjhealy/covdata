@@ -187,19 +187,19 @@ get_nyt_us <- function(url = "https://github.com/nytimes/covid-19-data/raw/maste
 }
 
 ## Get Apple data
-
-get_apple_target <- function(json_url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/current/v3/index.json",
-                             cdn_url = "https://covid19-static.cdn-apple.com") {
+## 1. Find today's URL
+get_apple_target <- function(cdn_url = "https://covid19-static.cdn-apple.com",
+                             json_file = "covid19-mobility-data/current/v3/index.json") {
   tf <- tempfile(fileext = ".json")
-  curl::curl_download(base_url, tf)
+  curl::curl_download(paste0(cdn_url, "/", json_file), tf)
   json_data <- jsonlite::fromJSON(tf)
   paste0(cdn_url, target$basePath, target$regions$`en-us`$csvPath)
 }
 
-
+## 2. Get the data and return a tibble
 get_apple_data <- function(url = get_apple_target(),
                              fname = "applemobilitytrends-",
-                             date = lubridate::today(),
+                             date = stringr::str_extract(get_apple_target(), "\\d{4}-\\d{2}-\\d{2}"),
                              ext = "csv",
                              dest = "data-raw/data",
                              save_file = c("n", "y")) {
@@ -211,14 +211,14 @@ get_apple_data <- function(url = get_apple_target(),
                           paste0("apple_mobility", "_daily_", date), ext = ext)
 
   tf <- tempfile(fileext = ext)
-
   curl::curl_download(url, tf)
 
+  ## We don't save the file by default
   switch(save_file,
          y = fs::file_copy(tf, destination),
          n = NULL)
 
-  janitor::clean_names(read_csv(tf))
+  janitor::clean_names(readr::read_csv(tf))
 }
 
 
