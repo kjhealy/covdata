@@ -187,7 +187,17 @@ get_nyt_us <- function(url = "https://github.com/nytimes/covid-19-data/raw/maste
 }
 
 ## Get Apple data
-get_apple_data <- function(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2008HotfixDev26/v2/en-us",
+
+get_apple_target <- function(json_url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/current/v3/index.json",
+                             cdn_url = "https://covid19-static.cdn-apple.com") {
+  tf <- tempfile(fileext = ".json")
+  curl::curl_download(base_url, tf)
+  json_data <- jsonlite::fromJSON(tf)
+  paste0(cdn_url, target$basePath, target$regions$`en-us`$csvPath)
+}
+
+
+get_apple_data <- function(url = get_apple_target(),
                              fname = "applemobilitytrends-",
                              date = lubridate::today(),
                              ext = "csv",
@@ -195,15 +205,14 @@ get_apple_data <- function(url = "https://covid19-static.cdn-apple.com/covid19-m
                              save_file = c("n", "y")) {
 
   save_file <- match.arg(save_file)
-  target <-  paste0(url, "/", fname, date, ".", ext)
-  message("target: ", target)
+  message("target: ", url)
 
   destination <- fs::path(here::here("data-raw/data"),
                           paste0("apple_mobility", "_daily_", date), ext = ext)
 
   tf <- tempfile(fileext = ext)
 
-  curl::curl_download(target, tf)
+  curl::curl_download(url, tf)
 
   switch(save_file,
          y = fs::file_copy(tf, destination),
@@ -522,9 +531,8 @@ nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
 ## Apple Mobility Data
-apple_mobility <- get_apple_data(url = "https://covid19-static.cdn-apple.com/covid19-mobility-data/2008HotfixDev38/v3/en-us",
-                                 date = "2020-05-21") %>%
-  pivot_longer(x2020_01_13:x2020_05_21, names_to = "date", values_to = "index") %>%
+apple_mobility <- get_apple_data() %>%
+  pivot_longer(cols = starts_with("x"), names_to = "date", values_to = "index") %>%
   mutate(
     date = stringr::str_remove(date, "x"),
     date = stringr::str_replace_all(date, "_", "-"),
