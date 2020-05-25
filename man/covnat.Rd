@@ -3,9 +3,9 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Saturday, May 23, 2020}
+\title{International COVID-19 cases and deaths, current as of Monday, May 25, 2020}
 \format{
-A tibble with 18,766 rows and 8 columns
+A tibble with 19,184 rows and 8 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{cname}{Name of country (character)}

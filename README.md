@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -20,7 +24,7 @@
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Saturday, May 23, 2020.
+Data are current through Monday, May 25, 2020.
 
 ## Installation
 
@@ -83,8 +87,8 @@ library(covdata)
 #> Attaching package: 'covdata'
 #> The following objects are masked _by_ '.GlobalEnv':
 #> 
-#>     apple_mobility, cdc_deaths_by_age, cdc_deaths_by_week, cdc_hospitalizations, coronanet, covnat, covus, google_mobility, nytcovcounty, nytcovstate,
-#>     nytcovus
+#>     apple_mobility, cdc_deaths_by_age, cdc_deaths_by_week, cdc_hospitalizations, coronanet, covnat, covus, google_mobility,
+#>     nytcovcounty, nytcovstate, nytcovus
 #> The following object is masked from 'package:socviz':
 #> 
 #>     %nin%
@@ -93,7 +97,7 @@ library(covdata)
 #>     %nin%
 
 covnat
-#> # A tibble: 18,766 x 8
+#> # A tibble: 19,184 x 8
 #> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -107,27 +111,27 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 18,756 more rows
+#> # … with 19,174 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 127 x 11
-#>    geo_type region        transportation_type alternative_name sub_region country       x2020_05_19 x2020_05_20 x2020_05_21 date       index
-#>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>               <dbl>       <dbl>       <dbl> <date>     <dbl>
-#>  1 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-13 100  
-#>  2 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-14  96.1
-#>  3 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-15 106. 
-#>  4 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-16 102. 
-#>  5 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-17 117. 
-#>  6 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-18 115. 
-#>  7 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-19 110. 
-#>  8 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-20  88.6
-#>  9 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-21  91.1
-#> 10 city     New York City walking             NYC              New York   United States        41.3        43.0        45.9 2020-01-22  98.5
-#> # … with 117 more rows
+#> # A tibble: 131 x 8
+#>    geo_type region        transportation_type alternative_name sub_region country       date       index
+#>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
+#>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
+#>  2 city     New York City walking             NYC              New York   United States 2020-01-14  96.1
+#>  3 city     New York City walking             NYC              New York   United States 2020-01-15 106. 
+#>  4 city     New York City walking             NYC              New York   United States 2020-01-16 102. 
+#>  5 city     New York City walking             NYC              New York   United States 2020-01-17 117. 
+#>  6 city     New York City walking             NYC              New York   United States 2020-01-18 115. 
+#>  7 city     New York City walking             NYC              New York   United States 2020-01-19 110. 
+#>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
+#>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
+#> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
+#> # … with 121 more rows
 ```
 
 
@@ -178,7 +182,8 @@ citation("covdata")
 #> 
 #> To cite the package `covdata` in publications use:
 #> 
-#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.
+#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0,
+#>   <http://kjhealy.github.io/covdata>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 

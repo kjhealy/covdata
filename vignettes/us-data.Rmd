@@ -37,7 +37,7 @@ covus
 
 ### Draw a log-linear graph of cumulative reported US cases.
 
-```{r us-example, fig.height=8, fig.width=10, dpi=100}
+```{r us-example, fig.height=8, fig.width=12, dpi=100}
 ## Which n states are leading the count of positive cases or deaths?
 top_n_states <- function(data, n = 5, measure = c("positive", "death")) {
   meas <- match.arg(measure)
@@ -69,7 +69,7 @@ covus %>%
   scale_x_date(date_breaks = "3 days", date_labels = "%b %e" ) + 
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
-                     breaks = 2^c(seq(1, 18, 1))) +
+                     breaks = 2^c(seq(1, 19, 1))) +
   guides(color = FALSE) + 
   labs(title = "COVID-19 Cumulative Recorded Cases by US State",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y")),
@@ -88,7 +88,7 @@ covus %>%
   ggplot(aes(x = date, y = count)) + 
   geom_line(size = 0.75) + 
   scale_x_date(date_breaks = "1 week", date_labels = "%b %e" ) + 
-  scale_y_continuous(labels = scales::comma, breaks = seq(0, 60000, 10000)) + 
+  scale_y_continuous(labels = scales::comma, breaks = seq(0, 100000, 20000)) + 
   labs(title = "COVID-19 Cumulative Recorded Deaths in the United States",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y"), "Recorded counts underestimate total mortality."),
        x = "Date", y = "Count of Deaths", 
