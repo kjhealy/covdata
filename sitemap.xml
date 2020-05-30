@@ -73,7 +73,13 @@
     <loc>https://kjhealy.github.io/covdata/reference/nytcovus.html</loc>
   </url>
   <url>
+    <loc>https://kjhealy.github.io/covdata/reference/nytexcess.html</loc>
+  </url>
+  <url>
     <loc>https://kjhealy.github.io/covdata/reference/start_date.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/reference/stmf.html</loc>
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/articles/coronanet-data.html</loc>
@@ -83,6 +89,9 @@
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/articles/ecdc-data.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/excess-mortality.html</loc>
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/articles/mobility-data.html</loc>

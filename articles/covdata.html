@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.9.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
       </span>
     </div>
 
@@ -58,6 +58,9 @@
   <ul class="dropdown-menu" role="menu">
 <li>
       <a href="../articles/ecdc-data.html">The ECDC Data</a>
+    </li>
+    <li>
+      <a href="../articles/excess-mortality.html">Excess Mortality Data</a>
     </li>
     <li>
       <a href="../articles/us-data.html">Case and Mortality Data for the United States</a>
@@ -110,8 +113,8 @@
 <p>The <code>covdata</code> package aims to make data related to the COVID-19 pandemic easily accessible to users of R. Once the package is installed, load it in the usual way:</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
-<span class="co">#&gt; ✔ ggplot2 3.3.0     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.0.1     ✔ dplyr   0.8.5</span>
+<span class="co">#&gt; ✔ ggplot2 3.3.1     ✔ purrr   0.3.4</span>
+<span class="co">#&gt; ✔ tibble  3.0.1     ✔ dplyr   1.0.0</span>
 <span class="co">#&gt; ✔ tidyr   1.1.0     ✔ stringr 1.4.0</span>
 <span class="co">#&gt; ✔ readr   1.3.1     ✔ forcats 0.5.0</span>
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
@@ -125,15 +128,17 @@
 <a href="#exploring-the-data" class="anchor"></a>Exploring the Data</h2>
 <p>Individual datasets are documented on their help pages. The documentation includes details on properly citing the source of the data and, in some cases, the terms of use under which it is provided. The vignettes in the package provide a brief overview of several of the datasets. These include:</p>
 <ul>
-<li>For the ECDC data: <code><a href="../articles/ecdc-data.html">vignette("ecdc-data")</a></code>
+<li>For the ECDC COVID-specific data: <code><a href="../articles/ecdc-data.html">vignette("ecdc-data")</a></code>
 </li>
-<li>For the US data: <code><a href="../articles/us-data.html">vignette("us-data")</a></code>
+<li>For US COVID-specific data: <code><a href="../articles/us-data.html">vignette("us-data")</a></code>
 </li>
-<li>For the New York Times data: <code><a href="../articles/new-york-times.html">vignette("new-york-times")</a></code>
+<li>For the New York Times COVID-specific data: <code><a href="../articles/new-york-times.html">vignette("new-york-times")</a></code>
 </li>
-<li>For the global mobility data: <code><a href="../articles/mobility-data.html">vignette("mobility-data")</a></code>
+<li>For the global mobility data from Apple and Google: <code><a href="../articles/mobility-data.html">vignette("mobility-data")</a></code>
 </li>
-<li>For the CoronaNet Project data: <code><a href="../articles/coronanet-data.html">vignette("coronanet-data")</a></code>
+<li>For the CoronaNet Project data on policy: <code><a href="../articles/coronanet-data.html">vignette("coronanet-data")</a></code>
+</li>
+<li>For data from the Human Mortality Database and the <em>New York Times</em> on excess mortality: <code><a href="../articles/excess-mortality.html">vignette("excess-mortality")</a></code>
 </li>
 </ul>
 </div>

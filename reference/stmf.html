@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US — cdc_hospitalizations • covdata</title>
+<title>Short Term Mortality Fluctuations (STMF) data series — stmf • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US — cdc_hospitalizations" />
-<meta property="og:description" content="Courtesy of Bob Rudis's cdccovidview package" />
+<meta property="og:title" content="Short Term Mortality Fluctuations (STMF) data series — stmf" />
+<meta property="og:description" content="Human Mortality Database (HMD) series of weekly death counts across countries." />
 
 
 
@@ -138,47 +138,50 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US</h1>
+    <h1>Short Term Mortality Fluctuations (STMF) data series</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>cdc_hospitalizations.Rd</code></div>
+    <div class="hidden name"><code>stmf.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Courtesy of Bob Rudis's cdccovidview package</p>
+    <p>Human Mortality Database (HMD) series of weekly death counts across countries.</p>
     </div>
 
-    <pre class="usage"><span class='no'>cdc_hospitalizations</span></pre>
+    <pre class="usage"><span class='no'>stmf</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 4,590 rows and 8 variables:</p><dl>
-<dt><code>catchment</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
-<dt><code>network</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
-<dt><code>year</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
-<dt><code>mmwr_year</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
-<dt><code>mmwr_week</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
-<dt><code>age_category</code></dt><dd><p>character COLUMN_DESCRIPTION</p></dd>
-<dt><code>cumulative_rate</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
-<dt><code>weekly_rate</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
+    <p>A tibble with 202,305 rows and 13 variables:</p><dl>
+<dt><code>country_code</code></dt><dd><p>character ISO3 Country Code</p></dd>
+<dt><code>year</code></dt><dd><p>double Year</p></dd>
+<dt><code>week</code></dt><dd><p>double Week number. Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics.</p></dd>
+<dt><code>sex</code></dt><dd><p>character Sex. m = Males. f = Females. b = Both combined.</p></dd>
+<dt><code>split</code></dt><dd><p>double Indicates if data were split from aggregated age groups (0 if the original data has necessary detailed age scale). For example, if the original age scale was 0-4, 5-29, 30-65, 65+, then split will be equal to 1</p></dd>
+<dt><code>split_sex</code></dt><dd><p>double Indicates if the original data are available by sex (0) or data are interpolated (1)</p></dd>
+<dt><code>forecast</code></dt><dd><p>double Equals 1 for all years where forecasted population exposures were used to calculate weekly death rates.</p></dd>
+<dt><code>approx_date</code></dt><dd><p>double Approximate date (derived from the <code>year</code> and <code>week</code> number).</p></dd>
+<dt><code>age_group</code></dt><dd><p>character Age group for death counts and rates</p></dd>
+<dt><code>death_count</code></dt><dd><p>double Weekly death count. This number need not be an integer, because the age categories may be aggregated or split across the source national data.</p></dd>
+<dt><code>death_rate</code></dt><dd><p>double Weekly death rate.</p></dd>
+<dt><code>deaths_total</code></dt><dd><p>double Count of deaths for all ages combined.</p></dd>
+<dt><code>rate_total</code></dt><dd><p>double Crude death rate.</p></dd>
+
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Courtesy of Bob Rudis's cdccovidview package</p>
+    <p>Human Mortality Database, <a href='http://mortality.org'>http://mortality.org</a></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The U.S. Centers for Disease Control provides weekly
-summary and interpretation of key indicators that have been adapted
-to track the COVID-19 pandemic in the United States. Data is
-retrieved using the cdccovidview package from both COVIDView
-(<a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a>)
-and COVID-NET
-(<a href='https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html'>https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html</a>).</p>
+    <p>For further details on the construction of this dataset see the codebook at <a href='https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf'>https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf</a>.
+For the original input data files in standardized form, see <a href='https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip'>https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip</a>.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p><a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a></p>
+    
+
+
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Kieran Healy</p>
