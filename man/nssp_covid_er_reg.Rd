@@ -5,7 +5,7 @@
 \alias{nssp_covid_er_reg}
 \title{NSSP Regional COVID ER Visits}
 \format{
-A data frame with 538 rows and 9 variables:
+A tibble with 538 rows and 9 variables:
 \describe{
 \item{\code{week}}{integer COLUMN_DESCRIPTION}
 \item{\code{num_fac}}{integer COLUMN_DESCRIPTION}

@@ -34,11 +34,17 @@ reference:
     desc: Cross-national Data from the European Centers for Disease Control.
     contents:
       - covnat
+  - title: "Human Mortality Database Data"
+    desc: Short-Term Mortality Fluctuations Data from the HMD.
+    contents:
+      - stmf
   - title: "New York Times Data"
-    desc: US State- and County-level Data from the New york Times.
+    desc: Data from the New York Times.
     contents:
       - nytcovcounty
       - nytcovstate
+      - nytexcess
+      - nytcovus
   - title: "Policy Data"
     desc: Cross-national Data from the Coronanet project.
     contents:
@@ -53,6 +59,7 @@ articles:
   navbar: ~
   contents:
   - ecdc-data
+  - excess-mortality
   - us-data
   - mobility-data
   - new-york-times

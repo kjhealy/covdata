@@ -120,6 +120,34 @@
 "nytcovus"
 
 
+#' @title NYT Excess Mortality Estimates, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
+#' @description All-cause mortality is widely used by demographers and other researchers to understand the full impact of deadly events, including epidemics, wars and natural disasters. The totals in this data include deaths from Covid-19 as well as those from other causes, likely including people who could not be treated or did not seek treatment for other conditions.
+#' @format A tibble with `r fmt_nr(nytexcess)` rows and `r fmt_nc(nytexcess)` columns
+#' \describe{
+#'   \item{\code{country}}{character Country Name}
+#'   \item{\code{placename}}{character Place Name}
+#'   \item{\code{frequency}}{character Reporting period. Weekly or monthly, depending on how the data is recorded.}
+#'   \item{\code{start_date}}{date The first date included in the period.}
+#'   \item{\code{end_date}}{date The last date included in the period,}
+#'   \item{\code{year}}{character Year of data. Note that this variable is of type character and not integer because several observations are notes to the effect that the year is an average of two years.}
+#'   \item{\code{month}}{integer Numerical month.}
+#'   \item{\code{week}}{integer Numerical week.}
+#'   \item{\code{deaths}}{integer  The total number of confirmed deaths recorded from any cause.}
+#'   \item{\code{expected_deaths}}{integer The baseline number of expected deaths, calculated from a historical average. See details below.}
+#'   \item{\code{excess_deaths}}{integer The number of deaths minus the expected deaths.}
+#'   \item{\code{baseline}}{character The years used to calculate expected_deaths.}
+#'}
+#' @details expected deaths for each area based on historical data for the same time of year. These expected deaths are the basis for our excess death calculations, which estimate how many more people have died this year than in an average year.
+#'
+#' The number of years used in the historical averages changes depending on what data is available, whether it is reliable and underlying demographic changes. See Data Sources for the years used to calculate the baselines. The baselines do not adjust for changes in age or other demographics, and they do not account for changes in total population.
+#'
+#' The number of expected deaths are not adjusted for how non-Covid-19 deaths may change during the outbreak, which will take some time to figure out. As countries impose control measures, deaths from causes like road accidents and homicides may decline. And people who die from Covid-19 cannot die later from other causes, which may reduce other causes of death. Both of these factors, if they play a role, would lead these baselines to understate, rather than overstate, the number of excess deaths.
+#' @author Kieran Healy
+#' @source The New York Times \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}.
+#' For further details on these data see \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}
+#' @references
+"nytexcess"
+
 #' @title CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US
 #' @description Courtesy of Bob Rudis's cdccovidview package
 #' @format A data frame with `r fmt_nr(cdc_hospitalizations)` rows and `r fmt_nc(cdc_hospitalizations)` variables:
@@ -295,7 +323,7 @@
 #' @title NSSP Regional COVID ER Visits
 #' @description Regional Syndromic Surveillance Program (NSSP):
 #' Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
-#' @format A data frame with `r fmt_nr(nssp_covid_er_reg)` rows and `r fmt_nc(nssp_covid_er_reg)` variables:
+#' @format A tibble with `r fmt_nr(nssp_covid_er_reg)` rows and `r fmt_nc(nssp_covid_er_reg)` variables:
 #' \describe{
 #'   \item{\code{week}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{num_fac}}{integer COLUMN_DESCRIPTION}
@@ -318,6 +346,33 @@
 #' @source Courtesy of Bob Rudis's cdccovidview package
 #' @author Kieran Healy
 "nssp_covid_er_reg"
+
+
+#' @title Short Term Mortality Fluctuations (STMF) data series
+#' @description Human Mortality Database (HMD) series of weekly death counts across countries.
+#' @format A tibble with `r fmt_nr(stmf)` rows and `r fmt_nc(stmf)` variables:
+#' \describe{
+#'   \item{\code{country_code}}{character ISO3 Country Code}
+#'   \item{\code{year}}{double Year}
+#'   \item{\code{week}}{double Week number. Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics.}
+#'   \item{\code{sex}}{character Sex. m = Males. f = Females. b = Both combined.}
+#'   \item{\code{split}}{double Indicates if data were split from aggregated age groups (0 if the original data has necessary detailed age scale). For example, if the original age scale was 0-4, 5-29, 30-65, 65+, then split will be equal to 1}
+#'   \item{\code{split_sex}}{double Indicates if the original data are available by sex (0) or data are interpolated (1)}
+#'   \item{\code{forecast}}{double Equals 1 for all years where forecasted population exposures were used to calculate weekly death rates.}
+#'   \item{\code{approx_date}}{double Approximate date (derived from the `year` and `week` number).}
+#'   \item{\code{age_group}}{character Age group for death counts and rates}
+#'   \item{\code{death_count}}{double Weekly death count. This number need not be an integer, because the age categories may be aggregated or split across the source national data.}
+#'   \item{\code{death_rate}}{double Weekly death rate.}
+#'   \item{\code{deaths_total}}{double Count of deaths for all ages combined.}
+#'   \item{\code{rate_total}}{double Crude death rate.}
+#'
+#'}
+#' @details For further details on the construction of this dataset see the codebook at \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}.
+#' For the original input data files in standardized form, see \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
+#' @author Kieran Healy
+#' @source Human Mortality Database, \url{http://mortality.org}
+#' @references
+"stmf"
 
 ## Apple Mobility Data
 #' @title Apple Mobility Data

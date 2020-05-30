@@ -8,19 +8,33 @@
 [![R build status](https://github.com/kjhealy/covdata/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/covdata/actions)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides COVID-19 related data from the following sources: 
+`covdata` is a data package for R. It provides the following datasets: 
 
-- National level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
+## COVID-19 specific case and mortality data
+
+- National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
+
+## All-cause mortality and excess mortality data
+
+- National-level short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org).
+- National-level all-cause and excess mortality estimates from the [_New York Times_](https://github.com/nytimes/covid-19-data).  
+
+## Mobility and activity data
+
 - Data from [Apple](http://apple.com/covid19) on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.
 - Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.
 - Data from the [CoronaNet Research Project](https://coronanet-project.org), providing event-based tracking of governmental policy responses to the corona virus. 
 
+## Policy data
+
+- Data on policy interventions from the [CoronaNet Project](https://coronanet-project.org).
+
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
 
-Data are current through Monday, May 25, 2020.
+Data are current through Saturday, May 30, 2020.
 
 ## Installation
 
@@ -79,21 +93,9 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 ```r
 library(tidyverse) # Optional but strongly recommended
 library(covdata)
-#> 
-#> Attaching package: 'covdata'
-#> The following objects are masked _by_ '.GlobalEnv':
-#> 
-#>     apple_mobility, cdc_deaths_by_age, cdc_deaths_by_week, cdc_hospitalizations, coronanet, covnat, covus, google_mobility,
-#>     nytcovcounty, nytcovstate, nytcovus
-#> The following object is masked from 'package:socviz':
-#> 
-#>     %nin%
-#> The following object is masked from 'package:kjhutils':
-#> 
-#>     %nin%
 
 covnat
-#> # A tibble: 19,184 x 8
+#> # A tibble: 20,229 x 8
 #> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -107,14 +109,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 19,174 more rows
+#> # … with 20,219 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 131 x 8
+#> # A tibble: 137 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -127,7 +129,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 121 more rows
+#> # … with 127 more rows
 ```
 
 
@@ -178,8 +180,7 @@ citation("covdata")
 #> 
 #> To cite the package `covdata` in publications use:
 #> 
-#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0,
-#>   <http://kjhealy.github.io/covdata>.
+#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 

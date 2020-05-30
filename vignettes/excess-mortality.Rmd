@@ -1,0 +1,63 @@
+---
+title: "Excess Mortality Data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{excess-mortality}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tidyverse)
+library(covdata)
+```
+
+## Short-term Mortality Fluctuations
+
+The [Human Mortality Database](https://www.mortality.org) provides weekly death counts and rates by age groups for a number of countries. Age groups are standardized across countries. Rate calculations are also standardized. The standardization of age categories means that weekly "counts" may not be whole numbers. See the [HMD Data Note](https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf) for details on the data sources and calculation of rates. In particular, note the following, from p.2 of the codebook:
+
+> In general, the STMF is based on the data that are collected for the core HMD. The HMD follows certain criteria for inclusion of individual countries such as requirements for maintaining high quality statistical systems and having the completeness of registration of vital events close to 100 percent. Nevertheless, the weekly statistics has own specific which should be taken into account.
+1) The data on deaths are provided by the date of registration or date of occurrence. There is no way to convert the date of registration into the date of occurrence. The exact type of the data and further details are indicated in the metadata file.
+2) If the data are provided by date of registration, there could be artificial fluctuations in weekly death figures related to special events (e.g. end of the statistical period, public holidays).
+3) The data for last weeks of a year as well as data for all weeks of the most recent year might be incomplete due to a delayed registration. Statistical offices may still revise these data in the course of the next update.
+4) Deaths and death rates are provided by calendar week starting from Monday, Saturday or Sunday (depending on country-specific standards). Please check the country-specific documentationfor details.
+5) Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics.
+The data in the STMF are presented without any corrections. The original data are notadjusted for death undercounts or smoothed. All known country-specific quality issues are documented in the country- specific metadata file.
+
+```{r stmf-example}
+stmf
+```
+
+```{r stmf-figure, fig.height=8, fig.width=12, dpi=100}
+stmf %>%
+  filter(sex == "b", country_code == "BEL") %>%
+  group_by(year, week) %>%
+  mutate(yr_ind = year %in% 2020) %>%
+  slice(1) %>%
+  ggplot(aes(x = week, y = deaths_total, color = yr_ind, group = year)) + 
+  geom_line(size = 0.9) + 
+  scale_color_manual(values = c("gray70", "red"), labels = c("2000-2019", "2020")) +
+  labs(x = "Week of the Year", 
+       y = "Total Deaths", 
+       color = "Year",
+       title = "Weekly recorded deaths in Belgium, 2000-2020") + 
+  theme_minimal() + 
+  theme(legend.position = "top")
+```
+
+
+## New York Times Excess Death Calculations
+
+The New York Times has begun to collate short term mortality counts in an effort to calculate excess deaths for various countries and regions. 
+
+```{r nytexcess}
+nytexcess
+```
+
