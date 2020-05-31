@@ -8,33 +8,35 @@
 [![R build status](https://github.com/kjhealy/covdata/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/covdata/actions)
 <!-- badges: end -->
 
-`covdata` is a data package for R. It provides the following datasets: 
+## About the package
 
-## COVID-19 specific case and mortality data
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Sunday, May 31, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+
+`covdata` provides the following: 
+
+### COVID-19 specific case and mortality data
 
 - National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
 
-## All-cause mortality and excess mortality data
+### All-cause mortality and excess mortality data
 
 - National-level short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org).
 - National-level all-cause and excess mortality estimates from the [_New York Times_](https://github.com/nytimes/covid-19-data).  
 
-## Mobility and activity data
+### Mobility and activity data
 
 - Data from [Apple](http://apple.com/covid19) on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.
 - Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.
 - Data from the [CoronaNet Research Project](https://coronanet-project.org), providing event-based tracking of governmental policy responses to the corona virus. 
 
-## Policy data
+### Policy data
 
 - Data on policy interventions from the [CoronaNet Project](https://coronanet-project.org).
 
 The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
-
-Data are current through Sunday, May 31, 2020.
 
 ## Installation
 
@@ -116,7 +118,7 @@ covnat
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 138 x 8
+#> # A tibble: 139 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -129,7 +131,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 128 more rows
+#> # … with 129 more rows
 ```
 
 
