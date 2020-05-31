@@ -352,7 +352,10 @@
 #' @description Human Mortality Database (HMD) series of weekly death counts across countries.
 #' @format A tibble with `r fmt_nr(stmf)` rows and `r fmt_nc(stmf)` variables:
 #' \describe{
-#'   \item{\code{country_code}}{character ISO3 Country Code}
+#'   \item{\code{country_code}}{Mortality database country code}
+#'   \item{\code{cname}}{character Country name}
+#'   \item{\code{iso2}}{character ISO2 country code}
+#'   \item{\code{iso3}}{character ISO3 country code}
 #'   \item{\code{year}}{double Year}
 #'   \item{\code{week}}{double Week number. Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics.}
 #'   \item{\code{sex}}{character Sex. m = Males. f = Females. b = Both combined.}

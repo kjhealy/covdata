@@ -613,6 +613,19 @@ stmf <- get_stmf(skip = 2) %>%
   select(country_code:sex, split:forecast, approx_date, approx_date, age_group:death_rate, deaths_total, rate_total)
 
 
+md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
+  left_join(countries, by = c("country_code" = "iso3")) %>%
+  mutate(cname = replace(cname, country_code == "DEUTNP", "Germany"),
+         iso2 = replace(iso2, country_code == "DEUTNP", "DE"),
+         cname = replace(cname, country_code == "GBRTENW", "England and Wales")
+         ) %>%
+  left_join(countries)
+
+
+stmf <- left_join(stmf, md_ccodes) %>%
+  select(country_code, cname:iso3, everything())
+
+
 ### --------------------------------------------------------------------------------------
 ### Get Coronanet policy data
 ### --------------------------------------------------------------------------------------

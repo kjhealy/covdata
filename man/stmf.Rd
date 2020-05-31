@@ -5,9 +5,12 @@
 \alias{stmf}
 \title{Short Term Mortality Fluctuations (STMF) data series}
 \format{
-A tibble with 202,305 rows and 13 variables:
+A tibble with 202,305 rows and 16 variables:
 \describe{
-\item{\code{country_code}}{character ISO3 Country Code}
+\item{\code{country_code}}{Mortality database country code}
+\item{\code{cname}}{character Country name}
+\item{\code{iso2}}{character ISO2 country code}
+\item{\code{iso3}}{character ISO3 country code}
 \item{\code{year}}{double Year}
 \item{\code{week}}{double Week number. Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics.}
 \item{\code{sex}}{character Sex. m = Males. f = Females. b = Both combined.}
