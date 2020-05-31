@@ -1,5 +1,5 @@
 ---
-title: "The ECDC Data"
+title: "European Centers for Disease Control Data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{ecdc-data}
