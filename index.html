@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
       </span>
     </div>
 
@@ -57,7 +57,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/ecdc-data.html">The ECDC Data</a>
+      <a href="articles/ecdc-data.html">European Centers for Disease Control Data</a>
     </li>
     <li>
       <a href="articles/excess-mortality.html">Excess Mortality Data</a>
@@ -138,7 +138,7 @@
 <li>Data on policy interventions from the <a href="https://coronanet-project.org">CoronaNet Project</a>.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
-<p>Data are current through Saturday, May 30, 2020.</p>
+<p>Data are current through Sunday, May 31, 2020.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -177,7 +177,7 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
 
 <span class="no">covnat</span>
-<span class="co">#&gt; # A tibble: 20,229 x 8</span>
+<span class="co">#&gt; # A tibble: 20,438 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [209]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
@@ -191,10 +191,10 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
-<span class="co">#&gt; # … with 20,219 more rows</span></pre></div>
+<span class="co">#&gt; # … with 20,428 more rows</span></pre></div>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"New York City"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"walking"</span>)
-<span class="co">#&gt; # A tibble: 137 x 8</span>
+<span class="co">#&gt; # A tibble: 138 x 8</span>
 <span class="co">#&gt;    geo_type region        transportation_type alternative_name sub_region country       date       index</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;         &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  </span>
@@ -207,7 +207,7 @@
 <span class="co">#&gt;  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6</span>
 <span class="co">#&gt;  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1</span>
 <span class="co">#&gt; 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5</span>
-<span class="co">#&gt; # … with 127 more rows</span></pre></div>
+<span class="co">#&gt; # … with 128 more rows</span></pre></div>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"positive"</span>,
          <span class="no">date</span> <span class="kw">==</span> <span class="st">"2020-04-27"</span>,

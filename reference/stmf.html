@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/ecdc-data.html">The ECDC Data</a>
+      <a href="../articles/ecdc-data.html">European Centers for Disease Control Data</a>
     </li>
     <li>
       <a href="../articles/excess-mortality.html">Excess Mortality Data</a>
@@ -152,8 +152,11 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 202,305 rows and 13 variables:</p><dl>
-<dt><code>country_code</code></dt><dd><p>character ISO3 Country Code</p></dd>
+    <p>A tibble with 202,305 rows and 16 variables:</p><dl>
+<dt><code>country_code</code></dt><dd><p>Mortality database country code</p></dd>
+<dt><code>cname</code></dt><dd><p>character Country name</p></dd>
+<dt><code>iso2</code></dt><dd><p>character ISO2 country code</p></dd>
+<dt><code>iso3</code></dt><dd><p>character ISO3 country code</p></dd>
 <dt><code>year</code></dt><dd><p>double Year</p></dd>
 <dt><code>week</code></dt><dd><p>double Week number. Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics.</p></dd>
 <dt><code>sex</code></dt><dd><p>character Sex. m = Males. f = Females. b = Both combined.</p></dd>
