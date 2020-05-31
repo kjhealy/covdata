@@ -102,10 +102,14 @@
 </h1></div>
 <!-- badges: start -->
 
-<p><code>covdata</code> is a data package for R. It provides the following datasets:</p>
-<div id="covid-19-specific-case-and-mortality-data" class="section level2">
+<div id="about-the-package" class="section level2">
 <h2 class="hasAnchor">
-<a href="#covid-19-specific-case-and-mortality-data" class="anchor"></a>COVID-19 specific case and mortality data</h2>
+<a href="#about-the-package" class="anchor"></a>About the package</h2>
+<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Sunday, May 31, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
+<p><code>covdata</code> provides the following:</p>
+<div id="covid-19-specific-case-and-mortality-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#covid-19-specific-case-and-mortality-data" class="anchor"></a>COVID-19 specific case and mortality data</h3>
 <ul>
 <li>National-level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.<br>
 </li>
@@ -114,31 +118,31 @@
 <li>Data from the US Centers for Disease Control’s <a href="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html">Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network</a> (COVID-NET). See below for details about this network and the scope of its coverage.</li>
 </ul>
 </div>
-<div id="all-cause-mortality-and-excess-mortality-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#all-cause-mortality-and-excess-mortality-data" class="anchor"></a>All-cause mortality and excess mortality data</h2>
+<div id="all-cause-mortality-and-excess-mortality-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#all-cause-mortality-and-excess-mortality-data" class="anchor"></a>All-cause mortality and excess mortality data</h3>
 <ul>
 <li>National-level short-term mortality fluctuations data from the <a href="https://www.mortality.org">Human Mortality Database</a>.</li>
 <li>National-level all-cause and excess mortality estimates from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
 </ul>
 </div>
-<div id="mobility-and-activity-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#mobility-and-activity-data" class="anchor"></a>Mobility and activity data</h2>
+<div id="mobility-and-activity-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#mobility-and-activity-data" class="anchor"></a>Mobility and activity data</h3>
 <ul>
 <li>Data from <a href="http://apple.com/covid19">Apple</a> on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.</li>
 <li>Data from <a href="https://www.google.com/covid19/mobility/data_documentation.html">Google</a> on relative trends in mobility in regions and countries since mid-January of 2020, based on location and activity information.</li>
 <li>Data from the <a href="https://coronanet-project.org">CoronaNet Research Project</a>, providing event-based tracking of governmental policy responses to the corona virus.</li>
 </ul>
 </div>
-<div id="policy-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#policy-data" class="anchor"></a>Policy data</h2>
+<div id="policy-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#policy-data" class="anchor"></a>Policy data</h3>
 <ul>
 <li>Data on policy interventions from the <a href="https://coronanet-project.org">CoronaNet Project</a>.</li>
 </ul>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)</p>
-<p>Data are current through Sunday, May 31, 2020.</p>
+</div>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -194,7 +198,7 @@
 <span class="co">#&gt; # … with 20,428 more rows</span></pre></div>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"New York City"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"walking"</span>)
-<span class="co">#&gt; # A tibble: 138 x 8</span>
+<span class="co">#&gt; # A tibble: 139 x 8</span>
 <span class="co">#&gt;    geo_type region        transportation_type alternative_name sub_region country       date       index</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;         &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  </span>
@@ -207,7 +211,7 @@
 <span class="co">#&gt;  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6</span>
 <span class="co">#&gt;  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1</span>
 <span class="co">#&gt; 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5</span>
-<span class="co">#&gt; # … with 128 more rows</span></pre></div>
+<span class="co">#&gt; # … with 129 more rows</span></pre></div>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"positive"</span>,
          <span class="no">date</span> <span class="kw">==</span> <span class="st">"2020-04-27"</span>,
