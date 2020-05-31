@@ -1,6 +1,4 @@
-## code to prepare covid datasets
-## code to prepare covid datasets
-## code to prepare covid datasets
+## code to prepare covdata datasets
 
 library(tidyverse)
 library(lubridate)
