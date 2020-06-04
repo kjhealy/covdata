@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Sunday, May 31, 2020}
+\title{COVID-19 data for the USA, current as of Thursday, June  4, 2020}
 \format{
-A tibble with 86,994 rows and 5 columns
+A tibble with 70,798 rows and 15 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}

@@ -10,7 +10,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Sunday, May 31, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Thursday, June  4, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -36,7 +36,7 @@
 - Data on policy interventions from the [CoronaNet Project](https://coronanet-project.org), providing event-based tracking of governmental policy responses to COVID-19. 
 
 
-The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. (Follow the links above.)
+The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. Follow the links above, and see the vignettes in the package. The collection and effective reporting of case and mortality data by national governments has technical and political aspects influenced by, amongst other things, the varying capacity of states to test, track and measure events in a timely fashion, the varying definitions, criteria, and methods employed by states in registering cases and deaths, and the role of politics in the exercise of capacity and the reporting of unflattering news. Researchers should take care to familiarize themselves with these issues prior to making strong claims based on these data.
 
 ## Installation
 
@@ -97,7 +97,7 @@ library(tidyverse) # Optional but strongly recommended
 library(covdata)
 
 covnat
-#> # A tibble: 20,438 x 8
+#> # A tibble: 21,274 x 8
 #> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -111,14 +111,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 20,428 more rows
+#> # … with 21,264 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 139 x 8
+#> # A tibble: 142 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -131,7 +131,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 129 more rows
+#> # … with 132 more rows
 ```
 
 
@@ -140,10 +140,10 @@ covus %>%
   filter(measure == "positive", 
          date == "2020-04-27", 
          state == "NJ")
-#> # A tibble: 1 x 5
-#>   date       state fips  measure   count
-#>   <date>     <chr> <chr> <chr>     <dbl>
-#> 1 2020-04-27 NJ    34    positive 111188
+#> # A tibble: 1 x 15
+#>   date       state fips  pos_neg death_increase hospitalized_inc… hash      commercial_score negative_regula… negative_score positive_score score grade measure  count
+#>   <date>     <chr> <chr>   <dbl>          <dbl>             <dbl> <chr>                <dbl>            <dbl>          <dbl>          <dbl> <dbl> <lgl> <chr>    <dbl>
+#> 1 2020-04-27 NJ    34     227775            106                 0 5c04c91f…                0                0              0              0     0 NA    positi… 111188
 ```
 
 
