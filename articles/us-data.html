@@ -132,20 +132,22 @@
 <h2 class="hasAnchor">
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">covus</span>
-<span class="co">#&gt; # A tibble: 86,994 x 5</span>
-<span class="co">#&gt;    date       state fips  measure                  count</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-05-30 AK    02    positive                   434</span>
-<span class="co">#&gt;  2 2020-05-30 AK    02    negative                 51261</span>
-<span class="co">#&gt;  3 2020-05-30 AK    02    pending                     NA</span>
-<span class="co">#&gt;  4 2020-05-30 AK    02    hospitalized_currently      14</span>
-<span class="co">#&gt;  5 2020-05-30 AK    02    hospitalized_cumulative     NA</span>
-<span class="co">#&gt;  6 2020-05-30 AK    02    in_icu_currently            NA</span>
-<span class="co">#&gt;  7 2020-05-30 AK    02    in_icu_cumulative           NA</span>
-<span class="co">#&gt;  8 2020-05-30 AK    02    on_ventilator_currently      2</span>
-<span class="co">#&gt;  9 2020-05-30 AK    02    on_ventilator_cumulative    NA</span>
-<span class="co">#&gt; 10 2020-05-30 AK    02    recovered                  368</span>
-<span class="co">#&gt; # … with 86,984 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # A tibble: 70,798 x 15</span>
+<span class="co">#&gt;    date       state fips  pos_neg death_increase hospitalized_in… hash </span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;</span>
+<span class="co">#&gt;  1 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  2 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  3 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  4 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  5 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  6 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  7 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  8 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt;  9 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt; 10 2020-06-03 AK    02      58182              0                0 0254…</span>
+<span class="co">#&gt; # … with 70,788 more rows, and 8 more variables: commercial_score &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   negative_regular_score &lt;dbl&gt;, negative_score &lt;dbl&gt;, positive_score &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   score &lt;dbl&gt;, grade &lt;lgl&gt;, measure &lt;chr&gt;, count &lt;dbl&gt;</span></pre></body></html></div>
 <div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="anchor"></a>Draw a log-linear graph of cumulative reported US cases.</h3>
@@ -191,7 +193,7 @@
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 15 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 4504 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
+<span class="co">#&gt; Warning: Removed 4728 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
 <div id="draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="section level3">
@@ -222,7 +224,7 @@
 <h3 class="hasAnchor">
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 4,909 x 5</span>
+<span class="co">#&gt; # A tibble: 5,129 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -235,13 +237,13 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 4,899 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 5,119 more rows</span></pre></body></html></div>
 </div>
 <div id="county-level-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 191,615 x 6</span>
+<span class="co">#&gt; # A tibble: 203,591 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -254,7 +256,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 191,605 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 203,581 more rows</span></pre></body></html></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
 <h3 class="hasAnchor">
