@@ -132,22 +132,20 @@
 <h2 class="hasAnchor">
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">covus</span>
-<span class="co">#&gt; # A tibble: 70,798 x 15</span>
-<span class="co">#&gt;    date       state fips  pos_neg death_increase hospitalized_in… hash </span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;</span>
-<span class="co">#&gt;  1 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  2 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  3 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  4 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  5 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  6 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  7 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  8 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt;  9 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt; 10 2020-06-03 AK    02      58182              0                0 0254…</span>
-<span class="co">#&gt; # … with 70,788 more rows, and 8 more variables: commercial_score &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   negative_regular_score &lt;dbl&gt;, negative_score &lt;dbl&gt;, positive_score &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   score &lt;dbl&gt;, grade &lt;lgl&gt;, measure &lt;chr&gt;, count &lt;dbl&gt;</span></pre></body></html></div>
+<span class="co">#&gt; # A tibble: 56,243 x 7</span>
+<span class="co">#&gt;    date       state fips  data_quality_gra… measure       count measure_label   </span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           </span>
+<span class="co">#&gt;  1 2020-06-04 AK    02    A                 positive        513 Positive Tests  </span>
+<span class="co">#&gt;  2 2020-06-04 AK    02    A                 negative      59584 Negative Tests  </span>
+<span class="co">#&gt;  3 2020-06-04 AK    02    A                 pending          NA Pending Tests   </span>
+<span class="co">#&gt;  4 2020-06-04 AK    02    A                 hospitalized…    13 Currently Hospi…</span>
+<span class="co">#&gt;  5 2020-06-04 AK    02    A                 hospitalized…    NA Cumulative Hosp…</span>
+<span class="co">#&gt;  6 2020-06-04 AK    02    A                 in_icu_curre…    NA Currently in ICU</span>
+<span class="co">#&gt;  7 2020-06-04 AK    02    A                 in_icu_cumul…    NA Cumulative in I…</span>
+<span class="co">#&gt;  8 2020-06-04 AK    02    A                 on_ventilato…     1 Currently on Ve…</span>
+<span class="co">#&gt;  9 2020-06-04 AK    02    A                 on_ventilato…    NA Cumulative on V…</span>
+<span class="co">#&gt; 10 2020-06-04 AK    02    A                 recovered       376 Recovered       </span>
+<span class="co">#&gt; # … with 56,233 more rows</span></pre></body></html></div>
 <div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="anchor"></a>Draw a log-linear graph of cumulative reported US cases.</h3>
@@ -193,7 +191,7 @@
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 15 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 4728 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
+<span class="co">#&gt; Warning: Removed 4784 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
 <div id="draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="section level3">
@@ -383,7 +381,7 @@
     <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Courtesy Bob Rudis's cdccovidview"</span>,
     <span class="kw">caption</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span>(<span class="st">"Source: COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention.\n&lt;https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html&gt;; Accessed on %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span>())) +
   <span class="fu">theme_minimal</span>()</pre></body></html></div>
-<p><img src="us-data_files/figure-html/cdc-example-1.png" width="1350"></p>
+<p><img src="us-data_files/figure-html/cdc-example-1.png" width="1800"></p>
 </div>
 </div>
   </div>
