@@ -158,7 +158,7 @@ nssp_covid_er_reg
 
 ### Summary view of CDC Surveillance Network Data
 
-```{r cdc-example, fig.height=5, fig.width=9, dpi=150}
+```{r cdc-example, fig.height=5, fig.width=12, dpi=150}
 
 age_f <- c(
   "0-4 yr", "5-17 yr", "18-49 yr", 

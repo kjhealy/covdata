@@ -3,15 +3,17 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Thursday, June  4, 2020}
+\title{COVID-19 data for the USA, current as of Friday, June  5, 2020}
 \format{
-A tibble with 70,798 rows and 15 columns
+A tibble with 56,243 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
 \item{fips}{State FIPS code (character)}
+\item{\code{data_quality_grade}}{character Data quality as assessed by COVID Tracking Project staff}
 \item{measure}{Outcome measure for this date}
 \item{count}{Count of measure}
+\item{\code{measure_label}}{character Outcome measure, suitable for use as a plot label}
 }
 }
 \source{
@@ -26,10 +28,10 @@ A dataset containing US state-level data on COVID-19
 \details{
 The measures tracked by the COVID tracking project are as follows:
 \itemize{
+\item \code{death} Total number of people who have died as a result of COVID-19 so far.
 \item \code{positive} Total cumulative positive test results.
-\item \code{positive_increase} Increase in positive cases from the day before.
 \item \code{negative} Total cumulative negative test results.
-\item \code{negative_increase} Increase in negative cases from the day before.
+\item \code{recovered} Total number recovered.
 \item \code{pending} Tests that have been submitted to a lab but no results have been reported yet.
 \item \code{hospitalized_currently} Total number of people hospitalized on date.
 \item \code{hospitalized_cumulative} Total cumulative number of people hospitalized by date.
@@ -37,11 +39,6 @@ The measures tracked by the COVID tracking project are as follows:
 \item \code{in_icu_cumulative} Total cumulative number of people in intensive care unit by date.
 \item \code{on_ventilator_currently}  Total number of people on ventilator on date.
 \item \code{on_ventilator_cumulative} Total cumulative number of people on ventilator by date.
-\item \code{recovered} Total number recovered.
-\item \code{death} Total number of deaths.
-\item \code{death_increase} Increase in deaths from the day before.
-\item \code{total_test_results} Calculated value (positive + negative) of total test results.
-\item \code{total_test_results_increase} Increase in total test results from the day before
 Not all measures are reported by all states.
 }
 }

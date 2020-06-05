@@ -39,14 +39,16 @@
 #' \item{date}{Date in YYYY-MM-DD format (date)}
 #' \item{state}{Two letter State abbreviation (character)}
 #' \item{fips}{State FIPS code (character)}
+#' \item{\code{data_quality_grade}}{character Data quality as assessed by COVID Tracking Project staff}
 #' \item{measure}{Outcome measure for this date}
 #' \item{count}{Count of measure}
+#' \item{\code{measure_label}}{character Outcome measure, suitable for use as a plot label}
 #' }
 #' @details The measures tracked by the COVID tracking project are as follows:
+#' - `death` Total number of people who have died as a result of COVID-19 so far.
 #' - `positive` Total cumulative positive test results.
-#' - `positive_increase` Increase in positive cases from the day before.
 #' - `negative` Total cumulative negative test results.
-#' - `negative_increase` Increase in negative cases from the day before.
+#' - `recovered` Total number recovered.
 #' - `pending` Tests that have been submitted to a lab but no results have been reported yet.
 #' - `hospitalized_currently` Total number of people hospitalized on date.
 #' - `hospitalized_cumulative` Total cumulative number of people hospitalized by date.
@@ -54,11 +56,6 @@
 #' - `in_icu_cumulative` Total cumulative number of people in intensive care unit by date.
 #' - `on_ventilator_currently`  Total number of people on ventilator on date.
 #' - `on_ventilator_cumulative` Total cumulative number of people on ventilator by date.
-#' - `recovered` Total number recovered.
-#' - `death` Total number of deaths.
-#' - `death_increase` Increase in deaths from the day before.
-#' - `total_test_results` Calculated value (positive + negative) of total test results.
-#' - `total_test_results_increase` Increase in total test results from the day before
 #' Not all measures are reported by all states.
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"

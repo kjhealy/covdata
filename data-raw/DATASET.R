@@ -509,13 +509,40 @@ countries <- covnat %>%
 ## US state data
 cov_us_raw <- get_uscovid_data(url = "https://covidtracking.com/api/v1/", save_file = "n")
 
+## Drop deprecated measures and unneeded variables
+drop_cols <- c("check_time_et", "commercial_score", "date_checked",
+               "death_increase", "date_modified", "grade", "hash",
+               "hospitalized", "hospitalized_increase", "last_update_et",
+               "negative_increase", "negative_regular_score",
+               "negative_score", "pos_neg", "positive_increase",
+               "positive_score", "score", "total", "total_test_results",
+               "total_test_results_increase")
+
 covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
-  select(!data_quality_grade:date_checked) %>%
-  select(date, state, fips, everything()) %>%
-  pivot_longer(positive:total_test_results_increase,
-               names_to = "measure", values_to = "count") %>%
-  filter(measure %nin% c("pos_neg", "total"))
+  select(!all_of(drop_cols)) %>%
+  select(date, state, fips, data_quality_grade, everything()) %>%
+  pivot_longer(positive:death,
+               names_to = "measure", values_to = "count")
+
+covus_measure_labels <- tribble(
+  ~measure, ~measure_label,
+  "death", "Deaths",
+  "hospitalized_cumulative", "Cumulative Hospitalized",
+  "hospitalized_currently",   "Currently Hospitalized",
+  "in_icu_cumulative",        "Cumulative in ICU",
+  "in_icu_currently",         "Currently in ICU",
+  "negative", "Negative Tests",
+  "on_ventilator_cumulative", "Cumulative on Ventilator",
+  "on_ventilator_currently",  "Currently on Ventilator",
+  "pending",                  "Pending Tests",
+  "positive",                 "Positive Tests",
+  "recovered", "Recovered"
+)
+
+covus <- covus %>%
+  left_join(covus_measure_labels)
+
 
 covus ## Data object
 
