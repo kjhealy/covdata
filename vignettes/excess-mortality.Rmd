@@ -61,7 +61,7 @@ The New York Times has begun to collate short term mortality counts in an effort
 nytexcess
 ```
 
-```{r}
+```{r nytexcessplot, fig.height=8, fig.width=12, dpi=100}
 nytexcess %>%
   filter(placename == "New York City") %>%
   group_by(year, week) %>%
