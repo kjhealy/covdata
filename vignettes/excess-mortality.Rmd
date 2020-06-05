@@ -61,3 +61,21 @@ The New York Times has begun to collate short term mortality counts in an effort
 nytexcess
 ```
 
+```{r}
+nytexcess %>%
+  filter(placename == "New York City") %>%
+  group_by(year, week) %>%
+  mutate(yr_ind = year %in% 2020) %>%
+  ggplot(aes(x = week, y = deaths, color = yr_ind, group = year)) + 
+  geom_line(size = 0.9) + 
+  scale_color_manual(values = c("gray70", "red"), labels = c("2017-2019", "2020")) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(x = "Week of the Year", 
+       y = "Total Deaths", 
+       color = "Year",
+       title = "Weekly recorded deaths in New York City, 2017-2020") + 
+  theme_minimal() + 
+  theme(legend.position = "top")
+```
+
+
