@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2.9000</span>
       </span>
     </div>
 
@@ -177,6 +177,21 @@
 <span class="co">#&gt; 10 Austria &lt;NA&gt;      weekly    2015-03-09 2015-03-15 2015      3    11   1763</span>
 <span class="co">#&gt; # … with 4,563 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span>
 <span class="co">#&gt; #   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span></pre></body></html></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">nytexcess</span> <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">placename</span> <span class="kw">==</span> <span class="st">"New York City"</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">group_by</span>(<span class="no">year</span>, <span class="no">week</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="kw">yr_ind</span> <span class="kw">=</span> <span class="no">year</span> <span class="kw">%in%</span> <span class="fl">2020</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">week</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">deaths</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="no">yr_ind</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">year</span>)) +
+  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.9</span>) +
+  <span class="fu">scale_color_manual</span>(<span class="kw">values</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gray70"</span>, <span class="st">"red"</span>), <span class="kw">labels</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"2017-2019"</span>, <span class="st">"2020"</span>)) +
+  <span class="fu">scale_y_continuous</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="no"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>) +
+  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Week of the Year"</span>,
+       <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Total Deaths"</span>,
+       <span class="kw">color</span> <span class="kw">=</span> <span class="st">"Year"</span>,
+       <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Weekly recorded deaths in New York City, 2017-2020"</span>) +
+  <span class="fu">theme_minimal</span>() +
+  <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"top"</span>)</pre></body></html></div>
+<p><img src="excess-mortality_files/figure-html/unnamed-chunk-2-1.png" width="1458.33334"></p>
 </div>
   </div>
 
