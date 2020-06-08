@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.9000</span>
       </span>
     </div>
 
@@ -120,7 +120,12 @@
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)</pre></body></html></div>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'covdata'</span>
+<span class="co">#&gt; The following object is masked from 'package:datasets':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     uspop</span></pre></body></html></div>
 <p>Loading the package makes a variety of datasets available for use. Because the data are in tibbles, the use of the <code>tidyverse</code> suite of packages is strongly recommended, though it is not required. If use the data objects as dataframes (i.e., without loading the <code>tidyverse</code> packages) you will need to re-encode some variables, most importantly <code>date</code> and <code>date-time</code> columns, for them to behave as expected.</p>
 </div>
 <div id="exploring-the-data" class="section level2">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FUNCTION_TITLE — MMWRweek2Date • covdata</title>
+<title>State population estimates for US States — uspop • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="FUNCTION_TITLE — MMWRweek2Date" />
-<meta property="og:description" content="FUNCTION_DESCRIPTION" />
+<meta property="og:title" content="State population estimates for US States — uspop" />
+<meta property="og:description" content="Population estimates for US States as of July 1st 2018" />
 
 
 
@@ -138,58 +138,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FUNCTION_TITLE</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/functions.R'><code>R/functions.R</code></a></small>
-    <div class="hidden name"><code>MMWRweek2Date.Rd</code></div>
+    <h1>State population estimates for US States</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>uspop.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>FUNCTION_DESCRIPTION</p>
+    <p>Population estimates for US States as of July 1st 2018</p>
     </div>
 
-    <pre class="usage"><span class='fu'>MMWRweek2Date</span>(<span class='no'>MMWRyear</span>, <span class='no'>MMWRweek</span>, <span class='kw'>MMWRday</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='no'>uspop</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>MMWRyear</th>
-      <td><p>PARAM_DESCRIPTION</p></td>
-    </tr>
-    <tr>
-      <th>MMWRweek</th>
-      <td><p>PARAM_DESCRIPTION</p></td>
-    </tr>
-    <tr>
-      <th>MMWRday</th>
-      <td><p>PARAM_DESCRIPTION, Default: NULL</p></td>
-    </tr>
-    </table>
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A tibble with 459 rows and 17 variables:</p><dl>
+<dt><code>state</code></dt><dd><p>character State Name</p></dd>
+<dt><code>state_abbr</code></dt><dd><p>character State Abbreviation</p></dd>
+<dt><code>statefips</code></dt><dd><p>character 2-digit FIPS code</p></dd>
+<dt><code>region_name</code></dt><dd><p>character Census region</p></dd>
+<dt><code>division_name</code></dt><dd><p>character Census Division</p></dd>
+<dt><code>sex_id</code></dt><dd><p>character Sex id</p></dd>
+<dt><code>sex</code></dt><dd><p>character Sex label</p></dd>
+<dt><code>hisp_id</code></dt><dd><p>character Ethnicity: Hispanic id</p></dd>
+<dt><code>hisp_label</code></dt><dd><p>character Hispanic label</p></dd>
+<dt><code>fips</code></dt><dd><p>character Full FIPS code</p></dd>
+<dt><code>pop</code></dt><dd><p>double Total population</p></dd>
+<dt><code>white</code></dt><dd><p>double Race alone: White</p></dd>
+<dt><code>black</code></dt><dd><p>double Race alone: Black or African-American</p></dd>
+<dt><code>amind</code></dt><dd><p>double Race alone: American Indian and Alaska Native</p></dd>
+<dt><code>asian</code></dt><dd><p>double Race alone: Asian</p></dd>
+<dt><code>nhopi</code></dt><dd><p>double Race alone: Native Hawaiian and Other Pacific Islander</p></dd>
+<dt><code>tom</code></dt><dd><p>double Race alone: Two or more races</p></dd>
+
+</dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>http://</p>
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>OUTPUT_DESCRIPTION</p>
+    <p>https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-detail.html</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>DETAILS</p>
+    <p>U.S. Census estimates. Be aware of the US Census classifications of Race and Ethnicity. For the estimated total population for each State, jointly filter on  <code>totsex</code> in <code>sex_id</code> and <code>tothisp</code> in <code>hisp_id</code>  and then select <code>pop</code>.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    
-
-
+    <p><a href='https://www2.census.gov/programs-surveys/popest/tables/2010-2018/state/asrh/PEPSR6H.pdf'>https://www2.census.gov/programs-surveys/popest/tables/2010-2018/state/asrh/PEPSR6H.pdf</a></p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Kieran Healy</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
- <span class='co'>#EXAMPLE1</span>
- }
-}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
