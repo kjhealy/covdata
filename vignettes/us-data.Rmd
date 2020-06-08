@@ -78,6 +78,36 @@ covus %>%
   theme_minimal()
 ```
 
+### Draw a graph of the weekly rolling average death rate, by state
+
+```{r rolling-state, fig.height=12, fig.width=8, dpi=100}
+
+state_pops <- uspop %>%
+  filter(sex_id == "totsex", hisp_id == "tothisp") %>%
+  select(state_abbr, statefips, pop, state) %>%
+  rename(name = state, 
+         state = state_abbr, fips = statefips) %>%
+  mutate(state = replace(state, fips == "11", "DC"))
+
+covus %>%
+  filter(measure == "death", state %in% unique(state_pops$state)) %>%
+  group_by(state) %>%
+  mutate(deaths7 = slider::slide_dbl(count, mean, .before = 7, .after = 0, na.rm = TRUE)) %>%
+  left_join(state_pops) %>%
+  ggplot(mapping = aes(x = date, y = (deaths7/pop)*1e5)) + 
+  geom_line(size = 0.5) + 
+  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
+  facet_wrap(~ name, ncol = 4) +
+  labs(x = "Date", 
+       y = "Deaths per 100,000 Population (Seven Day Rolling Average)", 
+       title = "Average Death Rate from COVID-19: US States and Washington, DC", 
+       subtitle = paste("COVID Tracking Project data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       caption = "Kieran Healy @kjhealy / Data: https://www.covidtracking.com/") +
+  theme_minimal()
+
+```
+
+
 ### Draw a graph of cumulative reported US deaths, aggregated to the national level
 
 ```{r us-example-2, fig.height=8, fig.width=10, dpi=100}

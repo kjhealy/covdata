@@ -642,6 +642,8 @@ md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
   left_join(countries, by = c("country_code" = "iso3")) %>%
   mutate(cname = replace(cname, country_code == "DEUTNP", "Germany"),
          iso2 = replace(iso2, country_code == "DEUTNP", "DE"),
+         cname = replace(cname, country_code == "FRATNP", "France"),
+         iso2 = replace(iso2, country_code == "FRATNP", "FR"),
          cname = replace(cname, country_code == "GBRTENW", "England and Wales")
          ) %>%
   left_join(countries)
@@ -673,6 +675,20 @@ coronanet <- coronanet_raw %>%
   select(cnet_vars) %>%
   rename(iso3 = iso_a3, iso2 = iso_a2)
 
+### --------------------------------------------------------------------------------------
+### US Census Population Estimates for States
+### --------------------------------------------------------------------------------------
+
+statefips <- read_csv(here("data-raw/data/state_fips_master.csv")) %>%
+  select(state_name, state_abbr, region_name, division_name) %>%
+  rename(state = state_name)
+
+uspop <- read_csv(here("data-raw/data/PEP_2018_PEPSR6H_with_ann.csv")) %>%
+  janitor::clean_names() %>%
+  filter(estimate == "est72018", !is.na(statefips)) %>%
+  select(sex_id:tom) %>%
+  left_join(statefips) %>%
+  select(state, state_abbr, statefips, region_name, division_name, everything())
 
 ### --------------------------------------------------------------------------------------
 ### Write out the data objects
@@ -714,8 +730,12 @@ usethis::use_data(nytcovus, overwrite = TRUE, compress = "xz")
 usethis::use_data(nytexcess, overwrite = TRUE, compress = "xz")
 
 
+## US State pops
+usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
+
+
 ## rd skeleton
-#sinew::makeOxygen("stmf")
+#sinew::makeOxygen("uspop")
 
 document()
 knit("README.Rmd")

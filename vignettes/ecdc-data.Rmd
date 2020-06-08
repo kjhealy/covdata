@@ -85,3 +85,31 @@ covnat %>%
 
 ```
 
+### Rolling Average of New Cases
+
+```{r rolling, fig.height=6, fig.width=9, dpi=100}
+
+covnat %>%
+  mutate(cname = recode(cname, `United States` = "USA",
+                        `Iran, Islamic Republic of` = "Iran",
+                        `Korea, Republic of` = "South Korea",
+                        `United Kingdom` = "UK"),
+         cgroup = case_when(iso3 %in% focus_cn ~ iso3, 
+                            TRUE ~ "ZZOTHER")) %>%
+  mutate(cases7 = slider::slide_dbl((deaths/pop_2018)*1e6, mean, .before = 7, .after = 0, na.rm = TRUE),
+         deaths7 = slider::slide_dbl((deaths/pop_2018)*1e6, mean, .before = 7, .after = 0, na.rm = TRUE)) %>%
+  filter(iso3 %in% focus_cn) %>%
+  ggplot(mapping = aes(x = date, y = deaths7)) + 
+  geom_line(size = 0.5) + 
+#  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
+  facet_wrap(~ cname) +
+  labs(x = "Date", 
+       y = "Deaths per Million Population (Seven Day Rolling Average)", 
+       title = "Deaths from COVID-19, Selected Countries", 
+       subtitle = paste("ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
+  theme_minimal()
+
+```
+
+Note the odd effect of Spain's decision to change how it's reporting deaths.

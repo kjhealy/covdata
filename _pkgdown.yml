@@ -50,9 +50,10 @@ reference:
     contents:
       - coronanet
   - title: "Other"
-    desc: Other tables
+    desc: Other useful tables
     contents:
       - countries
+      - uspop
 
 articles:
 - title: Datasets
