@@ -80,7 +80,7 @@ covus %>%
 
 ### Draw a graph of the weekly rolling average death rate, by state
 
-```{r rolling-state, fig.height=12, fig.width=8, dpi=100}
+```{r rolling-state, fig.height=16, fig.width=8, dpi=100}
 
 state_pops <- uspop %>%
   filter(sex_id == "totsex", hisp_id == "tothisp") %>%
