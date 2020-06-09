@@ -80,7 +80,7 @@ covus %>%
 
 ### Draw a graph of the weekly rolling average death rate, by state
 
-```{r rolling-state, fig.height=16, fig.width=8, dpi=100}
+```{r rolling-state, fig.height=16, fig.width=6, dpi=100}
 
 state_pops <- uspop %>%
   filter(sex_id == "totsex", hisp_id == "tothisp") %>%
@@ -101,6 +101,7 @@ covus %>%
     deaths_daily = get_daily_count(count, date), 
     deaths7 = slider::slide_dbl(deaths_daily, mean, .before = 7, .after = 0, na.rm = TRUE)) %>%
   left_join(state_pops) %>%
+  filter(date > lubridate::ymd("2020-03-15")) %>%
   ggplot(mapping = aes(x = date, y = (deaths7/pop)*1e5)) + 
   geom_line(size = 0.5) + 
   scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
