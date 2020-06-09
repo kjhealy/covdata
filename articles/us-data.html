@@ -222,6 +222,7 @@
     <span class="kw">deaths_daily</span> <span class="kw">=</span> <span class="fu">get_daily_count</span>(<span class="no">count</span>, <span class="no">date</span>),
     <span class="kw">deaths7</span> <span class="kw">=</span> <span class="kw pkg">slider</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>(<span class="no">deaths_daily</span>, <span class="no">mean</span>, <span class="kw">.before</span> <span class="kw">=</span> <span class="fl">7</span>, <span class="kw">.after</span> <span class="kw">=</span> <span class="fl">0</span>, <span class="kw">na.rm</span> <span class="kw">=</span> <span class="fl">TRUE</span>)) <span class="kw">%&gt;%</span>
   <span class="fu">left_join</span>(<span class="no">state_pops</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">date</span> <span class="kw">&gt;</span> <span class="kw pkg">lubridate</span><span class="kw ns">::</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span>(<span class="st">"2020-03-15"</span>)) <span class="kw">%&gt;%</span>
   <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> (<span class="no">deaths7</span>/<span class="no">pop</span>)*<span class="fl">1e5</span>)) +
   <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>) +
   <span class="fu">scale_y_continuous</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span>(<span class="kw">accuracy</span> <span class="kw">=</span> <span class="fl">1</span>)) +
@@ -232,9 +233,8 @@
        <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"COVID Tracking Project data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covnat</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
        <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.covidtracking.com/"</span>) +
   <span class="fu">theme_minimal</span>()
-<span class="co">#&gt; Joining, by = c("state", "fips")</span>
-<span class="co">#&gt; Warning: Removed 2 row(s) containing missing values (geom_path).</span></pre></body></html></div>
-<p><img src="us-data_files/figure-html/rolling-state-1.png" width="800"></p>
+<span class="co">#&gt; Joining, by = c("state", "fips")</span></pre></body></html></div>
+<p><img src="us-data_files/figure-html/rolling-state-1.png" width="600"></p>
 </div>
 <div id="draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="section level3">
 <h3 class="hasAnchor">
