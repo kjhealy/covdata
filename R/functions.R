@@ -158,4 +158,33 @@ fmt_nr <- function(x){
   prettyNum(nrow(x), big.mark=",", scientific=FALSE)
 }
 
+#' @title tabular
+#' @description Make an Rd table from a data frame
+#' @param df Data frame
+#' @param ... Other args
+#' @return Rd table
+#' @details DETAILS
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @author Kieran Healy
+#' @source http://
+#' @references
+tabular <- function(df, ...) {
+  stopifnot(is.data.frame(df))
+
+  align <- function(x) if (is.numeric(x)) "r" else "l"
+  col_align <- vapply(df, align, character(1))
+
+  cols <- lapply(df, format, ...)
+  contents <- do.call("paste",
+                      c(cols, list(sep = " \\tab ", collapse = "\\cr\n#'   ")))
+
+  paste("#' \\tabular{", paste(col_align, collapse = ""), "}{\n#'   ",
+        paste0("\\strong{", names(df), "}", sep = "", collapse = " \\tab "), " \\cr\n#'   ",
+        contents, "\n#' }\n", sep = "")
+}
 

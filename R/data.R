@@ -45,7 +45,7 @@
 #' \item{\code{measure_label}}{character Outcome measure, suitable for use as a plot label}
 #' }
 #' @details The measures tracked by the COVID tracking project are as follows:
-#' `r knitr::kable(unique(covus[, c("measure", "measure_label")]))`
+#' `r tabular(unique(covus[, c("measure", "measure_label")]))`
 #' Not all measures are reported by all states.
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"

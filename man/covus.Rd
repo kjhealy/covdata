@@ -27,23 +27,25 @@ A dataset containing US state-level data on COVID-19
 }
 \details{
 The measures tracked by the COVID tracking project are as follows:
-|measure                  |measure_label                                          |
-|:------------------------|:------------------------------------------------------|
-|positive                 |Positive Tests                                         |
-|negative                 |Negative Tests                                         |
-|pending                  |Pending Tests                                          |
-|hospitalized_currently   |Currently Hospitalized                                 |
-|hospitalized_cumulative  |Cumulative Hospitalized                                |
-|in_icu_currently         |Currently in ICU                                       |
-|in_icu_cumulative        |Cumulative in ICU                                      |
-|on_ventilator_currently  |Currently on Ventilator                                |
-|on_ventilator_cumulative |Cumulative on Ventilator                               |
-|recovered                |Recovered                                              |
-|death                    |Deaths                                                 |
-|total_tests_viral        |Total number of PCR tests performed                    |
-|positive_tests_viral     |Total number of positive PCR tests                     |
-|negative_tests_viral     |Total number of negative PCR tests                     |
-|positive_cases_viral     |Total number of positive cases measured with PCR tests |
+#' \tabular{ll}{
+#'   \strong{measure} \tab \strong{measure_label} \cr
+#'   positive                 \tab Positive Tests                                        \cr
+#'   negative                 \tab Negative Tests                                        \cr
+#'   pending                  \tab Pending Tests                                         \cr
+#'   hospitalized_currently   \tab Currently Hospitalized                                \cr
+#'   hospitalized_cumulative  \tab Cumulative Hospitalized                               \cr
+#'   in_icu_currently         \tab Currently in ICU                                      \cr
+#'   in_icu_cumulative        \tab Cumulative in ICU                                     \cr
+#'   on_ventilator_currently  \tab Currently on Ventilator                               \cr
+#'   on_ventilator_cumulative \tab Cumulative on Ventilator                              \cr
+#'   recovered                \tab Recovered                                             \cr
+#'   death                    \tab Deaths                                                \cr
+#'   total_tests_viral        \tab Total number of PCR tests performed                   \cr
+#'   positive_tests_viral     \tab Total number of positive PCR tests                    \cr
+#'   negative_tests_viral     \tab Total number of negative PCR tests                    \cr
+#'   positive_cases_viral     \tab Total number of positive cases measured with PCR tests
+#' }
+
 Not all measures are reported by all states.
 }
 \keyword{datasets}
