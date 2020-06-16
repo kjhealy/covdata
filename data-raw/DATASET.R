@@ -110,6 +110,8 @@ get_google_data <- function(url = "https://www.gstatic.com/covid19/mobility/",
                   country_region = col_character(),
                   sub_region_1 = col_character(),
                   sub_region_2 = col_character(),
+                  iso_3166_2_code = col_character(),
+                  census_fips_code = col_character(),
                   date = col_date(),
                   retail_and_recreation_percent_change_from_baseline = col_integer(),
                   grocery_and_pharmacy_percent_change_from_baseline = col_integer(),
@@ -251,20 +253,43 @@ get_corona_tscs <- function(url = "https://raw.githubusercontent.com/saudiwin/co
          y = fs::file_copy(tf, destination),
          n = NULL)
 
-  cn_spec <- cols(country_region_code = col_character(),
-                  country_region = col_character(),
-                  sub_region_1 = col_character(),
-                  sub_region_2 = col_character(),
-                  date = col_date(),
-                  retail_and_recreation_percent_change_from_baseline = col_integer(),
-                  grocery_and_pharmacy_percent_change_from_baseline = col_integer(),
-                  parks_percent_change_from_baseline = col_integer(),
-                  transit_stations_percent_change_from_baseline = col_integer(),
-                  workplaces_percent_change_from_baseline = col_integer(),
-                  residential_percent_change_from_baseline = col_integer())
+  cn_spec <- cols(
+    record_id = col_character(),
+    policy_id = col_character(),
+    recorded_date = col_datetime(),
+    date_announced = col_datetime(),
+    date_start = col_date(),
+    date_end = col_date(),
+    entry_type = col_character(),
+    event_description = col_character(),
+    domestic_policy = col_integer(),
+    type = col_character(),
+    type_sub_cat = col_character(),
+    type_text = col_integer(),
+    index_high_est = col_double(),
+    index_med_est = col_double(),
+    index_low_est  = col_double(),
+    index_country_rank = col_double(),
+    country = col_character(),
+    init_country_level = col_character(),
+    province = col_character(),
+    source_corr_type = col_character(),
+    target_country = col_character(),
+    target_geog_level = col_character(),
+    target_region = col_character(),
+    target_province = col_character(),
+    target_city = col_character(),
+    target_other = col_character(),
+    target_other = col_logical(),
+    target_direction = col_character(),
+    travel_mechanism = col_character(),
+    compliance = col_character(),
+    enforcer = col_character(),
+    link = col_character()
+  )
 
 
-  janitor::clean_names(read_csv(tf))
+  janitor::clean_names(read_csv(tf, col_types = cn_spec))
 
 }
 
@@ -522,7 +547,7 @@ covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
   select(!all_of(drop_cols)) %>%
   select(date, state, fips, data_quality_grade, everything()) %>%
-  pivot_longer(positive:death,
+  pivot_longer(positive:positive_cases_viral,
                names_to = "measure", values_to = "count")
 
 covus_measure_labels <- tribble(
@@ -533,11 +558,15 @@ covus_measure_labels <- tribble(
   "in_icu_cumulative",        "Cumulative in ICU",
   "in_icu_currently",         "Currently in ICU",
   "negative", "Negative Tests",
+  "negative_tests_viral", "Total number of negative PCR tests",
   "on_ventilator_cumulative", "Cumulative on Ventilator",
   "on_ventilator_currently",  "Currently on Ventilator",
   "pending",                  "Pending Tests",
   "positive",                 "Positive Tests",
-  "recovered", "Recovered"
+  "positive_cases_viral", "Total number of positive cases measured with PCR tests",
+  "positive_tests_viral", "Total number of positive PCR tests",
+  "recovered", "Recovered",
+  "total_tests_viral", "Total number of PCR tests performed"
 )
 
 covus <- covus %>%
@@ -607,7 +636,8 @@ apple_mobility <- get_apple_data() %>%
 ## Google Mobility Data
 
 google_mobility <- get_google_data() %>%
-  rename(retail = retail_and_recreation_percent_change_from_baseline,
+  rename(iso3166_2 = iso_3166_2_code,
+    retail = retail_and_recreation_percent_change_from_baseline,
          grocery = grocery_and_pharmacy_percent_change_from_baseline,
          parks = parks_percent_change_from_baseline,
          transit = transit_stations_percent_change_from_baseline,
@@ -658,12 +688,6 @@ stmf <- left_join(stmf, md_ccodes) %>%
 ### --------------------------------------------------------------------------------------
 coronanet_raw <- get_corona_tscs()
 
-## Seems like everything is missing on `link_type`?
-coronanet_raw %>%
-  slice(problems(coronanet_raw)$row) %>%
-  select(record_id, entry_type, link, link_type) %>%
-  print(n = 50)
-
 cnet_vars <- c("record_id", "policy_id", "recorded_date", "date_announced", "date_start", "date_end",
                "entry_type", "event_description", "domestic_policy", "type", "type_sub_cat",
                "type_text", "index_high_est", "index_med_est", "index_low_est", "index_country_rank",
@@ -672,7 +696,7 @@ cnet_vars <- c("record_id", "policy_id", "recorded_date", "date_announced", "dat
                "target_direction", "travel_mechanism", "compliance", "enforcer", "link", "iso_a3", "iso_a2")
 
 coronanet <- coronanet_raw %>%
-  select(cnet_vars) %>%
+  select(all_of(cnet_vars)) %>%
   rename(iso3 = iso_a3, iso2 = iso_a2)
 
 ### --------------------------------------------------------------------------------------
@@ -736,6 +760,7 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 ## rd skeleton
 #sinew::makeOxygen("uspop")
+sinew::makeOxygen("google_mobility")
 
 document()
 knit("README.Rmd")

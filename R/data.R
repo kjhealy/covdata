@@ -45,17 +45,7 @@
 #' \item{\code{measure_label}}{character Outcome measure, suitable for use as a plot label}
 #' }
 #' @details The measures tracked by the COVID tracking project are as follows:
-#' - `death` Total number of people who have died as a result of COVID-19 so far.
-#' - `positive` Total cumulative positive test results.
-#' - `negative` Total cumulative negative test results.
-#' - `recovered` Total number recovered.
-#' - `pending` Tests that have been submitted to a lab but no results have been reported yet.
-#' - `hospitalized_currently` Total number of people hospitalized on date.
-#' - `hospitalized_cumulative` Total cumulative number of people hospitalized by date.
-#' - `in_icu_currently`  Total number of people in intensive care unit on date.
-#' - `in_icu_cumulative` Total cumulative number of people in intensive care unit by date.
-#' - `on_ventilator_currently`  Total number of people on ventilator on date.
-#' - `on_ventilator_cumulative` Total cumulative number of people on ventilator by date.
+#' `knitr::kable(covus_measure_labels)`
 #' Not all measures are reported by all states.
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"
@@ -404,6 +394,8 @@
 #'   \item{\code{country_region}}{character Country or Region name}
 #'   \item{\code{sub_region_1}}{character Subregion (e.g. US state) name}
 #'   \item{\code{sub_region_2}}{character Subregion (e.g. US county) name}
+#'   \item{\code{iso3166_2}}{character ISO 3166-2 Country/Region code}
+#'   \item{\code{census_fips_code}}{character US Census FIPS code}
 #'   \item{\code{date}}{double Date in yyyy-mm-dd format}
 #'   \item{\code{type}}{character Type of location. Values are retail, grocery (and pharmacy), parts, transit (hubs/stations), workplaces, and residential}
 #'   \item{\code{pct_diff}}{integer Percent change from baseline activity}

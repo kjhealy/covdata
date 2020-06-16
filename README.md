@@ -10,7 +10,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Tuesday, June  9, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Tuesday, June 16, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -98,7 +98,7 @@ library(tidyverse) # Optional but strongly recommended
 library(covdata)
 
 covnat
-#> # A tibble: 22,319 x 8
+#> # A tibble: 23,782 x 8
 #> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -112,14 +112,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0
-#> # … with 22,309 more rows
+#> # … with 23,772 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 147 x 8
+#> # A tibble: 154 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -132,7 +132,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 137 more rows
+#> # … with 144 more rows
 ```
 
 
@@ -141,10 +141,10 @@ covus %>%
   filter(measure == "positive", 
          date == "2020-04-27", 
          state == "NJ")
-#> # A tibble: 1 x 7
-#>   date       state fips  data_quality_grade measure   count measure_label 
-#>   <date>     <chr> <chr> <chr>              <chr>     <dbl> <chr>         
-#> 1 2020-04-27 NJ    34    A                  positive 111188 Positive Tests
+#> # A tibble: 1 x 11
+#>   date       state fips  data_quality_grade total_tests_viral positive_tests_viral negative_tests_viral positive_cases_viral measure   count measure_label 
+#>   <date>     <chr> <chr> <chr>                          <dbl>                <dbl>                <dbl>                <dbl> <chr>     <dbl> <chr>         
+#> 1 2020-04-27 NJ    34    A                                 NA                   NA                   NA                   NA positive 111188 Positive Tests
 ```
 
 

@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytexcess}
 \alias{nytexcess}
-\title{NYT Excess Mortality Estimates, current as of Tuesday, June  9, 2020}
+\title{NYT Excess Mortality Estimates, current as of Tuesday, June 16, 2020}
 \format{
-A tibble with 4,573 rows and 12 columns
+A tibble with 6,498 rows and 12 columns
 \describe{
 \item{\code{country}}{character Country Name}
 \item{\code{placename}}{character Place Name}

@@ -5,7 +5,7 @@
 \alias{stmf}
 \title{Short Term Mortality Fluctuations (STMF) data series}
 \format{
-A tibble with 246,450 rows and 16 variables:
+A tibble with 254,535 rows and 16 variables:
 \describe{
 \item{\code{country_code}}{Mortality database country code}
 \item{\code{cname}}{character Country name}

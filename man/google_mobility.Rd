@@ -5,19 +5,21 @@
 \alias{google_mobility}
 \title{Google Mobility Data}
 \format{
-A data frame with 2,863,932 rows and 7 variables:
+A data frame with 3,100,182 rows and 9 variables:
 \describe{
 \item{\code{country_region_code}}{character Country Code}
 \item{\code{country_region}}{character Country or Region name}
 \item{\code{sub_region_1}}{character Subregion (e.g. US state) name}
 \item{\code{sub_region_2}}{character Subregion (e.g. US county) name}
+\item{\code{iso3166_2}}{character ISO 3166-2 Country/Region code}
+\item{\code{census_fips_code}}{character US Census FIPS code}
 \item{\code{date}}{double Date in yyyy-mm-dd format}
 \item{\code{type}}{character Type of location. Values are retail, grocery (and pharmacy), parts, transit (hubs/stations), workplaces, and residential}
 \item{\code{pct_diff}}{integer Percent change from baseline activity}
 }
 }
 \source{
-Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-06-09
+Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-06-16
 }
 \usage{
 google_mobility
