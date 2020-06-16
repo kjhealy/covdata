@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5.9000</span>
       </span>
     </div>
 
@@ -105,7 +105,7 @@
 <div id="about-the-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#about-the-package" class="anchor"></a>About the package</h2>
-<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Tuesday, June 9, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
+<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Tuesday, June 16, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
 <p><code>covdata</code> provides the following:</p>
 <div id="covid-19-specific-case-and-mortality-data" class="section level3">
 <h3 class="hasAnchor">
@@ -155,7 +155,9 @@
 <h3 class="hasAnchor">
 <a href="#install-direct-from-github" class="anchor"></a>Install direct from GitHub</h3>
 <p>You can install covdata from <a href="https://github.com/kjhealy/covdata">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"kjhealy/covdata"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"kjhealy/covdata"</span>)
+</pre></div>
 </div>
 <div id="installation-using-drat" class="section level3">
 <h3 class="hasAnchor">
@@ -163,16 +165,24 @@
 </h3>
 <p>While using <code>install_github()</code> works just fine, it would be nicer to be able to just type <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("covdata")</a></code> or <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages("covdata")</a></code> in the ordinary way. We can do this using Dirk Eddelbuettel’s <a href="http://eddelbuettel.github.io/drat/DratForPackageUsers.html">drat</a> package. Drat provides a convenient way to make R aware of package repositories other than CRAN.</p>
 <p>First, install <code>drat</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st">"drat"</span>)) {
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="co">if</span> (<span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st">"drat"</span>)) {
     <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"drat"</span>)
     <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"drat"</span>)
-}</pre></div>
+}
+</pre></div>
 <p>Then use <code>drat</code> to tell R about the repository where <code>covdata</code> is hosted:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="kw pkg">drat</span><span class="kw ns">::</span><span class="fu">addRepo</span>(<span class="st">"kjhealy"</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw">drat</span>::<span class="fu">addRepo</span>(<span class="st">"kjhealy"</span>)
+</pre></div>
 <p>You can now install <code>covdata</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"covdata"</span>)</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"covdata"</span>)
+</pre></div>
 <p>To ensure that the <code>covdata</code> repository is always available, you can add the following line to your <code>.Rprofile</code> or <code>.Rprofile.site</code> file:</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="kw pkg">drat</span><span class="kw ns">::</span><span class="fu">addRepo</span>(<span class="st">"kjhealy"</span>)</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw">drat</span>::<span class="fu">addRepo</span>(<span class="st">"kjhealy"</span>)
+</pre></div>
 <p>With that in place you’ll be able to do <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("covdata")</a></code> or <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages("covdata")</a></code> and have everything work as you’d expect.</p>
 <p>Note that my drat repository only contains data packages that are not on CRAN, so you will never be in danger of grabbing the wrong version of any other package.</p>
 </div>
@@ -180,11 +190,12 @@
 <div id="loading-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#loading-the-data" class="anchor"></a>Loading the Data</h2>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>) <span class="co"># Optional but strongly recommended</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span>) <span class="co"># Optional but strongly recommended</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kjhealy/covdata">covdata</a></span>)
 
-<span class="no">covnat</span>
-<span class="co">#&gt; # A tibble: 22,319 x 8</span>
+<span class="kw">covnat</span>
+<span class="co">#&gt; # A tibble: 23,782 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [209]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
@@ -198,10 +209,12 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
-<span class="co">#&gt; # … with 22,309 more rows</span></pre></div>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"New York City"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"walking"</span>)
-<span class="co">#&gt; # A tibble: 147 x 8</span>
+<span class="co">#&gt; # … with 23,772 more rows</span>
+</pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="kw">apple_mobility</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">region</span> <span class="op">==</span> <span class="st">"New York City"</span>, <span class="kw">transportation_type</span> <span class="op">==</span> <span class="st">"walking"</span>)
+<span class="co">#&gt; # A tibble: 154 x 8</span>
 <span class="co">#&gt;    geo_type region        transportation_type alternative_name sub_region country       date       index</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;         &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  </span>
@@ -214,38 +227,44 @@
 <span class="co">#&gt;  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6</span>
 <span class="co">#&gt;  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1</span>
 <span class="co">#&gt; 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5</span>
-<span class="co">#&gt; # … with 137 more rows</span></pre></div>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="no">covus</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">measure</span> <span class="kw">==</span> <span class="st">"positive"</span>,
-         <span class="no">date</span> <span class="kw">==</span> <span class="st">"2020-04-27"</span>,
-         <span class="no">state</span> <span class="kw">==</span> <span class="st">"NJ"</span>)
-<span class="co">#&gt; # A tibble: 1 x 7</span>
-<span class="co">#&gt;   date       state fips  data_quality_grade measure   count measure_label </span>
-<span class="co">#&gt;   &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         </span>
-<span class="co">#&gt; 1 2020-04-27 NJ    34    A                  positive 111188 Positive Tests</span></pre></div>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="no">nytcovcounty</span> <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">uniq_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">county</span>, <span class="no">state</span>)) <span class="kw">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
-  <span class="fu">group_by</span>(<span class="no">uniq_name</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">days_elapsed</span> <span class="kw">=</span> <span class="no">date</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">date</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">days_elapsed</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">cases</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">uniq_name</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.25</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray20"</span>) +
-  <span class="fu">scale_y_log10</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span>()) +
-  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">facet_wrap</span>(~ <span class="no">state</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">5</span>) +
-  <span class="fu">labs</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
-       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">nytcovcounty</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       <span class="kw">x</span> <span class="kw">=</span> <span class="st">"Days since first case"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span>) +
+<span class="co">#&gt; # … with 144 more rows</span>
+</pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="kw">covus</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"positive"</span>, 
+         <span class="kw">date</span> <span class="op">==</span> <span class="st">"2020-04-27"</span>, 
+         <span class="kw">state</span> <span class="op">==</span> <span class="st">"NJ"</span>)
+<span class="co">#&gt; # A tibble: 1 x 11</span>
+<span class="co">#&gt;   date       state fips  data_quality_grade total_tests_viral positive_tests_viral negative_tests_viral positive_cases_viral measure   count measure_label </span>
+<span class="co">#&gt;   &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         </span>
+<span class="co">#&gt; 1 2020-04-27 NJ    34    A                                 NA                   NA                   NA                   NA positive 111188 Positive Tests</span>
+</pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit">
+<span class="kw">nytcovcounty</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(uniq_name = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="kw">county</span>, <span class="kw">state</span>)) <span class="op">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
+  <span class="fu">group_by</span>(<span class="kw">uniq_name</span>) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(days_elapsed = <span class="kw">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="kw">date</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">days_elapsed</span>, y = <span class="kw">cases</span>, group = <span class="kw">uniq_name</span>)) <span class="op">+</span> 
+  <span class="fu">geom_line</span>(size = <span class="fl">0.25</span>, color = <span class="st">"gray20"</span>) <span class="op">+</span> 
+  <span class="fu">scale_y_log10</span>(labels = <span class="kw">scales</span>::<span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span>()) <span class="op">+</span> 
+  <span class="fu">guides</span>(color = <span class="fl">FALSE</span>) <span class="op">+</span> 
+  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">state</span>, ncol = <span class="fl">5</span>) <span class="op">+</span> 
+  <span class="fu">labs</span>(title = <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
+       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">nytcovcounty</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
+       x = <span class="st">"Days since first case"</span>, y = <span class="st">"Count of Cases (log 10 scale)"</span>, 
+       caption = <span class="st">"Data: The New York Times | Graph: @kjhealy"</span>) <span class="op">+</span> 
   <span class="fu">theme_minimal</span>()
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></pre></div>
+<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
+</pre></div>
 <p><img src="reference/figures/README-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%"></p>
 <p>To learn more about the different datasets available, consult the vignettes or, equivalently, the <a href="https://kjhealy.github.io/covdata/articles/covdata.html">the package website</a>.</p>
 <div id="citing-the-covdata-package" class="section level3">
 <h3 class="hasAnchor">
 <a href="#citing-the-covdata-package" class="anchor"></a>Citing the <code>covdata</code> package</h3>
 <p>To cite the package use the following:</p>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
@@ -259,7 +278,8 @@
 <span class="co">#&gt;     year = {2020},</span>
 <span class="co">#&gt;     note = {R package version 0.1.0},</span>
 <span class="co">#&gt;     url = {http://kjhealy.github.io/covdata},</span>
-<span class="co">#&gt;   }</span></pre></div>
+<span class="co">#&gt;   }</span>
+</pre></div>
 <p>Please be sure to also cite the specific data sources, as described in the documentation for each dataset.</p>
 <p>Mask icon in hex logo by <a href="https://www.flaticon.com/authors/freepik">Freepik</a>.</p>
 </div>

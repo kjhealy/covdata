@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5.9000</span>
       </span>
     </div>
 
@@ -110,13 +110,14 @@
 <div id="load-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#load-the-data" class="anchor"></a>Load the Data</h2>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kjhealy/covdata">covdata</a></span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     uspop</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span>)
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.1     ✔ purrr   0.3.4</span>
 <span class="co">#&gt; ✔ tibble  3.0.1     ✔ dplyr   1.0.0</span>
@@ -124,13 +125,15 @@
 <span class="co">#&gt; ✔ readr   1.3.1     ✔ forcats 0.5.0</span>
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
-<span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></pre></body></html></div>
+<span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
+</pre></div>
 </div>
 <div id="national-level-case-and-mortality-data-from-the-european-centers-for-disease-control-" class="section level2">
 <h2 class="hasAnchor">
 <a href="#national-level-case-and-mortality-data-from-the-european-centers-for-disease-control-" class="anchor"></a>National level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.</h2>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">covnat</span>
-<span class="co">#&gt; # A tibble: 22,319 x 8</span>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="kw">covnat</span>
+<span class="co">#&gt; # A tibble: 23,782 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [209]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
@@ -144,89 +147,94 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
-<span class="co">#&gt; # … with 22,309 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 23,772 more rows</span>
+</pre></div>
 <div id="plot-national-cases-over-time-highlighting-specific-countries-of-interest" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plot-national-cases-over-time-highlighting-specific-countries-of-interest" class="anchor"></a>Plot national cases over time, highlighting specific countries of interest</h3>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co">## Libraries for the graphs</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggrepel</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="co">## Libraries for the graphs</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://github.com/slowkow/ggrepel">ggrepel</a></span>)
 
 <span class="co">## Convenince "Not in" operator</span>
-<span class="st">"%nin%"</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">y</span>) {
-  <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>( !(<span class="no">x</span> <span class="kw">%in%</span> <span class="no">y</span>) )
+<span class="st">"%nin%"</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">x</span>, <span class="kw">y</span>) {
+  <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>( <span class="op">!</span>(<span class="kw">x</span> <span class="op">%in%</span> <span class="kw">y</span>) )
 }
 
 
 <span class="co">## Countries to highlight</span>
-<span class="no">focus_cn</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"CHN"</span>, <span class="st">"DEU"</span>, <span class="st">"GBR"</span>, <span class="st">"USA"</span>, <span class="st">"IRN"</span>, <span class="st">"JPN"</span>,
+<span class="kw">focus_cn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"CHN"</span>, <span class="st">"DEU"</span>, <span class="st">"GBR"</span>, <span class="st">"USA"</span>, <span class="st">"IRN"</span>, <span class="st">"JPN"</span>,
               <span class="st">"KOR"</span>, <span class="st">"ITA"</span>, <span class="st">"FRA"</span>, <span class="st">"ESP"</span>, <span class="st">"CHE"</span>, <span class="st">"TUR"</span>)
 
 <span class="co">## Colors</span>
-<span class="no">cgroup_cols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#195F90FF"</span>, <span class="st">"#D76500FF"</span>, <span class="st">"#238023FF"</span>, <span class="st">"#AB1F20FF"</span>, <span class="st">"#7747A3FF"</span>,
-                 <span class="st">"#70453CFF"</span>, <span class="st">"#D73EA8FF"</span>, <span class="st">"#666666FF"</span>, <span class="st">"#96971BFF"</span>, <span class="st">"#1298A6FF"</span>, <span class="st">"#6F9BD6FF"</span>,
+<span class="kw">cgroup_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#195F90FF"</span>, <span class="st">"#D76500FF"</span>, <span class="st">"#238023FF"</span>, <span class="st">"#AB1F20FF"</span>, <span class="st">"#7747A3FF"</span>, 
+                 <span class="st">"#70453CFF"</span>, <span class="st">"#D73EA8FF"</span>, <span class="st">"#666666FF"</span>, <span class="st">"#96971BFF"</span>, <span class="st">"#1298A6FF"</span>, <span class="st">"#6F9BD6FF"</span>, 
                  <span class="st">"#FF952DFF"</span>, <span class="st">"gray70"</span>)
 
-<span class="no">covnat</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">cu_cases</span> <span class="kw">&gt;</span> <span class="fl">99</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">days_elapsed</span> <span class="kw">=</span> <span class="no">date</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">date</span>),
-        <span class="kw">end_label</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="no">date</span> <span class="kw">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">date</span>), <span class="no">cname</span>, <span class="fl">NA</span>),
-        <span class="kw">end_label</span> <span class="kw">=</span> <span class="fu">recode</span>(<span class="no">end_label</span>, <span class="kw">`United States`</span> <span class="kw">=</span> <span class="st">"USA"</span>,
-                            <span class="kw">`Iran, Islamic Republic of`</span> <span class="kw">=</span> <span class="st">"Iran"</span>,
-                            <span class="kw">`Korea, Republic of`</span> <span class="kw">=</span> <span class="st">"South Korea"</span>,
-                            <span class="kw">`United Kingdom`</span> <span class="kw">=</span> <span class="st">"UK"</span>),
-         <span class="kw">cname</span> <span class="kw">=</span> <span class="fu">recode</span>(<span class="no">cname</span>, <span class="kw">`United States`</span> <span class="kw">=</span> <span class="st">"USA"</span>,
-                        <span class="kw">`Iran, Islamic Republic of`</span> <span class="kw">=</span> <span class="st">"Iran"</span>,
-                        <span class="kw">`Korea, Republic of`</span> <span class="kw">=</span> <span class="st">"South Korea"</span>,
-                        <span class="kw">`United Kingdom`</span> <span class="kw">=</span> <span class="st">"UK"</span>),
-         <span class="kw">end_label</span> <span class="kw">=</span> <span class="fu">case_when</span>(<span class="no">iso3</span> <span class="kw">%in%</span> <span class="no">focus_cn</span> ~ <span class="no">end_label</span>,
-                               <span class="fl">TRUE</span> ~ <span class="fl">NA_character_</span>),
-         <span class="kw">cgroup</span> <span class="kw">=</span> <span class="fu">case_when</span>(<span class="no">iso3</span> <span class="kw">%in%</span> <span class="no">focus_cn</span> ~ <span class="no">iso3</span>,
-                            <span class="fl">TRUE</span> ~ <span class="st">"ZZOTHER"</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">days_elapsed</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">cu_cases</span>,
-         <span class="kw">color</span> <span class="kw">=</span> <span class="no">cgroup</span>, <span class="kw">label</span> <span class="kw">=</span> <span class="no">end_label</span>,
-         <span class="kw">group</span> <span class="kw">=</span> <span class="no">cname</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>) +
-  <span class="fu"><a href="https://rdrr.io/pkg/ggrepel/man/geom_text_repel.html">geom_text_repel</a></span>(<span class="kw">nudge_x</span> <span class="kw">=</span> <span class="fl">0.75</span>,
-                  <span class="kw">segment.color</span> <span class="kw">=</span> <span class="fl">NA</span>) +
-  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">scale_color_manual</span>(<span class="kw">values</span> <span class="kw">=</span> <span class="no">cgroup_cols</span>) +
-  <span class="fu">scale_y_continuous</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span>(<span class="kw">accuracy</span> <span class="kw">=</span> <span class="fl">1</span>),
-                     <span class="kw">breaks</span> <span class="kw">=</span> <span class="fl">2</span>^<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">4</span>, <span class="fl">20</span>, <span class="fl">1</span>),
-                     <span class="kw">trans</span> <span class="kw">=</span> <span class="st">"log2"</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Days Since 100th Confirmed Case"</span>,
-       <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Cumulative Number of Reported Cases (log2 scale)"</span>,
-       <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Cumulative Reported Cases of COVID-19, Selected Countries"</span>,
-       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covnat</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) +
+<span class="kw">covnat</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">cu_cases</span> <span class="op">&gt;</span> <span class="fl">99</span>) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(days_elapsed = <span class="kw">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="kw">date</span>),
+        end_label = <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="kw">date</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">date</span>), <span class="kw">cname</span>, <span class="fl">NA</span>),
+        end_label = <span class="fu">recode</span>(<span class="kw">end_label</span>, `United States` = <span class="st">"USA"</span>,
+                            `Iran, Islamic Republic of` = <span class="st">"Iran"</span>,
+                            `Korea, Republic of` = <span class="st">"South Korea"</span>,
+                            `United Kingdom` = <span class="st">"UK"</span>),
+         cname = <span class="fu">recode</span>(<span class="kw">cname</span>, `United States` = <span class="st">"USA"</span>,
+                        `Iran, Islamic Republic of` = <span class="st">"Iran"</span>,
+                        `Korea, Republic of` = <span class="st">"South Korea"</span>,
+                        `United Kingdom` = <span class="st">"UK"</span>),
+         end_label = <span class="fu">case_when</span>(<span class="kw">iso3</span> <span class="op">%in%</span> <span class="kw">focus_cn</span> <span class="op">~</span> <span class="kw">end_label</span>,
+                               <span class="fl">TRUE</span> <span class="op">~</span> <span class="fl">NA_character_</span>), 
+         cgroup = <span class="fu">case_when</span>(<span class="kw">iso3</span> <span class="op">%in%</span> <span class="kw">focus_cn</span> <span class="op">~</span> <span class="kw">iso3</span>, 
+                            <span class="fl">TRUE</span> <span class="op">~</span> <span class="st">"ZZOTHER"</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span>(mapping = <span class="fu">aes</span>(x = <span class="kw">days_elapsed</span>, y = <span class="kw">cu_cases</span>, 
+         color = <span class="kw">cgroup</span>, label = <span class="kw">end_label</span>, 
+         group = <span class="kw">cname</span>)) <span class="op">+</span> 
+  <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>) <span class="op">+</span> 
+  <span class="fu"><a href="https://rdrr.io/pkg/ggrepel/man/geom_text_repel.html">geom_text_repel</a></span>(nudge_x = <span class="fl">0.75</span>,
+                  segment.color = <span class="fl">NA</span>) <span class="op">+</span> 
+  <span class="fu">guides</span>(color = <span class="fl">FALSE</span>) <span class="op">+</span> 
+  <span class="fu">scale_color_manual</span>(values = <span class="kw">cgroup_cols</span>) <span class="op">+</span>
+  <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span>(accuracy = <span class="fl">1</span>), 
+                     breaks = <span class="fl">2</span><span class="op">^</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">4</span>, <span class="fl">20</span>, <span class="fl">1</span>),
+                     trans = <span class="st">"log2"</span>) <span class="op">+</span> 
+  <span class="fu">labs</span>(x = <span class="st">"Days Since 100th Confirmed Case"</span>, 
+       y = <span class="st">"Cumulative Number of Reported Cases (log2 scale)"</span>, 
+       title = <span class="st">"Cumulative Reported Cases of COVID-19, Selected Countries"</span>, 
+       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covnat</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)), 
+       caption = <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) <span class="op">+</span>
   <span class="fu">theme_minimal</span>()
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Removed 11971 rows containing missing values (geom_text_repel).</span></pre></body></html></div>
+<span class="co">#&gt; Warning: Removed 13176 rows containing missing values (geom_text_repel).</span>
+</pre></div>
 <p><img src="ecdc-data_files/figure-html/ecdc-example-1.png" width="800"></p>
 </div>
 <div id="rolling-average-of-new-cases" class="section level3">
 <h3 class="hasAnchor">
 <a href="#rolling-average-of-new-cases" class="anchor"></a>Rolling Average of New Cases</h3>
-<div class="sourceCode" id="cb4"><html><body><pre class="r">
-<span class="no">covnat</span> <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">cname</span> <span class="kw">=</span> <span class="fu">recode</span>(<span class="no">cname</span>, <span class="kw">`United States`</span> <span class="kw">=</span> <span class="st">"USA"</span>,
-                        <span class="kw">`Iran, Islamic Republic of`</span> <span class="kw">=</span> <span class="st">"Iran"</span>,
-                        <span class="kw">`Korea, Republic of`</span> <span class="kw">=</span> <span class="st">"South Korea"</span>,
-                        <span class="kw">`United Kingdom`</span> <span class="kw">=</span> <span class="st">"UK"</span>),
-         <span class="kw">cgroup</span> <span class="kw">=</span> <span class="fu">case_when</span>(<span class="no">iso3</span> <span class="kw">%in%</span> <span class="no">focus_cn</span> ~ <span class="no">iso3</span>,
-                            <span class="fl">TRUE</span> ~ <span class="st">"ZZOTHER"</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">cases7</span> <span class="kw">=</span> <span class="kw pkg">slider</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="no">deaths</span>/<span class="no">pop_2018</span>)*<span class="fl">1e6</span>, <span class="no">mean</span>, <span class="kw">.before</span> <span class="kw">=</span> <span class="fl">7</span>, <span class="kw">.after</span> <span class="kw">=</span> <span class="fl">0</span>, <span class="kw">na.rm</span> <span class="kw">=</span> <span class="fl">TRUE</span>),
-         <span class="kw">deaths7</span> <span class="kw">=</span> <span class="kw pkg">slider</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="no">deaths</span>/<span class="no">pop_2018</span>)*<span class="fl">1e6</span>, <span class="no">mean</span>, <span class="kw">.before</span> <span class="kw">=</span> <span class="fl">7</span>, <span class="kw">.after</span> <span class="kw">=</span> <span class="fl">0</span>, <span class="kw">na.rm</span> <span class="kw">=</span> <span class="fl">TRUE</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">iso3</span> <span class="kw">%in%</span> <span class="no">focus_cn</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">deaths7</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>) +
+<div class="sourceCode" id="cb4"><pre class="downlit">
+
+<span class="kw">covnat</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(cname = <span class="fu">recode</span>(<span class="kw">cname</span>, `United States` = <span class="st">"USA"</span>,
+                        `Iran, Islamic Republic of` = <span class="st">"Iran"</span>,
+                        `Korea, Republic of` = <span class="st">"South Korea"</span>,
+                        `United Kingdom` = <span class="st">"UK"</span>),
+         cgroup = <span class="fu">case_when</span>(<span class="kw">iso3</span> <span class="op">%in%</span> <span class="kw">focus_cn</span> <span class="op">~</span> <span class="kw">iso3</span>, 
+                            <span class="fl">TRUE</span> <span class="op">~</span> <span class="st">"ZZOTHER"</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(cases7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="kw">deaths</span><span class="op">/</span><span class="kw">pop_2018</span>)<span class="op">*</span><span class="fl">1e6</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>),
+         deaths7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="kw">deaths</span><span class="op">/</span><span class="kw">pop_2018</span>)<span class="op">*</span><span class="fl">1e6</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">iso3</span> <span class="op">%in%</span> <span class="kw">focus_cn</span>) <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span>(mapping = <span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">deaths7</span>)) <span class="op">+</span> 
+  <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>) <span class="op">+</span> 
 <span class="co">#  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + </span>
-  <span class="fu">facet_wrap</span>(~ <span class="no">cname</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>,
-       <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Deaths per Million Population (Seven Day Rolling Average)"</span>,
-       <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Deaths from COVID-19, Selected Countries"</span>,
-       <span class="kw">subtitle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">covnat</span>$<span class="no">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) +
-  <span class="fu">theme_minimal</span>()</pre></body></html></div>
+  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">cname</span>) <span class="op">+</span>
+  <span class="fu">labs</span>(x = <span class="st">"Date"</span>, 
+       y = <span class="st">"Deaths per Million Population (Seven Day Rolling Average)"</span>, 
+       title = <span class="st">"Deaths from COVID-19, Selected Countries"</span>, 
+       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covnat</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)), 
+       caption = <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) <span class="op">+</span>
+  <span class="fu">theme_minimal</span>()
+</pre></div>
 <p><img src="ecdc-data_files/figure-html/rolling-1.png" width="900"></p>
 <p>Note the odd effect of Spain’s decision to change how it’s reporting deaths.</p>
 </div>

@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5.9000</span>
       </span>
     </div>
 
@@ -110,7 +110,8 @@
 <div id="load-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#load-the-data" class="anchor"></a>Load the Data</h2>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span>)
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.1     ✔ purrr   0.3.4</span>
 <span class="co">#&gt; ✔ tibble  3.0.1     ✔ dplyr   1.0.0</span>
@@ -119,20 +120,22 @@
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covdata</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kjhealy/covdata">covdata</a></span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     uspop</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggforce</span>)</pre></body></html></div>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://ggforce.data-imaginist.com">ggforce</a></span>)
+</pre></div>
 </div>
 <div id="apples-mobility-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#apples-mobility-data" class="anchor"></a>Apple’s Mobility Data</h2>
 <p>Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">apple_mobility</span>
-<span class="co">#&gt; # A tibble: 532,875 x 8</span>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="kw">apple_mobility</span>
+<span class="co">#&gt; # A tibble: 558,250 x 8</span>
 <span class="co">#&gt;    geo_type region transportation_… alternative_name sub_region country</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
@@ -145,33 +148,38 @@
 <span class="co">#&gt;  8 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt;  9 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt; 10 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
-<span class="co">#&gt; # … with 532,865 more rows, and 2 more variables: date &lt;date&gt;, index &lt;dbl&gt;</span></pre></body></html></div>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">vec_brks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span>)
-<span class="no">vec_labs</span> <span class="kw">&lt;-</span> <span class="no">vec_brks</span> + <span class="fl">100</span></pre></body></html></div>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">apple_cities</span> <span class="kw">&lt;-</span> <span class="no">apple_mobility</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">geo_type</span> <span class="kw">==</span> <span class="st">"city"</span>, <span class="no">transportation_type</span> <span class="kw">==</span> <span class="st">"driving"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">over_under</span> <span class="kw">=</span> <span class="no">index</span> <span class="kw">&lt;</span> <span class="fl">100</span>,
-         <span class="kw">index</span> <span class="kw">=</span> <span class="no">index</span> - <span class="fl">100</span>)
+<span class="co">#&gt; # … with 558,240 more rows, and 2 more variables: date &lt;date&gt;, index &lt;dbl&gt;</span>
+</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw">vec_brks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span>)
+<span class="kw">vec_labs</span> <span class="op">&lt;-</span> <span class="kw">vec_brks</span> <span class="op">+</span> <span class="fl">100</span>
+</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="kw">apple_cities</span> <span class="op">&lt;-</span> <span class="kw">apple_mobility</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">geo_type</span> <span class="op">==</span> <span class="st">"city"</span>, <span class="kw">transportation_type</span> <span class="op">==</span> <span class="st">"driving"</span>) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(over_under = <span class="kw">index</span> <span class="op">&lt;</span> <span class="fl">100</span>, 
+         index = <span class="kw">index</span> <span class="op">-</span> <span class="fl">100</span>) 
 
-<span class="kw">for</span>(<span class="no">i</span> <span class="kw">in</span> <span class="fl">1</span>:<span class="fl">5</span>){
+<span class="co">for</span>(<span class="kw">i</span> <span class="co">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>){
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(
-  <span class="fu">ggplot</span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">apple_cities</span>,
-         <span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">index</span>,
-                       <span class="kw">group</span> <span class="kw">=</span> <span class="no">region</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="no">over_under</span>)) +
-  <span class="fu">geom_hline</span>(<span class="kw">yintercept</span> <span class="kw">=</span> <span class="fl">0</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray40"</span>) +
-  <span class="fu">geom_col</span>() +
-  <span class="fu">scale_y_continuous</span>(<span class="kw">breaks</span> <span class="kw">=</span> <span class="no">vec_brks</span>, <span class="kw">labels</span> <span class="kw">=</span> <span class="no">vec_labs</span>) +
-  <span class="fu">scale_color_manual</span>(<span class="kw">values</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"firebrick"</span>, <span class="st">"steelblue"</span>)) +
-  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/facet_wrap_paginate.html">facet_wrap_paginate</a></span>(~ <span class="no">region</span>, <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">6</span>, <span class="kw">page</span> <span class="kw">=</span> <span class="no">i</span>) +
-  <span class="fu">guides</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Relative Mobility"</span>, <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Relative Trends in Apple Maps Usage for Driving, Selected Cities"</span>,
-                              <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Data are indexed to 100 for each city's usage on January 13th 2020"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: Apple. Graph: @kjhealy"</span>) +
+  <span class="fu">ggplot</span>(data = <span class="kw">apple_cities</span>,
+         mapping = <span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">index</span>, 
+                       group = <span class="kw">region</span>, color = <span class="kw">over_under</span>)) <span class="op">+</span> 
+  <span class="fu">geom_hline</span>(yintercept = <span class="fl">0</span>, color = <span class="st">"gray40"</span>) <span class="op">+</span> 
+  <span class="fu">geom_col</span>() <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span>(breaks = <span class="kw">vec_brks</span>, labels = <span class="kw">vec_labs</span>) <span class="op">+</span> 
+  <span class="fu">scale_color_manual</span>(values = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"firebrick"</span>, <span class="st">"steelblue"</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/facet_wrap_paginate.html">facet_wrap_paginate</a></span>(<span class="op">~</span> <span class="kw">region</span>, nrow = <span class="fl">5</span>, ncol = <span class="fl">6</span>, page = <span class="kw">i</span>) <span class="op">+</span> 
+  <span class="fu">guides</span>(color = <span class="fl">FALSE</span>) <span class="op">+</span> 
+  <span class="fu">labs</span>(x = <span class="st">"Date"</span>, y = <span class="st">"Relative Mobility"</span>, title = <span class="st">"Relative Trends in Apple Maps Usage for Driving, Selected Cities"</span>, 
+                              subtitle = <span class="st">"Data are indexed to 100 for each city's usage on January 13th 2020"</span>, 
+       caption = <span class="st">"Data: Apple. Graph: @kjhealy"</span>) <span class="op">+</span> 
   <span class="fu">theme_minimal</span>()
   )
-
-}
-<span class="co">#&gt; Warning: Removed 598 rows containing missing values (position_stack).</span></pre></body></html></div>
+  
+}  
+<span class="co">#&gt; Warning: Removed 598 rows containing missing values (position_stack).</span>
+</pre></div>
 <p><img src="mobility-data_files/figure-html/apple-example-1-1.png" width="1200"></p>
 <pre><code>#&gt; Warning: Removed 598 rows containing missing values (position_stack).</code></pre>
 <p><img src="mobility-data_files/figure-html/apple-example-1-2.png" width="1200"></p>
@@ -191,38 +199,43 @@
 <li>The datasets show trends over several months.</li>
 <li>What data is included in the calculation depends on user settings, connectivity, and whether it meets Google’s privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day.</li>
 </ul>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">google_mobility</span>
-<span class="co">#&gt; # A tibble: 2,863,932 x 7</span>
-<span class="co">#&gt;    country_region_… country_region sub_region_1 sub_region_2 date       type </span>
-<span class="co">#&gt;    &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;        &lt;chr&gt;        &lt;date&gt;     &lt;chr&gt;</span>
-<span class="co">#&gt;  1 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-15 reta…</span>
-<span class="co">#&gt;  2 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-15 groc…</span>
-<span class="co">#&gt;  3 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-15 parks</span>
-<span class="co">#&gt;  4 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-15 tran…</span>
-<span class="co">#&gt;  5 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-15 work…</span>
-<span class="co">#&gt;  6 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-15 resi…</span>
-<span class="co">#&gt;  7 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-16 reta…</span>
-<span class="co">#&gt;  8 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-16 groc…</span>
-<span class="co">#&gt;  9 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-16 parks</span>
-<span class="co">#&gt; 10 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         2020-02-16 tran…</span>
-<span class="co">#&gt; # … with 2,863,922 more rows, and 1 more variable: pct_diff &lt;int&gt;</span></pre></body></html></div>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">google_mobility</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">country_region_code</span> <span class="kw">==</span> <span class="st">"US"</span>, !<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">sub_region_1</span>), <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">sub_region_2</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="kw">type</span> <span class="kw">=</span> <span class="kw pkg">tools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/tools/toTitleCase.html">toTitleCase</a></span>(<span class="no">type</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="kw">mapping</span> <span class="kw">=</span> <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pct_diff</span>,
-                       <span class="kw">group</span> <span class="kw">=</span> <span class="no">sub_region_1</span>)) +
-  <span class="fu">geom_line</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">0.5</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="st">"gray80"</span>) +
-  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="kw">color</span> <span class="kw">=</span> <span class="no">type</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="fl">1</span>), <span class="kw">se</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
-  <span class="fu">facet_wrap</span>(~ <span class="no">type</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">2</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Percent Change from Baseline"</span>, <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Relative Trends in Mobility for Kinds of Location in the US, by State"</span>,
-                              <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Data are relative to median activity between Jan 3rd and Feb 6th"</span>,
-       <span class="kw">color</span> <span class="kw">=</span> <span class="st">"Location Type"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data: Google. Graph: @kjhealy"</span>) +
-  <span class="fu">theme_minimal</span>() +
-  <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"top"</span>,
-        <span class="kw">strip.text</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)))
+<div class="sourceCode" id="cb9"><pre class="downlit">
+<span class="kw">google_mobility</span>
+<span class="co">#&gt; # A tibble: 3,100,182 x 9</span>
+<span class="co">#&gt;    country_region_… country_region sub_region_1 sub_region_2 iso3166_2</span>
+<span class="co">#&gt;    &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;    </span>
+<span class="co">#&gt;  1 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  2 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  3 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  4 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  5 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  6 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  7 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  8 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt;  9 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt; 10 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
+<span class="co">#&gt; # … with 3,100,172 more rows, and 4 more variables: census_fips_code &lt;chr&gt;,</span>
+<span class="co">#&gt; #   date &lt;date&gt;, type &lt;chr&gt;, pct_diff &lt;int&gt;</span>
+</pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="kw">google_mobility</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">country_region_code</span> <span class="op">==</span> <span class="st">"US"</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="kw">sub_region_1</span>), <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="kw">sub_region_2</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(type = <span class="kw">tools</span>::<span class="fu"><a href="https://rdrr.io/r/tools/toTitleCase.html">toTitleCase</a></span>(<span class="kw">type</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span>(mapping = <span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">pct_diff</span>, 
+                       group = <span class="kw">sub_region_1</span>)) <span class="op">+</span> 
+  <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>, color = <span class="st">"gray80"</span>) <span class="op">+</span> 
+  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(color = <span class="kw">type</span>, group = <span class="fl">1</span>), se = <span class="fl">FALSE</span>) <span class="op">+</span> 
+  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">type</span>, ncol = <span class="fl">2</span>) <span class="op">+</span> 
+  <span class="fu">labs</span>(x = <span class="st">"Date"</span>, y = <span class="st">"Percent Change from Baseline"</span>, title = <span class="st">"Relative Trends in Mobility for Kinds of Location in the US, by State"</span>, 
+                              subtitle = <span class="st">"Data are relative to median activity between Jan 3rd and Feb 6th"</span>,
+       color = <span class="st">"Location Type"</span>, 
+       caption = <span class="st">"Data: Google. Graph: @kjhealy"</span>) <span class="op">+</span> 
+  <span class="fu">theme_minimal</span>() <span class="op">+</span> 
+  <span class="fu">theme</span>(legend.position = <span class="st">"top"</span>, 
+        strip.text = <span class="fu">element_text</span>(size = <span class="fu">rel</span>(<span class="fl">1.3</span>)))
 <span class="co">#&gt; `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'</span>
-<span class="co">#&gt; Warning: Removed 9 rows containing non-finite values (stat_smooth).</span></pre></body></html></div>
+<span class="co">#&gt; Warning: Removed 15 rows containing non-finite values (stat_smooth).</span>
+</pre></div>
 <p><img src="mobility-data_files/figure-html/google-example-1.png" width="900"></p>
 </div>
   </div>
