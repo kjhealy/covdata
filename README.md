@@ -175,7 +175,9 @@ To learn more about the different datasets available, consult the vignettes or, 
 
 ## Overview of Included Tables
 
-### National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).
+Here is an overview of the contents of each table of data in the package. For further details on the variables, consult each table's help page.
+
+### National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en)
 
 
 ```r
@@ -225,7 +227,7 @@ covnat %>%
 |cu_deaths     |         0|          1.00|      853.97|      5535.00|     0|       0|       3|       47.0|     116127|▇▁▁▁▁ |
 
 
-### State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
+### State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com)
 
 
 ```r
@@ -272,7 +274,7 @@ skimr::skim(covus)
 |count         |     55558|          0.42| 47744.94| 190023.2|  0| 157| 1268| 15614| 3862310|▇▁▁▁▁ |
 
 
-### State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
+### State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data)
 
 
 ```r
@@ -395,10 +397,9 @@ skimr::skim(nytcovus)
 |deaths        |         0|             1|  42928.23|  47021.73|  0|   2|  18821|   91174|  125545|▇▁▁▂▃ |
 
 
-### Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
+### Data from the CDC's [COVID-NET](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) 
 
-
-_Catchment Areas_
+_CDC Catchment Areas_
 
 
 ```r
@@ -738,7 +739,7 @@ skimr::skim(nssp_covid_er_reg)
 |pct_visits    |         0|             1|    0.02|    0.01|    0|    0.01|    0.02|    0.02|     0.11|▇▂▁▁▁ |
 |year          |         0|             1| 2019.52|    0.50| 2019| 2019.00| 2020.00| 2020.00|  2020.00|▇▁▁▁▇ |
 
-### Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org).
+### Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org)
 
 
 ```r
@@ -794,7 +795,7 @@ skimr::skim(stmf)
 |rate_total    |         0|             1|    0.01|    0.00|    0|    0.01|    0.01|    0.01|     0.02|▁▇▃▁▁ |
 
 
-### National-level all-cause and excess mortality estimates from the [_New York Times_](https://github.com/nytimes/covid-19-data).  
+### National-level all-cause and excess mortality estimates from the [_New York Times_](https://github.com/nytimes/covid-19-data)
 
 
 ```r
@@ -892,7 +893,7 @@ skimr::skim(apple_mobility)
 |:-------------|---------:|-------------:|------:|-----:|----:|-----:|-----:|-----:|-------:|:-----|
 |index         |     13646|          0.98| 105.23| 48.07| 2.43| 76.77| 102.7| 126.3| 1370.08|▇▁▁▁▁ |
 
-### Mobimilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) o
+### Mobimilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
 
 
 ```r
@@ -1053,7 +1054,7 @@ countries %>%
 |iso3          |         0|          1.00|   3|   3|     0|      209|          0|
 |iso2          |         2|          0.99|   2|   2|     0|      207|          0|
 
-_U.S. Population Counts_
+_U.S. Census Population Estimates_
 
 
 ```r
@@ -1101,8 +1102,6 @@ skimr::skim(uspop)
 |asian         |         0|             1|  168458.39|  515557.14|   79|   5045.5|   26484|  140424.5|  6063600|▇▁▁▁▁ |
 |nhopi         |         0|             1|    6966.61|   18657.18|   23|    669.0|    2029|    5063.5|   199872|▇▁▁▁▁ |
 |tom           |         0|             1|   77964.97|  131251.16|  455|  12091.0|   33757|   98669.5|  1554757|▇▁▁▁▁ |
-
-Further details can be found in the help page for each table.
 
 ## Citing the `covdata` package
 
