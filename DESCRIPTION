@@ -23,6 +23,7 @@ Suggests:
     knitr,
     rmarkdown,
     scales,
+    skimr,
     slider,
     tidyverse
 VignetteBuilder: knitr

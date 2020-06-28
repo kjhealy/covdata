@@ -140,7 +140,146 @@ nytcovcounty %>%
 
 To learn more about the different datasets available, consult the vignettes or, equivalently, the [the package website](https://kjhealy.github.io/covdata/articles/covdata.html). 
 
-### Citing the `covdata` package
+## Overview of Included Tables
+
+### National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).
+
+```{r}
+covnat %>%
+  ungroup() %>%
+  skimr::skim()
+```
+
+
+### State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
+
+```{r}
+skimr::skim(covus)
+```
+
+
+### State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
+
+```{r}
+skimr::skim(nytcovcounty)
+```
+
+
+```{r}
+skimr::skim(nytcovstate)
+```
+
+
+```{r}
+skimr::skim(nytcovus)
+```
+
+
+### Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
+
+
+_Catchment Areas_
+
+```{r}
+skimr::skim(cdc_catchments)
+```
+
+
+_Deaths by Age_
+
+```{r}
+skimr::skim(cdc_deaths_by_age)
+```
+
+_Deaths by Sex_
+
+
+```{r}
+skimr::skim(cdc_deaths_by_sex)
+```
+
+_Deaths by State_
+
+```{r}
+skimr::skim(cdc_deaths_by_state)
+```
+
+_Deaths by Week_
+
+```{r}
+skimr::skim(cdc_deaths_by_week)
+```
+
+_Hospitalization_
+
+```{r}
+skimr::skim(cdc_hospitalizations)
+```
+
+_National ER Visits_
+
+```{r}
+skimr::skim(nssp_covid_er_nat)
+```
+
+_Regional ER Visits_
+
+```{r}
+skimr::skim(nssp_covid_er_reg)
+```
+
+### Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org).
+
+```{r}
+skimr::skim(stmf)
+```
+
+
+### National-level all-cause and excess mortality estimates from the [_New York Times_](https://github.com/nytimes/covid-19-data).  
+
+```{r}
+skimr::skim(nytexcess)
+```
+
+### Mobility Data from [Apple](http://apple.com/covid19) 
+
+```{r}
+skimr::skim(apple_mobility)
+```
+
+### Mobimilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) o
+
+```{r}
+skimr::skim(google_mobility)
+```
+
+
+### Policy data from the [CoronaNet Project](https://coronanet-project.org)
+
+```{r}
+skimr::skim(coronanet)
+```
+
+
+### Other Tables
+
+_Country Codes_
+
+```{r}
+countries %>%
+  ungroup() %>%
+  skimr::skim()
+```
+
+_U.S. Population Counts_
+
+```{r}
+skimr::skim(uspop)
+```
+
+Further details can be found in the help page for each table.
+
+## Citing the `covdata` package
 
 To cite the package use the following:
 
