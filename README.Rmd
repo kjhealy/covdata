@@ -248,7 +248,7 @@ skimr::skim(nytexcess)
 skimr::skim(apple_mobility)
 ```
 
-### Mobimilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
+### Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
 
 ```{r}
 skimr::skim(google_mobility)

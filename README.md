@@ -893,7 +893,7 @@ skimr::skim(apple_mobility)
 |:-------------|---------:|-------------:|------:|-----:|----:|-----:|-----:|-----:|-------:|:-----|
 |index         |     13646|          0.98| 105.23| 48.07| 2.43| 76.77| 102.7| 126.3| 1370.08|▇▁▁▁▁ |
 
-### Mobimilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
+### Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
 
 
 ```r
