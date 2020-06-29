@@ -5,11 +5,12 @@
 \alias{countries}
 \title{Country Names and ISO codes}
 \format{
-A data frame with 209 rows and 3 variables:
+A data frame with 215 rows and 4 variables:
 \describe{
 \item{\code{cname}}{character Country name}
 \item{\code{iso3}}{character ISO 3 designation}
 \item{\code{iso2}}{character ISO 2 designation}
+\item{\code{continent}}{Continent}
 }
 }
 \source{

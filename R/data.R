@@ -5,6 +5,7 @@
 #'   \item{\code{cname}}{character Country name}
 #'   \item{\code{iso3}}{character ISO 3 designation}
 #'   \item{\code{iso2}}{character ISO 2 designation}
+#'   \item{\code{continent}}{Continent}
 #'}
 #' @details Produced from the ECDC tables in the covdata package
 #' @author Kieran Healy

@@ -10,7 +10,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Sunday, June 28, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Monday, June 29, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -119,7 +119,7 @@ covnat
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 166 x 8
+#> # A tibble: 167 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -132,7 +132,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 156 more rows
+#> # … with 157 more rows
 ```
 
 
@@ -238,7 +238,7 @@ skimr::skim(covus)
 |                         |      |
 |:------------------------|:-----|
 |Name                     |covus |
-|Number of rows           |96015 |
+|Number of rows           |96855 |
 |Number of columns        |7     |
 |_______________________  |      |
 |Column type frequency:   |      |
@@ -264,14 +264,14 @@ skimr::skim(covus)
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-22 |2020-06-27 |2020-05-01 |      158|
+|date          |         0|             1|2020-01-22 |2020-06-28 |2020-05-02 |      159|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|   p75|    p100|hist  |
-|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|-----:|-------:|:-----|
-|count         |     55558|          0.42| 47744.94| 190023.2|  0| 157| 1268| 15614| 3862310|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|    mean|       sd| p0| p25|  p50|      p75|    p100|hist  |
+|:-------------|---------:|-------------:|-------:|--------:|--:|---:|----:|--------:|-------:|:-----|
+|count         |     55929|          0.42| 48643.8| 193863.5|  0| 159| 1281| 15758.25| 3955952|▇▁▁▁▁ |
 
 
 ### State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data)
@@ -285,7 +285,7 @@ skimr::skim(nytcovcounty)
 |                         |             |
 |:------------------------|:------------|
 |Name                     |nytcovcounty |
-|Number of rows           |276383       |
+|Number of rows           |279450       |
 |Number of columns        |6            |
 |_______________________  |             |
 |Column type frequency:   |             |
@@ -302,22 +302,22 @@ skimr::skim(nytcovcounty)
 |:-------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
 |county        |         0|          1.00|   3|  33|     0|     1805|          0|
 |state         |         0|          1.00|   4|  24|     0|       55|          0|
-|fips          |      2887|          0.99|   5|   5|     0|     3042|          0|
+|fips          |      2916|          0.99|   5|   5|     0|     3042|          0|
 
 
 **Variable type: Date**
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-21 |2020-06-27 |2020-05-12 |      159|
+|date          |         0|             1|2020-01-21 |2020-06-28 |2020-05-13 |      160|
 
 
 **Variable type: numeric**
 
 |skim_variable | n_missing| complete_rate|   mean|      sd| p0| p25| p50| p75|   p100|hist  |
 |:-------------|---------:|-------------:|------:|-------:|--:|---:|---:|---:|------:|:-----|
-|cases         |         0|             1| 447.11| 3912.10|  0|   6|  26| 123| 219157|▇▁▁▁▁ |
-|deaths        |         0|             1|  24.70|  346.52|  0|   0|   0|   4|  21913|▇▁▁▁▁ |
+|cases         |         0|             1| 451.39| 3930.15|  0|   6|  26| 125| 219481|▇▁▁▁▁ |
+|deaths        |         0|             1|  24.87|  347.61|  0|   0|   0|   4|  21940|▇▁▁▁▁ |
 
 
 
@@ -329,7 +329,7 @@ skimr::skim(nytcovstate)
 |                         |            |
 |:------------------------|:-----------|
 |Name                     |nytcovstate |
-|Number of rows           |6449        |
+|Number of rows           |6504        |
 |Number of columns        |5           |
 |_______________________  |            |
 |Column type frequency:   |            |
@@ -352,15 +352,15 @@ skimr::skim(nytcovstate)
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-21 |2020-06-27 |2020-04-30 |      159|
+|date          |         0|             1|2020-01-21 |2020-06-28 |2020-04-30 |      160|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|   p75|   p100|hist  |
-|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|-----:|------:|:-----|
-|cases         |         0|             1| 19168.20| 45319.62|  1| 402| 3613| 17488| 396669|▇▁▁▁▁ |
-|deaths        |         0|             1|  1058.39|  3286.38|  0|   6|   99|   661|  31105|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|      p75|   p100|hist  |
+|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|--------:|------:|:-----|
+|cases         |         0|             1| 19400.43| 45620.63|  1| 409| 3681| 17790.50| 397293|▇▁▁▁▁ |
+|deaths        |         0|             1|  1068.79|  3303.36|  0|   6|  102|   672.25|  31137|▇▁▁▁▁ |
 
 
 
@@ -372,7 +372,7 @@ skimr::skim(nytcovus)
 |                         |         |
 |:------------------------|:--------|
 |Name                     |nytcovus |
-|Number of rows           |159      |
+|Number of rows           |160      |
 |Number of columns        |3        |
 |_______________________  |         |
 |Column type frequency:   |         |
@@ -386,15 +386,15 @@ skimr::skim(nytcovus)
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-21 |2020-06-27 |2020-04-09 |      159|
+|date          |         0|             1|2020-01-21 |2020-06-28 |2020-04-09 |      160|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|      mean|        sd| p0| p25|    p50|     p75|    p100|hist  |
-|:-------------|---------:|-------------:|---------:|---------:|--:|---:|------:|-------:|-------:|:-----|
-|cases         |         0|             1| 777457.26| 834867.46|  1|  79| 465909| 1525887| 2525928|▇▂▂▂▂ |
-|deaths        |         0|             1|  42928.23|  47021.73|  0|   2|  18821|   91174|  125545|▇▁▁▂▃ |
+|skim_variable | n_missing| complete_rate|      mean|        sd| p0|  p25|      p50|        p75|    p100|hist  |
+|:-------------|---------:|-------------:|---------:|---------:|--:|----:|--------:|----------:|-------:|:-----|
+|cases         |         0|             1| 788627.41| 844146.64|  1| 83.5| 482645.0| 1542137.00| 2564681|▇▂▂▂▂ |
+|deaths        |         0|             1|  43446.26|  47329.43|  0|  2.5|  19952.5|   92303.25|  125814|▇▁▁▂▃ |
 
 
 ### Data from the CDC's [COVID-NET](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) 
@@ -751,10 +751,10 @@ skimr::skim(stmf)
 |:------------------------|:------|
 |Name                     |stmf   |
 |Number of rows           |302850 |
-|Number of columns        |16     |
+|Number of columns        |17     |
 |_______________________  |       |
 |Column type frequency:   |       |
-|character                |6      |
+|character                |7      |
 |Date                     |1      |
 |numeric                  |9      |
 |________________________ |       |
@@ -768,7 +768,8 @@ skimr::skim(stmf)
 |country_code  |         0|          1.00|   3|   7|     0|       22|          0|
 |cname         |     15945|          0.95|   5|  17|     0|       21|          0|
 |iso2          |     24105|          0.92|   2|   2|     0|       20|          0|
-|iso3          |     24105|          0.92|   3|   3|     0|       20|          0|
+|continent     |     43455|          0.86|   6|  13|     0|        2|          0|
+|iso3          |     43455|          0.86|   3|   3|     0|       18|          0|
 |sex           |         0|          1.00|   1|   1|     0|        3|          0|
 |age_group     |         0|          1.00|   3|   5|     0|        5|          0|
 
@@ -857,7 +858,7 @@ skimr::skim(apple_mobility)
 |                         |               |
 |:------------------------|:--------------|
 |Name                     |apple_mobility |
-|Number of rows           |601750         |
+|Number of rows           |605375         |
 |Number of columns        |8              |
 |_______________________  |               |
 |Column type frequency:   |               |
@@ -875,23 +876,23 @@ skimr::skim(apple_mobility)
 |geo_type            |         0|          1.00|   4|  14|     0|        4|          0|
 |region              |         0|          1.00|   4|  48|     0|     2325|          0|
 |transportation_type |         0|          1.00|   7|   7|     0|        3|          0|
-|alternative_name    |    480072|          0.20|   2|  85|     0|      519|          0|
-|sub_region          |    140104|          0.77|   4|  33|     0|      162|          0|
-|country             |     25398|          0.96|   5|  20|     0|       47|          0|
+|alternative_name    |    482964|          0.20|   2|  85|     0|      519|          0|
+|sub_region          |    140948|          0.77|   4|  33|     0|      162|          0|
+|country             |     25551|          0.96|   5|  20|     0|       47|          0|
 
 
 **Variable type: Date**
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-13 |2020-06-26 |2020-04-04 |      166|
+|date          |         0|             1|2020-01-13 |2020-06-27 |2020-04-05 |      167|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|   mean|    sd|   p0|   p25|   p50|   p75|    p100|hist  |
-|:-------------|---------:|-------------:|------:|-----:|----:|-----:|-----:|-----:|-------:|:-----|
-|index         |     13646|          0.98| 105.23| 48.07| 2.43| 76.77| 102.7| 126.3| 1370.08|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|   mean|    sd|   p0|  p25|    p50|    p75|    p100|hist  |
+|:-------------|---------:|-------------:|------:|-----:|----:|----:|------:|------:|-------:|:-----|
+|index         |     13685|          0.98| 105.71| 48.96| 2.43| 76.9| 102.85| 126.74| 1370.08|▇▁▁▁▁ |
 
 ### Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
 
@@ -953,7 +954,7 @@ skimr::skim(coronanet)
 |                         |          |
 |:------------------------|:---------|
 |Name                     |coronanet |
-|Number of rows           |15884     |
+|Number of rows           |15982     |
 |Number of columns        |33        |
 |_______________________  |          |
 |Column type frequency:   |          |
@@ -969,27 +970,27 @@ skimr::skim(coronanet)
 
 |skim_variable      | n_missing| complete_rate| min|  max| empty| n_unique| whitespace|
 |:------------------|---------:|-------------:|---:|----:|-----:|--------:|----------:|
-|record_id          |         0|          1.00|   6|   10|     0|    15884|          0|
-|policy_id          |         0|          1.00|   4|   14|     0|    11758|          0|
-|entry_type         |         0|          1.00|   6|    9|     0|        2|          0|
-|event_description  |         0|          1.00|   3| 6463|     0|    12171|         21|
+|record_id          |         0|          1.00|   6|   10|     0|    15982|          0|
+|policy_id          |         0|          1.00|   4|   14|     0|    11830|          0|
+|entry_type         |         4|          1.00|   6|    9|     0|        2|          0|
+|event_description  |         0|          1.00|   3| 6463|     0|    12241|         21|
 |type               |         0|          1.00|   6|   54|     0|       21|          0|
-|type_sub_cat       |      6125|          0.61|   5|  140|     0|      103|          0|
+|type_sub_cat       |      6145|          0.62|   5|  140|     0|      103|          0|
 |country            |         0|          1.00|   4|   32|     0|      198|          0|
 |init_country_level |         0|          1.00|   8|   31|     0|        5|          0|
-|province           |      9721|          0.39|   3|   33|     0|      622|          0|
+|province           |      9747|          0.39|   3|   33|     0|      623|          0|
 |target_country     |       171|          0.99|   4| 1905|     0|      532|          0|
-|target_geog_level  |     10139|          0.36|  13|   62|     0|        6|          0|
-|target_region      |     15692|          0.01|   4|  218|     0|       39|          0|
-|target_province    |     14566|          0.08|   3| 1556|     0|      424|          0|
-|target_city        |     15464|          0.03|   2|  286|     0|      248|          0|
-|target_other       |     15884|          0.00|  NA|   NA|     0|        0|          0|
-|target_who_what    |      7965|          0.50|   5|   61|     0|       13|          0|
-|target_direction   |     12774|          0.20|   7|   16|     0|        3|          0|
-|travel_mechanism   |     10959|          0.31|   5|  103|     0|       76|          0|
+|target_geog_level  |     10229|          0.36|  13|   62|     0|        6|          0|
+|target_region      |     15790|          0.01|   4|  218|     0|       39|          0|
+|target_province    |     14659|          0.08|   3| 1556|     0|      428|          0|
+|target_city        |     15562|          0.03|   2|  286|     0|      248|          0|
+|target_other       |     15982|          0.00|  NA|   NA|     0|        0|          0|
+|target_who_what    |      8037|          0.50|   5|   61|     0|       13|          0|
+|target_direction   |     12865|          0.20|   7|   16|     0|        3|          0|
+|travel_mechanism   |     11049|          0.31|   5|  103|     0|       76|          0|
 |compliance         |       463|          0.97|  20|  167|     0|       31|          0|
-|enforcer           |         0|          1.00|   6|  190|     0|      151|          0|
-|link               |       141|          0.99|   1| 1749|     0|     8888|          0|
+|enforcer           |         0|          1.00|   6|  190|     0|      152|          0|
+|link               |       141|          0.99|   1| 1749|     0|     8943|          0|
 |iso3               |        48|          1.00|   1|    3|     0|      197|          0|
 |iso2               |        69|          1.00|   1|    2|     0|      196|          0|
 
@@ -998,28 +999,28 @@ skimr::skim(coronanet)
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date_start    |         0|          1.00|2019-12-31 |2021-01-01 |2020-03-28 |      187|
-|date_end      |     11308|          0.29|2020-01-28 |2022-03-13 |2020-04-26 |      212|
+|date_start    |         0|          1.00|2019-12-31 |2021-01-01 |2020-03-28 |      189|
+|date_end      |     11366|          0.29|2020-01-28 |2023-01-01 |2020-04-26 |      214|
 
 
 **Variable type: numeric**
 
 |skim_variable      | n_missing| complete_rate|   mean|    sd|    p0|   p25|    p50|    p75|   p100|hist  |
 |:------------------|---------:|-------------:|------:|-----:|-----:|-----:|------:|------:|------:|:-----|
-|domestic_policy    |         0|          1.00|   0.84|  0.36|  0.00|  1.00|   1.00|   1.00|   1.00|▂▁▁▁▇ |
-|type_text          |     15749|          0.01|  20.47| 11.64|  2.00| 14.00|  20.00|  28.00|  85.00|▆▇▁▁▁ |
-|index_high_est     |      2800|          0.82|  53.85|  2.31| 48.29| 52.46|  53.54|  54.97|  70.74|▅▇▁▁▁ |
-|index_med_est      |      2800|          0.82|  52.23|  1.92| 45.42| 51.25|  52.29|  53.46|  57.59|▁▂▇▆▁ |
-|index_low_est      |      2800|          0.82|  50.62|  2.51| 37.19| 49.82|  51.12|  52.14|  56.26|▁▁▂▇▂ |
-|index_country_rank |      2800|          0.82| 118.76| 52.99|  1.00| 71.00| 123.00| 168.00| 194.00|▂▅▅▅▇ |
+|domestic_policy    |         0|          1.00|   0.85|  0.36|  0.00|  1.00|   1.00|   1.00|   1.00|▂▁▁▁▇ |
+|type_text          |     15849|          0.01|  20.13| 11.39|  2.00| 14.00|  20.00|  28.00|  85.00|▆▇▁▁▁ |
+|index_high_est     |      2871|          0.82|  53.85|  2.31| 48.29| 52.47|  53.54|  54.97|  70.74|▅▇▁▁▁ |
+|index_med_est      |      2871|          0.82|  52.23|  1.92| 45.42| 51.26|  52.29|  53.46|  57.59|▁▂▇▆▁ |
+|index_low_est      |      2871|          0.82|  50.62|  2.51| 37.19| 49.82|  51.12|  52.13|  56.26|▁▁▂▇▂ |
+|index_country_rank |      2871|          0.82| 118.68| 52.97|  1.00| 71.00| 123.00| 168.00| 194.00|▂▅▅▅▇ |
 
 
 **Variable type: POSIXct**
 
 |skim_variable  | n_missing| complete_rate|min                 |max                 |median              | n_unique|
 |:--------------|---------:|-------------:|:-------------------|:-------------------|:-------------------|--------:|
-|recorded_date  |         0|             1|2020-03-28 05:38:17 |2020-06-21 21:46:06 |2020-04-20 17:49:25 |    12157|
-|date_announced |        14|             1|2019-12-31 00:00:00 |2020-06-20 00:00:00 |2020-03-27 00:00:00 |      170|
+|recorded_date  |         0|             1|2020-03-28 05:38:17 |2020-06-22 22:34:13 |2020-04-21 06:29:26 |    12227|
+|date_announced |        14|             1|2019-12-31 00:00:00 |2020-06-22 00:00:00 |2020-03-27 00:00:00 |      172|
 
 
 ### Other Tables
@@ -1037,11 +1038,11 @@ countries %>%
 |                         |           |
 |:------------------------|:----------|
 |Name                     |Piped data |
-|Number of rows           |209        |
-|Number of columns        |3          |
+|Number of rows           |215        |
+|Number of columns        |4          |
 |_______________________  |           |
 |Column type frequency:   |           |
-|character                |3          |
+|character                |4          |
 |________________________ |           |
 |Group variables          |None       |
 
@@ -1053,6 +1054,7 @@ countries %>%
 |cname         |         0|          1.00|   4|  42|     0|      209|          0|
 |iso3          |         0|          1.00|   3|   3|     0|      209|          0|
 |iso2          |         2|          0.99|   2|   2|     0|      207|          0|
+|continent     |         0|          1.00|   4|  13|     0|        6|          0|
 
 _U.S. Census Population Estimates_
 
