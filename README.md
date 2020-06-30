@@ -10,7 +10,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Monday, June 29, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Tuesday, June 30, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -119,7 +119,7 @@ covnat
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 167 x 8
+#> # A tibble: 168 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -132,7 +132,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 157 more rows
+#> # … with 158 more rows
 ```
 
 
@@ -238,7 +238,7 @@ skimr::skim(covus)
 |                         |      |
 |:------------------------|:-----|
 |Name                     |covus |
-|Number of rows           |96855 |
+|Number of rows           |97695 |
 |Number of columns        |7     |
 |_______________________  |      |
 |Column type frequency:   |      |
@@ -264,14 +264,14 @@ skimr::skim(covus)
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-22 |2020-06-28 |2020-05-02 |      159|
+|date          |         0|             1|2020-01-22 |2020-06-29 |2020-05-02 |      160|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|    mean|       sd| p0| p25|  p50|      p75|    p100|hist  |
-|:-------------|---------:|-------------:|-------:|--------:|--:|---:|----:|--------:|-------:|:-----|
-|count         |     55929|          0.42| 48643.8| 193863.5|  0| 159| 1281| 15758.25| 3955952|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|   p75|    p100|hist  |
+|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|-----:|-------:|:-----|
+|count         |     56300|          0.42| 49548.66| 197741.7|  0| 160| 1293| 15963| 4061692|▇▁▁▁▁ |
 
 
 ### State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data)
@@ -858,7 +858,7 @@ skimr::skim(apple_mobility)
 |                         |               |
 |:------------------------|:--------------|
 |Name                     |apple_mobility |
-|Number of rows           |605375         |
+|Number of rows           |609000         |
 |Number of columns        |8              |
 |_______________________  |               |
 |Column type frequency:   |               |
@@ -876,23 +876,23 @@ skimr::skim(apple_mobility)
 |geo_type            |         0|          1.00|   4|  14|     0|        4|          0|
 |region              |         0|          1.00|   4|  48|     0|     2325|          0|
 |transportation_type |         0|          1.00|   7|   7|     0|        3|          0|
-|alternative_name    |    482964|          0.20|   2|  85|     0|      519|          0|
-|sub_region          |    140948|          0.77|   4|  33|     0|      162|          0|
-|country             |     25551|          0.96|   5|  20|     0|       47|          0|
+|alternative_name    |    485856|          0.20|   2|  85|     0|      519|          0|
+|sub_region          |    141792|          0.77|   4|  33|     0|      162|          0|
+|country             |     25704|          0.96|   5|  20|     0|       47|          0|
 
 
 **Variable type: Date**
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-13 |2020-06-27 |2020-04-05 |      167|
+|date          |         0|             1|2020-01-13 |2020-06-28 |2020-04-05 |      168|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|   mean|    sd|   p0|  p25|    p50|    p75|    p100|hist  |
-|:-------------|---------:|-------------:|------:|-----:|----:|----:|------:|------:|-------:|:-----|
-|index         |     13685|          0.98| 105.71| 48.96| 2.43| 76.9| 102.85| 126.74| 1370.08|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate| mean|    sd|   p0| p25|    p50|    p75|    p100|hist  |
+|:-------------|---------:|-------------:|----:|-----:|----:|---:|------:|------:|-------:|:-----|
+|index         |     13724|          0.98|  106| 49.47| 2.43|  77| 102.95| 127.04| 1370.08|▇▁▁▁▁ |
 
 ### Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
 
