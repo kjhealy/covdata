@@ -80,7 +80,7 @@ covus %>%
 
 ### Draw a graph of the weekly rolling average death rate, by state
 
-```{r rolling-state, fig.height=16, fig.width=7, dpi=100}
+```{r rolling-state, fig.height=16, fig.width=8, dpi=100}
 
 state_pops <- uspop %>%
   filter(sex_id == "totsex", hisp_id == "tothisp") %>%
@@ -118,7 +118,7 @@ covus %>%
 
 ### Draw a graph of the weekly rolling average death rate, by state, with free y-axes in the panels
 
-```{r rolling-state-free, fig.height=16, fig.width=7, dpi=100}
+```{r rolling-state-free, fig.height=16, fig.width=8, dpi=100}
 
 covus %>%
   filter(measure == "death", state %in% unique(state_pops$state)) %>%
@@ -152,7 +152,7 @@ covus %>%
   ggplot(aes(x = date, y = count)) + 
   geom_line(size = 0.75) + 
   scale_x_date(date_breaks = "1 week", date_labels = "%b %e" ) + 
-  scale_y_continuous(labels = scales::comma, breaks = seq(0, 100000, 20000)) + 
+  scale_y_continuous(labels = scales::comma, breaks = seq(0, 160000, 20000)) + 
   labs(title = "COVID-19 Cumulative Recorded Deaths in the United States",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y"), "Recorded counts underestimate total mortality."),
        x = "Date", y = "Count of Deaths", 
