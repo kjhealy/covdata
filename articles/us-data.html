@@ -245,7 +245,7 @@
   <span class="fu">theme_minimal</span>()
 <span class="co">#&gt; Joining, by = c("state", "fips")</span>
 </pre></div>
-<p><img src="us-data_files/figure-html/rolling-state-1.png" width="700"></p>
+<p><img src="us-data_files/figure-html/rolling-state-1.png" width="800"></p>
 </div>
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state-with-free-y-axes-in-the-panels" class="section level3">
 <h3 class="hasAnchor">
@@ -271,7 +271,7 @@
   <span class="fu">theme_minimal</span>()
 <span class="co">#&gt; Joining, by = c("state", "fips")</span>
 </pre></div>
-<p><img src="us-data_files/figure-html/rolling-state-free-1.png" width="700"></p>
+<p><img src="us-data_files/figure-html/rolling-state-free-1.png" width="800"></p>
 </div>
 <div id="draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="section level3">
 <h3 class="hasAnchor">
@@ -284,7 +284,7 @@
   <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">count</span>)) <span class="op">+</span> 
   <span class="fu">geom_line</span>(size = <span class="fl">0.75</span>) <span class="op">+</span> 
   <span class="fu">scale_x_date</span>(date_breaks = <span class="st">"1 week"</span>, date_labels = <span class="st">"%b %e"</span> ) <span class="op">+</span> 
-  <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="kw"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks = <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">100000</span>, <span class="fl">20000</span>)) <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="kw"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks = <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">160000</span>, <span class="fl">20000</span>)) <span class="op">+</span> 
   <span class="fu">labs</span>(title = <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
        subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covus</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>), <span class="st">"Recorded counts underestimate total mortality."</span>),
        x = <span class="st">"Date"</span>, y = <span class="st">"Count of Deaths"</span>, 
