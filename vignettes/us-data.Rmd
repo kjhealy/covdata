@@ -118,7 +118,7 @@ covus %>%
 
 ### Draw a graph of the weekly rolling average death rate, by state, with free y-axes in the panels
 
-```{r rolling-state, fig.height=16, fig.width=6, dpi=100}
+```{r rolling-state-free, fig.height=16, fig.width=6, dpi=100}
 
 covus %>%
   filter(measure == "death", state %in% unique(state_pops$state)) %>%
