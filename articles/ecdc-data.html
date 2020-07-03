@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7.9000</span>
       </span>
     </div>
 
@@ -75,6 +75,9 @@
       <a href="../articles/coronanet-data.html">CoronaNet Data</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -133,21 +136,21 @@
 <a href="#national-level-case-and-mortality-data-from-the-european-centers-for-disease-control-" class="anchor"></a>National level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">covnat</span>
-<span class="co">#&gt; # A tibble: 23,782 x 8</span>
+<span class="co">#&gt; # A tibble: 27,336 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [209]</span>
-<span class="co">#&gt;    date       cname       iso3  cases deaths  pop_2018 cu_cases cu_deaths</span>
+<span class="co">#&gt;    date       cname       iso3  cases deaths       pop cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2019-12-31 Afghanistan AFG       0      0  37172386        0         0</span>
-<span class="co">#&gt;  2 2019-12-31 Algeria     DZA       0      0  42228429        0         0</span>
-<span class="co">#&gt;  3 2019-12-31 Armenia     ARM       0      0   2951776        0         0</span>
-<span class="co">#&gt;  4 2019-12-31 Australia   AUS       0      0  24992369        0         0</span>
-<span class="co">#&gt;  5 2019-12-31 Austria     AUT       0      0   8847037        0         0</span>
-<span class="co">#&gt;  6 2019-12-31 Azerbaijan  AZE       0      0   9942334        0         0</span>
-<span class="co">#&gt;  7 2019-12-31 Bahrain     BHR       0      0   1569439        0         0</span>
-<span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9485386        0         0</span>
-<span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11422068        0         0</span>
-<span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 209469333        0         0</span>
-<span class="co">#&gt; # … with 23,772 more rows</span>
+<span class="co">#&gt;  1 2019-12-31 Afghanistan AFG       0      0  38041757        0         0</span>
+<span class="co">#&gt;  2 2019-12-31 Algeria     DZA       0      0  43053054        0         0</span>
+<span class="co">#&gt;  3 2019-12-31 Armenia     ARM       0      0   2957728        0         0</span>
+<span class="co">#&gt;  4 2019-12-31 Australia   AUS       0      0  25203200        0         0</span>
+<span class="co">#&gt;  5 2019-12-31 Austria     AUT       0      0   8858775        0         0</span>
+<span class="co">#&gt;  6 2019-12-31 Azerbaijan  AZE       0      0  10047719        0         0</span>
+<span class="co">#&gt;  7 2019-12-31 Bahrain     BHR       0      0   1641164        0         0</span>
+<span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9452409        0         0</span>
+<span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11455519        0         0</span>
+<span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 211049519        0         0</span>
+<span class="co">#&gt; # … with 27,326 more rows</span>
 </pre></div>
 <div id="plot-national-cases-over-time-highlighting-specific-countries-of-interest" class="section level3">
 <h3 class="hasAnchor">
@@ -205,13 +208,13 @@
        caption = <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) <span class="op">+</span>
   <span class="fu">theme_minimal</span>()
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Removed 13176 rows containing missing values (geom_text_repel).</span>
+<span class="co">#&gt; Warning: Removed 16167 rows containing missing values (geom_text_repel).</span>
 </pre></div>
 <p><img src="ecdc-data_files/figure-html/ecdc-example-1.png" width="800"></p>
 </div>
-<div id="rolling-average-of-new-cases" class="section level3">
+<div id="rolling-average-of-new-cases-per-capita" class="section level3">
 <h3 class="hasAnchor">
-<a href="#rolling-average-of-new-cases" class="anchor"></a>Rolling Average of New Cases</h3>
+<a href="#rolling-average-of-new-cases-per-capita" class="anchor"></a>Rolling Average of New Cases per Capita</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 
 <span class="kw">covnat</span> <span class="op">%&gt;%</span>
@@ -221,8 +224,8 @@
                         `United Kingdom` = <span class="st">"UK"</span>),
          cgroup = <span class="fu">case_when</span>(<span class="kw">iso3</span> <span class="op">%in%</span> <span class="kw">focus_cn</span> <span class="op">~</span> <span class="kw">iso3</span>, 
                             <span class="fl">TRUE</span> <span class="op">~</span> <span class="st">"ZZOTHER"</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(cases7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="kw">deaths</span><span class="op">/</span><span class="kw">pop_2018</span>)<span class="op">*</span><span class="fl">1e6</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>),
-         deaths7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="kw">deaths</span><span class="op">/</span><span class="kw">pop_2018</span>)<span class="op">*</span><span class="fl">1e6</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(cases7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="kw">deaths</span><span class="op">/</span><span class="kw">pop</span>)<span class="op">*</span><span class="fl">1e6</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>),
+         deaths7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>((<span class="kw">deaths</span><span class="op">/</span><span class="kw">pop</span>)<span class="op">*</span><span class="fl">1e6</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">iso3</span> <span class="op">%in%</span> <span class="kw">focus_cn</span>) <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span>(mapping = <span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">deaths7</span>)) <span class="op">+</span> 
   <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>) <span class="op">+</span> 
