@@ -130,7 +130,6 @@ covus %>%
   filter(date > lubridate::ymd("2020-03-15")) %>%
   ggplot(mapping = aes(x = date, y = (deaths7/pop)*1e5)) + 
   geom_line(size = 0.5) + 
-  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
   facet_wrap(~ name, ncol = 4, scales = "free_y") +
   labs(x = "Date", 
        y = "Deaths per 100,000 Population (Seven Day Rolling Average)", 
