@@ -116,6 +116,33 @@ covus %>%
 ```
 
 
+### Draw a graph of the weekly rolling average death rate, by state, with free y-axes in the panels
+
+```{r rolling-state, fig.height=16, fig.width=6, dpi=100}
+
+covus %>%
+  filter(measure == "death", state %in% unique(state_pops$state)) %>%
+  group_by(state) %>%
+  mutate(
+    deaths_daily = get_daily_count(count, date), 
+    deaths7 = slider::slide_dbl(deaths_daily, mean, .before = 7, .after = 0, na.rm = TRUE)) %>%
+  left_join(state_pops) %>%
+  filter(date > lubridate::ymd("2020-03-15")) %>%
+  ggplot(mapping = aes(x = date, y = (deaths7/pop)*1e5)) + 
+  geom_line(size = 0.5) + 
+  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
+  facet_wrap(~ name, ncol = 4, scales = "free_y") +
+  labs(x = "Date", 
+       y = "Deaths per 100,000 Population (Seven Day Rolling Average)", 
+       title = "Average Death Rate from COVID-19: US States and Washington, DC. Free scales.", 
+       subtitle = paste("COVID Tracking Project data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       caption = "Kieran Healy @kjhealy / Data: https://www.covidtracking.com/") +
+  theme_minimal()
+
+```
+
+
+
 ### Draw a graph of cumulative reported US deaths, aggregated to the national level
 
 ```{r us-example-2, fig.height=8, fig.width=10, dpi=100}

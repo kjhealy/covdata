@@ -3,16 +3,16 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Tuesday, June 30, 2020}
+\title{International COVID-19 cases and deaths, current as of Friday, July  3, 2020}
 \format{
-A tibble with 23,782 rows and 8 columns
+A tibble with 27,336 rows and 8 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{cname}{Name of country (character)}
 \item{iso3}{ISO3 country code (character)}
 \item{cases}{N reported COVID-19 cases on this date}
 \item{deaths}{N reported COVID-19 deaths on this date}
-\item{pop_2018}{Country population in 2018}
+\item{pop}{Country population in 2019}
 \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this date}
 \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this date}
 }

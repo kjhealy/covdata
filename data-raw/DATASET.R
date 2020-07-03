@@ -523,8 +523,8 @@ anti_join(covid, cname_table) %>%
   distinct()
 
 covnat <- covid %>%
-  select(date, cname, iso3, cases, deaths, pop_data2018) %>%
-  rename(pop_2018 = pop_data2018) %>%
+  select(date, cname, iso3, cases, deaths, pop_data2019) %>%
+  rename(pop = pop_data2019) %>%
   drop_na(iso3) %>%
   group_by(iso3) %>%
   arrange(date) %>%
@@ -532,7 +532,6 @@ covnat <- covid %>%
          cu_deaths = cumsum(deaths))
 
 covnat ## Data object
-
 
 countries <- covnat %>%
   distinct(cname, iso3) %>%

@@ -24,7 +24,7 @@
 #'   \item{iso3}{ISO3 country code (character)}
 #'   \item{cases}{N reported COVID-19 cases on this date}
 #'   \item{deaths}{N reported COVID-19 deaths on this date}
-#'   \item{pop_2018}{Country population in 2018}
+#'   \item{pop}{Country population in 2019}
 #'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this date}
 #'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this date}
 #' }
