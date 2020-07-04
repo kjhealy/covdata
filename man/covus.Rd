@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Friday, July  3, 2020}
+\title{COVID-19 data for the USA, current as of Saturday, July  4, 2020}
 \format{
 A tibble with 101,055 rows and 7 columns
 \describe{
@@ -47,5 +47,6 @@ The measures tracked by the COVID tracking project are as follows:
 #' }
 
 Not all measures are reported by all states.
+The \code{positive}, \code{negative}, and \code{death} measures are \emph{cumulative} counts.
 }
 \keyword{datasets}

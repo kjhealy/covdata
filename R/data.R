@@ -48,6 +48,7 @@
 #' @details The measures tracked by the COVID tracking project are as follows:
 #' `r tabular(unique(covus[, c("measure", "measure_label")]))`
 #' Not all measures are reported by all states.
+#' The `positive`, `negative`, and `death` measures are _cumulative_ counts.
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"
 

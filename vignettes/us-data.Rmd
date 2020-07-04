@@ -1,5 +1,5 @@
 ---
-title: "Case and Mortality Data for the United States"
+title: "U.S. Case and Mortality Data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{us-data}
@@ -78,6 +78,36 @@ covus %>%
   theme_minimal()
 ```
 
+### Calculating daily counts
+
+The COVID Tracking Project reports _cumulative_ counts for key measures such as positive tests and deaths. For example, for New York State:
+
+```{r nystate-ex1}
+
+measures <- c("positive", "negative", "death")
+
+covus %>%
+  filter(measure %in% measures, state == "NY") %>%
+  select(date, state, measure, count) %>%
+  pivot_wider(names_from = measure, values_from = count)
+
+```
+
+To calculate _daily_ counts from these cumulative measures, use `lag()`.
+
+```{r nydaily}
+
+covus %>%
+  filter(measure %in% measures, state == "NY") %>%
+  select(date, state, measure, count) %>%
+  pivot_wider(names_from = measure, values_from = count) %>%
+  mutate(across(positive:death, ~.x - lag(.x, order_by = date), 
+                .names = "daily_{col}"))
+
+
+```
+
+
 ### Draw a graph of the weekly rolling average death rate, by state
 
 ```{r rolling-state, fig.height=16, fig.width=8, dpi=100}
@@ -89,10 +119,12 @@ state_pops <- uspop %>%
          state = state_abbr, fips = statefips) %>%
   mutate(state = replace(state, fips == "11", "DC"))
 
-
+## Using a convenience function to do something similar
+## to the lambda version above
 get_daily_count <- function(count, date){
   count - lag(count, order_by = date)
 }
+
 
 covus %>%
   filter(measure == "death", state %in% unique(state_pops$state)) %>%
