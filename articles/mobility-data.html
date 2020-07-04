@@ -63,7 +63,7 @@
       <a href="../articles/excess-mortality.html">Excess Mortality Data</a>
     </li>
     <li>
-      <a href="../articles/us-data.html">Case and Mortality Data for the United States</a>
+      <a href="../articles/us-data.html">U.S. Case and Mortality Data</a>
     </li>
     <li>
       <a href="../articles/mobility-data.html">Mobility Data from Apple and Google</a>
@@ -138,7 +138,7 @@
 <p>Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">apple_mobility</span>
-<span class="co">#&gt; # A tibble: 619,875 x 8</span>
+<span class="co">#&gt; # A tibble: 623,500 x 8</span>
 <span class="co">#&gt;    geo_type region transportation_… alternative_name sub_region country</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
@@ -151,7 +151,7 @@
 <span class="co">#&gt;  8 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt;  9 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt; 10 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
-<span class="co">#&gt; # … with 619,865 more rows, and 2 more variables: date &lt;date&gt;, index &lt;dbl&gt;</span>
+<span class="co">#&gt; # … with 623,490 more rows, and 2 more variables: date &lt;date&gt;, index &lt;dbl&gt;</span>
 </pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">vec_brks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span>)

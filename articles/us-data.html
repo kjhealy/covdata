@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case and Mortality Data for the United States • covdata</title>
+<title>U.S. Case and Mortality Data • covdata</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Case and Mortality Data for the United States">
+<script src="../pkgdown.js"></script><meta property="og:title" content="U.S. Case and Mortality Data">
 <meta property="og:description" content="covdata">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -63,7 +63,7 @@
       <a href="../articles/excess-mortality.html">Excess Mortality Data</a>
     </li>
     <li>
-      <a href="../articles/us-data.html">Case and Mortality Data for the United States</a>
+      <a href="../articles/us-data.html">U.S. Case and Mortality Data</a>
     </li>
     <li>
       <a href="../articles/mobility-data.html">Mobility Data from Apple and Google</a>
@@ -100,7 +100,7 @@
       </header><script src="us-data_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Case and Mortality Data for the United States</h1>
+      <h1 data-toc-skip>U.S. Case and Mortality Data</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/master/vignettes/us-data.Rmd"><code>vignettes/us-data.Rmd</code></a></small>
@@ -208,10 +208,62 @@
 </pre></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
+<div id="calculating-daily-counts" class="section level3">
+<h3 class="hasAnchor">
+<a href="#calculating-daily-counts" class="anchor"></a>Calculating daily counts</h3>
+<p>The COVID Tracking Project reports <em>cumulative</em> counts for key measures such as positive tests and deaths. For example, for New York State:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+
+<span class="kw">measures</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"negative"</span>, <span class="st">"death"</span>)
+
+<span class="kw">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">%in%</span> <span class="kw">measures</span>, <span class="kw">state</span> <span class="op">==</span> <span class="st">"NY"</span>) <span class="op">%&gt;%</span>
+  <span class="fu">select</span>(<span class="kw">date</span>, <span class="kw">state</span>, <span class="kw">measure</span>, <span class="kw">count</span>) <span class="op">%&gt;%</span>
+  <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>)
+<span class="co">#&gt; # A tibble: 122 x 5</span>
+<span class="co">#&gt;    date       state positive negative death</span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2020-07-03 NY      395872  3712113 24885</span>
+<span class="co">#&gt;  2 2020-07-02 NY      394954  3646639 24877</span>
+<span class="co">#&gt;  3 2020-07-01 NY      394079  3577569 24866</span>
+<span class="co">#&gt;  4 2020-06-30 NY      393454  3521484 24855</span>
+<span class="co">#&gt;  5 2020-06-29 NY      392930  3469983 24842</span>
+<span class="co">#&gt;  6 2020-06-28 NY      392539  3423946 24835</span>
+<span class="co">#&gt;  7 2020-06-27 NY      391923  3362656 24830</span>
+<span class="co">#&gt;  8 2020-06-26 NY      391220  3290097 24814</span>
+<span class="co">#&gt;  9 2020-06-25 NY      390415  3229179 24800</span>
+<span class="co">#&gt; 10 2020-06-24 NY      389666  3162286 24782</span>
+<span class="co">#&gt; # … with 112 more rows</span>
+</pre></div>
+<p>To calculate <em>daily</em> counts from these cumulative measures, use <code><a href="https://rdrr.io/r/stats/lag.html">lag()</a></code>.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+
+<span class="kw">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">%in%</span> <span class="kw">measures</span>, <span class="kw">state</span> <span class="op">==</span> <span class="st">"NY"</span>) <span class="op">%&gt;%</span>
+  <span class="fu">select</span>(<span class="kw">date</span>, <span class="kw">state</span>, <span class="kw">measure</span>, <span class="kw">count</span>) <span class="op">%&gt;%</span>
+  <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="kw">positive</span><span class="op">:</span><span class="kw">death</span>, <span class="op">~</span><span class="kw">.x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>(<span class="kw">.x</span>, order_by = <span class="kw">date</span>), 
+                .names = <span class="st">"daily_{col}"</span>))
+<span class="co">#&gt; # A tibble: 122 x 8</span>
+<span class="co">#&gt;    date       state positive negative death daily_positive daily_negative</span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2020-07-03 NY      395872  3712113 24885            918          65474</span>
+<span class="co">#&gt;  2 2020-07-02 NY      394954  3646639 24877            875          69070</span>
+<span class="co">#&gt;  3 2020-07-01 NY      394079  3577569 24866            625          56085</span>
+<span class="co">#&gt;  4 2020-06-30 NY      393454  3521484 24855            524          51501</span>
+<span class="co">#&gt;  5 2020-06-29 NY      392930  3469983 24842            391          46037</span>
+<span class="co">#&gt;  6 2020-06-28 NY      392539  3423946 24835            616          61290</span>
+<span class="co">#&gt;  7 2020-06-27 NY      391923  3362656 24830            703          72559</span>
+<span class="co">#&gt;  8 2020-06-26 NY      391220  3290097 24814            805          60918</span>
+<span class="co">#&gt;  9 2020-06-25 NY      390415  3229179 24800            749          66893</span>
+<span class="co">#&gt; 10 2020-06-24 NY      389666  3162286 24782            581          50563</span>
+<span class="co">#&gt; # … with 112 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span>
+</pre></div>
+</div>
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state" class="anchor"></a>Draw a graph of the weekly rolling average death rate, by state</h3>
-<div class="sourceCode" id="cb4"><pre class="downlit">
+<div class="sourceCode" id="cb6"><pre class="downlit">
 
 <span class="kw">state_pops</span> <span class="op">&lt;-</span> <span class="kw">uspop</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">sex_id</span> <span class="op">==</span> <span class="st">"totsex"</span>, <span class="kw">hisp_id</span> <span class="op">==</span> <span class="st">"tothisp"</span>) <span class="op">%&gt;%</span>
@@ -220,10 +272,12 @@
          state = <span class="kw">state_abbr</span>, fips = <span class="kw">statefips</span>) <span class="op">%&gt;%</span>
   <span class="fu">mutate</span>(state = <span class="fu"><a href="https://rdrr.io/r/base/replace.html">replace</a></span>(<span class="kw">state</span>, <span class="kw">fips</span> <span class="op">==</span> <span class="st">"11"</span>, <span class="st">"DC"</span>))
 
-
+<span class="co">## Using a convenience function to do something similar</span>
+<span class="co">## to the lambda version above</span>
 <span class="kw">get_daily_count</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">count</span>, <span class="kw">date</span>){
   <span class="kw">count</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>(<span class="kw">count</span>, order_by = <span class="kw">date</span>)
 }
+
 
 <span class="kw">covus</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"death"</span>, <span class="kw">state</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="kw">state_pops</span><span class="op">$</span><span class="kw">state</span>)) <span class="op">%&gt;%</span>
@@ -250,7 +304,7 @@
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state-with-free-y-axes-in-the-panels" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state-with-free-y-axes-in-the-panels" class="anchor"></a>Draw a graph of the weekly rolling average death rate, by state, with free y-axes in the panels</h3>
-<div class="sourceCode" id="cb5"><pre class="downlit">
+<div class="sourceCode" id="cb7"><pre class="downlit">
 
 <span class="kw">covus</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"death"</span>, <span class="kw">state</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="kw">state_pops</span><span class="op">$</span><span class="kw">state</span>)) <span class="op">%&gt;%</span>
@@ -276,7 +330,7 @@
 <div id="draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="anchor"></a>Draw a graph of cumulative reported US deaths, aggregated to the national level</h3>
-<div class="sourceCode" id="cb6"><pre class="downlit">
+<div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="kw">covus</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"death"</span>) <span class="op">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="kw">date</span>) <span class="op">%&gt;%</span>
@@ -302,7 +356,7 @@
 <div id="state-level-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
-<div class="sourceCode" id="cb7"><pre class="downlit">
+<div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="kw">nytcovstate</span>
 <span class="co">#&gt; # A tibble: 6,724 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
@@ -323,7 +377,7 @@
 <div id="county-level-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
-<div class="sourceCode" id="cb8"><pre class="downlit">
+<div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="kw">nytcovcounty</span>
 <span class="co">#&gt; # A tibble: 291,759 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
@@ -344,7 +398,7 @@
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county.</h3>
-<div class="sourceCode" id="cb9"><pre class="downlit">
+<div class="sourceCode" id="cb11"><pre class="downlit">
 <span class="kw">nytcovcounty</span> <span class="op">%&gt;%</span>
   <span class="fu">mutate</span>(uniq_name = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="kw">county</span>, <span class="kw">state</span>)) <span class="op">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
   <span class="fu">group_by</span>(<span class="kw">uniq_name</span>) <span class="op">%&gt;%</span>
@@ -370,7 +424,7 @@
 <a href="#us-cdc-surveillance-network-data" class="anchor"></a>US CDC Surveillance Network Data</h2>
 <p>This US Centers for Disase Control surveillance network conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults in the United States. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.</p>
 <p>Thanks to Bob Rudis’s <a href="https://github.com/hrbrmstr/cdccovidview"><code>cdccovidview</code></a> package for making these data tractable to include.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
+<div class="sourceCode" id="cb12"><pre class="downlit">
 <span class="kw">cdc_hospitalizations</span>
 <span class="co">#&gt; # A tibble: 4,590 x 8</span>
 <span class="co">#&gt;    catchment network year  mmwr_year mmwr_week age_category cumulative_rate</span>
@@ -446,7 +500,7 @@
 <div id="summary-view-of-cdc-surveillance-network-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#summary-view-of-cdc-surveillance-network-data" class="anchor"></a>Summary view of CDC Surveillance Network Data</h3>
-<div class="sourceCode" id="cb11"><pre class="downlit">
+<div class="sourceCode" id="cb13"><pre class="downlit">
 
 <span class="kw">age_f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
   <span class="st">"0-4 yr"</span>, <span class="st">"5-17 yr"</span>, <span class="st">"18-49 yr"</span>, 
