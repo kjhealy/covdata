@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovus}
 \alias{nytcovus}
-\title{NYT COVID-19 data for the US, current as of Saturday, July  4, 2020}
+\title{NYT COVID-19 data for the US, current as of Sunday, July  5, 2020}
 \format{
-A tibble with 164 rows and 3 columns
+A tibble with 166 rows and 3 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{cases}{Cumulative N  reported cases}
