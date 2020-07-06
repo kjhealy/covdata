@@ -6,3 +6,4 @@
 ^_pkgdown.yml$
 ^data-raw
 ^README.Rmd$
+^LICENSE.md$

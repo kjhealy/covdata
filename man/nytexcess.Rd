@@ -23,7 +23,6 @@ A tibble with 6,712 rows and 12 columns
 }
 \source{
 The New York Times \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}.
-For further details on these data see \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}
 }
 \usage{
 nytexcess
@@ -39,7 +38,7 @@ The number of years used in the historical averages changes depending on what da
 The number of expected deaths are not adjusted for how non-Covid-19 deaths may change during the outbreak, which will take some time to figure out. As countries impose control measures, deaths from causes like road accidents and homicides may decline. And people who die from Covid-19 cannot die later from other causes, which may reduce other causes of death. Both of these factors, if they play a role, would lead these baselines to understate, rather than overstate, the number of excess deaths.
 }
 \references{
-
+For further details on these data see \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}
 }
 \author{
 Kieran Healy

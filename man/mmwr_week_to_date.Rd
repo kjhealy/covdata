@@ -32,9 +32,6 @@ if(interactive()){
  }
 }
 }
-\references{
-
-}
 \seealso{
 \code{\link[MMWRweek]{MMWRweek2Date}}
 }
