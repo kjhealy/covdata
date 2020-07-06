@@ -266,7 +266,7 @@
 <div id="overview-of-included-tables" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview-of-included-tables" class="anchor"></a>Overview of Included Tables</h2>
-<p>Here is an overview of the contents of each table of data in the package. For further details on the variables, consult each table’s help page.</p>
+<p>Here is an overview of the contents of each table of data in the package. For further details on the variables, consult each table’s help page. Note that many of these data tables are provisional, or are estimates subject to significant interpretive limits. <em>Read the documentation carefully before working with any of the tables</em>.</p>
 <div id="national-level-case-and-mortality-data-from-the-european-centers-for-disease-control" class="section level3">
 <h3 class="hasAnchor">
 <a href="#national-level-case-and-mortality-data-from-the-european-centers-for-disease-control" class="anchor"></a>National-level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>
@@ -2508,11 +2508,415 @@
 </tbody>
 </table>
 </div>
+<div id="data-from-the-us-national-center-for-health-statistics" class="section level3">
+<h3 class="hasAnchor">
+<a href="#data-from-the-us-national-center-for-health-statistics" class="anchor"></a>Data from the U.S. National Center for Health Statistics</h3>
+<p><em>Provisional COVID-19 Death Counts by Sex, Age, and State</em></p>
+<div class="sourceCode" id="cb23"><pre class="downlit">
+<span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">nchs_sas</span>)
+</pre></div>
+<p>Table: Data summary</p>
+<table class="table"><tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">nchs_sas</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">1362</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">12</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">Date</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="left">numeric</td>
+<td align="left">6</td>
+</tr>
+<tr class="odd">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody></table>
+<p><strong>Variable type: character</strong></p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">state</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">20</td>
+<td align="right">0</td>
+<td align="right">54</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">sex</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">7</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">age_group</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">17</td>
+<td align="right">0</td>
+<td align="right">12</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: Date</strong></p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">max</th>
+<th align="left">median</th>
+<th align="right">n_unique</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">data_as_of</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">2020-07-01</td>
+<td align="left">2020-07-01</td>
+<td align="left">2020-07-01</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">start_week</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">2020-02-01</td>
+<td align="left">2020-02-01</td>
+<td align="left">2020-02-01</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">end_week</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">2020-06-27</td>
+<td align="left">2020-06-27</td>
+<td align="left">2020-06-27</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="table">
+<colgroup>
+<col width="34%">
+<col width="8%">
+<col width="12%">
+<col width="7%">
+<col width="7%">
+<col width="2%">
+<col width="3%">
+<col width="5%">
+<col width="6%">
+<col width="7%">
+<col width="5%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">covid_19_deaths</td>
+<td align="right">281</td>
+<td align="right">0.79</td>
+<td align="right">622.09</td>
+<td align="right">4683.52</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">16.0</td>
+<td align="right">125.0</td>
+<td align="right">112226</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">total_deaths</td>
+<td align="right">135</td>
+<td align="right">0.90</td>
+<td align="right">6245.23</td>
+<td align="right">49191.15</td>
+<td align="right">0</td>
+<td align="right">65</td>
+<td align="right">400.0</td>
+<td align="right">2095.0</td>
+<td align="right">1276875</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">pneumonia_deaths</td>
+<td align="right">323</td>
+<td align="right">0.76</td>
+<td align="right">707.20</td>
+<td align="right">5182.75</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">42.0</td>
+<td align="right">233.0</td>
+<td align="right">122597</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">pneumonia_and_covid_19_deaths</td>
+<td align="right">291</td>
+<td align="right">0.79</td>
+<td align="right">271.14</td>
+<td align="right">2031.83</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0.0</td>
+<td align="right">53.0</td>
+<td align="right">48556</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">influenza_deaths</td>
+<td align="right">532</td>
+<td align="right">0.61</td>
+<td align="right">44.76</td>
+<td align="right">298.60</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0.0</td>
+<td align="right">17.0</td>
+<td align="right">6470</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">pneumonia_influenza_or_covid_19_deaths</td>
+<td align="right">352</td>
+<td align="right">0.74</td>
+<td align="right">1138.55</td>
+<td align="right">8229.31</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">69.5</td>
+<td align="right">355.5</td>
+<td align="right">191798</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+</tbody>
+</table>
+<p><em>Estimated distributions of US COVID-19 deaths and population size by race and Hispanic origin, by State</em></p>
+<div class="sourceCode" id="cb24"><pre class="downlit">
+<span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">nchs_wss</span>)
+</pre></div>
+<p>Table: Data summary</p>
+<table class="table"><tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">nchs_wss</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">264</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">7</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody></table>
+<p><strong>Variable type: character</strong></p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">data_as_of</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">state</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">20</td>
+<td align="right">0</td>
+<td align="right">44</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">group</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">45</td>
+<td align="right">0</td>
+<td align="right">6</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">deaths</td>
+<td align="right">67</td>
+<td align="right">0.75</td>
+<td align="right">1135.80</td>
+<td align="right">4895.57</td>
+<td align="right">0.0</td>
+<td align="right">30.0</td>
+<td align="right">116.00</td>
+<td align="right">588.00</td>
+<td align="right">59696.0</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">dist_pct</td>
+<td align="right">67</td>
+<td align="right">0.75</td>
+<td align="right">22.06</td>
+<td align="right">24.85</td>
+<td align="right">0.0</td>
+<td align="right">2.4</td>
+<td align="right">10.60</td>
+<td align="right">40.10</td>
+<td align="right">95.3</td>
+<td align="left">▇▂▂▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">uw_dist_pop_pct</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">16.67</td>
+<td align="right">24.14</td>
+<td align="right">0.1</td>
+<td align="right">1.8</td>
+<td align="right">4.75</td>
+<td align="right">16.88</td>
+<td align="right">93.1</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">wt_dist_pop_pct</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">16.67</td>
+<td align="right">21.14</td>
+<td align="right">0.1</td>
+<td align="right">2.1</td>
+<td align="right">6.35</td>
+<td align="right">23.70</td>
+<td align="right">91.0</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="cross-national-short-term-mortality-fluctuations-data-from-the-human-mortality-database" class="section level3">
 <h3 class="hasAnchor">
 <a href="#cross-national-short-term-mortality-fluctuations-data-from-the-human-mortality-database" class="anchor"></a>Cross-national short-term mortality fluctuations data from the <a href="https://www.mortality.org">Human Mortality Database</a>
 </h3>
-<div class="sourceCode" id="cb23"><pre class="downlit">
+<div class="sourceCode" id="cb25"><pre class="downlit">
 <span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">stmf</span>)
 </pre></div>
 <p>Table: Data summary</p>
@@ -2804,7 +3208,7 @@
 <h3 class="hasAnchor">
 <a href="#national-level-all-cause-and-excess-mortality-estimates-from-the-new-york-times" class="anchor"></a>National-level all-cause and excess mortality estimates from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>
 </h3>
-<div class="sourceCode" id="cb24"><pre class="downlit">
+<div class="sourceCode" id="cb26"><pre class="downlit">
 <span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">nytexcess</span>)
 </pre></div>
 <p>Table: Data summary</p>
@@ -3035,7 +3439,7 @@
 <h3 class="hasAnchor">
 <a href="#mobility-data-from-apple" class="anchor"></a>Mobility Data from <a href="http://apple.com/covid19">Apple</a>
 </h3>
-<div class="sourceCode" id="cb25"><pre class="downlit">
+<div class="sourceCode" id="cb27"><pre class="downlit">
 <span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">apple_mobility</span>)
 </pre></div>
 <p>Table: Data summary</p>
@@ -3211,7 +3615,7 @@
 <h3 class="hasAnchor">
 <a href="#mobilty-data-from-google" class="anchor"></a>Mobilty Data from <a href="https://www.google.com/covid19/mobility/data_documentation.html">Google</a>
 </h3>
-<div class="sourceCode" id="cb26"><pre class="downlit">
+<div class="sourceCode" id="cb28"><pre class="downlit">
 <span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">google_mobility</span>)
 </pre></div>
 <p>Table: Data summary</p>
@@ -3397,7 +3801,7 @@
 <h3 class="hasAnchor">
 <a href="#policy-data-from-the-coronanet-project" class="anchor"></a>Policy data from the <a href="https://coronanet-project.org">CoronaNet Project</a>
 </h3>
-<div class="sourceCode" id="cb27"><pre class="downlit">
+<div class="sourceCode" id="cb29"><pre class="downlit">
 <span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">coronanet</span>)
 </pre></div>
 <p>Table: Data summary</p>
@@ -3866,7 +4270,7 @@
 <h3 class="hasAnchor">
 <a href="#other-tables" class="anchor"></a>Other Tables</h3>
 <p><em>Country Codes</em></p>
-<div class="sourceCode" id="cb28"><pre class="downlit">
+<div class="sourceCode" id="cb30"><pre class="downlit">
 <span class="kw">countries</span> <span class="op">%&gt;%</span>
   <span class="fu">ungroup</span>() <span class="op">%&gt;%</span>
   <span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>()
@@ -3962,7 +4366,7 @@
 </tbody>
 </table>
 <p><em>U.S. Census Population Estimates</em></p>
-<div class="sourceCode" id="cb29"><pre class="downlit">
+<div class="sourceCode" id="cb31"><pre class="downlit">
 <span class="kw">skimr</span>::<span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span>(<span class="kw">uspop</span>)
 </pre></div>
 <p>Table: Data summary</p>
@@ -4234,7 +4638,7 @@
 <h2 class="hasAnchor">
 <a href="#citing-the-covdata-package" class="anchor"></a>Citing the <code>covdata</code> package</h2>
 <p>To cite the package use the following:</p>
-<div class="sourceCode" id="cb30"><pre class="downlit">
+<div class="sourceCode" id="cb32"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"covdata"</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
