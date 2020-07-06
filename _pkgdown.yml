@@ -38,6 +38,11 @@ reference:
     desc: Short-Term Mortality Fluctuations Data from the HMD.
     contents:
       - stmf
+  - title: "US National Center for Health Statistics"
+    desc: Reports from the NCHS on the age and racial/ethnic composition of COVID victims
+    contents:
+      - nchs_sas
+      - nchs_wss
   - title: "New York Times Data"
     desc: Data from the New York Times.
     contents:

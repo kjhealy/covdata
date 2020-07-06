@@ -380,6 +380,50 @@ my_pdc <-  function ()
        by_state = as_tibble(by_state), by_sex = as_tibble(by_sex))
 }
 
+### --------------------------------------------------------------------------------------
+### NCHS data via the CDC
+### --------------------------------------------------------------------------------------
+
+nchs_tables <- tribble(
+  ~name, ~sname, ~locator,
+  "Death Counts by Sex, Age, and State", "SAS", "9bhg-hcku",
+  "Weekly State Specific Updates", "WSS", "pj7m-y5uh"
+)
+
+get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
+                             sname = c("SAS", "WSS"),
+                             fname = "-",
+                             date = lubridate::today(),
+                             ext = "csv",
+                             dest = "data-raw/data",
+                             save_file = c("y", "n"),
+                          clean_names = c("y", "n")) {
+  sname <- match.arg(sname)
+  save_file <- match.arg(save_file)
+  clean_names <- match.arg(clean_names)
+
+  target <-  paste0(url, "/", as.character(nchs_tables[nchs_tables$sname == sname, "locator"]),
+                    "/rows.csv?accessType=DOWNLOAD")
+  message("target: ", target)
+
+  destination <- fs::path(here::here("data-raw/data"),
+                          paste0(sname, "_on_", date), ext = ext)
+
+  tf <- tempfile(fileext = ext)
+  curl::curl_download(target, tf)
+
+  switch(save_file,
+         y = fs::file_copy(tf, destination),
+         n = NULL
+         )
+
+  switch(clean_names,
+         y = janitor::clean_names(read_csv(tf)),
+         n = read_csv(tf)
+         )
+}
+
+
 
 ### --------------------------------------------------------------------------------------
 ### Data munging functions
@@ -638,6 +682,59 @@ cdc_catchments <- cdccovidview::surveillance_areas()
 nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
+
+## --------------------------------------------------------------------------------------
+### CDC / National Center for Health Statistics
+### --------------------------------------------------------------------------------------
+
+## Get NCHS breakdowns by State, via the CDC
+nchs_sas_raw <- get_nchs_data(sname = "SAS",
+                          save_file = "n")
+
+us_style <-  "%m/%d/%Y"
+
+nchs_sas <- nchs_sas_raw %>%
+  mutate(across(where(is_double), as.character)) %>%
+  type_convert(col_types = cols(
+    data_as_of = col_date(format = us_style),
+    start_week = col_date(format = us_style),
+    end_week = col_date(format = us_style),
+    state = "c",
+    sex = "c",
+    age_group = "c",
+    covid_19_deaths = "i",
+    total_deaths = "i",
+    pneumonia_deaths = "i",
+    pneumonia_and_covid_19_deaths = "i",
+    influenza_deaths = "i",
+    pneumonia_influenza_or_covid_19_deaths = "i",
+    footnote = "c"
+  )) %>%
+  select(-footnote) %>%
+  mutate(age_group = stringr::str_to_sentence(age_group)) %>%
+  filter(!stringr::str_detect(state, "Total"))
+
+nchs_wss_raw <- get_nchs_data(sname = "WSS",
+                              save_file = "n",
+                              clean_names = "n")
+
+nchs_wss <- nchs_wss_raw %>%
+  select(-Footnote) %>%
+  pivot_longer(`Non-Hispanic White`:`Other`,
+               names_to = "group") %>%
+  pivot_wider(names_from = Indicator) %>%
+  janitor::clean_names() %>%
+  rename(deaths = count_of_covid_19_deaths,
+         dist_pct = distribution_of_covid_19_deaths_percent,
+         uw_dist_pop_pct = unweighted_distribution_of_population_percent,
+         wt_dist_pop_pct = weighted_distribution_of_population_percent) %>%
+  mutate(state = stringr::str_replace(state, "<sup>5</sup>", ""))
+
+
+## --------------------------------------------------------------------------------------
+### Apple and Google
+### --------------------------------------------------------------------------------------
+
 ## Apple Mobility Data
 apple_mobility <- get_apple_data() %>%
   pivot_longer(cols = starts_with("x"), names_to = "date", values_to = "index") %>%
@@ -745,6 +842,11 @@ usethis::use_data(cdc_catchments, overwrite = TRUE, compress = "xz")
 usethis::use_data(nssp_covid_er_nat, overwrite = TRUE, compress = "xz")
 usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 
+## NCHS
+usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
+usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
+
+
 ## CoronaNet
 usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
 
@@ -766,14 +868,13 @@ usethis::use_data(nytcovstate, overwrite = TRUE, compress = "xz")
 usethis::use_data(nytcovus, overwrite = TRUE, compress = "xz")
 usethis::use_data(nytexcess, overwrite = TRUE, compress = "xz")
 
-
 ## US State pops
 usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 
 ## rd skeleton
 #sinew::makeOxygen("uspop")
-sinew::makeOxygen("google_mobility")
+sinew::makeOxygen("nchs_sas")
 
 document()
 knit("README.Rmd")

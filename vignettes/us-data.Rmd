@@ -27,6 +27,7 @@ Data for the United States come from a variety of sources:
 - State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance](https://gis.cdc.gov/grasp/covidnet/COVID19_3.html). 
+- State- and national-level reports from the United States [National Center for Health Statistics](https://www.cdc.gov/nchs/).
 
 
 ## COVID Tracking Project data
@@ -173,7 +174,6 @@ covus %>%
 ```
 
 
-
 ### Draw a graph of cumulative reported US deaths, aggregated to the national level
 
 ```{r us-example-2, fig.height=8, fig.width=10, dpi=100}
@@ -281,4 +281,3 @@ cdc_hospitalizations %>%
   theme_minimal()
 
 ```
-

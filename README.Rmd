@@ -142,7 +142,7 @@ To learn more about the different datasets available, consult the vignettes or, 
 
 ## Overview of Included Tables
 
-Here is an overview of the contents of each table of data in the package. For further details on the variables, consult each table's help page.
+Here is an overview of the contents of each table of data in the package. For further details on the variables, consult each table's help page. Note that many of these data tables are provisional, or are estimates subject to significant interpretive limits. _Read the documentation carefully before working with any of the tables_.
 
 ### National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en)
 
@@ -228,6 +228,21 @@ _Regional ER Visits_
 ```{r}
 skimr::skim(nssp_covid_er_reg)
 ```
+
+### Data from the U.S. National Center for Health Statistics
+
+_Provisional COVID-19 Death Counts by Sex, Age, and State_
+
+```{r}
+skimr::skim(nchs_sas)
+```
+
+_Estimated distributions of US COVID-19 deaths and population size by race and Hispanic origin, by State_
+
+```{r}
+skimr::skim(nchs_wss)
+```
+
 
 ### Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org)
 

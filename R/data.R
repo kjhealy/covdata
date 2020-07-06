@@ -494,3 +494,59 @@
 #' @source https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-detail.html
 #' @references \url{https://www2.census.gov/programs-surveys/popest/tables/2010-2018/state/asrh/PEPSR6H.pdf}
 "uspop"
+
+#' @title Provisional COVID-19 Death Counts by Sex, Age, and State
+#' @description Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.
+#' @format A tibble with `r fmt_nr(nchs_sas)` rows and `r fmt_nc(nchs_sas)` variables:
+#' \describe{
+#'   \item{\code{data_as_of}}{date Date of data release}
+#'   \item{\code{start_week}}{date First week-ending date of data period}
+#'   \item{\code{end_week}}{date Last week-ending date of data period}
+#'   \item{\code{state}}{character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, *and New York City*, separate from New York state.}
+#'   \item{\code{sex}}{character Sex}
+#'   \item{\code{age_group}}{character Age group}
+#'   \item{\code{covid_19_deaths}}{integer Deaths involving COVID-19 (ICD-code U07.1)}
+#'   \item{\code{total_deaths}}{integer Deaths from all causes of death}
+#'   \item{\code{pneumonia_deaths}}{integer Pneumonia Deaths (ICD-10 codes J12.0-J18.9)}
+#'   \item{\code{pneumonia_and_covid_19_deaths}}{integer Deaths with Pneumonia and COVID-19 (ICD-10 codes J12.0-J18.9 and U07.1)}
+#'   \item{\code{influenza_deaths}}{integer Influenza Deaths (ICD-10 codes J09-J11)}
+#'   \item{\code{pneumonia_influenza_or_covid_19_deaths}}{integer Deaths with Pneumonia, Influenza, or COVID-19 (ICD-10 codes U07.1 or J09-J18.9)}
+#'}
+#' @details Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis,
+#' and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
+#' between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
+#' This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
+#' been suppressed in accordance with NHCS confidentiality standards.
+#' @author Kieran Healy
+#' @source National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}
+#' @references \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}
+"nchs_sas"
+
+#' @title Provisional Death Counts for Coronavirus Disease (COVID-19): Weekly State-Specific Data Updates
+#' @description This report provides a weekly summary of deaths with coronavirus disease 2019 (COVID-19) by select geographic and demographic variables.
+#' In this release, counts of deaths are provided by the race and Hispanic origin of the decedent.
+#' @format A tibble with `r fmt_nr(nchs_wss)` rows and `r fmt_nc(nchs_wss)` variables:
+#' \describe{
+#'   \item{\code{data_as_of}}{character Date of analysis}
+#'   \item{\code{state}}{character Geographical unit. One of: the United States, a U.S. State, the District of Columbia, or New York City. New York state measures *do not* include New York City }
+#'   \item{\code{group}}{character Population group}
+#'   \item{\code{deaths}}{double }
+#'   \item{\code{dist_pct}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{uw_dist_pop_pct}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{wt_dist_pop_pct}}{double COLUMN_DESCRIPTION}
+#'}
+#' @details The percent of deaths reported in this table are the total number of represent all deaths received and coded as of the date of analysis
+#' and do not represent all deaths that occurred in that period. Data are incomplete because of the lag in time between when the death occurred
+#' and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. *This delay can range from 1 week to 8 weeks or more*,
+#' depending on the jurisdiction, age, and cause of death. Provisional counts reported here track approximately 1–2 weeks behind other published data sources
+#' on the number of COVID-19 deaths in the U.S. COVID-19 deaths are defined as having confirmed or presumed COVID-19, and are coded to ICD–10 code U07.1.
+#' Unweighted population percentages are based on the Single-Race Population Estimates from the U.S. Census Bureau, for the year 2018
+#' (available from: https://wonder.cdc.gov/single-race-population.html). Weighted population percentages are computed by multiplying county-level population counts by
+#' the count of COVID deaths for each county, summing to the state-level, and then estimating the percent of the population within each racial and ethnic group.
+#' These weighted population distributions therefore more accurately reflect the geographic locations where COVID outbreaks are occurring.
+#' Jurisdictions are included in this table if more than 100 deaths were received and processed by NCHS as of the data of analysis.
+#'
+#' Missing values may indicate that a category has between 1 and 9 observed cases and have been suppressed in accordance with NHCS confidentiality standards.
+#' @author Kieran Healy
+#' @source National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh}
+"nchs_wss"
