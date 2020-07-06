@@ -32,5 +32,5 @@ if(interactive()){
 
 }
 \author{
-
+Kieran Healy
 }

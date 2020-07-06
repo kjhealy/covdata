@@ -9,8 +9,7 @@
 #'}
 #' @details Produced from the ECDC tables in the covdata package
 #' @author Kieran Healy
-#' @source
-#' @references
+#' @references ISO 2: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2} ISO 3: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3}
 "countries"
 
 #' International COVID-19 cases and deaths, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
@@ -133,8 +132,7 @@
 #' The number of expected deaths are not adjusted for how non-Covid-19 deaths may change during the outbreak, which will take some time to figure out. As countries impose control measures, deaths from causes like road accidents and homicides may decline. And people who die from Covid-19 cannot die later from other causes, which may reduce other causes of death. Both of these factors, if they play a role, would lead these baselines to understate, rather than overstate, the number of excess deaths.
 #' @author Kieran Healy
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}.
-#' For further details on these data see \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}
-#' @references
+#' @references For further details on these data see \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}
 "nytexcess"
 
 #' @title CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US
@@ -363,7 +361,7 @@
 #' For the original input data files in standardized form, see \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
 #' @author Kieran Healy
 #' @source Human Mortality Database, \url{http://mortality.org}
-#' @references
+#' @references "Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}
 "stmf"
 
 ## Apple Mobility Data
@@ -405,7 +403,6 @@
 #' @details Location accuracy and the understanding of categorized places varies from region to region, so Google does not recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas). Regions or categories are omitted if Google does not have have sufficient statistically significant levels of data for it. Changes for each day are compared to a baseline value for that day of the week. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020. What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) we don’t show a change for the day. As a result, you may encounter empty fields for certain places and dates. We calculate these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population.
 #' @author Kieran Healy
 #' @source Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: `r Sys.Date()`
-#' @references
 "google_mobility"
 
 #' @title CoronaNet Government Response Project data

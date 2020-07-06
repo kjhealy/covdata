@@ -28,9 +28,6 @@ if(interactive()){
  }
 }
 }
-\references{
-
-}
 \author{
-
+AUTHOR_NAME
 }

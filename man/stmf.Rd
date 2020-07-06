@@ -40,7 +40,7 @@ For further details on the construction of this dataset see the codebook at \url
 For the original input data files in standardized form, see \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
 }
 \references{
-
+"Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}
 }
 \author{
 Kieran Healy

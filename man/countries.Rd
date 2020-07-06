@@ -13,9 +13,6 @@ A data frame with 215 rows and 4 variables:
 \item{\code{continent}}{Continent}
 }
 }
-\source{
-
-}
 \usage{
 countries
 }
@@ -26,7 +23,7 @@ Convenience table of country names and their abbreviated names
 Produced from the ECDC tables in the covdata package
 }
 \references{
-
+ISO 2: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2} ISO 3: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3}
 }
 \author{
 Kieran Healy

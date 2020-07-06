@@ -28,9 +28,8 @@
 #'  }
 #' }
 #' @rdname MMWRweekday
-#' @author
+#' @author Kieran Healy
 #' @source http://
-#' @references
 MMWRweekday <- function (date)
 {
   factor(strftime(as.Date(date), "%w"), levels = 0:6, labels = c("Sunday",
@@ -50,9 +49,8 @@ MMWRweekday <- function (date)
 #'  }
 #' }
 #' @rdname start_date
-#' @author
+#' @author AUTHOR_NAME
 #' @source http://
-#' @references
 start_date <- function (year)
 {
   jan1 = as.Date(paste(year, "-01-01", sep = ""))
@@ -77,7 +75,6 @@ start_date <- function (year)
 #' @rdname MMWRweek2Date
 #' @author Kieran Healy
 #' @source http://
-#' @references
 MMWRweek2Date <- function (MMWRyear, MMWRweek, MMWRday = NULL)
 {
   stopifnot(all(is.numeric(MMWRyear)))
@@ -110,7 +107,6 @@ MMWRweek2Date <- function (MMWRyear, MMWRweek, MMWRday = NULL)
 #' @author Kieran Healy
 #' @source http://
 #' @export
-#' @references
 mmwr_week_to_date <- function (year, week, day = NULL)
 {
   year <- as.numeric(year)
@@ -172,7 +168,6 @@ fmt_nr <- function(x){
 #' }
 #' @author Kieran Healy
 #' @source http://
-#' @references
 tabular <- function(df, ...) {
   stopifnot(is.data.frame(df))
 

@@ -3,7 +3,7 @@
 \docType{data}
 \name{nytcovstate}
 \alias{nytcovstate}
-\title{NYT COVID-19 data for the US states, current as of Sunday, July  5, 2020}
+\title{NYT COVID-19 data for the US states, current as of Monday, July  6, 2020}
 \format{
 A tibble with 6,834 rows and 5 columns
 \describe{
