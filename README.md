@@ -175,7 +175,7 @@ To learn more about the different datasets available, consult the vignettes or, 
 
 ## Overview of Included Tables
 
-Here is an overview of the contents of each table of data in the package. For further details on the variables, consult each table's help page.
+Here is an overview of the contents of each table of data in the package. For further details on the variables, consult each table's help page. Note that many of these data tables are provisional, or are estimates subject to significant interpretive limits. _Read the documentation carefully before working with any of the tables_.
 
 ### National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en)
 
@@ -764,6 +764,103 @@ Table: Data summary
 |visits        |         0|             1| 4164.87| 4028.53|  279| 1596.00| 2780.00| 4723.75| 23345.00|▇▂▁▁▁ |
 |pct_visits    |         0|             1|    0.02|    0.01|    0|    0.01|    0.02|    0.02|     0.11|▇▂▁▁▁ |
 |year          |         0|             1| 2019.52|    0.50| 2019| 2019.00| 2020.00| 2020.00|  2020.00|▇▁▁▁▇ |
+
+### Data from the U.S. National Center for Health Statistics
+
+_Provisional COVID-19 Death Counts by Sex, Age, and State_
+
+
+```r
+skimr::skim(nchs_sas)
+```
+
+
+Table: Data summary
+
+|                         |         |
+|:------------------------|:--------|
+|Name                     |nchs_sas |
+|Number of rows           |1362     |
+|Number of columns        |12       |
+|_______________________  |         |
+|Column type frequency:   |         |
+|character                |3        |
+|Date                     |3        |
+|numeric                  |6        |
+|________________________ |         |
+|Group variables          |None     |
+
+
+**Variable type: character**
+
+|skim_variable | n_missing| complete_rate| min| max| empty| n_unique| whitespace|
+|:-------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
+|state         |         0|             1|   4|  20|     0|       54|          0|
+|sex           |         0|             1|   3|   7|     0|        4|          0|
+|age_group     |         0|             1|   8|  17|     0|       12|          0|
+
+
+**Variable type: Date**
+
+|skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
+|:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
+|data_as_of    |         0|             1|2020-07-01 |2020-07-01 |2020-07-01 |        1|
+|start_week    |         0|             1|2020-02-01 |2020-02-01 |2020-02-01 |        1|
+|end_week      |         0|             1|2020-06-27 |2020-06-27 |2020-06-27 |        1|
+
+
+**Variable type: numeric**
+
+|skim_variable                          | n_missing| complete_rate|    mean|       sd| p0| p25|   p50|    p75|    p100|hist  |
+|:--------------------------------------|---------:|-------------:|-------:|--------:|--:|---:|-----:|------:|-------:|:-----|
+|covid_19_deaths                        |       281|          0.79|  622.09|  4683.52|  0|   0|  16.0|  125.0|  112226|▇▁▁▁▁ |
+|total_deaths                           |       135|          0.90| 6245.23| 49191.15|  0|  65| 400.0| 2095.0| 1276875|▇▁▁▁▁ |
+|pneumonia_deaths                       |       323|          0.76|  707.20|  5182.75|  0|   0|  42.0|  233.0|  122597|▇▁▁▁▁ |
+|pneumonia_and_covid_19_deaths          |       291|          0.79|  271.14|  2031.83|  0|   0|   0.0|   53.0|   48556|▇▁▁▁▁ |
+|influenza_deaths                       |       532|          0.61|   44.76|   298.60|  0|   0|   0.0|   17.0|    6470|▇▁▁▁▁ |
+|pneumonia_influenza_or_covid_19_deaths |       352|          0.74| 1138.55|  8229.31|  0|  10|  69.5|  355.5|  191798|▇▁▁▁▁ |
+
+_Estimated distributions of US COVID-19 deaths and population size by race and Hispanic origin, by State_
+
+
+```r
+skimr::skim(nchs_wss)
+```
+
+
+Table: Data summary
+
+|                         |         |
+|:------------------------|:--------|
+|Name                     |nchs_wss |
+|Number of rows           |264      |
+|Number of columns        |7        |
+|_______________________  |         |
+|Column type frequency:   |         |
+|character                |3        |
+|numeric                  |4        |
+|________________________ |         |
+|Group variables          |None     |
+
+
+**Variable type: character**
+
+|skim_variable | n_missing| complete_rate| min| max| empty| n_unique| whitespace|
+|:-------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
+|data_as_of    |         0|             1|  10|  10|     0|        1|          0|
+|state         |         0|             1|   4|  20|     0|       44|          0|
+|group         |         0|             1|   5|  45|     0|        6|          0|
+
+
+**Variable type: numeric**
+
+|skim_variable   | n_missing| complete_rate|    mean|      sd|  p0|  p25|    p50|    p75|    p100|hist  |
+|:---------------|---------:|-------------:|-------:|-------:|---:|----:|------:|------:|-------:|:-----|
+|deaths          |        67|          0.75| 1135.80| 4895.57| 0.0| 30.0| 116.00| 588.00| 59696.0|▇▁▁▁▁ |
+|dist_pct        |        67|          0.75|   22.06|   24.85| 0.0|  2.4|  10.60|  40.10|    95.3|▇▂▂▁▁ |
+|uw_dist_pop_pct |         0|          1.00|   16.67|   24.14| 0.1|  1.8|   4.75|  16.88|    93.1|▇▁▁▁▁ |
+|wt_dist_pop_pct |         0|          1.00|   16.67|   21.14| 0.1|  2.1|   6.35|  23.70|    91.0|▇▁▁▁▁ |
+
 
 ### Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org)
 
