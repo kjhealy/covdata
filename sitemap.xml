@@ -55,6 +55,12 @@
     <loc>https://kjhealy.github.io/covdata/reference/mmwr_week_to_date.html</loc>
   </url>
   <url>
+    <loc>https://kjhealy.github.io/covdata/reference/nchs_sas.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/reference/nchs_wss.html</loc>
+  </url>
+  <url>
     <loc>https://kjhealy.github.io/covdata/reference/nin.html</loc>
   </url>
   <url>
@@ -80,6 +86,9 @@
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/reference/stmf.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/reference/tabular.html</loc>
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/reference/uspop.html</loc>
