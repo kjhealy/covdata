@@ -183,7 +183,7 @@ covus %>%
   summarize(count = sum(count, na.rm = TRUE)) %>%
   ggplot(aes(x = date, y = count)) + 
   geom_line(size = 0.75) + 
-  scale_x_date(date_breaks = "1 week", date_labels = "%b %e" ) + 
+  scale_x_date(date_breaks = "2 weeks", date_labels = "%b %e" ) + 
   scale_y_continuous(labels = scales::comma, breaks = seq(0, 160000, 20000)) + 
   labs(title = "COVID-19 Cumulative Recorded Deaths in the United States",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y"), "Recorded counts underestimate total mortality."),
@@ -271,7 +271,7 @@ cdc_hospitalizations %>%
   ggplot() +
   geom_line(aes(start, weekly_rate)) +
   scale_x_date(
-    date_breaks = "2 weeks", date_labels = "%b\n%d"
+    date_breaks = "4 weeks", date_labels = "%b\n%d"
   ) +
   facet_grid(network ~ age_category) +
   labs(x = NULL, y = "Rates per 100,000 pop",
