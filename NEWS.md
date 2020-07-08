@@ -1,6 +1,14 @@
+# covdata 0.2.9
+
+Added two tables adapted from the COVID tracking project:  
+- `covus_race` provides total reported cases and deaths by state and race
+- `covus_ethnicity` provides total reported cases and deaths by state and Hispanic status
+
+See the [COVID Tracking Project Page](https://covidtracking.com/race/about) for more details on the source, scope, and limits of these counts.
+
 # covdata 0.2.8
 
-Added two tables from the National Center for Health Statistics, one on death counts by sex, age and state; the other on state-level estimates of deaths by racial and ethnic group.
+Added two tables from the [National Center for Health Statistics](https://www.cdc.gov/nchs/), one on death counts by sex, age and state; the other on state-level estimates of deaths by racial and ethnic group.
 
 # covdata 0.2.7
 

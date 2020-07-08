@@ -61,6 +61,7 @@ get_uscovid_data <- function(url = "https://covidtracking.com/api/",
                              dest = "data-raw/data",
                              save_file = c("y", "n")) {
   unit <- match.arg(unit)
+  save_file = match.arg(save_file)
   target <-  paste0(url, unit, "/", "daily.", ext)
   message("target: ", target)
 
@@ -76,6 +77,33 @@ get_uscovid_data <- function(url = "https://covidtracking.com/api/",
 
   janitor::clean_names(read_csv(tf))
 }
+
+## This URL will yield a file named "RACE Data Entry - CRDT.csv"
+get_uscovid_race_data <- function(url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_xmYt4ACPDZCDJcY12kCiMiH0ODyx3E1ZvgOHB8ae1tRcjXbs_yWBOA4j4uoCEADVfC1PS2jYO68B/pub?gid=43720681&single=true&output=csv",
+                             date = lubridate::today(),
+                             ext = "csv",
+                             dest = "data-raw/data",
+                             save_file = c("y", "n")) {
+  save_file <- match.arg(save_file)
+  target <-  url
+  message("target: ", target)
+
+  destination <- fs::path(here::here("data-raw/data"),
+                          paste0("covus_crt_daily_", date), ext = ext)
+  message("destination: ", destination)
+
+  tf <- tempfile(fileext = ext)
+  curl::curl_download(target, tf)
+
+  switch(save_file,
+         y = fs::file_copy(tf, destination),
+         n = NULL)
+
+  janitor::clean_names(read_csv(tf))
+}
+
+
+
 
 ### --------------------------------------------------------------------------------------
 ### Google mobility data
@@ -632,6 +660,101 @@ covus <- covus %>%
 
 covus ## Data object
 
+
+### COVID Tracking Project Race Data
+covus_race_raw <- get_uscovid_race_data(save = "n")
+
+covus_raw_date <-  "%Y%m%d"
+
+covus_race_all <- covus_race_raw %>%
+  mutate(across(where(is_double), as.character)) %>%
+  type_convert(col_types = cols(date = col_date(format = covus_raw_date),
+  state = col_character(),
+  cases_total = col_integer(),
+  cases_white = col_integer(),
+  cases_black = col_integer(),
+  cases_latin_x = col_integer(),
+  cases_asian = col_integer(),
+  cases_aian = col_integer(),
+  cases_nhpi = col_integer(),
+  cases_multiracial = col_integer(),
+  cases_other = col_integer(),
+  cases_unknown = col_integer(),
+  cases_ethnicity_hispanic = col_integer(),
+  cases_ethnicity_non_hispanic = col_integer(),
+  cases_ethnicity_unknown = col_integer(),
+  deaths_total = col_integer(),
+  deaths_white = col_integer(),
+  deaths_black = col_integer(),
+  deaths_latin_x = col_integer(),
+  deaths_asian = col_integer(),
+  deaths_aian = col_integer(),
+  deaths_nhpi = col_integer(),
+  deaths_multiracial = col_integer(),
+  deaths_other = col_integer(),
+  deaths_unknown = col_integer(),
+  deaths_ethnicity_hispanic = col_integer(),
+  deaths_ethnicity_non_hispanic = col_integer(),
+  deaths_ethnicity_unknown = col_integer())) %>%
+  rename(cases_latinx = cases_latin_x,
+         deaths_latinx = deaths_latin_x)
+
+
+covus_race_tots <- covus_race_all %>%
+  select(date, state, cases_total, deaths_total)
+
+covus_ethnicity <- covus_race_all %>%
+  select(date, state, contains("_ethnicity_") & !contains("total")) %>%
+  pivot_longer(
+    cols = cases_ethnicity_hispanic:deaths_ethnicity_unknown,
+    names_to = c("measure", "group"),
+    names_pattern = "(cases|deaths)_ethnicity_(.*)",
+    values_to = "count"
+  ) %>%
+  pivot_wider(
+    names_from = measure,
+    values_from = count
+  )
+
+covus_race <- covus_race_all %>%
+  select(date, state, !contains("_ethnicity_") & !contains("total")) %>%
+  pivot_longer(
+    cols = cases_white:deaths_unknown,
+    names_to = c("measure", "group"),
+    names_pattern = "(cases|deaths)_(.*)",
+    values_to = "count"
+  ) %>%
+  pivot_wider(
+    names_from = measure,
+    values_from = count
+  )
+
+
+covus_race_tots
+
+covus_ethnicity %>%
+  group_by(state) %>%
+  summarize(across(where(is.integer), sum, na.rm = TRUE))
+
+covus_race %>%
+  group_by(state) %>%
+  summarize(across(where(is.integer), sum, na.rm = TRUE))
+
+
+covus_ethnicity <- covus_ethnicity %>%
+  mutate(group = recode(group, hispanic = "Hispanic",
+                        non_hispanic = "Non-Hispanic",
+                        unknown = "Unknown"))
+
+covus_race  <- covus_race %>%
+  mutate(group = recode(group, white = "White",
+                        black = "Black", latinx = "Latino",
+                        asian = "Asian", aian = "AI/AN",
+                        multiracial = "Multiracial",
+                        nhpi = "NH/PI", other = "Other",
+                        unknown = "Unknown"))
+
+
 ### --------------------------------------------------------------------------------------
 ### NYT Data
 ### --------------------------------------------------------------------------------------
@@ -846,12 +969,15 @@ usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
 
-
 ## CoronaNet
 usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
 
 ## COVID Tracking Project
 usethis::use_data(covus, overwrite = TRUE, compress = "xz")
+
+usethis::use_data(covus_race, overwrite = TRUE, compress = "xz")
+usethis::use_data(covus_ethnicity, overwrite = TRUE, compress = "xz")
+
 
 ## Country codes
 usethis::use_data(countries, overwrite = TRUE, compress = "xz")
@@ -874,7 +1000,7 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 ## rd skeleton
 #sinew::makeOxygen("uspop")
-sinew::makeOxygen("nchs_sas")
+sinew::makeOxygen("covus_race")
 
 document()
 knit("README.Rmd")

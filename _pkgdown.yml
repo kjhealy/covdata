@@ -30,6 +30,8 @@ reference:
     desc: US State-level Data from the COVID Tracking Project.
     contents:
       - covus
+      - covus_race
+      - covus_ethnicity
   - title: "ECDC Data"
     desc: Cross-national Data from the European Centers for Disease Control.
     contents:

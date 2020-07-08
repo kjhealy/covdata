@@ -51,6 +51,55 @@
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"
 
+#' @title COVID-19 case and death counts for the USA by race and state current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
+#' @description The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States.
+#' It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.
+#' @format A tibble with `r fmt_nr(covus_race)` rows and `r fmt_nc(covus_race)` columns
+#' \describe{
+#'   \item{\code{date}}{date Data reported as of this date}
+#'   \item{\code{state}}{character State}
+#'   \item{\code{group}}{character Racial group}
+#'   \item{\code{cases}}{integer Total cases, count}
+#'   \item{\code{deaths}}{integer Total deaths, count}
+#'}
+#' @details The `group` variable is coded as follows:
+#' |Category    |
+#' |:-----------|
+#' |White       |
+#' |Black       |
+#' |Latino      |
+#' |Asian       |
+#' |AI/AN       |
+#' |NH/PI       |
+#' |Multiracial |
+#' |Other       |
+#' |Unknown     |
+#'
+#' AI/AN is American Indian/Alaska Native. NH/PI is Native Hawaiian/Pacific Islander.
+#' State-level counts should be handled with care, given the widely varying population distribution of people of different racial backgrounds by state.
+#' @author Kieran Healy
+#' @source https://covidtracking.com/race
+"covus_race"
+
+
+#' @title COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
+#' @description The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States.
+#' It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.
+#' @format A tibble with `r fmt_nr(covus_ethnicity)` rows and `r fmt_nc(covus_ethnicity)` columns
+#' \describe{
+#'   \item{\code{date}}{date Data reported as of this date}
+#'   \item{\code{state}}{character State}
+#'   \item{\code{group}}{character Ethnic group}
+#'   \item{\code{cases}}{integer Total cases, count}
+#'   \item{\code{deaths}}{integer Total deaths, count}
+#'}
+#' @details The `group` variable is coded as "Hispanic", "Non-Hispanic", or "Unknown". Hispanics may be of any race. State-level counts should
+#' be handled with care, given the widely varying population distribution of people of different ethnic backgrounds by state.
+#' @author Kieran Healy
+#' @source https://covidtracking.com/race
+"covus_ethnicity"
+
+
 #' NYT COVID-19 data for US counties, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
 #'
 #' A dataset containing US county-level data on COVID-19, collected by the New York Times.

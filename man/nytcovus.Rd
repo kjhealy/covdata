@@ -5,7 +5,7 @@
 \alias{nytcovus}
 \title{NYT COVID-19 data for the US, current as of Wednesday, July  8, 2020}
 \format{
-A tibble with 168 rows and 3 columns
+A tibble with 169 rows and 3 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{cases}{Cumulative N  reported cases}

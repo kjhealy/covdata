@@ -155,8 +155,22 @@ covnat %>%
 
 ### State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com)
 
+_Cumulative testing, deaths, and hospitalization data over time_
+
 ```{r}
 skimr::skim(covus)
+```
+
+
+_Total case and death counts by race and ethnicity_ 
+
+```{r}
+skimr::skim(covus_race)
+```
+
+
+```{r}
+skimr::skim(covus_ethnicity)
 ```
 
 
