@@ -338,7 +338,7 @@
   <span class="fu">summarize</span>(count = <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="kw">count</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">count</span>)) <span class="op">+</span> 
   <span class="fu">geom_line</span>(size = <span class="fl">0.75</span>) <span class="op">+</span> 
-  <span class="fu">scale_x_date</span>(date_breaks = <span class="st">"1 week"</span>, date_labels = <span class="st">"%b %e"</span> ) <span class="op">+</span> 
+  <span class="fu">scale_x_date</span>(date_breaks = <span class="st">"2 weeks"</span>, date_labels = <span class="st">"%b %e"</span> ) <span class="op">+</span> 
   <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="kw"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks = <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">160000</span>, <span class="fl">20000</span>)) <span class="op">+</span> 
   <span class="fu">labs</span>(title = <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
        subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covus</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>), <span class="st">"Recorded counts underestimate total mortality."</span>),
@@ -518,7 +518,7 @@
   <span class="fu">ggplot</span>() <span class="op">+</span>
   <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="kw">start</span>, <span class="kw">weekly_rate</span>)) <span class="op">+</span>
   <span class="fu">scale_x_date</span>(
-    date_breaks = <span class="st">"2 weeks"</span>, date_labels = <span class="st">"%b\n%d"</span>
+    date_breaks = <span class="st">"4 weeks"</span>, date_labels = <span class="st">"%b\n%d"</span>
   ) <span class="op">+</span>
   <span class="fu">facet_grid</span>(<span class="kw">network</span> <span class="op">~</span> <span class="kw">age_category</span>) <span class="op">+</span>
   <span class="fu">labs</span>(x = <span class="kw">NULL</span>, y = <span class="st">"Rates per 100,000 pop"</span>,
