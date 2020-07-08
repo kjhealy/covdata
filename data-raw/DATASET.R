@@ -879,5 +879,4 @@ sinew::makeOxygen("nchs_sas")
 document()
 knit("README.Rmd")
 
-load_all()
 test()
