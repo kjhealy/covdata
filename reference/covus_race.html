@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • covdata</title>
+<title>COVID-19 case and death counts for the USA by race and state current as of Wednesday, July  8, 2020 — covus_race • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,9 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="COVID-19 case and death counts for the USA by race and state current as of Wednesday, July  8, 2020 — covus_race" />
+<meta property="og:description" content="The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States.
+It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research." />
 
 
 
@@ -58,7 +60,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -140,40 +142,59 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/kjhealy/covdata/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>COVID-19 case and death counts for the USA by race and state current as of Wednesday, July  8, 2020</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>covus_race.Rd</code></div>
     </div>
 
-    <div id="covdata-029" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.9">
-<a href="#covdata-029" class="anchor"></a>covdata 0.2.9</h1>
-<p>Added two tables adapted from the COVID tracking project:</p>
-<ul>
-<li>
-<code>covus_race</code> provides total reported cases and deaths by state and race</li>
-<li>
-<code>covus_ethnicity</code> provides total reported cases and deaths by state and Hispanic status</li>
-</ul>
-<p>See the <a href="https://covidtracking.com/race/about">COVID Tracking Project Page</a> for more details on the source, scope, and limits of these counts.</p>
-</div>
-    <div id="covdata-028" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.8">
-<a href="#covdata-028" class="anchor"></a>covdata 0.2.8</h1>
-<p>Added two tables from the <a href="https://www.cdc.gov/nchs/">National Center for Health Statistics</a>, one on death counts by sex, age and state; the other on state-level estimates of deaths by racial and ethnic group.</p>
-</div>
-    <div id="covdata-027" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.7">
-<a href="#covdata-027" class="anchor"></a>covdata 0.2.7</h1>
-<p>The <code>pop_2018</code> column in <code>covnat</code> has been updated to 2019 population data and renamed <code>pop</code>. This is a breaking change for any code that used <code>pop_2018</code> to calculate, e.g., per capita rates.</p>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States.
+It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.</p>
+    </div>
 
+    <pre class="usage"><span class='kw'>covus_race</span></pre>
+
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A tibble with 504 rows and 5 columns</p><dl>
+<dt><code>date</code></dt><dd><p>date Data reported as of this date</p></dd>
+<dt><code>state</code></dt><dd><p>character State</p></dd>
+<dt><code>group</code></dt><dd><p>character Racial group</p></dd>
+<dt><code>cases</code></dt><dd><p>integer Total cases, count</p></dd>
+<dt><code>deaths</code></dt><dd><p>integer Total deaths, count</p></dd>
+
+</dl>
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>https://covidtracking.com/race</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The <code>group</code> variable is coded as follows:
+|Category    |
+|:-----------|
+|White       |
+|Black       |
+|Latino      |
+|Asian       |
+|AI/AN       |
+|NH/PI       |
+|Multiracial |
+|Other       |
+|Unknown     |</p>
+<p>AI/AN is American Indian/Alaska Native. NH/PI is Native Hawaiian/Pacific Islander.
+State-level counts should be handled with care, given the widely varying population distribution of people of different racial backgrounds by state.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Kieran Healy</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 
