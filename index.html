@@ -108,7 +108,7 @@
 <div id="about-the-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#about-the-package" class="anchor"></a>About the package</h2>
-<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Monday, July 6, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
+<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Wednesday, July 8, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
 <p><code>covdata</code> provides the following:</p>
 <div id="covid-19-specific-case-and-mortality-data" class="section level3">
 <h3 class="hasAnchor">
@@ -198,7 +198,7 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kjhealy/covdata">covdata</a></span>)
 
 <span class="kw">covnat</span>
-<span class="co">#&gt; # A tibble: 27,976 x 8</span>
+<span class="co">#&gt; # A tibble: 28,395 x 8</span>
 <span class="co">#&gt; # Groups:   iso3 [209]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths       pop cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
@@ -212,12 +212,12 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9452409        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11455519        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 211049519        0         0</span>
-<span class="co">#&gt; # … with 27,966 more rows</span>
+<span class="co">#&gt; # … with 28,385 more rows</span>
 </pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="kw">apple_mobility</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">region</span> <span class="op">==</span> <span class="st">"New York City"</span>, <span class="kw">transportation_type</span> <span class="op">==</span> <span class="st">"walking"</span>)
-<span class="co">#&gt; # A tibble: 174 x 8</span>
+<span class="co">#&gt; # A tibble: 176 x 8</span>
 <span class="co">#&gt;    geo_type region        transportation_type alternative_name sub_region country       date       index</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;         &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  </span>
@@ -230,7 +230,7 @@
 <span class="co">#&gt;  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6</span>
 <span class="co">#&gt;  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1</span>
 <span class="co">#&gt; 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5</span>
-<span class="co">#&gt; # … with 164 more rows</span>
+<span class="co">#&gt; # … with 166 more rows</span>
 </pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="kw">covus</span> <span class="op">%&gt;%</span> 
@@ -284,7 +284,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">27976</td>
+<td align="left">28395</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -370,9 +370,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2019-12-31</td>
-<td align="left">2020-07-06</td>
-<td align="left">2020-04-30</td>
-<td align="right">189</td>
+<td align="left">2020-07-08</td>
+<td align="left">2020-05-01</td>
+<td align="right">191</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -395,25 +395,25 @@
 <td align="left">cases</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">408.13</td>
-<td align="right">2374.09</td>
+<td align="right">415.61</td>
+<td align="right">2427.16</td>
 <td align="right">-29726</td>
 <td align="right">0</td>
 <td align="right">4</td>
-<td align="right">73.00</td>
-<td align="right">54771</td>
+<td align="right">74</td>
+<td align="right">57473</td>
 <td align="left">▁▇▁▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">deaths</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">19.09</td>
-<td align="right">120.64</td>
+<td align="right">19.15</td>
+<td align="right">120.50</td>
 <td align="right">-1918</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">2.00</td>
+<td align="right">2</td>
 <td align="right">4928</td>
 <td align="left">▁▇▁▁▁</td>
 </tr>
@@ -421,12 +421,12 @@
 <td align="left">pop</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">46333711.61</td>
-<td align="right">166258107.03</td>
+<td align="right">46190188.30</td>
+<td align="right">165921569.34</td>
 <td align="right">815</td>
 <td align="right">1798506</td>
 <td align="right">8776119</td>
-<td align="right">31825299.00</td>
+<td align="right">31825299</td>
 <td align="right">1433783692</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
@@ -434,26 +434,26 @@
 <td align="left">cu_cases</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">18510.94</td>
-<td align="right">112171.49</td>
+<td align="right">19061.71</td>
+<td align="right">115406.43</td>
 <td align="right">0</td>
 <td align="right">16</td>
-<td align="right">286</td>
-<td align="right">3088.25</td>
-<td align="right">2888635</td>
+<td align="right">299</td>
+<td align="right">3184</td>
+<td align="right">2996098</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
 <tr class="odd">
 <td align="left">cu_deaths</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">1077.67</td>
-<td align="right">6576.25</td>
+<td align="right">1099.86</td>
+<td align="right">6675.83</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">6</td>
-<td align="right">69.00</td>
-<td align="right">129947</td>
+<td align="right">72</td>
+<td align="right">131480</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
 </tbody>
@@ -474,7 +474,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">102735</td>
+<td align="left">104415</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -590,9 +590,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-01-22</td>
-<td align="left">2020-07-05</td>
-<td align="left">2020-05-05</td>
-<td align="right">166</td>
+<td align="left">2020-07-07</td>
+<td align="left">2020-05-06</td>
+<td align="right">168</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -612,15 +612,15 @@
 </tr></thead>
 <tbody><tr class="odd">
 <td align="left">count</td>
-<td align="right">58271</td>
+<td align="right">59294</td>
 <td align="right">0.43</td>
-<td align="right">54949.9</td>
-<td align="right">221452.4</td>
+<td align="right">57316.18</td>
+<td align="right">230674.2</td>
 <td align="right">0</td>
 <td align="right">164</td>
-<td align="right">1339</td>
-<td align="right">17285.75</td>
-<td align="right">4680138</td>
+<td align="right">1357</td>
+<td align="right">17810</td>
+<td align="right">4896370</td>
 <td align="left">▇▁▁▁▁</td>
 </tr></tbody>
 </table>
@@ -640,7 +640,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">301004</td>
+<td align="left">304095</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -695,7 +695,7 @@
 <td align="right">3</td>
 <td align="right">33</td>
 <td align="right">0</td>
-<td align="right">1815</td>
+<td align="right">1817</td>
 <td align="right">0</td>
 </tr>
 <tr class="even">
@@ -710,12 +710,12 @@
 </tr>
 <tr class="odd">
 <td align="left">fips</td>
-<td align="right">3143</td>
+<td align="right">3173</td>
 <td align="right">0.99</td>
 <td align="right">5</td>
 <td align="right">5</td>
 <td align="right">0</td>
-<td align="right">3060</td>
+<td align="right">3065</td>
 <td align="right">0</td>
 </tr>
 </tbody>
@@ -736,9 +736,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-01-21</td>
-<td align="left">2020-07-05</td>
+<td align="left">2020-07-06</td>
 <td align="left">2020-05-17</td>
-<td align="right">167</td>
+<td align="right">168</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -761,26 +761,26 @@
 <td align="left">cases</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">483.36</td>
-<td align="right">4061.96</td>
+<td align="right">488.18</td>
+<td align="right">4081.63</td>
 <td align="right">0</td>
 <td align="right">6</td>
-<td align="right">28</td>
-<td align="right">138</td>
-<td align="right">221637</td>
+<td align="right">29</td>
+<td align="right">140</td>
+<td align="right">221882</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">deaths</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">26.08</td>
-<td align="right">355.44</td>
+<td align="right">26.25</td>
+<td align="right">356.49</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">4</td>
-<td align="right">22661</td>
+<td align="right">22672</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
 </tbody>
@@ -796,7 +796,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">6889</td>
+<td align="left">6944</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -882,9 +882,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-01-21</td>
-<td align="left">2020-07-05</td>
+<td align="left">2020-07-06</td>
 <td align="left">2020-05-04</td>
-<td align="right">167</td>
+<td align="right">168</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -907,26 +907,26 @@
 <td align="left">cases</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">21119.55</td>
-<td align="right">47934.61</td>
+<td align="right">21378.26</td>
+<td align="right">48298.18</td>
 <td align="right">1</td>
-<td align="right">470</td>
-<td align="right">4231</td>
-<td align="right">20099</td>
-<td align="right">401822</td>
+<td align="right">479</td>
+<td align="right">4317.0</td>
+<td align="right">20364.00</td>
+<td align="right">402338</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">deaths</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">1139.64</td>
-<td align="right">3418.93</td>
+<td align="right">1149.38</td>
+<td align="right">3434.44</td>
 <td align="right">0</td>
 <td align="right">7</td>
-<td align="right">119</td>
-<td align="right">740</td>
-<td align="right">31895</td>
+<td align="right">121.5</td>
+<td align="right">754.25</td>
+<td align="right">31911</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
 </tbody>
@@ -942,7 +942,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">167</td>
+<td align="left">168</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -989,9 +989,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-01-21</td>
-<td align="left">2020-07-05</td>
+<td align="left">2020-07-06</td>
 <td align="left">2020-04-13</td>
-<td align="right">167</td>
+<td align="right">168</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -1014,26 +1014,26 @@
 <td align="left">cases</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">871213.2</td>
-<td align="right">916419.03</td>
+<td align="right">883634.84</td>
+<td align="right">927748.30</td>
 <td align="right">1</td>
-<td align="right">114.5</td>
-<td align="right">584018</td>
-<td align="right">1660811</td>
-<td align="right">2910782</td>
+<td align="right">119.75</td>
+<td align="right">597363.5</td>
+<td align="right">1675083.25</td>
+<td align="right">2958050</td>
 <td align="left">▇▂▂▂▁</td>
 </tr>
 <tr class="even">
 <td align="left">deaths</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">47011.9</td>
-<td align="right">49376.43</td>
+<td align="right">47507.85</td>
+<td align="right">49646.31</td>
 <td align="right">0</td>
-<td align="right">8.0</td>
-<td align="right">26613</td>
-<td align="right">97935</td>
-<td align="right">129941</td>
+<td align="right">9.00</td>
+<td align="right">27965.5</td>
+<td align="right">98376.75</td>
+<td align="right">130332</td>
 <td align="left">▇▁▂▂▃</td>
 </tr>
 </tbody>
@@ -3450,7 +3450,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">630750</td>
+<td align="left">638000</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -3530,7 +3530,7 @@
 </tr>
 <tr class="even">
 <td align="left">alternative_name</td>
-<td align="right">503208</td>
+<td align="right">508992</td>
 <td align="right">0.20</td>
 <td align="right">2</td>
 <td align="right">85</td>
@@ -3540,7 +3540,7 @@
 </tr>
 <tr class="odd">
 <td align="left">sub_region</td>
-<td align="right">146856</td>
+<td align="right">148544</td>
 <td align="right">0.77</td>
 <td align="right">4</td>
 <td align="right">33</td>
@@ -3550,7 +3550,7 @@
 </tr>
 <tr class="even">
 <td align="left">country</td>
-<td align="right">26622</td>
+<td align="right">26928</td>
 <td align="right">0.96</td>
 <td align="right">5</td>
 <td align="right">20</td>
@@ -3576,9 +3576,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-01-13</td>
-<td align="left">2020-07-04</td>
-<td align="left">2020-04-08</td>
-<td align="right">174</td>
+<td align="left">2020-07-06</td>
+<td align="left">2020-04-09</td>
+<td align="right">176</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -3598,15 +3598,15 @@
 </tr></thead>
 <tbody><tr class="odd">
 <td align="left">index</td>
-<td align="right">13958</td>
+<td align="right">14036</td>
 <td align="right">0.98</td>
-<td align="right">108.06</td>
-<td align="right">52.48</td>
+<td align="right">108.73</td>
+<td align="right">53.71</td>
 <td align="right">2.43</td>
-<td align="right">77.83</td>
-<td align="right">103.77</td>
-<td align="right">129.44</td>
-<td align="right">1370.08</td>
+<td align="right">78.08</td>
+<td align="right">104.01</td>
+<td align="right">130.11</td>
+<td align="right">1497.29</td>
 <td align="left">▇▁▁▁▁</td>
 </tr></tbody>
 </table>
@@ -3626,7 +3626,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">3638802</td>
+<td align="left">3802494</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -3676,7 +3676,7 @@
 <tbody>
 <tr class="odd">
 <td align="left">country_region_code</td>
-<td align="right">6270</td>
+<td align="right">6558</td>
 <td align="right">1.00</td>
 <td align="right">2</td>
 <td align="right">2</td>
@@ -3696,7 +3696,7 @@
 </tr>
 <tr class="odd">
 <td align="left">sub_region_1</td>
-<td align="right">107820</td>
+<td align="right">112572</td>
 <td align="right">0.97</td>
 <td align="right">3</td>
 <td align="right">74</td>
@@ -3706,17 +3706,17 @@
 </tr>
 <tr class="even">
 <td align="left">sub_region_2</td>
-<td align="right">1536414</td>
+<td align="right">1605312</td>
 <td align="right">0.58</td>
 <td align="right">5</td>
 <td align="right">27</td>
 <td align="right">0</td>
-<td align="right">1715</td>
+<td align="right">1716</td>
 <td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">iso3166_2</td>
-<td align="right">2317980</td>
+<td align="right">2422464</td>
 <td align="right">0.36</td>
 <td align="right">4</td>
 <td align="right">6</td>
@@ -3726,12 +3726,12 @@
 </tr>
 <tr class="even">
 <td align="left">census_fips_code</td>
-<td align="right">1535610</td>
+<td align="right">1604472</td>
 <td align="right">0.58</td>
 <td align="right">5</td>
 <td align="right">5</td>
 <td align="right">0</td>
-<td align="right">2832</td>
+<td align="right">2833</td>
 <td align="right">0</td>
 </tr>
 <tr class="odd">
@@ -3762,9 +3762,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-02-15</td>
-<td align="left">2020-06-27</td>
-<td align="left">2020-04-21</td>
-<td align="right">134</td>
+<td align="left">2020-07-03</td>
+<td align="left">2020-04-24</td>
+<td align="right">140</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -3784,10 +3784,10 @@
 </tr></thead>
 <tbody><tr class="odd">
 <td align="left">pct_diff</td>
-<td align="right">1200902</td>
+<td align="right">1259484</td>
 <td align="right">0.67</td>
-<td align="right">-13.47</td>
-<td align="right">31.12</td>
+<td align="right">-13.15</td>
+<td align="right">31.36</td>
 <td align="right">-100</td>
 <td align="right">-33</td>
 <td align="right">-9</td>
