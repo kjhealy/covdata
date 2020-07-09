@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 104,415 rows and 7 columns</p><dl>
+    <p>A tibble with 119,289 rows and 7 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>Two letter State abbreviation (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -188,13 +188,19 @@
 <tr><td>#'   total_tests_viral</td><td>Total number of PCR tests performed</td></tr>
 <tr><td>#'   positive_tests_viral</td><td>Total number of positive PCR tests</td></tr>
 <tr><td>#'   negative_tests_viral</td><td>Total number of negative PCR tests</td></tr>
-<tr><td>#'   positive_cases_viral</td><td>Total number of positive cases measured with PCR tests
+<tr><td>#'   positive_cases_viral</td><td>Total number of positive cases measured with PCR tests</td></tr>
+<tr><td>#'   death_confirmed</td><td>Deaths Confirmed</td></tr>
+<tr><td>#'   death_probable</td><td>NA
 #'</td></tr>
 </table>
 
 
 <p>Not all measures are reported by all states.
-The <code>positive</code>, <code>negative</code>, and <code>death</code> measures are <em>cumulative</em> counts.</p>
+The <code>positive</code>, <code>negative</code>, <code>death</code>, <code>death_confirmed</code>, and <code>death_probable</code> measures are <em>cumulative</em> counts.
+<code>death_confirmed</code> is the total number deaths of individuals with COVID-19 infection confirmed by a laboratory test.
+In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
+to the death according to the death certificate. <code>death_probable</code> is the total number of deaths where COVID was listed as a
+cause of death and there is not a laboratory test confirming COVID-19 infection.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

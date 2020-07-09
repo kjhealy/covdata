@@ -217,7 +217,7 @@
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="kw">apple_mobility</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">region</span> <span class="op">==</span> <span class="st">"New York City"</span>, <span class="kw">transportation_type</span> <span class="op">==</span> <span class="st">"walking"</span>)
-<span class="co">#&gt; # A tibble: 176 x 8</span>
+<span class="co">#&gt; # A tibble: 177 x 8</span>
 <span class="co">#&gt;    geo_type region        transportation_type alternative_name sub_region country       date       index</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;               &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;         &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  </span>
@@ -230,7 +230,7 @@
 <span class="co">#&gt;  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6</span>
 <span class="co">#&gt;  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1</span>
 <span class="co">#&gt; 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5</span>
-<span class="co">#&gt; # … with 166 more rows</span>
+<span class="co">#&gt; # … with 167 more rows</span>
 </pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="kw">covus</span> <span class="op">%&gt;%</span> 
@@ -475,7 +475,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">104415</td>
+<td align="left">119289</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -545,7 +545,7 @@
 </tr>
 <tr class="odd">
 <td align="left">data_quality_grade</td>
-<td align="right">16515</td>
+<td align="right">18717</td>
 <td align="right">0.84</td>
 <td align="right">1</td>
 <td align="right">2</td>
@@ -560,17 +560,17 @@
 <td align="right">5</td>
 <td align="right">24</td>
 <td align="right">0</td>
-<td align="right">15</td>
+<td align="right">17</td>
 <td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">measure_label</td>
-<td align="right">0</td>
-<td align="right">1.00</td>
+<td align="right">7017</td>
+<td align="right">0.94</td>
 <td align="right">6</td>
 <td align="right">54</td>
 <td align="right">0</td>
-<td align="right">15</td>
+<td align="right">16</td>
 <td align="right">0</td>
 </tr>
 </tbody>
@@ -591,9 +591,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-01-22</td>
-<td align="left">2020-07-07</td>
-<td align="left">2020-05-06</td>
-<td align="right">168</td>
+<td align="left">2020-07-08</td>
+<td align="left">2020-05-07</td>
+<td align="right">169</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -613,15 +613,15 @@
 </tr></thead>
 <tbody><tr class="odd">
 <td align="left">count</td>
-<td align="right">59294</td>
-<td align="right">0.43</td>
-<td align="right">57316.18</td>
-<td align="right">230674.2</td>
+<td align="right">70143</td>
+<td align="right">0.41</td>
+<td align="right">54702.43</td>
+<td align="right">226876.1</td>
 <td align="right">0</td>
-<td align="right">164</td>
-<td align="right">1357</td>
-<td align="right">17810</td>
-<td align="right">4896370</td>
+<td align="right">146</td>
+<td align="right">1226</td>
+<td align="right">15614</td>
+<td align="right">4996175</td>
 <td align="left">▇▁▁▁▁</td>
 </tr></tbody>
 </table>
@@ -3744,7 +3744,7 @@
 </tr>
 <tr class="even">
 <td align="left">Number of rows</td>
-<td align="left">638000</td>
+<td align="left">641625</td>
 </tr>
 <tr class="odd">
 <td align="left">Number of columns</td>
@@ -3824,7 +3824,7 @@
 </tr>
 <tr class="even">
 <td align="left">alternative_name</td>
-<td align="right">508992</td>
+<td align="right">511884</td>
 <td align="right">0.20</td>
 <td align="right">2</td>
 <td align="right">85</td>
@@ -3834,7 +3834,7 @@
 </tr>
 <tr class="odd">
 <td align="left">sub_region</td>
-<td align="right">148544</td>
+<td align="right">149388</td>
 <td align="right">0.77</td>
 <td align="right">4</td>
 <td align="right">33</td>
@@ -3844,7 +3844,7 @@
 </tr>
 <tr class="even">
 <td align="left">country</td>
-<td align="right">26928</td>
+<td align="right">27081</td>
 <td align="right">0.96</td>
 <td align="right">5</td>
 <td align="right">20</td>
@@ -3870,9 +3870,9 @@
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="left">2020-01-13</td>
-<td align="left">2020-07-06</td>
-<td align="left">2020-04-09</td>
-<td align="right">176</td>
+<td align="left">2020-07-07</td>
+<td align="left">2020-04-10</td>
+<td align="right">177</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -3892,14 +3892,14 @@
 </tr></thead>
 <tbody><tr class="odd">
 <td align="left">index</td>
-<td align="right">14036</td>
+<td align="right">14075</td>
 <td align="right">0.98</td>
-<td align="right">108.73</td>
-<td align="right">53.71</td>
+<td align="right">108.99</td>
+<td align="right">53.93</td>
 <td align="right">2.43</td>
-<td align="right">78.08</td>
-<td align="right">104.01</td>
-<td align="right">130.11</td>
+<td align="right">78.21</td>
+<td align="right">104.15</td>
+<td align="right">130.52</td>
 <td align="right">1497.29</td>
 <td align="left">▇▁▁▁▁</td>
 </tr></tbody>
