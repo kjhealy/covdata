@@ -1,3 +1,7 @@
+#' @importFrom magrittr %>%
+#' @export
+magrittr::`%>%`
+
 #' Convenience 'not-in' operator
 #'
 #' Complement of the built-in operator `%in%`. Returns the elements of `x` that are not in `y`.
@@ -199,14 +203,14 @@ tabular <- function(df, ...) {
 stmf_country_years <- function(df = stmf) {
 
   df %>%
-    select(cname, year) %>%
-    group_by(cname, year) %>%
-    tally() %>%
-    mutate(n = as.character(n),
-           n = recode(n, "0" = "-", .default = "Y")) %>%
-    group_by(year, cname) %>%
-    arrange(year) %>%
-    pivot_wider(names_from = year, values_from = n) %>%
-    mutate(across(where(is.character), recode, .missing = "-")) %>%
-    arrange(cname)
+    dplyr::select(cname, year) %>%
+    dplyr::group_by(cname, year) %>%
+    dplyr::tally() %>%
+    dplyr::mutate(n = as.character(n),
+           n = dplyr::recode(n, "0" = "-", .default = "Y")) %>%
+    dplyr::group_by(year, cname) %>%
+    dplyr::arrange(year) %>%
+    tidyr::pivot_wider(names_from = year, values_from = n) %>%
+    dplyr::mutate(across(where(is.character), dplyr::recode, .missing = "-")) %>%
+    dplyr::arrange(cname)
 }

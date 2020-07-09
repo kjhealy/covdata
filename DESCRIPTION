@@ -17,6 +17,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/kjhealy/covdata
 BugReports: https://github.com/kjhealy/covdata/issues
+Imports: dplyr, magrittr, tidyr
 Suggests: 
     ggforce,
     ggrepel,
