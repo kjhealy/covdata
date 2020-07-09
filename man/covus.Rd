@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Wednesday, July  8, 2020}
+\title{COVID-19 data for the USA, current as of Thursday, July  9, 2020}
 \format{
 A tibble with 119,289 rows and 7 columns
 \describe{
@@ -17,7 +17,7 @@ A tibble with 119,289 rows and 7 columns
 }
 }
 \source{
-The COVID-19 Tracking Project \url{https://covidtracking.com}
+The COVID-19 Tracking Project \url{https://covidtracking.com} oi
 }
 \usage{
 covus
@@ -26,27 +26,27 @@ covus
 A dataset containing US state-level data on COVID-19
 }
 \details{
-The measures tracked by the COVID tracking project are as follows:
-#' \tabular{ll}{
-#'   \strong{measure} \tab \strong{measure_label} \cr
-#'   positive                 \tab Positive Tests                                        \cr
-#'   negative                 \tab Negative Tests                                        \cr
-#'   pending                  \tab Pending Tests                                         \cr
-#'   hospitalized_currently   \tab Currently Hospitalized                                \cr
-#'   hospitalized_cumulative  \tab Cumulative Hospitalized                               \cr
-#'   in_icu_currently         \tab Currently in ICU                                      \cr
-#'   in_icu_cumulative        \tab Cumulative in ICU                                     \cr
-#'   on_ventilator_currently  \tab Currently on Ventilator                               \cr
-#'   on_ventilator_cumulative \tab Cumulative on Ventilator                              \cr
-#'   recovered                \tab Recovered                                             \cr
-#'   death                    \tab Deaths                                                \cr
-#'   total_tests_viral        \tab Total number of PCR tests performed                   \cr
-#'   positive_tests_viral     \tab Total number of positive PCR tests                    \cr
-#'   negative_tests_viral     \tab Total number of negative PCR tests                    \cr
-#'   positive_cases_viral     \tab Total number of positive cases measured with PCR tests\cr
-#'   death_confirmed          \tab Deaths Confirmed                                      \cr
-#'   death_probable           \tab NA
-#' }
+The measures tracked by the COVID tracking project are as follows:\tabular{ll}{
+   measure \tab measure_label \cr
+   positive \tab Positive Tests \cr
+   negative \tab Negative Tests \cr
+   pending \tab Pending Tests \cr
+   hospitalized_currently \tab Currently Hospitalized \cr
+   hospitalized_cumulative \tab Cumulative Hospitalized \cr
+   in_icu_currently \tab Currently in ICU \cr
+   in_icu_cumulative \tab Cumulative in ICU \cr
+   on_ventilator_currently \tab Currently on Ventilator \cr
+   on_ventilator_cumulative \tab Cumulative on Ventilator \cr
+   recovered \tab Recovered \cr
+   death \tab Deaths \cr
+   total_tests_viral \tab Total number of PCR tests performed \cr
+   positive_tests_viral \tab Total number of positive PCR tests \cr
+   negative_tests_viral \tab Total number of negative PCR tests \cr
+   positive_cases_viral \tab Total number of positive cases measured with PCR tests \cr
+   death_confirmed \tab Deaths Confirmed \cr
+   death_probable \tab Deaths Probable \cr
+}
+
 
 Not all measures are reported by all states.
 The \code{positive}, \code{negative}, \code{death}, \code{death_confirmed}, and \code{death_probable} measures are \emph{cumulative} counts.

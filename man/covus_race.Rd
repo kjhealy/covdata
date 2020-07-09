@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Wednesday, July  8, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Thursday, July  9, 2020}
 \format{
 A tibble with 504 rows and 5 columns
 \describe{
@@ -25,19 +25,19 @@ The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes r
 It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.
 }
 \details{
-The \code{group} variable is coded as follows:
-#' \tabular{l}{
-#'   \strong{unique.covus_race....group...} \cr
-#'   White      \cr
-#'   Black      \cr
-#'   Latino     \cr
-#'   Asian      \cr
-#'   AI/AN      \cr
-#'   NH/PI      \cr
-#'   Multiracial\cr
-#'   Other      \cr
-#'   Unknown
-#' }
+The \code{group} variable is coded as follows:\tabular{l}{
+   groups \cr
+   White \cr
+   Black \cr
+   Latino \cr
+   Asian \cr
+   AI/AN \cr
+   NH/PI \cr
+   Multiracial \cr
+   Other \cr
+   Unknown \cr
+}
+
 
 AI/AN is American Indian/Alaska Native. NH/PI is Native Hawaiian/Pacific Islander.
 State-level counts should be handled with care, given the widely varying population distribution of people of different racial backgrounds by state.

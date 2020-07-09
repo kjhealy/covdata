@@ -3,7 +3,7 @@
 \docType{data}
 \name{nytexcess}
 \alias{nytexcess}
-\title{NYT Excess Mortality Estimates, current as of Wednesday, July  8, 2020}
+\title{NYT Excess Mortality Estimates, current as of Thursday, July  9, 2020}
 \format{
 A tibble with 6,712 rows and 12 columns
 \describe{

@@ -639,7 +639,7 @@ covus_measure_labels <- tribble(
   ~measure, ~measure_label,
   "death", "Deaths",
   "death_confirmed", "Deaths Confirmed",
-  "death_propbable", "Deaths Probable",
+  "death_probable", "Deaths Probable",
   "hospitalized_cumulative", "Cumulative Hospitalized",
   "hospitalized_currently",   "Currently Hospitalized",
   "in_icu_cumulative",        "Cumulative in ICU",

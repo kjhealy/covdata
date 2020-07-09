@@ -45,14 +45,16 @@
 #' \item{\code{measure_label}}{character Outcome measure, suitable for use as a plot label}
 #' }
 #' @details The measures tracked by the COVID tracking project are as follows:
-#' `r tabular(unique(covus[, c("measure", "measure_label")]))`
+#'
+#' `r knitr::kable(unique(covus[, c("measure", "measure_label")]))`
+#'
 #' Not all measures are reported by all states.
 #' The `positive`, `negative`, `death`, `death_confirmed`, and `death_probable` measures are _cumulative_ counts.
 #' `death_confirmed` is the total number deaths of individuals with COVID-19 infection confirmed by a laboratory test.
 #' In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
 #' to the death according to the death certificate. `death_probable` is the total number of deaths where COVID was listed as a
 #' cause of death and there is not a laboratory test confirming COVID-19 infection.
-#' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
+#' @source The COVID-19 Tracking Project \url{https://covidtracking.com} oi
 "covus"
 
 #' @title COVID-19 case and death counts for the USA by race and state current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
@@ -67,7 +69,8 @@
 #'   \item{\code{deaths}}{integer Total deaths, count}
 #'}
 #' @details The `group` variable is coded as follows:
-#' `r tabular(data.frame(unique(covus_race[,"group"])))`
+#'
+#' `r knitr::kable(unique(covus_race[,"group"]), col.names = c("groups"))`
 #'
 #' AI/AN is American Indian/Alaska Native. NH/PI is Native Hawaiian/Pacific Islander.
 #' State-level counts should be handled with care, given the widely varying population distribution of people of different racial backgrounds by state.
