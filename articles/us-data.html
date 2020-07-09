@@ -144,6 +144,13 @@
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">covus</span>
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 119,289 x 7</span>
 <span class="co">#&gt;    date       state fips  data_quality_gra… measure       count measure_label   </span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           </span>
@@ -221,6 +228,13 @@
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">%in%</span> <span class="kw">measures</span>, <span class="kw">state</span> <span class="op">==</span> <span class="st">"NY"</span>) <span class="op">%&gt;%</span>
   <span class="fu">select</span>(<span class="kw">date</span>, <span class="kw">state</span>, <span class="kw">measure</span>, <span class="kw">count</span>) <span class="op">%&gt;%</span>
   <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>)
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 127 x 5</span>
 <span class="co">#&gt;    date       state positive negative death</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
@@ -245,6 +259,13 @@
   <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>) <span class="op">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="kw">positive</span><span class="op">:</span><span class="kw">death</span>, <span class="op">~</span><span class="kw">.x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>(<span class="kw">.x</span>, order_by = <span class="kw">date</span>), 
                 .names = <span class="st">"daily_{col}"</span>))
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 127 x 8</span>
 <span class="co">#&gt;    date       state positive negative death daily_positive daily_negative</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;</span>
@@ -359,6 +380,13 @@
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="kw">nytcovstate</span>
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 7,054 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
@@ -380,6 +408,13 @@
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="kw">nytcovcounty</span>
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 310,256 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
@@ -427,6 +462,13 @@
 <p>Thanks to Bob Rudis’s <a href="https://github.com/hrbrmstr/cdccovidview"><code>cdccovidview</code></a> package for making these data tractable to include.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit">
 <span class="kw">cdc_hospitalizations</span>
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 4,590 x 8</span>
 <span class="co">#&gt;    catchment network year  mmwr_year mmwr_week age_category cumulative_rate</span>
 <span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;</span>
@@ -443,6 +485,13 @@
 <span class="co">#&gt; # … with 4,580 more rows, and 1 more variable: weekly_rate &lt;dbl&gt;</span>
 
 <span class="kw">cdc_catchments</span>
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 17 x 2</span>
 <span class="co">#&gt;    name      area          </span>
 <span class="co">#&gt;  * &lt;chr&gt;     &lt;chr&gt;         </span>
@@ -465,6 +514,13 @@
 <span class="co">#&gt; 17 IHSP      Utah</span>
 
 <span class="kw">cdc_deaths_by_state</span>
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 53 x 10</span>
 <span class="co">#&gt;    data_as_of state start_week end_week   covid_deaths total_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;date&gt;     &lt;date&gt;            &lt;int&gt;        &lt;int&gt;</span>
@@ -483,6 +539,13 @@
 <span class="co">#&gt; #   all_influenza_deaths_j09_j11 &lt;int&gt;</span>
 
 <span class="kw">nssp_covid_er_reg</span>
+<span class="co">#&gt; Warning: `...` is not empty.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; We detected these problematic arguments:</span>
+<span class="co">#&gt; * `needs_dots`</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
+<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 538 x 9</span>
 <span class="co">#&gt;     week num_fac total_ed_visits visits pct_visits visit_type region source</span>
 <span class="co">#&gt;    &lt;int&gt;   &lt;int&gt; &lt;chr&gt;            &lt;int&gt;      &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt; </span>
