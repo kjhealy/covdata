@@ -67,7 +67,7 @@
 #'   \item{\code{deaths}}{integer Total deaths, count}
 #'}
 #' @details The `group` variable is coded as follows:
-#' `r tabular(unique(covus_race[,"group"]))`
+#' `r tabular(data.frame(unique(covus_race[,"group"])))`
 #'
 #' AI/AN is American Indian/Alaska Native. NH/PI is Native Hawaiian/Pacific Islander.
 #' State-level counts should be handled with care, given the widely varying population distribution of people of different racial backgrounds by state.

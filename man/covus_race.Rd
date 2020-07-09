@@ -27,7 +27,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 \details{
 The \code{group} variable is coded as follows:
 #' \tabular{l}{
-#'   \strong{group} \cr
+#'   \strong{unique.covus_race....group...} \cr
 #'   White      \cr
 #'   Black      \cr
 #'   Latino     \cr
