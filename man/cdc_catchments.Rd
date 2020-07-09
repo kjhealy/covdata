@@ -7,8 +7,8 @@
 \format{
 A data frame with 17 rows and 2 variables:
 \describe{
-\item{\code{name}}{character COLUMN_DESCRIPTION}
-\item{\code{area}}{character COLUMN_DESCRIPTION}
+\item{\code{name}}{character Network name}
+\item{\code{area}}{character Area}
 }
 }
 \source{
@@ -21,7 +21,26 @@ cdc_catchments
 What the CDC surveillance network covers
 }
 \details{
-The Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10\% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+The Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10\% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.\tabular{ll}{
+   name \tab area \cr
+   COVID-NET \tab Entire Network \cr
+   EIP \tab California \cr
+   EIP \tab Colorado \cr
+   EIP \tab Connecticut \cr
+   EIP \tab Entire Network \cr
+   EIP \tab Georgia \cr
+   EIP \tab Maryland \cr
+   EIP \tab Minnesota \cr
+   EIP \tab New Mexico \cr
+   EIP \tab New York \cr
+   EIP \tab Oregon \cr
+   EIP \tab Tennessee \cr
+   IHSP \tab Entire Network \cr
+   IHSP \tab Iowa \cr
+   IHSP \tab Michigan \cr
+   IHSP \tab Ohio \cr
+   IHSP \tab Utah \cr
+}
 }
 \references{
 \url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html}

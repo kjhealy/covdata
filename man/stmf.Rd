@@ -38,6 +38,36 @@ Human Mortality Database (HMD) series of weekly death counts across countries.
 \details{
 For further details on the construction of this dataset see the codebook at \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}.
 For the original input data files in standardized form, see \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
+
+Countries and years covered in the dataset:
+
+#' |cname             |1990 |1991 |1992 |1993 |1994 |1995 |1996 |1997 |1998 |1999 |2000 |2001 |2002 |2003 |2004 |2005 |2006 |2007 |2008 |2009 |2010 |2011 |2012 |2013 |2014 |2015 |2016 |2017 |2018 |2019 |2020 |
+|:-----------------|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
+|Austria           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Belgium           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Bulgaria          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Czech Republic    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Denmark           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|England and Wales |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Estonia           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Finland           |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|France            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Germany           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |
+|Hungary           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Iceland           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Israel            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Italy             |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Lithuania         |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Luxembourg        |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Netherlands       |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Norway            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Portugal          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Scotland          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Slovakia          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Spain             |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Sweden            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|Switzerland       |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+|United States     |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
 }
 \references{
 "Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}

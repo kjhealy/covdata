@@ -909,7 +909,8 @@ md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
          iso2 = replace(iso2, country_code == "DEUTNP", "DE"),
          cname = replace(cname, country_code == "FRATNP", "France"),
          iso2 = replace(iso2, country_code == "FRATNP", "FR"),
-         cname = replace(cname, country_code == "GBRTENW", "England and Wales")
+         cname = replace(cname, country_code == "GBRTENW", "England and Wales"),
+         cname = replace(cname, country_code == "GBR_SCO", "Scotland")
          ) %>%
   left_join(countries)
 

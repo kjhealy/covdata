@@ -183,3 +183,29 @@ tabular <- function(df, ...) {
         contents, "\n#' }\n", sep = "")
 }
 
+#' Make a table of stmf country years
+#'
+#' @param df The stmf data frame
+#'
+#' @return A tibble
+#'
+#' @examples
+#' \donttest{
+#' # for internal use only
+#' stmf_country_years(stmf)
+#' }
+#'
+stmf_country_years <- function(df = stmf) {
+
+  df %>%
+    select(cname, year) %>%
+    group_by(cname, year) %>%
+    tally() %>%
+    mutate(n = as.character(n),
+           n = recode(n, "0" = "-", .default = "Y")) %>%
+    group_by(year, cname) %>%
+    arrange(year) %>%
+    pivot_wider(names_from = year, values_from = n) %>%
+    mutate(across(where(is.character), recode, .missing = "-")) %>%
+    arrange(cname)
+}

@@ -317,10 +317,13 @@
 #' @description What the CDC surveillance network covers
 #' @format A data frame with `r fmt_nr(cdc_catchments)` rows and `r fmt_nc(cdc_catchments)` variables:
 #' \describe{
-#' \item{\code{name}}{character COLUMN_DESCRIPTION}
-#' \item{\code{area}}{character COLUMN_DESCRIPTION}
+#' \item{\code{name}}{character Network name}
+#' \item{\code{area}}{character Area}
 #' }
 #' @details The Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+#'
+#' `r knitr::kable(cdc_catchments)`
+#'
 #' @source Courtesy of Bob Rudis's cdccovidview package
 #' @references <https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>
 #' @author Kieran Healy
@@ -405,6 +408,11 @@
 #'}
 #' @details For further details on the construction of this dataset see the codebook at \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}.
 #' For the original input data files in standardized form, see \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
+#'
+#' Countries and years covered in the dataset:
+#'
+#' #' `r knitr::kable(stmf_country_years(stmf))`
+#'
 #' @author Kieran Healy
 #' @source Human Mortality Database, \url{http://mortality.org}
 #' @references "Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}
