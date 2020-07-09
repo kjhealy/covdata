@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 data for the USA, current as of Thursday, July  9, 2020 — covus • covdata</title>
+<title>Objects exported from other packages — reexports • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,13 @@
 
 
 
-<meta property="og:title" content="COVID-19 data for the USA, current as of Thursday, July  9, 2020 — covus" />
-<meta property="og:description" content="A dataset containing US state-level data on COVID-19" />
+<meta property="og:title" content="Objects exported from other packages — reexports" />
+<meta property="og:description" content="These objects are imported from other packages. Follow the links
+below to see their documentation.
+
+  magrittr%&amp;gt;%
+
+" />
 
 
 
@@ -141,65 +146,22 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 data for the USA, current as of Thursday, July  9, 2020</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>covus.Rd</code></div>
+    <h1>Objects exported from other packages</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/functions.R'><code>R/functions.R</code></a></small>
+    <div class="hidden name"><code>reexports.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing US state-level data on COVID-19</p>
-    </div>
-
-    <pre class="usage"><span class='kw'>covus</span></pre>
-
-
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A tibble with 120,241 rows and 7 columns</p><dl>
-<dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
-<dt>state</dt><dd><p>Two letter State abbreviation (character)</p></dd>
-<dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
-<dt><code>data_quality_grade</code></dt><dd><p>character Data quality as assessed by COVID Tracking Project staff</p></dd>
-<dt>measure</dt><dd><p>Outcome measure for this date</p></dd>
-<dt>count</dt><dd><p>Count of measure</p></dd>
-<dt><code>measure_label</code></dt><dd><p>character Outcome measure, suitable for use as a plot label</p></dd>
+    <p>These objects are imported from other packages. Follow the links
+below to see their documentation.</p>
+<dl>
+  <dt>magrittr</dt><dd><p><code>%&gt;%</code></p></dd>
 
 </dl>
-
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>The COVID-19 Tracking Project <a href='https://covidtracking.com'>https://covidtracking.com</a> oi</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The measures tracked by the COVID tracking project are as follows:</p><table class='table'>
-<tr><td>measure</td><td>measure_label</td></tr>
-<tr><td>positive</td><td>Positive Tests</td></tr>
-<tr><td>negative</td><td>Negative Tests</td></tr>
-<tr><td>pending</td><td>Pending Tests</td></tr>
-<tr><td>hospitalized_currently</td><td>Currently Hospitalized</td></tr>
-<tr><td>hospitalized_cumulative</td><td>Cumulative Hospitalized</td></tr>
-<tr><td>in_icu_currently</td><td>Currently in ICU</td></tr>
-<tr><td>in_icu_cumulative</td><td>Cumulative in ICU</td></tr>
-<tr><td>on_ventilator_currently</td><td>Currently on Ventilator</td></tr>
-<tr><td>on_ventilator_cumulative</td><td>Cumulative on Ventilator</td></tr>
-<tr><td>recovered</td><td>Recovered</td></tr>
-<tr><td>death</td><td>Deaths</td></tr>
-<tr><td>total_tests_viral</td><td>Total number of PCR tests performed</td></tr>
-<tr><td>positive_tests_viral</td><td>Total number of positive PCR tests</td></tr>
-<tr><td>negative_tests_viral</td><td>Total number of negative PCR tests</td></tr>
-<tr><td>positive_cases_viral</td><td>Total number of positive cases measured with PCR tests</td></tr>
-<tr><td>death_confirmed</td><td>Deaths Confirmed</td></tr>
-<tr><td>death_probable</td><td>Deaths Probable</td></tr>
-</table>
+    </div>
 
 
 
-<p>Not all measures are reported by all states.
-The <code>positive</code>, <code>negative</code>, <code>death</code>, <code>death_confirmed</code>, and <code>death_probable</code> measures are <em>cumulative</em> counts.
-<code>death_confirmed</code> is the total number deaths of individuals with COVID-19 infection confirmed by a laboratory test.
-In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
-to the death according to the death certificate. <code>death_probable</code> is the total number of deaths where COVID was listed as a
-cause of death and there is not a laboratory test confirming COVID-19 infection.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
