@@ -632,12 +632,14 @@ covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
   select(!all_of(drop_cols)) %>%
   select(date, state, fips, data_quality_grade, everything()) %>%
-  pivot_longer(positive:positive_cases_viral,
+  pivot_longer(positive:death_probable,
                names_to = "measure", values_to = "count")
 
 covus_measure_labels <- tribble(
   ~measure, ~measure_label,
   "death", "Deaths",
+  "death_confirmed", "Deaths Confirmed",
+  "death_propbable", "Deaths Probable",
   "hospitalized_cumulative", "Cumulative Hospitalized",
   "hospitalized_currently",   "Currently Hospitalized",
   "in_icu_cumulative",        "Cumulative in ICU",

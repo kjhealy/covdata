@@ -26,7 +26,7 @@ test_that("covus conforms to spec", {
                            "hospitalized_cumulative", "in_icu_currently", "in_icu_cumulative",
                            "on_ventilator_currently", "on_ventilator_cumulative", "recovered",
                            "death", "total_tests_viral", "positive_tests_viral",
-                           "negative_tests_viral", "positive_cases_viral")
+                           "negative_tests_viral", "positive_cases_viral", "death_confirmed", "death_probable")
   expect_equal(unique(covus$measure), covus_measure_names)
 
 

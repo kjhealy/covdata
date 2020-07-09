@@ -47,7 +47,11 @@
 #' @details The measures tracked by the COVID tracking project are as follows:
 #' `r tabular(unique(covus[, c("measure", "measure_label")]))`
 #' Not all measures are reported by all states.
-#' The `positive`, `negative`, and `death` measures are _cumulative_ counts.
+#' The `positive`, `negative`, `death`, `death_confirmed`, and `death_probable` measures are _cumulative_ counts.
+#' `death_confirmed` is the total number deaths of individuals with COVID-19 infection confirmed by a laboratory test.
+#' In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
+#' to the death according to the death certificate. `death_probable` is the total number of deaths where COVID was listed as a
+#' cause of death and there is not a laboratory test confirming COVID-19 infection.
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"
 
@@ -63,17 +67,7 @@
 #'   \item{\code{deaths}}{integer Total deaths, count}
 #'}
 #' @details The `group` variable is coded as follows:
-#' |Category    |
-#' |:-----------|
-#' |White       |
-#' |Black       |
-#' |Latino      |
-#' |Asian       |
-#' |AI/AN       |
-#' |NH/PI       |
-#' |Multiracial |
-#' |Other       |
-#' |Unknown     |
+#' `r tabular(unique(covus_race[,"group"]))`
 #'
 #' AI/AN is American Indian/Alaska Native. NH/PI is Native Hawaiian/Pacific Islander.
 #' State-level counts should be handled with care, given the widely varying population distribution of people of different racial backgrounds by state.

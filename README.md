@@ -119,7 +119,7 @@ covnat
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 176 x 8
+#> # A tibble: 177 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -132,7 +132,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 166 more rows
+#> # … with 167 more rows
 ```
 
 
@@ -244,7 +244,7 @@ Table: Data summary
 |                         |       |
 |:------------------------|:------|
 |Name                     |covus  |
-|Number of rows           |104415 |
+|Number of rows           |119289 |
 |Number of columns        |7      |
 |_______________________  |       |
 |Column type frequency:   |       |
@@ -261,23 +261,23 @@ Table: Data summary
 |:------------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
 |state              |         0|          1.00|   2|   2|     0|       56|          0|
 |fips               |         0|          1.00|   2|   2|     0|       56|          0|
-|data_quality_grade |     16515|          0.84|   1|   2|     0|        6|          0|
-|measure            |         0|          1.00|   5|  24|     0|       15|          0|
-|measure_label      |         0|          1.00|   6|  54|     0|       15|          0|
+|data_quality_grade |     18717|          0.84|   1|   2|     0|        6|          0|
+|measure            |         0|          1.00|   5|  24|     0|       17|          0|
+|measure_label      |      7017|          0.94|   6|  54|     0|       16|          0|
 
 
 **Variable type: Date**
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-22 |2020-07-07 |2020-05-06 |      168|
+|date          |         0|             1|2020-01-22 |2020-07-08 |2020-05-07 |      169|
 
 
 **Variable type: numeric**
 
 |skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|   p75|    p100|hist  |
 |:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|-----:|-------:|:-----|
-|count         |     59294|          0.43| 57316.18| 230674.2|  0| 164| 1357| 17810| 4896370|▇▁▁▁▁ |
+|count         |     70143|          0.41| 54702.43| 226876.1|  0| 146| 1226| 15614| 4996175|▇▁▁▁▁ |
 
 
 _Total case and death counts by race and ethnicity_ 
@@ -1081,7 +1081,7 @@ Table: Data summary
 |                         |               |
 |:------------------------|:--------------|
 |Name                     |apple_mobility |
-|Number of rows           |638000         |
+|Number of rows           |641625         |
 |Number of columns        |8              |
 |_______________________  |               |
 |Column type frequency:   |               |
@@ -1099,23 +1099,23 @@ Table: Data summary
 |geo_type            |         0|          1.00|   4|  14|     0|        4|          0|
 |region              |         0|          1.00|   4|  48|     0|     2325|          0|
 |transportation_type |         0|          1.00|   7|   7|     0|        3|          0|
-|alternative_name    |    508992|          0.20|   2|  85|     0|      519|          0|
-|sub_region          |    148544|          0.77|   4|  33|     0|      162|          0|
-|country             |     26928|          0.96|   5|  20|     0|       47|          0|
+|alternative_name    |    511884|          0.20|   2|  85|     0|      519|          0|
+|sub_region          |    149388|          0.77|   4|  33|     0|      162|          0|
+|country             |     27081|          0.96|   5|  20|     0|       47|          0|
 
 
 **Variable type: Date**
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-13 |2020-07-06 |2020-04-09 |      176|
+|date          |         0|             1|2020-01-13 |2020-07-07 |2020-04-10 |      177|
 
 
 **Variable type: numeric**
 
 |skim_variable | n_missing| complete_rate|   mean|    sd|   p0|   p25|    p50|    p75|    p100|hist  |
 |:-------------|---------:|-------------:|------:|-----:|----:|-----:|------:|------:|-------:|:-----|
-|index         |     14036|          0.98| 108.73| 53.71| 2.43| 78.08| 104.01| 130.11| 1497.29|▇▁▁▁▁ |
+|index         |     14075|          0.98| 108.99| 53.93| 2.43| 78.21| 104.15| 130.52| 1497.29|▇▁▁▁▁ |
 
 ### Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
 

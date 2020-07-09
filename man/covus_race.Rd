@@ -26,17 +26,18 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 }
 \details{
 The \code{group} variable is coded as follows:
-|Category    |
-|:-----------|
-|White       |
-|Black       |
-|Latino      |
-|Asian       |
-|AI/AN       |
-|NH/PI       |
-|Multiracial |
-|Other       |
-|Unknown     |
+#' \tabular{l}{
+#'   \strong{group} \cr
+#'   White      \cr
+#'   Black      \cr
+#'   Latino     \cr
+#'   Asian      \cr
+#'   AI/AN      \cr
+#'   NH/PI      \cr
+#'   Multiracial\cr
+#'   Other      \cr
+#'   Unknown
+#' }
 
 AI/AN is American Indian/Alaska Native. NH/PI is Native Hawaiian/Pacific Islander.
 State-level counts should be handled with care, given the widely varying population distribution of people of different racial backgrounds by state.

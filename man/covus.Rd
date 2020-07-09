@@ -5,7 +5,7 @@
 \alias{covus}
 \title{COVID-19 data for the USA, current as of Wednesday, July  8, 2020}
 \format{
-A tibble with 104,415 rows and 7 columns
+A tibble with 119,289 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -43,10 +43,16 @@ The measures tracked by the COVID tracking project are as follows:
 #'   total_tests_viral        \tab Total number of PCR tests performed                   \cr
 #'   positive_tests_viral     \tab Total number of positive PCR tests                    \cr
 #'   negative_tests_viral     \tab Total number of negative PCR tests                    \cr
-#'   positive_cases_viral     \tab Total number of positive cases measured with PCR tests
+#'   positive_cases_viral     \tab Total number of positive cases measured with PCR tests\cr
+#'   death_confirmed          \tab Deaths Confirmed                                      \cr
+#'   death_probable           \tab NA
 #' }
 
 Not all measures are reported by all states.
-The \code{positive}, \code{negative}, and \code{death} measures are \emph{cumulative} counts.
+The \code{positive}, \code{negative}, \code{death}, \code{death_confirmed}, and \code{death_probable} measures are \emph{cumulative} counts.
+\code{death_confirmed} is the total number deaths of individuals with COVID-19 infection confirmed by a laboratory test.
+In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
+to the death according to the death certificate. \code{death_probable} is the total number of deaths where COVID was listed as a
+cause of death and there is not a laboratory test confirming COVID-19 infection.
 }
 \keyword{datasets}
