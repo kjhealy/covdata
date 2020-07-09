@@ -411,7 +411,7 @@
 #'
 #' Countries and years covered in the dataset:
 #'
-#' #' `r knitr::kable(stmf_country_years(stmf))`
+#' `r knitr::kable(stmf_country_years(stmf))`
 #'
 #' @author Kieran Healy
 #' @source Human Mortality Database, \url{http://mortality.org}

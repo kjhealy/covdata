@@ -39,35 +39,34 @@ Human Mortality Database (HMD) series of weekly death counts across countries.
 For further details on the construction of this dataset see the codebook at \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}.
 For the original input data files in standardized form, see \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
 
-Countries and years covered in the dataset:
-
-#' |cname             |1990 |1991 |1992 |1993 |1994 |1995 |1996 |1997 |1998 |1999 |2000 |2001 |2002 |2003 |2004 |2005 |2006 |2007 |2008 |2009 |2010 |2011 |2012 |2013 |2014 |2015 |2016 |2017 |2018 |2019 |2020 |
-|:-----------------|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
-|Austria           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Belgium           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Bulgaria          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Czech Republic    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Denmark           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|England and Wales |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Estonia           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Finland           |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|France            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Germany           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |
-|Hungary           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Iceland           |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Israel            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Italy             |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Lithuania         |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Luxembourg        |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Netherlands       |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Norway            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Portugal          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Scotland          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Slovakia          |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Spain             |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Sweden            |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|Switzerland       |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
-|United States     |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |-    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |Y    |
+Countries and years covered in the dataset:\tabular{llllllllllllllllllllllllllllllll}{
+   cname \tab 1990 \tab 1991 \tab 1992 \tab 1993 \tab 1994 \tab 1995 \tab 1996 \tab 1997 \tab 1998 \tab 1999 \tab 2000 \tab 2001 \tab 2002 \tab 2003 \tab 2004 \tab 2005 \tab 2006 \tab 2007 \tab 2008 \tab 2009 \tab 2010 \tab 2011 \tab 2012 \tab 2013 \tab 2014 \tab 2015 \tab 2016 \tab 2017 \tab 2018 \tab 2019 \tab 2020 \cr
+   Austria \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Belgium \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Bulgaria \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Czech Republic \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Denmark \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   England and Wales \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Estonia \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Finland \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   France \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Germany \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Hungary \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Iceland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Israel \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Italy \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Lithuania \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Luxembourg \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Netherlands \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Norway \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Portugal \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Scotland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Slovakia \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Spain \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Sweden \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Switzerland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   United States \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+}
 }
 \references{
 "Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}
