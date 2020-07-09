@@ -244,7 +244,7 @@ Table: Data summary
 |                         |       |
 |:------------------------|:------|
 |Name                     |covus  |
-|Number of rows           |119289 |
+|Number of rows           |120241 |
 |Number of columns        |7      |
 |_______________________  |       |
 |Column type frequency:   |       |
@@ -270,14 +270,14 @@ Table: Data summary
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-22 |2020-07-08 |2020-05-07 |      169|
+|date          |         0|             1|2020-01-22 |2020-07-09 |2020-05-07 |      170|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|    p50|     p75|    p100|hist  |
-|:-------------|---------:|-------------:|--------:|--------:|--:|---:|------:|-------:|-------:|:-----|
-|count         |     70079|          0.41| 54567.59| 226706.3|  0| 146| 1225.5| 15588.5| 4996175|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|   p75|    p100|hist  |
+|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|-----:|-------:|:-----|
+|count         |     70505|          0.41| 55486.97| 230841.8|  0| 147| 1235| 15699| 5078434|▇▁▁▁▁ |
 
 
 _Total case and death counts by race and ethnicity_ 
@@ -1346,7 +1346,8 @@ citation("covdata")
 #> 
 #> To cite the package `covdata` in publications use:
 #> 
-#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.
+#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0,
+#>   <http://kjhealy.github.io/covdata>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 

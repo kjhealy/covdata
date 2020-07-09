@@ -5,7 +5,7 @@
 \alias{covus}
 \title{COVID-19 data for the USA, current as of Thursday, July  9, 2020}
 \format{
-A tibble with 119,289 rows and 7 columns
+A tibble with 120,241 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
