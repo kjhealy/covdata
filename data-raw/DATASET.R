@@ -1005,6 +1005,12 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 sinew::makeOxygen("covus_race")
 
 document()
+
 knit("README.Rmd")
+system("sed -i '' '1,4d' README.md")
+
 
 test()
+
+
+
