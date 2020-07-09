@@ -186,15 +186,16 @@ tabular <- function(df, ...) {
 #' Make a table of stmf country years
 #'
 #' @param df The stmf data frame
-#'
 #' @return A tibble
-#'
+#' @details Get a table of country x year coverage for stmf
 #' @examples
-#' \donttest{
-#' # for internal use only
-#' stmf_country_years(stmf)
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
 #' }
-#'
+#' @author Kieran Healy
+#' @source http://
 stmf_country_years <- function(df = stmf) {
 
   df %>%

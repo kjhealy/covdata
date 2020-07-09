@@ -3,6 +3,9 @@
 \name{stmf_country_years}
 \alias{stmf_country_years}
 \title{Make a table of stmf country years}
+\source{
+http://
+}
 \usage{
 stmf_country_years(df = stmf)
 }
@@ -15,10 +18,16 @@ A tibble
 \description{
 Make a table of stmf country years
 }
-\examples{
-\donttest{
-# for internal use only
-stmf_country_years(stmf)
+\details{
+Get a table of country x year coverage for stmf
 }
-
+\examples{
+\dontrun{
+if(interactive()){
+ #EXAMPLE1
+ }
+}
+}
+\author{
+Kieran Healy
 }
