@@ -10,7 +10,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Thursday, July  9, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Friday, July 10, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -98,7 +98,7 @@ library(tidyverse) # Optional but strongly recommended
 library(covdata)
 
 covnat
-#> # A tibble: 28,604 x 8
+#> # A tibble: 28,813 x 8
 #> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths       pop cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -112,14 +112,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9452409        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11455519        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 211049519        0         0
-#> # … with 28,594 more rows
+#> # … with 28,803 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 177 x 8
+#> # A tibble: 178 x 8
 #>    geo_type region        transportation_type alternative_name sub_region country       date       index
 #>    <chr>    <chr>         <chr>               <chr>            <chr>      <chr>         <date>     <dbl>
 #>  1 city     New York City walking             NYC              New York   United States 2020-01-13 100  
@@ -132,7 +132,7 @@ apple_mobility %>%
 #>  8 city     New York City walking             NYC              New York   United States 2020-01-20  88.6
 #>  9 city     New York City walking             NYC              New York   United States 2020-01-21  91.1
 #> 10 city     New York City walking             NYC              New York   United States 2020-01-22  98.5
-#> # … with 167 more rows
+#> # … with 168 more rows
 ```
 
 
@@ -192,7 +192,7 @@ Table: Data summary
 |                         |           |
 |:------------------------|:----------|
 |Name                     |Piped data |
-|Number of rows           |28604      |
+|Number of rows           |28813      |
 |Number of columns        |8          |
 |_______________________  |           |
 |Column type frequency:   |           |
@@ -215,18 +215,18 @@ Table: Data summary
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2019-12-31 |2020-07-09 |2020-05-02 |      192|
+|date          |         0|             1|2019-12-31 |2020-07-10 |2020-05-03 |      193|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|        mean|           sd|     p0|     p25|     p50|         p75|       p100|hist  |
-|:-------------|---------:|-------------:|-----------:|------------:|------:|-------:|-------:|-----------:|----------:|:-----|
-|cases         |         0|             1|      420.10|      2462.87| -29726|       0|       4|       76.00|      58906|▁▇▁▁▁ |
-|deaths        |         0|             1|       19.20|       120.51|  -1918|       0|       0|        2.00|       4928|▁▇▁▁▁ |
-|pop           |         0|             1| 46120808.72| 165758040.66|    815| 1798506| 8776119| 31825299.00| 1433783692|▇▁▁▁▁ |
-|cu_cases      |         0|             1|    19342.52|    117081.47|      0|      16|     306|     3270.25|    3055004|▇▁▁▁▁ |
-|cu_deaths     |         0|             1|     1111.03|      6726.00|      0|       0|       6|       74.00|     132309|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|        mean|           sd|     p0|     p25|     p50|      p75|       p100|hist  |
+|:-------------|---------:|-------------:|-----------:|------------:|------:|-------:|-------:|--------:|----------:|:-----|
+|cases         |         0|             1|      424.97|      2501.47| -29726|       0|       4|       76|      63004|▁▇▁▁▁ |
+|deaths        |         0|             1|       19.25|       120.54|  -1918|       0|       0|        2|       4928|▁▇▁▁▁ |
+|pop           |         0|             1| 46052435.66| 165596698.01|    815| 1798506| 8776119| 31825299| 1433783692|▇▁▁▁▁ |
+|cu_cases      |         0|             1|    19627.19|    118796.82|      0|      16|     311|     3340|    3118008|▇▁▁▁▁ |
+|cu_deaths     |         0|             1|     1122.22|      6776.39|      0|       0|       6|       75|     133291|▇▁▁▁▁ |
 
 
 ### State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com)
@@ -244,7 +244,7 @@ Table: Data summary
 |                         |       |
 |:------------------------|:------|
 |Name                     |covus  |
-|Number of rows           |120241 |
+|Number of rows           |121193 |
 |Number of columns        |7      |
 |_______________________  |       |
 |Column type frequency:   |       |
@@ -261,7 +261,7 @@ Table: Data summary
 |:------------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
 |state              |         0|          1.00|   2|   2|     0|       56|          0|
 |fips               |         0|          1.00|   2|   2|     0|       56|          0|
-|data_quality_grade |     18717|          0.84|   1|   2|     0|        6|          0|
+|data_quality_grade |     18717|          0.85|   1|   2|     0|        6|          0|
 |measure            |         0|          1.00|   5|  24|     0|       17|          0|
 |measure_label      |         0|          1.00|   6|  54|     0|       17|          0|
 
@@ -270,14 +270,14 @@ Table: Data summary
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-22 |2020-07-09 |2020-05-07 |      170|
+|date          |         0|             1|2020-01-22 |2020-07-10 |2020-05-08 |      171|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|   p75|    p100|hist  |
-|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|-----:|-------:|:-----|
-|count         |     70505|          0.41| 55486.97| 230841.8|  0| 147| 1235| 15699| 5078434|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|      p75|    p100|hist  |
+|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|--------:|-------:|:-----|
+|count         |     70897|          0.42| 56377.72| 234964.1|  0| 147| 1244| 15855.25| 5175737|▇▁▁▁▁ |
 
 
 _Total case and death counts by race and ethnicity_ 
@@ -385,7 +385,7 @@ Table: Data summary
 |                         |             |
 |:------------------------|:------------|
 |Name                     |nytcovcounty |
-|Number of rows           |310256       |
+|Number of rows           |313348       |
 |Number of columns        |6            |
 |_______________________  |             |
 |Column type frequency:   |             |
@@ -402,22 +402,22 @@ Table: Data summary
 |:-------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
 |county        |         0|          1.00|   3|  33|     0|     1814|          0|
 |state         |         0|          1.00|   4|  24|     0|       55|          0|
-|fips          |      3232|          0.99|   5|   5|     0|     3065|          0|
+|fips          |      3261|          0.99|   5|   5|     0|     3065|          0|
 
 
 **Variable type: Date**
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-21 |2020-07-08 |2020-05-18 |      170|
+|date          |         0|             1|2020-01-21 |2020-07-09 |2020-05-19 |      171|
 
 
 **Variable type: numeric**
 
 |skim_variable | n_missing| complete_rate|   mean|      sd| p0| p25| p50| p75|   p100|hist  |
 |:-------------|---------:|-------------:|------:|-------:|--:|---:|---:|---:|------:|:-----|
-|cases         |         0|             1| 498.09| 4122.34|  0|   6|  30| 144| 222444|▇▁▁▁▁ |
-|deaths        |         0|             1|  26.57|  358.55|  0|   0|   1|   4|  22696|▇▁▁▁▁ |
+|cases         |         0|             1| 503.17| 4143.07|  0|   6|  30| 146| 222723|▇▁▁▁▁ |
+|deaths        |         0|             1|  26.74|  359.56|  0|   0|   1|   4|  22719|▇▁▁▁▁ |
 
 
 
@@ -431,7 +431,7 @@ Table: Data summary
 |                         |            |
 |:------------------------|:-----------|
 |Name                     |nytcovstate |
-|Number of rows           |7054        |
+|Number of rows           |7109        |
 |Number of columns        |5           |
 |_______________________  |            |
 |Column type frequency:   |            |
@@ -454,15 +454,15 @@ Table: Data summary
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-21 |2020-07-08 |2020-05-05 |      170|
+|date          |         0|             1|2020-01-21 |2020-07-09 |2020-05-06 |      171|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|     mean|       sd| p0|    p25|    p50|      p75|   p100|hist  |
-|:-------------|---------:|-------------:|--------:|--------:|--:|------:|------:|--------:|------:|:-----|
-|cases         |         0|             1| 21907.43| 49060.90|  1| 497.25| 4499.0| 21014.75| 403619|▇▁▁▁▁ |
-|deaths        |         0|             1|  1168.82|  3464.89|  0|   7.00|  126.5|   774.75|  31945|▇▁▁▁▁ |
+|skim_variable | n_missing| complete_rate|     mean|       sd| p0| p25|  p50|   p75|   p100|hist  |
+|:-------------|---------:|-------------:|--------:|--------:|--:|---:|----:|-----:|------:|:-----|
+|cases         |         0|             1| 22178.44| 49459.95|  1| 511| 4586| 21422| 404207|▇▁▁▁▁ |
+|deaths        |         0|             1|  1178.50|  3479.84|  0|   7|  129|   786|  31979|▇▁▁▁▁ |
 
 
 
@@ -476,7 +476,7 @@ Table: Data summary
 |                         |         |
 |:------------------------|:--------|
 |Name                     |nytcovus |
-|Number of rows           |170      |
+|Number of rows           |171      |
 |Number of columns        |3        |
 |_______________________  |         |
 |Column type frequency:   |         |
@@ -490,15 +490,15 @@ Table: Data summary
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-21 |2020-07-08 |2020-04-14 |      170|
+|date          |         0|             1|2020-01-21 |2020-07-09 |2020-04-15 |      171|
 
 
 **Variable type: numeric**
 
-|skim_variable | n_missing| complete_rate|      mean|        sd| p0|   p25|      p50|       p75|    p100|hist  |
-|:-------------|---------:|-------------:|---------:|---------:|--:|-----:|--------:|---------:|-------:|:-----|
-|cases         |         0|             1| 909029.42| 951331.41|  1| 134.0| 625725.5| 1703302.2| 3071663|▇▂▂▂▁ |
-|deaths        |         0|             1|  48499.09|  50185.78|  0|  10.5|  30694.0|  100050.8|  132237|▇▁▂▂▃ |
+|skim_variable | n_missing| complete_rate|      mean|        sd| p0| p25|    p50|     p75|    p100|hist  |
+|:-------------|---------:|-------------:|---------:|---------:|--:|---:|------:|-------:|-------:|:-----|
+|cases         |         0|             1| 922026.61| 963635.95|  1| 143| 640742| 1719222| 3131549|▇▂▂▂▁ |
+|deaths        |         0|             1|  48993.71|  50454.26|  0|  11|  32070|  101022|  133079|▇▁▂▂▃ |
 
 
 ### Data from the CDC's [COVID-NET](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) 
@@ -768,10 +768,10 @@ Table: Data summary
 
 **Variable type: numeric**
 
-|skim_variable   | n_missing| complete_rate|   mean|     sd| p0| p25|  p50|   p75|   p100|hist  |
-|:---------------|---------:|-------------:|------:|------:|--:|---:|----:|-----:|------:|:-----|
-|cumulative_rate |      1989|          0.57| 103.15| 172.09|  0| 2.6| 34.8| 129.6| 1655.0|▇▁▁▁▁ |
-|weekly_rate     |      1989|          0.57|  11.09|  19.84|  0| 0.5|  4.3|  12.9|  269.2|▇▁▁▁▁ |
+|skim_variable   | n_missing| complete_rate|   mean|     sd| p0| p25|   p50|    p75|   p100|hist  |
+|:---------------|---------:|-------------:|------:|------:|--:|---:|-----:|------:|------:|:-----|
+|cumulative_rate |      1836|           0.6| 108.54| 177.97|  0| 2.9| 38.85| 138.88| 1684.1|▇▁▁▁▁ |
+|weekly_rate     |      1836|           0.6|  10.83|  19.44|  0| 0.5|  4.20|  12.67|  269.2|▇▁▁▁▁ |
 
 _National ER Visits_
 
@@ -1081,7 +1081,7 @@ Table: Data summary
 |                         |               |
 |:------------------------|:--------------|
 |Name                     |apple_mobility |
-|Number of rows           |641625         |
+|Number of rows           |645250         |
 |Number of columns        |8              |
 |_______________________  |               |
 |Column type frequency:   |               |
@@ -1099,23 +1099,23 @@ Table: Data summary
 |geo_type            |         0|          1.00|   4|  14|     0|        4|          0|
 |region              |         0|          1.00|   4|  48|     0|     2325|          0|
 |transportation_type |         0|          1.00|   7|   7|     0|        3|          0|
-|alternative_name    |    511884|          0.20|   2|  85|     0|      519|          0|
-|sub_region          |    149388|          0.77|   4|  33|     0|      162|          0|
-|country             |     27081|          0.96|   5|  20|     0|       47|          0|
+|alternative_name    |    514776|          0.20|   2|  85|     0|      519|          0|
+|sub_region          |    150232|          0.77|   4|  33|     0|      162|          0|
+|country             |     27234|          0.96|   5|  20|     0|       47|          0|
 
 
 **Variable type: Date**
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-01-13 |2020-07-07 |2020-04-10 |      177|
+|date          |         0|             1|2020-01-13 |2020-07-08 |2020-04-10 |      178|
 
 
 **Variable type: numeric**
 
 |skim_variable | n_missing| complete_rate|   mean|    sd|   p0|   p25|    p50|    p75|    p100|hist  |
 |:-------------|---------:|-------------:|------:|-----:|----:|-----:|------:|------:|-------:|:-----|
-|index         |     14075|          0.98| 108.99| 53.93| 2.43| 78.21| 104.15| 130.52| 1497.29|▇▁▁▁▁ |
+|index         |     14114|          0.98| 109.26| 54.16| 2.43| 78.35| 104.29| 130.91| 1497.29|▇▁▁▁▁ |
 
 ### Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
 
@@ -1130,7 +1130,7 @@ Table: Data summary
 |                         |                |
 |:------------------------|:---------------|
 |Name                     |google_mobility |
-|Number of rows           |3849726         |
+|Number of rows           |3906036         |
 |Number of columns        |9               |
 |_______________________  |                |
 |Column type frequency:   |                |
@@ -1145,12 +1145,12 @@ Table: Data summary
 
 |skim_variable       | n_missing| complete_rate| min| max| empty| n_unique| whitespace|
 |:-------------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
-|country_region_code |      6612|          1.00|   2|   2|     0|      134|          0|
+|country_region_code |      6720|          1.00|   2|   2|     0|      134|          0|
 |country_region      |         0|          1.00|   4|  22|     0|      135|          0|
-|sub_region_1        |    114156|          0.97|   3|  74|     0|     1844|          0|
-|sub_region_2        |   1626858|          0.58|   5|  27|     0|     1716|          0|
-|iso3166_2           |   2450838|          0.36|   4|   6|     0|     1703|          0|
-|census_fips_code    |   1626006|          0.58|   5|   5|     0|     2833|          0|
+|sub_region_1        |    115740|          0.97|   3|  74|     0|     1844|          0|
+|sub_region_2        |   1650156|          0.58|   5|  27|     0|     1716|          0|
+|iso3166_2           |   2487198|          0.36|   4|   6|     0|     1703|          0|
+|census_fips_code    |   1649292|          0.58|   5|   5|     0|     2833|          0|
 |type                |         0|          1.00|   5|  11|     0|        6|          0|
 
 
@@ -1158,14 +1158,14 @@ Table: Data summary
 
 |skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
 |:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
-|date          |         0|             1|2020-02-15 |2020-07-05 |2020-04-25 |      142|
+|date          |         0|             1|2020-02-15 |2020-07-07 |2020-04-26 |      144|
 
 
 **Variable type: numeric**
 
 |skim_variable | n_missing| complete_rate|   mean|    sd|   p0| p25| p50| p75| p100|hist  |
 |:-------------|---------:|-------------:|------:|-----:|----:|---:|---:|---:|----:|:-----|
-|pct_diff      |   1274649|          0.67| -13.06| 31.49| -100| -33|  -9|   5|  625|▇▁▁▁▁ |
+|pct_diff      |   1295319|          0.67| -12.97| 31.54| -100| -32|  -9|   5|  625|▇▁▁▁▁ |
 
 
 ### Policy data from the [CoronaNet Project](https://coronanet-project.org)

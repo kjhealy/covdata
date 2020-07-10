@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovcounty}
 \alias{nytcovcounty}
-\title{NYT COVID-19 data for US counties, current as of Thursday, July  9, 2020}
+\title{NYT COVID-19 data for US counties, current as of Friday, July 10, 2020}
 \format{
-A tibble with 310,256 rows and 6 columns
+A tibble with 313,348 rows and 6 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{county}{County name (character)}
