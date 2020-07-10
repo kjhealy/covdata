@@ -211,6 +211,6 @@ stmf_country_years <- function(df = stmf) {
     dplyr::group_by(year, cname) %>%
     dplyr::arrange(year) %>%
     tidyr::pivot_wider(names_from = year, values_from = n) %>%
-    dplyr::mutate(across(where(is.character), dplyr::recode, .missing = "-")) %>%
+    dplyr::mutate(dplyr::across(where(is.character), dplyr::recode, .missing = "-")) %>%
     dplyr::arrange(cname)
 }
