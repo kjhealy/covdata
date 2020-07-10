@@ -117,7 +117,7 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span>)
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.2     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.0.2     ✔ dplyr   1.0.0</span>
+<span class="co">#&gt; ✔ tibble  3.0.3     ✔ dplyr   1.0.0</span>
 <span class="co">#&gt; ✔ tidyr   1.1.0     ✔ stringr 1.4.0</span>
 <span class="co">#&gt; ✔ readr   1.3.1     ✔ forcats 0.5.0</span>
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
@@ -138,14 +138,7 @@
 <p>Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">apple_mobility</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
-<span class="co">#&gt; # A tibble: 641,625 x 8</span>
+<span class="co">#&gt; # A tibble: 645,250 x 8</span>
 <span class="co">#&gt;    geo_type region transportation_… alternative_name sub_region country</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
@@ -158,7 +151,7 @@
 <span class="co">#&gt;  8 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt;  9 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt; 10 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
-<span class="co">#&gt; # … with 641,615 more rows, and 2 more variables: date &lt;date&gt;, index &lt;dbl&gt;</span>
+<span class="co">#&gt; # … with 645,240 more rows, and 2 more variables: date &lt;date&gt;, index &lt;dbl&gt;</span>
 </pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">vec_brks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span>)
@@ -211,14 +204,7 @@
 </ul>
 <div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="kw">google_mobility</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
-<span class="co">#&gt; # A tibble: 3,849,726 x 9</span>
+<span class="co">#&gt; # A tibble: 3,906,036 x 9</span>
 <span class="co">#&gt;    country_region_… country_region sub_region_1 sub_region_2 iso3166_2</span>
 <span class="co">#&gt;    &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;    </span>
 <span class="co">#&gt;  1 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
@@ -231,7 +217,7 @@
 <span class="co">#&gt;  8 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
 <span class="co">#&gt;  9 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
 <span class="co">#&gt; 10 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;     </span>
-<span class="co">#&gt; # … with 3,849,716 more rows, and 4 more variables: census_fips_code &lt;chr&gt;,</span>
+<span class="co">#&gt; # … with 3,906,026 more rows, and 4 more variables: census_fips_code &lt;chr&gt;,</span>
 <span class="co">#&gt; #   date &lt;date&gt;, type &lt;chr&gt;, pct_diff &lt;int&gt;</span>
 </pre></div>
 <div class="sourceCode" id="cb10"><pre class="downlit">

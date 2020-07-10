@@ -117,7 +117,7 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span>)
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.2     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.0.2     ✔ dplyr   1.0.0</span>
+<span class="co">#&gt; ✔ tibble  3.0.3     ✔ dplyr   1.0.0</span>
 <span class="co">#&gt; ✔ tidyr   1.1.0     ✔ stringr 1.4.0</span>
 <span class="co">#&gt; ✔ readr   1.3.1     ✔ forcats 0.5.0</span>
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
@@ -144,27 +144,20 @@
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">covus</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
-<span class="co">#&gt; # A tibble: 120,241 x 7</span>
+<span class="co">#&gt; # A tibble: 121,193 x 7</span>
 <span class="co">#&gt;    date       state fips  data_quality_gra… measure       count measure_label   </span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           </span>
-<span class="co">#&gt;  1 2020-07-09 AK    02    A                 positive       1272 Positive Tests  </span>
-<span class="co">#&gt;  2 2020-07-09 AK    02    A                 negative     134472 Negative Tests  </span>
-<span class="co">#&gt;  3 2020-07-09 AK    02    A                 pending          NA Pending Tests   </span>
-<span class="co">#&gt;  4 2020-07-09 AK    02    A                 hospitalize…     28 Currently Hospi…</span>
-<span class="co">#&gt;  5 2020-07-09 AK    02    A                 hospitalize…     NA Cumulative Hosp…</span>
-<span class="co">#&gt;  6 2020-07-09 AK    02    A                 in_icu_curr…     NA Currently in ICU</span>
-<span class="co">#&gt;  7 2020-07-09 AK    02    A                 in_icu_cumu…     NA Cumulative in I…</span>
-<span class="co">#&gt;  8 2020-07-09 AK    02    A                 on_ventilat…      0 Currently on Ve…</span>
-<span class="co">#&gt;  9 2020-07-09 AK    02    A                 on_ventilat…     NA Cumulative on V…</span>
-<span class="co">#&gt; 10 2020-07-09 AK    02    A                 recovered       571 Recovered       </span>
-<span class="co">#&gt; # … with 120,231 more rows</span>
+<span class="co">#&gt;  1 2020-07-10 AK    02    A                 positive       1323 Positive Tests  </span>
+<span class="co">#&gt;  2 2020-07-10 AK    02    A                 negative     140608 Negative Tests  </span>
+<span class="co">#&gt;  3 2020-07-10 AK    02    A                 pending          NA Pending Tests   </span>
+<span class="co">#&gt;  4 2020-07-10 AK    02    A                 hospitalize…     30 Currently Hospi…</span>
+<span class="co">#&gt;  5 2020-07-10 AK    02    A                 hospitalize…     NA Cumulative Hosp…</span>
+<span class="co">#&gt;  6 2020-07-10 AK    02    A                 in_icu_curr…     NA Currently in ICU</span>
+<span class="co">#&gt;  7 2020-07-10 AK    02    A                 in_icu_cumu…     NA Cumulative in I…</span>
+<span class="co">#&gt;  8 2020-07-10 AK    02    A                 on_ventilat…      0 Currently on Ve…</span>
+<span class="co">#&gt;  9 2020-07-10 AK    02    A                 on_ventilat…     NA Cumulative on V…</span>
+<span class="co">#&gt; 10 2020-07-10 AK    02    A                 recovered       588 Recovered       </span>
+<span class="co">#&gt; # … with 121,183 more rows</span>
 </pre></div>
 <div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="section level3">
 <h3 class="hasAnchor">
@@ -212,7 +205,7 @@
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 15 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 6744 rows containing missing values (geom_text_repel).</span>
+<span class="co">#&gt; Warning: Removed 6800 rows containing missing values (geom_text_repel).</span>
 </pre></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
@@ -228,27 +221,20 @@
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">%in%</span> <span class="kw">measures</span>, <span class="kw">state</span> <span class="op">==</span> <span class="st">"NY"</span>) <span class="op">%&gt;%</span>
   <span class="fu">select</span>(<span class="kw">date</span>, <span class="kw">state</span>, <span class="kw">measure</span>, <span class="kw">count</span>) <span class="op">%&gt;%</span>
   <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>)
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
-<span class="co">#&gt; # A tibble: 128 x 5</span>
+<span class="co">#&gt; # A tibble: 129 x 5</span>
 <span class="co">#&gt;    date       state positive negative death</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-07-09 NY      399513  4068503 24959</span>
-<span class="co">#&gt;  2 2020-07-08 NY      398929  4003523 24944</span>
-<span class="co">#&gt;  3 2020-07-07 NY      398237  3946630 24924</span>
-<span class="co">#&gt;  4 2020-07-06 NY      397649  3890482 24913</span>
-<span class="co">#&gt;  5 2020-07-05 NY      397131  3836672 24904</span>
-<span class="co">#&gt;  6 2020-07-04 NY      396598  3773790 24896</span>
-<span class="co">#&gt;  7 2020-07-03 NY      395872  3712113 24885</span>
-<span class="co">#&gt;  8 2020-07-02 NY      394954  3646639 24877</span>
-<span class="co">#&gt;  9 2020-07-01 NY      394079  3577569 24866</span>
-<span class="co">#&gt; 10 2020-06-30 NY      393454  3521484 24855</span>
-<span class="co">#&gt; # … with 118 more rows</span>
+<span class="co">#&gt;  1 2020-07-10 NY      400299  4141275 24968</span>
+<span class="co">#&gt;  2 2020-07-09 NY      399513  4068503 24959</span>
+<span class="co">#&gt;  3 2020-07-08 NY      398929  4003523 24944</span>
+<span class="co">#&gt;  4 2020-07-07 NY      398237  3946630 24924</span>
+<span class="co">#&gt;  5 2020-07-06 NY      397649  3890482 24913</span>
+<span class="co">#&gt;  6 2020-07-05 NY      397131  3836672 24904</span>
+<span class="co">#&gt;  7 2020-07-04 NY      396598  3773790 24896</span>
+<span class="co">#&gt;  8 2020-07-03 NY      395872  3712113 24885</span>
+<span class="co">#&gt;  9 2020-07-02 NY      394954  3646639 24877</span>
+<span class="co">#&gt; 10 2020-07-01 NY      394079  3577569 24866</span>
+<span class="co">#&gt; # … with 119 more rows</span>
 </pre></div>
 <p>To calculate <em>daily</em> counts from these cumulative measures, use <code><a href="https://rdrr.io/r/stats/lag.html">lag()</a></code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
@@ -259,27 +245,20 @@
   <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>) <span class="op">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="kw">positive</span><span class="op">:</span><span class="kw">death</span>, <span class="op">~</span><span class="kw">.x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>(<span class="kw">.x</span>, order_by = <span class="kw">date</span>), 
                 .names = <span class="st">"daily_{col}"</span>))
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
-<span class="co">#&gt; # A tibble: 128 x 8</span>
+<span class="co">#&gt; # A tibble: 129 x 8</span>
 <span class="co">#&gt;    date       state positive negative death daily_positive daily_negative</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-07-09 NY      399513  4068503 24959            584          64980</span>
-<span class="co">#&gt;  2 2020-07-08 NY      398929  4003523 24944            692          56893</span>
-<span class="co">#&gt;  3 2020-07-07 NY      398237  3946630 24924            588          56148</span>
-<span class="co">#&gt;  4 2020-07-06 NY      397649  3890482 24913            518          53810</span>
-<span class="co">#&gt;  5 2020-07-05 NY      397131  3836672 24904            533          62882</span>
-<span class="co">#&gt;  6 2020-07-04 NY      396598  3773790 24896            726          61677</span>
-<span class="co">#&gt;  7 2020-07-03 NY      395872  3712113 24885            918          65474</span>
-<span class="co">#&gt;  8 2020-07-02 NY      394954  3646639 24877            875          69070</span>
-<span class="co">#&gt;  9 2020-07-01 NY      394079  3577569 24866            625          56085</span>
-<span class="co">#&gt; 10 2020-06-30 NY      393454  3521484 24855            524          51501</span>
-<span class="co">#&gt; # … with 118 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2020-07-10 NY      400299  4141275 24968            786          72772</span>
+<span class="co">#&gt;  2 2020-07-09 NY      399513  4068503 24959            584          64980</span>
+<span class="co">#&gt;  3 2020-07-08 NY      398929  4003523 24944            692          56893</span>
+<span class="co">#&gt;  4 2020-07-07 NY      398237  3946630 24924            588          56148</span>
+<span class="co">#&gt;  5 2020-07-06 NY      397649  3890482 24913            518          53810</span>
+<span class="co">#&gt;  6 2020-07-05 NY      397131  3836672 24904            533          62882</span>
+<span class="co">#&gt;  7 2020-07-04 NY      396598  3773790 24896            726          61677</span>
+<span class="co">#&gt;  8 2020-07-03 NY      395872  3712113 24885            918          65474</span>
+<span class="co">#&gt;  9 2020-07-02 NY      394954  3646639 24877            875          69070</span>
+<span class="co">#&gt; 10 2020-07-01 NY      394079  3577569 24866            625          56085</span>
+<span class="co">#&gt; # … with 119 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span>
 </pre></div>
 </div>
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state" class="section level3">
@@ -380,14 +359,7 @@
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="kw">nytcovstate</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
-<span class="co">#&gt; # A tibble: 7,054 x 5</span>
+<span class="co">#&gt; # A tibble: 7,109 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -400,7 +372,7 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 7,044 more rows</span>
+<span class="co">#&gt; # … with 7,099 more rows</span>
 </pre></div>
 </div>
 <div id="county-level-table" class="section level3">
@@ -408,14 +380,7 @@
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="kw">nytcovcounty</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
-<span class="co">#&gt; # A tibble: 310,256 x 6</span>
+<span class="co">#&gt; # A tibble: 313,348 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -428,7 +393,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 310,246 more rows</span>
+<span class="co">#&gt; # … with 313,338 more rows</span>
 </pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
@@ -462,13 +427,6 @@
 <p>Thanks to Bob Rudis’s <a href="https://github.com/hrbrmstr/cdccovidview"><code>cdccovidview</code></a> package for making these data tractable to include.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit">
 <span class="kw">cdc_hospitalizations</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 4,590 x 8</span>
 <span class="co">#&gt;    catchment network year  mmwr_year mmwr_week age_category cumulative_rate</span>
 <span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;</span>
@@ -485,13 +443,6 @@
 <span class="co">#&gt; # … with 4,580 more rows, and 1 more variable: weekly_rate &lt;dbl&gt;</span>
 
 <span class="kw">cdc_catchments</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 17 x 2</span>
 <span class="co">#&gt;    name      area          </span>
 <span class="co">#&gt;  * &lt;chr&gt;     &lt;chr&gt;         </span>
@@ -514,13 +465,6 @@
 <span class="co">#&gt; 17 IHSP      Utah</span>
 
 <span class="kw">cdc_deaths_by_state</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 53 x 10</span>
 <span class="co">#&gt;    data_as_of state start_week end_week   covid_deaths total_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;date&gt;     &lt;date&gt;            &lt;int&gt;        &lt;int&gt;</span>
@@ -539,13 +483,6 @@
 <span class="co">#&gt; #   all_influenza_deaths_j09_j11 &lt;int&gt;</span>
 
 <span class="kw">nssp_covid_er_reg</span>
-<span class="co">#&gt; Warning: `...` is not empty.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; We detected these problematic arguments:</span>
-<span class="co">#&gt; * `needs_dots`</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; These dots only exist to allow future extensions and should be empty.</span>
-<span class="co">#&gt; Did you misspecify an argument?</span>
 <span class="co">#&gt; # A tibble: 538 x 9</span>
 <span class="co">#&gt;     week num_fac total_ed_visits visits pct_visits visit_type region source</span>
 <span class="co">#&gt;    &lt;int&gt;   &lt;int&gt; &lt;chr&gt;            &lt;int&gt;      &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt; </span>
