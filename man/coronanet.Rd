@@ -5,7 +5,7 @@
 \alias{coronanet}
 \title{CoronaNet Government Response Project data}
 \format{
-A tibble with 15,982 rows and 33 variables:
+A tibble with 18,074 rows and 33 variables:
 \describe{
 \item{\code{record_id}}{character Unique identifier for each unique policy record}
 \item{\code{policy_id}}{double Identifier linking new policies with subsequent updates to policies}
