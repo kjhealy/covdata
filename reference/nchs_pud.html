@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apple Mobility Data — apple_mobility • covdata</title>
+<title>COVID-19 Case Surveillance Public Use Data — nchs_pud • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Apple Mobility Data — apple_mobility" />
-<meta property="og:description" content="Data from Apple Maps on relative changes in mobility in various cities and countries." />
+<meta property="og:title" content="COVID-19 Case Surveillance Public Use Data — nchs_pud" />
+<meta property="og:description" content="Deidentified patient-level data reported to U.S. states and autonomous reporting entities, including New York City and the District of Columbia (D.C.), as well as U.S. territories and states." />
 
 
 
@@ -141,41 +141,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Apple Mobility Data</h1>
+    <h1>COVID-19 Case Surveillance Public Use Data</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>apple_mobility.Rd</code></div>
+    <div class="hidden name"><code>nchs_pud.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Data from Apple Maps on relative changes in mobility in various cities and countries.</p>
+    <p>Deidentified patient-level data reported to U.S. states and autonomous reporting entities, including New York City and the District of Columbia (D.C.), as well as U.S. territories and states.</p>
     </div>
 
-    <pre class="usage"><span class='kw'>apple_mobility</span></pre>
+    <pre class="usage"><span class='kw'>nchs_pud</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 667,000 rows and 8 variables:</p><dl>
-<dt><code>geo_type</code></dt><dd><p>character Type geographical unit. Values: city or country/region</p></dd>
-<dt><code>region</code></dt><dd><p>character Name of geographical unit.</p></dd>
-<dt><code>transportation_type</code></dt><dd><p>character Mode of transport. Values: Driving, Transit, or Walking</p></dd>
-<dt><code>alternative_name</code></dt><dd><p>character Name of <code>region</code> in local language</p></dd>
-<dt><code>sub_region</code></dt><dd><p>character Subregion</p></dd>
-<dt><code>country</code></dt><dd><p>character Country name (not provided for all countries)</p></dd>
-<dt><code>date</code></dt><dd><p>double Date in yyyy-mm-dddd format</p></dd>
-<dt><code>index</code></dt><dd><p>double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.</p></dd>
+    <p>A tibble with 1,748,965 rows and 11 variables:</p><dl>
+<dt><code>cdc_report_dt</code></dt><dd><p>date Initial case report date to CDC</p></dd>
+<dt><code>pos_spec_dt</code></dt><dd><p>date Date of first positive specimen collection</p></dd>
+<dt><code>onset_dt</code></dt><dd><p>date Symptom onset date, if symptomatic</p></dd>
+<dt><code>current_status</code></dt><dd><p>character Case Status: Laboratory-confirmed case or Probable case</p></dd>
+<dt><code>sex</code></dt><dd><p>character Sex: Male; Female; Unknown; Other</p></dd>
+<dt><code>age_group</code></dt><dd><p>character Age Group: 0-9 Years; 10-19 Years; 20-39 Years; 40-49 Years; 50-59 Years; 60-69 Years; 70-79 Years; 80+ Years</p></dd>
+<dt><code>race_ethnicity</code></dt><dd><p>character Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic</p></dd>
+<dt><code>hosp_yn</code></dt><dd><p>character Hospitalization status</p></dd>
+<dt><code>icu_yn</code></dt><dd><p>character ICU admission status</p></dd>
+<dt><code>death_yn</code></dt><dd><p>character Death status</p></dd>
+<dt><code>medcond_yn</code></dt><dd><p>character Presence of underlying comorbidity or disease</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>https://www.apple.com/covid19/mobility</p>
+    <p>https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Data made available by Apple, Inc. at <a href='https://www.apple.com/covid19/mobility'>https://www.apple.com/covid19/mobility</a>, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p>See https://www.apple.com/covid19/mobility for detailed terms of use.</p>
+    <p>Each row is a deidentified patient. These deidentified data include demographic characteristics, exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities. All data elements can be found on the COVID-19 case report form located at <code>www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf</code>.
+The COVID-19 case surveillance data are dynamic; case reports can be modified at any time by the reporting jurisdiction as new information becomes available (i.e., data are subject to change). Furthermore, reporting jurisdictions may report cases late. Version updates to the detailed and limited datasets will be available for request once a month.
+The datasets will include all cases with an initial report date of case to CDC at least 30 days prior to the creation of the previously updated datasets. This month lag will allow case reporting to be stabilized and ensure that time-dependent outcome data, including death, are accurately captured.
+Questions that have been left unanswered (blank) on the case report form are re-classified to an Unknown value, if applicable to the question. For example, in the question “Was the patient hospitalized?”, where the possible answer choices include “Yes”, “No”, or “Unknown”, the missing value is re-coded to the Unknown answer option if the respondent did not answer the question.
+The initial report date of the case to CDC is intended to be completed by the reporting jurisdiction when data are submitted. If blank, this variable is completed using the date the data file was first submitted to CDC.
+To prevent release of data that could be used to identify persons, data cells are suppressed for low frequency (&lt;5) records and indirect identifiers (date of first positive specimen). Suppression includes uncommon combinations of demographic characteristics (sex, age group, race/ethnicity). Suppressed values are re-coded to the NA answer option.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Kieran Healy</p>

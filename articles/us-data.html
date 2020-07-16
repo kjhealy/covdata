@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.9.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.9000</span>
       </span>
     </div>
 
@@ -518,7 +518,7 @@
   <span class="fu">ggplot</span>() <span class="op">+</span>
   <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="kw">start</span>, <span class="kw">weekly_rate</span>)) <span class="op">+</span>
   <span class="fu">scale_x_date</span>(
-    date_breaks = <span class="st">"4 weeks"</span>, date_labels = <span class="st">"%b\n%d"</span>
+    date_breaks = <span class="st">"8 weeks"</span>, date_labels = <span class="st">"%b\n%d"</span>
   ) <span class="op">+</span>
   <span class="fu">facet_grid</span>(<span class="kw">network</span> <span class="op">~</span> <span class="kw">age_category</span>) <span class="op">+</span>
   <span class="fu">labs</span>(x = <span class="kw">NULL</span>, y = <span class="st">"Rates per 100,000 pop"</span>,
