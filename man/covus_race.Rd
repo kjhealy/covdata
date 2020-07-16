@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Tuesday, July 14, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Thursday, July 16, 2020}
 \format{
-A tibble with 13,608 rows and 5 columns
+A tibble with 14,112 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
