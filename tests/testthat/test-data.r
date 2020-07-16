@@ -185,3 +185,13 @@ test_that("nchs_wss conforms to spec", {
                        "Non-Hispanic Asian", "Hispanic or Latino", "Other")
   expect_equal(unique(nchs_wss$group), nchs_wss_groups)
 })
+
+
+## nchs_pud
+test_that("nchs_pud conforms to spec", {
+  nchs_pud_colnames <- c("cdc_report_dt", "pos_spec_dt", "onset_dt", "current_status", "sex",
+                         "age_group", "race_ethnicity", "hosp_yn", "icu_yn", "death_yn",
+                         "medcond_yn"   )
+  expect_equal(colnames(nchs_pud), nchs_pud_colnames)
+})
+

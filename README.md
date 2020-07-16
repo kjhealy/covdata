@@ -20,6 +20,7 @@
 - State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
 - Data from the US Centers for Disease Control's [Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) (COVID-NET). See below for details about this network and the scope of its coverage.
+- Deidentified patient-level data from the CDC's [COVID-19 Case Surveillance Public Use Dataset](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf). 
 
 ### All-cause mortality and excess mortality data
 
@@ -954,6 +955,51 @@ Table: Data summary
 |dist_pct        |        67|          0.75|   22.05|   24.74| 0.0|  2.4|  11.00|  38.60|    95.5|▇▂▂▁▁ |
 |uw_dist_pop_pct |         0|          1.00|   16.67|   24.14| 0.1|  1.8|   4.75|  16.88|    93.1|▇▁▁▁▁ |
 |wt_dist_pop_pct |         0|          1.00|   16.67|   21.15| 0.1|  2.1|   6.30|  23.62|    91.0|▇▁▁▁▁ |
+
+_Deidentified patient-level data from the CDC COVID-19 case surveillance system database_
+
+
+```r
+skimr::skim(nchs_pud)
+```
+
+
+Table: Data summary
+
+|                         |         |
+|:------------------------|:--------|
+|Name                     |nchs_pud |
+|Number of rows           |1748965  |
+|Number of columns        |11       |
+|_______________________  |         |
+|Column type frequency:   |         |
+|character                |8        |
+|Date                     |3        |
+|________________________ |         |
+|Group variables          |None     |
+
+
+**Variable type: character**
+
+|skim_variable  | n_missing| complete_rate| min| max| empty| n_unique| whitespace|
+|:--------------|---------:|-------------:|---:|---:|-----:|--------:|----------:|
+|current_status |         0|             1|   8|   9|     0|        2|          0|
+|sex            |        15|             1|   4|   7|     0|        4|          0|
+|age_group      |        38|             1|   6|   8|     0|       10|          0|
+|race_ethnicity |         9|             1|   7|  28|     0|        8|          0|
+|hosp_yn        |         0|             1|   2|   7|     0|        3|          0|
+|icu_yn         |         0|             1|   2|   7|     0|        3|          0|
+|death_yn       |         0|             1|   2|   7|     0|        3|          0|
+|medcond_yn     |         0|             1|   2|   7|     0|        3|          0|
+
+
+**Variable type: Date**
+
+|skim_variable | n_missing| complete_rate|min        |max        |median     | n_unique|
+|:-------------|---------:|-------------:|:----------|:----------|:----------|--------:|
+|cdc_report_dt |         0|          1.00|2020-01-01 |2020-06-11 |2020-05-01 |      116|
+|pos_spec_dt   |   1052553|          0.40|2020-01-04 |2020-06-24 |2020-04-18 |      137|
+|onset_dt      |    969687|          0.45|2020-01-01 |2020-06-26 |2020-04-16 |      178|
 
 
 ### Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org)

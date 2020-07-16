@@ -415,11 +415,12 @@ my_pdc <-  function ()
 nchs_tables <- tribble(
   ~name, ~sname, ~locator,
   "Death Counts by Sex, Age, and State", "SAS", "9bhg-hcku",
-  "Weekly State Specific Updates", "WSS", "pj7m-y5uh"
+  "Weekly State Specific Updates", "WSS", "pj7m-y5uh",
+  "COVID-19 Case Surveillance Public Use Data", "CSPUD", "vbim-akqf"
 )
 
 get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
-                             sname = c("SAS", "WSS"),
+                             sname = c("SAS", "WSS", "CSPUD"),
                              fname = "-",
                              date = lubridate::today(),
                              ext = "csv",
@@ -855,6 +856,21 @@ nchs_wss <- nchs_wss_raw %>%
          wt_dist_pop_pct = weighted_distribution_of_population_percent) %>%
   mutate(state = stringr::str_replace(state, "<sup>5</sup>", ""))
 
+nchs_cspud_raw <- get_nchs_data(sname = "CSPUD",
+                                save_file = "n")
+
+nchs_pud <- nchs_cspud_raw %>%
+  mutate(current_status = recode(current_status,
+                                 "Laboratory-confirmed case" = "Confirmed", "Probable Case" = "Probable"),
+         age_group = stringr::str_replace(age_group, "Years", "yrs"),
+         age_group = stringr::str_replace_all(age_group, " ", ""),
+         race_and_ethnicity_combined = stringr::str_replace(race_and_ethnicity_combined,
+                                                            "American Indian/Alaska Native",
+                                                            "AI/AN"),
+         race_and_ethnicity_combined = stringr::str_replace(race_and_ethnicity_combined,
+                                                            "Native Hawaiian/Other Pacific Islander",
+                                                            "NH/PI")) %>%
+  rename(race_ethnicity = race_and_ethnicity_combined)
 
 ## --------------------------------------------------------------------------------------
 ### Apple and Google
@@ -971,6 +987,7 @@ usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 ## NCHS
 usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
+usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
 
 ## CoronaNet
 usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
@@ -1003,7 +1020,7 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 ## rd skeleton
 #sinew::makeOxygen("uspop")
-sinew::makeOxygen("covus_race")
+sinew::makeOxygen("nchs_pud")
 
 document()
 

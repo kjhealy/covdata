@@ -1,3 +1,7 @@
+# covdata 0.3
+
+Added the CDC's patient-level public-use dataset, as `nchs_pud`
+
 # covdata 0.2.9
 
 Added two tables adapted from the COVID tracking project:  

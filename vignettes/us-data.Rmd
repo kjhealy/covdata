@@ -271,7 +271,7 @@ cdc_hospitalizations %>%
   ggplot() +
   geom_line(aes(start, weekly_rate)) +
   scale_x_date(
-    date_breaks = "4 weeks", date_labels = "%b\n%d"
+    date_breaks = "8 weeks", date_labels = "%b\n%d"
   ) +
   facet_grid(network ~ age_category) +
   labs(x = NULL, y = "Rates per 100,000 pop",

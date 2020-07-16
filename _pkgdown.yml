@@ -43,6 +43,7 @@ reference:
   - title: "US National Center for Health Statistics"
     desc: Reports from the NCHS on the age and racial/ethnic composition of COVID victims
     contents:
+      - nchs_pud
       - nchs_sas
       - nchs_wss
   - title: "New York Times Data"
