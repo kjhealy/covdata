@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 data for the USA, current as of Thursday, July 16, 2020 — covus • covdata</title>
+<title>COVID-19 data for the USA, current as of Friday, July 17, 2020 — covus • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 data for the USA, current as of Thursday, July 16, 2020 — covus" />
+<meta property="og:title" content="COVID-19 data for the USA, current as of Friday, July 17, 2020 — covus" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
       </span>
     </div>
 
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 data for the USA, current as of Thursday, July 16, 2020</h1>
+    <h1>COVID-19 data for the USA, current as of Friday, July 17, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 125,953 rows and 7 columns</p><dl>
+    <p>A tibble with 126,905 rows and 7 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>Two letter State abbreviation (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -171,7 +171,28 @@
     <p>The COVID-19 Tracking Project <a href='https://covidtracking.com'>https://covidtracking.com</a> oi</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The measures tracked by the COVID tracking project are as follows:</p><table class='table'>
+    <p>c("character", "character", "character", "character", "character", "Date", "numeric")
+c("state", "fips", "data_quality_grade", "measure", "measure_label", "date", "count")
+c(0, 0, 18717, 0, 0, 0, 73451)
+c(1, 1, 0.852511721366376, 1, 1, 1, 0.421212718175013)
+c(2, 2, 1, 5, 6, NA, NA)
+c(2, 2, 2, 24, 54, NA, NA)
+c(0, 0, 0, 0, 0, NA, NA)
+c(56, 56, 6, 17, 17, NA, NA)
+c(0, 0, 0, 0, 0, NA, NA)
+c(NA, NA, NA, NA, NA, 18283, NA)
+c(NA, NA, NA, NA, NA, 18459, NA)
+c(NA, NA, NA, NA, NA, 18393, NA)
+c(NA, NA, NA, NA, NA, 177, NA)
+c(NA, NA, NA, NA, NA, NA, 62202.1988064504)
+c(NA, NA, NA, NA, NA, NA, 261627.828909367)
+c(NA, NA, NA, NA, NA, NA, 0)
+c(NA, NA, NA, NA, NA, NA, 151)
+c(NA, NA, NA, NA, NA, NA, 1294.5)
+c(NA, NA, NA, NA, NA, NA, 17204)
+c(NA, NA, NA, NA, NA, NA, 5915508)
+c(NA, NA, NA, NA, NA, NA, "▇▁▁▁▁")</p>
+<p>The measures tracked by the COVID tracking project are as follows:</p><table class='table'>
 <tr><td>measure</td><td>measure_label</td></tr>
 <tr><td>positive</td><td>Positive Tests</td></tr>
 <tr><td>negative</td><td>Negative Tests</td></tr>

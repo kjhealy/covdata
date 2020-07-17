@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for the US states, current as of Thursday, July 16, 2020 — nytcovstate • covdata</title>
+<title>NYT COVID-19 data for the US states, current as of Friday, July 17, 2020 — nytcovstate • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Thursday, July 16, 2020 — nytcovstate" />
+<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Friday, July 17, 2020 — nytcovstate" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19, collected by the New York Times." />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
       </span>
     </div>
 
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for the US states, current as of Thursday, July 16, 2020</h1>
+    <h1>NYT COVID-19 data for the US states, current as of Friday, July 17, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovstate.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 7,439 rows and 5 columns</p><dl>
+    <p>A tibble with 7,494 rows and 5 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>State name (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -168,6 +168,29 @@
 
     <p>The New York Times <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.
 For details on the methods and limitations see <a href='https://github.com/nytimes/covid-19-data'>https://github.com/nytimes/covid-19-data</a>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>c("character", "character", "Date", "numeric", "numeric")
+c("state", "fips", "date", "cases", "deaths")
+c(0, 0, 0, 0, 0)
+c(1, 1, 1, 1, 1)
+c(4, 2, NA, NA, NA)
+c(24, 2, NA, NA, NA)
+c(0, 0, NA, NA, NA)
+c(55, 55, NA, NA, NA)
+c(0, 0, NA, NA, NA)
+c(NA, NA, 18282, NA, NA)
+c(NA, NA, 18459, NA, NA)
+c(NA, NA, 18391, NA, NA)
+c(NA, NA, 178, NA, NA)
+c(NA, NA, NA, 24202.2747531358, 1244.8271950894)
+c(NA, NA, NA, 52643.197481745, 3578.85582081053)
+c(NA, NA, NA, 1, 0)
+c(NA, NA, NA, 593, 9)
+c(NA, NA, NA, 5177.5, 146)
+c(NA, NA, NA, 24197, 853.75)
+c(NA, NA, NA, 409476, 32133)
+c(NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
       </span>
     </div>
 
@@ -201,7 +201,33 @@
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This file contains variables from the <a href='https://coronanet-project.org/'>CoronaNet government response project</a>, representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. For more detail on this data, you can see <a href='https://docs.google.com/document/d/1zvNMpwj0onFvUZ_gLl4RRjqS-clbHv3TIX6EOHofsME'>the codebook here</a>.
+    <p>c("character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "POSIXct", "POSIXct")
+c("record_id", "policy_id", "entry_type", "event_description", "type", "type_sub_cat", "country", "init_country_level", "province", "target_country", "target_geog_level", "target_region", "target_province", "target_city", "target_other", "target_who_what", "target_direction", "travel_mechanism", "compliance", "enforcer", "link", "iso3", "iso2", "date_start", "date_end", "domestic_policy", "type_text", "index_high_est", "index_med_est", "index_low_est", "index_country_rank", "recorded_date", "date_announced"
+)
+c(0, 0, 0, 0, 0, 6756, 0, 0, 10610, 186, 11965, 17864, 16672, 17588, 18074, 9539, 14757, 12859, 457, 0, 146, 48, 69, 0, 12926, 0, 17942, 3872, 3872, 3872, 3872, 0, 14)
+c(1, 1, 1, 1, 1, 0.626203386079451, 1, 1, 0.412968905610269, 0.989708974217107, 0.337999336062853, 0.0116189000774594, 0.0775699900409428, 0.0268894544649774, 0, 0.472225296005311, 0.183523293128251, 0.28853601859024, 0.974715060307624, 1, 0.991922098041385, 0.997344251410866, 0.996182361403121, 1, 0.284829036184575, 1, 0.0073033086201173, 0.785769613809893, 0.785769613809893, 0.785769613809893, 0.785769613809893, 1, 0.999225406661503)
+c(6, 4, 6, 3, 6, 5, 4, 8, 3, 4, 13, 4, 3, 2, NA, 5, 7, 5, 20, 6, 1, 1, 1, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(10, 14, 9, 6463, 54, 140, 32, 31, 33, 1905, 62, 218, 1556, 286, NA, 61, 16, 103, 167, 219, 1821, 3, 2, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(18074, 13547, 2, 13858, 21, 108, 198, 5, 671, 558, 6, 40, 476, 296, 0, 13, 3, 78, 31, 178, 10052, 197, 196, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 18261, 18289, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 19872, 19872, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 18351, 18381, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 208, 229, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0.851499391390948, 19.969696969697, 53.8929254475804, 52.2349993234081, 50.5891676618901, 118.994930291508, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0.355605363255071, 11.4618113977747, 2.36410293130679, 1.93168843515652, 2.52120323572528, 53.8831313873642, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, 2, 48.2881986976457, 45.4169763090071, 37.1908139778481, 1, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 14, 52.4678771378979, 51.2447941968846, 49.7246742583905, 70, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 20, 53.5806187824825, 52.3057555608501, 51.110711776471, 124, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 28, 54.9836024149479, 53.4563836153193, 52.1274912597159, 169, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 85, 70.7421844688118, 57.5867493801265, 56.2595023940775, 194, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, "▂▁▁▁▇", "▆▇▁▁▁", "▅▇▁▁▁", "▁▂▇▆▁", "▁▁▂▇▂", "▂▅▃▅▇", NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1585373897, 1577750400)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1593992053, 1593907200)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1587891533, 1585353600)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 13850, 185)</p>
+<p>This file contains variables from the <a href='https://coronanet-project.org/'>CoronaNet government response project</a>, representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. For more detail on this data, you can see <a href='https://docs.google.com/document/d/1zvNMpwj0onFvUZ_gLl4RRjqS-clbHv3TIX6EOHofsME'>the codebook here</a>.
 The format of the data is in country-day-<code>record_id</code> format. Some
 <code>record_id</code> values have letters appended to indicate that the
 general policy category <code>type</code> also has a value for
