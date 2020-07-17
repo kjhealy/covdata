@@ -27,6 +27,24 @@ This report provides a weekly summary of deaths with coronavirus disease 2019 (C
 In this release, counts of deaths are provided by the race and Hispanic origin of the decedent.
 }
 \details{
+c("character", "character", "character", "numeric", "numeric", "numeric", "numeric")
+c("data_as_of", "state", "group", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
+c(0, 0, 0, 67, 67, 0, 0)
+c(1, 1, 1, 0.746212121212121, 0.746212121212121, 1, 1)
+c(10, 4, 5, NA, NA, NA, NA)
+c(10, 20, 45, NA, NA, NA, NA)
+c(0, 0, 0, NA, NA, NA, NA)
+c(1, 44, 6, NA, NA, NA, NA)
+c(0, 0, 0, NA, NA, NA, NA)
+c(NA, NA, NA, 1228.47208121827, 22.053807106599, 16.6651515151515, 16.6689393939394)
+c(NA, NA, NA, 5266.17607806518, 24.7388987311883, 24.1377116390695, 21.1545216070269)
+c(NA, NA, NA, 0, 0, 0.1, 0.1)
+c(NA, NA, NA, 34, 2.4, 1.8, 2.1)
+c(NA, NA, NA, 123, 11, 4.75, 6.3)
+c(NA, NA, NA, 650, 38.6, 16.875, 23.625)
+c(NA, NA, NA, 64073, 95.5, 93.1, 91)
+c(NA, NA, NA, "▇▁▁▁▁", "▇▂▂▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+
 The percent of deaths reported in this table are the total number of represent all deaths received and coded as of the date of analysis
 and do not represent all deaths that occurred in that period. Data are incomplete because of the lag in time between when the death occurred
 and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. \emph{This delay can range from 1 week to 8 weeks or more},

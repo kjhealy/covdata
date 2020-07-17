@@ -27,6 +27,24 @@ cdc_hospitalizations
 Courtesy of Bob Rudis's cdccovidview package
 }
 \details{
+c("character", "character", "character", "character", "character", "character", "numeric", "numeric")
+c("catchment", "network", "year", "mmwr_year", "mmwr_week", "age_category", "cumulative_rate", "weekly_rate")
+c(0, 0, 0, 0, 0, 0, 1836, 1836)
+c(1, 1, 1, 1, 1, 1, 0.6, 0.6)
+c(4, 3, 4, 4, 2, 3, NA, NA)
+c(14, 9, 4, 4, 2, 8, NA, NA)
+c(0, 0, 0, 0, 0, 0, NA, NA)
+c(15, 3, 1, 1, 30, 9, NA, NA)
+c(0, 0, 0, 0, 0, 0, NA, NA)
+c(NA, NA, NA, NA, NA, NA, 108.540777051561, 10.8326797385621)
+c(NA, NA, NA, NA, NA, NA, 177.971385145269, 19.4395350884378)
+c(NA, NA, NA, NA, NA, NA, 0, 0)
+c(NA, NA, NA, NA, NA, NA, 2.9, 0.5)
+c(NA, NA, NA, NA, NA, NA, 38.85, 4.2)
+c(NA, NA, NA, NA, NA, NA, 138.875, 12.675)
+c(NA, NA, NA, NA, NA, NA, 1684.1, 269.2)
+c(NA, NA, NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")
+
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted
 to track the COVID-19 pandemic in the United States. Data is

@@ -20,7 +20,17 @@ countries
 Convenience table of country names and their abbreviated names
 }
 \details{
-Produced from the ECDC tables in the covdata package
+c("character", "character", "character", "character")
+c("cname", "iso3", "iso2", "continent")
+c(0, 0, 2, 0)
+c(1, 1, 0.990697674418605, 1)
+c(4, 3, 2, 4)
+c(42, 3, 2, 13)
+c(0, 0, 0, 0)
+c(209, 209, 207, 6)
+c(0, 0, 0, 0)
+
+Produced from the ECDC tables in the covdata package.
 }
 \references{
 ISO 2: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2} ISO 3: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3}

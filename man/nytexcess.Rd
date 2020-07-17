@@ -3,7 +3,7 @@
 \docType{data}
 \name{nytexcess}
 \alias{nytexcess}
-\title{NYT Excess Mortality Estimates, current as of Thursday, July 16, 2020}
+\title{NYT Excess Mortality Estimates, current as of Friday, July 17, 2020}
 \format{
 A tibble with 6,712 rows and 12 columns
 \describe{
@@ -31,7 +31,29 @@ nytexcess
 All-cause mortality is widely used by demographers and other researchers to understand the full impact of deadly events, including epidemics, wars and natural disasters. The totals in this data include deaths from Covid-19 as well as those from other causes, likely including people who could not be treated or did not seek treatment for other conditions.
 }
 \details{
-expected deaths for each area based on historical data for the same time of year. These expected deaths are the basis for our excess death calculations, which estimate how many more people have died this year than in an average year.
+c("character", "character", "character", "character", "character", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("country", "placename", "frequency", "year", "baseline", "start_date", "end_date", "month", "week", "deaths", "expected_deaths", "excess_deaths")
+c(0, 4013, 0, 0, 6063, 1327, 1327, 0, 1177, 0, 6091, 6091)
+c(1, 0.402115613825983, 1, 1, 0.0966924910607867, 0.802294398092968, 0.802294398092968, 1, 0.824642431466031, 1, 0.0925208581644815, 0.0925208581644815)
+c(4, 4, 6, 4, 2, NA, NA, NA, NA, NA, NA, NA)
+c(14, 14, 7, 17, 27, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
+c(28, 28, 2, 14, 10, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, 14618, 14624, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, 18421, 18427, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, 17483, 17489, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, 1336, 1336, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 6.19293802145411, 24.8287262872629, 5121.71036948748, 5709.37037037037, 688.597423510467)
+c(NA, NA, NA, NA, NA, NA, NA, 3.37541192179776, 14.4895662554512, 7796.71395031462, 10323.2005127829, 2538.18227927627)
+c(NA, NA, NA, NA, NA, NA, NA, 1, 2, 48, 67, -4047)
+c(NA, NA, NA, NA, NA, NA, NA, 3, 12, 986, 1011, -99)
+c(NA, NA, NA, NA, NA, NA, NA, 6, 23, 1718.5, 1573, 8)
+c(NA, NA, NA, NA, NA, NA, NA, 9, 37, 8225, 7085, 410)
+c(NA, NA, NA, NA, NA, NA, NA, 12, 52, 80623, 60617, 26351)
+c(NA, NA, NA, NA, NA, NA, NA, "▇▆▅▅▆", "▇▇▆▆▅", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+
+Expected deaths for each area based on historical data for the same time of year. These expected deaths are the basis for our excess death calculations, which estimate how many more people have died this year than in an average year.
 
 The number of years used in the historical averages changes depending on what data is available, whether it is reliable and underlying demographic changes. See Data Sources for the years used to calculate the baselines. The baselines do not adjust for changes in age or other demographics, and they do not account for changes in total population.
 

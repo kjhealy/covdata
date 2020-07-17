@@ -19,7 +19,7 @@ A data frame with 4,037,280 rows and 9 variables:
 }
 }
 \source{
-Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-07-16
+Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-07-17
 }
 \usage{
 google_mobility
@@ -28,6 +28,28 @@ google_mobility
 Data from Google's Community Mobility Reports on relative changes in movement trends by location type.
 }
 \details{
+c("character", "character", "character", "character", "character", "character", "character", "Date", "numeric")
+c("country_region_code", "country_region", "sub_region_1", "sub_region_2", "iso3166_2", "census_fips_code", "type", "date", "pct_diff")
+c(6936, 0, 119880, 1706796, 2569692, 1705902, 0, 0, 1340233)
+c(0.998282011651409, 1, 0.970306741172274, 0.577241112828439, 0.363509095232434, 0.57746254904292, 1, 1, 0.668035657670511)
+c(2, 4, 3, 5, 4, 5, 5, NA, NA)
+c(2, 22, 74, 27, 6, 5, 11, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, NA, NA)
+c(134, 135, 1844, 1716, 1703, 2833, 6, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 18307, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 18455, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 18380, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 149, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, -12.6999573978503)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 31.7525934604164)
+c(NA, NA, NA, NA, NA, NA, NA, NA, -100)
+c(NA, NA, NA, NA, NA, NA, NA, NA, -32)
+c(NA, NA, NA, NA, NA, NA, NA, NA, -9)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 5)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 625)
+c(NA, NA, NA, NA, NA, NA, NA, NA, "▇▁▁▁▁")
+
 Location accuracy and the understanding of categorized places varies from region to region, so Google does not recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas). Regions or categories are omitted if Google does not have have sufficient statistically significant levels of data for it. Changes for each day are compared to a baseline value for that day of the week. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020. What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) we don’t show a change for the day. As a result, you may encounter empty fields for certain places and dates. We calculate these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population.
 }
 \author{

@@ -29,6 +29,23 @@ cdc_deaths_by_week
 Provisional Death Counts for Coronavirus Disease (COVID-19)
 }
 \details{
+c("Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("data_as_of", "start_week", "end_week", "covid_deaths", "total_deaths", "percent_expected_deaths", "pneumonia_deaths", "pneumonia_and_covid_deaths", "all_influenza_deaths_j09_j11", "pneumonia_influenza_and_covid_19_deaths")
+c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+c(18382, 18293, 18293, NA, NA, NA, NA, NA, NA, NA)
+c(18382, 18377, 18377, NA, NA, NA, NA, NA, NA, NA)
+c(18382, 18335, 18335, NA, NA, NA, NA, NA, NA, NA)
+c(1, 13, 13, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, 2655.46153846154, 54875.8461538462, 0.965384615384615, 4825, 1177, 447.769230769231, 6690.23076923077)
+c(NA, NA, NA, 4194.37332656073, 9864.46311975597, 0.17222153294596, 2217.1934962921, 1863.76286045194, 156.185335337089, 4292.62196786234)
+c(NA, NA, NA, 0, 24387, 0.45, 2219, 0, 58, 3553)
+c(NA, NA, NA, 0, 53940, 0.97, 3671, 0, 427, 4165)
+c(NA, NA, NA, 49, 56831, 0.97, 3692, 25, 494, 4275)
+c(NA, NA, NA, 2659, 57299, 0.99, 5598, 1220, 536, 7397)
+c(NA, NA, NA, 11864, 65676, 1.19, 9580, 5281, 619, 16272)
+c(NA, NA, NA, "▇▁▁▂▁", "▁▁▁▇▂", "▁▁▁▇▂", "▇▃▁▁▂", "▇▁▁▂▁", "▁▁▁▇▇", "▇▁▁▂▁")
+
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted
 to track the COVID-19 pandemic in the United States. Data is

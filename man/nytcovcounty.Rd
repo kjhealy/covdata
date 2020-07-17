@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovcounty}
 \alias{nytcovcounty}
-\title{NYT COVID-19 data for US counties, current as of Thursday, July 16, 2020}
+\title{NYT COVID-19 data for US counties, current as of Friday, July 17, 2020}
 \format{
-A tibble with 337,568 rows and 6 columns
+A tibble with 340,762 rows and 6 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{county}{County name (character)}
@@ -33,5 +33,28 @@ nytcovcounty
 }
 \description{
 A dataset containing US county-level data on COVID-19, collected by the New York Times.
+}
+\details{
+c("character", "character", "character", "Date", "numeric", "numeric")
+c("county", "state", "fips", "date", "cases", "deaths")
+c(0, 0, 3468, 0, 0, 0)
+c(1, 1, 0.989822808881272, 1, 1, 1)
+c(3, 4, 5, NA, NA, NA)
+c(33, 24, 5, NA, NA, NA)
+c(0, 0, 0, NA, NA, NA)
+c(1901, 55, 3167, NA, NA, NA)
+c(0, 0, 0, NA, NA, NA)
+c(NA, NA, NA, 18282, NA, NA)
+c(NA, NA, NA, 18459, NA, NA)
+c(NA, NA, NA, 18405, NA, NA)
+c(NA, NA, NA, 178, NA, NA)
+c(NA, NA, NA, NA, 532.256839084171, 27.3471220382555)
+c(NA, NA, NA, NA, 4264.0536727626, 363.078920573632)
+c(NA, NA, NA, NA, 0, 0)
+c(NA, NA, NA, NA, 7, 0)
+c(NA, NA, NA, NA, 33, 1)
+c(NA, NA, NA, NA, 159, 4)
+c(NA, NA, NA, NA, 225045, 22842)
+c(NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")
 }
 \keyword{datasets}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Thursday, July 16, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Friday, July 17, 2020}
 \format{
 A tibble with 14,112 rows and 5 columns
 \describe{
@@ -25,6 +25,28 @@ The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes r
 It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.
 }
 \details{
+c("character", "character", "Date", "numeric", "numeric")
+c("state", "group", "date", "cases", "deaths")
+c(0, 0, 0, 5710, 6827)
+c(1, 1, 1, 0.595379818594104, 0.516227324263039)
+c(2, 5, NA, NA, NA)
+c(2, 11, NA, NA, NA)
+c(0, 0, NA, NA, NA)
+c(56, 9, NA, NA, NA)
+c(0, 0, NA, NA, NA)
+c(NA, NA, 18364, NA, NA)
+c(NA, NA, 18458, NA, NA)
+c(NA, NA, 18411, NA, NA)
+c(NA, NA, 28, NA, NA)
+c(NA, NA, NA, 5595.28957391097, 334.80370624571)
+c(NA, NA, NA, 21286.3557447174, 910.076903782863)
+c(NA, NA, NA, 0, 0)
+c(NA, NA, NA, 146, 7)
+c(NA, NA, NA, 906, 36)
+c(NA, NA, NA, 4605.25, 209)
+c(NA, NA, NA, 404006, 8569)
+c(NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")
+
 The \code{group} variable is coded as follows:\tabular{l}{
    groups \cr
    White \cr

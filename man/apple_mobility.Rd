@@ -5,7 +5,7 @@
 \alias{apple_mobility}
 \title{Apple Mobility Data}
 \format{
-A data frame with 667,000 rows and 8 variables:
+A data frame with 670,625 rows and 8 variables:
 \describe{
 \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
 \item{\code{region}}{character Name of geographical unit.}
@@ -27,6 +27,28 @@ apple_mobility
 Data from Apple Maps on relative changes in mobility in various cities and countries.
 }
 \details{
+c("character", "character", "character", "character", "character", "character", "Date", "numeric")
+c("geo_type", "region", "transportation_type", "alternative_name", "sub_region", "country", "date", "index")
+c(0, 0, 0, 535020, 156140, 28305, 0, 14387)
+c(1, 1, 1, 0.202206896551724, 0.767172413793103, 0.957793103448276, 1, 0.978546877912395)
+c(4, 4, 7, 2, 4, 5, NA, NA)
+c(14, 48, 7, 85, 33, 20, NA, NA)
+c(0, 0, 0, 0, 0, 0, NA, NA)
+c(4, 2325, 3, 519, 162, 47, NA, NA)
+c(0, 0, 0, 0, 0, 0, NA, NA)
+c(NA, NA, NA, NA, NA, NA, 18274, NA)
+c(NA, NA, NA, NA, NA, NA, 18458, NA)
+c(NA, NA, NA, NA, NA, NA, 18366, NA)
+c(NA, NA, NA, NA, NA, NA, 185, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 111.515419040043)
+c(NA, NA, NA, NA, NA, NA, NA, 56.8382748456252)
+c(NA, NA, NA, NA, NA, NA, NA, 2.43)
+c(NA, NA, NA, NA, NA, NA, NA, 79.3)
+c(NA, NA, NA, NA, NA, NA, NA, 105.25)
+c(NA, NA, NA, NA, NA, NA, NA, 133.72)
+c(NA, NA, NA, NA, NA, NA, NA, 1497.29)
+c(NA, NA, NA, NA, NA, NA, NA, "▇▁▁▁▁")
+
 Data made available by Apple, Inc. at \url{https://www.apple.com/covid19/mobility}, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
 }
 \references{

@@ -31,6 +31,28 @@ nchs_sas
 Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.
 }
 \details{
+c("character", "character", "character", "Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("state", "sex", "age_group", "data_as_of", "start_week", "end_week", "covid_19_deaths", "total_deaths", "pneumonia_deaths", "pneumonia_and_covid_19_deaths", "influenza_deaths", "pneumonia_influenza_or_covid_19_deaths")
+c(0, 0, 0, 0, 0, 0, 277, 130, 330, 294, 533, 359)
+c(1, 1, 1, 1, 1, 1, 0.796622613803231, 0.904552129221733, 0.757709251101322, 0.784140969162996, 0.608663729809104, 0.736417033773862)
+c(4, 3, 8, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(20, 7, 17, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(54, 4, 12, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, 18458, 18293, 18454, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, 18458, 18293, 18454, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, 18458, 18293, 18454, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, 1, 1, 1, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, 670.403686635945, 6757.91964285714, 762.767441860465, 293.623595505618, 45.1628468033776, 1230.46759720837)
+c(NA, NA, NA, NA, NA, NA, 5052.61403638992, 53323.2143413217, 5568.38288671158, 2195.24895456669, 301.014963868983, 8858.98723771183)
+c(NA, NA, NA, NA, NA, NA, 0, 0, 0, 0, 0, 0)
+c(NA, NA, NA, NA, NA, NA, 0, 70, 0, 0, 0, 12)
+c(NA, NA, NA, NA, NA, NA, 18, 429, 47.5, 0, 0, 76)
+c(NA, NA, NA, NA, NA, NA, 139, 2248.75, 247.5, 59, 17, 385)
+c(NA, NA, NA, NA, NA, NA, 121374, 1387325, 131332, 52431, 6519, 205837)
+c(NA, NA, NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+
 Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis,
 and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
 between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.

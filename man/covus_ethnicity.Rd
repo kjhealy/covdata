@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, July 16, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Friday, July 17, 2020}
 \format{
 A tibble with 4,704 rows and 5 columns
 \describe{
@@ -25,6 +25,28 @@ The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes r
 It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.
 }
 \details{
+c("character", "character", "Date", "numeric", "numeric")
+c("state", "group", "date", "cases", "deaths")
+c(0, 0, 0, 1337, 1577)
+c(1, 1, 1, 0.71577380952381, 0.664753401360544)
+c(2, 7, NA, NA, NA)
+c(2, 12, NA, NA, NA)
+c(0, 0, NA, NA, NA)
+c(56, 3, NA, NA, NA)
+c(0, 0, NA, NA, NA)
+c(NA, NA, 18364, NA, NA)
+c(NA, NA, 18458, NA, NA)
+c(NA, NA, 18411, NA, NA)
+c(NA, NA, 28, NA, NA)
+c(NA, NA, NA, 11157.9432729433, 727.54045410937)
+c(NA, NA, NA, 17837.8168706455, 1824.3912644515)
+c(NA, NA, NA, 0, 0)
+c(NA, NA, NA, 1346.5, 29)
+c(NA, NA, NA, 5009, 113)
+c(NA, NA, NA, 13046, 543)
+c(NA, NA, NA, 261534, 18391)
+c(NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")
+
 The \code{group} variable is coded as "Hispanic", "Non-Hispanic", or "Unknown". Hispanics may be of any race. State-level counts should
 be handled with care, given the widely varying population distribution of people of different ethnic backgrounds by state.
 }

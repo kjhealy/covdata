@@ -29,6 +29,24 @@ National Syndromic Surveillance Program (NSSP):
 Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
 }
 \details{
+c("character", "character", "character", "character", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("total_ed_visits", "visit_type", "region", "source", "week", "num_fac", "visits", "pct_visits", "year")
+c(0, 0, 0, 0, 0, 0, 0, 0, 0)
+c(1, 1, 1, 1, 1, 1, 1, 1, 1)
+c(7, 3, 8, 21, NA, NA, NA, NA, NA)
+c(7, 3, 8, 21, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, NA, NA, NA, NA, NA)
+c(27, 2, 1, 1, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, 26.037037037037, 3346.88888888889, 41521.6666666667, 0.0201296296296296, 2019.51851851852)
+c(NA, NA, NA, NA, 19.8113393896954, 48.9707909347998, 16344.2478093313, 0.0102571581931771, 0.504348664241606)
+c(NA, NA, NA, NA, 1, 3249, 17639, 0.008, 2019)
+c(NA, NA, NA, NA, 7.25, 3329.5, 31216, 0.014, 2019)
+c(NA, NA, NA, NA, 14, 3352, 39183.5, 0.0175, 2020)
+c(NA, NA, NA, NA, 45.75, 3389.5, 50532, 0.022, 2020)
+c(NA, NA, NA, NA, 52, 3406, 86088, 0.05, 2020)
+c(NA, NA, NA, NA, "▇▂▁▂▇", "▃▁▆▃▇", "▅▇▃▂▁", "▇▆▂▁▂", "▇▁▁▁▇")
+
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted
 to track the COVID-19 pandemic in the United States. Data is

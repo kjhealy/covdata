@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Thursday, July 16, 2020}
+\title{COVID-19 data for the USA, current as of Friday, July 17, 2020}
 \format{
-A tibble with 125,953 rows and 7 columns
+A tibble with 126,905 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -26,6 +26,28 @@ covus
 A dataset containing US state-level data on COVID-19
 }
 \details{
+c("character", "character", "character", "character", "character", "Date", "numeric")
+c("state", "fips", "data_quality_grade", "measure", "measure_label", "date", "count")
+c(0, 0, 18717, 0, 0, 0, 73451)
+c(1, 1, 0.852511721366376, 1, 1, 1, 0.421212718175013)
+c(2, 2, 1, 5, 6, NA, NA)
+c(2, 2, 2, 24, 54, NA, NA)
+c(0, 0, 0, 0, 0, NA, NA)
+c(56, 56, 6, 17, 17, NA, NA)
+c(0, 0, 0, 0, 0, NA, NA)
+c(NA, NA, NA, NA, NA, 18283, NA)
+c(NA, NA, NA, NA, NA, 18459, NA)
+c(NA, NA, NA, NA, NA, 18393, NA)
+c(NA, NA, NA, NA, NA, 177, NA)
+c(NA, NA, NA, NA, NA, NA, 62202.1988064504)
+c(NA, NA, NA, NA, NA, NA, 261627.828909367)
+c(NA, NA, NA, NA, NA, NA, 0)
+c(NA, NA, NA, NA, NA, NA, 151)
+c(NA, NA, NA, NA, NA, NA, 1294.5)
+c(NA, NA, NA, NA, NA, NA, 17204)
+c(NA, NA, NA, NA, NA, NA, 5915508)
+c(NA, NA, NA, NA, NA, NA, "▇▁▁▁▁")
+
 The measures tracked by the COVID tracking project are as follows:\tabular{ll}{
    measure \tab measure_label \cr
    positive \tab Positive Tests \cr

@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovus}
 \alias{nytcovus}
-\title{NYT COVID-19 data for the US, current as of Thursday, July 16, 2020}
+\title{NYT COVID-19 data for the US, current as of Friday, July 17, 2020}
 \format{
-A tibble with 177 rows and 3 columns
+A tibble with 178 rows and 3 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{cases}{Cumulative N  reported cases}
@@ -21,5 +21,23 @@ nytcovus
 }
 \description{
 A dataset containing US national-level data on COVID-19, collected by the New York Times.
+}
+\details{
+c("Date", "numeric", "numeric")
+c("date", "cases", "deaths")
+c(0, 0, 0)
+c(1, 1, 1)
+c(18282, NA, NA)
+c(18459, NA, NA)
+c(18370.5, NA, NA)
+c(178, NA, NA)
+c(NA, 1018942.96067416, 52408.6235955056)
+c(NA, 1059845.24914492, 52264.0097084124)
+c(NA, 1, 0)
+c(NA, 248.75, 12.75)
+c(NA, 744929, 39419)
+c(NA, 1836517, 105924.5)
+c(NA, 3588462, 138268)
+c(NA, "▇▂▃▂▁", "▇▁▂▂▃")
 }
 \keyword{datasets}

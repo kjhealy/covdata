@@ -7,7 +7,11 @@
 #'   \item{\code{iso2}}{character ISO 2 designation}
 #'   \item{\code{continent}}{Continent}
 #'}
-#' @details Produced from the ECDC tables in the covdata package
+#' @details
+#'
+#'  `r countries %>% dplyr::ungroup() %>% skimr::skim()`
+#'
+#' Produced from the ECDC tables in the covdata package.
 #' @author Kieran Healy
 #' @references ISO 2: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2} ISO 3: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3}
 "countries"
@@ -27,6 +31,10 @@
 #'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this date}
 #'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this date}
 #' }
+#' @details
+#'
+#' `r covnat %>% dplyr::ungroup() %>% skimr::skim()`
+#'
 #' @source \url{http://ecdc.europa.eu/}
 "covnat"
 
@@ -44,7 +52,11 @@
 #' \item{count}{Count of measure}
 #' \item{\code{measure_label}}{character Outcome measure, suitable for use as a plot label}
 #' }
-#' @details The measures tracked by the COVID tracking project are as follows:
+#' @details
+#'
+#' `r skimr::skim(covus)`
+#'
+#' The measures tracked by the COVID tracking project are as follows:
 #'
 #' `r knitr::kable(unique(covus[, c("measure", "measure_label")]))`
 #'
@@ -68,7 +80,11 @@
 #'   \item{\code{cases}}{integer Total cases, count}
 #'   \item{\code{deaths}}{integer Total deaths, count}
 #'}
-#' @details The `group` variable is coded as follows:
+#' @details
+#'
+#' `r skimr::skim(covus_race)`
+#'
+#' The `group` variable is coded as follows:
 #'
 #' `r knitr::kable(unique(covus_race[,"group"]), col.names = c("groups"))`
 #'
@@ -90,7 +106,11 @@
 #'   \item{\code{cases}}{integer Total cases, count}
 #'   \item{\code{deaths}}{integer Total deaths, count}
 #'}
-#' @details The `group` variable is coded as "Hispanic", "Non-Hispanic", or "Unknown". Hispanics may be of any race. State-level counts should
+#' @details
+#'
+#' `r skimr::skim(covus_ethnicity)`
+#'
+#' The `group` variable is coded as "Hispanic", "Non-Hispanic", or "Unknown". Hispanics may be of any race. State-level counts should
 #' be handled with care, given the widely varying population distribution of people of different ethnic backgrounds by state.
 #' @author Kieran Healy
 #' @source https://covidtracking.com/race
@@ -110,6 +130,10 @@
 #' \item{cases}{Cumulative N reported cases}
 #' \item{deaths}{Cumulative N reported deaths}
 #' }
+#' @details
+#'
+#' `r skimr::skim(nytcovcounty)`
+#'
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data}
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
 #' For county data, note in particular:
@@ -133,6 +157,9 @@
 #' \item{cases}{Cumulative N  reported cases}
 #' \item{deaths}{Cumulative N reported deaths}
 #' }
+#' @details
+#'
+#' `r skimr::skim(nytcovstate)`
 #'
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data}.
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
@@ -148,6 +175,9 @@
 #' \item{cases}{Cumulative N  reported cases}
 #' \item{deaths}{Cumulative N reported deaths}
 #' }
+#' @details
+#'
+#' `r skimr::skim(nytcovus)`
 #'
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data}.
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
@@ -171,7 +201,11 @@
 #'   \item{\code{excess_deaths}}{integer The number of deaths minus the expected deaths.}
 #'   \item{\code{baseline}}{character The years used to calculate expected_deaths.}
 #'}
-#' @details expected deaths for each area based on historical data for the same time of year. These expected deaths are the basis for our excess death calculations, which estimate how many more people have died this year than in an average year.
+#' @details
+#'
+#' `r skimr::skim(nytexcess)`
+#'
+#' Expected deaths for each area based on historical data for the same time of year. These expected deaths are the basis for our excess death calculations, which estimate how many more people have died this year than in an average year.
 #'
 #' The number of years used in the historical averages changes depending on what data is available, whether it is reliable and underlying demographic changes. See Data Sources for the years used to calculate the baselines. The baselines do not adjust for changes in age or other demographics, and they do not account for changes in total population.
 #'
@@ -194,7 +228,11 @@
 #'   \item{\code{cumulative_rate}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{weekly_rate}}{double COLUMN_DESCRIPTION}
 #'}
-#' @details The U.S. Centers for Disease Control provides weekly
+#' @details
+#'
+#' `r skimr::skim(cdc_hospitalizations)`
+#'
+#' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
 #' retrieved using the cdccovidview package from both COVIDView
@@ -222,7 +260,11 @@
 #'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_influenza_and_covid_19_deaths}}{integer COLUMN_DESCRIPTION}
 #'}
-#' @details The U.S. Centers for Disease Control provides weekly
+#' @details
+#'
+#' `r skimr::skim(cdc_deaths_by_week)`
+#'
+#' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
 #' retrieved using the cdccovidview package from both COVIDView
@@ -249,7 +291,11 @@
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
-#' @details The U.S. Centers for Disease Control provides weekly
+#' @details
+#'
+#' `r skimr::skim(cdc_deaths_by_age)`
+#'
+#' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
 #' retrieved using the cdccovidview package from both COVIDView
@@ -276,7 +322,11 @@
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
-#' @details The U.S. Centers for Disease Control provides weekly
+#' @details
+#'
+#' `r skimr::skim(cdc_deaths_by_sex)`
+#'
+#' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
 #' retrieved using the cdccovidview package from both COVIDView
@@ -320,7 +370,11 @@
 #' \item{\code{name}}{character Network name}
 #' \item{\code{area}}{character Area}
 #' }
-#' @details The Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+#' @details T
+#'
+#' `r skimr::skim(cdc_catchments)`
+#'
+#' he Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
 #'
 #' `r knitr::kable(cdc_catchments)`
 #'
@@ -344,7 +398,11 @@
 #'   \item{\code{source}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{year}}{integer COLUMN_DESCRIPTION}
 #'}
-#' @details The U.S. Centers for Disease Control provides weekly
+#' @details
+#'
+#' `r skimr::skim(nssp_covid_er_nat)`
+#'
+#' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
 #' retrieved using the cdccovidview package from both COVIDView
@@ -371,7 +429,11 @@
 #'   \item{\code{source}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{year}}{integer COLUMN_DESCRIPTION}
 #'}
-#' @details The U.S. Centers for Disease Control provides weekly
+#' @details
+#'
+#' `r skimr::skim(nssp_covid_er_reg)`
+#'
+#' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
 #' retrieved using the cdccovidview package from both COVIDView
@@ -413,6 +475,12 @@
 #'
 #' `r knitr::kable(stmf_country_years(stmf))`
 #'
+#' Variables
+#'
+#' `r skimr::skim(stmf)`
+#'
+
+#'
 #' @author Kieran Healy
 #' @source Human Mortality Database, \url{http://mortality.org}
 #' @references "Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}
@@ -432,7 +500,10 @@
 #'   \item{\code{date}}{double Date in yyyy-mm-dddd format}
 #'   \item{\code{index}}{double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.}
 #'}
-#' @details Data made available by Apple, Inc. at \url{https://www.apple.com/covid19/mobility}, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
+#' @details
+#' `r skimr::skim(apple_mobility)`
+#'
+#' Data made available by Apple, Inc. at \url{https://www.apple.com/covid19/mobility}, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
 #' @author Kieran Healy
 #' @source https://www.apple.com/covid19/mobility
 #' @references See https://www.apple.com/covid19/mobility for detailed terms of use.
@@ -454,7 +525,11 @@
 #'   \item{\code{type}}{character Type of location. Values are retail, grocery (and pharmacy), parts, transit (hubs/stations), workplaces, and residential}
 #'   \item{\code{pct_diff}}{integer Percent change from baseline activity}
 #'}
-#' @details Location accuracy and the understanding of categorized places varies from region to region, so Google does not recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas). Regions or categories are omitted if Google does not have have sufficient statistically significant levels of data for it. Changes for each day are compared to a baseline value for that day of the week. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020. What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) we don’t show a change for the day. As a result, you may encounter empty fields for certain places and dates. We calculate these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population.
+#' @details
+#'
+#' `r skimr::skim(google_mobility)`
+#'
+#' Location accuracy and the understanding of categorized places varies from region to region, so Google does not recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas). Regions or categories are omitted if Google does not have have sufficient statistically significant levels of data for it. Changes for each day are compared to a baseline value for that day of the week. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020. What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) we don’t show a change for the day. As a result, you may encounter empty fields for certain places and dates. We calculate these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population.
 #' @author Kieran Healy
 #' @source Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: `r Sys.Date()`
 "google_mobility"
@@ -497,7 +572,11 @@
 #'   \item{\code{iso3}}{character 3-digit ISO country code}
 #'   \item{\code{iso2}}{character 2-digit ISO country code}
 #'}
-#' @details This file contains variables from the [CoronaNet government response project](https://coronanet-project.org/), representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. For more detail on this data, you can see [the codebook here](https://docs.google.com/document/d/1zvNMpwj0onFvUZ_gLl4RRjqS-clbHv3TIX6EOHofsME).
+#' @details
+#'
+#' `r skimr::skim(coronanet)`
+#'
+#' This file contains variables from the [CoronaNet government response project](https://coronanet-project.org/), representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. For more detail on this data, you can see [the codebook here](https://docs.google.com/document/d/1zvNMpwj0onFvUZ_gLl4RRjqS-clbHv3TIX6EOHofsME).
 #' The format of the data is in country-day-`record_id` format. Some
 #' `record_id` values have letters appended to indicate that the
 #' general policy category `type` also has a value for
@@ -543,7 +622,11 @@
 #'   \item{\code{nhopi}}{double Race alone: Native Hawaiian and Other Pacific Islander}
 #'   \item{\code{tom}}{double Race alone: Two or more races}
 #'}
-#' @details U.S. Census estimates. Be aware of the US Census classifications of Race and Ethnicity. For the estimated total population for each State, jointly filter on  `totsex` in `sex_id` and `tothisp` in `hisp_id`  and then select `pop`.
+#' @details
+#'
+#' `r skimr::skim(uspop)`
+#'
+#' U.S. Census estimates. Be aware of the US Census classifications of Race and Ethnicity. For the estimated total population for each State, jointly filter on  `totsex` in `sex_id` and `tothisp` in `hisp_id`  and then select `pop`.
 #' @author Kieran Healy
 #' @source https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-detail.html
 #' @references \url{https://www2.census.gov/programs-surveys/popest/tables/2010-2018/state/asrh/PEPSR6H.pdf}
@@ -566,7 +649,11 @@
 #'   \item{\code{influenza_deaths}}{integer Influenza Deaths (ICD-10 codes J09-J11)}
 #'   \item{\code{pneumonia_influenza_or_covid_19_deaths}}{integer Deaths with Pneumonia, Influenza, or COVID-19 (ICD-10 codes U07.1 or J09-J18.9)}
 #'}
-#' @details Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis,
+#' @details
+#'
+#' `r skimr::skim(nchs_sas)`
+#'
+#' Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis,
 #' and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
 #' between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
 #' This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
@@ -589,7 +676,11 @@
 #'   \item{\code{uw_dist_pop_pct}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{wt_dist_pop_pct}}{double COLUMN_DESCRIPTION}
 #'}
-#' @details The percent of deaths reported in this table are the total number of represent all deaths received and coded as of the date of analysis
+#' @details
+#'
+#' `r skimr::skim(nchs_wss)`
+#'
+#' The percent of deaths reported in this table are the total number of represent all deaths received and coded as of the date of analysis
 #' and do not represent all deaths that occurred in that period. Data are incomplete because of the lag in time between when the death occurred
 #' and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. *This delay can range from 1 week to 8 weeks or more*,
 #' depending on the jurisdiction, age, and cause of death. Provisional counts reported here track approximately 1–2 weeks behind other published data sources
@@ -622,7 +713,11 @@
 #'   \item{\code{death_yn}}{character Death status}
 #'   \item{\code{medcond_yn}}{character Presence of underlying comorbidity or disease}
 #'}
-#' @details Each row is a deidentified patient. These deidentified data include demographic characteristics, exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities. All data elements can be found on the COVID-19 case report form located at `www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf`.
+#' @details
+#'
+#' `r skimr::skim(nchs_pud)`
+#'
+#' Each row is a deidentified patient. These deidentified data include demographic characteristics, exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities. All data elements can be found on the COVID-19 case report form located at `www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf`.
 #' The COVID-19 case surveillance data are dynamic; case reports can be modified at any time by the reporting jurisdiction as new information becomes available (i.e., data are subject to change). Furthermore, reporting jurisdictions may report cases late. Version updates to the detailed and limited datasets will be available for request once a month.
 #' The datasets will include all cases with an initial report date of case to CDC at least 30 days prior to the creation of the previously updated datasets. This month lag will allow case reporting to be stabilized and ensure that time-dependent outcome data, including death, are accurately captured.
 #' Questions that have been left unanswered (blank) on the case report form are re-classified to an Unknown value, if applicable to the question. For example, in the question “Was the patient hospitalized?”, where the possible answer choices include “Yes”, “No”, or “Unknown”, the missing value is re-coded to the Unknown answer option if the respondent did not answer the question.

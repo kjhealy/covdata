@@ -36,6 +36,24 @@ uspop
 Population estimates for US States as of July 1st 2018
 }
 \details{
+c("character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("state", "state_abbr", "statefips", "region_name", "division_name", "sex_id", "sex", "hisp_id", "hisp_label", "fips", "pop", "white", "black", "amind", "asian", "nhopi", "tom")
+c(0, 9, 0, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+c(1, 0.980392156862745, 1, 0.980392156862745, 0.980392156862745, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+c(4, 2, 2, 4, 7, 4, 4, 4, 5, 11, NA, NA, NA, NA, NA, NA, NA)
+c(20, 2, 2, 9, 18, 6, 10, 7, 12, 11, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
+c(51, 50, 51, 4, 9, 3, 3, 3, 3, 51, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 2851132.32244009, 2179861.40305011, 381736.984749455, 36143.9738562092, 168458.387799564, 6966.60566448802, 77964.9673202614)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 4198641.26163193, 3116129.24695129, 644380.662866089, 65036.8342659081, 515557.14119709, 18657.1753142485, 131251.15699839)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 6154, 5120, 260, 161, 79, 23, 455)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 386961.5, 296294, 11907, 6103.5, 5045.5, 669, 12091)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1349442, 1088503, 80714, 15273, 26484, 2029, 33757)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 3558480, 2759335.5, 486281.5, 35770.5, 140424.5, 5063.5, 98669.5)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 39557045, 28531740, 3673855, 651076, 6063600, 199872, 1554757)
+c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+
 U.S. Census estimates. Be aware of the US Census classifications of Race and Ethnicity. For the estimated total population for each State, jointly filter on  \code{totsex} in \code{sex_id} and \code{tothisp} in \code{hisp_id}  and then select \code{pop}.
 }
 \references{

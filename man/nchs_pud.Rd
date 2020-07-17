@@ -30,6 +30,20 @@ nchs_pud
 Deidentified patient-level data reported to U.S. states and autonomous reporting entities, including New York City and the District of Columbia (D.C.), as well as U.S. territories and states.
 }
 \details{
+c("character", "character", "character", "character", "character", "character", "character", "character", "Date", "Date", "Date")
+c("current_status", "sex", "age_group", "race_ethnicity", "hosp_yn", "icu_yn", "death_yn", "medcond_yn", "cdc_report_dt", "pos_spec_dt", "onset_dt")
+c(0, 15, 38, 9, 0, 0, 0, 0, 0, 1052553, 969687)
+c(1, 0.999991423499041, 0.999978272864237, 0.999994854099425, 1, 1, 1, 1, 1, 0.398185212397046, 0.445565234295712)
+c(8, 4, 6, 7, 2, 2, 2, 2, NA, NA, NA)
+c(9, 7, 8, 28, 7, 7, 7, 7, NA, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA)
+c(2, 4, 10, 8, 3, 3, 3, 3, NA, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 18262, 18265, 18262)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 18424, 18437, 18439)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 18383, 18370, 18368)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 116, 137, 178)
+
 Each row is a deidentified patient. These deidentified data include demographic characteristics, exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities. All data elements can be found on the COVID-19 case report form located at \code{www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf}.
 The COVID-19 case surveillance data are dynamic; case reports can be modified at any time by the reporting jurisdiction as new information becomes available (i.e., data are subject to change). Furthermore, reporting jurisdictions may report cases late. Version updates to the detailed and limited datasets will be available for request once a month.
 The datasets will include all cases with an initial report date of case to CDC at least 30 days prior to the creation of the previously updated datasets. This month lag will allow case reporting to be stabilized and ensure that time-dependent outcome data, including death, are accurately captured.

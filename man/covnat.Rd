@@ -3,9 +3,9 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Thursday, July 16, 2020}
+\title{International COVID-19 cases and deaths, current as of Friday, July 17, 2020}
 \format{
-A tibble with 30,067 rows and 8 columns
+A tibble with 30,276 rows and 8 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{cname}{Name of country (character)}
@@ -25,5 +25,28 @@ covnat
 }
 \description{
 A dataset containing national-level ECDC data on COVID-19
+}
+\details{
+c("character", "character", "Date", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("cname", "iso3", "date", "cases", "deaths", "pop", "cu_cases", "cu_deaths")
+c(0, 0, 0, 0, 0, 0, 0, 0)
+c(1, 1, 1, 1, 1, 1, 1, 1)
+c(4, 3, NA, NA, NA, NA, NA, NA)
+c(42, 3, NA, NA, NA, NA, NA, NA)
+c(0, 0, NA, NA, NA, NA, NA, NA)
+c(209, 209, NA, NA, NA, NA, NA, NA)
+c(0, 0, NA, NA, NA, NA, NA, NA)
+c(NA, NA, 18261, NA, NA, NA, NA, NA)
+c(NA, NA, 18460, NA, NA, NA, NA, NA)
+c(NA, NA, 18388, NA, NA, NA, NA, NA)
+c(NA, NA, 200, NA, NA, NA, NA, NA)
+c(NA, NA, NA, 455.397146254459, 19.4768463469415, 45600255.6552715, 21709.3418549346, 1200.7120821773)
+c(NA, NA, NA, 2746.46839512866, 120.11196136274, 164524974.247146, 131767.69246064, 7126.91580541081)
+c(NA, NA, NA, -29726, -1918, 815, 0, 0)
+c(NA, NA, NA, 0, 0, 1641164, 18, 0)
+c(NA, NA, NA, 5, 0, 8544527, 336, 7)
+c(NA, NA, NA, 83, 2, 30417858, 3910.5, 86)
+c(NA, NA, NA, 76930, 4928, 1433783692, 3576221, 138358)
+c(NA, NA, NA, "▁▇▁▁▁", "▁▇▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
 }
 \keyword{datasets}

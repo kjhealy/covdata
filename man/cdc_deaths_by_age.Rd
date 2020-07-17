@@ -29,6 +29,28 @@ cdc_deaths_by_age
 Provisional Death Counts for Coronavirus Disease (COVID-19)
 }
 \details{
+c("character", "Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("age_group", "data_as_of", "start_week", "end_week", "covid_deaths", "total_deaths", "percent_expected_deaths", "pneumonia_deaths", "pneumonia_and_covid_deaths", "all_influenza_deaths_j09_j11")
+c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+c(5, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(10, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(12, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
+c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
+c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
+c(NA, 1, 1, 1, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, 5753.5, 118897.666666667, 0.97, 10454.1666666667, 2550.16666666667, 970.166666666667)
+c(NA, NA, NA, NA, 9877.31491393744, 202377.065266494, 0, 18036.2489187915, 4387.92646895657, 1618.89551761987)
+c(NA, NA, NA, NA, 2, 712, 0.97, 33, 0, 11)
+c(NA, NA, NA, NA, 30.25, 5675.25, 0.97, 109, 12.5, 40.75)
+c(NA, NA, NA, NA, 1211.5, 28460, 0.97, 1799.5, 491.5, 358.5)
+c(NA, NA, NA, NA, 7918.25, 149341.5, 0.97, 14114.25, 3515.75, 1222.75)
+c(NA, NA, NA, NA, 34521, 713386, 0.97, 62725, 15301, 5821)
+c(NA, NA, NA, NA, "▇▃▁▁▁", "▇▂▁▁▁", "▁▁▇▁▁", "▇▃▁▁▁", "▇▃▁▁▁", "▇▃▁▁▁")
+
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted
 to track the COVID-19 pandemic in the United States. Data is

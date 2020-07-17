@@ -67,6 +67,31 @@ Countries and years covered in the dataset:\tabular{llllllllllllllllllllllllllll
    Switzerland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    United States \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
 }
+
+
+Variables
+
+c("character", "character", "character", "character", "character", "character", "character", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
+c("country_code", "cname", "iso2", "continent", "iso3", "sex", "age_group", "approx_date", "year", "week", "split", "split_sex", "forecast", "death_count", "death_rate", "deaths_total", "rate_total")
+c(0, 0, 24165, 43545, 43545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+c(1, 1, 0.931224385245902, 0.876067281420765, 0.876067281420765, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+c(3, 5, 2, 4, 3, 1, 3, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(7, 17, 2, 13, 3, 1, 5, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(25, 25, 23, 3, 21, 3, 5, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 7311, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 18441, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 14983, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, 1586, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 2009.95803449454, 26.1465590846995, 0.128457991803279, 0.0176457194899818, 0.112107240437158, 445.676804417122, 0.0483249726457555, 2228.38402208561, 0.00957375072944008)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 6.41212034091397, 15.0189783467693, 0.334599543908441, 0.131660158775577, 0.3154987961569, 1229.37683331503, 0.0641938680490415, 5207.06503588317, 0.00239789804497262)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 1990, 1, 0, 0, 0, 0, 0, 2, 0.000657914772427258)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 2005, 13, 0, 0, 0, 24.4278845149905, 0.00175630952390428, 467, 0.00820765870446905)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 2011, 26, 0, 0, 0, 146, 0.0176597277244164, 912, 0.00928301159927633)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 2015, 39, 0, 0, 0, 339, 0.0635147695905718, 1646, 0.0106565699230333)
+c(NA, NA, NA, NA, NA, NA, NA, NA, 2020, 52, 1, 1, 1, 24683.8766956658, 0.575226288732232, 77737, 0.0249402392761819)
+c(NA, NA, NA, NA, NA, NA, NA, NA, "▁▃▇▇▇", "▇▇▇▇▇", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▂▁▁▁", "▇▁▁▁▁", "▁▇▃▁▁")
 }
 \references{
 "Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}
