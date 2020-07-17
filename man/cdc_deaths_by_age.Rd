@@ -66,14 +66,16 @@ Table: Data summary\tabular{ll}{
    pneumonia_deaths \tab 0 \tab 1 \tab 10454.17 \tab 18036.25 \tab 33.00 \tab 109.00 \tab 1799.50 \tab 14114.25 \tab 62725.00 \tab ▇▃▁▁▁ \cr
    pneumonia_and_covid_deaths \tab 0 \tab 1 \tab 2550.17 \tab 4387.93 \tab 0.00 \tab 12.50 \tab 491.50 \tab 3515.75 \tab 15301.00 \tab ▇▃▁▁▁ \cr
    all_influenza_deaths_j09_j11 \tab 0 \tab 1 \tab 970.17 \tab 1618.90 \tab 11.00 \tab 40.75 \tab 358.50 \tab 1222.75 \tab 5821.00 \tab ▇▃▁▁▁ \cr
-   The U.S. Centers for Disease Control provides weekly \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   summary and interpretation of key indicators that have been adapted \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   to track the COVID-19 pandemic in the United States. Data is \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   retrieved using the cdccovidview package from both COVIDView \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   (\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html}) \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   and COVID-NET \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   (\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}). Please see the indicated reference for all the caveats and precise meanings for each field. \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
 }
+
+
+The U.S. Centers for Disease Control provides weekly
+summary and interpretation of key indicators that have been adapted
+to track the COVID-19 pandemic in the United States. Data is
+retrieved using the cdccovidview package from both COVIDView
+(\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html})
+and COVID-NET
+(\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}). Please see the indicated reference for all the caveats and precise meanings for each field.
 }
 \references{
 \url{https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&bom=true&format=true}

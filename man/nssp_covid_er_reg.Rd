@@ -59,14 +59,16 @@ Table: Data summary\tabular{ll}{
    visits \tab 0 \tab 1 \tab 4164.87 \tab 4028.53 \tab 279 \tab 1596.00 \tab 2780.00 \tab 4723.75 \tab 23345.00 \tab ▇▂▁▁▁ \cr
    pct_visits \tab 0 \tab 1 \tab 0.02 \tab 0.01 \tab 0 \tab 0.01 \tab 0.02 \tab 0.02 \tab 0.11 \tab ▇▂▁▁▁ \cr
    year \tab 0 \tab 1 \tab 2019.52 \tab 0.50 \tab 2019 \tab 2019.00 \tab 2020.00 \tab 2020.00 \tab 2020.00 \tab ▇▁▁▁▇ \cr
-   The U.S. Centers for Disease Control provides weekly \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   summary and interpretation of key indicators that have been adapted \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   to track the COVID-19 pandemic in the United States. Data is \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   retrieved using the cdccovidview package from both COVIDView \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   (\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html}) \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   and COVID-NET \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   (\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}). \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
 }
+
+
+The U.S. Centers for Disease Control provides weekly
+summary and interpretation of key indicators that have been adapted
+to track the COVID-19 pandemic in the United States. Data is
+retrieved using the cdccovidview package from both COVIDView
+(\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html})
+and COVID-NET
+(\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}).
 }
 \references{
 \url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html}

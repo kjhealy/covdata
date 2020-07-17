@@ -57,9 +57,10 @@ Table: Data summary\tabular{ll}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
    cases \tab 5710 \tab 0.60 \tab 5595.29 \tab 21286.36 \tab 0 \tab 146 \tab 906 \tab 4605.25 \tab 404006 \tab ▇▁▁▁▁ \cr
    deaths \tab 6827 \tab 0.52 \tab 334.80 \tab 910.08 \tab 0 \tab 7 \tab 36 \tab 209.00 \tab 8569 \tab ▇▁▁▁▁ \cr
-   The \code{group} variable is coded as follows: \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
 }
-\tabular{l}{
+
+
+The \code{group} variable is coded as follows:\tabular{l}{
    groups \cr
    White \cr
    Black \cr

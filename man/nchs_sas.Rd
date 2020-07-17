@@ -70,12 +70,14 @@ Table: Data summary\tabular{ll}{
    pneumonia_and_covid_19_deaths \tab 294 \tab 0.78 \tab 293.62 \tab 2195.25 \tab 0 \tab 0 \tab 0.0 \tab 59.00 \tab 52431 \tab ▇▁▁▁▁ \cr
    influenza_deaths \tab 533 \tab 0.61 \tab 45.16 \tab 301.01 \tab 0 \tab 0 \tab 0.0 \tab 17.00 \tab 6519 \tab ▇▁▁▁▁ \cr
    pneumonia_influenza_or_covid_19_deaths \tab 359 \tab 0.74 \tab 1230.47 \tab 8858.99 \tab 0 \tab 12 \tab 76.0 \tab 385.00 \tab 205837 \tab ▇▁▁▁▁ \cr
-   Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis, \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
-   been suppressed in accordance with NHCS confidentiality standards. \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
 }
+
+
+Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis,
+and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
+between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
+This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
+been suppressed in accordance with NHCS confidentiality standards.
 }
 \references{
 \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}
