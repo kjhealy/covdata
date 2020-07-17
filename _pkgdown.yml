@@ -67,6 +67,7 @@ articles:
 - title: Datasets
   navbar: ~
   contents:
+  - codebook
   - ecdc-data
   - excess-mortality
   - us-data
