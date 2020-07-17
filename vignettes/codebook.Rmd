@@ -1,0 +1,192 @@
+---
+title: "Summary Codebook"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Summary Codebook}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(covdata)
+```
+
+## Overview of Included Tables
+
+This vignette provides an overview of the contents of each table of data in the package. For further details on the variables, consult each table's help page. Note that many of these data tables are provisional, or are estimates subject to significant interpretive limits. _Read the supplied documentation carefully before working with any of the tables_.
+
+## National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en)
+
+```{r}
+covnat %>%
+  ungroup() %>%
+  skimr::skim()
+```
+
+
+## State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com)
+
+### Cumulative testing, deaths, and hospitalization data over time
+
+```{r}
+skimr::skim(covus)
+```
+
+
+### Total case and death counts by race and ethnicity
+
+```{r}
+skimr::skim(covus_race)
+```
+
+
+```{r}
+skimr::skim(covus_ethnicity)
+```
+
+
+## State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data)
+
+```{r}
+skimr::skim(nytcovcounty)
+```
+
+
+```{r}
+skimr::skim(nytcovstate)
+```
+
+
+```{r}
+skimr::skim(nytcovus)
+```
+
+
+## Data from the CDC's [COVID-NET](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html) 
+
+### CDC Catchment Areas_
+
+```{r}
+skimr::skim(cdc_catchments)
+```
+
+
+### Deaths by Age
+
+```{r}
+skimr::skim(cdc_deaths_by_age)
+```
+
+### Deaths by Sex
+
+
+```{r}
+skimr::skim(cdc_deaths_by_sex)
+```
+
+### Deaths by State
+
+```{r}
+skimr::skim(cdc_deaths_by_state)
+```
+
+### Deaths by Week
+
+```{r}
+skimr::skim(cdc_deaths_by_week)
+```
+
+### Hospitalization
+
+```{r}
+skimr::skim(cdc_hospitalizations)
+```
+
+### National ER Visits
+
+```{r}
+skimr::skim(nssp_covid_er_nat)
+```
+
+### Regional ER Visits
+
+```{r}
+skimr::skim(nssp_covid_er_reg)
+```
+
+## Data from the U.S. National Center for Health Statistics
+
+### Provisional COVID-19 Death Counts by Sex, Age, and State
+
+```{r}
+skimr::skim(nchs_sas)
+```
+
+### Estimated distributions of US COVID-19 deaths and population size by race and Hispanic origin, by State
+
+```{r}
+skimr::skim(nchs_wss)
+```
+
+### Deidentified patient-level data from the CDC COVID-19 case surveillance system database
+
+```{r}
+skimr::skim(nchs_pud)
+```
+
+
+## Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org)
+
+```{r}
+skimr::skim(stmf)
+```
+
+
+## National-level all-cause and excess mortality estimates from the [_New York Times_](https://github.com/nytimes/covid-19-data)
+
+```{r}
+skimr::skim(nytexcess)
+```
+
+## Mobility Data from [Apple](http://apple.com/covid19) 
+
+```{r}
+skimr::skim(apple_mobility)
+```
+
+## Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
+
+```{r}
+skimr::skim(google_mobility)
+```
+
+
+## Policy data from the [CoronaNet Project](https://coronanet-project.org)
+
+```{r}
+skimr::skim(coronanet)
+```
+
+
+## Other Tables
+
+### Country Codes
+
+```{r}
+countries %>%
+  ungroup() %>%
+  skimr::skim()
+```
+
+### U.S. Census Population Estimates
+
+```{r}
+skimr::skim(uspop)
+```
