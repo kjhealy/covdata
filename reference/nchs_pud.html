@@ -178,25 +178,49 @@
     <p>https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>c("character", "character", "character", "character", "character", "character", "character", "character", "Date", "Date", "Date")
-c("current_status", "sex", "age_group", "race_ethnicity", "hosp_yn", "icu_yn", "death_yn", "medcond_yn", "cdc_report_dt", "pos_spec_dt", "onset_dt")
-c(0, 15, 38, 9, 0, 0, 0, 0, 0, 1052553, 969687)
-c(1, 0.999991423499041, 0.999978272864237, 0.999994854099425, 1, 1, 1, 1, 1, 0.398185212397046, 0.445565234295712)
-c(8, 4, 6, 7, 2, 2, 2, 2, NA, NA, NA)
-c(9, 7, 8, 28, 7, 7, 7, 7, NA, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA)
-c(2, 4, 10, 8, 3, 3, 3, 3, NA, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 18262, 18265, 18262)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 18424, 18437, 18439)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 18383, 18370, 18368)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 116, 137, 178)</p>
-<p>Each row is a deidentified patient. These deidentified data include demographic characteristics, exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities. All data elements can be found on the COVID-19 case report form located at <code>www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf</code>.
-The COVID-19 case surveillance data are dynamic; case reports can be modified at any time by the reporting jurisdiction as new information becomes available (i.e., data are subject to change). Furthermore, reporting jurisdictions may report cases late. Version updates to the detailed and limited datasets will be available for request once a month.
-The datasets will include all cases with an initial report date of case to CDC at least 30 days prior to the creation of the previously updated datasets. This month lag will allow case reporting to be stabilized and ensure that time-dependent outcome data, including death, are accurately captured.
-Questions that have been left unanswered (blank) on the case report form are re-classified to an Unknown value, if applicable to the question. For example, in the question “Was the patient hospitalized?”, where the possible answer choices include “Yes”, “No”, or “Unknown”, the missing value is re-coded to the Unknown answer option if the respondent did not answer the question.
-The initial report date of the case to CDC is intended to be completed by the reporting jurisdiction when data are submitted. If blank, this variable is completed using the date the data file was first submitted to CDC.
-To prevent release of data that could be used to identify persons, data cells are suppressed for low frequency (&lt;5) records and indirect identifiers (date of first positive specimen). Suppression includes uncommon combinations of demographic characteristics (sex, age group, race/ethnicity). Suppressed values are re-coded to the NA answer option.</p>
+    <p>Table: Data summary</p><table class='table'>
+<tr><td></td><td></td></tr>
+<tr><td>Name</td><td>nchs_pud</td></tr>
+<tr><td>Number of rows</td><td>1748965</td></tr>
+<tr><td>Number of columns</td><td>11</td></tr>
+<tr><td>_______________________</td><td></td></tr>
+<tr><td>Column type frequency:</td><td></td></tr>
+<tr><td>Date</td><td>3</td></tr>
+<tr><td>character</td><td>8</td></tr>
+<tr><td>________________________</td><td></td></tr>
+<tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>cdc_report_dt</td><td>0</td><td>1.00</td><td>2020-01-01</td><td>2020-06-11</td><td>2020-05-01</td><td>116</td></tr>
+<tr><td>pos_spec_dt</td><td>1052553</td><td>0.40</td><td>2020-01-04</td><td>2020-06-24</td><td>2020-04-18</td><td>137</td></tr>
+<tr><td>onset_dt</td><td>969687</td><td>0.45</td><td>2020-01-01</td><td>2020-06-26</td><td>2020-04-16</td><td>178</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: character</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
+<tr><td>current_status</td><td>0</td><td>1</td><td>8</td><td>9</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>sex</td><td>15</td><td>1</td><td>4</td><td>7</td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>age_group</td><td>38</td><td>1</td><td>6</td><td>8</td><td>0</td><td>10</td><td>0</td></tr>
+<tr><td>race_ethnicity</td><td>9</td><td>1</td><td>7</td><td>28</td><td>0</td><td>8</td><td>0</td></tr>
+<tr><td>hosp_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>icu_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>death_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>medcond_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>Each row is a deidentified patient. These deidentified data include demographic characteristics, exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities. All data elements can be found on the COVID-19 case report form located at <code>www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf</code>.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>The COVID-19 case surveillance data are dynamic; case reports can be modified at any time by the reporting jurisdiction as new information becomes available (i.e., data are subject to change). Furthermore, reporting jurisdictions may report cases late. Version updates to the detailed and limited datasets will be available for request once a month.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>The datasets will include all cases with an initial report date of case to CDC at least 30 days prior to the creation of the previously updated datasets. This month lag will allow case reporting to be stabilized and ensure that time-dependent outcome data, including death, are accurately captured.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Questions that have been left unanswered (blank) on the case report form are re-classified to an Unknown value, if applicable to the question. For example, in the question “Was the patient hospitalized?”, where the possible answer choices include “Yes”, “No”, or “Unknown”, the missing value is re-coded to the Unknown answer option if the respondent did not answer the question.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>The initial report date of the case to CDC is intended to be completed by the reporting jurisdiction when data are submitted. If blank, this variable is completed using the date the data file was first submitted to CDC.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>To prevent release of data that could be used to identify persons, data cells are suppressed for low frequency (&lt;5) records and indirect identifiers (date of first positive specimen). Suppression includes uncommon combinations of demographic characteristics (sex, age group, race/ethnicity). Suppressed values are re-coded to the NA answer option.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Kieran Healy</p>

@@ -177,22 +177,43 @@
     <p>Courtesy of Bob Rudis's cdccovidview package</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>c("Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("data_as_of", "start_week", "end_week", "covid_deaths", "total_deaths", "percent_expected_deaths", "pneumonia_deaths", "pneumonia_and_covid_deaths", "all_influenza_deaths_j09_j11", "pneumonia_influenza_and_covid_19_deaths")
-c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(18382, 18293, 18293, NA, NA, NA, NA, NA, NA, NA)
-c(18382, 18377, 18377, NA, NA, NA, NA, NA, NA, NA)
-c(18382, 18335, 18335, NA, NA, NA, NA, NA, NA, NA)
-c(1, 13, 13, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, 2655.46153846154, 54875.8461538462, 0.965384615384615, 4825, 1177, 447.769230769231, 6690.23076923077)
-c(NA, NA, NA, 4194.37332656073, 9864.46311975597, 0.17222153294596, 2217.1934962921, 1863.76286045194, 156.185335337089, 4292.62196786234)
-c(NA, NA, NA, 0, 24387, 0.45, 2219, 0, 58, 3553)
-c(NA, NA, NA, 0, 53940, 0.97, 3671, 0, 427, 4165)
-c(NA, NA, NA, 49, 56831, 0.97, 3692, 25, 494, 4275)
-c(NA, NA, NA, 2659, 57299, 0.99, 5598, 1220, 536, 7397)
-c(NA, NA, NA, 11864, 65676, 1.19, 9580, 5281, 619, 16272)
-c(NA, NA, NA, "▇▁▁▂▁", "▁▁▁▇▂", "▁▁▁▇▂", "▇▃▁▁▂", "▇▁▁▂▁", "▁▁▁▇▇", "▇▁▁▂▁")</p>
+    <p>Table: Data summary</p><table class='table'>
+<tr><td></td><td></td></tr>
+<tr><td>Name</td><td>cdc_deaths_by_week</td></tr>
+<tr><td>Number of rows</td><td>13</td></tr>
+<tr><td>Number of columns</td><td>10</td></tr>
+<tr><td>_______________________</td><td></td></tr>
+<tr><td>Column type frequency:</td><td></td></tr>
+<tr><td>Date</td><td>3</td></tr>
+<tr><td>numeric</td><td>7</td></tr>
+<tr><td>________________________</td><td></td></tr>
+<tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2020-04-30</td><td>2020-04-30</td><td>2020-04-30</td><td>1</td></tr>
+<tr><td>start_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-04-25</td><td>2020-03-14</td><td>13</td></tr>
+<tr><td>end_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-04-25</td><td>2020-03-14</td><td>13</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: numeric</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
+<tr><td>covid_deaths</td><td>0</td><td>1</td><td>2655.46</td><td>4194.37</td><td>0.00</td><td>0.00</td><td>49.00</td><td>2659.00</td><td>11864.00</td><td>▇▁▁▂▁</td></tr>
+<tr><td>total_deaths</td><td>0</td><td>1</td><td>54875.85</td><td>9864.46</td><td>24387.00</td><td>53940.00</td><td>56831.00</td><td>57299.00</td><td>65676.00</td><td>▁▁▁▇▂</td></tr>
+<tr><td>percent_expected_deaths</td><td>0</td><td>1</td><td>0.97</td><td>0.17</td><td>0.45</td><td>0.97</td><td>0.97</td><td>0.99</td><td>1.19</td><td>▁▁▁▇▂</td></tr>
+<tr><td>pneumonia_deaths</td><td>0</td><td>1</td><td>4825.00</td><td>2217.19</td><td>2219.00</td><td>3671.00</td><td>3692.00</td><td>5598.00</td><td>9580.00</td><td>▇▃▁▁▂</td></tr>
+<tr><td>pneumonia_and_covid_deaths</td><td>0</td><td>1</td><td>1177.00</td><td>1863.76</td><td>0.00</td><td>0.00</td><td>25.00</td><td>1220.00</td><td>5281.00</td><td>▇▁▁▂▁</td></tr>
+<tr><td>all_influenza_deaths_j09_j11</td><td>0</td><td>1</td><td>447.77</td><td>156.19</td><td>58.00</td><td>427.00</td><td>494.00</td><td>536.00</td><td>619.00</td><td>▁▁▁▇▇</td></tr>
+<tr><td>pneumonia_influenza_and_covid_19_deaths</td><td>0</td><td>1</td><td>6690.23</td><td>4292.62</td><td>3553.00</td><td>4165.00</td><td>4275.00</td><td>7397.00</td><td>16272.00</td><td>▇▁▁▂▁</td></tr>
+</table>
+
+
+
 <p>The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted
 to track the COVID-19 pandemic in the United States. Data is

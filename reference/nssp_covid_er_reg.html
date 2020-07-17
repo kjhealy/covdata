@@ -178,30 +178,48 @@ Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (
     <p>Courtesy of Bob Rudis's cdccovidview package</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>c("character", "character", "character", "character", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("total_ed_visits", "visit_type", "region", "source", "week", "num_fac", "visits", "pct_visits", "year")
-c(0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(5, 3, 8, 21, NA, NA, NA, NA, NA)
-c(6, 3, 9, 21, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, NA, NA, NA, NA, NA)
-c(269, 2, 10, 1, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, 25.9851301115242, 335.17843866171, 4164.8717472119, 0.0198122676579926, 2019.52044609665)
-c(NA, NA, NA, NA, 19.6632677541809, 234.578852667867, 4028.53211090876, 0.0122150225787191, 0.500046725818193)
-c(NA, NA, NA, NA, 1, 135, 279, 0.005, 2019)
-c(NA, NA, NA, NA, 7, 190, 1596, 0.012, 2019)
-c(NA, NA, NA, NA, 14, 222, 2780, 0.017, 2020)
-c(NA, NA, NA, NA, 46, 343, 4723.75, 0.024, 2020)
-c(NA, NA, NA, NA, 52, 884, 23345, 0.107, 2020)
-c(NA, NA, NA, NA, "▇▂▁▂▇", "▇▃▁▂▂", "▇▂▁▁▁", "▇▂▁▁▁", "▇▁▁▁▇")</p>
-<p>The U.S. Centers for Disease Control provides weekly
-summary and interpretation of key indicators that have been adapted
-to track the COVID-19 pandemic in the United States. Data is
-retrieved using the cdccovidview package from both COVIDView
-(<a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a>)
-and COVID-NET
-(<a href='https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html'>https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html</a>).</p>
+    <p>Table: Data summary</p><table class='table'>
+<tr><td></td><td></td></tr>
+<tr><td>Name</td><td>nssp_covid_er_reg</td></tr>
+<tr><td>Number of rows</td><td>538</td></tr>
+<tr><td>Number of columns</td><td>9</td></tr>
+<tr><td>_______________________</td><td></td></tr>
+<tr><td>Column type frequency:</td><td></td></tr>
+<tr><td>character</td><td>4</td></tr>
+<tr><td>numeric</td><td>5</td></tr>
+<tr><td>________________________</td><td></td></tr>
+<tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: character</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
+<tr><td>total_ed_visits</td><td>0</td><td>1</td><td>5</td><td>6</td><td>0</td><td>269</td><td>0</td></tr>
+<tr><td>visit_type</td><td>0</td><td>1</td><td>3</td><td>3</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>region</td><td>0</td><td>1</td><td>8</td><td>9</td><td>0</td><td>10</td><td>0</td></tr>
+<tr><td>source</td><td>0</td><td>1</td><td>21</td><td>21</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: numeric</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
+<tr><td>week</td><td>0</td><td>1</td><td>25.99</td><td>19.66</td><td>1</td><td>7.00</td><td>14.00</td><td>46.00</td><td>52.00</td><td>▇▂▁▂▇</td></tr>
+<tr><td>num_fac</td><td>0</td><td>1</td><td>335.18</td><td>234.58</td><td>135</td><td>190.00</td><td>222.00</td><td>343.00</td><td>884.00</td><td>▇▃▁▂▂</td></tr>
+<tr><td>visits</td><td>0</td><td>1</td><td>4164.87</td><td>4028.53</td><td>279</td><td>1596.00</td><td>2780.00</td><td>4723.75</td><td>23345.00</td><td>▇▂▁▁▁</td></tr>
+<tr><td>pct_visits</td><td>0</td><td>1</td><td>0.02</td><td>0.01</td><td>0</td><td>0.01</td><td>0.02</td><td>0.02</td><td>0.11</td><td>▇▂▁▁▁</td></tr>
+<tr><td>year</td><td>0</td><td>1</td><td>2019.52</td><td>0.50</td><td>2019</td><td>2019.00</td><td>2020.00</td><td>2020.00</td><td>2020.00</td><td>▇▁▁▁▇</td></tr>
+<tr><td>The U.S. Centers for Disease Control provides weekly</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>summary and interpretation of key indicators that have been adapted</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>to track the COVID-19 pandemic in the United States. Data is</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>retrieved using the cdccovidview package from both COVIDView</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(<a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a>)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>and COVID-NET</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(<a href='https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html'>https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html</a>).</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p><a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html</a></p>

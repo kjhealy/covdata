@@ -176,27 +176,49 @@
     <p>Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-07-17</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>c("character", "character", "character", "character", "character", "character", "character", "Date", "numeric")
-c("country_region_code", "country_region", "sub_region_1", "sub_region_2", "iso3166_2", "census_fips_code", "type", "date", "pct_diff")
-c(6936, 0, 119880, 1706796, 2569692, 1705902, 0, 0, 1340233)
-c(0.998282011651409, 1, 0.970306741172274, 0.577241112828439, 0.363509095232434, 0.57746254904292, 1, 1, 0.668035657670511)
-c(2, 4, 3, 5, 4, 5, 5, NA, NA)
-c(2, 22, 74, 27, 6, 5, 11, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, NA, NA)
-c(134, 135, 1844, 1716, 1703, 2833, 6, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 18307, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 18455, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 18380, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 149, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, -12.6999573978503)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 31.7525934604164)
-c(NA, NA, NA, NA, NA, NA, NA, NA, -100)
-c(NA, NA, NA, NA, NA, NA, NA, NA, -32)
-c(NA, NA, NA, NA, NA, NA, NA, NA, -9)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 5)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 625)
-c(NA, NA, NA, NA, NA, NA, NA, NA, "▇▁▁▁▁")</p>
+    <p>Table: Data summary</p><table class='table'>
+<tr><td></td><td></td></tr>
+<tr><td>Name</td><td>google_mobility</td></tr>
+<tr><td>Number of rows</td><td>4037280</td></tr>
+<tr><td>Number of columns</td><td>9</td></tr>
+<tr><td>_______________________</td><td></td></tr>
+<tr><td>Column type frequency:</td><td></td></tr>
+<tr><td>Date</td><td>1</td></tr>
+<tr><td>character</td><td>7</td></tr>
+<tr><td>numeric</td><td>1</td></tr>
+<tr><td>________________________</td><td></td></tr>
+<tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-02-15</td><td>2020-07-12</td><td>2020-04-28</td><td>149</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: character</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
+<tr><td>country_region_code</td><td>6936</td><td>1.00</td><td>2</td><td>2</td><td>0</td><td>134</td><td>0</td></tr>
+<tr><td>country_region</td><td>0</td><td>1.00</td><td>4</td><td>22</td><td>0</td><td>135</td><td>0</td></tr>
+<tr><td>sub_region_1</td><td>119880</td><td>0.97</td><td>3</td><td>74</td><td>0</td><td>1844</td><td>0</td></tr>
+<tr><td>sub_region_2</td><td>1706796</td><td>0.58</td><td>5</td><td>27</td><td>0</td><td>1716</td><td>0</td></tr>
+<tr><td>iso3166_2</td><td>2569692</td><td>0.36</td><td>4</td><td>6</td><td>0</td><td>1703</td><td>0</td></tr>
+<tr><td>census_fips_code</td><td>1705902</td><td>0.58</td><td>5</td><td>5</td><td>0</td><td>2833</td><td>0</td></tr>
+<tr><td>type</td><td>0</td><td>1.00</td><td>5</td><td>11</td><td>0</td><td>6</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: numeric</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
+<tr><td>pct_diff</td><td>1340233</td><td>0.67</td><td>-12.7</td><td>31.75</td><td>-100</td><td>-32</td><td>-9</td><td>5</td><td>625</td><td>▇▁▁▁▁</td></tr>
+</table>
+
+
+
 <p>Location accuracy and the understanding of categorized places varies from region to region, so Google does not recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas). Regions or categories are omitted if Google does not have have sufficient statistically significant levels of data for it. Changes for each day are compared to a baseline value for that day of the week. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020. What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) we don’t show a change for the day. As a result, you may encounter empty fields for certain places and dates. We calculate these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 

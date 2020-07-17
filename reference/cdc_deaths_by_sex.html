@@ -177,27 +177,50 @@
     <p>Courtesy of Bob Rudis's cdccovidview package</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>c("character", "Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("sex", "data_as_of", "start_week", "end_week", "covid_deaths", "total_deaths", "percent_expected_deaths", "pneumonia_deaths", "pneumonia_and_covid_deaths", "all_influenza_deaths_j09_j11")
-c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(4, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(7, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(3, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 1, 1, 1, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, 11507.3333333333, 237795, 0.97, 20908.3333333333, 5100.33333333333, 1940.33333333333)
-c(NA, NA, NA, NA, 10231.3977702625, 206241.057260673, 0, 18248.3963496339, 4559.67381874332, 1682.21054964393)
-c(NA, NA, NA, NA, 1, 25, 0.97, 1, 1, 0)
-c(NA, NA, NA, NA, 7470.5, 172555, 0.97, 14545, 3258, 1416)
-c(NA, NA, NA, NA, 14940, 345085, 0.97, 29089, 6515, 2832)
-c(NA, NA, NA, NA, 17260.5, 356680, 0.97, 31362, 7650, 2910.5)
-c(NA, NA, NA, NA, 19581, 368275, 0.97, 33635, 8785, 2989)
-c(NA, NA, NA, NA, "▇▁▁▇▇", "▃▁▁▁▇", "▁▁▇▁▁", "▃▁▁▁▇", "▇▁▁▇▇", "▃▁▁▁▇")</p>
+    <p>Table: Data summary</p><table class='table'>
+<tr><td></td><td></td></tr>
+<tr><td>Name</td><td>cdc_deaths_by_sex</td></tr>
+<tr><td>Number of rows</td><td>3</td></tr>
+<tr><td>Number of columns</td><td>10</td></tr>
+<tr><td>_______________________</td><td></td></tr>
+<tr><td>Column type frequency:</td><td></td></tr>
+<tr><td>Date</td><td>3</td></tr>
+<tr><td>character</td><td>1</td></tr>
+<tr><td>numeric</td><td>6</td></tr>
+<tr><td>________________________</td><td></td></tr>
+<tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2020-04-30</td><td>2020-04-30</td><td>2020-04-30</td><td>1</td></tr>
+<tr><td>start_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-02-01</td><td>2020-02-01</td><td>1</td></tr>
+<tr><td>end_week</td><td>0</td><td>1</td><td>2020-04-25</td><td>2020-04-25</td><td>2020-04-25</td><td>1</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: character</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
+<tr><td>sex</td><td>0</td><td>1</td><td>4</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: numeric</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
+<tr><td>covid_deaths</td><td>0</td><td>1</td><td>11507.33</td><td>10231.40</td><td>1.00</td><td>7470.50</td><td>14940.00</td><td>17260.50</td><td>19581.00</td><td>▇▁▁▇▇</td></tr>
+<tr><td>total_deaths</td><td>0</td><td>1</td><td>237795.00</td><td>206241.06</td><td>25.00</td><td>172555.00</td><td>345085.00</td><td>356680.00</td><td>368275.00</td><td>▃▁▁▁▇</td></tr>
+<tr><td>percent_expected_deaths</td><td>0</td><td>1</td><td>0.97</td><td>0.00</td><td>0.97</td><td>0.97</td><td>0.97</td><td>0.97</td><td>0.97</td><td>▁▁▇▁▁</td></tr>
+<tr><td>pneumonia_deaths</td><td>0</td><td>1</td><td>20908.33</td><td>18248.40</td><td>1.00</td><td>14545.00</td><td>29089.00</td><td>31362.00</td><td>33635.00</td><td>▃▁▁▁▇</td></tr>
+<tr><td>pneumonia_and_covid_deaths</td><td>0</td><td>1</td><td>5100.33</td><td>4559.67</td><td>1.00</td><td>3258.00</td><td>6515.00</td><td>7650.00</td><td>8785.00</td><td>▇▁▁▇▇</td></tr>
+<tr><td>all_influenza_deaths_j09_j11</td><td>0</td><td>1</td><td>1940.33</td><td>1682.21</td><td>0.00</td><td>1416.00</td><td>2832.00</td><td>2910.50</td><td>2989.00</td><td>▃▁▁▁▇</td></tr>
+</table>
+
+
+
 <p>The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted
 to track the COVID-19 pandemic in the United States. Data is

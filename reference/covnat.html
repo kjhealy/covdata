@@ -175,27 +175,47 @@
     <p><a href='http://ecdc.europa.eu/'>http://ecdc.europa.eu/</a></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>c("character", "character", "Date", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("cname", "iso3", "date", "cases", "deaths", "pop", "cu_cases", "cu_deaths")
-c(0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1)
-c(4, 3, NA, NA, NA, NA, NA, NA)
-c(42, 3, NA, NA, NA, NA, NA, NA)
-c(0, 0, NA, NA, NA, NA, NA, NA)
-c(209, 209, NA, NA, NA, NA, NA, NA)
-c(0, 0, NA, NA, NA, NA, NA, NA)
-c(NA, NA, 18261, NA, NA, NA, NA, NA)
-c(NA, NA, 18460, NA, NA, NA, NA, NA)
-c(NA, NA, 18388, NA, NA, NA, NA, NA)
-c(NA, NA, 200, NA, NA, NA, NA, NA)
-c(NA, NA, NA, 455.397146254459, 19.4768463469415, 45600255.6552715, 21709.3418549346, 1200.7120821773)
-c(NA, NA, NA, 2746.46839512866, 120.11196136274, 164524974.247146, 131767.69246064, 7126.91580541081)
-c(NA, NA, NA, -29726, -1918, 815, 0, 0)
-c(NA, NA, NA, 0, 0, 1641164, 18, 0)
-c(NA, NA, NA, 5, 0, 8544527, 336, 7)
-c(NA, NA, NA, 83, 2, 30417858, 3910.5, 86)
-c(NA, NA, NA, 76930, 4928, 1433783692, 3576221, 138358)
-c(NA, NA, NA, "▁▇▁▁▁", "▁▇▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")</p>
+    <p>Table: Data summary</p><table class='table'>
+<tr><td></td><td></td></tr>
+<tr><td>Name</td><td>dplyr::ungroup(covnat)</td></tr>
+<tr><td>Number of rows</td><td>30276</td></tr>
+<tr><td>Number of columns</td><td>8</td></tr>
+<tr><td>_______________________</td><td></td></tr>
+<tr><td>Column type frequency:</td><td></td></tr>
+<tr><td>Date</td><td>1</td></tr>
+<tr><td>character</td><td>2</td></tr>
+<tr><td>numeric</td><td>5</td></tr>
+<tr><td>________________________</td><td></td></tr>
+<tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2019-12-31</td><td>2020-07-17</td><td>2020-05-06</td><td>200</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: character</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
+<tr><td>cname</td><td>0</td><td>1</td><td>4</td><td>42</td><td>0</td><td>209</td><td>0</td></tr>
+<tr><td>iso3</td><td>0</td><td>1</td><td>3</td><td>3</td><td>0</td><td>209</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: numeric</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>455.40</td><td>2746.47</td><td>-29726</td><td>0</td><td>5</td><td>83.0</td><td>76930</td><td>▁▇▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>19.48</td><td>120.11</td><td>-1918</td><td>0</td><td>0</td><td>2.0</td><td>4928</td><td>▁▇▁▁▁</td></tr>
+<tr><td>pop</td><td>0</td><td>1</td><td>45600255.66</td><td>164524974.25</td><td>815</td><td>1641164</td><td>8544527</td><td>30417858.0</td><td>1433783692</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_cases</td><td>0</td><td>1</td><td>21709.34</td><td>131767.69</td><td>0</td><td>18</td><td>336</td><td>3910.5</td><td>3576221</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_deaths</td><td>0</td><td>1</td><td>1200.71</td><td>7126.92</td><td>0</td><td>0</td><td>7</td><td>86.0</td><td>138358</td><td>▇▁▁▁▁</td></tr>
+</table>
+
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
