@@ -17,7 +17,7 @@ A tibble with 126,905 rows and 7 columns
 }
 }
 \source{
-The COVID-19 Tracking Project \url{https://covidtracking.com} oi
+The COVID-19 Tracking Project \url{https://covidtracking.com}
 }
 \usage{
 covus
@@ -26,27 +26,42 @@ covus
 A dataset containing US state-level data on COVID-19
 }
 \details{
-c("character", "character", "character", "character", "character", "Date", "numeric")
-c("state", "fips", "data_quality_grade", "measure", "measure_label", "date", "count")
-c(0, 0, 18717, 0, 0, 0, 73451)
-c(1, 1, 0.852511721366376, 1, 1, 1, 0.421212718175013)
-c(2, 2, 1, 5, 6, NA, NA)
-c(2, 2, 2, 24, 54, NA, NA)
-c(0, 0, 0, 0, 0, NA, NA)
-c(56, 56, 6, 17, 17, NA, NA)
-c(0, 0, 0, 0, 0, NA, NA)
-c(NA, NA, NA, NA, NA, 18283, NA)
-c(NA, NA, NA, NA, NA, 18459, NA)
-c(NA, NA, NA, NA, NA, 18393, NA)
-c(NA, NA, NA, NA, NA, 177, NA)
-c(NA, NA, NA, NA, NA, NA, 62202.1988064504)
-c(NA, NA, NA, NA, NA, NA, 261627.828909367)
-c(NA, NA, NA, NA, NA, NA, 0)
-c(NA, NA, NA, NA, NA, NA, 151)
-c(NA, NA, NA, NA, NA, NA, 1294.5)
-c(NA, NA, NA, NA, NA, NA, 17204)
-c(NA, NA, NA, NA, NA, NA, 5915508)
-c(NA, NA, NA, NA, NA, NA, "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab covus \cr
+   Number of rows \tab 126905 \cr
+   Number of columns \tab 7 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 1 \cr
+   character \tab 5 \cr
+   numeric \tab 1 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-07-16 \tab 2020-05-11 \tab 177 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   state \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
+   fips \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
+   data_quality_grade \tab 18717 \tab 0.85 \tab 1 \tab 2 \tab 0 \tab 6 \tab 0 \cr
+   measure \tab 0 \tab 1.00 \tab 5 \tab 24 \tab 0 \tab 17 \tab 0 \cr
+   measure_label \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 17 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   count \tab 73451 \tab 0.42 \tab 62202.2 \tab 261627.8 \tab 0 \tab 151 \tab 1294.5 \tab 17204 \tab 5915508 \tab ▇▁▁▁▁ \cr
+}
+
 
 The measures tracked by the COVID tracking project are as follows:\tabular{ll}{
    measure \tab measure_label \cr

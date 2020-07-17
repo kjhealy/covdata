@@ -27,26 +27,41 @@ covnat
 A dataset containing national-level ECDC data on COVID-19
 }
 \details{
-c("character", "character", "Date", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("cname", "iso3", "date", "cases", "deaths", "pop", "cu_cases", "cu_deaths")
-c(0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1)
-c(4, 3, NA, NA, NA, NA, NA, NA)
-c(42, 3, NA, NA, NA, NA, NA, NA)
-c(0, 0, NA, NA, NA, NA, NA, NA)
-c(209, 209, NA, NA, NA, NA, NA, NA)
-c(0, 0, NA, NA, NA, NA, NA, NA)
-c(NA, NA, 18261, NA, NA, NA, NA, NA)
-c(NA, NA, 18460, NA, NA, NA, NA, NA)
-c(NA, NA, 18388, NA, NA, NA, NA, NA)
-c(NA, NA, 200, NA, NA, NA, NA, NA)
-c(NA, NA, NA, 455.397146254459, 19.4768463469415, 45600255.6552715, 21709.3418549346, 1200.7120821773)
-c(NA, NA, NA, 2746.46839512866, 120.11196136274, 164524974.247146, 131767.69246064, 7126.91580541081)
-c(NA, NA, NA, -29726, -1918, 815, 0, 0)
-c(NA, NA, NA, 0, 0, 1641164, 18, 0)
-c(NA, NA, NA, 5, 0, 8544527, 336, 7)
-c(NA, NA, NA, 83, 2, 30417858, 3910.5, 86)
-c(NA, NA, NA, 76930, 4928, 1433783692, 3576221, 138358)
-c(NA, NA, NA, "▁▇▁▁▁", "▁▇▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab dplyr::ungroup(covnat) \cr
+   Number of rows \tab 30276 \cr
+   Number of columns \tab 8 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 1 \cr
+   character \tab 2 \cr
+   numeric \tab 5 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-07-17 \tab 2020-05-06 \tab 200 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   cname \tab 0 \tab 1 \tab 4 \tab 42 \tab 0 \tab 209 \tab 0 \cr
+   iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 209 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   cases \tab 0 \tab 1 \tab 455.40 \tab 2746.47 \tab -29726 \tab 0 \tab 5 \tab 83.0 \tab 76930 \tab ▁▇▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 19.48 \tab 120.11 \tab -1918 \tab 0 \tab 0 \tab 2.0 \tab 4928 \tab ▁▇▁▁▁ \cr
+   pop \tab 0 \tab 1 \tab 45600255.66 \tab 164524974.25 \tab 815 \tab 1641164 \tab 8544527 \tab 30417858.0 \tab 1433783692 \tab ▇▁▁▁▁ \cr
+   cu_cases \tab 0 \tab 1 \tab 21709.34 \tab 131767.69 \tab 0 \tab 18 \tab 336 \tab 3910.5 \tab 3576221 \tab ▇▁▁▁▁ \cr
+   cu_deaths \tab 0 \tab 1 \tab 1200.71 \tab 7126.92 \tab 0 \tab 0 \tab 7 \tab 86.0 \tab 138358 \tab ▇▁▁▁▁ \cr
+}
 }
 \keyword{datasets}

@@ -25,26 +25,38 @@ nytcovstate
 A dataset containing US state-level data on COVID-19, collected by the New York Times.
 }
 \details{
-c("character", "character", "Date", "numeric", "numeric")
-c("state", "fips", "date", "cases", "deaths")
-c(0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1)
-c(4, 2, NA, NA, NA)
-c(24, 2, NA, NA, NA)
-c(0, 0, NA, NA, NA)
-c(55, 55, NA, NA, NA)
-c(0, 0, NA, NA, NA)
-c(NA, NA, 18282, NA, NA)
-c(NA, NA, 18459, NA, NA)
-c(NA, NA, 18391, NA, NA)
-c(NA, NA, 178, NA, NA)
-c(NA, NA, NA, 24202.2747531358, 1244.8271950894)
-c(NA, NA, NA, 52643.197481745, 3578.85582081053)
-c(NA, NA, NA, 1, 0)
-c(NA, NA, NA, 593, 9)
-c(NA, NA, NA, 5177.5, 146)
-c(NA, NA, NA, 24197, 853.75)
-c(NA, NA, NA, 409476, 32133)
-c(NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nytcovstate \cr
+   Number of rows \tab 7494 \cr
+   Number of columns \tab 5 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 1 \cr
+   character \tab 2 \cr
+   numeric \tab 2 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-16 \tab 2020-05-09 \tab 178 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   state \tab 0 \tab 1 \tab 4 \tab 24 \tab 0 \tab 55 \tab 0 \cr
+   fips \tab 0 \tab 1 \tab 2 \tab 2 \tab 0 \tab 55 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   cases \tab 0 \tab 1 \tab 24202.27 \tab 52643.20 \tab 1 \tab 593 \tab 5177.5 \tab 24197.00 \tab 409476 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 1244.83 \tab 3578.86 \tab 0 \tab 9 \tab 146.0 \tab 853.75 \tab 32133 \tab ▇▁▁▁▁ \cr
+}
 }
 \keyword{datasets}

@@ -20,15 +20,27 @@ countries
 Convenience table of country names and their abbreviated names
 }
 \details{
-c("character", "character", "character", "character")
-c("cname", "iso3", "iso2", "continent")
-c(0, 0, 2, 0)
-c(1, 1, 0.990697674418605, 1)
-c(4, 3, 2, 4)
-c(42, 3, 2, 13)
-c(0, 0, 0, 0)
-c(209, 209, 207, 6)
-c(0, 0, 0, 0)
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab dplyr::ungroup(countries) \cr
+   Number of rows \tab 215 \cr
+   Number of columns \tab 4 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   character \tab 4 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   cname \tab 0 \tab 1.00 \tab 4 \tab 42 \tab 0 \tab 209 \tab 0 \cr
+   iso3 \tab 0 \tab 1.00 \tab 3 \tab 3 \tab 0 \tab 209 \tab 0 \cr
+   iso2 \tab 2 \tab 0.99 \tab 2 \tab 2 \tab 0 \tab 207 \tab 0 \cr
+   continent \tab 0 \tab 1.00 \tab 4 \tab 13 \tab 0 \tab 6 \tab 0 \cr
+}
+
 
 Produced from the ECDC tables in the covdata package.
 }

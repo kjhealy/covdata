@@ -31,27 +31,47 @@ nytexcess
 All-cause mortality is widely used by demographers and other researchers to understand the full impact of deadly events, including epidemics, wars and natural disasters. The totals in this data include deaths from Covid-19 as well as those from other causes, likely including people who could not be treated or did not seek treatment for other conditions.
 }
 \details{
-c("character", "character", "character", "character", "character", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("country", "placename", "frequency", "year", "baseline", "start_date", "end_date", "month", "week", "deaths", "expected_deaths", "excess_deaths")
-c(0, 4013, 0, 0, 6063, 1327, 1327, 0, 1177, 0, 6091, 6091)
-c(1, 0.402115613825983, 1, 1, 0.0966924910607867, 0.802294398092968, 0.802294398092968, 1, 0.824642431466031, 1, 0.0925208581644815, 0.0925208581644815)
-c(4, 4, 6, 4, 2, NA, NA, NA, NA, NA, NA, NA)
-c(14, 14, 7, 17, 27, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
-c(28, 28, 2, 14, 10, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, 14618, 14624, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, 18421, 18427, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, 17483, 17489, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, 1336, 1336, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 6.19293802145411, 24.8287262872629, 5121.71036948748, 5709.37037037037, 688.597423510467)
-c(NA, NA, NA, NA, NA, NA, NA, 3.37541192179776, 14.4895662554512, 7796.71395031462, 10323.2005127829, 2538.18227927627)
-c(NA, NA, NA, NA, NA, NA, NA, 1, 2, 48, 67, -4047)
-c(NA, NA, NA, NA, NA, NA, NA, 3, 12, 986, 1011, -99)
-c(NA, NA, NA, NA, NA, NA, NA, 6, 23, 1718.5, 1573, 8)
-c(NA, NA, NA, NA, NA, NA, NA, 9, 37, 8225, 7085, 410)
-c(NA, NA, NA, NA, NA, NA, NA, 12, 52, 80623, 60617, 26351)
-c(NA, NA, NA, NA, NA, NA, NA, "▇▆▅▅▆", "▇▇▆▆▅", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nytexcess \cr
+   Number of rows \tab 6712 \cr
+   Number of columns \tab 12 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 2 \cr
+   character \tab 5 \cr
+   numeric \tab 5 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   start_date \tab 1327 \tab 0.8 \tab 2010-01-09 \tab 2020-06-08 \tab 2017-11-13 \tab 1336 \cr
+   end_date \tab 1327 \tab 0.8 \tab 2010-01-15 \tab 2020-06-14 \tab 2017-11-19 \tab 1336 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   country \tab 0 \tab 1.0 \tab 4 \tab 14 \tab 0 \tab 28 \tab 0 \cr
+   placename \tab 4013 \tab 0.4 \tab 4 \tab 14 \tab 0 \tab 28 \tab 0 \cr
+   frequency \tab 0 \tab 1.0 \tab 6 \tab 7 \tab 0 \tab 2 \tab 0 \cr
+   year \tab 0 \tab 1.0 \tab 4 \tab 17 \tab 0 \tab 14 \tab 0 \cr
+   baseline \tab 6063 \tab 0.1 \tab 2 \tab 27 \tab 0 \tab 10 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   month \tab 0 \tab 1.00 \tab 6.19 \tab 3.38 \tab 1 \tab 3 \tab 6.0 \tab 9 \tab 12 \tab ▇▆▅▅▆ \cr
+   week \tab 1177 \tab 0.82 \tab 24.83 \tab 14.49 \tab 2 \tab 12 \tab 23.0 \tab 37 \tab 52 \tab ▇▇▆▆▅ \cr
+   deaths \tab 0 \tab 1.00 \tab 5121.71 \tab 7796.71 \tab 48 \tab 986 \tab 1718.5 \tab 8225 \tab 80623 \tab ▇▁▁▁▁ \cr
+   expected_deaths \tab 6091 \tab 0.09 \tab 5709.37 \tab 10323.20 \tab 67 \tab 1011 \tab 1573.0 \tab 7085 \tab 60617 \tab ▇▁▁▁▁ \cr
+   excess_deaths \tab 6091 \tab 0.09 \tab 688.60 \tab 2538.18 \tab -4047 \tab -99 \tab 8.0 \tab 410 \tab 26351 \tab ▇▁▁▁▁ \cr
+}
+
 
 Expected deaths for each area based on historical data for the same time of year. These expected deaths are the basis for our excess death calculations, which estimate how many more people have died this year than in an average year.
 

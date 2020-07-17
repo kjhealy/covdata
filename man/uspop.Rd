@@ -36,23 +36,46 @@ uspop
 Population estimates for US States as of July 1st 2018
 }
 \details{
-c("character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("state", "state_abbr", "statefips", "region_name", "division_name", "sex_id", "sex", "hisp_id", "hisp_label", "fips", "pop", "white", "black", "amind", "asian", "nhopi", "tom")
-c(0, 9, 0, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 0.980392156862745, 1, 0.980392156862745, 0.980392156862745, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(4, 2, 2, 4, 7, 4, 4, 4, 5, 11, NA, NA, NA, NA, NA, NA, NA)
-c(20, 2, 2, 9, 18, 6, 10, 7, 12, 11, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
-c(51, 50, 51, 4, 9, 3, 3, 3, 3, 51, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 2851132.32244009, 2179861.40305011, 381736.984749455, 36143.9738562092, 168458.387799564, 6966.60566448802, 77964.9673202614)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 4198641.26163193, 3116129.24695129, 644380.662866089, 65036.8342659081, 515557.14119709, 18657.1753142485, 131251.15699839)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 6154, 5120, 260, 161, 79, 23, 455)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 386961.5, 296294, 11907, 6103.5, 5045.5, 669, 12091)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1349442, 1088503, 80714, 15273, 26484, 2029, 33757)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 3558480, 2759335.5, 486281.5, 35770.5, 140424.5, 5063.5, 98669.5)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 39557045, 28531740, 3673855, 651076, 6063600, 199872, 1554757)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab uspop \cr
+   Number of rows \tab 459 \cr
+   Number of columns \tab 17 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   character \tab 10 \cr
+   numeric \tab 7 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   state \tab 0 \tab 1.00 \tab 4 \tab 20 \tab 0 \tab 51 \tab 0 \cr
+   state_abbr \tab 9 \tab 0.98 \tab 2 \tab 2 \tab 0 \tab 50 \tab 0 \cr
+   statefips \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 51 \tab 0 \cr
+   region_name \tab 9 \tab 0.98 \tab 4 \tab 9 \tab 0 \tab 4 \tab 0 \cr
+   division_name \tab 9 \tab 0.98 \tab 7 \tab 18 \tab 0 \tab 9 \tab 0 \cr
+   sex_id \tab 0 \tab 1.00 \tab 4 \tab 6 \tab 0 \tab 3 \tab 0 \cr
+   sex \tab 0 \tab 1.00 \tab 4 \tab 10 \tab 0 \tab 3 \tab 0 \cr
+   hisp_id \tab 0 \tab 1.00 \tab 4 \tab 7 \tab 0 \tab 3 \tab 0 \cr
+   hisp_label \tab 0 \tab 1.00 \tab 5 \tab 12 \tab 0 \tab 3 \tab 0 \cr
+   fips \tab 0 \tab 1.00 \tab 11 \tab 11 \tab 0 \tab 51 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   pop \tab 0 \tab 1 \tab 2851132.32 \tab 4198641.26 \tab 6154 \tab 386961.5 \tab 1349442 \tab 3558480.0 \tab 39557045 \tab ▇▁▁▁▁ \cr
+   white \tab 0 \tab 1 \tab 2179861.40 \tab 3116129.25 \tab 5120 \tab 296294.0 \tab 1088503 \tab 2759335.5 \tab 28531740 \tab ▇▁▁▁▁ \cr
+   black \tab 0 \tab 1 \tab 381736.98 \tab 644380.66 \tab 260 \tab 11907.0 \tab 80714 \tab 486281.5 \tab 3673855 \tab ▇▁▁▁▁ \cr
+   amind \tab 0 \tab 1 \tab 36143.97 \tab 65036.83 \tab 161 \tab 6103.5 \tab 15273 \tab 35770.5 \tab 651076 \tab ▇▁▁▁▁ \cr
+   asian \tab 0 \tab 1 \tab 168458.39 \tab 515557.14 \tab 79 \tab 5045.5 \tab 26484 \tab 140424.5 \tab 6063600 \tab ▇▁▁▁▁ \cr
+   nhopi \tab 0 \tab 1 \tab 6966.61 \tab 18657.18 \tab 23 \tab 669.0 \tab 2029 \tab 5063.5 \tab 199872 \tab ▇▁▁▁▁ \cr
+   tom \tab 0 \tab 1 \tab 77964.97 \tab 131251.16 \tab 455 \tab 12091.0 \tab 33757 \tab 98669.5 \tab 1554757 \tab ▇▁▁▁▁ \cr
+}
+
 
 U.S. Census estimates. Be aware of the US Census classifications of Race and Ethnicity. For the estimated total population for each State, jointly filter on  \code{totsex} in \code{sex_id} and \code{tothisp} in \code{hisp_id}  and then select \code{pop}.
 }

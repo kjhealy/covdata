@@ -31,33 +31,51 @@ nchs_sas
 Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.
 }
 \details{
-c("character", "character", "character", "Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("state", "sex", "age_group", "data_as_of", "start_week", "end_week", "covid_19_deaths", "total_deaths", "pneumonia_deaths", "pneumonia_and_covid_19_deaths", "influenza_deaths", "pneumonia_influenza_or_covid_19_deaths")
-c(0, 0, 0, 0, 0, 0, 277, 130, 330, 294, 533, 359)
-c(1, 1, 1, 1, 1, 1, 0.796622613803231, 0.904552129221733, 0.757709251101322, 0.784140969162996, 0.608663729809104, 0.736417033773862)
-c(4, 3, 8, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(20, 7, 17, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(54, 4, 12, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, 18458, 18293, 18454, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, 18458, 18293, 18454, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, 18458, 18293, 18454, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, 1, 1, 1, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, 670.403686635945, 6757.91964285714, 762.767441860465, 293.623595505618, 45.1628468033776, 1230.46759720837)
-c(NA, NA, NA, NA, NA, NA, 5052.61403638992, 53323.2143413217, 5568.38288671158, 2195.24895456669, 301.014963868983, 8858.98723771183)
-c(NA, NA, NA, NA, NA, NA, 0, 0, 0, 0, 0, 0)
-c(NA, NA, NA, NA, NA, NA, 0, 70, 0, 0, 0, 12)
-c(NA, NA, NA, NA, NA, NA, 18, 429, 47.5, 0, 0, 76)
-c(NA, NA, NA, NA, NA, NA, 139, 2248.75, 247.5, 59, 17, 385)
-c(NA, NA, NA, NA, NA, NA, 121374, 1387325, 131332, 52431, 6519, 205837)
-c(NA, NA, NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nchs_sas \cr
+   Number of rows \tab 1362 \cr
+   Number of columns \tab 12 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 3 \cr
+   character \tab 3 \cr
+   numeric \tab 6 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
 
-Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis,
-and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
-between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
-This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
-been suppressed in accordance with NHCS confidentiality standards.
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-07-15 \tab 2020-07-15 \tab 2020-07-15 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-07-11 \tab 2020-07-11 \tab 2020-07-11 \tab 1 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
+   sex \tab 0 \tab 1 \tab 3 \tab 7 \tab 0 \tab 4 \tab 0 \cr
+   age_group \tab 0 \tab 1 \tab 8 \tab 17 \tab 0 \tab 12 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   covid_19_deaths \tab 277 \tab 0.80 \tab 670.40 \tab 5052.61 \tab 0 \tab 0 \tab 18.0 \tab 139.00 \tab 121374 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 130 \tab 0.90 \tab 6757.92 \tab 53323.21 \tab 0 \tab 70 \tab 429.0 \tab 2248.75 \tab 1387325 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 330 \tab 0.76 \tab 762.77 \tab 5568.38 \tab 0 \tab 0 \tab 47.5 \tab 247.50 \tab 131332 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 294 \tab 0.78 \tab 293.62 \tab 2195.25 \tab 0 \tab 0 \tab 0.0 \tab 59.00 \tab 52431 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 533 \tab 0.61 \tab 45.16 \tab 301.01 \tab 0 \tab 0 \tab 0.0 \tab 17.00 \tab 6519 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 359 \tab 0.74 \tab 1230.47 \tab 8858.99 \tab 0 \tab 12 \tab 76.0 \tab 385.00 \tab 205837 \tab ▇▁▁▁▁ \cr
+   Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis, \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   been suppressed in accordance with NHCS confidentiality standards. \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+}
 }
 \references{
 \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}

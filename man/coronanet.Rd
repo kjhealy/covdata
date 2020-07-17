@@ -54,32 +54,74 @@ coronanet
 Contains variables from the CoronaNet Government Response Project (\verb{https://coronanet-project.org}), representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. See below for citation information.
 }
 \details{
-c("character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "POSIXct", "POSIXct")
-c("record_id", "policy_id", "entry_type", "event_description", "type", "type_sub_cat", "country", "init_country_level", "province", "target_country", "target_geog_level", "target_region", "target_province", "target_city", "target_other", "target_who_what", "target_direction", "travel_mechanism", "compliance", "enforcer", "link", "iso3", "iso2", "date_start", "date_end", "domestic_policy", "type_text", "index_high_est", "index_med_est", "index_low_est", "index_country_rank", "recorded_date", "date_announced"
-)
-c(0, 0, 0, 0, 0, 6756, 0, 0, 10610, 186, 11965, 17864, 16672, 17588, 18074, 9539, 14757, 12859, 457, 0, 146, 48, 69, 0, 12926, 0, 17942, 3872, 3872, 3872, 3872, 0, 14)
-c(1, 1, 1, 1, 1, 0.626203386079451, 1, 1, 0.412968905610269, 0.989708974217107, 0.337999336062853, 0.0116189000774594, 0.0775699900409428, 0.0268894544649774, 0, 0.472225296005311, 0.183523293128251, 0.28853601859024, 0.974715060307624, 1, 0.991922098041385, 0.997344251410866, 0.996182361403121, 1, 0.284829036184575, 1, 0.0073033086201173, 0.785769613809893, 0.785769613809893, 0.785769613809893, 0.785769613809893, 1, 0.999225406661503)
-c(6, 4, 6, 3, 6, 5, 4, 8, 3, 4, 13, 4, 3, 2, NA, 5, 7, 5, 20, 6, 1, 1, 1, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(10, 14, 9, 6463, 54, 140, 32, 31, 33, 1905, 62, 218, 1556, 286, NA, 61, 16, 103, 167, 219, 1821, 3, 2, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(18074, 13547, 2, 13858, 21, 108, 198, 5, 671, 558, 6, 40, 476, 296, 0, 13, 3, 78, 31, 178, 10052, 197, 196, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 18261, 18289, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 19872, 19872, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 18351, 18381, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 208, 229, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0.851499391390948, 19.969696969697, 53.8929254475804, 52.2349993234081, 50.5891676618901, 118.994930291508, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0.355605363255071, 11.4618113977747, 2.36410293130679, 1.93168843515652, 2.52120323572528, 53.8831313873642, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, 2, 48.2881986976457, 45.4169763090071, 37.1908139778481, 1, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 14, 52.4678771378979, 51.2447941968846, 49.7246742583905, 70, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 20, 53.5806187824825, 52.3057555608501, 51.110711776471, 124, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 28, 54.9836024149479, 53.4563836153193, 52.1274912597159, 169, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 85, 70.7421844688118, 57.5867493801265, 56.2595023940775, 194, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, "▂▁▁▁▇", "▆▇▁▁▁", "▅▇▁▁▁", "▁▂▇▆▁", "▁▁▂▇▂", "▂▅▃▅▇", NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1585373897, 1577750400)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1593992053, 1593907200)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1587891533, 1585353600)
-c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 13850, 185)
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab coronanet \cr
+   Number of rows \tab 18074 \cr
+   Number of columns \tab 33 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 2 \cr
+   POSIXct \tab 2 \cr
+   character \tab 23 \cr
+   numeric \tab 6 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date_start \tab 0 \tab 1.00 \tab 2019-12-31 \tab 2024-05-29 \tab 2020-03-30 \tab 208 \cr
+   date_end \tab 12926 \tab 0.28 \tab 2020-01-28 \tab 2024-05-29 \tab 2020-04-29 \tab 229 \cr
+}
+
+
+\strong{Variable type: POSIXct}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   recorded_date \tab 0 \tab 1 \tab 2020-03-28 05:38:17 \tab 2020-07-05 23:34:13 \tab 2020-04-26 08:58:53 \tab 13850 \cr
+   date_announced \tab 14 \tab 1 \tab 2019-12-31 00:00:00 \tab 2020-07-05 00:00:00 \tab 2020-03-28 00:00:00 \tab 185 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   record_id \tab 0 \tab 1.00 \tab 6 \tab 10 \tab 0 \tab 18074 \tab 0 \cr
+   policy_id \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 13547 \tab 0 \cr
+   entry_type \tab 0 \tab 1.00 \tab 6 \tab 9 \tab 0 \tab 2 \tab 0 \cr
+   event_description \tab 0 \tab 1.00 \tab 3 \tab 6463 \tab 0 \tab 13858 \tab 23 \cr
+   type \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 21 \tab 0 \cr
+   type_sub_cat \tab 6756 \tab 0.63 \tab 5 \tab 140 \tab 0 \tab 108 \tab 0 \cr
+   country \tab 0 \tab 1.00 \tab 4 \tab 32 \tab 0 \tab 198 \tab 0 \cr
+   init_country_level \tab 0 \tab 1.00 \tab 8 \tab 31 \tab 0 \tab 5 \tab 0 \cr
+   province \tab 10610 \tab 0.41 \tab 3 \tab 33 \tab 0 \tab 671 \tab 0 \cr
+   target_country \tab 186 \tab 0.99 \tab 4 \tab 1905 \tab 0 \tab 558 \tab 0 \cr
+   target_geog_level \tab 11965 \tab 0.34 \tab 13 \tab 62 \tab 0 \tab 6 \tab 0 \cr
+   target_region \tab 17864 \tab 0.01 \tab 4 \tab 218 \tab 0 \tab 40 \tab 0 \cr
+   target_province \tab 16672 \tab 0.08 \tab 3 \tab 1556 \tab 0 \tab 476 \tab 0 \cr
+   target_city \tab 17588 \tab 0.03 \tab 2 \tab 286 \tab 0 \tab 296 \tab 0 \cr
+   target_other \tab 18074 \tab 0.00 \tab NA \tab NA \tab 0 \tab 0 \tab 0 \cr
+   target_who_what \tab 9539 \tab 0.47 \tab 5 \tab 61 \tab 0 \tab 13 \tab 0 \cr
+   target_direction \tab 14757 \tab 0.18 \tab 7 \tab 16 \tab 0 \tab 3 \tab 0 \cr
+   travel_mechanism \tab 12859 \tab 0.29 \tab 5 \tab 103 \tab 0 \tab 78 \tab 0 \cr
+   compliance \tab 457 \tab 0.97 \tab 20 \tab 167 \tab 0 \tab 31 \tab 0 \cr
+   enforcer \tab 0 \tab 1.00 \tab 6 \tab 219 \tab 0 \tab 178 \tab 0 \cr
+   link \tab 146 \tab 0.99 \tab 1 \tab 1821 \tab 0 \tab 10052 \tab 0 \cr
+   iso3 \tab 48 \tab 1.00 \tab 1 \tab 3 \tab 0 \tab 197 \tab 0 \cr
+   iso2 \tab 69 \tab 1.00 \tab 1 \tab 2 \tab 0 \tab 196 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   domestic_policy \tab 0 \tab 1.00 \tab 0.85 \tab 0.36 \tab 0.00 \tab 1.00 \tab 1.00 \tab 1.00 \tab 1.00 \tab ▂▁▁▁▇ \cr
+   type_text \tab 17942 \tab 0.01 \tab 19.97 \tab 11.46 \tab 2.00 \tab 14.00 \tab 20.00 \tab 28.00 \tab 85.00 \tab ▆▇▁▁▁ \cr
+   index_high_est \tab 3872 \tab 0.79 \tab 53.89 \tab 2.36 \tab 48.29 \tab 52.47 \tab 53.58 \tab 54.98 \tab 70.74 \tab ▅▇▁▁▁ \cr
+   index_med_est \tab 3872 \tab 0.79 \tab 52.23 \tab 1.93 \tab 45.42 \tab 51.24 \tab 52.31 \tab 53.46 \tab 57.59 \tab ▁▂▇▆▁ \cr
+   index_low_est \tab 3872 \tab 0.79 \tab 50.59 \tab 2.52 \tab 37.19 \tab 49.72 \tab 51.11 \tab 52.13 \tab 56.26 \tab ▁▁▂▇▂ \cr
+   index_country_rank \tab 3872 \tab 0.79 \tab 118.99 \tab 53.88 \tab 1.00 \tab 70.00 \tab 124.00 \tab 169.00 \tab 194.00 \tab ▂▅▃▅▇ \cr
+}
+
 
 This file contains variables from the \href{https://coronanet-project.org/}{CoronaNet government response project}, representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. For more detail on this data, you can see \href{https://docs.google.com/document/d/1zvNMpwj0onFvUZ_gLl4RRjqS-clbHv3TIX6EOHofsME}{the codebook here}.
 The format of the data is in country-day-\code{record_id} format. Some

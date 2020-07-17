@@ -29,23 +29,38 @@ National Syndromic Surveillance Program (NSSP):
 Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
 }
 \details{
-c("character", "character", "character", "character", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("total_ed_visits", "visit_type", "region", "source", "week", "num_fac", "visits", "pct_visits", "year")
-c(0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(7, 3, 8, 21, NA, NA, NA, NA, NA)
-c(7, 3, 8, 21, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, NA, NA, NA, NA, NA)
-c(27, 2, 1, 1, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, 26.037037037037, 3346.88888888889, 41521.6666666667, 0.0201296296296296, 2019.51851851852)
-c(NA, NA, NA, NA, 19.8113393896954, 48.9707909347998, 16344.2478093313, 0.0102571581931771, 0.504348664241606)
-c(NA, NA, NA, NA, 1, 3249, 17639, 0.008, 2019)
-c(NA, NA, NA, NA, 7.25, 3329.5, 31216, 0.014, 2019)
-c(NA, NA, NA, NA, 14, 3352, 39183.5, 0.0175, 2020)
-c(NA, NA, NA, NA, 45.75, 3389.5, 50532, 0.022, 2020)
-c(NA, NA, NA, NA, 52, 3406, 86088, 0.05, 2020)
-c(NA, NA, NA, NA, "▇▂▁▂▇", "▃▁▆▃▇", "▅▇▃▂▁", "▇▆▂▁▂", "▇▁▁▁▇")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nssp_covid_er_nat \cr
+   Number of rows \tab 54 \cr
+   Number of columns \tab 9 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   character \tab 4 \cr
+   numeric \tab 5 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   total_ed_visits \tab 0 \tab 1 \tab 7 \tab 7 \tab 0 \tab 27 \tab 0 \cr
+   visit_type \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 2 \tab 0 \cr
+   region \tab 0 \tab 1 \tab 8 \tab 8 \tab 0 \tab 1 \tab 0 \cr
+   source \tab 0 \tab 1 \tab 21 \tab 21 \tab 0 \tab 1 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   week \tab 0 \tab 1 \tab 26.04 \tab 19.81 \tab 1.00 \tab 7.25 \tab 14.00 \tab 45.75 \tab 52.00 \tab ▇▂▁▂▇ \cr
+   num_fac \tab 0 \tab 1 \tab 3346.89 \tab 48.97 \tab 3249.00 \tab 3329.50 \tab 3352.00 \tab 3389.50 \tab 3406.00 \tab ▃▁▆▃▇ \cr
+   visits \tab 0 \tab 1 \tab 41521.67 \tab 16344.25 \tab 17639.00 \tab 31216.00 \tab 39183.50 \tab 50532.00 \tab 86088.00 \tab ▅▇▃▂▁ \cr
+   pct_visits \tab 0 \tab 1 \tab 0.02 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.02 \tab 0.02 \tab 0.05 \tab ▇▆▂▁▂ \cr
+   year \tab 0 \tab 1 \tab 2019.52 \tab 0.50 \tab 2019.00 \tab 2019.00 \tab 2020.00 \tab 2020.00 \tab 2020.00 \tab ▇▁▁▁▇ \cr
+}
+
 
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted

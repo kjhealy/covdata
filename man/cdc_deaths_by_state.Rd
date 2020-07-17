@@ -25,6 +25,46 @@ cdc_deaths_by_state
 CDC Surveillance Network provisional death counts
 }
 \details{
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab cdc_deaths_by_state \cr
+   Number of rows \tab 53 \cr
+   Number of columns \tab 10 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 3 \cr
+   character \tab 1 \cr
+   numeric \tab 6 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-04-30 \tab 2020-04-30 \tab 2020-04-30 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-04-25 \tab 2020-04-25 \tab 2020-04-25 \tab 1 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 53 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   covid_deaths \tab 6 \tab 0.89 \tab 735.02 \tab 1801.11 \tab 0 \tab 54.50 \tab 153.00 \tab 519.00 \tab 10978.00 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 0 \tab 1.00 \tab 13557.43 \tab 13996.83 \tab 856 \tab 3813.00 \tab 10721.00 \tab 17624.00 \tab 69341.00 \tab ▇▂▁▁▁ \cr
+   percent_expected_deaths \tab 0 \tab 1.00 \tab 0.93 \tab 0.27 \tab 0 \tab 0.86 \tab 0.95 \tab 0.99 \tab 2.19 \tab ▁▂▇▁▁ \cr
+   pneumonia_deaths \tab 0 \tab 1.00 \tab 1197.26 \tab 1453.17 \tab 41 \tab 277.00 \tab 769.00 \tab 1306.00 \tab 6076.00 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_deaths \tab 10 \tab 0.81 \tab 355.81 \tab 759.51 \tab 0 \tab 30.50 \tab 65.00 \tab 296.00 \tab 4019.00 \tab ▇▁▁▁▁ \cr
+   all_influenza_deaths_j09_j11 \tab 3 \tab 0.94 \tab 116.58 \tab 142.24 \tab 14 \tab 30.50 \tab 87.50 \tab 125.50 \tab 850.00 \tab ▇▁▁▁▁ \cr
+}
+
+
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted
 to track the COVID-19 pandemic in the United States. Data is

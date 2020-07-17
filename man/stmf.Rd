@@ -70,28 +70,51 @@ Countries and years covered in the dataset:\tabular{llllllllllllllllllllllllllll
 
 
 Variables
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab stmf \cr
+   Number of rows \tab 351360 \cr
+   Number of columns \tab 17 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 1 \cr
+   character \tab 7 \cr
+   numeric \tab 9 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
 
-c("character", "character", "character", "character", "character", "character", "character", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("country_code", "cname", "iso2", "continent", "iso3", "sex", "age_group", "approx_date", "year", "week", "split", "split_sex", "forecast", "death_count", "death_rate", "deaths_total", "rate_total")
-c(0, 0, 24165, 43545, 43545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 0.931224385245902, 0.876067281420765, 0.876067281420765, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(3, 5, 2, 4, 3, 1, 3, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(7, 17, 2, 13, 3, 1, 5, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(25, 25, 23, 3, 21, 3, 5, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, 0, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 7311, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 18441, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 14983, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 1586, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 2009.95803449454, 26.1465590846995, 0.128457991803279, 0.0176457194899818, 0.112107240437158, 445.676804417122, 0.0483249726457555, 2228.38402208561, 0.00957375072944008)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 6.41212034091397, 15.0189783467693, 0.334599543908441, 0.131660158775577, 0.3154987961569, 1229.37683331503, 0.0641938680490415, 5207.06503588317, 0.00239789804497262)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 1990, 1, 0, 0, 0, 0, 0, 2, 0.000657914772427258)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 2005, 13, 0, 0, 0, 24.4278845149905, 0.00175630952390428, 467, 0.00820765870446905)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 2011, 26, 0, 0, 0, 146, 0.0176597277244164, 912, 0.00928301159927633)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 2015, 39, 0, 0, 0, 339, 0.0635147695905718, 1646, 0.0106565699230333)
-c(NA, NA, NA, NA, NA, NA, NA, NA, 2020, 52, 1, 1, 1, 24683.8766956658, 0.575226288732232, 77737, 0.0249402392761819)
-c(NA, NA, NA, NA, NA, NA, NA, NA, "▁▃▇▇▇", "▇▇▇▇▇", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▁▁▁▁", "▇▂▁▁▁", "▇▁▁▁▁", "▁▇▃▁▁")
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-06-28 \tab 2011-01-09 \tab 1586 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   country_code \tab 0 \tab 1.00 \tab 3 \tab 7 \tab 0 \tab 25 \tab 0 \cr
+   cname \tab 0 \tab 1.00 \tab 5 \tab 17 \tab 0 \tab 25 \tab 0 \cr
+   iso2 \tab 24165 \tab 0.93 \tab 2 \tab 2 \tab 0 \tab 23 \tab 0 \cr
+   continent \tab 43545 \tab 0.88 \tab 4 \tab 13 \tab 0 \tab 3 \tab 0 \cr
+   iso3 \tab 43545 \tab 0.88 \tab 3 \tab 3 \tab 0 \tab 21 \tab 0 \cr
+   sex \tab 0 \tab 1.00 \tab 1 \tab 1 \tab 0 \tab 3 \tab 0 \cr
+   age_group \tab 0 \tab 1.00 \tab 3 \tab 5 \tab 0 \tab 5 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   year \tab 0 \tab 1 \tab 2009.96 \tab 6.41 \tab 1990 \tab 2005.00 \tab 2011.00 \tab 2015.00 \tab 2020.00 \tab ▁▃▇▇▇ \cr
+   week \tab 0 \tab 1 \tab 26.15 \tab 15.02 \tab 1 \tab 13.00 \tab 26.00 \tab 39.00 \tab 52.00 \tab ▇▇▇▇▇ \cr
+   split \tab 0 \tab 1 \tab 0.13 \tab 0.33 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
+   split_sex \tab 0 \tab 1 \tab 0.02 \tab 0.13 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
+   forecast \tab 0 \tab 1 \tab 0.11 \tab 0.32 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
+   death_count \tab 0 \tab 1 \tab 445.68 \tab 1229.38 \tab 0 \tab 24.43 \tab 146.00 \tab 339.00 \tab 24683.88 \tab ▇▁▁▁▁ \cr
+   death_rate \tab 0 \tab 1 \tab 0.05 \tab 0.06 \tab 0 \tab 0.00 \tab 0.02 \tab 0.06 \tab 0.58 \tab ▇▂▁▁▁ \cr
+   deaths_total \tab 0 \tab 1 \tab 2228.38 \tab 5207.07 \tab 2 \tab 467.00 \tab 912.00 \tab 1646.00 \tab 77737.00 \tab ▇▁▁▁▁ \cr
+   rate_total \tab 0 \tab 1 \tab 0.01 \tab 0.00 \tab 0 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.02 \tab ▁▇▃▁▁ \cr
+}
 }
 \references{
 "Short-term Mortality Fluctuations Dataseries" n.d., \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}

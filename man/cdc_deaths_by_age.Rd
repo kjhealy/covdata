@@ -29,35 +29,51 @@ cdc_deaths_by_age
 Provisional Death Counts for Coronavirus Disease (COVID-19)
 }
 \details{
-c("character", "Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("age_group", "data_as_of", "start_week", "end_week", "covid_deaths", "total_deaths", "percent_expected_deaths", "pneumonia_deaths", "pneumonia_and_covid_deaths", "all_influenza_deaths_j09_j11")
-c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(5, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(10, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(12, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 1, 1, 1, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, 5753.5, 118897.666666667, 0.97, 10454.1666666667, 2550.16666666667, 970.166666666667)
-c(NA, NA, NA, NA, 9877.31491393744, 202377.065266494, 0, 18036.2489187915, 4387.92646895657, 1618.89551761987)
-c(NA, NA, NA, NA, 2, 712, 0.97, 33, 0, 11)
-c(NA, NA, NA, NA, 30.25, 5675.25, 0.97, 109, 12.5, 40.75)
-c(NA, NA, NA, NA, 1211.5, 28460, 0.97, 1799.5, 491.5, 358.5)
-c(NA, NA, NA, NA, 7918.25, 149341.5, 0.97, 14114.25, 3515.75, 1222.75)
-c(NA, NA, NA, NA, 34521, 713386, 0.97, 62725, 15301, 5821)
-c(NA, NA, NA, NA, "▇▃▁▁▁", "▇▂▁▁▁", "▁▁▇▁▁", "▇▃▁▁▁", "▇▃▁▁▁", "▇▃▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab cdc_deaths_by_age \cr
+   Number of rows \tab 12 \cr
+   Number of columns \tab 10 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 3 \cr
+   character \tab 1 \cr
+   numeric \tab 6 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
 
-The U.S. Centers for Disease Control provides weekly
-summary and interpretation of key indicators that have been adapted
-to track the COVID-19 pandemic in the United States. Data is
-retrieved using the cdccovidview package from both COVIDView
-(\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html})
-and COVID-NET
-(\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}). Please see the indicated reference for all the caveats and precise meanings for each field.
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-04-30 \tab 2020-04-30 \tab 2020-04-30 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-04-25 \tab 2020-04-25 \tab 2020-04-25 \tab 1 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   age_group \tab 0 \tab 1 \tab 5 \tab 10 \tab 0 \tab 12 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   covid_deaths \tab 0 \tab 1 \tab 5753.50 \tab 9877.31 \tab 2.00 \tab 30.25 \tab 1211.50 \tab 7918.25 \tab 34521.00 \tab ▇▃▁▁▁ \cr
+   total_deaths \tab 0 \tab 1 \tab 118897.67 \tab 202377.07 \tab 712.00 \tab 5675.25 \tab 28460.00 \tab 149341.50 \tab 713386.00 \tab ▇▂▁▁▁ \cr
+   percent_expected_deaths \tab 0 \tab 1 \tab 0.97 \tab 0.00 \tab 0.97 \tab 0.97 \tab 0.97 \tab 0.97 \tab 0.97 \tab ▁▁▇▁▁ \cr
+   pneumonia_deaths \tab 0 \tab 1 \tab 10454.17 \tab 18036.25 \tab 33.00 \tab 109.00 \tab 1799.50 \tab 14114.25 \tab 62725.00 \tab ▇▃▁▁▁ \cr
+   pneumonia_and_covid_deaths \tab 0 \tab 1 \tab 2550.17 \tab 4387.93 \tab 0.00 \tab 12.50 \tab 491.50 \tab 3515.75 \tab 15301.00 \tab ▇▃▁▁▁ \cr
+   all_influenza_deaths_j09_j11 \tab 0 \tab 1 \tab 970.17 \tab 1618.90 \tab 11.00 \tab 40.75 \tab 358.50 \tab 1222.75 \tab 5821.00 \tab ▇▃▁▁▁ \cr
+   The U.S. Centers for Disease Control provides weekly \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   summary and interpretation of key indicators that have been adapted \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   to track the COVID-19 pandemic in the United States. Data is \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   retrieved using the cdccovidview package from both COVIDView \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   (\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html}) \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   and COVID-NET \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   (\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}). Please see the indicated reference for all the caveats and precise meanings for each field. \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+}
 }
 \references{
 \url{https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&bom=true&format=true}

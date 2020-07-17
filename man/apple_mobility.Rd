@@ -27,27 +27,43 @@ apple_mobility
 Data from Apple Maps on relative changes in mobility in various cities and countries.
 }
 \details{
-c("character", "character", "character", "character", "character", "character", "Date", "numeric")
-c("geo_type", "region", "transportation_type", "alternative_name", "sub_region", "country", "date", "index")
-c(0, 0, 0, 535020, 156140, 28305, 0, 14387)
-c(1, 1, 1, 0.202206896551724, 0.767172413793103, 0.957793103448276, 1, 0.978546877912395)
-c(4, 4, 7, 2, 4, 5, NA, NA)
-c(14, 48, 7, 85, 33, 20, NA, NA)
-c(0, 0, 0, 0, 0, 0, NA, NA)
-c(4, 2325, 3, 519, 162, 47, NA, NA)
-c(0, 0, 0, 0, 0, 0, NA, NA)
-c(NA, NA, NA, NA, NA, NA, 18274, NA)
-c(NA, NA, NA, NA, NA, NA, 18458, NA)
-c(NA, NA, NA, NA, NA, NA, 18366, NA)
-c(NA, NA, NA, NA, NA, NA, 185, NA)
-c(NA, NA, NA, NA, NA, NA, NA, 111.515419040043)
-c(NA, NA, NA, NA, NA, NA, NA, 56.8382748456252)
-c(NA, NA, NA, NA, NA, NA, NA, 2.43)
-c(NA, NA, NA, NA, NA, NA, NA, 79.3)
-c(NA, NA, NA, NA, NA, NA, NA, 105.25)
-c(NA, NA, NA, NA, NA, NA, NA, 133.72)
-c(NA, NA, NA, NA, NA, NA, NA, 1497.29)
-c(NA, NA, NA, NA, NA, NA, NA, "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab apple_mobility \cr
+   Number of rows \tab 670625 \cr
+   Number of columns \tab 8 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 1 \cr
+   character \tab 6 \cr
+   numeric \tab 1 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2020-07-15 \tab 2020-04-14 \tab 185 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   geo_type \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 4 \tab 0 \cr
+   region \tab 0 \tab 1.00 \tab 4 \tab 48 \tab 0 \tab 2325 \tab 0 \cr
+   transportation_type \tab 0 \tab 1.00 \tab 7 \tab 7 \tab 0 \tab 3 \tab 0 \cr
+   alternative_name \tab 535020 \tab 0.20 \tab 2 \tab 85 \tab 0 \tab 519 \tab 0 \cr
+   sub_region \tab 156140 \tab 0.77 \tab 4 \tab 33 \tab 0 \tab 162 \tab 0 \cr
+   country \tab 28305 \tab 0.96 \tab 5 \tab 20 \tab 0 \tab 47 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   index \tab 14387 \tab 0.98 \tab 111.52 \tab 56.84 \tab 2.43 \tab 79.3 \tab 105.25 \tab 133.72 \tab 1497.29 \tab ▇▁▁▁▁ \cr
+}
+
 
 Data made available by Apple, Inc. at \url{https://www.apple.com/covid19/mobility}, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
 }

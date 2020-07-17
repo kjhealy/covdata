@@ -9,7 +9,9 @@
 #'}
 #' @details
 #'
-#'  `r countries %>% dplyr::ungroup() %>% skimr::skim()`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(dplyr::ungroup(countries))
+#' ```
 #'
 #' Produced from the ECDC tables in the covdata package.
 #' @author Kieran Healy
@@ -32,8 +34,9 @@
 #'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this date}
 #' }
 #' @details
-#'
-#' `r covnat %>% dplyr::ungroup() %>% skimr::skim()`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(dplyr::ungroup(covnat))
+#' ```
 #'
 #' @source \url{http://ecdc.europa.eu/}
 "covnat"
@@ -54,7 +57,9 @@
 #' }
 #' @details
 #'
-#' `r skimr::skim(covus)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(covus)
+#' ```
 #'
 #' The measures tracked by the COVID tracking project are as follows:
 #'
@@ -66,7 +71,7 @@
 #' In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
 #' to the death according to the death certificate. `death_probable` is the total number of deaths where COVID was listed as a
 #' cause of death and there is not a laboratory test confirming COVID-19 infection.
-#' @source The COVID-19 Tracking Project \url{https://covidtracking.com} oi
+#' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"
 
 #' @title COVID-19 case and death counts for the USA by race and state current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
@@ -81,8 +86,9 @@
 #'   \item{\code{deaths}}{integer Total deaths, count}
 #'}
 #' @details
-#'
-#' `r skimr::skim(covus_race)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(covus_race)
+#' ```
 #'
 #' The `group` variable is coded as follows:
 #'
@@ -107,8 +113,9 @@
 #'   \item{\code{deaths}}{integer Total deaths, count}
 #'}
 #' @details
-#'
-#' `r skimr::skim(covus_ethnicity)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(covus_ethnicity)
+#' ```
 #'
 #' The `group` variable is coded as "Hispanic", "Non-Hispanic", or "Unknown". Hispanics may be of any race. State-level counts should
 #' be handled with care, given the widely varying population distribution of people of different ethnic backgrounds by state.
@@ -131,8 +138,9 @@
 #' \item{deaths}{Cumulative N reported deaths}
 #' }
 #' @details
-#'
-#' `r skimr::skim(nytcovcounty)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nytcovcounty)
+#' ```
 #'
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data}
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
@@ -158,8 +166,9 @@
 #' \item{deaths}{Cumulative N reported deaths}
 #' }
 #' @details
-#'
-#' `r skimr::skim(nytcovstate)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nytcovstate)
+#' ```
 #'
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data}.
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
@@ -176,8 +185,9 @@
 #' \item{deaths}{Cumulative N reported deaths}
 #' }
 #' @details
-#'
-#' `r skimr::skim(nytcovus)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nytcovus)
+#' ```
 #'
 #' @source The New York Times \url{https://github.com/nytimes/covid-19-data}.
 #' For details on the methods and limitations see \url{https://github.com/nytimes/covid-19-data}.
@@ -202,8 +212,9 @@
 #'   \item{\code{baseline}}{character The years used to calculate expected_deaths.}
 #'}
 #' @details
-#'
-#' `r skimr::skim(nytexcess)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nytexcess)
+#' ```
 #'
 #' Expected deaths for each area based on historical data for the same time of year. These expected deaths are the basis for our excess death calculations, which estimate how many more people have died this year than in an average year.
 #'
@@ -229,8 +240,9 @@
 #'   \item{\code{weekly_rate}}{double COLUMN_DESCRIPTION}
 #'}
 #' @details
-#'
-#' `r skimr::skim(cdc_hospitalizations)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(cdc_hospitalizations)
+#' ```
 #'
 #' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -261,8 +273,9 @@
 #'   \item{\code{pneumonia_influenza_and_covid_19_deaths}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details
-#'
-#' `r skimr::skim(cdc_deaths_by_week)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(cdc_deaths_by_week)
+#' ```
 #'
 #' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -292,8 +305,9 @@
 #'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details
-#'
-#' `r skimr::skim(cdc_deaths_by_age)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(cdc_deaths_by_age)
+#' ```
 #'
 #' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -323,8 +337,9 @@
 #'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details
-#'
-#' `r skimr::skim(cdc_deaths_by_sex)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(cdc_deaths_by_sex)
+#' ```
 #'
 #' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -352,7 +367,12 @@
 #'   \item{\code{pneumonia_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{pneumonia_and_covid_deaths}}{integer COLUMN_DESCRIPTION}
 #'   \item{\code{all_influenza_deaths_j09_j11}}{integer COLUMN_DESCRIPTION}}
-#' @details The U.S. Centers for Disease Control provides weekly
+#' @details
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(cdc_deaths_by_state)
+#' ```
+#'
+#' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
 #' to track the COVID-19 pandemic in the United States. Data is
 #' retrieved using the cdccovidview package from both COVIDView
@@ -370,11 +390,12 @@
 #' \item{\code{name}}{character Network name}
 #' \item{\code{area}}{character Area}
 #' }
-#' @details T
+#' @details
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(cdc_catchments)
+#' ```
 #'
-#' `r skimr::skim(cdc_catchments)`
-#'
-#' he Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
+#' The Coronavirus Disease 2019 (COVID-19)-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in children (persons younger than 18 years) and adults. The current network covers nearly 100 counties in the 10 Emerging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, and TN) and four additional states through the Influenza Hospitalization Surveillance Project (IA, MI, OH, and UT). The network represents approximately 10% of US population (~32 million people). Cases are identified by reviewing hospital, laboratory, and admission databases and infection control logs for patients hospitalized with a documented positive SARS-CoV-2 test. Data gathered are used to estimate age-specific hospitalization rates on a weekly basis and describe characteristics of persons hospitalized with COVID-19. Laboratory confirmation is dependent on clinician-ordered SARS-CoV-2 testing. Therefore, the unadjusted rates provided are likely to be underestimated as COVID-19-associated hospitalizations can be missed due to test availability and provider or facility testing practices. COVID-NET hospitalization data are preliminary and subject to change as more data become available. All incidence rates are unadjusted. Please use the following citation when referencing these data: “COVID-NET: COVID-19-Associated Hospitalization Surveillance Network, Centers for Disease Control and Prevention. WEBSITE. Accessed on DATE”.
 #'
 #' `r knitr::kable(cdc_catchments)`
 #'
@@ -399,8 +420,9 @@
 #'   \item{\code{year}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details
-#'
-#' `r skimr::skim(nssp_covid_er_nat)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nssp_covid_er_nat)
+#' ```
 #'
 #' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -430,8 +452,9 @@
 #'   \item{\code{year}}{integer COLUMN_DESCRIPTION}
 #'}
 #' @details
-#'
-#' `r skimr::skim(nssp_covid_er_reg)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nssp_covid_er_reg)
+#' ```
 #'
 #' The U.S. Centers for Disease Control provides weekly
 #' summary and interpretation of key indicators that have been adapted
@@ -476,10 +499,9 @@
 #' `r knitr::kable(stmf_country_years(stmf))`
 #'
 #' Variables
-#'
-#' `r skimr::skim(stmf)`
-#'
-
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(stmf)
+#' ```
 #'
 #' @author Kieran Healy
 #' @source Human Mortality Database, \url{http://mortality.org}
@@ -501,7 +523,9 @@
 #'   \item{\code{index}}{double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.}
 #'}
 #' @details
-#' `r skimr::skim(apple_mobility)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(apple_mobility)
+#' ```
 #'
 #' Data made available by Apple, Inc. at \url{https://www.apple.com/covid19/mobility}, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.
 #' @author Kieran Healy
@@ -526,8 +550,9 @@
 #'   \item{\code{pct_diff}}{integer Percent change from baseline activity}
 #'}
 #' @details
-#'
-#' `r skimr::skim(google_mobility)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(google_mobility)
+#' ```
 #'
 #' Location accuracy and the understanding of categorized places varies from region to region, so Google does not recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas). Regions or categories are omitted if Google does not have have sufficient statistically significant levels of data for it. Changes for each day are compared to a baseline value for that day of the week. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020. What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) we don’t show a change for the day. As a result, you may encounter empty fields for certain places and dates. We calculate these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population.
 #' @author Kieran Healy
@@ -573,8 +598,9 @@
 #'   \item{\code{iso2}}{character 2-digit ISO country code}
 #'}
 #' @details
-#'
-#' `r skimr::skim(coronanet)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(coronanet)
+#' ```
 #'
 #' This file contains variables from the [CoronaNet government response project](https://coronanet-project.org/), representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. For more detail on this data, you can see [the codebook here](https://docs.google.com/document/d/1zvNMpwj0onFvUZ_gLl4RRjqS-clbHv3TIX6EOHofsME).
 #' The format of the data is in country-day-`record_id` format. Some
@@ -623,8 +649,9 @@
 #'   \item{\code{tom}}{double Race alone: Two or more races}
 #'}
 #' @details
-#'
-#' `r skimr::skim(uspop)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(uspop)
+#' ```
 #'
 #' U.S. Census estimates. Be aware of the US Census classifications of Race and Ethnicity. For the estimated total population for each State, jointly filter on  `totsex` in `sex_id` and `tothisp` in `hisp_id`  and then select `pop`.
 #' @author Kieran Healy
@@ -650,8 +677,9 @@
 #'   \item{\code{pneumonia_influenza_or_covid_19_deaths}}{integer Deaths with Pneumonia, Influenza, or COVID-19 (ICD-10 codes U07.1 or J09-J18.9)}
 #'}
 #' @details
-#'
-#' `r skimr::skim(nchs_sas)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nchs_sas)
+#' ```
 #'
 #' Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis,
 #' and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
@@ -677,8 +705,9 @@
 #'   \item{\code{wt_dist_pop_pct}}{double COLUMN_DESCRIPTION}
 #'}
 #' @details
-#'
-#' `r skimr::skim(nchs_wss)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nchs_wss)
+#' ```
 #'
 #' The percent of deaths reported in this table are the total number of represent all deaths received and coded as of the date of analysis
 #' and do not represent all deaths that occurred in that period. Data are incomplete because of the lag in time between when the death occurred
@@ -714,8 +743,9 @@
 #'   \item{\code{medcond_yn}}{character Presence of underlying comorbidity or disease}
 #'}
 #' @details
-#'
-#' `r skimr::skim(nchs_pud)`
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(nchs_pud)
+#' ```
 #'
 #' Each row is a deidentified patient. These deidentified data include demographic characteristics, exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities. All data elements can be found on the COVID-19 case report form located at `www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf`.
 #' The COVID-19 case surveillance data are dynamic; case reports can be modified at any time by the reporting jurisdiction as new information becomes available (i.e., data are subject to change). Furthermore, reporting jurisdictions may report cases late. Version updates to the detailed and limited datasets will be available for request once a month.

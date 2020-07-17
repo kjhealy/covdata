@@ -27,23 +27,36 @@ This report provides a weekly summary of deaths with coronavirus disease 2019 (C
 In this release, counts of deaths are provided by the race and Hispanic origin of the decedent.
 }
 \details{
-c("character", "character", "character", "numeric", "numeric", "numeric", "numeric")
-c("data_as_of", "state", "group", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
-c(0, 0, 0, 67, 67, 0, 0)
-c(1, 1, 1, 0.746212121212121, 0.746212121212121, 1, 1)
-c(10, 4, 5, NA, NA, NA, NA)
-c(10, 20, 45, NA, NA, NA, NA)
-c(0, 0, 0, NA, NA, NA, NA)
-c(1, 44, 6, NA, NA, NA, NA)
-c(0, 0, 0, NA, NA, NA, NA)
-c(NA, NA, NA, 1228.47208121827, 22.053807106599, 16.6651515151515, 16.6689393939394)
-c(NA, NA, NA, 5266.17607806518, 24.7388987311883, 24.1377116390695, 21.1545216070269)
-c(NA, NA, NA, 0, 0, 0.1, 0.1)
-c(NA, NA, NA, 34, 2.4, 1.8, 2.1)
-c(NA, NA, NA, 123, 11, 4.75, 6.3)
-c(NA, NA, NA, 650, 38.6, 16.875, 23.625)
-c(NA, NA, NA, 64073, 95.5, 93.1, 91)
-c(NA, NA, NA, "▇▁▁▁▁", "▇▂▂▁▁", "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nchs_wss \cr
+   Number of rows \tab 264 \cr
+   Number of columns \tab 7 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   character \tab 3 \cr
+   numeric \tab 4 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   data_as_of \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 1 \tab 0 \cr
+   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 44 \tab 0 \cr
+   group \tab 0 \tab 1 \tab 5 \tab 45 \tab 0 \tab 6 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   deaths \tab 67 \tab 0.75 \tab 1228.47 \tab 5266.18 \tab 0.0 \tab 34.0 \tab 123.00 \tab 650.00 \tab 64073.0 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 67 \tab 0.75 \tab 22.05 \tab 24.74 \tab 0.0 \tab 2.4 \tab 11.00 \tab 38.60 \tab 95.5 \tab ▇▂▂▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 24.14 \tab 0.1 \tab 1.8 \tab 4.75 \tab 16.88 \tab 93.1 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 21.15 \tab 0.1 \tab 2.1 \tab 6.30 \tab 23.62 \tab 91.0 \tab ▇▁▁▁▁ \cr
+}
+
 
 The percent of deaths reported in this table are the total number of represent all deaths received and coded as of the date of analysis
 and do not represent all deaths that occurred in that period. Data are incomplete because of the lag in time between when the death occurred

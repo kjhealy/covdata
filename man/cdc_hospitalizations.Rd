@@ -27,23 +27,37 @@ cdc_hospitalizations
 Courtesy of Bob Rudis's cdccovidview package
 }
 \details{
-c("character", "character", "character", "character", "character", "character", "numeric", "numeric")
-c("catchment", "network", "year", "mmwr_year", "mmwr_week", "age_category", "cumulative_rate", "weekly_rate")
-c(0, 0, 0, 0, 0, 0, 1836, 1836)
-c(1, 1, 1, 1, 1, 1, 0.6, 0.6)
-c(4, 3, 4, 4, 2, 3, NA, NA)
-c(14, 9, 4, 4, 2, 8, NA, NA)
-c(0, 0, 0, 0, 0, 0, NA, NA)
-c(15, 3, 1, 1, 30, 9, NA, NA)
-c(0, 0, 0, 0, 0, 0, NA, NA)
-c(NA, NA, NA, NA, NA, NA, 108.540777051561, 10.8326797385621)
-c(NA, NA, NA, NA, NA, NA, 177.971385145269, 19.4395350884378)
-c(NA, NA, NA, NA, NA, NA, 0, 0)
-c(NA, NA, NA, NA, NA, NA, 2.9, 0.5)
-c(NA, NA, NA, NA, NA, NA, 38.85, 4.2)
-c(NA, NA, NA, NA, NA, NA, 138.875, 12.675)
-c(NA, NA, NA, NA, NA, NA, 1684.1, 269.2)
-c(NA, NA, NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab cdc_hospitalizations \cr
+   Number of rows \tab 4590 \cr
+   Number of columns \tab 8 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   character \tab 6 \cr
+   numeric \tab 2 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   catchment \tab 0 \tab 1 \tab 4 \tab 14 \tab 0 \tab 15 \tab 0 \cr
+   network \tab 0 \tab 1 \tab 3 \tab 9 \tab 0 \tab 3 \tab 0 \cr
+   year \tab 0 \tab 1 \tab 4 \tab 4 \tab 0 \tab 1 \tab 0 \cr
+   mmwr_year \tab 0 \tab 1 \tab 4 \tab 4 \tab 0 \tab 1 \tab 0 \cr
+   mmwr_week \tab 0 \tab 1 \tab 2 \tab 2 \tab 0 \tab 30 \tab 0 \cr
+   age_category \tab 0 \tab 1 \tab 3 \tab 8 \tab 0 \tab 9 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   cumulative_rate \tab 1836 \tab 0.6 \tab 108.54 \tab 177.97 \tab 0 \tab 2.9 \tab 38.85 \tab 138.88 \tab 1684.1 \tab ▇▁▁▁▁ \cr
+   weekly_rate \tab 1836 \tab 0.6 \tab 10.83 \tab 19.44 \tab 0 \tab 0.5 \tab 4.20 \tab 12.67 \tab 269.2 \tab ▇▁▁▁▁ \cr
+}
+
 
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted

@@ -29,27 +29,45 @@ cdc_deaths_by_sex
 Provisional Death Counts for Coronavirus Disease (COVID-19)
 }
 \details{
-c("character", "Date", "Date", "Date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("sex", "data_as_of", "start_week", "end_week", "covid_deaths", "total_deaths", "percent_expected_deaths", "pneumonia_deaths", "pneumonia_and_covid_deaths", "all_influenza_deaths_j09_j11")
-c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(4, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(7, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(3, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(0, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 18382, 18293, 18377, NA, NA, NA, NA, NA, NA)
-c(NA, 1, 1, 1, NA, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, 11507.3333333333, 237795, 0.97, 20908.3333333333, 5100.33333333333, 1940.33333333333)
-c(NA, NA, NA, NA, 10231.3977702625, 206241.057260673, 0, 18248.3963496339, 4559.67381874332, 1682.21054964393)
-c(NA, NA, NA, NA, 1, 25, 0.97, 1, 1, 0)
-c(NA, NA, NA, NA, 7470.5, 172555, 0.97, 14545, 3258, 1416)
-c(NA, NA, NA, NA, 14940, 345085, 0.97, 29089, 6515, 2832)
-c(NA, NA, NA, NA, 17260.5, 356680, 0.97, 31362, 7650, 2910.5)
-c(NA, NA, NA, NA, 19581, 368275, 0.97, 33635, 8785, 2989)
-c(NA, NA, NA, NA, "▇▁▁▇▇", "▃▁▁▁▇", "▁▁▇▁▁", "▃▁▁▁▇", "▇▁▁▇▇", "▃▁▁▁▇")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab cdc_deaths_by_sex \cr
+   Number of rows \tab 3 \cr
+   Number of columns \tab 10 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 3 \cr
+   character \tab 1 \cr
+   numeric \tab 6 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-04-30 \tab 2020-04-30 \tab 2020-04-30 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-04-25 \tab 2020-04-25 \tab 2020-04-25 \tab 1 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   sex \tab 0 \tab 1 \tab 4 \tab 7 \tab 0 \tab 3 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   covid_deaths \tab 0 \tab 1 \tab 11507.33 \tab 10231.40 \tab 1.00 \tab 7470.50 \tab 14940.00 \tab 17260.50 \tab 19581.00 \tab ▇▁▁▇▇ \cr
+   total_deaths \tab 0 \tab 1 \tab 237795.00 \tab 206241.06 \tab 25.00 \tab 172555.00 \tab 345085.00 \tab 356680.00 \tab 368275.00 \tab ▃▁▁▁▇ \cr
+   percent_expected_deaths \tab 0 \tab 1 \tab 0.97 \tab 0.00 \tab 0.97 \tab 0.97 \tab 0.97 \tab 0.97 \tab 0.97 \tab ▁▁▇▁▁ \cr
+   pneumonia_deaths \tab 0 \tab 1 \tab 20908.33 \tab 18248.40 \tab 1.00 \tab 14545.00 \tab 29089.00 \tab 31362.00 \tab 33635.00 \tab ▃▁▁▁▇ \cr
+   pneumonia_and_covid_deaths \tab 0 \tab 1 \tab 5100.33 \tab 4559.67 \tab 1.00 \tab 3258.00 \tab 6515.00 \tab 7650.00 \tab 8785.00 \tab ▇▁▁▇▇ \cr
+   all_influenza_deaths_j09_j11 \tab 0 \tab 1 \tab 1940.33 \tab 1682.21 \tab 0.00 \tab 1416.00 \tab 2832.00 \tab 2910.50 \tab 2989.00 \tab ▃▁▁▁▇ \cr
+}
+
 
 The U.S. Centers for Disease Control provides weekly
 summary and interpretation of key indicators that have been adapted

@@ -35,26 +35,39 @@ nytcovcounty
 A dataset containing US county-level data on COVID-19, collected by the New York Times.
 }
 \details{
-c("character", "character", "character", "Date", "numeric", "numeric")
-c("county", "state", "fips", "date", "cases", "deaths")
-c(0, 0, 3468, 0, 0, 0)
-c(1, 1, 0.989822808881272, 1, 1, 1)
-c(3, 4, 5, NA, NA, NA)
-c(33, 24, 5, NA, NA, NA)
-c(0, 0, 0, NA, NA, NA)
-c(1901, 55, 3167, NA, NA, NA)
-c(0, 0, 0, NA, NA, NA)
-c(NA, NA, NA, 18282, NA, NA)
-c(NA, NA, NA, 18459, NA, NA)
-c(NA, NA, NA, 18405, NA, NA)
-c(NA, NA, NA, 178, NA, NA)
-c(NA, NA, NA, NA, 532.256839084171, 27.3471220382555)
-c(NA, NA, NA, NA, 4264.0536727626, 363.078920573632)
-c(NA, NA, NA, NA, 0, 0)
-c(NA, NA, NA, NA, 7, 0)
-c(NA, NA, NA, NA, 33, 1)
-c(NA, NA, NA, NA, 159, 4)
-c(NA, NA, NA, NA, 225045, 22842)
-c(NA, NA, NA, NA, "▇▁▁▁▁", "▇▁▁▁▁")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nytcovcounty \cr
+   Number of rows \tab 340762 \cr
+   Number of columns \tab 6 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 1 \cr
+   character \tab 3 \cr
+   numeric \tab 2 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-16 \tab 2020-05-23 \tab 178 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   county \tab 0 \tab 1.00 \tab 3 \tab 33 \tab 0 \tab 1901 \tab 0 \cr
+   state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 55 \tab 0 \cr
+   fips \tab 3468 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3167 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   cases \tab 0 \tab 1 \tab 532.26 \tab 4264.05 \tab 0 \tab 7 \tab 33 \tab 159 \tab 225045 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 27.35 \tab 363.08 \tab 0 \tab 0 \tab 1 \tab 4 \tab 22842 \tab ▇▁▁▁▁ \cr
+}
 }
 \keyword{datasets}

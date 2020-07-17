@@ -23,21 +23,30 @@ nytcovus
 A dataset containing US national-level data on COVID-19, collected by the New York Times.
 }
 \details{
-c("Date", "numeric", "numeric")
-c("date", "cases", "deaths")
-c(0, 0, 0)
-c(1, 1, 1)
-c(18282, NA, NA)
-c(18459, NA, NA)
-c(18370.5, NA, NA)
-c(178, NA, NA)
-c(NA, 1018942.96067416, 52408.6235955056)
-c(NA, 1059845.24914492, 52264.0097084124)
-c(NA, 1, 0)
-c(NA, 248.75, 12.75)
-c(NA, 744929, 39419)
-c(NA, 1836517, 105924.5)
-c(NA, 3588462, 138268)
-c(NA, "▇▂▃▂▁", "▇▁▂▂▃")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nytcovus \cr
+   Number of rows \tab 178 \cr
+   Number of columns \tab 3 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   Date \tab 1 \cr
+   numeric \tab 2 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-16 \tab 2020-04-18 \tab 178 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   cases \tab 0 \tab 1 \tab 1018942.96 \tab 1059845.25 \tab 1 \tab 248.75 \tab 744929 \tab 1836517.0 \tab 3588462 \tab ▇▂▃▂▁ \cr
+   deaths \tab 0 \tab 1 \tab 52408.62 \tab 52264.01 \tab 0 \tab 12.75 \tab 39419 \tab 105924.5 \tab 138268 \tab ▇▁▂▂▃ \cr
+}
 }
 \keyword{datasets}

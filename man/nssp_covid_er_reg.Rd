@@ -29,31 +29,44 @@ Regional Syndromic Surveillance Program (NSSP):
 Emergency Department Visits and Percentage of Visits for COVID-19-Like Illness (CLI) or Influenza-like Illness (ILI)
 }
 \details{
-c("character", "character", "character", "character", "numeric", "numeric", "numeric", "numeric", "numeric")
-c("total_ed_visits", "visit_type", "region", "source", "week", "num_fac", "visits", "pct_visits", "year")
-c(0, 0, 0, 0, 0, 0, 0, 0, 0)
-c(1, 1, 1, 1, 1, 1, 1, 1, 1)
-c(5, 3, 8, 21, NA, NA, NA, NA, NA)
-c(6, 3, 9, 21, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, NA, NA, NA, NA, NA)
-c(269, 2, 10, 1, NA, NA, NA, NA, NA)
-c(0, 0, 0, 0, NA, NA, NA, NA, NA)
-c(NA, NA, NA, NA, 25.9851301115242, 335.17843866171, 4164.8717472119, 0.0198122676579926, 2019.52044609665)
-c(NA, NA, NA, NA, 19.6632677541809, 234.578852667867, 4028.53211090876, 0.0122150225787191, 0.500046725818193)
-c(NA, NA, NA, NA, 1, 135, 279, 0.005, 2019)
-c(NA, NA, NA, NA, 7, 190, 1596, 0.012, 2019)
-c(NA, NA, NA, NA, 14, 222, 2780, 0.017, 2020)
-c(NA, NA, NA, NA, 46, 343, 4723.75, 0.024, 2020)
-c(NA, NA, NA, NA, 52, 884, 23345, 0.107, 2020)
-c(NA, NA, NA, NA, "▇▂▁▂▇", "▇▃▁▂▂", "▇▂▁▁▁", "▇▂▁▁▁", "▇▁▁▁▇")
+Table: Data summary\tabular{ll}{
+    \tab  \cr
+   Name \tab nssp_covid_er_reg \cr
+   Number of rows \tab 538 \cr
+   Number of columns \tab 9 \cr
+   _______________________ \tab  \cr
+   Column type frequency: \tab  \cr
+   character \tab 4 \cr
+   numeric \tab 5 \cr
+   ________________________ \tab  \cr
+   Group variables \tab None \cr
+}
 
-The U.S. Centers for Disease Control provides weekly
-summary and interpretation of key indicators that have been adapted
-to track the COVID-19 pandemic in the United States. Data is
-retrieved using the cdccovidview package from both COVIDView
-(\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html})
-and COVID-NET
-(\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}).
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   total_ed_visits \tab 0 \tab 1 \tab 5 \tab 6 \tab 0 \tab 269 \tab 0 \cr
+   visit_type \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 2 \tab 0 \cr
+   region \tab 0 \tab 1 \tab 8 \tab 9 \tab 0 \tab 10 \tab 0 \cr
+   source \tab 0 \tab 1 \tab 21 \tab 21 \tab 0 \tab 1 \tab 0 \cr
+}
+
+
+\strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
+   week \tab 0 \tab 1 \tab 25.99 \tab 19.66 \tab 1 \tab 7.00 \tab 14.00 \tab 46.00 \tab 52.00 \tab ▇▂▁▂▇ \cr
+   num_fac \tab 0 \tab 1 \tab 335.18 \tab 234.58 \tab 135 \tab 190.00 \tab 222.00 \tab 343.00 \tab 884.00 \tab ▇▃▁▂▂ \cr
+   visits \tab 0 \tab 1 \tab 4164.87 \tab 4028.53 \tab 279 \tab 1596.00 \tab 2780.00 \tab 4723.75 \tab 23345.00 \tab ▇▂▁▁▁ \cr
+   pct_visits \tab 0 \tab 1 \tab 0.02 \tab 0.01 \tab 0 \tab 0.01 \tab 0.02 \tab 0.02 \tab 0.11 \tab ▇▂▁▁▁ \cr
+   year \tab 0 \tab 1 \tab 2019.52 \tab 0.50 \tab 2019 \tab 2019.00 \tab 2020.00 \tab 2020.00 \tab 2020.00 \tab ▇▁▁▁▇ \cr
+   The U.S. Centers for Disease Control provides weekly \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   summary and interpretation of key indicators that have been adapted \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   to track the COVID-19 pandemic in the United States. Data is \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   retrieved using the cdccovidview package from both COVIDView \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   (\url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html}) \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   and COVID-NET \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+   (\url{https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html}). \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \tab  \cr
+}
 }
 \references{
 \url{https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/04102020/nssp-regions.html}
