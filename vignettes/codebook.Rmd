@@ -26,7 +26,7 @@ This vignette provides an overview of the contents of each table of data in the 
 
 ```{r}
 covnat %>%
-  ungroup() %>%
+  dplyr::ungroup() %>%
   skimr::skim()
 ```
 
@@ -181,7 +181,7 @@ skimr::skim(coronanet)
 
 ```{r}
 countries %>%
-  ungroup() %>%
+  dplyr::ungroup() %>%
   skimr::skim()
 ```
 
