@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovstate}
 \alias{nytcovstate}
-\title{NYT COVID-19 data for the US states, current as of Friday, July 17, 2020}
+\title{NYT COVID-19 data for the US states, current as of Monday, July 20, 2020}
 \format{
-A tibble with 7,494 rows and 5 columns
+A tibble with 7,659 rows and 5 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{State name (character)}
@@ -28,21 +28,15 @@ A dataset containing US state-level data on COVID-19, collected by the New York 
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovstate \cr
-   Number of rows \tab 7494 \cr
+   Number of rows \tab 7659 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-16 \tab 2020-05-09 \tab 178 \cr
 }
 
 
@@ -53,10 +47,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-19 \tab 2020-05-11 \tab 181 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 24202.27 \tab 52643.20 \tab 1 \tab 593 \tab 5177.5 \tab 24197.00 \tab 409476 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 1244.83 \tab 3578.86 \tab 0 \tab 9 \tab 146.0 \tab 853.75 \tab 32133 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 25139.30 \tab 54241.55 \tab 1 \tab 620 \tab 5458 \tab 25288.0 \tab 411515 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 1272.79 \tab 3618.68 \tab 0 \tab 9 \tab 151 \tab 892.5 \tab 32187 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

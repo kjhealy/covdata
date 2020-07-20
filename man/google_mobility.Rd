@@ -5,7 +5,7 @@
 \alias{google_mobility}
 \title{Google Mobility Data}
 \format{
-A data frame with 4,037,280 rows and 9 variables:
+A data frame with 4,093,596 rows and 9 variables:
 \describe{
 \item{\code{country_region_code}}{character Country Code}
 \item{\code{country_region}}{character Country or Region name}
@@ -19,7 +19,7 @@ A data frame with 4,037,280 rows and 9 variables:
 }
 }
 \source{
-Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-07-17
+Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: 2020-07-20
 }
 \usage{
 google_mobility
@@ -31,39 +31,39 @@ Data from Google's Community Mobility Reports on relative changes in movement tr
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab google_mobility \cr
-   Number of rows \tab 4037280 \cr
+   Number of rows \tab 4093596 \cr
    Number of columns \tab 9 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 7 \cr
+   Date \tab 1 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-02-15 \tab 2020-07-12 \tab 2020-04-28 \tab 149 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   country_region_code \tab 7044 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 134 \tab 0 \cr
+   country_region \tab 0 \tab 1.00 \tab 4 \tab 22 \tab 0 \tab 135 \tab 0 \cr
+   sub_region_1 \tab 121500 \tab 0.97 \tab 3 \tab 74 \tab 0 \tab 1844 \tab 0 \cr
+   sub_region_2 \tab 1730148 \tab 0.58 \tab 5 \tab 27 \tab 0 \tab 1716 \tab 0 \cr
+   iso3166_2 \tab 2606028 \tab 0.36 \tab 4 \tab 6 \tab 0 \tab 1703 \tab 0 \cr
+   census_fips_code \tab 1729242 \tab 0.58 \tab 5 \tab 5 \tab 0 \tab 2833 \tab 0 \cr
+   type \tab 0 \tab 1.00 \tab 5 \tab 11 \tab 0 \tab 6 \tab 0 \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   country_region_code \tab 6936 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 134 \tab 0 \cr
-   country_region \tab 0 \tab 1.00 \tab 4 \tab 22 \tab 0 \tab 135 \tab 0 \cr
-   sub_region_1 \tab 119880 \tab 0.97 \tab 3 \tab 74 \tab 0 \tab 1844 \tab 0 \cr
-   sub_region_2 \tab 1706796 \tab 0.58 \tab 5 \tab 27 \tab 0 \tab 1716 \tab 0 \cr
-   iso3166_2 \tab 2569692 \tab 0.36 \tab 4 \tab 6 \tab 0 \tab 1703 \tab 0 \cr
-   census_fips_code \tab 1705902 \tab 0.58 \tab 5 \tab 5 \tab 0 \tab 2833 \tab 0 \cr
-   type \tab 0 \tab 1.00 \tab 5 \tab 11 \tab 0 \tab 6 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-02-15 \tab 2020-07-14 \tab 2020-04-29 \tab 151 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   pct_diff \tab 1340233 \tab 0.67 \tab -12.7 \tab 31.75 \tab -100 \tab -32 \tab -9 \tab 5 \tab 625 \tab ▇▁▁▁▁ \cr
+   pct_diff \tab 1360864 \tab 0.67 \tab -12.61 \tab 31.83 \tab -100 \tab -32 \tab -9 \tab 5 \tab 625 \tab ▇▁▁▁▁ \cr
 }
 
 

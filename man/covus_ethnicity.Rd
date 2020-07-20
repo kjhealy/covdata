@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Friday, July 17, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Monday, July 20, 2020}
 \format{
-A tibble with 4,704 rows and 5 columns
+A tibble with 4,848 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -28,21 +28,15 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_ethnicity \cr
-   Number of rows \tab 4704 \cr
+   Number of rows \tab 4848 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-07-15 \tab 2020-05-29 \tab 28 \cr
 }
 
 
@@ -53,10 +47,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-07-19 \tab 2020-05-31 \tab 29 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 1337 \tab 0.72 \tab 11157.94 \tab 17837.82 \tab 0 \tab 1346.5 \tab 5009 \tab 13046 \tab 261534 \tab ▇▁▁▁▁ \cr
-   deaths \tab 1577 \tab 0.66 \tab 727.54 \tab 1824.39 \tab 0 \tab 29.0 \tab 113 \tab 543 \tab 18391 \tab ▇▁▁▁▁ \cr
+   cases \tab 1348 \tab 0.72 \tab 11681.03 \tab 19159.44 \tab 0 \tab 1391.25 \tab 5220.5 \tab 13557.5 \tab 302517 \tab ▇▁▁▁▁ \cr
+   deaths \tab 1588 \tab 0.67 \tab 739.07 \tab 1845.34 \tab 0 \tab 30.00 \tab 114.0 \tab 552.5 \tab 18442 \tab ▇▁▁▁▁ \cr
 }
 
 

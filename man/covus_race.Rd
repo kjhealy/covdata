@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Friday, July 17, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Monday, July 20, 2020}
 \format{
-A tibble with 14,112 rows and 5 columns
+A tibble with 14,544 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -28,21 +28,15 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_race \cr
-   Number of rows \tab 14112 \cr
+   Number of rows \tab 14544 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-07-15 \tab 2020-05-29 \tab 28 \cr
 }
 
 
@@ -53,10 +47,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-07-19 \tab 2020-05-31 \tab 29 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 5710 \tab 0.60 \tab 5595.29 \tab 21286.36 \tab 0 \tab 146 \tab 906 \tab 4605.25 \tab 404006 \tab ▇▁▁▁▁ \cr
-   deaths \tab 6827 \tab 0.52 \tab 334.80 \tab 910.08 \tab 0 \tab 7 \tab 36 \tab 209.00 \tab 8569 \tab ▇▁▁▁▁ \cr
+   cases \tab 5826 \tab 0.60 \tab 5822.02 \tab 21867.92 \tab 0 \tab 151 \tab 937 \tab 4752.5 \tab 406807 \tab ▇▁▁▁▁ \cr
+   deaths \tab 6959 \tab 0.52 \tab 339.39 \tab 919.31 \tab 0 \tab 7 \tab 36 \tab 212.0 \tab 8597 \tab ▇▁▁▁▁ \cr
 }
 
 

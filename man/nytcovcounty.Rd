@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovcounty}
 \alias{nytcovcounty}
-\title{NYT COVID-19 data for US counties, current as of Friday, July 17, 2020}
+\title{NYT COVID-19 data for US counties, current as of Monday, July 20, 2020}
 \format{
-A tibble with 340,762 rows and 6 columns
+A tibble with 350,365 rows and 6 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{county}{County name (character)}
@@ -38,36 +38,36 @@ A dataset containing US county-level data on COVID-19, collected by the New York
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovcounty \cr
-   Number of rows \tab 340762 \cr
+   Number of rows \tab 350365 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 3 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-16 \tab 2020-05-23 \tab 178 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   county \tab 0 \tab 1.00 \tab 3 \tab 33 \tab 0 \tab 1906 \tab 0 \cr
+   state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 55 \tab 0 \cr
+   fips \tab 3555 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3174 \tab 0 \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   county \tab 0 \tab 1.00 \tab 3 \tab 33 \tab 0 \tab 1901 \tab 0 \cr
-   state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 55 \tab 0 \cr
-   fips \tab 3468 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3167 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-19 \tab 2020-05-24 \tab 181 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 532.26 \tab 4264.05 \tab 0 \tab 7 \tab 33 \tab 159 \tab 225045 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 27.35 \tab 363.08 \tab 0 \tab 0 \tab 1 \tab 4 \tab 22842 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 549.55 \tab 4337.70 \tab 0 \tab 7 \tab 35 \tab 166 \tab 226104 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 27.79 \tab 365.62 \tab 0 \tab 0 \tab 1 \tab 5 \tab 22872 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}
