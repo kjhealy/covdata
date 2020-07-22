@@ -135,7 +135,7 @@ test_that("stmf conforms to spec", {
 ## apple_mobility
 test_that("apple_mobility conforms to spec", {
   apple_mobility_colnames <- c("geo_type", "region", "transportation_type",
-                               "alternative_name", "sub_region", "country", "date", "index")
+                               "alternative_name", "sub_region", "country", "date", "score")
   expect_equal(colnames(apple_mobility), apple_mobility_colnames)
 })
 

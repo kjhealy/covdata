@@ -520,7 +520,7 @@
 #'   \item{\code{sub_region}}{character Subregion}
 #'   \item{\code{country}}{character Country name (not provided for all countries)}
 #'   \item{\code{date}}{double Date in yyyy-mm-dddd format}
-#'   \item{\code{index}}{double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.}
+#'   \item{\code{score}}{double Activity score. Indexed to 100 on the first date of observation for a given mode of transport.}
 #'}
 #' @details
 #' ```{r, results = "asis", echo = FALSE}

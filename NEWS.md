@@ -1,3 +1,7 @@
+# covdata 0.4
+
+*Breaking change*: The `index` variable in the `apple_mobility` dataset is now named `score`. Under the hood, various tidyverse or tidyverse-adjacent tools such as `tsibble` and `fable` use the concept of an index variable in many functions. Often it is named as `index` internally. Having a column in the data actually named `index` can lead to strange and confusing errors.
+
 # covdata 0.3
 
 Added the CDC's patient-level public-use dataset, as `nchs_pud`

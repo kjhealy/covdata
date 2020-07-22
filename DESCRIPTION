@@ -1,7 +1,7 @@
 Package: covdata
 Type: Package
 Title: COVID-19 Data
-Version: 0.3.1.9000
+Version: 0.4.0
 Authors@R: 
     person(given = "Kieran",
            family = "Healy",

@@ -882,7 +882,8 @@ apple_mobility <- get_apple_data() %>%
   mutate(
     date = stringr::str_remove(date, "x"),
     date = stringr::str_replace_all(date, "_", "-"),
-    date = as_date(date))
+    date = as_date(date)) %>%
+  rename(score = index)
 
 ## Google Mobility Data
 

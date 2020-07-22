@@ -14,7 +14,7 @@ A data frame with 688,750 rows and 8 variables:
 \item{\code{sub_region}}{character Subregion}
 \item{\code{country}}{character Country name (not provided for all countries)}
 \item{\code{date}}{double Date in yyyy-mm-dddd format}
-\item{\code{index}}{double Activity index. Indexed to 100 on the first date of observation for a given mode of transport.}
+\item{\code{score}}{double Activity score. Indexed to 100 on the first date of observation for a given mode of transport.}
 }
 }
 \source{
@@ -61,7 +61,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   index \tab 14582 \tab 0.98 \tab 113.23 \tab 59.16 \tab 2.43 \tab 79.98 \tab 105.95 \tab 135.73 \tab 2148.12 \tab ▇▁▁▁▁ \cr
+   score \tab 14582 \tab 0.98 \tab 113.23 \tab 59.16 \tab 2.43 \tab 79.98 \tab 105.95 \tab 135.73 \tab 2148.12 \tab ▇▁▁▁▁ \cr
 }
 
 
