@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -168,7 +172,7 @@ nytcovcounty %>%
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="README-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%" />
+<img src="man/README-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%" />
 
 
 ## Documentation and Summary Codebook 
@@ -185,8 +189,7 @@ citation("covdata")
 #> 
 #> To cite the package `covdata` in publications use:
 #> 
-#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0,
-#>   <http://kjhealy.github.io/covdata>.
+#>   Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
