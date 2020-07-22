@@ -61,26 +61,12 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 33 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 2 \cr
-   POSIXct \tab 2 \cr
    character \tab 23 \cr
+   Date \tab 2 \cr
    numeric \tab 6 \cr
+   POSIXct \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date_start \tab 0 \tab 1.00 \tab 2019-12-31 \tab 2024-05-29 \tab 2020-03-30 \tab 208 \cr
-   date_end \tab 12926 \tab 0.28 \tab 2020-01-28 \tab 2024-05-29 \tab 2020-04-29 \tab 229 \cr
-}
-
-
-\strong{Variable type: POSIXct}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   recorded_date \tab 0 \tab 1 \tab 2020-03-28 05:38:17 \tab 2020-07-05 23:34:13 \tab 2020-04-26 08:58:53 \tab 13850 \cr
-   date_announced \tab 14 \tab 1 \tab 2019-12-31 00:00:00 \tab 2020-07-05 00:00:00 \tab 2020-03-28 00:00:00 \tab 185 \cr
 }
 
 
@@ -112,6 +98,13 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date_start \tab 0 \tab 1.00 \tab 2019-12-31 \tab 2024-05-29 \tab 2020-03-30 \tab 208 \cr
+   date_end \tab 12926 \tab 0.28 \tab 2020-01-28 \tab 2024-05-29 \tab 2020-04-29 \tab 229 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
    domestic_policy \tab 0 \tab 1.00 \tab 0.85 \tab 0.36 \tab 0.00 \tab 1.00 \tab 1.00 \tab 1.00 \tab 1.00 \tab ▂▁▁▁▇ \cr
@@ -120,6 +113,13 @@ Table: Data summary\tabular{ll}{
    index_med_est \tab 3872 \tab 0.79 \tab 52.23 \tab 1.93 \tab 45.42 \tab 51.24 \tab 52.31 \tab 53.46 \tab 57.59 \tab ▁▂▇▆▁ \cr
    index_low_est \tab 3872 \tab 0.79 \tab 50.59 \tab 2.52 \tab 37.19 \tab 49.72 \tab 51.11 \tab 52.13 \tab 56.26 \tab ▁▁▂▇▂ \cr
    index_country_rank \tab 3872 \tab 0.79 \tab 118.99 \tab 53.88 \tab 1.00 \tab 70.00 \tab 124.00 \tab 169.00 \tab 194.00 \tab ▂▅▃▅▇ \cr
+}
+
+
+\strong{Variable type: POSIXct}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   recorded_date \tab 0 \tab 1 \tab 2020-03-28 05:38:17 \tab 2020-07-05 23:34:13 \tab 2020-04-26 08:58:53 \tab 13850 \cr
+   date_announced \tab 14 \tab 1 \tab 2019-12-31 00:00:00 \tab 2020-07-05 00:00:00 \tab 2020-03-28 00:00:00 \tab 185 \cr
 }
 
 

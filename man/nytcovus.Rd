@@ -45,8 +45,8 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 1094520.15 \tab 1138894.90 \tab 1 \tab 369.5 \tab 810434 \tab 1923262 \tab 3910398 \tab ▇▃▃▂▁ \cr
-   deaths \tab 0 \tab 1 \tab 54815.38 \tab 53514.99 \tab 0 \tab 17.0 \tab 44688 \tab 109668 \tab 142031 \tab ▇▁▂▂▃ \cr
+   cases \tab 0 \tab 1 \tab 1094530.36 \tab 1138915.22 \tab 1 \tab 369.5 \tab 810434 \tab 1923264 \tab 3910398 \tab ▇▃▃▂▁ \cr
+   deaths \tab 0 \tab 1 \tab 54815.43 \tab 53515.06 \tab 0 \tab 17.0 \tab 44688 \tab 109668 \tab 142031 \tab ▇▁▂▂▃ \cr
 }
 }
 \keyword{datasets}

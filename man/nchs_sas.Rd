@@ -38,19 +38,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 12 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 3 \cr
    character \tab 3 \cr
+   Date \tab 3 \cr
    numeric \tab 6 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2020-07-15 \tab 2020-07-15 \tab 2020-07-15 \tab 1 \cr
-   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
-   end_week \tab 0 \tab 1 \tab 2020-07-11 \tab 2020-07-11 \tab 2020-07-11 \tab 1 \cr
 }
 
 
@@ -62,14 +54,22 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-07-22 \tab 2020-07-22 \tab 2020-07-22 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-07-11 \tab 2020-07-11 \tab 2020-07-11 \tab 1 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 277 \tab 0.80 \tab 670.40 \tab 5052.61 \tab 0 \tab 0 \tab 18.0 \tab 139.00 \tab 121374 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 130 \tab 0.90 \tab 6757.92 \tab 53323.21 \tab 0 \tab 70 \tab 429.0 \tab 2248.75 \tab 1387325 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 330 \tab 0.76 \tab 762.77 \tab 5568.38 \tab 0 \tab 0 \tab 47.5 \tab 247.50 \tab 131332 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 294 \tab 0.78 \tab 293.62 \tab 2195.25 \tab 0 \tab 0 \tab 0.0 \tab 59.00 \tab 52431 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 533 \tab 0.61 \tab 45.16 \tab 301.01 \tab 0 \tab 0 \tab 0.0 \tab 17.00 \tab 6519 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 359 \tab 0.74 \tab 1230.47 \tab 8858.99 \tab 0 \tab 12 \tab 76.0 \tab 385.00 \tab 205837 \tab ▇▁▁▁▁ \cr
+   covid_19_deaths \tab 278 \tab 0.80 \tab 720.14 \tab 5416.49 \tab 0 \tab 0 \tab 21.0 \tab 161.25 \tab 130250 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 122 \tab 0.91 \tab 7098.71 \tab 56175.59 \tab 0 \tab 75 \tab 451.0 \tab 2373.00 \tab 1466723 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 336 \tab 0.75 \tab 811.08 \tab 5899.95 \tab 0 \tab 0 \tab 51.0 \tab 267.00 \tab 138829 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 294 \tab 0.78 \tab 314.97 \tab 2351.36 \tab 0 \tab 0 \tab 0.0 \tab 69.00 \tab 56231 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 535 \tab 0.61 \tab 45.51 \tab 302.91 \tab 0 \tab 0 \tab 0.0 \tab 17.00 \tab 6553 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 358 \tab 0.74 \tab 1304.59 \tab 9390.23 \tab 0 \tab 13 \tab 79.5 \tab 406.25 \tab 218441 \tab ▇▁▁▁▁ \cr
 }
 
 

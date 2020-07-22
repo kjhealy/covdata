@@ -32,17 +32,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-21 \tab 2020-05-12 \tab 183 \cr
 }
 
 
@@ -53,10 +47,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-07-21 \tab 2020-05-12 \tab 183 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 25781.59 \tab 55366.62 \tab 1 \tab 631 \tab 5612 \tab 25940 \tab 412889 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 1291.18 \tab 3644.34 \tab 0 \tab 10 \tab 155 \tab 915 \tab 32218 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 25781.83 \tab 55366.95 \tab 1 \tab 631 \tab 5612 \tab 25940 \tab 412889 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 1291.19 \tab 3644.34 \tab 0 \tab 10 \tab 155 \tab 915 \tab 32218 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}
