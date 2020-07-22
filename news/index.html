@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -147,6 +147,11 @@
       <small>Source: <a href='https://github.com/kjhealy/covdata/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="covdata-04" class="section level1">
+<h1 class="page-header" data-toc-text="0.4">
+<a href="#covdata-04" class="anchor"></a>covdata 0.4</h1>
+<p><em>Breaking change</em>: The <code>index</code> variable in the <code>apple_mobility</code> dataset is now named <code>score</code>. Under the hood, various tidyverse or tidyverse-adjacent tools such as <code>tsibble</code> and <code>fable</code> use the concept of an index variable in many functions. Often it is named as <code>index</code> internally. Having a column in the data actually named <code>index</code> can lead to strange and confusing errors.</p>
+</div>
     <div id="covdata-03" class="section level1">
 <h1 class="page-header" data-toc-text="0.3">
 <a href="#covdata-03" class="anchor"></a>covdata 0.3</h1>
