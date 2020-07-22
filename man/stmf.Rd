@@ -77,11 +77,17 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 17 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 7 \cr
    Date \tab 1 \cr
+   character \tab 7 \cr
    numeric \tab 9 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-06-28 \tab 2011-01-09 \tab 1586 \cr
 }
 
 
@@ -94,12 +100,6 @@ Table: Data summary\tabular{ll}{
    iso3 \tab 43545 \tab 0.88 \tab 3 \tab 3 \tab 0 \tab 21 \tab 0 \cr
    sex \tab 0 \tab 1.00 \tab 1 \tab 1 \tab 0 \tab 3 \tab 0 \cr
    age_group \tab 0 \tab 1.00 \tab 3 \tab 5 \tab 0 \tab 5 \tab 0 \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-06-28 \tab 2011-01-09 \tab 1586 \cr
 }
 
 

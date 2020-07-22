@@ -34,11 +34,17 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 8 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 6 \cr
    Date \tab 1 \cr
+   character \tab 6 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2020-07-20 \tab 2020-04-16 \tab 190 \cr
 }
 
 
@@ -50,12 +56,6 @@ Table: Data summary\tabular{ll}{
    alternative_name \tab 549480 \tab 0.20 \tab 2 \tab 85 \tab 0 \tab 519 \tab 0 \cr
    sub_region \tab 160360 \tab 0.77 \tab 4 \tab 33 \tab 0 \tab 162 \tab 0 \cr
    country \tab 29070 \tab 0.96 \tab 5 \tab 20 \tab 0 \tab 47 \tab 0 \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2020-07-20 \tab 2020-04-16 \tab 190 \cr
 }
 
 
