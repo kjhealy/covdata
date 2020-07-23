@@ -119,7 +119,7 @@ covus %>%
          state == "NJ")
 ```
 
-```{r plot, fig.path='man/figures/README-', fig.height=15, fig.width=8, dpi=150}
+```{r plot, fig.height=15, fig.width=8, dpi=150}
 nytcovcounty %>%
   mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
   group_by(uniq_name) %>%

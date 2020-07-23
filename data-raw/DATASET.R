@@ -1025,7 +1025,7 @@ sinew::makeOxygen("nchs_pud")
 
 document()
 
-knit("README.Rmd")
+system("Rscript -e 'knitr::knit(\"README.Rmd\")'")
 system("sed -i '' '1,4d' README.md")
 
 
