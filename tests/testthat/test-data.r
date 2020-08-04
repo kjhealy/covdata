@@ -142,7 +142,7 @@ test_that("apple_mobility conforms to spec", {
 ## google_mobility
 test_that("google_mobility conforms to spec", {
   google_mobility_colnames <- c("country_region_code", "country_region", "sub_region_1",
-                                "sub_region_2", "iso3166_2", "census_fips_code", "date", "type", "pct_diff")
+                                "sub_region_2", "metro_area", "iso3166_2", "census_fips_code", "date", "type", "pct_diff")
   expect_equal(colnames(google_mobility), google_mobility_colnames)
 })
 
@@ -178,7 +178,7 @@ test_that("nchs_sas conforms to spec", {
 
 ## nchs_wss
 test_that("nchs_wss conforms to spec", {
-  nchs_wss_colnames <- c("data_as_of", "state", "group", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
+  nchs_wss_colnames <- c("data_as_of", "start_week", "end_week", "state", "group", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
   expect_equal(colnames(nchs_wss), nchs_wss_colnames)
 
   nchs_wss_groups <- c("Non-Hispanic White", "Non-Hispanic Black or African American", "Non-Hispanic American Indian or Alaska Native",

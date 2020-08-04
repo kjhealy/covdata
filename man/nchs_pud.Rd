@@ -5,7 +5,7 @@
 \alias{nchs_pud}
 \title{COVID-19 Case Surveillance Public Use Data}
 \format{
-A tibble with 1,748,965 rows and 11 variables:
+A tibble with 2,668,175 rows and 11 variables:
 \describe{
 \item{\code{cdc_report_dt}}{date Initial case report date to CDC}
 \item{\code{pos_spec_dt}}{date Date of first positive specimen collection}
@@ -33,7 +33,7 @@ Deidentified patient-level data reported to U.S. states and autonomous reporting
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_pud \cr
-   Number of rows \tab 1748965 \cr
+   Number of rows \tab 2668175 \cr
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -47,21 +47,21 @@ Table: Data summary\tabular{ll}{
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    current_status \tab 0 \tab 1 \tab 8 \tab 9 \tab 0 \tab 2 \tab 0 \cr
-   sex \tab 15 \tab 1 \tab 4 \tab 7 \tab 0 \tab 4 \tab 0 \cr
-   age_group \tab 38 \tab 1 \tab 6 \tab 8 \tab 0 \tab 10 \tab 0 \cr
-   race_ethnicity \tab 9 \tab 1 \tab 7 \tab 28 \tab 0 \tab 8 \tab 0 \cr
-   hosp_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 3 \tab 0 \cr
-   icu_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 3 \tab 0 \cr
-   death_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 3 \tab 0 \cr
-   medcond_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 3 \tab 0 \cr
+   sex \tab 19 \tab 1 \tab 4 \tab 7 \tab 0 \tab 5 \tab 0 \cr
+   age_group \tab 81 \tab 1 \tab 6 \tab 8 \tab 0 \tab 10 \tab 0 \cr
+   race_ethnicity \tab 7 \tab 1 \tab 7 \tab 28 \tab 0 \tab 8 \tab 0 \cr
+   hosp_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
+   icu_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
+   death_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
+   medcond_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
 }
 
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   cdc_report_dt \tab 0 \tab 1.00 \tab 2020-01-01 \tab 2020-06-11 \tab 2020-05-01 \tab 116 \cr
-   pos_spec_dt \tab 1052553 \tab 0.40 \tab 2020-01-04 \tab 2020-06-24 \tab 2020-04-18 \tab 137 \cr
-   onset_dt \tab 969687 \tab 0.45 \tab 2020-01-01 \tab 2020-06-26 \tab 2020-04-16 \tab 178 \cr
+   cdc_report_dt \tab 0 \tab 1.00 \tab 2020-01-01 \tab 2020-07-16 \tab 2020-05-26 \tab 157 \cr
+   pos_spec_dt \tab 1674731 \tab 0.37 \tab 2020-01-04 \tab 2020-07-30 \tab 2020-04-28 \tab 174 \cr
+   onset_dt \tab 1420565 \tab 0.47 \tab 2020-01-01 \tab 2020-07-30 \tab 2020-05-04 \tab 212 \cr
 }
 
 

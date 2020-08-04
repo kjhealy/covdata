@@ -5,12 +5,14 @@
 \alias{nchs_wss}
 \title{Provisional Death Counts for Coronavirus Disease (COVID-19): Weekly State-Specific Data Updates}
 \format{
-A tibble with 288 rows and 7 variables:
+A tibble with 288 rows and 9 variables:
 \describe{
-\item{\code{data_as_of}}{character Date of analysis}
+\item{\code{data_as_of}}{date Date of analysis}
+\item{\code{start_week}}{date Start date of coverage}
+\item{\code{end_week}}{date End date of coverage}
 \item{\code{state}}{character Geographical unit. One of: the United States, a U.S. State, the District of Columbia, or New York City. New York state measures \emph{do not} include New York City }
 \item{\code{group}}{character Population group}
-\item{\code{deaths}}{double }
+\item{\code{deaths}}{integer Count of deaths}
 \item{\code{dist_pct}}{double COLUMN_DESCRIPTION}
 \item{\code{uw_dist_pop_pct}}{double COLUMN_DESCRIPTION}
 \item{\code{wt_dist_pop_pct}}{double COLUMN_DESCRIPTION}
@@ -31,10 +33,11 @@ Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_wss \cr
    Number of rows \tab 288 \cr
-   Number of columns \tab 7 \cr
+   Number of columns \tab 9 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 3 \cr
+   character \tab 2 \cr
+   Date \tab 3 \cr
    numeric \tab 4 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
@@ -43,18 +46,25 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   data_as_of \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 1 \tab 0 \cr
    state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 48 \tab 0 \cr
    group \tab 0 \tab 1 \tab 5 \tab 45 \tab 0 \tab 6 \tab 0 \cr
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-07-29 \tab 2020-07-29 \tab 2020-07-29 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-07-26 \tab 2020-07-26 \tab 2020-07-26 \tab 1 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   deaths \tab 75 \tab 0.74 \tab 1221.09 \tab 5415.41 \tab 0.0 \tab 30.00 \tab 115.00 \tab 630.00 \tab 68377.0 \tab ▇▁▁▁▁ \cr
-   dist_pct \tab 75 \tab 0.74 \tab 22.22 \tab 25.54 \tab 0.0 \tab 2.20 \tab 9.60 \tab 41.10 \tab 95.4 \tab ▇▂▂▁▁ \cr
-   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 16.66 \tab 24.76 \tab 0.1 \tab 1.70 \tab 4.30 \tab 16.05 \tab 93.1 \tab ▇▁▁▁▁ \cr
-   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 22.08 \tab 0.1 \tab 2.08 \tab 5.65 \tab 23.08 \tab 91.0 \tab ▇▁▁▁▁ \cr
+   deaths \tab 75 \tab 0.74 \tab 1271.02 \tab 5616.05 \tab 0.0 \tab 35.00 \tab 124.0 \tab 669.00 \tab 70822.0 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 75 \tab 0.74 \tab 22.21 \tab 25.48 \tab 0.0 \tab 2.40 \tab 9.9 \tab 41.40 \tab 94.7 \tab ▇▂▂▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 16.66 \tab 24.76 \tab 0.1 \tab 1.70 \tab 4.3 \tab 16.05 \tab 93.1 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 22.09 \tab 0.1 \tab 2.08 \tab 5.6 \tab 23.00 \tab 91.0 \tab ▇▁▁▁▁ \cr
 }
 
 

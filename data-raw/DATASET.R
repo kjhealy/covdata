@@ -138,6 +138,7 @@ get_google_data <- function(url = "https://www.gstatic.com/covid19/mobility/",
                   country_region = col_character(),
                   sub_region_1 = col_character(),
                   sub_region_2 = col_character(),
+                  metro_area = col_character(),
                   iso_3166_2_code = col_character(),
                   census_fips_code = col_character(),
                   date = col_date(),
@@ -426,7 +427,8 @@ get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
                              ext = "csv",
                              dest = "data-raw/data",
                              save_file = c("y", "n"),
-                          clean_names = c("y", "n")) {
+                             clean_names = c("y", "n"),
+                          cols = readr::cols()) {
   sname <- match.arg(sname)
   save_file <- match.arg(save_file)
   clean_names <- match.arg(clean_names)
@@ -447,8 +449,8 @@ get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
          )
 
   switch(clean_names,
-         y = janitor::clean_names(read_csv(tf)),
-         n = read_csv(tf)
+         y = janitor::clean_names(read_csv(tf, col_types = cols)),
+         n = read_csv(tf, col_types = cols)
          )
 }
 
@@ -854,10 +856,38 @@ nchs_wss <- nchs_wss_raw %>%
          dist_pct = distribution_of_covid_19_deaths_percent,
          uw_dist_pop_pct = unweighted_distribution_of_population_percent,
          wt_dist_pop_pct = weighted_distribution_of_population_percent) %>%
-  mutate(state = stringr::str_replace(state, "<sup>5</sup>", ""))
+  mutate(state = stringr::str_replace(state, "<sup>5</sup>", "")) %>%
+  type_convert(col_types = cols(
+    data_as_of = col_date(format = us_style),
+    start_week = col_date(format = us_style),
+    end_week = col_date(format = us_style),
+    state = "c",
+    group = "c",
+    deaths = "i",
+    dist_pct = "d",
+    uw_dist_pop_pct = "d",
+    wt_dist_pop_pct = "d"
+  ))
+
+cspud_style <-  "%Y/%m/%d"
+
+cspud_colspec <- cols(
+  cdc_report_dt = col_date(format = cspud_style),
+  pos_spec_dt = col_date(format = cspud_style),
+  onset_dt = col_date(format = cspud_style),
+  current_status = "c",
+  sex = "c",
+  age_group = "c",
+  `Race and ethnicity (combined)` = "c",
+  hosp_yn = "c",
+  icu_yn = "c",
+  medcond_yn = "c"
+)
 
 nchs_cspud_raw <- get_nchs_data(sname = "CSPUD",
-                                save_file = "n")
+                                clean_names = "y",
+                                save_file = "n",
+                                cols = cspud_colspec)
 
 nchs_pud <- nchs_cspud_raw %>%
   mutate(current_status = recode(current_status,
