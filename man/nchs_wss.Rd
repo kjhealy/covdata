@@ -53,18 +53,18 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2020-07-29 \tab 2020-07-29 \tab 2020-07-29 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-08-12 \tab 2020-08-12 \tab 2020-08-12 \tab 1 \cr
    start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
-   end_week \tab 0 \tab 1 \tab 2020-07-26 \tab 2020-07-26 \tab 2020-07-26 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-08-08 \tab 2020-08-08 \tab 2020-08-08 \tab 1 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   deaths \tab 75 \tab 0.74 \tab 1271.02 \tab 5616.05 \tab 0.0 \tab 35.00 \tab 124.0 \tab 669.00 \tab 70822.0 \tab ▇▁▁▁▁ \cr
-   dist_pct \tab 75 \tab 0.74 \tab 22.21 \tab 25.48 \tab 0.0 \tab 2.40 \tab 9.9 \tab 41.40 \tab 94.7 \tab ▇▂▂▁▁ \cr
-   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 16.66 \tab 24.76 \tab 0.1 \tab 1.70 \tab 4.3 \tab 16.05 \tab 93.1 \tab ▇▁▁▁▁ \cr
-   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 22.09 \tab 0.1 \tab 2.08 \tab 5.6 \tab 23.00 \tab 91.0 \tab ▇▁▁▁▁ \cr
+   deaths \tab 70 \tab 0.76 \tab 1366.61 \tab 6072.53 \tab 0.0 \tab 33.25 \tab 128.00 \tab 774.50 \tab 77210.0 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 70 \tab 0.76 \tab 21.72 \tab 25.45 \tab 0.0 \tab 2.15 \tab 9.30 \tab 33.35 \tab 94.8 \tab ▇▂▂▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 16.66 \tab 24.76 \tab 0.1 \tab 1.70 \tab 4.30 \tab 16.05 \tab 93.1 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 22.12 \tab 0.1 \tab 2.08 \tab 5.55 \tab 22.90 \tab 91.0 \tab ▇▁▁▁▁ \cr
 }
 
 

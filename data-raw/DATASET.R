@@ -53,7 +53,7 @@ get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/casedist
 
 ## Get Daily COVID Tracking Project Data
 ## form is https://covidtracking.com/api/us/daily.csv
-get_uscovid_data <- function(url = "https://covidtracking.com/api/",
+get_uscovid_data <- function(url = "https://covidtracking.com/api/v1/",
                              unit = c("states", "us"),
                              fname = "-",
                              date = lubridate::today(),
@@ -635,7 +635,7 @@ covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
   select(!all_of(drop_cols)) %>%
   select(date, state, fips, data_quality_grade, everything()) %>%
-  pivot_longer(positive:death_probable,
+  pivot_longer(positive:positive_tests_antigen,
                names_to = "measure", values_to = "count")
 
 covus_measure_labels <- tribble(
@@ -656,7 +656,20 @@ covus_measure_labels <- tribble(
   "positive_cases_viral", "Total number of positive cases measured with PCR tests",
   "positive_tests_viral", "Total number of positive PCR tests",
   "recovered", "Recovered",
-  "total_tests_viral", "Total number of PCR tests performed"
+  "total_tests_viral", "Total number of PCR tests performed",
+  "total_test_encounters_viral", "Total Test Encounters (PCR)",
+  "total_tests_people_viral", "Total PCR Tests (People)",
+  "total_tests_antibody", "Total Antibody Tests",
+  "positive_tests_antibody", "Positive Antibody Tests",
+  "negative_tests_antibody", "Negative Antibody Tests",
+  "total_tests_people_antibody", "Total Antibody Tests (People)",
+  "positive_tests_people_antibody", "Positive Antibody Tests (People)",
+  "negative_tests_people_antibody", "Negative Antibody Tests (People)",
+  "total_tests_people_antigen", "Total Antigen Tests (People)",
+  "negative_tests_people_antigen", "Negative Antigen Tests (People)",
+  "positive_tests_people_antigen",  "Positive Antigen Tests (People)",
+  "total_tests_antigen", "Total Antigen Tests",
+  "positive_tests_antigen", "Positive Antigen Tests"
 )
 
 covus <- covus %>%

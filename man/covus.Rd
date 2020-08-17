@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Monday, August  3, 2020}
+\title{COVID-19 data for the USA, current as of Monday, August 17, 2020}
 \format{
-A tibble with 144,041 rows and 7 columns
+A tibble with 266,829 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,7 +29,7 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 144041 \cr
+   Number of rows \tab 266829 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -45,21 +45,21 @@ Table: Data summary\tabular{ll}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    state \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
    fips \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
-   data_quality_grade \tab 18717 \tab 0.87 \tab 1 \tab 2 \tab 0 \tab 6 \tab 0 \cr
-   measure \tab 0 \tab 1.00 \tab 5 \tab 24 \tab 0 \tab 17 \tab 0 \cr
-   measure_label \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 17 \tab 0 \cr
+   data_quality_grade \tab 31929 \tab 0.88 \tab 1 \tab 2 \tab 0 \tab 6 \tab 0 \cr
+   measure \tab 0 \tab 1.00 \tab 5 \tab 30 \tab 0 \tab 29 \tab 0 \cr
+   measure_label \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 29 \tab 0 \cr
 }
 
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-08-03 \tab 2020-05-20 \tab 195 \cr
+   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-08-16 \tab 2020-05-26 \tab 208 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 80168 \tab 0.44 \tab 81371.63 \tab 350804.3 \tab 0 \tab 165 \tab 1471 \tab 21367 \tab 8184696 \tab ▇▁▁▁▁ \cr
+   count \tab 187093 \tab 0.3 \tab 113043.4 \tab 443020 \tab 0 \tab 215 \tab 2408 \tab 40552.5 \tab 9798135 \tab ▇▁▁▁▁ \cr
 }
 
 
@@ -82,6 +82,18 @@ The measures tracked by the COVID tracking project are as follows:\tabular{ll}{
    positive_cases_viral \tab Total number of positive cases measured with PCR tests \cr
    death_confirmed \tab Deaths Confirmed \cr
    death_probable \tab Deaths Probable \cr
+   total_test_encounters_viral \tab Total Test Encounters (PCR) \cr
+   total_tests_people_viral \tab Total PCR Tests (People) \cr
+   total_tests_antibody \tab Total Antibody Tests \cr
+   positive_tests_antibody \tab Positive Antibody Tests \cr
+   negative_tests_antibody \tab Negative Antibody Tests \cr
+   total_tests_people_antibody \tab Total Antibody Tests (People) \cr
+   positive_tests_people_antibody \tab Positive Antibody Tests (People) \cr
+   negative_tests_people_antibody \tab Negative Antibody Tests (People) \cr
+   total_tests_people_antigen \tab Total Antigen Tests (People) \cr
+   positive_tests_people_antigen \tab Positive Antigen Tests (People) \cr
+   total_tests_antigen \tab Total Antigen Tests \cr
+   positive_tests_antigen \tab Positive Antigen Tests \cr
 }
 
 

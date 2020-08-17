@@ -22,11 +22,35 @@ test_that("covus conforms to spec", {
   covus_colnames <- c("date", "state", "fips", "data_quality_grade", "measure", "count", "measure_label")
   expect_equal(colnames(covus), covus_colnames)
 
-  covus_measure_names <- c("positive", "negative", "pending", "hospitalized_currently",
-                           "hospitalized_cumulative", "in_icu_currently", "in_icu_cumulative",
-                           "on_ventilator_currently", "on_ventilator_cumulative", "recovered",
-                           "death", "total_tests_viral", "positive_tests_viral",
-                           "negative_tests_viral", "positive_cases_viral", "death_confirmed", "death_probable")
+  covus_measure_names <- c("positive",
+                           "negative",
+                           "pending",
+                           "hospitalized_currently",
+                           "hospitalized_cumulative",
+                           "in_icu_currently",
+                           "in_icu_cumulative",
+                           "on_ventilator_currently",
+                           "on_ventilator_cumulative",
+                           "recovered",
+                           "death",
+                           "total_tests_viral",
+                           "positive_tests_viral",
+                           "negative_tests_viral",
+                           "positive_cases_viral",
+                           "death_confirmed",
+                           "death_probable",
+                           "total_test_encounters_viral",
+                           "total_tests_people_viral",
+                           "total_tests_antibody",
+                           "positive_tests_antibody",
+                           "negative_tests_antibody",
+                           "total_tests_people_antibody",
+                           "positive_tests_people_antibody",
+                           "negative_tests_people_antibody",
+                           "total_tests_people_antigen",
+                           "positive_tests_people_antigen",
+                           "total_tests_antigen",
+                           "positive_tests_antigen")
   expect_equal(unique(covus$measure), covus_measure_names)
 
 
