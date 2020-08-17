@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 data for the USA, current as of Monday, August  3, 2020 — covus • covdata</title>
+<title>COVID-19 data for the USA, current as of Monday, August 17, 2020 — covus • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 data for the USA, current as of Monday, August  3, 2020 — covus" />
+<meta property="og:title" content="COVID-19 data for the USA, current as of Monday, August 17, 2020 — covus" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.2</span>
       </span>
     </div>
 
@@ -144,7 +144,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 data for the USA, current as of Monday, August  3, 2020</h1>
+    <h1>COVID-19 data for the USA, current as of Monday, August 17, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus.Rd</code></div>
     </div>
@@ -158,7 +158,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 144,041 rows and 7 columns</p><dl>
+    <p>A tibble with 266,829 rows and 7 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>Two letter State abbreviation (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -177,7 +177,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>covus</td></tr>
-<tr><td>Number of rows</td><td>144041</td></tr>
+<tr><td>Number of rows</td><td>266829</td></tr>
 <tr><td>Number of columns</td><td>7</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -194,23 +194,23 @@
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
 <tr><td>state</td><td>0</td><td>1.00</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
 <tr><td>fips</td><td>0</td><td>1.00</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
-<tr><td>data_quality_grade</td><td>18717</td><td>0.87</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
-<tr><td>measure</td><td>0</td><td>1.00</td><td>5</td><td>24</td><td>0</td><td>17</td><td>0</td></tr>
-<tr><td>measure_label</td><td>0</td><td>1.00</td><td>6</td><td>54</td><td>0</td><td>17</td><td>0</td></tr>
+<tr><td>data_quality_grade</td><td>31929</td><td>0.88</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td>measure</td><td>0</td><td>1.00</td><td>5</td><td>30</td><td>0</td><td>29</td><td>0</td></tr>
+<tr><td>measure_label</td><td>0</td><td>1.00</td><td>6</td><td>54</td><td>0</td><td>29</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-08-03</td><td>2020-05-20</td><td>195</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-08-16</td><td>2020-05-26</td><td>208</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>count</td><td>80168</td><td>0.44</td><td>81371.63</td><td>350804.3</td><td>0</td><td>165</td><td>1471</td><td>21367</td><td>8184696</td><td>▇▁▁▁▁</td></tr>
+<tr><td>count</td><td>187093</td><td>0.3</td><td>113043.4</td><td>443020</td><td>0</td><td>215</td><td>2408</td><td>40552.5</td><td>9798135</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -234,6 +234,18 @@
 <tr><td>positive_cases_viral</td><td>Total number of positive cases measured with PCR tests</td></tr>
 <tr><td>death_confirmed</td><td>Deaths Confirmed</td></tr>
 <tr><td>death_probable</td><td>Deaths Probable</td></tr>
+<tr><td>total_test_encounters_viral</td><td>Total Test Encounters (PCR)</td></tr>
+<tr><td>total_tests_people_viral</td><td>Total PCR Tests (People)</td></tr>
+<tr><td>total_tests_antibody</td><td>Total Antibody Tests</td></tr>
+<tr><td>positive_tests_antibody</td><td>Positive Antibody Tests</td></tr>
+<tr><td>negative_tests_antibody</td><td>Negative Antibody Tests</td></tr>
+<tr><td>total_tests_people_antibody</td><td>Total Antibody Tests (People)</td></tr>
+<tr><td>positive_tests_people_antibody</td><td>Positive Antibody Tests (People)</td></tr>
+<tr><td>negative_tests_people_antibody</td><td>Negative Antibody Tests (People)</td></tr>
+<tr><td>total_tests_people_antigen</td><td>Total Antigen Tests (People)</td></tr>
+<tr><td>positive_tests_people_antigen</td><td>Positive Antigen Tests (People)</td></tr>
+<tr><td>total_tests_antigen</td><td>Total Antigen Tests</td></tr>
+<tr><td>positive_tests_antigen</td><td>Positive Antigen Tests</td></tr>
 </table>
 
 
