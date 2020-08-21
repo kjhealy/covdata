@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Monday, August 17, 2020}
+\title{COVID-19 data for the USA, current as of Friday, August 21, 2020}
 \format{
-A tibble with 266,829 rows and 7 columns
+A tibble with 274,021 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,7 +29,7 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 266829 \cr
+   Number of rows \tab 274021 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -45,7 +45,7 @@ Table: Data summary\tabular{ll}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    state \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
    fips \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
-   data_quality_grade \tab 31929 \tab 0.88 \tab 1 \tab 2 \tab 0 \tab 6 \tab 0 \cr
+   data_quality_grade \tab 32625 \tab 0.88 \tab 1 \tab 2 \tab 0 \tab 6 \tab 0 \cr
    measure \tab 0 \tab 1.00 \tab 5 \tab 30 \tab 0 \tab 29 \tab 0 \cr
    measure_label \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 29 \tab 0 \cr
 }
@@ -53,13 +53,13 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-08-16 \tab 2020-05-26 \tab 208 \cr
+   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-08-20 \tab 2020-05-28 \tab 212 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 187093 \tab 0.3 \tab 113043.4 \tab 443020 \tab 0 \tab 215 \tab 2408 \tab 40552.5 \tab 9798135 \tab ▇▁▁▁▁ \cr
+   count \tab 191406 \tab 0.3 \tab 118440.8 \tab 464092.9 \tab 0 \tab 222 \tab 2551 \tab 43026 \tab 10227966 \tab ▇▁▁▁▁ \cr
 }
 
 
