@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Friday, August 21, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Monday, August 24, 2020}
 \format{
 A tibble with 5,544 rows and 5 columns
 \describe{
@@ -49,14 +49,14 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-29 \tab 2020-08-19 \tab 2020-06-24 \tab 33 \cr
+   date \tab 0 \tab 1 \tab 2020-05-03 \tab 2020-08-23 \tab 2020-06-28 \tab 33 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 1130 \tab 0.80 \tab 17807.18 \tab 33309.92 \tab 0 \tab 2238.5 \tab 7244.0 \tab 19852.50 \tab 517877 \tab ▇▁▁▁▁ \cr
-   deaths \tab 1286 \tab 0.77 \tab 870.34 \tab 2056.44 \tab 0 \tab 36.0 \tab 128.5 \tab 664.75 \tab 18648 \tab ▇▁▁▁▁ \cr
+   cases \tab 1094 \tab 0.80 \tab 18717.22 \tab 35088.38 \tab 0 \tab 2455.5 \tab 7568.5 \tab 20844.25 \tab 537476 \tab ▇▁▁▁▁ \cr
+   deaths \tab 1224 \tab 0.78 \tab 890.49 \tab 2088.33 \tab 0 \tab 37.0 \tab 131.0 \tab 683.25 \tab 18670 \tab ▇▁▁▁▁ \cr
 }
 
 

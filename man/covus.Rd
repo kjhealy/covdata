@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Friday, August 21, 2020}
+\title{COVID-19 data for the USA, current as of Monday, August 24, 2020}
 \format{
-A tibble with 274,021 rows and 7 columns
+A tibble with 278,893 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,7 +29,7 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 274021 \cr
+   Number of rows \tab 278893 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -53,13 +53,13 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-08-20 \tab 2020-05-28 \tab 212 \cr
+   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-08-23 \tab 2020-05-30 \tab 215 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 191406 \tab 0.3 \tab 118440.8 \tab 464092.9 \tab 0 \tab 222 \tab 2551 \tab 43026 \tab 10227966 \tab ▇▁▁▁▁ \cr
+   count \tab 194340 \tab 0.3 \tab 122494 \tab 480448.5 \tab 0 \tab 225 \tab 2621 \tab 44347 \tab 10541031 \tab ▇▁▁▁▁ \cr
 }
 
 

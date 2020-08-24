@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Friday, August 21, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Monday, August 24, 2020}
 \format{
 A tibble with 16,632 rows and 5 columns
 \describe{
@@ -49,14 +49,14 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-29 \tab 2020-08-19 \tab 2020-06-24 \tab 33 \cr
+   date \tab 0 \tab 1 \tab 2020-05-03 \tab 2020-08-23 \tab 2020-06-28 \tab 33 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 5906 \tab 0.64 \tab 8599.54 \tab 28966.82 \tab 0 \tab 230 \tab 1365 \tab 6752 \tab 517877 \tab ▇▁▁▁▁ \cr
-   deaths \tab 6983 \tab 0.58 \tab 397.15 \tab 1028.07 \tab 0 \tab 8 \tab 42 \tab 255 \tab 8709 \tab ▇▁▁▁▁ \cr
+   cases \tab 5838 \tab 0.65 \tab 9016.92 \tab 30004.07 \tab 0 \tab 245 \tab 1451 \tab 7075 \tab 537476 \tab ▇▁▁▁▁ \cr
+   deaths \tab 6871 \tab 0.59 \tab 404.95 \tab 1042.60 \tab 0 \tab 8 \tab 43 \tab 264 \tab 8718 \tab ▇▁▁▁▁ \cr
 }
 
 
