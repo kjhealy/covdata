@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Monday, August 24, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Thursday, September  3, 2020}
 \format{
 A tibble with 16,632 rows and 5 columns
 \describe{
@@ -32,17 +32,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-05-03 \tab 2020-08-23 \tab 2020-06-28 \tab 33 \cr
 }
 
 
@@ -53,10 +47,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-05-13 \tab 2020-09-02 \tab 2020-07-08 \tab 33 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 5838 \tab 0.65 \tab 9016.92 \tab 30004.07 \tab 0 \tab 245 \tab 1451 \tab 7075 \tab 537476 \tab ▇▁▁▁▁ \cr
-   deaths \tab 6871 \tab 0.59 \tab 404.95 \tab 1042.60 \tab 0 \tab 8 \tab 43 \tab 264 \tab 8718 \tab ▇▁▁▁▁ \cr
+   cases \tab 5666 \tab 0.66 \tab 10253.37 \tab 32956.53 \tab 0 \tab 279 \tab 1695 \tab 8336.25 \tab 579926 \tab ▇▁▁▁▁ \cr
+   deaths \tab 6609 \tab 0.60 \tab 427.73 \tab 1085.79 \tab 0 \tab 9 \tab 45 \tab 286.00 \tab 8741 \tab ▇▁▁▁▁ \cr
 }
 
 

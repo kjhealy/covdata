@@ -172,13 +172,13 @@ test_that("google_mobility conforms to spec", {
 
 ## coronanet
 test_that("coronanet conforms to spec", {
-  coronanet_colnames <- c("record_id", "policy_id", "recorded_date", "date_announced", "date_start",
-                          "date_end", "entry_type", "event_description", "domestic_policy", "type",
-                          "type_sub_cat", "type_text", "index_high_est", "index_med_est", "index_low_est",
-                          "index_country_rank", "country", "init_country_level", "province",
-                          "target_country", "target_geog_level", "target_region", "target_province",
-                          "target_city", "target_other", "target_who_what", "target_direction",
-                          "travel_mechanism", "compliance", "enforcer", "link", "iso3", "iso2")
+  coronanet_colnames <- c("record_id", "policy_id", "entry_type", "correct_type", "update_type", "update_level",
+                          "description", "date_announced", "date_start", "date_end", "country", "iso3",
+                          "iso2", "init_country_level", "domestic_policy", "province", "city", "type",
+                          "type_sub_cat", "type_text", "school_status", "target_country", "target_geog_level", "target_region",
+                          "target_province", "target_city", "target_other", "target_who_what", "target_direction", "travel_mechanism",
+                          "compliance", "enforcer", "index_high_est", "index_med_est", "index_low_est", "index_country_rank",
+                          "link", "date_updated", "recorded_date")
   expect_equal(colnames(coronanet), coronanet_colnames)
 })
 
@@ -218,4 +218,8 @@ test_that("nchs_pud conforms to spec", {
                          "medcond_yn"   )
   expect_equal(colnames(nchs_pud), nchs_pud_colnames)
 })
+
+
+
+
 

@@ -5,7 +5,7 @@
 \alias{coronanet}
 \title{CoronaNet Government Response Project data}
 \format{
-A tibble with 18,074 rows and 33 variables:
+A tibble with 36,286 rows and 39 variables:
 \describe{
 \item{\code{record_id}}{character Unique identifier for each unique policy record}
 \item{\code{policy_id}}{double Identifier linking new policies with subsequent updates to policies}
@@ -57,69 +57,75 @@ Contains variables from the CoronaNet Government Response Project (\verb{https:/
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab coronanet \cr
-   Number of rows \tab 18074 \cr
-   Number of columns \tab 33 \cr
+   Number of rows \tab 36286 \cr
+   Number of columns \tab 39 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 2 \cr
+   character \tab 29 \cr
+   Date \tab 3 \cr
+   numeric \tab 5 \cr
    POSIXct \tab 2 \cr
-   character \tab 23 \cr
-   numeric \tab 6 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date_start \tab 0 \tab 1.00 \tab 2019-12-31 \tab 2024-05-29 \tab 2020-03-30 \tab 208 \cr
-   date_end \tab 12926 \tab 0.28 \tab 2020-01-28 \tab 2024-05-29 \tab 2020-04-29 \tab 229 \cr
-}
-
-
-\strong{Variable type: POSIXct}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   recorded_date \tab 0 \tab 1 \tab 2020-03-28 05:38:17 \tab 2020-07-05 23:34:13 \tab 2020-04-26 08:58:53 \tab 13850 \cr
-   date_announced \tab 14 \tab 1 \tab 2019-12-31 00:00:00 \tab 2020-07-05 00:00:00 \tab 2020-03-28 00:00:00 \tab 185 \cr
-}
-
-
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   record_id \tab 0 \tab 1.00 \tab 6 \tab 10 \tab 0 \tab 18074 \tab 0 \cr
-   policy_id \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 13547 \tab 0 \cr
+   record_id \tab 0 \tab 1.00 \tab 19 \tab 19 \tab 0 \tab 36286 \tab 0 \cr
+   policy_id \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 20249 \tab 0 \cr
    entry_type \tab 0 \tab 1.00 \tab 6 \tab 9 \tab 0 \tab 2 \tab 0 \cr
-   event_description \tab 0 \tab 1.00 \tab 3 \tab 6463 \tab 0 \tab 13858 \tab 23 \cr
-   type \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 21 \tab 0 \cr
-   type_sub_cat \tab 6756 \tab 0.63 \tab 5 \tab 140 \tab 0 \tab 108 \tab 0 \cr
-   country \tab 0 \tab 1.00 \tab 4 \tab 32 \tab 0 \tab 198 \tab 0 \cr
-   init_country_level \tab 0 \tab 1.00 \tab 8 \tab 31 \tab 0 \tab 5 \tab 0 \cr
-   province \tab 10610 \tab 0.41 \tab 3 \tab 33 \tab 0 \tab 671 \tab 0 \cr
-   target_country \tab 186 \tab 0.99 \tab 4 \tab 1905 \tab 0 \tab 558 \tab 0 \cr
-   target_geog_level \tab 11965 \tab 0.34 \tab 13 \tab 62 \tab 0 \tab 6 \tab 0 \cr
-   target_region \tab 17864 \tab 0.01 \tab 4 \tab 218 \tab 0 \tab 40 \tab 0 \cr
-   target_province \tab 16672 \tab 0.08 \tab 3 \tab 1556 \tab 0 \tab 476 \tab 0 \cr
-   target_city \tab 17588 \tab 0.03 \tab 2 \tab 286 \tab 0 \tab 296 \tab 0 \cr
-   target_other \tab 18074 \tab 0.00 \tab NA \tab NA \tab 0 \tab 0 \tab 0 \cr
-   target_who_what \tab 9539 \tab 0.47 \tab 5 \tab 61 \tab 0 \tab 13 \tab 0 \cr
-   target_direction \tab 14757 \tab 0.18 \tab 7 \tab 16 \tab 0 \tab 3 \tab 0 \cr
-   travel_mechanism \tab 12859 \tab 0.29 \tab 5 \tab 103 \tab 0 \tab 78 \tab 0 \cr
-   compliance \tab 457 \tab 0.97 \tab 20 \tab 167 \tab 0 \tab 31 \tab 0 \cr
-   enforcer \tab 0 \tab 1.00 \tab 6 \tab 219 \tab 0 \tab 178 \tab 0 \cr
-   link \tab 146 \tab 0.99 \tab 1 \tab 1821 \tab 0 \tab 10052 \tab 0 \cr
-   iso3 \tab 48 \tab 1.00 \tab 1 \tab 3 \tab 0 \tab 197 \tab 0 \cr
-   iso2 \tab 69 \tab 1.00 \tab 1 \tab 2 \tab 0 \tab 196 \tab 0 \cr
+   correct_type \tab 18 \tab 1.00 \tab 8 \tab 10 \tab 0 \tab 2 \tab 0 \cr
+   update_type \tab 29646 \tab 0.18 \tab 13 \tab 16 \tab 0 \tab 2 \tab 0 \cr
+   update_level \tab 30000 \tab 0.17 \tab 8 \tab 31 \tab 0 \tab 3 \tab 0 \cr
+   description \tab 0 \tab 1.00 \tab 3 \tab 6463 \tab 0 \tab 26317 \tab 43 \cr
+   country \tab 0 \tab 1.00 \tab 4 \tab 32 \tab 0 \tab 203 \tab 0 \cr
+   iso3 \tab 58 \tab 1.00 \tab 1 \tab 3 \tab 0 \tab 198 \tab 0 \cr
+   iso2 \tab 81 \tab 1.00 \tab 1 \tab 2 \tab 0 \tab 197 \tab 0 \cr
+   init_country_level \tab 83 \tab 1.00 \tab 8 \tab 20 \tab 0 \tab 4 \tab 0 \cr
+   province \tab 17372 \tab 0.52 \tab 3 \tab 33 \tab 0 \tab 809 \tab 0 \cr
+   city \tab 34578 \tab 0.05 \tab 2 \tab 965 \tab 0 \tab 632 \tab 0 \cr
+   type \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 19 \tab 0 \cr
+   type_sub_cat \tab 11558 \tab 0.68 \tab 4 \tab 122 \tab 0 \tab 116 \tab 0 \cr
+   type_text \tab 34312 \tab 0.05 \tab 3 \tab 954 \tab 0 \tab 1646 \tab 0 \cr
+   school_status \tab 32355 \tab 0.11 \tab 20 \tab 68 \tab 0 \tab 13 \tab 0 \cr
+   target_country \tab 2022 \tab 0.94 \tab 4 \tab 1898 \tab 0 \tab 617 \tab 0 \cr
+   target_geog_level \tab 27587 \tab 0.24 \tab 13 \tab 62 \tab 0 \tab 6 \tab 0 \cr
+   target_region \tab 36000 \tab 0.01 \tab 4 \tab 75 \tab 0 \tab 34 \tab 0 \cr
+   target_province \tab 17954 \tab 0.51 \tab 1 \tab 1556 \tab 0 \tab 1093 \tab 0 \cr
+   target_city \tab 34162 \tab 0.06 \tab 2 \tab 965 \tab 0 \tab 837 \tab 0 \cr
+   target_other \tab 36286 \tab 0.00 \tab NA \tab NA \tab 0 \tab 0 \tab 0 \cr
+   target_who_what \tab 0 \tab 1.00 \tab 1 \tab 53 \tab 0 \tab 14 \tab 0 \cr
+   target_direction \tab 31543 \tab 0.13 \tab 7 \tab 16 \tab 0 \tab 3 \tab 0 \cr
+   travel_mechanism \tab 29335 \tab 0.19 \tab 5 \tab 103 \tab 0 \tab 84 \tab 0 \cr
+   compliance \tab 198 \tab 0.99 \tab 20 \tab 178 \tab 0 \tab 30 \tab 0 \cr
+   enforcer \tab 50 \tab 1.00 \tab 6 \tab 219 \tab 0 \tab 231 \tab 0 \cr
+   link \tab 155 \tab 1.00 \tab 1 \tab 4004 \tab 0 \tab 15175 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date_start \tab 0 \tab 1.00 \tab 2019-12-31 \tab 2024-05-29 \tab 2020-04-04 \tab 264 \cr
+   date_end \tab 20586 \tab 0.43 \tab 2020-01-10 \tab 2024-05-29 \tab 2020-05-22 \tab 289 \cr
+   date_updated \tab 0 \tab 1.00 \tab 2020-03-28 \tab 2020-08-27 \tab 2020-06-16 \tab 153 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   domestic_policy \tab 0 \tab 1.00 \tab 0.85 \tab 0.36 \tab 0.00 \tab 1.00 \tab 1.00 \tab 1.00 \tab 1.00 \tab ▂▁▁▁▇ \cr
-   type_text \tab 17942 \tab 0.01 \tab 19.97 \tab 11.46 \tab 2.00 \tab 14.00 \tab 20.00 \tab 28.00 \tab 85.00 \tab ▆▇▁▁▁ \cr
-   index_high_est \tab 3872 \tab 0.79 \tab 53.89 \tab 2.36 \tab 48.29 \tab 52.47 \tab 53.58 \tab 54.98 \tab 70.74 \tab ▅▇▁▁▁ \cr
-   index_med_est \tab 3872 \tab 0.79 \tab 52.23 \tab 1.93 \tab 45.42 \tab 51.24 \tab 52.31 \tab 53.46 \tab 57.59 \tab ▁▂▇▆▁ \cr
-   index_low_est \tab 3872 \tab 0.79 \tab 50.59 \tab 2.52 \tab 37.19 \tab 49.72 \tab 51.11 \tab 52.13 \tab 56.26 \tab ▁▁▂▇▂ \cr
-   index_country_rank \tab 3872 \tab 0.79 \tab 118.99 \tab 53.88 \tab 1.00 \tab 70.00 \tab 124.00 \tab 169.00 \tab 194.00 \tab ▂▅▃▅▇ \cr
+   domestic_policy \tab 0 \tab 1.00 \tab 0.44 \tab 0.50 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab 1.00 \tab ▇▁▁▁▆ \cr
+   index_high_est \tab 11543 \tab 0.68 \tab 54.25 \tab 2.55 \tab 48.29 \tab 52.64 \tab 53.91 \tab 55.40 \tab 70.74 \tab ▃▇▂▁▁ \cr
+   index_med_est \tab 11543 \tab 0.68 \tab 52.53 \tab 2.01 \tab 45.42 \tab 51.45 \tab 52.57 \tab 53.77 \tab 57.59 \tab ▁▂▇▇▂ \cr
+   index_low_est \tab 11543 \tab 0.68 \tab 50.87 \tab 2.53 \tab 37.03 \tab 50.05 \tab 51.31 \tab 52.40 \tab 56.26 \tab ▁▁▂▇▃ \cr
+   index_country_rank \tab 11543 \tab 0.68 \tab 124.64 \tab 54.45 \tab 1.00 \tab 76.00 \tab 132.00 \tab 177.00 \tab 194.00 \tab ▂▃▃▃▇ \cr
+}
+
+
+\strong{Variable type: POSIXct}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date_announced \tab 14 \tab 1 \tab 2019-12-31 00:00:00 \tab 2030-02-28 00:00:00 \tab 2020-04-03 00:00:00 \tab 239 \cr
+   recorded_date \tab 0 \tab 1 \tab 2020-03-28 11:14:33 \tab 2020-08-27 21:14:04 \tab 2020-06-16 18:20:09 \tab 26491 \cr
 }
 
 

@@ -5,7 +5,7 @@
 \alias{nchs_sas}
 \title{Provisional COVID-19 Death Counts by Sex, Age, and State}
 \format{
-A tibble with 1,362 rows and 12 variables:
+A tibble with 2,660 rows and 12 variables:
 \describe{
 \item{\code{data_as_of}}{date Date of data release}
 \item{\code{start_week}}{date First week-ending date of data period}
@@ -34,42 +34,42 @@ Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza r
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_sas \cr
-   Number of rows \tab 1362 \cr
+   Number of rows \tab 2660 \cr
    Number of columns \tab 12 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 3 \cr
    character \tab 3 \cr
+   Date \tab 3 \cr
    numeric \tab 6 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2020-08-19 \tab 2020-08-19 \tab 2020-08-19 \tab 1 \cr
-   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
-   end_week \tab 0 \tab 1 \tab 2020-08-15 \tab 2020-08-15 \tab 2020-08-15 \tab 1 \cr
-}
-
-
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
-   sex \tab 0 \tab 1 \tab 3 \tab 7 \tab 0 \tab 4 \tab 0 \cr
-   age_group \tab 0 \tab 1 \tab 8 \tab 17 \tab 0 \tab 12 \tab 0 \cr
+   sex \tab 0 \tab 1 \tab 4 \tab 9 \tab 0 \tab 4 \tab 0 \cr
+   age_group \tab 0 \tab 1 \tab 8 \tab 17 \tab 0 \tab 16 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-09-02 \tab 2020-09-02 \tab 2020-09-02 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-08-29 \tab 2020-08-29 \tab 2020-08-29 \tab 1 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 276 \tab 0.80 \tab 868.94 \tab 6518.35 \tab 0 \tab 0 \tab 29.0 \tab 218.50 \tab 157413 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 110 \tab 0.92 \tab 8234.09 \tab 65438.60 \tab 0 \tab 81 \tab 505.5 \tab 2782.25 \tab 1717761 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 330 \tab 0.76 \tab 946.59 \tab 6898.03 \tab 0 \tab 0 \tab 59.0 \tab 311.00 \tab 162940 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 274 \tab 0.80 \tab 380.70 \tab 2858.93 \tab 0 \tab 0 \tab 12.0 \tab 94.25 \tab 69187 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 537 \tab 0.61 \tab 46.12 \tab 306.48 \tab 0 \tab 0 \tab 0.0 \tab 17.00 \tab 6623 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 352 \tab 0.74 \tab 1524.84 \tab 10991.60 \tab 0 \tab 14 \tab 95.0 \tab 480.00 \tab 256814 \tab ▇▁▁▁▁ \cr
+   covid_19_deaths \tab 419 \tab 0.84 \tab 580.48 \tab 5046.54 \tab 0 \tab 0 \tab 0.0 \tab 81.00 \tab 170566 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 178 \tab 0.93 \tab 5789.26 \tab 51056.70 \tab 0 \tab 0 \tab 143.5 \tab 1416.50 \tab 1841678 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 489 \tab 0.82 \tab 617.20 \tab 5237.58 \tab 0 \tab 0 \tab 0.0 \tab 138.50 \tab 175096 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 404 \tab 0.85 \tab 256.88 \tab 2236.97 \tab 0 \tab 0 \tab 0.0 \tab 33.00 \tab 75771 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 772 \tab 0.71 \tab 27.26 \tab 212.45 \tab 0 \tab 0 \tab 0.0 \tab 10.00 \tab 6660 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 490 \tab 0.82 \tab 971.00 \tab 8246.23 \tab 0 \tab 0 \tab 13.0 \tab 196.75 \tab 275565 \tab ▇▁▁▁▁ \cr
 }
 
 

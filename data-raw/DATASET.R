@@ -52,8 +52,8 @@ get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/casedist
 ### --------------------------------------------------------------------------------------
 
 ## Get Daily COVID Tracking Project Data
-## form is https://covidtracking.com/api/us/daily.csv
-get_uscovid_data <- function(url = "https://covidtracking.com/api/v1/",
+## form is https://api.covidtracking.com/v1/us/daily.csv
+get_uscovid_data <- function(url = "https://api.covidtracking.com/v1/",
                              unit = c("states", "us"),
                              fname = "-",
                              date = lubridate::today(),
@@ -285,37 +285,46 @@ get_corona_tscs <- function(url = "https://raw.githubusercontent.com/saudiwin/co
   cn_spec <- cols(
     record_id = col_character(),
     policy_id = col_character(),
-    recorded_date = col_datetime(),
+    entry_type = col_character(),
+    correct_type = col_character(),
+    update_type = col_character(),
+    update_level = col_character(),
+    description = col_character(),
     date_announced = col_datetime(),
     date_start = col_date(),
     date_end = col_date(),
-    entry_type = col_character(),
-    event_description = col_character(),
+    country = col_character(),
+    iso_a3 = col_character(),
+    iso_a2 = col_character(),
+    init_country_level = col_character(),
     domestic_policy = col_integer(),
+    province = col_character(),
+    city = col_character(),
     type = col_character(),
     type_sub_cat = col_character(),
-    type_text = col_integer(),
-    index_high_est = col_double(),
-    index_med_est = col_double(),
-    index_low_est  = col_double(),
-    index_country_rank = col_double(),
-    country = col_character(),
-    init_country_level = col_character(),
-    province = col_character(),
-    source_corr_type = col_character(),
+    type_text = col_character(),
+    school_status = col_character(),
     target_country = col_character(),
     target_geog_level = col_character(),
     target_region = col_character(),
     target_province = col_character(),
     target_city = col_character(),
     target_other = col_character(),
-    target_other = col_logical(),
+    target_who_what = col_character(),
     target_direction = col_character(),
     travel_mechanism = col_character(),
     compliance = col_character(),
     enforcer = col_character(),
-    link = col_character()
+    link = col_character(),
+    enforcer = col_character(),
+    index_high_est = col_double(),
+    index_med_est = col_double(),
+    index_low_est = col_double(),
+    index_country_rank = col_double(),
+    link = col_character(),
+    date_update = col_datetime()
   )
+
 
 
   janitor::clean_names(read_csv(tf, col_types = cn_spec))
@@ -620,7 +629,7 @@ countries <- covnat %>%
 ### --------------------------------------------------------------------------------------
 
 ## US state data
-cov_us_raw <- get_uscovid_data(url = "https://covidtracking.com/api/v1/", save_file = "n")
+cov_us_raw <- get_uscovid_data(url = "https://api.covidtracking.com/v1/", save_file = "n")
 
 ## Drop deprecated measures and unneeded variables
 drop_cols <- c("check_time_et", "commercial_score", "date_checked",
@@ -629,7 +638,7 @@ drop_cols <- c("check_time_et", "commercial_score", "date_checked",
                "negative_increase", "negative_regular_score",
                "negative_score", "pos_neg", "positive_increase",
                "positive_score", "score", "total", "total_test_results",
-               "total_test_results_increase")
+               "total_test_results_increase", "total_test_results_source")
 
 covus <- cov_us_raw %>%
   mutate(date = lubridate::ymd(date)) %>%
@@ -984,15 +993,7 @@ stmf <- left_join(stmf, md_ccodes) %>%
 ### --------------------------------------------------------------------------------------
 coronanet_raw <- get_corona_tscs()
 
-cnet_vars <- c("record_id", "policy_id", "recorded_date", "date_announced", "date_start", "date_end",
-               "entry_type", "event_description", "domestic_policy", "type", "type_sub_cat",
-               "type_text", "index_high_est", "index_med_est", "index_low_est", "index_country_rank",
-               "country", "init_country_level", "province", "target_country", "target_geog_level",
-               "target_region", "target_province", "target_city", "target_other", "target_who_what",
-               "target_direction", "travel_mechanism", "compliance", "enforcer", "link", "iso_a3", "iso_a2")
-
 coronanet <- coronanet_raw %>%
-  select(all_of(cnet_vars)) %>%
   rename(iso3 = iso_a3, iso2 = iso_a2)
 
 ### --------------------------------------------------------------------------------------
