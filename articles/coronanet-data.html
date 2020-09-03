@@ -141,28 +141,30 @@
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">coronanet</span>
-<span class="co">#&gt; # A tibble: 18,074 x 33</span>
-<span class="co">#&gt;    record_id policy_id recorded_date       date_announced      date_start</span>
-<span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;     &lt;dttm&gt;              &lt;dttm&gt;              &lt;date&gt;    </span>
-<span class="co">#&gt;  1 1000140Et 1000140   2020-06-20 19:07:14 2020-03-24 00:00:00 2020-03-24</span>
-<span class="co">#&gt;  2 1000140Es 1000140   2020-06-20 19:07:14 2020-03-24 00:00:00 2020-03-24</span>
-<span class="co">#&gt;  3 1000509Dw 1000509   2020-06-17 12:53:43 2020-03-19 00:00:00 2020-03-19</span>
-<span class="co">#&gt;  4 1000509Dx 1000509   2020-06-17 12:53:43 2020-03-19 00:00:00 2020-03-19</span>
-<span class="co">#&gt;  5 1000509Co 1000509   2020-06-17 12:53:43 2020-03-19 00:00:00 2020-03-19</span>
-<span class="co">#&gt;  6 1000775Eo 1342691   2020-04-04 15:43:15 2020-03-14 00:00:00 2020-03-14</span>
-<span class="co">#&gt;  7 1000775Eb 1342691   2020-04-04 15:43:15 2020-03-14 00:00:00 2020-03-14</span>
-<span class="co">#&gt;  8 1003875NA 1003875   2020-04-15 11:04:50 2020-04-07 00:00:00 2020-04-07</span>
-<span class="co">#&gt;  9 1004103NA 1004103   2020-05-15 11:04:46 2020-05-15 00:00:00 2020-05-15</span>
-<span class="co">#&gt; 10 100452Cx  100452    2020-05-31 22:47:59 2020-03-28 00:00:00 2020-03-28</span>
-<span class="co">#&gt; # … with 18,064 more rows, and 28 more variables: date_end &lt;date&gt;,</span>
-<span class="co">#&gt; #   entry_type &lt;chr&gt;, event_description &lt;chr&gt;, domestic_policy &lt;int&gt;,</span>
-<span class="co">#&gt; #   type &lt;chr&gt;, type_sub_cat &lt;chr&gt;, type_text &lt;int&gt;, index_high_est &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   index_med_est &lt;dbl&gt;, index_low_est &lt;dbl&gt;, index_country_rank &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   country &lt;chr&gt;, init_country_level &lt;chr&gt;, province &lt;chr&gt;,</span>
-<span class="co">#&gt; #   target_country &lt;chr&gt;, target_geog_level &lt;chr&gt;, target_region &lt;chr&gt;,</span>
-<span class="co">#&gt; #   target_province &lt;chr&gt;, target_city &lt;chr&gt;, target_other &lt;chr&gt;,</span>
-<span class="co">#&gt; #   target_who_what &lt;chr&gt;, target_direction &lt;chr&gt;, travel_mechanism &lt;chr&gt;,</span>
-<span class="co">#&gt; #   compliance &lt;chr&gt;, enforcer &lt;chr&gt;, link &lt;chr&gt;, iso3 &lt;chr&gt;, iso2 &lt;chr&gt;</span>
+<span class="co">#&gt; # A tibble: 36,286 x 39</span>
+<span class="co">#&gt;    record_id policy_id entry_type correct_type update_type update_level</span>
+<span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;       </span>
+<span class="co">#&gt;  1 R_1gdyC2… 3889409   new_entry  original     &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt;  2 R_vp4xmb… 1429889   new_entry  original     &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt;  3 R_VWmXp5… 3386408   new_entry  correction   &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt;  4 R_3Dhjkd… 1541147   update     original     Change of … &lt;NA&gt;        </span>
+<span class="co">#&gt;  5 R_1KxVwu… 1846710   new_entry  original     &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt;  6 R_1DnzRb… 6645065   new_entry  original     &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt;  7 R_yz7pUp… 9724038   new_entry  original     &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt;  8 R_2bZuvo… 6203597   new_entry  original     &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt;  9 R_22kWz6… 1919243   new_entry  correction   &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt; 10 R_2Ytcwe… 1924743   new_entry  original     &lt;NA&gt;        &lt;NA&gt;        </span>
+<span class="co">#&gt; # … with 36,276 more rows, and 33 more variables: description &lt;chr&gt;,</span>
+<span class="co">#&gt; #   date_announced &lt;dttm&gt;, date_start &lt;date&gt;, date_end &lt;date&gt;, country &lt;chr&gt;,</span>
+<span class="co">#&gt; #   iso3 &lt;chr&gt;, iso2 &lt;chr&gt;, init_country_level &lt;chr&gt;, domestic_policy &lt;int&gt;,</span>
+<span class="co">#&gt; #   province &lt;chr&gt;, city &lt;chr&gt;, type &lt;chr&gt;, type_sub_cat &lt;chr&gt;,</span>
+<span class="co">#&gt; #   type_text &lt;chr&gt;, school_status &lt;chr&gt;, target_country &lt;chr&gt;,</span>
+<span class="co">#&gt; #   target_geog_level &lt;chr&gt;, target_region &lt;chr&gt;, target_province &lt;chr&gt;,</span>
+<span class="co">#&gt; #   target_city &lt;chr&gt;, target_other &lt;chr&gt;, target_who_what &lt;chr&gt;,</span>
+<span class="co">#&gt; #   target_direction &lt;chr&gt;, travel_mechanism &lt;chr&gt;, compliance &lt;chr&gt;,</span>
+<span class="co">#&gt; #   enforcer &lt;chr&gt;, index_high_est &lt;dbl&gt;, index_med_est &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   index_low_est &lt;dbl&gt;, index_country_rank &lt;dbl&gt;, link &lt;chr&gt;,</span>
+<span class="co">#&gt; #   date_updated &lt;date&gt;, recorded_date &lt;dttm&gt;</span>
 </pre></div>
 <p>To cite this dataset, use:</p>
 <p>Cheng, Cindy, Joan Barcelo, Allison Hartnett, Robert Kubinec, and Luca Messerschmidt. 2020. “Coronanet: A Dyadic Dataset of Government Responses to the COVID-19 Pandemic.” BETAVersion 1.0. <a href="https://www.coronanet-project.org" class="uri">https://www.coronanet-project.org</a>.</p>

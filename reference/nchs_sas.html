@@ -158,7 +158,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 1,362 rows and 12 variables:</p><dl>
+    <p>A tibble with 2,660 rows and 12 variables:</p><dl>
 <dt><code>data_as_of</code></dt><dd><p>date Date of data release</p></dd>
 <dt><code>start_week</code></dt><dd><p>date First week-ending date of data period</p></dd>
 <dt><code>end_week</code></dt><dd><p>date Last week-ending date of data period</p></dd>
@@ -182,12 +182,12 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nchs_sas</td></tr>
-<tr><td>Number of rows</td><td>1362</td></tr>
+<tr><td>Number of rows</td><td>2660</td></tr>
 <tr><td>Number of columns</td><td>12</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>3</td></tr>
 <tr><td>character</td><td>3</td></tr>
+<tr><td>Date</td><td>3</td></tr>
 <tr><td>numeric</td><td>6</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
@@ -195,32 +195,32 @@
 
 
 
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>data_as_of</td><td>0</td><td>1</td><td>2020-08-19</td><td>2020-08-19</td><td>2020-08-19</td><td>1</td></tr>
-<tr><td>start_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-02-01</td><td>2020-02-01</td><td>1</td></tr>
-<tr><td>end_week</td><td>0</td><td>1</td><td>2020-08-15</td><td>2020-08-15</td><td>2020-08-15</td><td>1</td></tr>
+<p><strong>Variable type: character</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
+<tr><td>state</td><td>0</td><td>1</td><td>4</td><td>20</td><td>0</td><td>54</td><td>0</td></tr>
+<tr><td>sex</td><td>0</td><td>1</td><td>4</td><td>9</td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>age_group</td><td>0</td><td>1</td><td>8</td><td>17</td><td>0</td><td>16</td><td>0</td></tr>
 </table>
 
 
 
-<p><strong>Variable type: character</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>state</td><td>0</td><td>1</td><td>4</td><td>20</td><td>0</td><td>54</td><td>0</td></tr>
-<tr><td>sex</td><td>0</td><td>1</td><td>3</td><td>7</td><td>0</td><td>4</td><td>0</td></tr>
-<tr><td>age_group</td><td>0</td><td>1</td><td>8</td><td>17</td><td>0</td><td>12</td><td>0</td></tr>
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2020-09-02</td><td>2020-09-02</td><td>2020-09-02</td><td>1</td></tr>
+<tr><td>start_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-02-01</td><td>2020-02-01</td><td>1</td></tr>
+<tr><td>end_week</td><td>0</td><td>1</td><td>2020-08-29</td><td>2020-08-29</td><td>2020-08-29</td><td>1</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>covid_19_deaths</td><td>276</td><td>0.80</td><td>868.94</td><td>6518.35</td><td>0</td><td>0</td><td>29.0</td><td>218.50</td><td>157413</td><td>▇▁▁▁▁</td></tr>
-<tr><td>total_deaths</td><td>110</td><td>0.92</td><td>8234.09</td><td>65438.60</td><td>0</td><td>81</td><td>505.5</td><td>2782.25</td><td>1717761</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_deaths</td><td>330</td><td>0.76</td><td>946.59</td><td>6898.03</td><td>0</td><td>0</td><td>59.0</td><td>311.00</td><td>162940</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_and_covid_19_deaths</td><td>274</td><td>0.80</td><td>380.70</td><td>2858.93</td><td>0</td><td>0</td><td>12.0</td><td>94.25</td><td>69187</td><td>▇▁▁▁▁</td></tr>
-<tr><td>influenza_deaths</td><td>537</td><td>0.61</td><td>46.12</td><td>306.48</td><td>0</td><td>0</td><td>0.0</td><td>17.00</td><td>6623</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>352</td><td>0.74</td><td>1524.84</td><td>10991.60</td><td>0</td><td>14</td><td>95.0</td><td>480.00</td><td>256814</td><td>▇▁▁▁▁</td></tr>
+<tr><td>covid_19_deaths</td><td>419</td><td>0.84</td><td>580.48</td><td>5046.54</td><td>0</td><td>0</td><td>0.0</td><td>81.00</td><td>170566</td><td>▇▁▁▁▁</td></tr>
+<tr><td>total_deaths</td><td>178</td><td>0.93</td><td>5789.26</td><td>51056.70</td><td>0</td><td>0</td><td>143.5</td><td>1416.50</td><td>1841678</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_deaths</td><td>489</td><td>0.82</td><td>617.20</td><td>5237.58</td><td>0</td><td>0</td><td>0.0</td><td>138.50</td><td>175096</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_and_covid_19_deaths</td><td>404</td><td>0.85</td><td>256.88</td><td>2236.97</td><td>0</td><td>0</td><td>0.0</td><td>33.00</td><td>75771</td><td>▇▁▁▁▁</td></tr>
+<tr><td>influenza_deaths</td><td>772</td><td>0.71</td><td>27.26</td><td>212.45</td><td>0</td><td>0</td><td>0.0</td><td>10.00</td><td>6660</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>490</td><td>0.82</td><td>971.00</td><td>8246.23</td><td>0</td><td>0</td><td>13.0</td><td>196.75</td><td>275565</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
