@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, September  3, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Wednesday, September 16, 2020}
 \format{
-A tibble with 5,544 rows and 5 columns
+A tibble with 7,560 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -28,7 +28,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_ethnicity \cr
-   Number of rows \tab 5544 \cr
+   Number of rows \tab 7560 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -49,14 +49,14 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-05-13 \tab 2020-09-02 \tab 2020-07-08 \tab 33 \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-09-13 \tab 2020-06-28 \tab 45 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 1022 \tab 0.82 \tab 21590.41 \tab 40365.06 \tab 0 \tab 2941.5 \tab 8836 \tab 24183.75 \tab 579926 \tab ▇▁▁▁▁ \cr
-   deaths \tab 1088 \tab 0.80 \tab 947.85 \tab 2183.59 \tab 0 \tab 40.0 \tab 137 \tab 727.50 \tab 18717 \tab ▇▁▁▁▁ \cr
+   cases \tab 1832 \tab 0.76 \tab 20758.89 \tab 41513.85 \tab 0 \tab 2245.75 \tab 7919.5 \tab 22363.50 \tab 615805 \tab ▇▁▁▁▁ \cr
+   deaths \tab 2028 \tab 0.73 \tab 911.57 \tab 2118.26 \tab 0 \tab 36.00 \tab 132.0 \tab 687.25 \tab 18782 \tab ▇▁▁▁▁ \cr
 }
 
 

@@ -56,20 +56,20 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2020-09-02 \tab 2020-09-02 \tab 2020-09-02 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-09-16 \tab 2020-09-16 \tab 2020-09-16 \tab 1 \cr
    start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
-   end_week \tab 0 \tab 1 \tab 2020-08-29 \tab 2020-08-29 \tab 2020-08-29 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-09-12 \tab 2020-09-12 \tab 2020-09-12 \tab 1 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 419 \tab 0.84 \tab 580.48 \tab 5046.54 \tab 0 \tab 0 \tab 0.0 \tab 81.00 \tab 170566 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 178 \tab 0.93 \tab 5789.26 \tab 51056.70 \tab 0 \tab 0 \tab 143.5 \tab 1416.50 \tab 1841678 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 489 \tab 0.82 \tab 617.20 \tab 5237.58 \tab 0 \tab 0 \tab 0.0 \tab 138.50 \tab 175096 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 404 \tab 0.85 \tab 256.88 \tab 2236.97 \tab 0 \tab 0 \tab 0.0 \tab 33.00 \tab 75771 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 772 \tab 0.71 \tab 27.26 \tab 212.45 \tab 0 \tab 0 \tab 0.0 \tab 10.00 \tab 6660 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 490 \tab 0.82 \tab 971.00 \tab 8246.23 \tab 0 \tab 0 \tab 13.0 \tab 196.75 \tab 275565 \tab ▇▁▁▁▁ \cr
+   covid_19_deaths \tab 414 \tab 0.84 \tab 618.72 \tab 5377.65 \tab 0 \tab 0 \tab 0 \tab 89.75 \tab 182095 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 175 \tab 0.93 \tab 6149.02 \tab 54237.62 \tab 0 \tab 0 \tab 152 \tab 1503.00 \tab 1957766 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 486 \tab 0.82 \tab 655.63 \tab 5563.49 \tab 0 \tab 0 \tab 0 \tab 146.75 \tab 186116 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 398 \tab 0.85 \tab 276.55 \tab 2407.68 \tab 0 \tab 0 \tab 0 \tab 37.00 \tab 81691 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 773 \tab 0.71 \tab 27.39 \tab 213.36 \tab 0 \tab 0 \tab 0 \tab 10.00 \tab 6687 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 492 \tab 0.82 \tab 1031.09 \tab 8746.66 \tab 0 \tab 0 \tab 13 \tab 212.00 \tab 292214 \tab ▇▁▁▁▁ \cr
 }
 
 
