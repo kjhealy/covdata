@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
       </span>
     </div>
 
@@ -158,7 +158,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 36,286 rows and 39 variables:</p><dl>
+    <p>A tibble with 60,825 rows and 39 variables:</p><dl>
 <dt><code>record_id</code></dt><dd><p>character Unique identifier for each unique policy record</p></dd>
 <dt><code>policy_id</code></dt><dd><p>double Identifier linking new policies with subsequent updates to policies</p></dd>
 <dt><code>recorded_date</code></dt><dd><p>date-time When the record was entered into the dataset</p></dd>
@@ -207,7 +207,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>coronanet</td></tr>
-<tr><td>Number of rows</td><td>36286</td></tr>
+<tr><td>Number of rows</td><td>60825</td></tr>
 <tr><td>Number of columns</td><td>39</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -223,63 +223,63 @@
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>record_id</td><td>0</td><td>1.00</td><td>19</td><td>19</td><td>0</td><td>36286</td><td>0</td></tr>
-<tr><td>policy_id</td><td>0</td><td>1.00</td><td>4</td><td>14</td><td>0</td><td>20249</td><td>0</td></tr>
+<tr><td>record_id</td><td>0</td><td>1.00</td><td>19</td><td>19</td><td>0</td><td>60825</td><td>0</td></tr>
+<tr><td>policy_id</td><td>0</td><td>1.00</td><td>4</td><td>14</td><td>0</td><td>21407</td><td>0</td></tr>
 <tr><td>entry_type</td><td>0</td><td>1.00</td><td>6</td><td>9</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>correct_type</td><td>18</td><td>1.00</td><td>8</td><td>10</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>update_type</td><td>29646</td><td>0.18</td><td>13</td><td>16</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>update_level</td><td>30000</td><td>0.17</td><td>8</td><td>31</td><td>0</td><td>3</td><td>0</td></tr>
-<tr><td>description</td><td>0</td><td>1.00</td><td>3</td><td>6463</td><td>0</td><td>26317</td><td>43</td></tr>
+<tr><td>correct_type</td><td>34</td><td>1.00</td><td>8</td><td>10</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>update_type</td><td>49951</td><td>0.18</td><td>13</td><td>16</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>update_level</td><td>51578</td><td>0.15</td><td>8</td><td>31</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>description</td><td>0</td><td>1.00</td><td>3</td><td>6463</td><td>0</td><td>28051</td><td>0</td></tr>
 <tr><td>country</td><td>0</td><td>1.00</td><td>4</td><td>32</td><td>0</td><td>203</td><td>0</td></tr>
-<tr><td>iso3</td><td>58</td><td>1.00</td><td>1</td><td>3</td><td>0</td><td>198</td><td>0</td></tr>
-<tr><td>iso2</td><td>81</td><td>1.00</td><td>1</td><td>2</td><td>0</td><td>197</td><td>0</td></tr>
-<tr><td>init_country_level</td><td>83</td><td>1.00</td><td>8</td><td>20</td><td>0</td><td>4</td><td>0</td></tr>
-<tr><td>province</td><td>17372</td><td>0.52</td><td>3</td><td>33</td><td>0</td><td>809</td><td>0</td></tr>
-<tr><td>city</td><td>34578</td><td>0.05</td><td>2</td><td>965</td><td>0</td><td>632</td><td>0</td></tr>
+<tr><td>iso3</td><td>52</td><td>1.00</td><td>1</td><td>3</td><td>0</td><td>198</td><td>0</td></tr>
+<tr><td>iso2</td><td>94</td><td>1.00</td><td>1</td><td>2</td><td>0</td><td>197</td><td>0</td></tr>
+<tr><td>init_country_level</td><td>121</td><td>1.00</td><td>8</td><td>20</td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>province</td><td>26608</td><td>0.56</td><td>3</td><td>33</td><td>0</td><td>856</td><td>0</td></tr>
+<tr><td>city</td><td>58266</td><td>0.04</td><td>2</td><td>965</td><td>0</td><td>655</td><td>0</td></tr>
 <tr><td>type</td><td>0</td><td>1.00</td><td>6</td><td>54</td><td>0</td><td>19</td><td>0</td></tr>
-<tr><td>type_sub_cat</td><td>11558</td><td>0.68</td><td>4</td><td>122</td><td>0</td><td>116</td><td>0</td></tr>
-<tr><td>type_text</td><td>34312</td><td>0.05</td><td>3</td><td>954</td><td>0</td><td>1646</td><td>0</td></tr>
-<tr><td>school_status</td><td>32355</td><td>0.11</td><td>20</td><td>68</td><td>0</td><td>13</td><td>0</td></tr>
-<tr><td>target_country</td><td>2022</td><td>0.94</td><td>4</td><td>1898</td><td>0</td><td>617</td><td>0</td></tr>
-<tr><td>target_geog_level</td><td>27587</td><td>0.24</td><td>13</td><td>62</td><td>0</td><td>6</td><td>0</td></tr>
-<tr><td>target_region</td><td>36000</td><td>0.01</td><td>4</td><td>75</td><td>0</td><td>34</td><td>0</td></tr>
-<tr><td>target_province</td><td>17954</td><td>0.51</td><td>1</td><td>1556</td><td>0</td><td>1093</td><td>0</td></tr>
-<tr><td>target_city</td><td>34162</td><td>0.06</td><td>2</td><td>965</td><td>0</td><td>837</td><td>0</td></tr>
-<tr><td>target_other</td><td>36286</td><td>0.00</td><td>NA</td><td>NA</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>target_who_what</td><td>0</td><td>1.00</td><td>1</td><td>53</td><td>0</td><td>14</td><td>0</td></tr>
-<tr><td>target_direction</td><td>31543</td><td>0.13</td><td>7</td><td>16</td><td>0</td><td>3</td><td>0</td></tr>
-<tr><td>travel_mechanism</td><td>29335</td><td>0.19</td><td>5</td><td>103</td><td>0</td><td>84</td><td>0</td></tr>
-<tr><td>compliance</td><td>198</td><td>0.99</td><td>20</td><td>178</td><td>0</td><td>30</td><td>0</td></tr>
-<tr><td>enforcer</td><td>50</td><td>1.00</td><td>6</td><td>219</td><td>0</td><td>231</td><td>0</td></tr>
-<tr><td>link</td><td>155</td><td>1.00</td><td>1</td><td>4004</td><td>0</td><td>15175</td><td>0</td></tr>
+<tr><td>type_sub_cat</td><td>6368</td><td>0.90</td><td>5</td><td>99</td><td>0</td><td>17</td><td>0</td></tr>
+<tr><td>type_text</td><td>58626</td><td>0.04</td><td>3</td><td>954</td><td>0</td><td>1704</td><td>0</td></tr>
+<tr><td>school_status</td><td>58207</td><td>0.04</td><td>34</td><td>52</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td>target_country</td><td>3450</td><td>0.94</td><td>4</td><td>1905</td><td>0</td><td>626</td><td>0</td></tr>
+<tr><td>target_geog_level</td><td>50786</td><td>0.17</td><td>13</td><td>62</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td>target_region</td><td>60432</td><td>0.01</td><td>4</td><td>75</td><td>0</td><td>34</td><td>0</td></tr>
+<tr><td>target_province</td><td>27488</td><td>0.55</td><td>1</td><td>1556</td><td>0</td><td>1158</td><td>0</td></tr>
+<tr><td>target_city</td><td>57763</td><td>0.05</td><td>2</td><td>965</td><td>0</td><td>866</td><td>0</td></tr>
+<tr><td>target_other</td><td>60825</td><td>0.00</td><td>NA</td><td>NA</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>target_who_what</td><td>10758</td><td>0.82</td><td>5</td><td>61</td><td>0</td><td>13</td><td>0</td></tr>
+<tr><td>target_direction</td><td>54649</td><td>0.10</td><td>7</td><td>16</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>travel_mechanism</td><td>52921</td><td>0.13</td><td>5</td><td>103</td><td>0</td><td>84</td><td>0</td></tr>
+<tr><td>compliance</td><td>206</td><td>1.00</td><td>20</td><td>178</td><td>0</td><td>30</td><td>0</td></tr>
+<tr><td>enforcer</td><td>79</td><td>1.00</td><td>6</td><td>219</td><td>0</td><td>237</td><td>0</td></tr>
+<tr><td>link</td><td>144</td><td>1.00</td><td>1</td><td>4004</td><td>0</td><td>15936</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date_start</td><td>0</td><td>1.00</td><td>2019-12-31</td><td>2024-05-29</td><td>2020-04-04</td><td>264</td></tr>
-<tr><td>date_end</td><td>20586</td><td>0.43</td><td>2020-01-10</td><td>2024-05-29</td><td>2020-05-22</td><td>289</td></tr>
-<tr><td>date_updated</td><td>0</td><td>1.00</td><td>2020-03-28</td><td>2020-08-27</td><td>2020-06-16</td><td>153</td></tr>
+<tr><td>date_start</td><td>0</td><td>1.00</td><td>2019-12-31</td><td>2024-05-29</td><td>2020-04-02</td><td>278</td></tr>
+<tr><td>date_end</td><td>33643</td><td>0.45</td><td>2020-01-10</td><td>2024-05-29</td><td>2020-05-18</td><td>307</td></tr>
+<tr><td>date_updated</td><td>0</td><td>1.00</td><td>2020-03-28</td><td>2020-09-10</td><td>2020-06-29</td><td>167</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>domestic_policy</td><td>0</td><td>1.00</td><td>0.44</td><td>0.50</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>1.00</td><td>▇▁▁▁▆</td></tr>
-<tr><td>index_high_est</td><td>11543</td><td>0.68</td><td>54.25</td><td>2.55</td><td>48.29</td><td>52.64</td><td>53.91</td><td>55.40</td><td>70.74</td><td>▃▇▂▁▁</td></tr>
-<tr><td>index_med_est</td><td>11543</td><td>0.68</td><td>52.53</td><td>2.01</td><td>45.42</td><td>51.45</td><td>52.57</td><td>53.77</td><td>57.59</td><td>▁▂▇▇▂</td></tr>
-<tr><td>index_low_est</td><td>11543</td><td>0.68</td><td>50.87</td><td>2.53</td><td>37.03</td><td>50.05</td><td>51.31</td><td>52.40</td><td>56.26</td><td>▁▁▂▇▃</td></tr>
-<tr><td>index_country_rank</td><td>11543</td><td>0.68</td><td>124.64</td><td>54.45</td><td>1.00</td><td>76.00</td><td>132.00</td><td>177.00</td><td>194.00</td><td>▂▃▃▃▇</td></tr>
+<tr><td>domestic_policy</td><td>0</td><td>1.00</td><td>0.51</td><td>0.50</td><td>0.00</td><td>0.00</td><td>1.00</td><td>1.00</td><td>1.00</td><td>▇▁▁▁▇</td></tr>
+<tr><td>index_high_est</td><td>19347</td><td>0.68</td><td>54.22</td><td>2.57</td><td>48.29</td><td>52.55</td><td>53.90</td><td>55.43</td><td>70.74</td><td>▅▇▂▁▁</td></tr>
+<tr><td>index_med_est</td><td>19347</td><td>0.68</td><td>52.51</td><td>2.05</td><td>45.42</td><td>51.42</td><td>52.50</td><td>53.75</td><td>57.59</td><td>▁▂▇▇▂</td></tr>
+<tr><td>index_low_est</td><td>19347</td><td>0.68</td><td>50.86</td><td>2.56</td><td>37.03</td><td>50.08</td><td>51.28</td><td>52.36</td><td>56.26</td><td>▁▁▂▇▃</td></tr>
+<tr><td>index_country_rank</td><td>19347</td><td>0.68</td><td>121.67</td><td>55.76</td><td>1.00</td><td>73.00</td><td>127.00</td><td>177.00</td><td>194.00</td><td>▂▅▃▃▇</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: POSIXct</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date_announced</td><td>14</td><td>1</td><td>2019-12-31 00:00:00</td><td>2030-02-28 00:00:00</td><td>2020-04-03 00:00:00</td><td>239</td></tr>
-<tr><td>recorded_date</td><td>0</td><td>1</td><td>2020-03-28 11:14:33</td><td>2020-08-27 21:14:04</td><td>2020-06-16 18:20:09</td><td>26491</td></tr>
+<tr><td>date_announced</td><td>10</td><td>1</td><td>2019-12-31 00:00:00</td><td>2030-02-28 00:00:00</td><td>2020-04-01 00:00:00</td><td>254</td></tr>
+<tr><td>recorded_date</td><td>0</td><td>1</td><td>2020-03-28 11:14:33</td><td>2020-09-10 23:39:10</td><td>2020-06-29 20:31:15</td><td>28146</td></tr>
 </table>
 
 
@@ -326,7 +326,7 @@ the corrected data).</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

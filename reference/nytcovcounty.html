@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for US counties, current as of Thursday, September  3, 2020 — nytcovcounty • covdata</title>
+<title>NYT COVID-19 data for US counties, current as of Wednesday, September 16, 2020 — nytcovcounty • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for US counties, current as of Thursday, September  3, 2020 — nytcovcounty" />
+<meta property="og:title" content="NYT COVID-19 data for US counties, current as of Wednesday, September 16, 2020 — nytcovcounty" />
 <meta property="og:description" content="A dataset containing US county-level data on COVID-19, collected by the New York Times." />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
       </span>
     </div>
 
@@ -144,7 +144,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for US counties, current as of Thursday, September  3, 2020</h1>
+    <h1>NYT COVID-19 data for US counties, current as of Wednesday, September 16, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovcounty.Rd</code></div>
     </div>
@@ -158,7 +158,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 495,663 rows and 6 columns</p><dl>
+    <p>A tibble with 537,714 rows and 6 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>county</dt><dd><p>County name (character)</p></dd>
 <dt>state</dt><dd><p>State name (character)</p></dd>
@@ -186,7 +186,7 @@ For county data, note in particular:</p><ul>
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytcovcounty</td></tr>
-<tr><td>Number of rows</td><td>495663</td></tr>
+<tr><td>Number of rows</td><td>537714</td></tr>
 <tr><td>Number of columns</td><td>6</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -201,24 +201,24 @@ For county data, note in particular:</p><ul>
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>county</td><td>0</td><td>1.00</td><td>3</td><td>33</td><td>0</td><td>1921</td><td>0</td></tr>
+<tr><td>county</td><td>0</td><td>1.00</td><td>3</td><td>33</td><td>0</td><td>1923</td><td>0</td></tr>
 <tr><td>state</td><td>0</td><td>1.00</td><td>4</td><td>24</td><td>0</td><td>55</td><td>0</td></tr>
-<tr><td>fips</td><td>4774</td><td>0.99</td><td>5</td><td>5</td><td>0</td><td>3203</td><td>0</td></tr>
+<tr><td>fips</td><td>5174</td><td>0.99</td><td>5</td><td>5</td><td>0</td><td>3205</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-09-02</td><td>2020-06-17</td><td>226</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-09-15</td><td>2020-06-24</td><td>239</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>851.50</td><td>5645.58</td><td>0</td><td>12</td><td>63</td><td>304</td><td>243935</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>34.54</td><td>396.14</td><td>0</td><td>0</td><td>1</td><td>7</td><td>23708</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>939.45</td><td>5996.93</td><td>0</td><td>14</td><td>73</td><td>354</td><td>255049</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>36.44</td><td>403.12</td><td>0</td><td>0</td><td>1</td><td>9</td><td>23758</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -238,7 +238,7 @@ For county data, note in particular:</p><ul>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

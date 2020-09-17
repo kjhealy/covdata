@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 data for the USA, current as of Thursday, September  3, 2020 — covus • covdata</title>
+<title>COVID-19 data for the USA, current as of Wednesday, September 16, 2020 — covus • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 data for the USA, current as of Thursday, September  3, 2020 — covus" />
+<meta property="og:title" content="COVID-19 data for the USA, current as of Wednesday, September 16, 2020 — covus" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
       </span>
     </div>
 
@@ -144,7 +144,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 data for the USA, current as of Thursday, September  3, 2020</h1>
+    <h1>COVID-19 data for the USA, current as of Wednesday, September 16, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus.Rd</code></div>
     </div>
@@ -158,7 +158,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 296,786 rows and 7 columns</p><dl>
+    <p>A tibble with 319,522 rows and 7 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>Two letter State abbreviation (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -177,7 +177,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>covus</td></tr>
-<tr><td>Number of rows</td><td>296786</td></tr>
+<tr><td>Number of rows</td><td>319522</td></tr>
 <tr><td>Number of columns</td><td>7</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -194,7 +194,7 @@
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
 <tr><td>state</td><td>0</td><td>1.00</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
 <tr><td>fips</td><td>0</td><td>1.00</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
-<tr><td>data_quality_grade</td><td>34278</td><td>0.88</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td>data_quality_grade</td><td>34278</td><td>0.89</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
 <tr><td>measure</td><td>0</td><td>1.00</td><td>5</td><td>30</td><td>0</td><td>29</td><td>0</td></tr>
 <tr><td>measure_label</td><td>0</td><td>1.00</td><td>6</td><td>54</td><td>0</td><td>29</td><td>0</td></tr>
 </table>
@@ -203,14 +203,14 @@
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-09-02</td><td>2020-06-03</td><td>225</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-09-16</td><td>2020-06-10</td><td>239</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>count</td><td>204711</td><td>0.31</td><td>136291</td><td>532531.2</td><td>0</td><td>241</td><td>2965</td><td>50176.5</td><td>11580370</td><td>▇▁▁▁▁</td></tr>
+<tr><td>count</td><td>217142</td><td>0.32</td><td>154346.3</td><td>605039.7</td><td>0</td><td>256</td><td>3338</td><td>56611.25</td><td>13000522</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -272,7 +272,7 @@ cause of death and there is not a laboratory test confirming COVID-19 infection.
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
