@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Wednesday, September 16, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Tuesday, September 22, 2020}
 \format{
-A tibble with 7,560 rows and 5 columns
+A tibble with 7,896 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -28,15 +28,21 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_ethnicity \cr
-   Number of rows \tab 7560 \cr
+   Number of rows \tab 7896 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 2 \cr
    Date \tab 1 \cr
+   character \tab 2 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-09-20 \tab 2020-07-01 \tab 47 \cr
 }
 
 
@@ -47,16 +53,10 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-09-13 \tab 2020-06-28 \tab 45 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 1832 \tab 0.76 \tab 20758.89 \tab 41513.85 \tab 0 \tab 2245.75 \tab 7919.5 \tab 22363.50 \tab 615805 \tab ▇▁▁▁▁ \cr
-   deaths \tab 2028 \tab 0.73 \tab 911.57 \tab 2118.26 \tab 0 \tab 36.00 \tab 132.0 \tab 687.25 \tab 18782 \tab ▇▁▁▁▁ \cr
+   cases \tab 1890 \tab 0.76 \tab 21849.94 \tab 43830.53 \tab 0 \tab 2369.75 \tab 8327 \tab 23441.25 \tab 642795 \tab ▇▁▁▁▁ \cr
+   deaths \tab 2078 \tab 0.74 \tab 932.99 \tab 2149.71 \tab 0 \tab 38.00 \tab 134 \tab 705.75 \tab 18815 \tab ▇▁▁▁▁ \cr
 }
 
 

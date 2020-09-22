@@ -61,12 +61,27 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 39 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 29 \cr
    Date \tab 3 \cr
-   numeric \tab 5 \cr
    POSIXct \tab 2 \cr
+   character \tab 29 \cr
+   numeric \tab 5 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date_start \tab 0 \tab 1.00 \tab 2019-12-31 \tab 2024-05-29 \tab 2020-04-02 \tab 278 \cr
+   date_end \tab 33643 \tab 0.45 \tab 2020-01-10 \tab 2024-05-29 \tab 2020-05-18 \tab 307 \cr
+   date_updated \tab 0 \tab 1.00 \tab 2020-03-28 \tab 2020-09-10 \tab 2020-06-29 \tab 167 \cr
+}
+
+
+\strong{Variable type: POSIXct}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date_announced \tab 10 \tab 1 \tab 2019-12-31 00:00:00 \tab 2030-02-28 00:00:00 \tab 2020-04-01 00:00:00 \tab 254 \cr
+   recorded_date \tab 0 \tab 1 \tab 2020-03-28 11:14:33 \tab 2020-09-10 23:39:10 \tab 2020-06-29 20:31:15 \tab 28146 \cr
 }
 
 
@@ -104,14 +119,6 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date_start \tab 0 \tab 1.00 \tab 2019-12-31 \tab 2024-05-29 \tab 2020-04-02 \tab 278 \cr
-   date_end \tab 33643 \tab 0.45 \tab 2020-01-10 \tab 2024-05-29 \tab 2020-05-18 \tab 307 \cr
-   date_updated \tab 0 \tab 1.00 \tab 2020-03-28 \tab 2020-09-10 \tab 2020-06-29 \tab 167 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
    domestic_policy \tab 0 \tab 1.00 \tab 0.51 \tab 0.50 \tab 0.00 \tab 0.00 \tab 1.00 \tab 1.00 \tab 1.00 \tab ▇▁▁▁▇ \cr
@@ -119,13 +126,6 @@ Table: Data summary\tabular{ll}{
    index_med_est \tab 19347 \tab 0.68 \tab 52.51 \tab 2.05 \tab 45.42 \tab 51.42 \tab 52.50 \tab 53.75 \tab 57.59 \tab ▁▂▇▇▂ \cr
    index_low_est \tab 19347 \tab 0.68 \tab 50.86 \tab 2.56 \tab 37.03 \tab 50.08 \tab 51.28 \tab 52.36 \tab 56.26 \tab ▁▁▂▇▃ \cr
    index_country_rank \tab 19347 \tab 0.68 \tab 121.67 \tab 55.76 \tab 1.00 \tab 73.00 \tab 127.00 \tab 177.00 \tab 194.00 \tab ▂▅▃▃▇ \cr
-}
-
-
-\strong{Variable type: POSIXct}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date_announced \tab 10 \tab 1 \tab 2019-12-31 00:00:00 \tab 2030-02-28 00:00:00 \tab 2020-04-01 00:00:00 \tab 254 \cr
-   recorded_date \tab 0 \tab 1 \tab 2020-03-28 11:14:33 \tab 2020-09-10 23:39:10 \tab 2020-06-29 20:31:15 \tab 28146 \cr
 }
 
 
