@@ -12,6 +12,7 @@ magrittr::`%>%`
 #' @author Kieran Healy
 #' @rdname nin
 #' @examples
+#' @keyword internal
 #' fruit <- c("apples", "oranges", "banana")
 #' "apples" %nin% fruit
 #' "pears" %nin% fruit
@@ -34,6 +35,7 @@ magrittr::`%>%`
 #' @rdname MMWRweekday
 #' @author Kieran Healy
 #' @source http://
+#' @keyword internal
 MMWRweekday <- function (date)
 {
   factor(strftime(as.Date(date), "%w"), levels = 0:6, labels = c("Sunday",
@@ -55,6 +57,7 @@ MMWRweekday <- function (date)
 #' @rdname start_date
 #' @author AUTHOR_NAME
 #' @source http://
+#' @keyword internal
 start_date <- function (year)
 {
   jan1 = as.Date(paste(year, "-01-01", sep = ""))
@@ -79,6 +82,7 @@ start_date <- function (year)
 #' @rdname MMWRweek2Date
 #' @author Kieran Healy
 #' @source http://
+#' @keyword internal
 MMWRweek2Date <- function (MMWRyear, MMWRweek, MMWRday = NULL)
 {
   stopifnot(all(is.numeric(MMWRyear)))
@@ -154,6 +158,7 @@ fmt_nc <- function(x){
 #'  }
 #' }
 #' @author Kieran Healy
+#' @keyword internal
 fmt_nr <- function(x){
   prettyNum(nrow(x), big.mark=",", scientific=FALSE)
 }
@@ -172,6 +177,7 @@ fmt_nr <- function(x){
 #' }
 #' @author Kieran Healy
 #' @source http://
+#' @keyword internal
 tabular <- function(df, ...) {
   stopifnot(is.data.frame(df))
 
@@ -200,6 +206,7 @@ tabular <- function(df, ...) {
 #' }
 #' @author Kieran Healy
 #' @source http://
+#' @keyword internal
 stmf_country_years <- function(df = stmf) {
 
   df %>%
