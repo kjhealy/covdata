@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for the US states, current as of Wednesday, September 16, 2020 — nytcovstate • covdata</title>
+<title>NYT COVID-19 data for the US states, current as of Tuesday, September 22, 2020 — nytcovstate • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Wednesday, September 16, 2020 — nytcovstate" />
+<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Tuesday, September 22, 2020 — nytcovstate" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19, collected by the New York Times." />
 
 
@@ -72,19 +72,13 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.6</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
 <li>
@@ -144,7 +138,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for the US states, current as of Wednesday, September 16, 2020</h1>
+    <h1>NYT COVID-19 data for the US states, current as of Tuesday, September 22, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovstate.Rd</code></div>
     </div>
@@ -158,7 +152,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 10,849 rows and 5 columns</p><dl>
+    <p>A tibble with 11,179 rows and 5 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>State name (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -176,15 +170,22 @@ For details on the methods and limitations see <a href='https://github.com/nytim
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytcovstate</td></tr>
-<tr><td>Number of rows</td><td>10849</td></tr>
+<tr><td>Number of rows</td><td>11179</td></tr>
 <tr><td>Number of columns</td><td>5</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>character</td><td>2</td></tr>
 <tr><td>Date</td><td>1</td></tr>
+<tr><td>character</td><td>2</td></tr>
 <tr><td>numeric</td><td>2</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-09-21</td><td>2020-06-12</td><td>245</td></tr>
 </table>
 
 
@@ -197,17 +198,10 @@ For details on the methods and limitations see <a href='https://github.com/nytim
 
 
 
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-09-15</td><td>2020-06-09</td><td>239</td></tr>
-</table>
-
-
-
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>46560.95</td><td>94367.81</td><td>1</td><td>1312</td><td>11247</td><td>50110</td><td>769917</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>1809.00</td><td>4258.17</td><td>0</td><td>25</td><td>339</td><td>1605</td><td>32655</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>48817.87</td><td>98223.52</td><td>1</td><td>1396</td><td>12004</td><td>52612.5</td><td>792217</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>1862.14</td><td>4316.23</td><td>0</td><td>29</td><td>359</td><td>1675.0</td><td>32691</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
