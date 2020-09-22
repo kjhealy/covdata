@@ -62,6 +62,18 @@ reference:
     contents:
       - countries
       - uspop
+  - title: "Internal Functions"
+    desc: These functions are for package housekeeping only
+    contents:
+      - starts_with("%")
+      - MMWRweekday
+      - MMWRweek2Date
+      - fmt_nc
+      - fmt_nr
+      - mmwr_week_to_date
+      - start_date
+      - stmf_country_years
+      - tabular
 
 articles:
 - title: Datasets
