@@ -5,7 +5,7 @@
 \alias{covus}
 \title{COVID-19 data for the USA, current as of Tuesday, September 22, 2020}
 \format{
-A tibble with 327,642 rows and 7 columns
+A tibble with 329,266 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,21 +29,15 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 327642 \cr
+   Number of rows \tab 329266 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 5 \cr
+   Date \tab 1 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-09-21 \tab 2020-06-13 \tab 244 \cr
 }
 
 
@@ -57,9 +51,15 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-09-22 \tab 2020-06-13 \tab 245 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 221701 \tab 0.32 \tab 160698.8 \tab 631187.2 \tab 0 \tab 262 \tab 3420 \tab 58363 \tab 13672782 \tab ▇▁▁▁▁ \cr
+   count \tab 223083 \tab 0.32 \tab 162611 \tab 637814.9 \tab 0 \tab 263 \tab 3430 \tab 58997 \tab 13804055 \tab ▇▁▁▁▁ \cr
 }
 
 

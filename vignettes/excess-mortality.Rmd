@@ -19,7 +19,7 @@ library(tidyverse)
 library(covdata)
 ```
 
-## Short-term Mortality Fluctuations
+## National Short-term Mortality Fluctuations
 
 The [Human Mortality Database](https://www.mortality.org) provides weekly death counts and rates by age groups for a number of countries. Age groups are standardized across countries. Rate calculations are also standardized. The standardization of age categories means that weekly "counts" may not be whole numbers. See the [HMD Data Note](https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf) for details on the data sources and calculation of rates. In particular, note the following, from p.2 of the codebook:
 
@@ -53,12 +53,44 @@ stmf %>%
 ```
 
 
+## NCHS Excess Death Estimates
+
+The CDC's estimates of state-level excess deaths for the United States.
+
+```{r nchswdc}
+nchs_wdc
+```
+
+```{r cdcexcessplot, fig.height=10, fig.width=5, dpi=100}
+nchs_wdc %>% 
+  filter(jurisdiction %in% c("New Jersey", "New York",
+                             "Michigan", "Georgia"), type == "Predicted (weighted)") %>% 
+  group_by(jurisdiction, year, week) %>% 
+  summarize(deaths = sum(average_number_of_deaths_in_time_period, na.rm = TRUE)) %>%
+  group_by(year, week) %>%
+  mutate(yr_ind = year %in% 2020) %>%
+  ggplot(aes(x = week, y = deaths, color = yr_ind, group = year)) + 
+  geom_line(size = 0.9) + 
+  scale_color_manual(values = c("gray70", "red"), labels = c("2015-2019", "2020")) +
+  scale_y_continuous(labels = scales::comma) +
+  facet_wrap(~ jurisdiction, ncol = 2, scales = "free_y") + 
+  labs(x = "Week of the Year", 
+       y = "Total Deaths", 
+       color = "Years",
+       title = "Weekly recorded deaths from all causes",
+       subtitle = "Raw counts, each state has its own y-axis scale") + 
+  theme_minimal() + 
+  theme(legend.position = "top")
+  
+```
+
+
 ## New York Times Excess Death Calculations
 
 The New York Times has begun to collate short term mortality counts in an effort to calculate excess deaths for various countries and regions. 
 
 ```{r nytexcess}
-nytexcess
+nytexcess  
 ```
 
 ```{r nytexcessplot, fig.height=8, fig.width=12, dpi=100}

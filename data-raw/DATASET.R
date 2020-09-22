@@ -426,11 +426,12 @@ nchs_tables <- tribble(
   ~name, ~sname, ~locator,
   "Death Counts by Sex, Age, and State", "SAS", "9bhg-hcku",
   "Weekly State Specific Updates", "WSS", "pj7m-y5uh",
-  "COVID-19 Case Surveillance Public Use Data", "CSPUD", "vbim-akqf"
+  "COVID-19 Case Surveillance Public Use Data", "CSPUD", "vbim-akqf",
+  "Weekly counts of death by jurisdiction and caus of death", "WDC", "u6jv-9ijr"
 )
 
 get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
-                             sname = c("SAS", "WSS", "CSPUD"),
+                             sname = c("SAS", "WSS", "CSPUD", "WDC"),
                              fname = "-",
                              date = lubridate::today(),
                              ext = "csv",
@@ -924,6 +925,32 @@ nchs_pud <- nchs_cspud_raw %>%
                                                             "NH/PI")) %>%
   rename(race_ethnicity = race_and_ethnicity_combined)
 
+wdc_style <-  "%Y-%m-%d"
+
+wdc_colspec <- cols(
+  Jurisdiction = "c",
+  `Week Ending Date` = col_date(format = wdc_style),
+  `State Abbreviation` = "c",
+  Year = "i",
+  Week = "i",
+  `Cause Group` = "c",
+  `Number of Deaths` = "i",
+  `Cause Subgroup` = "c",
+  `Time Period` = "c",
+  Suppress = "l",
+  Note = "c",
+  `Average Number of Deaths in Time Period` = "d",
+  `Difference from 2015-2019 to 2020` = "d",
+  `Percent Difference from 2015-2019 to 2020` = "d",
+  Type = "c"
+)
+
+nchs_wdc <- get_nchs_data(sname = "WDC",
+                          clean_names = "y",
+                          save_file = "n",
+                          cols = wdc_colspec)
+
+
 ## --------------------------------------------------------------------------------------
 ### Apple and Google
 ### --------------------------------------------------------------------------------------
@@ -1033,6 +1060,7 @@ usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
+usethis::use_data(nchs_wdc, overwrite = TRUE, compress = "xz")
 
 ## CoronaNet
 usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
@@ -1065,7 +1093,7 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 ## rd skeleton
 #sinew::makeOxygen("uspop")
-sinew::makeOxygen("nchs_pud")
+sinew::makeOxygen("nchs_wdc")
 
 document()
 

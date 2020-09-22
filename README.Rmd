@@ -37,6 +37,7 @@ knitr::opts_chunk$set(
 
 - National-level short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org).
 - National-level all-cause and excess mortality estimates from the [_New York Times_](https://github.com/nytimes/covid-19-data).  
+- U.S. state-level excess mortality estimates from the [National Center for Health Statistics](https://data.cdc.gov/browse?category=NCHS)
 
 ### Mobility and activity data
 
