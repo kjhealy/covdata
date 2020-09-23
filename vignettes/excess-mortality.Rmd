@@ -61,7 +61,7 @@ The CDC's estimates of state-level excess deaths for the United States.
 nchs_wdc
 ```
 
-```{r cdcexcessplot, fig.height=7, fig.width=6, dpi=100}
+```{r cdcexcessplot, fig.height=7, fig.width=8, dpi=100}
 nchs_wdc %>% 
   group_by(year, week) %>% 
   summarize(deaths = sum(average_number_of_deaths_in_time_period, na.rm = TRUE)) %>%
@@ -78,7 +78,8 @@ nchs_wdc %>%
        y = "Total Deaths", 
        color = "Years",
        title = "Weekly recorded deaths from all causes in the United States", 
-       subtitle = "2020 data are for Weeks 1 to 30") + 
+       subtitle = "2020 data are for Weeks 1 to 30", 
+       caption = "Graph: @kjhealy Data: CDC") + 
   theme_minimal() + 
   theme(legend.position = "top")
   
