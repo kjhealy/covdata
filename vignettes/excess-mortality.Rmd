@@ -63,9 +63,9 @@ nchs_wdc
 
 ```{r cdcexcessplot, fig.height=7, fig.width=8, dpi=100}
 nchs_wdc %>% 
+  filter(jurisdiction != "United States", type != "Unweighted") %>%
   group_by(year, week) %>% 
-  summarize(deaths = sum(average_number_of_deaths_in_time_period, na.rm = TRUE)) %>%
-  group_by(year, week) %>%
+  summarize(deaths = sum(number_of_deaths, na.rm = TRUE)) %>%
   mutate(yr_ind = year %in% 2020) %>%
   filter(!(year == 2020 & week > 30)) %>%
   ggplot(aes(x = week, y = deaths, color = yr_ind, group = year)) + 
@@ -73,7 +73,6 @@ nchs_wdc %>%
   scale_color_manual(values = c("gray70", "red"), labels = c("2015-2019", "2020")) +
   scale_x_continuous(breaks = c(1, 10, 20, 30, 40, 50), labels = c(1, 10, 20, 30, 40, 50)) + 
   scale_y_continuous(labels = scales::comma) +
-#  facet_wrap(~ jurisdiction, ncol = 2, scales = "free_y") + 
   labs(x = "Week of the Year", 
        y = "Total Deaths", 
        color = "Years",
