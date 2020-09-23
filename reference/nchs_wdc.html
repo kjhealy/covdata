@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>International COVID-19 cases and deaths, current as of Tuesday, September 22, 2020 — covnat • covdata</title>
+<title>Weekly counts of death by jurisdiction and cause of death — nchs_wdc • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="International COVID-19 cases and deaths, current as of Tuesday, September 22, 2020 — covnat" />
-<meta property="og:description" content="A dataset containing national-level ECDC data on COVID-19" />
+<meta property="og:title" content="Weekly counts of death by jurisdiction and cause of death — nchs_wdc" />
+<meta property="og:description" content="Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2015-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death." />
 
 
 
@@ -138,78 +138,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>International COVID-19 cases and deaths, current as of Tuesday, September 22, 2020</h1>
+    <h1>Weekly counts of death by jurisdiction and cause of death</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>covnat.Rd</code></div>
+    <div class="hidden name"><code>nchs_wdc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing national-level ECDC data on COVID-19</p>
+    <p>Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2015-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.</p>
     </div>
 
-    <pre class="usage"><span class='kw'>covnat</span></pre>
+    <pre class="usage"><span class='kw'>nchs_wdc</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 44,281 rows and 8 columns</p><dl>
-<dt>date</dt><dd><p>date in YYYY-MM-DD format</p></dd>
-<dt>cname</dt><dd><p>Name of country (character)</p></dd>
-<dt>iso3</dt><dd><p>ISO3 country code (character)</p></dd>
-<dt>cases</dt><dd><p>N reported COVID-19 cases on this date</p></dd>
-<dt>deaths</dt><dd><p>N reported COVID-19 deaths on this date</p></dd>
-<dt>pop</dt><dd><p>Country population in 2019</p></dd>
-<dt>cu_cases</dt><dd><p>Cumulative N reported COVID-19 cases up to and including this date</p></dd>
-<dt>cu_deaths</dt><dd><p>Cumulative N reported COVID-19 deaths up to and including this date</p></dd>
+    <p>A tibble with 343,838 rows and 15 variables:</p><dl>
+<dt><code>jurisdiction</code></dt><dd><p>character Jurisdiction of occurrence (e.g. US State)</p></dd>
+<dt><code>week_ending_date</code></dt><dd><p>double Week ending date</p></dd>
+<dt><code>state_abbreviation</code></dt><dd><p>character State abbreviation</p></dd>
+<dt><code>year</code></dt><dd><p>integer Year</p></dd>
+<dt><code>week</code></dt><dd><p>integer MMWR Week number</p></dd>
+<dt><code>cause_group</code></dt><dd><p>character Cause of death group</p></dd>
+<dt><code>number_of_deaths</code></dt><dd><p>integer Number of deaths</p></dd>
+<dt><code>cause_subgroup</code></dt><dd><p>character Cause of death subgroup</p></dd>
+<dt><code>time_period</code></dt><dd><p>character Time period</p></dd>
+<dt><code>suppress</code></dt><dd><p>logical Flag for data suppression due to confidentiality</p></dd>
+<dt><code>note</code></dt><dd><p>character Note on observation</p></dd>
+<dt><code>average_number_of_deaths_in_time_period</code></dt><dd><p>double Average number of deaths in a given time period and week number</p></dd>
+<dt><code>difference_from_2015_2019_to_2020</code></dt><dd><p>double Difference in the number of deaths in 2020 relative to 2015-2019</p></dd>
+<dt><code>percent_difference_from_2015_2019_to_2020</code></dt><dd><p>double Percent difference in the number of deaths in 2020 relative to 2015-2019</p></dd>
+<dt><code>type</code></dt><dd><p>character Estimate type (predicted or observed)</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='http://ecdc.europa.eu/'>http://ecdc.europa.eu/</a></p>
+    <p>National Center for Health Statistics <a href='https://data.cdc.gov/NCHS/Weekly-counts-of-death-by-jurisdiction-and-cause-o/u6jv-9ijr/'>https://data.cdc.gov/NCHS/Weekly-counts-of-death-by-jurisdiction-and-cause-o/u6jv-9ijr/</a></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Table: Data summary</p><table class='table'>
-<tr><td></td><td></td></tr>
-<tr><td>Name</td><td>dplyr::ungroup(covnat)</td></tr>
-<tr><td>Number of rows</td><td>44281</td></tr>
-<tr><td>Number of columns</td><td>8</td></tr>
-<tr><td>_______________________</td><td></td></tr>
-<tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>character</td><td>2</td></tr>
-<tr><td>Date</td><td>1</td></tr>
-<tr><td>numeric</td><td>5</td></tr>
-<tr><td>________________________</td><td></td></tr>
-<tr><td>Group variables</td><td>None</td></tr>
-</table>
+    <p>Cause of death counts are based on the underlying cause of death, and presented for Respiratory diseases, Circulatory diseases, Malignant neoplasms, and Alzheimer disease and dementia. Estimated numbers of deaths due to these other causes of death could represent misclassified COVID-19 deaths, or potentially could be indirectly related to COVID-19 (e.g., deaths from other causes occurring in the context of health care shortages or overburdened health care systems). Deaths with an underlying cause of death of COVID-19 are not included in these estimates of deaths due to other causes. Deaths due to external causes (i.e. injuries) or unknown causes are excluded.
+Both unweighted and weighted (predicted) provisional counts are provided. Weighting of provisional counts is done to account for potential underreporting in the most recent weeks. However, data for the most recent week(s) are still likely to be incomplete. Only about 60% of deaths are reported within 10 days of the date of death, and there is considerable variation by jurisdiction and cause of death. The weighted estimates for specific causes of death are likely too low, as reporting lags are typically larger for specific causes of death than for all-cause mortality. To minimize the degree of underreporting, cause-specific estimates are presented with a two-week lag.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
-
-
-<p><strong>Variable type: character</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>cname</td><td>0</td><td>1</td><td>4</td><td>42</td><td>0</td><td>209</td><td>0</td></tr>
-<tr><td>iso3</td><td>0</td><td>1</td><td>3</td><td>3</td><td>0</td><td>209</td><td>0</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2019-12-31</td><td>2020-09-22</td><td>2020-06-09</td><td>267</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: numeric</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>708.57</td><td>4405.17</td><td>-8261</td><td>0</td><td>9</td><td>153</td><td>97894</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>21.81</td><td>126.22</td><td>-1918</td><td>0</td><td>0</td><td>3</td><td>4928</td><td>▁▇▁▁▁</td></tr>
-<tr><td>pop</td><td>0</td><td>1</td><td>42783097.87</td><td>157653496.85</td><td>815</td><td>1355982</td><td>8082359</td><td>29161922</td><td>1433783692</td><td>▇▁▁▁▁</td></tr>
-<tr><td>cu_cases</td><td>0</td><td>1</td><td>48852.59</td><td>309402.87</td><td>0</td><td>54</td><td>977</td><td>10088</td><td>6857967</td><td>▇▁▁▁▁</td></tr>
-<tr><td>cu_deaths</td><td>0</td><td>1</td><td>2003.01</td><td>10795.13</td><td>0</td><td>0</td><td>19</td><td>214</td><td>199881</td><td>▇▁▁▁▁</td></tr>
-</table>
-
-
+    <p>Kieran Healy</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

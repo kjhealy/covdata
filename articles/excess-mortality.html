@@ -124,9 +124,9 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     uspop</span>
 </pre></div>
-<div id="short-term-mortality-fluctuations" class="section level2">
+<div id="national-short-term-mortality-fluctuations" class="section level2">
 <h2 class="hasAnchor">
-<a href="#short-term-mortality-fluctuations" class="anchor"></a>Short-term Mortality Fluctuations</h2>
+<a href="#national-short-term-mortality-fluctuations" class="anchor"></a>National Short-term Mortality Fluctuations</h2>
 <p>The <a href="https://www.mortality.org">Human Mortality Database</a> provides weekly death counts and rates by age groups for a number of countries. Age groups are standardized across countries. Rate calculations are also standardized. The standardization of age categories means that weekly “counts” may not be whole numbers. See the <a href="https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf">HMD Data Note</a> for details on the data sources and calculation of rates. In particular, note the following, from p.2 of the codebook:</p>
 <blockquote>
 <p>In general, the STMF is based on the data that are collected for the core HMD. The HMD follows certain criteria for inclusion of individual countries such as requirements for maintaining high quality statistical systems and having the completeness of registration of vital events close to 100 percent. Nevertheless, the weekly statistics has own specific which should be taken into account. 1) The data on deaths are provided by the date of registration or date of occurrence. There is no way to convert the date of registration into the date of occurrence. The exact type of the data and further details are indicated in the metadata file. 2) If the data are provided by date of registration, there could be artificial fluctuations in weekly death figures related to special events (e.g. end of the statistical period, public holidays). 3) The data for last weeks of a year as well as data for all weeks of the most recent year might be incomplete due to a delayed registration. Statistical offices may still revise these data in the course of the next update. 4) Deaths and death rates are provided by calendar week starting from Monday, Saturday or Sunday (depending on country-specific standards). Please check the country-specific documentationfor details. 5) Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics. The data in the STMF are presented without any corrections. The original data are notadjusted for death undercounts or smoothed. All known country-specific quality issues are documented in the country- specific metadata file.</p>
@@ -168,12 +168,61 @@
 </pre></div>
 <p><img src="excess-mortality_files/figure-html/stmf-figure-1.png" width="1200"></p>
 </div>
+<div id="nchs-excess-death-estimates" class="section level2">
+<h2 class="hasAnchor">
+<a href="#nchs-excess-death-estimates" class="anchor"></a>NCHS Excess Death Estimates</h2>
+<p>The CDC’s estimates of state-level excess deaths for the United States.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="kw">nchs_wdc</span>
+<span class="co">#&gt; # A tibble: 343,838 x 15</span>
+<span class="co">#&gt;    jurisdiction week_ending_date state_abbreviat…  year  week cause_group</span>
+<span class="co">#&gt;    &lt;chr&gt;        &lt;date&gt;           &lt;chr&gt;            &lt;int&gt; &lt;int&gt; &lt;chr&gt;      </span>
+<span class="co">#&gt;  1 Alabama      2015-01-10       AL                2015     1 Alzheimer …</span>
+<span class="co">#&gt;  2 Alabama      2015-01-10       AL                2015     1 Alzheimer …</span>
+<span class="co">#&gt;  3 Alabama      2016-01-09       AL                2016     1 Alzheimer …</span>
+<span class="co">#&gt;  4 Alabama      2016-01-09       AL                2016     1 Alzheimer …</span>
+<span class="co">#&gt;  5 Alabama      2017-01-07       AL                2017     1 Alzheimer …</span>
+<span class="co">#&gt;  6 Alabama      2017-01-07       AL                2017     1 Alzheimer …</span>
+<span class="co">#&gt;  7 Alabama      2018-01-06       AL                2018     1 Alzheimer …</span>
+<span class="co">#&gt;  8 Alabama      2018-01-06       AL                2018     1 Alzheimer …</span>
+<span class="co">#&gt;  9 Alabama      2019-01-05       AL                2019     1 Alzheimer …</span>
+<span class="co">#&gt; 10 Alabama      2019-01-05       AL                2019     1 Alzheimer …</span>
+<span class="co">#&gt; # … with 343,828 more rows, and 9 more variables: number_of_deaths &lt;int&gt;,</span>
+<span class="co">#&gt; #   cause_subgroup &lt;chr&gt;, time_period &lt;chr&gt;, suppress &lt;lgl&gt;, note &lt;chr&gt;,</span>
+<span class="co">#&gt; #   average_number_of_deaths_in_time_period &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   difference_from_2015_2019_to_2020 &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   percent_difference_from_2015_2019_to_2020 &lt;dbl&gt;, type &lt;chr&gt;</span>
+</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw">nchs_wdc</span> <span class="op">%&gt;%</span> 
+  <span class="fu">group_by</span>(<span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span> 
+  <span class="fu">summarize</span>(deaths = <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="kw">average_number_of_deaths_in_time_period</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">group_by</span>(<span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span>(yr_ind = <span class="kw">year</span> <span class="op">%in%</span> <span class="fl">2020</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="op">!</span>(<span class="kw">year</span> <span class="op">==</span> <span class="fl">2020</span> <span class="op">&amp;</span> <span class="kw">week</span> <span class="op">&gt;</span> <span class="fl">30</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">week</span>, y = <span class="kw">deaths</span>, color = <span class="kw">yr_ind</span>, group = <span class="kw">year</span>)) <span class="op">+</span> 
+  <span class="fu">geom_line</span>(size = <span class="fl">0.9</span>) <span class="op">+</span> 
+  <span class="fu">scale_color_manual</span>(values = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gray70"</span>, <span class="st">"red"</span>), labels = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"2015-2019"</span>, <span class="st">"2020"</span>)) <span class="op">+</span>
+  <span class="fu">scale_x_continuous</span>(breaks = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span>), labels = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span>)) <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="kw"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>) <span class="op">+</span>
+<span class="co">#  facet_wrap(~ jurisdiction, ncol = 2, scales = "free_y") + </span>
+  <span class="fu">labs</span>(x = <span class="st">"Week of the Year"</span>, 
+       y = <span class="st">"Total Deaths"</span>, 
+       color = <span class="st">"Years"</span>,
+       title = <span class="st">"Weekly recorded deaths from all causes in the United States"</span>, 
+       subtitle = <span class="st">"2020 data are for Weeks 1 to 30"</span>) <span class="op">+</span> 
+  <span class="fu">theme_minimal</span>() <span class="op">+</span> 
+  <span class="fu">theme</span>(legend.position = <span class="st">"top"</span>)
+<span class="co">#&gt; `summarise()` regrouping output by 'year' (override with `.groups` argument)</span>
+</pre></div>
+<p><img src="excess-mortality_files/figure-html/cdcexcessplot-1.png" width="600"></p>
+</div>
 <div id="new-york-times-excess-death-calculations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-york-times-excess-death-calculations" class="anchor"></a>New York Times Excess Death Calculations</h2>
 <p>The New York Times has begun to collate short term mortality counts in an effort to calculate excess deaths for various countries and regions.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="kw">nytexcess</span>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="kw">nytexcess</span>  
 <span class="co">#&gt; # A tibble: 6,712 x 12</span>
 <span class="co">#&gt;    country placename frequency start_date end_date   year  month  week deaths</span>
 <span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;     &lt;date&gt;     &lt;date&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;</span>
@@ -190,7 +239,7 @@
 <span class="co">#&gt; # … with 6,702 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span>
 <span class="co">#&gt; #   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span>
 </pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit">
+<div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="kw">nytexcess</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">placename</span> <span class="op">==</span> <span class="st">"New York City"</span>) <span class="op">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span>
