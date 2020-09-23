@@ -195,9 +195,9 @@
 </pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="kw">nchs_wdc</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">jurisdiction</span> != <span class="st">"United States"</span>, <span class="kw">type</span> != <span class="st">"Unweighted"</span>) <span class="op">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span> 
-  <span class="fu">summarize</span>(deaths = <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="kw">average_number_of_deaths_in_time_period</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span>
+  <span class="fu">summarize</span>(deaths = <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="kw">number_of_deaths</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
   <span class="fu">mutate</span>(yr_ind = <span class="kw">year</span> <span class="op">%in%</span> <span class="fl">2020</span>) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="op">!</span>(<span class="kw">year</span> <span class="op">==</span> <span class="fl">2020</span> <span class="op">&amp;</span> <span class="kw">week</span> <span class="op">&gt;</span> <span class="fl">30</span>)) <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">week</span>, y = <span class="kw">deaths</span>, color = <span class="kw">yr_ind</span>, group = <span class="kw">year</span>)) <span class="op">+</span> 
@@ -205,7 +205,6 @@
   <span class="fu">scale_color_manual</span>(values = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gray70"</span>, <span class="st">"red"</span>), labels = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"2015-2019"</span>, <span class="st">"2020"</span>)) <span class="op">+</span>
   <span class="fu">scale_x_continuous</span>(breaks = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span>), labels = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span>)) <span class="op">+</span> 
   <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="kw"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>) <span class="op">+</span>
-<span class="co">#  facet_wrap(~ jurisdiction, ncol = 2, scales = "free_y") + </span>
   <span class="fu">labs</span>(x = <span class="st">"Week of the Year"</span>, 
        y = <span class="st">"Total Deaths"</span>, 
        color = <span class="st">"Years"</span>,
