@@ -61,24 +61,24 @@ The CDC's estimates of state-level excess deaths for the United States.
 nchs_wdc
 ```
 
-```{r cdcexcessplot, fig.height=10, fig.width=5, dpi=100}
+```{r cdcexcessplot, fig.height=7, fig.width=6, dpi=100}
 nchs_wdc %>% 
-  filter(jurisdiction %in% c("New Jersey", "New York",
-                             "Michigan", "Georgia"), type == "Predicted (weighted)") %>% 
-  group_by(jurisdiction, year, week) %>% 
+  group_by(year, week) %>% 
   summarize(deaths = sum(average_number_of_deaths_in_time_period, na.rm = TRUE)) %>%
   group_by(year, week) %>%
   mutate(yr_ind = year %in% 2020) %>%
+  filter(!(year == 2020 & week > 30)) %>%
   ggplot(aes(x = week, y = deaths, color = yr_ind, group = year)) + 
   geom_line(size = 0.9) + 
   scale_color_manual(values = c("gray70", "red"), labels = c("2015-2019", "2020")) +
+  scale_x_continuous(breaks = c(1, 10, 20, 30, 40, 50), labels = c(1, 10, 20, 30, 40, 50)) + 
   scale_y_continuous(labels = scales::comma) +
-  facet_wrap(~ jurisdiction, ncol = 2, scales = "free_y") + 
+#  facet_wrap(~ jurisdiction, ncol = 2, scales = "free_y") + 
   labs(x = "Week of the Year", 
        y = "Total Deaths", 
        color = "Years",
-       title = "Weekly recorded deaths from all causes",
-       subtitle = "Raw counts, each state has its own y-axis scale") + 
+       title = "Weekly recorded deaths from all causes in the United States", 
+       subtitle = "2020 data are for Weeks 1 to 30") + 
   theme_minimal() + 
   theme(legend.position = "top")
   
