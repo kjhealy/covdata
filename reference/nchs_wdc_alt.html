@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apple Mobility Data — apple_mobility • covdata</title>
+<title>Weekly Counts of Deaths by State and Select Causes 2014-2020 — nchs_wdc_alt • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Apple Mobility Data — apple_mobility" />
-<meta property="og:description" content="Data from Apple Maps on relative changes in mobility in various cities and countries." />
+<meta property="og:title" content="Weekly Counts of Deaths by State and Select Causes 2014-2020 — nchs_wdc_alt" />
+<meta property="og:description" content="Final counts of deaths by the week the deaths occurred, by state of occurrence, and by select causes of death for 2014-2018, and Provisional counts of deaths by the week the deaths occurred, by state of occurrence, and by select underlying causes of death for 2019-2020. The dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death." />
 
 
 
@@ -138,83 +138,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Apple Mobility Data</h1>
+    <h1>Weekly Counts of Deaths by State and Select Causes 2014-2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>apple_mobility.Rd</code></div>
+    <div class="hidden name"><code>nchs_wdc_alt.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Data from Apple Maps on relative changes in mobility in various cities and countries.</p>
+    <p>Final counts of deaths by the week the deaths occurred, by state of occurrence, and by select causes of death for 2014-2018, and Provisional counts of deaths by the week the deaths occurred, by state of occurrence, and by select underlying causes of death for 2019-2020. The dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death.</p>
     </div>
 
-    <pre class="usage"><span class='kw'>apple_mobility</span></pre>
+    <pre class="usage"><span class='kw'>nchs_wdc_alt</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 1,196,205 rows and 8 variables:</p><dl>
-<dt><code>geo_type</code></dt><dd><p>character Type geographical unit. Values: city or country/region</p></dd>
-<dt><code>region</code></dt><dd><p>character Name of geographical unit.</p></dd>
-<dt><code>transportation_type</code></dt><dd><p>character Mode of transport. Values: Driving, Transit, or Walking</p></dd>
-<dt><code>alternative_name</code></dt><dd><p>character Name of <code>region</code> in local language</p></dd>
-<dt><code>sub_region</code></dt><dd><p>character Subregion</p></dd>
-<dt><code>country</code></dt><dd><p>character Country name (not provided for all countries)</p></dd>
-<dt><code>date</code></dt><dd><p>double Date in yyyy-mm-dddd format</p></dd>
-<dt><code>score</code></dt><dd><p>double Activity score. Indexed to 100 on the first date of observation for a given mode of transport.</p></dd>
+    <p>A data frame with 255,267 rows and 7 variables:</p><dl>
+<dt><code>jurisdiction</code></dt><dd><p>character Jurisdiction of Occurrence</p></dd>
+<dt><code>year</code></dt><dd><p>double MMWR Year</p></dd>
+<dt><code>week</code></dt><dd><p>double MMWR Week</p></dd>
+<dt><code>week_ending_date</code></dt><dd><p>double MMWR Week ending date</p></dd>
+<dt><code>cause_detailed</code></dt><dd><p>character Cause with ICD Codes</p></dd>
+<dt><code>n</code></dt><dd><p>double Count of deaths</p></dd>
+<dt><code>cause</code></dt><dd><p>character Cause of death</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>https://www.apple.com/covid19/mobility</p>
+    <p>2014-2018: <a href='https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr'>https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr</a>. 2019-2020: <a href='https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6'>https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6</a></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Table: Data summary</p><table class='table'>
-<tr><td></td><td></td></tr>
-<tr><td>Name</td><td>apple_mobility</td></tr>
-<tr><td>Number of rows</td><td>1196205</td></tr>
-<tr><td>Number of columns</td><td>8</td></tr>
-<tr><td>_______________________</td><td></td></tr>
-<tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
-<tr><td>character</td><td>6</td></tr>
-<tr><td>numeric</td><td>1</td></tr>
-<tr><td>________________________</td><td></td></tr>
-<tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-13</td><td>2020-09-23</td><td>2020-05-19</td><td>255</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: character</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>geo_type</td><td>0</td><td>1.00</td><td>4</td><td>14</td><td>0</td><td>4</td><td>0</td></tr>
-<tr><td>region</td><td>0</td><td>1.00</td><td>4</td><td>48</td><td>0</td><td>2325</td><td>0</td></tr>
-<tr><td>transportation_type</td><td>0</td><td>1.00</td><td>7</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
-<tr><td>alternative_name</td><td>929985</td><td>0.22</td><td>2</td><td>85</td><td>0</td><td>519</td><td>0</td></tr>
-<tr><td>sub_region</td><td>347310</td><td>0.71</td><td>4</td><td>33</td><td>0</td><td>162</td><td>0</td></tr>
-<tr><td>country</td><td>39015</td><td>0.97</td><td>5</td><td>20</td><td>0</td><td>47</td><td>0</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: numeric</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>score</td><td>17117</td><td>0.99</td><td>122.5</td><td>69.14</td><td>0.44</td><td>81.93</td><td>111.69</td><td>151.41</td><td>2148.12</td><td>▇▁▁▁▁</td></tr>
-</table>
-
-
-
-<p>Data made available by Apple, Inc. at <a href='https://www.apple.com/covid19/mobility'>https://www.apple.com/covid19/mobility</a>, showing relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
+    <p>For 2014-2018, death counts in this dataset were derived from the National Vital Statistics System database that provides the most timely access to the data. Therefore, counts may differ slightly from final data due to differences in processing, recoding, and imputation. For 2019-2020, the dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death.
+Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis, and do not represent all deaths that occurred in that period. Data for 2019 and 2020 are provisional and may be incomplete because of the lag in time between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. Causes of death included in this dataset are tabulated by underlying cause of death ICD-10 codes. COVID-19 deaths by underlying cause and multiple cause of death are also included.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>See https://www.apple.com/covid19/mobility for detailed terms of use.</p>
+    
+
+
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Kieran Healy</p>

@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Weekly counts of death by jurisdiction and cause of death — nchs_wdc" />
-<meta property="og:description" content="Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2015-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death." />
+<meta property="og:description" content="Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2014-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death." />
 
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
       </span>
     </div>
 
@@ -144,7 +144,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2015-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.</p>
+    <p>Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2014-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.</p>
     </div>
 
     <pre class="usage"><span class='kw'>nchs_wdc</span></pre>
@@ -152,10 +152,9 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 343,838 rows and 15 variables:</p><dl>
+    <p>A tibble with 312,332 rows and 15 variables:</p><dl>
 <dt><code>jurisdiction</code></dt><dd><p>character Jurisdiction of occurrence (e.g. US State)</p></dd>
 <dt><code>week_ending_date</code></dt><dd><p>double Week ending date</p></dd>
-<dt><code>state_abbreviation</code></dt><dd><p>character State abbreviation</p></dd>
 <dt><code>year</code></dt><dd><p>integer Year</p></dd>
 <dt><code>week</code></dt><dd><p>integer MMWR Week number</p></dd>
 <dt><code>cause_group</code></dt><dd><p>character Cause of death group</p></dd>
