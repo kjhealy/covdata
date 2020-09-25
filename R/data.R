@@ -729,12 +729,11 @@
 "nchs_wss"
 
 #' @title Weekly counts of death by jurisdiction and cause of death
-#' @description Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2015-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.
+#' @description Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2014-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.
 #' @format A tibble with `r fmt_nr(nchs_wdc)` rows and `r fmt_nc(nchs_wdc)` variables:
 #' \describe{
 #'   \item{\code{jurisdiction}}{character Jurisdiction of occurrence (e.g. US State)}
 #'   \item{\code{week_ending_date}}{double Week ending date}
-#'   \item{\code{state_abbreviation}}{character State abbreviation}
 #'   \item{\code{year}}{integer Year}
 #'   \item{\code{week}}{integer MMWR Week number}
 #'   \item{\code{cause_group}}{character Cause of death group}
@@ -753,6 +752,25 @@
 #' @author Kieran Healy
 #' @source National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Weekly-counts-of-death-by-jurisdiction-and-cause-o/u6jv-9ijr/}
 "nchs_wdc"
+
+#' @title Weekly Counts of Deaths by State and Select Causes 2014-2020
+#' @description Final counts of deaths by the week the deaths occurred, by state of occurrence, and by select causes of death for 2014-2018, and Provisional counts of deaths by the week the deaths occurred, by state of occurrence, and by select underlying causes of death for 2019-2020. The dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death.
+#' @format A data frame with `r fmt_nr(nchs_wdc_alt)` rows and `r fmt_nc(nchs_wdc_alt)` variables:
+#' \describe{
+#'   \item{\code{jurisdiction}}{character Jurisdiction of Occurrence}
+#'   \item{\code{year}}{double MMWR Year}
+#'   \item{\code{week}}{double MMWR Week}
+#'   \item{\code{week_ending_date}}{double MMWR Week ending date}
+#'   \item{\code{cause_detailed}}{character Cause with ICD Codes}
+#'   \item{\code{n}}{double Count of deaths}
+#'   \item{\code{cause}}{character Cause of death}
+#'}
+#' @details For 2014-2018, death counts in this dataset were derived from the National Vital Statistics System database that provides the most timely access to the data. Therefore, counts may differ slightly from final data due to differences in processing, recoding, and imputation. For 2019-2020, the dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death.
+#' Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis, and do not represent all deaths that occurred in that period. Data for 2019 and 2020 are provisional and may be incomplete because of the lag in time between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. Causes of death included in this dataset are tabulated by underlying cause of death ICD-10 codes. COVID-19 deaths by underlying cause and multiple cause of death are also included.
+#' @author Kieran Healy
+#' @source 2014-2018: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr}. 2019-2020: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6}
+#' @references
+"nchs_wdc_alt"
 
 #' @title COVID-19 Case Surveillance Public Use Data
 #' @description Deidentified patient-level data reported to U.S. states and autonomous reporting entities, including New York City and the District of Columbia (D.C.), as well as U.S. territories and states.

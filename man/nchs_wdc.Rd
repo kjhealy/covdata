@@ -5,11 +5,10 @@
 \alias{nchs_wdc}
 \title{Weekly counts of death by jurisdiction and cause of death}
 \format{
-A tibble with 343,838 rows and 15 variables:
+A tibble with 312,332 rows and 15 variables:
 \describe{
 \item{\code{jurisdiction}}{character Jurisdiction of occurrence (e.g. US State)}
 \item{\code{week_ending_date}}{double Week ending date}
-\item{\code{state_abbreviation}}{character State abbreviation}
 \item{\code{year}}{integer Year}
 \item{\code{week}}{integer MMWR Week number}
 \item{\code{cause_group}}{character Cause of death group}
@@ -31,7 +30,7 @@ National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Weekly-coun
 nchs_wdc
 }
 \description{
-Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2015-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.
+Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2014-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.
 }
 \details{
 Cause of death counts are based on the underlying cause of death, and presented for Respiratory diseases, Circulatory diseases, Malignant neoplasms, and Alzheimer disease and dementia. Estimated numbers of deaths due to these other causes of death could represent misclassified COVID-19 deaths, or potentially could be indirectly related to COVID-19 (e.g., deaths from other causes occurring in the context of health care shortages or overburdened health care systems). Deaths with an underlying cause of death of COVID-19 are not included in these estimates of deaths due to other causes. Deaths due to external causes (i.e. injuries) or unknown causes are excluded.

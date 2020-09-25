@@ -20,6 +20,11 @@ Convenience 'not-in' operator
 \details{
 Complement of the built-in operator \code{\%in\%}. Returns the elements of \code{x} that are not in \code{y}.
 }
+\examples{
+fruit <- c("apples", "oranges", "banana")
+"apples" \%nin\% fruit
+"pears" \%nin\% fruit
+}
 \author{
 Kieran Healy
 }

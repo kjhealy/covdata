@@ -427,11 +427,13 @@ nchs_tables <- tribble(
   "Death Counts by Sex, Age, and State", "SAS", "9bhg-hcku",
   "Weekly State Specific Updates", "WSS", "pj7m-y5uh",
   "COVID-19 Case Surveillance Public Use Data", "CSPUD", "vbim-akqf",
-  "Weekly counts of death by jurisdiction and caus of death", "WDC", "u6jv-9ijr"
+  "Weekly counts of death by jurisdiction and cause of death", "WDC", "u6jv-9ijr",
+  "Weekly counts 2014-2018", "WDC1418", "3yf8-kanr",
+  "Weekly counts 2019-2020", "WDC1920", "muzy-jte6"
 )
 
 get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
-                             sname = c("SAS", "WSS", "CSPUD", "WDC"),
+                             sname = c("SAS", "WSS", "CSPUD", "WDC", "WDC1418", "WDC1920"),
                              fname = "-",
                              date = lubridate::today(),
                              ext = "csv",
@@ -951,6 +953,59 @@ nchs_wdc <- get_nchs_data(sname = "WDC",
                           cols = wdc_colspec)
 
 
+nchs_wdc1418_raw <- get_nchs_data(sname = "WDC1418",
+                          clean_names = "n",
+                          save_file = "n")
+
+nchs_wdc1418 <- nchs_wdc1418_raw %>%
+  pivot_longer(`All  Cause`:`Cerebrovascular diseases (I60-I69)`, names_to = "cause_detailed", values_to = "n") %>%
+  janitor::clean_names() %>%
+  mutate(week_ending_date = lubridate::mdy(week_ending_date)) %>%
+  rename(jurisdiction = jurisdiction_of_occurrence,
+         year = mmwr_year,
+         week = mmwr_week) %>%
+  select(jurisdiction, year, week, week_ending_date, cause_detailed, n) %>%
+  mutate(cause_detailed = stringr::str_squish(cause_detailed))
+
+
+nchs_wdc1920_raw <- get_nchs_data(sname = "WDC1920",
+                              clean_names = "n",
+                              save_file = "n")
+
+nchs_wdc1920 <- nchs_wdc1920_raw %>%
+  pivot_longer(`All Cause`:`COVID-19 (U071, Underlying Cause of Death)`, names_to = "cause_detailed", values_to = "n") %>%
+  janitor::clean_names() %>%
+  rename(jurisdiction = jurisdiction_of_occurrence,
+         year = mmwr_year,
+         week = mmwr_week) %>%
+  select(jurisdiction, year, week, week_ending_date, cause_detailed, n) %>%
+  mutate(cause_detailed = stringr::str_squish(cause_detailed))
+
+nchs_wdc_alt <- bind_rows(nchs_wdc1418, nchs_wdc1920) %>%
+    arrange(jurisdiction, year, week, week_ending_date, cause_detailed) %>%
+    mutate(cause = case_when(
+      cause_detailed == "All Cause"                                                                                        ~ "All Cause",
+      cause_detailed == "Alzheimer disease (G30)"                                                                          ~ "Alzheimer's",
+      cause_detailed == "Cerebrovascular diseases (I60-I69)"                                                               ~ "Cerebrovascular Diseases",
+      cause_detailed == "Chronic lower respiratory diseases (J40-J47)"                                                     ~ "Chronic Lower Respiratory Diseases",
+      cause_detailed == "Diabetes mellitus (E10-E14)"                                                                      ~ "Diabetes",
+      cause_detailed == "Diseases of heart (I00-I09,I11,I13,I20-I51)"                                                      ~ "Diseases of the Heart",
+      cause_detailed == "Influenza and pneumonia (J10-J18)"                                                                ~ "Influenza and Pneumonia",
+      cause_detailed == "Malignant neoplasms (C00-C97)"                                                                    ~ "Cancer",
+      cause_detailed == "Natural Cause"                                                                                    ~ "Natural Causes",
+      cause_detailed == "Nephritis, nephrotic syndrome and nephrosis (N00-N07,N17-N19,N25-N27)"                            ~ "Kidney Diseases",
+      cause_detailed == "Other diseases of respiratory system (J00-J06,J30-J39,J67,J70-J98)"                               ~ "Other Respiratory disease",
+      cause_detailed == "Septicemia (A40-A41)"                                                                             ~ "Septicemia",
+      cause_detailed == "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified (R00-R99)"~ "Other",
+      cause_detailed == "COVID-19 (U071, Multiple Cause of Death)"                                                         ~ "COVID-19 Multiple cause",
+      cause_detailed == "COVID-19 (U071, Underlying Cause of Death)"                                                       ~ "COVID-19 Underlying",
+      cause_detailed == "Influenza and pneumonia (J09-J18)"                                                                ~ "Influenza and Pneumonia",
+      TRUE ~ "Other")
+    )
+
+
+
+
 ## --------------------------------------------------------------------------------------
 ### Apple and Google
 ### --------------------------------------------------------------------------------------
@@ -1061,6 +1116,7 @@ usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wdc, overwrite = TRUE, compress = "xz")
+usethis::use_data(nchs_wdc_alt, overwrite = TRUE, compress = "xz")
 
 ## CoronaNet
 usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
@@ -1070,7 +1126,6 @@ usethis::use_data(covus, overwrite = TRUE, compress = "xz")
 
 usethis::use_data(covus_race, overwrite = TRUE, compress = "xz")
 usethis::use_data(covus_ethnicity, overwrite = TRUE, compress = "xz")
-
 
 ## Country codes
 usethis::use_data(countries, overwrite = TRUE, compress = "xz")
@@ -1093,7 +1148,7 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 ## rd skeleton
 #sinew::makeOxygen("uspop")
-sinew::makeOxygen("nchs_wdc")
+sinew::makeOxygen("nchs_wdc_alt")
 
 document()
 
