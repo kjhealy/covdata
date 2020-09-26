@@ -67,7 +67,7 @@ nchs_wdc_alt
 ```{r cdcexcessplot, fig.height=7, fig.width=8, dpi=100}
 nchs_wdc_alt %>% 
   filter(jurisdiction %in% c("New York", "New Jersey", "Michigan", "Georgia", "California", "Alabama")) %>%
-  filter(cause == "All Cause") %>%
+  filter(cause == "All Cause", year > 2014) %>%
   group_by(jurisdiction, year, week) %>% 
   summarize(deaths = sum(n, na.rm = TRUE)) %>%
   mutate(yr_ind = year %in% 2020) %>%
