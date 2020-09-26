@@ -168,10 +168,9 @@
 </pre></div>
 <p><img src="excess-mortality_files/figure-html/stmf-figure-1.png" width="1200"></p>
 </div>
-<div id="nchs-excess-death-estimates" class="section level2">
+<div id="nchs-mortality-counts-and-estimates" class="section level2">
 <h2 class="hasAnchor">
-<a href="#nchs-excess-death-estimates" class="anchor"></a>NCHS Excess Death Estimates</h2>
-<p>The CDC’s estimates of state-level excess deaths for the United States.</p>
+<a href="#nchs-mortality-counts-and-estimates" class="anchor"></a>NCHS Mortality Counts and Estimates</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="kw">nchs_wdc</span>
 <span class="co">#&gt; # A tibble: 312,332 x 15</span>
@@ -194,10 +193,28 @@
 <span class="co">#&gt; #   percent_difference_from_2015_2019_to_2020 &lt;dbl&gt;, type &lt;chr&gt;</span>
 </pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">nchs_wdc</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">jurisdiction</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span>), <span class="kw">type</span> != <span class="st">"Unweighted"</span>) <span class="op">%&gt;%</span>
+<span class="kw">nchs_wdc_alt</span>
+<span class="co">#&gt; # A tibble: 255,267 x 7</span>
+<span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed           n cause   </span>
+<span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   </span>
+<span class="co">#&gt;  1 Alabama       2014     1 2014-01-04       All Cause              355 All Cau…</span>
+<span class="co">#&gt;  2 Alabama       2014     1 2014-01-04       Alzheimer disease (…    10 Alzheim…</span>
+<span class="co">#&gt;  3 Alabama       2014     1 2014-01-04       Cerebrovascular dis…    18 Cerebro…</span>
+<span class="co">#&gt;  4 Alabama       2014     1 2014-01-04       Chronic lower respi…    20 Chronic…</span>
+<span class="co">#&gt;  5 Alabama       2014     1 2014-01-04       Diabetes mellitus (…    NA Diabetes</span>
+<span class="co">#&gt;  6 Alabama       2014     1 2014-01-04       Diseases of heart (…    87 Disease…</span>
+<span class="co">#&gt;  7 Alabama       2014     1 2014-01-04       Influenza and pneum…    NA Influen…</span>
+<span class="co">#&gt;  8 Alabama       2014     1 2014-01-04       Malignant neoplasms…    60 Cancer  </span>
+<span class="co">#&gt;  9 Alabama       2014     1 2014-01-04       Natural Cause          327 Natural…</span>
+<span class="co">#&gt; 10 Alabama       2014     1 2014-01-04       Nephritis, nephroti…    NA Kidney …</span>
+<span class="co">#&gt; # … with 255,257 more rows</span>
+</pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="kw">nchs_wdc_alt</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">jurisdiction</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span>)) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">cause</span> <span class="op">==</span> <span class="st">"All Cause"</span>) <span class="op">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="kw">jurisdiction</span>, <span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span> 
-  <span class="fu">summarize</span>(deaths = <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="kw">number_of_deaths</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
+  <span class="fu">summarize</span>(deaths = <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="kw">n</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
   <span class="fu">mutate</span>(yr_ind = <span class="kw">year</span> <span class="op">%in%</span> <span class="fl">2020</span>) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="op">!</span>(<span class="kw">year</span> <span class="op">==</span> <span class="fl">2020</span> <span class="op">&amp;</span> <span class="kw">week</span> <span class="op">&gt;</span> <span class="fl">30</span>)) <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">week</span>, y = <span class="kw">deaths</span>, color = <span class="kw">yr_ind</span>, group = <span class="kw">year</span>)) <span class="op">+</span> 
@@ -222,7 +239,7 @@
 <h2 class="hasAnchor">
 <a href="#new-york-times-excess-death-calculations" class="anchor"></a>New York Times Excess Death Calculations</h2>
 <p>The New York Times has begun to collate short term mortality counts in an effort to calculate excess deaths for various countries and regions.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
+<div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="kw">nytexcess</span>  
 <span class="co">#&gt; # A tibble: 6,712 x 12</span>
 <span class="co">#&gt;    country placename frequency start_date end_date   year  month  week deaths</span>
@@ -240,7 +257,7 @@
 <span class="co">#&gt; # … with 6,702 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span>
 <span class="co">#&gt; #   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span>
 </pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit">
+<div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="kw">nytexcess</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">placename</span> <span class="op">==</span> <span class="st">"New York City"</span>) <span class="op">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span>
