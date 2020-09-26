@@ -53,19 +53,23 @@ stmf %>%
 ```
 
 
-## NCHS Excess Death Estimates
-
-The CDC's estimates of state-level excess deaths for the United States.
+## NCHS Mortality Counts and Estimates
 
 ```{r nchswdc}
 nchs_wdc
 ```
 
+
+```{r nchswdc-alt}
+nchs_wdc_alt
+```
+
 ```{r cdcexcessplot, fig.height=7, fig.width=8, dpi=100}
-nchs_wdc %>% 
-  filter(jurisdiction %in% c("New York", "New Jersey", "Michigan", "Georgia", "California", "Alabama"), type != "Unweighted") %>%
+nchs_wdc_alt %>% 
+  filter(jurisdiction %in% c("New York", "New Jersey", "Michigan", "Georgia", "California", "Alabama")) %>%
+  filter(cause == "All Cause") %>%
   group_by(jurisdiction, year, week) %>% 
-  summarize(deaths = sum(number_of_deaths, na.rm = TRUE)) %>%
+  summarize(deaths = sum(n, na.rm = TRUE)) %>%
   mutate(yr_ind = year %in% 2020) %>%
   filter(!(year == 2020 & week > 30)) %>%
   ggplot(aes(x = week, y = deaths, color = yr_ind, group = year)) + 
