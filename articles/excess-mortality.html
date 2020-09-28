@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5</span>
       </span>
     </div>
 
@@ -173,27 +173,6 @@
 <a href="#nchs-mortality-counts-and-estimates" class="anchor"></a>NCHS Mortality Counts and Estimates</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="kw">nchs_wdc</span>
-<span class="co">#&gt; # A tibble: 312,332 x 15</span>
-<span class="co">#&gt;    jurisdiction week_ending_date state_abbreviat…  year  week cause_group</span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;date&gt;           &lt;chr&gt;            &lt;int&gt; &lt;int&gt; &lt;chr&gt;      </span>
-<span class="co">#&gt;  1 Alabama      2015-01-10       AL                2015     1 Alzheimer …</span>
-<span class="co">#&gt;  2 Alabama      2015-01-10       AL                2015     1 Alzheimer …</span>
-<span class="co">#&gt;  3 Alabama      2016-01-09       AL                2016     1 Alzheimer …</span>
-<span class="co">#&gt;  4 Alabama      2016-01-09       AL                2016     1 Alzheimer …</span>
-<span class="co">#&gt;  5 Alabama      2017-01-07       AL                2017     1 Alzheimer …</span>
-<span class="co">#&gt;  6 Alabama      2017-01-07       AL                2017     1 Alzheimer …</span>
-<span class="co">#&gt;  7 Alabama      2018-01-06       AL                2018     1 Alzheimer …</span>
-<span class="co">#&gt;  8 Alabama      2018-01-06       AL                2018     1 Alzheimer …</span>
-<span class="co">#&gt;  9 Alabama      2019-01-05       AL                2019     1 Alzheimer …</span>
-<span class="co">#&gt; 10 Alabama      2019-01-05       AL                2019     1 Alzheimer …</span>
-<span class="co">#&gt; # … with 312,322 more rows, and 9 more variables: number_of_deaths &lt;int&gt;,</span>
-<span class="co">#&gt; #   cause_subgroup &lt;chr&gt;, time_period &lt;chr&gt;, suppress &lt;lgl&gt;, note &lt;chr&gt;,</span>
-<span class="co">#&gt; #   average_number_of_deaths_in_time_period &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   difference_from_2015_2019_to_2020 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   percent_difference_from_2015_2019_to_2020 &lt;dbl&gt;, type &lt;chr&gt;</span>
-</pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">nchs_wdc_alt</span>
 <span class="co">#&gt; # A tibble: 255,267 x 7</span>
 <span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed           n cause   </span>
 <span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   </span>
@@ -209,8 +188,8 @@
 <span class="co">#&gt; 10 Alabama       2014     1 2014-01-04       Nephritis, nephroti…    NA Kidney …</span>
 <span class="co">#&gt; # … with 255,257 more rows</span>
 </pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw">nchs_wdc_alt</span> <span class="op">%&gt;%</span> 
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw">nchs_wdc</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">jurisdiction</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span>)) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">cause</span> <span class="op">==</span> <span class="st">"All Cause"</span>, <span class="kw">year</span> <span class="op">&gt;</span> <span class="fl">2014</span>) <span class="op">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="kw">jurisdiction</span>, <span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span> 
@@ -239,7 +218,7 @@
 <h2 class="hasAnchor">
 <a href="#new-york-times-excess-death-calculations" class="anchor"></a>New York Times Excess Death Calculations</h2>
 <p>The New York Times has begun to collate short term mortality counts in an effort to calculate excess deaths for various countries and regions.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
+<div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="kw">nytexcess</span>  
 <span class="co">#&gt; # A tibble: 6,712 x 12</span>
 <span class="co">#&gt;    country placename frequency start_date end_date   year  month  week deaths</span>
@@ -257,7 +236,7 @@
 <span class="co">#&gt; # … with 6,702 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span>
 <span class="co">#&gt; #   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span>
 </pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit">
+<div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="kw">nytexcess</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">placename</span> <span class="op">==</span> <span class="st">"New York City"</span>) <span class="op">%&gt;%</span>
   <span class="fu">group_by</span>(<span class="kw">year</span>, <span class="kw">week</span>) <span class="op">%&gt;%</span>
