@@ -745,7 +745,7 @@
 #' @author Kieran Healy
 #' @source 2014-2018: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr}. 2019-2020: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6}
 #' @references
-"nchs_wdc_alt"
+"nchs_wdc"
 
 #' @title COVID-19 Case Surveillance Public Use Data
 #' @description Deidentified patient-level data reported to U.S. states and autonomous reporting entities, including New York City and the District of Columbia (D.C.), as well as U.S. territories and states.
