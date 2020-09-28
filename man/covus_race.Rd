@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Friday, September 25, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Monday, September 28, 2020}
 \format{
-A tibble with 24,192 rows and 5 columns
+A tibble with 24,696 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -28,21 +28,15 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_race \cr
-   Number of rows \tab 24192 \cr
+   Number of rows \tab 24696 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-09-23 \tab 2020-07-03 \tab 48 \cr
 }
 
 
@@ -53,10 +47,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-09-27 \tab 2020-07-05 \tab 49 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 8869 \tab 0.63 \tab 10228.78 \tab 34121.84 \tab 0 \tab 247 \tab 1497.0 \tab 7654.5 \tab 672896 \tab ▇▁▁▁▁ \cr
-   deaths \tab 10398 \tab 0.57 \tab 420.81 \tab 1083.69 \tab 0 \tab 8 \tab 43.5 \tab 269.0 \tab 8801 \tab ▇▁▁▁▁ \cr
+   cases \tab 9019 \tab 0.63 \tab 10450.39 \tab 34739.05 \tab 0 \tab 250 \tab 1526 \tab 7848 \tab 688020 \tab ▇▁▁▁▁ \cr
+   deaths \tab 10563 \tab 0.57 \tab 424.85 \tab 1092.25 \tab 0 \tab 8 \tab 44 \tab 273 \tab 8808 \tab ▇▁▁▁▁ \cr
 }
 
 

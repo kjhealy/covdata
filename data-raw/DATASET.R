@@ -947,7 +947,7 @@ wdc_colspec <- cols(
   Type = "c"
 )
 
-nchs_wdc <- get_nchs_data(sname = "WDC",
+nchs_wdc_old <- get_nchs_data(sname = "WDC",
                           clean_names = "y",
                           save_file = "n",
                           cols = wdc_colspec)
@@ -981,7 +981,8 @@ nchs_wdc1920 <- nchs_wdc1920_raw %>%
   select(jurisdiction, year, week, week_ending_date, cause_detailed, n) %>%
   mutate(cause_detailed = stringr::str_squish(cause_detailed))
 
-nchs_wdc_alt <- bind_rows(nchs_wdc1418, nchs_wdc1920) %>%
+## New NCHS WDC
+nchs_wdc <- bind_rows(nchs_wdc1418, nchs_wdc1920) %>%
     arrange(jurisdiction, year, week, week_ending_date, cause_detailed) %>%
     mutate(cause = case_when(
       cause_detailed == "All Cause"                                                                                        ~ "All Cause",
@@ -1061,7 +1062,8 @@ md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
          cname = replace(cname, country_code == "FRATNP", "France"),
          iso2 = replace(iso2, country_code == "FRATNP", "FR"),
          cname = replace(cname, country_code == "GBRTENW", "England and Wales"),
-         cname = replace(cname, country_code == "GBR_SCO", "Scotland")
+         cname = replace(cname, country_code == "GBR_SCO", "Scotland"),
+         cname = replace(cname, country_code == "GBR_NIR", "Northern Ireland")
          ) %>%
   left_join(countries)
 
@@ -1116,7 +1118,6 @@ usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wdc, overwrite = TRUE, compress = "xz")
-usethis::use_data(nchs_wdc_alt, overwrite = TRUE, compress = "xz")
 
 ## CoronaNet
 usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
@@ -1148,7 +1149,6 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 ## rd skeleton
 #sinew::makeOxygen("uspop")
-sinew::makeOxygen("nchs_wdc_alt")
 
 document()
 

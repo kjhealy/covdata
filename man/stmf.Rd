@@ -61,6 +61,7 @@ Countries and years covered in the dataset:\tabular{llllllllllllllllllllllllllll
    Lithuania \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Luxembourg \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Netherlands \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Northern Ireland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Norway \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Poland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Portugal \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
@@ -72,7 +73,6 @@ Countries and years covered in the dataset:\tabular{llllllllllllllllllllllllllll
    Sweden \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Switzerland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    United States \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
-   NA \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
 }
 
 
@@ -84,29 +84,29 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 17 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 7 \cr
+   Date \tab 1 \cr
    numeric \tab 9 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-09-20 \tab 2011-02-27 \tab 1598 \cr
-}
-
-
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    country_code \tab 0 \tab 1.00 \tab 3 \tab 7 \tab 0 \tab 32 \tab 0 \cr
-   cname \tab 4365 \tab 0.99 \tab 5 \tab 18 \tab 0 \tab 31 \tab 0 \cr
+   cname \tab 0 \tab 1.00 \tab 5 \tab 18 \tab 0 \tab 32 \tab 0 \cr
    iso2 \tab 28860 \tab 0.93 \tab 2 \tab 2 \tab 0 \tab 29 \tab 0 \cr
    continent \tab 48585 \tab 0.89 \tab 4 \tab 13 \tab 0 \tab 3 \tab 0 \cr
    iso3 \tab 48585 \tab 0.89 \tab 3 \tab 3 \tab 0 \tab 27 \tab 0 \cr
    sex \tab 0 \tab 1.00 \tab 1 \tab 1 \tab 0 \tab 3 \tab 0 \cr
    age_group \tab 0 \tab 1.00 \tab 3 \tab 5 \tab 0 \tab 5 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-09-20 \tab 2011-02-27 \tab 1598 \cr
 }
 
 

@@ -47,7 +47,6 @@ reference:
       - nchs_sas
       - nchs_wss
       - nchs_wdc
-      - nchs_wdc_alt
   - title: "New York Times Data"
     desc: Data from the New York Times.
     contents:

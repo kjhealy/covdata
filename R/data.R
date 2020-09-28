@@ -728,34 +728,9 @@
 #' @source National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh}
 "nchs_wss"
 
-#' @title Weekly counts of death by jurisdiction and cause of death
-#' @description Weekly data on the number of deaths by jurisdiction of occurrence and cause of death, US States, 2014-present. Counts of deaths in more recent weeks can be compared with counts from earlier years to determine if the number is higher than expected. Selected causes of death are shown, based on analyses of the most prevalent comorbid conditions reported on death certificates where COVID-19 was listed as a cause of death.
-#' @format A tibble with `r fmt_nr(nchs_wdc)` rows and `r fmt_nc(nchs_wdc)` variables:
-#' \describe{
-#'   \item{\code{jurisdiction}}{character Jurisdiction of occurrence (e.g. US State)}
-#'   \item{\code{week_ending_date}}{double Week ending date}
-#'   \item{\code{year}}{integer Year}
-#'   \item{\code{week}}{integer MMWR Week number}
-#'   \item{\code{cause_group}}{character Cause of death group}
-#'   \item{\code{number_of_deaths}}{integer Number of deaths}
-#'   \item{\code{cause_subgroup}}{character Cause of death subgroup}
-#'   \item{\code{time_period}}{character Time period}
-#'   \item{\code{suppress}}{logical Flag for data suppression due to confidentiality}
-#'   \item{\code{note}}{character Note on observation}
-#'   \item{\code{average_number_of_deaths_in_time_period}}{double Average number of deaths in a given time period and week number}
-#'   \item{\code{difference_from_2015_2019_to_2020}}{double Difference in the number of deaths in 2020 relative to 2015-2019}
-#'   \item{\code{percent_difference_from_2015_2019_to_2020}}{double Percent difference in the number of deaths in 2020 relative to 2015-2019}
-#'   \item{\code{type}}{character Estimate type (predicted or observed)}
-#'}
-#' @details Cause of death counts are based on the underlying cause of death, and presented for Respiratory diseases, Circulatory diseases, Malignant neoplasms, and Alzheimer disease and dementia. Estimated numbers of deaths due to these other causes of death could represent misclassified COVID-19 deaths, or potentially could be indirectly related to COVID-19 (e.g., deaths from other causes occurring in the context of health care shortages or overburdened health care systems). Deaths with an underlying cause of death of COVID-19 are not included in these estimates of deaths due to other causes. Deaths due to external causes (i.e. injuries) or unknown causes are excluded.
-#' Both unweighted and weighted (predicted) provisional counts are provided. Weighting of provisional counts is done to account for potential underreporting in the most recent weeks. However, data for the most recent week(s) are still likely to be incomplete. Only about 60% of deaths are reported within 10 days of the date of death, and there is considerable variation by jurisdiction and cause of death. The weighted estimates for specific causes of death are likely too low, as reporting lags are typically larger for specific causes of death than for all-cause mortality. To minimize the degree of underreporting, cause-specific estimates are presented with a two-week lag.
-#' @author Kieran Healy
-#' @source National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Weekly-counts-of-death-by-jurisdiction-and-cause-o/u6jv-9ijr/}
-"nchs_wdc"
-
 #' @title Weekly Counts of Deaths by State and Select Causes 2014-2020
 #' @description Final counts of deaths by the week the deaths occurred, by state of occurrence, and by select causes of death for 2014-2018, and Provisional counts of deaths by the week the deaths occurred, by state of occurrence, and by select underlying causes of death for 2019-2020. The dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death.
-#' @format A data frame with `r fmt_nr(nchs_wdc_alt)` rows and `r fmt_nc(nchs_wdc_alt)` variables:
+#' @format A data frame with `r fmt_nr(nchs_wdc)` rows and `r fmt_nc(nchs_wdc)` variables:
 #' \describe{
 #'   \item{\code{jurisdiction}}{character Jurisdiction of Occurrence}
 #'   \item{\code{year}}{double MMWR Year}
