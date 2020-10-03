@@ -5,7 +5,7 @@
 \alias{nchs_pud}
 \title{COVID-19 Case Surveillance Public Use Data}
 \format{
-A tibble with 3,662,325 rows and 11 variables:
+A tibble with 4,481,062 rows and 11 variables:
 \describe{
 \item{\code{cdc_report_dt}}{date Initial case report date to CDC}
 \item{\code{pos_spec_dt}}{date Date of first positive specimen collection}
@@ -33,7 +33,7 @@ Deidentified patient-level data reported to U.S. states and autonomous reporting
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_pud \cr
-   Number of rows \tab 3662325 \cr
+   Number of rows \tab 4481062 \cr
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -47,9 +47,9 @@ Table: Data summary\tabular{ll}{
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    current_status \tab 0 \tab 1 \tab 8 \tab 9 \tab 0 \tab 2 \tab 0 \cr
-   sex \tab 18 \tab 1 \tab 4 \tab 7 \tab 0 \tab 5 \tab 0 \cr
-   age_group \tab 94 \tab 1 \tab 6 \tab 8 \tab 0 \tab 10 \tab 0 \cr
-   race_ethnicity \tab 6 \tab 1 \tab 7 \tab 28 \tab 0 \tab 8 \tab 0 \cr
+   sex \tab 12 \tab 1 \tab 4 \tab 7 \tab 0 \tab 5 \tab 0 \cr
+   age_group \tab 93 \tab 1 \tab 6 \tab 8 \tab 0 \tab 10 \tab 0 \cr
+   race_ethnicity \tab 12 \tab 1 \tab 7 \tab 28 \tab 0 \tab 8 \tab 0 \cr
    hosp_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
    icu_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
    death_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
@@ -59,9 +59,9 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   cdc_report_dt \tab 0 \tab 1.00 \tab 2020-01-01 \tab 2020-08-16 \tab 2020-06-23 \tab 225 \cr
-   pos_spec_dt \tab 2331742 \tab 0.36 \tab 2020-01-01 \tab 2020-08-28 \tab 2020-05-16 \tab 205 \cr
-   onset_dt \tab 1772698 \tab 0.52 \tab 2020-01-01 \tab 2020-08-30 \tab 2020-06-06 \tab 243 \cr
+   cdc_report_dt \tab 0 \tab 1.00 \tab 2020-01-01 \tab 2020-09-15 \tab 2020-07-04 \tab 255 \cr
+   pos_spec_dt \tab 2957494 \tab 0.34 \tab 2020-01-01 \tab 2020-09-28 \tab 2020-05-30 \tab 236 \cr
+   onset_dt \tab 2113224 \tab 0.53 \tab 2020-01-01 \tab 2020-09-29 \tab 2020-06-24 \tab 273 \cr
 }
 
 

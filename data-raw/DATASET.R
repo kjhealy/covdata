@@ -187,6 +187,7 @@ get_stmf <- function(url = "https://www.mortality.org/Public/STMF/Outputs",
 
 ## Get NYT data from their repo
 ## Generic NYT get
+
 get_nyt_data <- function(url = "https://github.com/nytimes/covid-19-data/raw/master/",
                         fname = "us-counties",
                         date = lubridate::today(),
@@ -947,10 +948,10 @@ wdc_colspec <- cols(
   Type = "c"
 )
 
-nchs_wdc_old <- get_nchs_data(sname = "WDC",
-                          clean_names = "y",
-                          save_file = "n",
-                          cols = wdc_colspec)
+# nchs_wdc_old <- get_nchs_data(sname = "WDC",
+#                           clean_names = "y",
+#                           save_file = "n",
+#                           cols = wdc_colspec)
 
 
 nchs_wdc1418_raw <- get_nchs_data(sname = "WDC1418",
@@ -975,6 +976,7 @@ nchs_wdc1920_raw <- get_nchs_data(sname = "WDC1920",
 nchs_wdc1920 <- nchs_wdc1920_raw %>%
   pivot_longer(`All Cause`:`COVID-19 (U071, Underlying Cause of Death)`, names_to = "cause_detailed", values_to = "n") %>%
   janitor::clean_names() %>%
+  mutate(week_ending_date = lubridate::mdy(week_ending_date)) %>%
   rename(jurisdiction = jurisdiction_of_occurrence,
          year = mmwr_year,
          week = mmwr_week) %>%
@@ -1148,7 +1150,7 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 
 
 ## rd skeleton
-#sinew::makeOxygen("uspop")
+#sinew::makeOxygen("")
 
 document()
 

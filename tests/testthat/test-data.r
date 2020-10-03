@@ -220,6 +220,29 @@ test_that("nchs_pud conforms to spec", {
 })
 
 
+## nchs_wdc
+test_that("nchs_wdc conforms to spec", {
+  nchs_wdc_colnames <- c("jurisdiction", "year", "week", "week_ending_date", "cause_detailed", "n", "cause")
+  expect_equal(colnames(nchs_wdc), nchs_wdc_colnames)
+
+  nchs_wdc_causes <- c("All Cause"                                                                                       ,
+                       "Alzheimer disease (G30)"                                                                          ,
+                       "Cerebrovascular diseases (I60-I69)"                                                               ,
+                       "Chronic lower respiratory diseases (J40-J47)"                                                     ,
+                       "Diabetes mellitus (E10-E14)"                                                                      ,
+                       "Diseases of heart (I00-I09,I11,I13,I20-I51)"                                                      ,
+                       "Influenza and pneumonia (J10-J18)"                                                                ,
+                       "Malignant neoplasms (C00-C97)"                                                                    ,
+                       "Natural Cause"                                                                                    ,
+                       "Nephritis, nephrotic syndrome and nephrosis (N00-N07,N17-N19,N25-N27)"                            ,
+                       "Other diseases of respiratory system (J00-J06,J30-J39,J67,J70-J98)"                               ,
+                       "Septicemia (A40-A41)"                                                                             ,
+                       "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified (R00-R99)",
+                       "COVID-19 (U071, Multiple Cause of Death)"                                                         ,
+                       "COVID-19 (U071, Underlying Cause of Death)"                                                       ,
+                       "Influenza and pneumonia (J09-J18)")
+  expect_equal(unique(nchs_wdc$cause_detailed), nchs_wdc_causes)
+})
 
 
 
