@@ -6,10 +6,10 @@ citEntry(
   author   = person(given = "Kieran",
                       family = "Healy",
                       role = c("aut", "cre"),
-                      email = "kjhealy@soc.duke.edu"),
+                      email = "kieran.healy@duke.edu"),
   year     = "2020",
-  note = "R package version 0.1.0",
+  note = "R package version 0.5.2",
   url      = "http://kjhealy.github.io/covdata",
-  textVersion = paste("Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.1.0, <http://kjhealy.github.io/covdata>."
+  textVersion = paste("Kieran Healy. 2020. covdata: COVID-19 Case and Mortality Time Series. R package version 0.5.2, <http://kjhealy.github.io/covdata>."
   )
 )

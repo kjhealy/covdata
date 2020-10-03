@@ -1,14 +1,14 @@
 Package: covdata
 Type: Package
 Title: COVID-19 Data
-Version: 0.5.1
+Version: 0.5.2
 Authors@R: 
     person(given = "Kieran",
            family = "Healy",
            role = c("aut", "cre"),
            email = "kjhealy@gmail.com",
            comment = c(ORCID = "https://orcid.org/0000-0001-9114-981X"))
-Description: COVID-19 related data from the ECDC, the COVID-19 Tracking Project, the New York Times, the Human Mortality Database, Apple, and Google. Packaged for R.
+Description: COVID-19 related data from the ECDC, the COVID-19 Tracking Project, the New York Times, the Human Mortality Database, and Apple. Packaged for R.
 Depends: R (>= 2.10)
 License: MIT + file LICENSE
 Encoding: UTF-8

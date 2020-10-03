@@ -3,7 +3,7 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Friday, October  2, 2020}
+\title{International COVID-19 cases and deaths, current as of Saturday, October  3, 2020}
 \format{
 A tibble with 46,371 rows and 8 columns
 \describe{

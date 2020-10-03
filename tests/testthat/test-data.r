@@ -164,11 +164,11 @@ test_that("apple_mobility conforms to spec", {
 })
 
 ## google_mobility
-test_that("google_mobility conforms to spec", {
-  google_mobility_colnames <- c("country_region_code", "country_region", "sub_region_1",
-                                "sub_region_2", "metro_area", "iso3166_2", "census_fips_code", "date", "type", "pct_diff")
-  expect_equal(colnames(google_mobility), google_mobility_colnames)
-})
+# test_that("google_mobility conforms to spec", {
+#   google_mobility_colnames <- c("country_region_code", "country_region", "sub_region_1",
+#                                 "sub_region_2", "metro_area", "iso3166_2", "census_fips_code", "date", "type", "pct_diff")
+#   expect_equal(colnames(google_mobility), google_mobility_colnames)
+# })
 
 ## coronanet
 test_that("coronanet conforms to spec", {

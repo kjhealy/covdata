@@ -32,7 +32,7 @@ Individual datasets are documented on their help pages. The documentation includ
 - For the ECDC COVID-specific data: `vignette("ecdc-data")`
 - For US COVID-specific data: `vignette("us-data")`
 - For the New York Times COVID-specific data: `vignette("new-york-times")`
-- For the global mobility data from Apple and Google: `vignette("mobility-data")`
+- For the global mobility data from Apple: `vignette("mobility-data")`
 - For the CoronaNet Project data on policy: `vignette("coronanet-data")`
 - For data from the Human Mortality Database and the _New York Times_ on excess mortality: `vignette("excess-mortality")`
 

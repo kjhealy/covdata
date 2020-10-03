@@ -161,12 +161,6 @@ skimr::skim(nytexcess)
 skimr::skim(apple_mobility)
 ```
 
-## Mobilty Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) 
-
-```{r}
-skimr::skim(google_mobility)
-```
-
 
 ## Policy data from the [CoronaNet Project](https://coronanet-project.org)
 

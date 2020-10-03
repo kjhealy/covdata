@@ -11,10 +11,9 @@ template:
 
 reference:
   - title: "Activity Data"
-    desc: Data from Apple and Google.
+    desc: Data from Apple.
     contents:
       - apple_mobility
-      - google_mobility
   - title: "CDC Data"
     desc: Data from the Centers for Disease Control's surveillance network.
     contents:

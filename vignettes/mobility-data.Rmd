@@ -1,5 +1,5 @@
 ---
-title: "Mobility Data from Apple and Google"
+title: "Mobility Data from Apple"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{mobility-data}
@@ -65,33 +65,4 @@ for(i in 1:5){
 
 ## Google's Mobility Reports
 
-These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential. Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area. These datasets show how visits and length of stay at different places change compared to a baseline. Changes for each day are compared to a baseline value for that day of the week:
-
-- The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.
-- The datasets show trends over several months.
-- What data is included in the calculation depends on user settings, connectivity, and whether it meets Google's privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day. 
-
-```{r google-data}
-google_mobility
-```
-
-
-```{r google-example, fig.height=6, fig.width=6, dpi=150}
-google_mobility %>% 
-  filter(country_region_code == "US", !is.na(sub_region_1), is.na(sub_region_2)) %>%
-  mutate(type = tools::toTitleCase(type)) %>%
-  ggplot(mapping = aes(x = date, y = pct_diff, 
-                       group = sub_region_1)) + 
-  geom_line(size = 0.5, color = "gray80") + 
-  geom_smooth(aes(color = type, group = 1), se = FALSE) + 
-  facet_wrap(~ type, ncol = 2) + 
-  labs(x = "Date", y = "Percent Change from Baseline", title = "Relative Trends in Mobility for Kinds of Location in the US, by State", 
-                              subtitle = "Data are relative to median activity between Jan 3rd and Feb 6th",
-       color = "Location Type", 
-       caption = "Data: Google. Graph: @kjhealy") + 
-  theme_minimal() + 
-  theme(legend.position = "top", 
-        strip.text = element_text(size = rel(1.3)))
-  
-```
-
+Google's mobility reports are now available in the [covmobility](https://kjhealy.github.io/covmobility) package.

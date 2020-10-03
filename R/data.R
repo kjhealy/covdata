@@ -534,31 +534,6 @@
 "apple_mobility"
 
 
-## Google Mobility Data
-#' @title Google Mobility Data
-#' @description Data from Google's Community Mobility Reports on relative changes in movement trends by location type.
-#' @format A data frame with `r fmt_nr(google_mobility)` rows and `r fmt_nc(google_mobility)` variables:
-#' \describe{
-#'   \item{\code{country_region_code}}{character Country Code}
-#'   \item{\code{country_region}}{character Country or Region name}
-#'   \item{\code{sub_region_1}}{character Subregion (e.g. US state) name}
-#'   \item{\code{sub_region_2}}{character Subregion (e.g. US county) name}
-#'   \item{\code{metro_area}}{Metropolitan area name}
-#'   \item{\code{iso3166_2}}{character ISO 3166-2 Country/Region code}
-#'   \item{\code{census_fips_code}}{character US Census FIPS code}
-#'   \item{\code{date}}{double Date in yyyy-mm-dd format}
-#'   \item{\code{type}}{character Type of location. Values are retail, grocery (and pharmacy), parts, transit (hubs/stations), workplaces, and residential}
-#'   \item{\code{pct_diff}}{integer Percent change from baseline activity}
-#'}
-#' @details
-#' ```{r, results = "asis", echo = FALSE}
-#' skimr::skim(google_mobility)
-#' ```
-#'
-#' Location accuracy and the understanding of categorized places varies from region to region, so Google does not recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas). Regions or categories are omitted if Google does not have have sufficient statistically significant levels of data for it. Changes for each day are compared to a baseline value for that day of the week. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020. What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) we don’t show a change for the day. As a result, you may encounter empty fields for certain places and dates. We calculate these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population.
-#' @author Kieran Healy
-#' @source Google LLC "Google COVID-19 Community Mobility Reports." https://www.google.com/covid19/mobility/ Accessed: `r Sys.Date()`
-"google_mobility"
 
 #' @title CoronaNet Government Response Project data
 #' @description Contains variables from the CoronaNet Government Response Project (`https://coronanet-project.org`), representing national and sub-national policy event data from more than 140 countries since January 1st, 2020. The data include source links, descriptions, targets (i.e. other countries), the type and level of enforcement, and a comprehensive set of policy types. See below for citation information.
