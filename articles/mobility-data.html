@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobility Data from Apple and Google • covdata</title>
+<title>Mobility Data from Apple • covdata</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Mobility Data from Apple and Google">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Mobility Data from Apple">
 <meta property="og:description" content="covdata">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
       </span>
     </div>
 
@@ -63,7 +63,7 @@
       <a href="../articles/us-data.html">U.S. Case and Mortality Data</a>
     </li>
     <li>
-      <a href="../articles/mobility-data.html">Mobility Data from Apple and Google</a>
+      <a href="../articles/mobility-data.html">Mobility Data from Apple</a>
     </li>
     <li>
       <a href="../articles/new-york-times.html">New York Times Data</a>
@@ -97,7 +97,7 @@
       </header><script src="mobility-data_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Mobility Data from Apple and Google</h1>
+      <h1 data-toc-skip>Mobility Data from Apple</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/master/vignettes/mobility-data.Rmd"><code>vignettes/mobility-data.Rmd</code></a></small>
@@ -135,7 +135,7 @@
 <p>Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">apple_mobility</span>
-<span class="co">#&gt; # A tibble: 1,229,042 x 8</span>
+<span class="co">#&gt; # A tibble: 1,233,733 x 8</span>
 <span class="co">#&gt;    geo_type region transportation_… alternative_name sub_region country</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
@@ -148,7 +148,7 @@
 <span class="co">#&gt;  8 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt;  9 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt; 10 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
-<span class="co">#&gt; # … with 1,229,032 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span>
+<span class="co">#&gt; # … with 1,233,723 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span>
 </pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">vec_brks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span>)
@@ -193,50 +193,7 @@
 <div id="googles-mobility-reports" class="section level2">
 <h2 class="hasAnchor">
 <a href="#googles-mobility-reports" class="anchor"></a>Google’s Mobility Reports</h2>
-<p>These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential. Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area. These datasets show how visits and length of stay at different places change compared to a baseline. Changes for each day are compared to a baseline value for that day of the week:</p>
-<ul>
-<li>The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.</li>
-<li>The datasets show trends over several months.</li>
-<li>What data is included in the calculation depends on user settings, connectivity, and whether it meets Google’s privacy threshold. If the privacy threshold isn’t met (when somewhere isn’t busy enough to ensure anonymity) no change is shown for the day.</li>
-</ul>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="kw">google_mobility</span>
-<span class="co">#&gt; # A tibble: 15,731,082 x 10</span>
-<span class="co">#&gt;    country_region_… country_region sub_region_1 sub_region_2 metro_area</span>
-<span class="co">#&gt;    &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  2 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  3 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  4 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  5 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  6 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  7 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  8 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt;  9 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt; 10 AE               United Arab E… &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      </span>
-<span class="co">#&gt; # … with 15,731,072 more rows, and 5 more variables: iso3166_2 &lt;chr&gt;,</span>
-<span class="co">#&gt; #   census_fips_code &lt;chr&gt;, date &lt;date&gt;, type &lt;chr&gt;, pct_diff &lt;int&gt;</span>
-</pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="kw">google_mobility</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">country_region_code</span> <span class="op">==</span> <span class="st">"US"</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="kw">sub_region_1</span>), <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="kw">sub_region_2</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(type = <span class="kw">tools</span>::<span class="fu"><a href="https://rdrr.io/r/tools/toTitleCase.html">toTitleCase</a></span>(<span class="kw">type</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span>(mapping = <span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">pct_diff</span>, 
-                       group = <span class="kw">sub_region_1</span>)) <span class="op">+</span> 
-  <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>, color = <span class="st">"gray80"</span>) <span class="op">+</span> 
-  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(color = <span class="kw">type</span>, group = <span class="fl">1</span>), se = <span class="fl">FALSE</span>) <span class="op">+</span> 
-  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">type</span>, ncol = <span class="fl">2</span>) <span class="op">+</span> 
-  <span class="fu">labs</span>(x = <span class="st">"Date"</span>, y = <span class="st">"Percent Change from Baseline"</span>, title = <span class="st">"Relative Trends in Mobility for Kinds of Location in the US, by State"</span>, 
-                              subtitle = <span class="st">"Data are relative to median activity between Jan 3rd and Feb 6th"</span>,
-       color = <span class="st">"Location Type"</span>, 
-       caption = <span class="st">"Data: Google. Graph: @kjhealy"</span>) <span class="op">+</span> 
-  <span class="fu">theme_minimal</span>() <span class="op">+</span> 
-  <span class="fu">theme</span>(legend.position = <span class="st">"top"</span>, 
-        strip.text = <span class="fu">element_text</span>(size = <span class="fu">rel</span>(<span class="fl">1.3</span>)))
-<span class="co">#&gt; `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'</span>
-<span class="co">#&gt; Warning: Removed 8640 rows containing non-finite values (stat_smooth).</span>
-</pre></div>
-<p><img src="mobility-data_files/figure-html/google-example-1.png" width="900"></p>
+<p>Google’s mobility reports are now available in the <a href="https://kjhealy.github.io/covmobility">covmobility</a> package.</p>
 </div>
   </div>
 
