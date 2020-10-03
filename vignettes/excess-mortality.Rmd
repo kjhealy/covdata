@@ -59,7 +59,7 @@ stmf %>%
 nchs_wdc
 ```
 
-```{r cdcexcessplot, fig.height=7, fig.width=8, dpi=100}
+```{r cdcexcessplot, fig.height=14, fig.width=8, dpi=100}
 nchs_wdc %>% 
   filter(jurisdiction %in% c("New York", "New Jersey", "Michigan", "Georgia", "California", "Alabama")) %>%
   filter(cause == "All Cause", year > 2014) %>%
