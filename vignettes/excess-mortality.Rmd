@@ -66,18 +66,18 @@ nchs_wdc %>%
   group_by(jurisdiction, year, week) %>% 
   summarize(deaths = sum(n, na.rm = TRUE)) %>%
   mutate(yr_ind = year %in% 2020) %>%
-  filter(!(year == 2020 & week > 30)) %>%
+  filter(!(year == 2020 & week > 35)) %>%
   ggplot(aes(x = week, y = deaths, color = yr_ind, group = year)) + 
   geom_line(size = 0.9) + 
   scale_color_manual(values = c("gray70", "red"), labels = c("2015-2019", "2020")) +
   scale_x_continuous(breaks = c(1, 10, 20, 30, 40, 50), labels = c(1, 10, 20, 30, 40, 50)) + 
   scale_y_continuous(labels = scales::comma) +
-  facet_wrap(~ jurisdiction, scales = "free_y") + 
+  facet_wrap(~ jurisdiction, scales = "free_y", ncol = 1) + 
   labs(x = "Week of the Year", 
        y = "Total Deaths", 
        color = "Years",
        title = "Weekly recorded deaths from all causes", 
-       subtitle = "2020 data are for Weeks 1 to 30. Raw Counts, each state has its own y-axis scale.", 
+       subtitle = "2020 data are for Weeks 1 to 35. Raw Counts, each state has its own y-axis scale.", 
        caption = "Graph: @kjhealy Data: CDC") + 
   theme_minimal() + 
   theme(legend.position = "top")
