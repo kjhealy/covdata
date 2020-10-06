@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 data for the USA, current as of Saturday, October  3, 2020 — covus • covdata</title>
+<title>COVID-19 data for the USA, current as of Tuesday, October  6, 2020 — covus • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 data for the USA, current as of Saturday, October  3, 2020 — covus" />
+<meta property="og:title" content="COVID-19 data for the USA, current as of Tuesday, October  6, 2020 — covus" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.3</span>
       </span>
     </div>
 
@@ -138,7 +138,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 data for the USA, current as of Saturday, October  3, 2020</h1>
+    <h1>COVID-19 data for the USA, current as of Tuesday, October  6, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus.Rd</code></div>
     </div>
@@ -152,7 +152,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 345,506 rows and 7 columns</p><dl>
+    <p>A tibble with 364,140 rows and 7 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>Two letter State abbreviation (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -171,22 +171,15 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>covus</td></tr>
-<tr><td>Number of rows</td><td>345506</td></tr>
+<tr><td>Number of rows</td><td>364140</td></tr>
 <tr><td>Number of columns</td><td>7</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>5</td></tr>
+<tr><td>Date</td><td>1</td></tr>
 <tr><td>numeric</td><td>1</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-10-02</td><td>2020-06-18</td><td>255</td></tr>
 </table>
 
 
@@ -195,16 +188,23 @@
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
 <tr><td>state</td><td>0</td><td>1.0</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
 <tr><td>fips</td><td>0</td><td>1.0</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
-<tr><td>data_quality_grade</td><td>34278</td><td>0.9</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
-<tr><td>measure</td><td>0</td><td>1.0</td><td>5</td><td>30</td><td>0</td><td>29</td><td>0</td></tr>
-<tr><td>measure_label</td><td>0</td><td>1.0</td><td>6</td><td>54</td><td>0</td><td>29</td><td>0</td></tr>
+<tr><td>data_quality_grade</td><td>35460</td><td>0.9</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td>measure</td><td>0</td><td>1.0</td><td>5</td><td>30</td><td>0</td><td>30</td><td>0</td></tr>
+<tr><td>measure_label</td><td>0</td><td>1.0</td><td>6</td><td>54</td><td>0</td><td>30</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-10-06</td><td>2020-06-20</td><td>259</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>count</td><td>232296</td><td>0.33</td><td>176138.4</td><td>691653.4</td><td>0</td><td>268</td><td>3602</td><td>62978</td><td>14868431</td><td>▇▁▁▁▁</td></tr>
+<tr><td>count</td><td>244740</td><td>0.33</td><td>176572.5</td><td>704139.5</td><td>0</td><td>277</td><td>3445</td><td>59846</td><td>15430421</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -212,6 +212,7 @@
 <p>The measures tracked by the COVID tracking project are as follows:</p><table class='table'>
 <tr><td>measure</td><td>measure_label</td></tr>
 <tr><td>positive</td><td>Positive Tests</td></tr>
+<tr><td>probable_cases</td><td>Probable Cases</td></tr>
 <tr><td>negative</td><td>Negative Tests</td></tr>
 <tr><td>pending</td><td>Pending Tests</td></tr>
 <tr><td>hospitalized_currently</td><td>Currently Hospitalized</td></tr>
@@ -245,11 +246,12 @@
 
 
 <p>Not all measures are reported by all states.
-The <code>positive</code>, <code>negative</code>, <code>death</code>, <code>death_confirmed</code>, and <code>death_probable</code> measures are <em>cumulative</em> counts.
+The <code>positive</code>, <code>negative</code>, <code>death</code>, <code>death_confirmed</code>, <code>probable_cases</code> and <code>death_probable</code> measures are <em>cumulative</em> counts.
 <code>death_confirmed</code> is the total number deaths of individuals with COVID-19 infection confirmed by a laboratory test.
 In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
 to the death according to the death certificate. <code>death_probable</code> is the total number of deaths where COVID was listed as a
 cause of death and there is not a laboratory test confirming COVID-19 infection.</p>
+<p>For further information on the COVID Tracking Project's measures, see <a href='https://covidtracking.com/about-data/data-definitions'>https://covidtracking.com/about-data/data-definitions</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

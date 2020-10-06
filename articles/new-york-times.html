@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.3</span>
       </span>
     </div>
 
@@ -139,7 +139,7 @@
 <a href="#u-s--national-table" class="anchor"></a>U.S. National Table</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">nytcovus</span>
-<span class="co">#&gt; # A tibble: 255 x 3</span>
+<span class="co">#&gt; # A tibble: 259 x 3</span>
 <span class="co">#&gt;    date       cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21     1      0</span>
@@ -152,7 +152,7 @@
 <span class="co">#&gt;  8 2020-01-28     5      0</span>
 <span class="co">#&gt;  9 2020-01-29     5      0</span>
 <span class="co">#&gt; 10 2020-01-30     6      0</span>
-<span class="co">#&gt; # … with 245 more rows</span>
+<span class="co">#&gt; # … with 249 more rows</span>
 </pre></div>
 </div>
 <div id="u-s--state-table" class="section level3">
@@ -160,7 +160,7 @@
 <a href="#u-s--state-table" class="anchor"></a>U.S. State Table</h3>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 11,729 x 5</span>
+<span class="co">#&gt; # A tibble: 11,949 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -173,7 +173,7 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 11,719 more rows</span>
+<span class="co">#&gt; # … with 11,939 more rows</span>
 </pre></div>
 </div>
 <div id="u-s--county-table" class="section level3">
@@ -181,7 +181,7 @@
 <a href="#u-s--county-table" class="anchor"></a>U.S. County Table</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="kw">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 589,543 x 6</span>
+<span class="co">#&gt; # A tibble: 602,511 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -194,7 +194,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 589,533 more rows</span>
+<span class="co">#&gt; # … with 602,501 more rows</span>
 </pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
