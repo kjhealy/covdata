@@ -1023,19 +1023,6 @@ apple_mobility <- get_apple_data() %>%
     date = as_date(date)) %>%
   rename(score = index)
 
-## Google Mobility Data
-
-google_mobility <- get_google_data() %>%
-  rename(iso3166_2 = iso_3166_2_code,
-    retail = retail_and_recreation_percent_change_from_baseline,
-         grocery = grocery_and_pharmacy_percent_change_from_baseline,
-         parks = parks_percent_change_from_baseline,
-         transit = transit_stations_percent_change_from_baseline,
-         workplaces = workplaces_percent_change_from_baseline,
-         residential = residential_percent_change_from_baseline) %>%
-  pivot_longer(retail:residential, names_to = "type", values_to = "pct_diff")
-
-
 ### --------------------------------------------------------------------------------------
 ### Get mortality.org data
 ### --------------------------------------------------------------------------------------
@@ -1102,9 +1089,8 @@ uspop <- read_csv(here("data-raw/data/PEP_2018_PEPSR6H_with_ann.csv")) %>%
 ### Write out the data objects
 ### --------------------------------------------------------------------------------------
 
-## Apple and Google
+## Apple
 usethis::use_data(apple_mobility, overwrite = TRUE, compress = "xz")
-usethis::use_data(google_mobility, overwrite = TRUE, compress = "xz")
 
 ## CDC surveillance
 usethis::use_data(cdc_hospitalizations, overwrite = TRUE, compress = "xz")
