@@ -3,7 +3,7 @@
 \docType{data}
 \name{nytexcess}
 \alias{nytexcess}
-\title{NYT Excess Mortality Estimates, current as of Saturday, October  3, 2020}
+\title{NYT Excess Mortality Estimates, current as of Tuesday, October  6, 2020}
 \format{
 A tibble with 6,712 rows and 12 columns
 \describe{
@@ -38,18 +38,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 12 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 2 \cr
    character \tab 5 \cr
+   Date \tab 2 \cr
    numeric \tab 5 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   start_date \tab 1327 \tab 0.8 \tab 2010-01-09 \tab 2020-06-08 \tab 2017-11-13 \tab 1336 \cr
-   end_date \tab 1327 \tab 0.8 \tab 2010-01-15 \tab 2020-06-14 \tab 2017-11-19 \tab 1336 \cr
 }
 
 
@@ -60,6 +53,13 @@ Table: Data summary\tabular{ll}{
    frequency \tab 0 \tab 1.0 \tab 6 \tab 7 \tab 0 \tab 2 \tab 0 \cr
    year \tab 0 \tab 1.0 \tab 4 \tab 17 \tab 0 \tab 14 \tab 0 \cr
    baseline \tab 6063 \tab 0.1 \tab 2 \tab 27 \tab 0 \tab 10 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   start_date \tab 1327 \tab 0.8 \tab 2010-01-09 \tab 2020-06-08 \tab 2017-11-13 \tab 1336 \cr
+   end_date \tab 1327 \tab 0.8 \tab 2010-01-15 \tab 2020-06-14 \tab 2017-11-19 \tab 1336 \cr
 }
 
 

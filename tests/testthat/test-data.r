@@ -23,6 +23,7 @@ test_that("covus conforms to spec", {
   expect_equal(colnames(covus), covus_colnames)
 
   covus_measure_names <- c("positive",
+                           "probable_cases",
                            "negative",
                            "pending",
                            "hospitalized_currently",

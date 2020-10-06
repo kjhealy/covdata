@@ -66,11 +66,13 @@
 #' `r knitr::kable(unique(covus[, c("measure", "measure_label")]))`
 #'
 #' Not all measures are reported by all states.
-#' The `positive`, `negative`, `death`, `death_confirmed`, and `death_probable` measures are _cumulative_ counts.
+#' The `positive`, `negative`, `death`, `death_confirmed`, `probable_cases` and `death_probable` measures are _cumulative_ counts.
 #' `death_confirmed` is the total number deaths of individuals with COVID-19 infection confirmed by a laboratory test.
 #' In states where the information is available, it tracks only those laboratory-confirmed deaths where COVID also contributed
 #' to the death according to the death certificate. `death_probable` is the total number of deaths where COVID was listed as a
 #' cause of death and there is not a laboratory test confirming COVID-19 infection.
+#'
+#' For further information on the COVID Tracking Project's measures, see \url{https://covidtracking.com/about-data/data-definitions}
 #' @source The COVID-19 Tracking Project \url{https://covidtracking.com}
 "covus"
 

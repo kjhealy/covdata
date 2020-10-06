@@ -665,6 +665,7 @@ covus_measure_labels <- tribble(
   "on_ventilator_cumulative", "Cumulative on Ventilator",
   "on_ventilator_currently",  "Currently on Ventilator",
   "pending",                  "Pending Tests",
+  "probable_cases",           "Probable Cases",
   "positive",                 "Positive Tests",
   "positive_cases_viral", "Total number of positive cases measured with PCR tests",
   "positive_tests_viral", "Total number of positive PCR tests",
