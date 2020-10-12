@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.4</span>
       </span>
     </div>
 
@@ -141,20 +141,20 @@
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">covus</span>
-<span class="co">#&gt; # A tibble: 364,140 x 7</span>
+<span class="co">#&gt; # A tibble: 372,630 x 7</span>
 <span class="co">#&gt;    date       state fips  data_quality_gra… measure       count measure_label   </span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           </span>
-<span class="co">#&gt;  1 2020-10-06 AK    02    A                 positive       9587 Positive Tests  </span>
-<span class="co">#&gt;  2 2020-10-06 AK    02    A                 probable_ca…     NA Probable Cases  </span>
-<span class="co">#&gt;  3 2020-10-06 AK    02    A                 negative     469787 Negative Tests  </span>
-<span class="co">#&gt;  4 2020-10-06 AK    02    A                 pending          NA Pending Tests   </span>
-<span class="co">#&gt;  5 2020-10-06 AK    02    A                 hospitalize…     45 Currently Hospi…</span>
-<span class="co">#&gt;  6 2020-10-06 AK    02    A                 hospitalize…     NA Cumulative Hosp…</span>
-<span class="co">#&gt;  7 2020-10-06 AK    02    A                 in_icu_curr…     NA Currently in ICU</span>
-<span class="co">#&gt;  8 2020-10-06 AK    02    A                 in_icu_cumu…     NA Cumulative in I…</span>
-<span class="co">#&gt;  9 2020-10-06 AK    02    A                 on_ventilat…      6 Currently on Ve…</span>
-<span class="co">#&gt; 10 2020-10-06 AK    02    A                 on_ventilat…     NA Cumulative on V…</span>
-<span class="co">#&gt; # … with 364,130 more rows</span>
+<span class="co">#&gt;  1 2020-10-11 AK    02    A                 positive      10686 Positive Tests  </span>
+<span class="co">#&gt;  2 2020-10-11 AK    02    A                 probable_ca…     NA Probable Cases  </span>
+<span class="co">#&gt;  3 2020-10-11 AK    02    A                 negative     492311 Negative Tests  </span>
+<span class="co">#&gt;  4 2020-10-11 AK    02    A                 pending          NA Pending Tests   </span>
+<span class="co">#&gt;  5 2020-10-11 AK    02    A                 hospitalize…     57 Currently Hospi…</span>
+<span class="co">#&gt;  6 2020-10-11 AK    02    A                 hospitalize…     NA Cumulative Hosp…</span>
+<span class="co">#&gt;  7 2020-10-11 AK    02    A                 in_icu_curr…     NA Currently in ICU</span>
+<span class="co">#&gt;  8 2020-10-11 AK    02    A                 in_icu_cumu…     NA Cumulative in I…</span>
+<span class="co">#&gt;  9 2020-10-11 AK    02    A                 on_ventilat…      7 Currently on Ve…</span>
+<span class="co">#&gt; 10 2020-10-11 AK    02    A                 on_ventilat…     NA Cumulative on V…</span>
+<span class="co">#&gt; # … with 372,620 more rows</span>
 </pre></div>
 <div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="section level3">
 <h3 class="hasAnchor">
@@ -202,7 +202,7 @@
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 17 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 11730 rows containing missing values (geom_text_repel).</span>
+<span class="co">#&gt; Warning: Removed 12010 rows containing missing values (geom_text_repel).</span>
 </pre></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
@@ -218,20 +218,20 @@
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">%in%</span> <span class="kw">measures</span>, <span class="kw">state</span> <span class="op">==</span> <span class="st">"NY"</span>) <span class="op">%&gt;%</span>
   <span class="fu">select</span>(<span class="kw">date</span>, <span class="kw">state</span>, <span class="kw">measure</span>, <span class="kw">count</span>) <span class="op">%&gt;%</span>
   <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>)
-<span class="co">#&gt; # A tibble: 217 x 5</span>
+<span class="co">#&gt; # A tibble: 222 x 5</span>
 <span class="co">#&gt;    date       state positive negative death</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-10-06 NY      466908 10926475 25536</span>
-<span class="co">#&gt;  2 2020-10-05 NY      465515 10831509 25527</span>
-<span class="co">#&gt;  3 2020-10-04 NY      464582 10756038 25519</span>
-<span class="co">#&gt;  4 2020-10-03 NY      463360 10646931 25505</span>
-<span class="co">#&gt;  5 2020-10-02 NY      461629 10514395 25497</span>
-<span class="co">#&gt;  6 2020-10-01 NY      460031 10396500 25490</span>
-<span class="co">#&gt;  7 2020-09-30 NY      458649 10288664 25479</span>
-<span class="co">#&gt;  8 2020-09-29 NY      457649 10191704 25470</span>
-<span class="co">#&gt;  9 2020-09-28 NY      456460 10104662 25468</span>
-<span class="co">#&gt; 10 2020-09-27 NY      455626 10052560 25456</span>
-<span class="co">#&gt; # … with 207 more rows</span>
+<span class="co">#&gt;  1 2020-10-11 NY      474286 11565287 25574</span>
+<span class="co">#&gt;  2 2020-10-10 NY      473143 11448176 25569</span>
+<span class="co">#&gt;  3 2020-10-09 NY      471696 11315044 25561</span>
+<span class="co">#&gt;  4 2020-10-08 NY      470104 11177336 25555</span>
+<span class="co">#&gt;  5 2020-10-07 NY      468268 11033361 25545</span>
+<span class="co">#&gt;  6 2020-10-06 NY      466908 10926475 25536</span>
+<span class="co">#&gt;  7 2020-10-05 NY      465515 10831509 25527</span>
+<span class="co">#&gt;  8 2020-10-04 NY      464582 10756038 25519</span>
+<span class="co">#&gt;  9 2020-10-03 NY      463360 10646931 25505</span>
+<span class="co">#&gt; 10 2020-10-02 NY      461629 10514395 25497</span>
+<span class="co">#&gt; # … with 212 more rows</span>
 </pre></div>
 <p>To calculate <em>daily</em> counts from these cumulative measures, use <code><a href="https://rdrr.io/r/stats/lag.html">lag()</a></code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
@@ -242,20 +242,20 @@
   <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>) <span class="op">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="kw">positive</span><span class="op">:</span><span class="kw">death</span>, <span class="op">~</span><span class="kw">.x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>(<span class="kw">.x</span>, order_by = <span class="kw">date</span>), 
                 .names = <span class="st">"daily_{col}"</span>))
-<span class="co">#&gt; # A tibble: 217 x 8</span>
+<span class="co">#&gt; # A tibble: 222 x 8</span>
 <span class="co">#&gt;    date       state positive negative death daily_positive daily_negative</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-10-06 NY      466908 10926475 25536           1393          94966</span>
-<span class="co">#&gt;  2 2020-10-05 NY      465515 10831509 25527            933          75471</span>
-<span class="co">#&gt;  3 2020-10-04 NY      464582 10756038 25519           1222         109107</span>
-<span class="co">#&gt;  4 2020-10-03 NY      463360 10646931 25505           1731         132536</span>
-<span class="co">#&gt;  5 2020-10-02 NY      461629 10514395 25497           1598         117895</span>
-<span class="co">#&gt;  6 2020-10-01 NY      460031 10396500 25490           1382         107836</span>
-<span class="co">#&gt;  7 2020-09-30 NY      458649 10288664 25479           1000          96960</span>
-<span class="co">#&gt;  8 2020-09-29 NY      457649 10191704 25470           1189          87042</span>
-<span class="co">#&gt;  9 2020-09-28 NY      456460 10104662 25468            834          52102</span>
-<span class="co">#&gt; 10 2020-09-27 NY      455626 10052560 25456            866          83904</span>
-<span class="co">#&gt; # … with 207 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2020-10-11 NY      474286 11565287 25574           1143         117111</span>
+<span class="co">#&gt;  2 2020-10-10 NY      473143 11448176 25569           1447         133132</span>
+<span class="co">#&gt;  3 2020-10-09 NY      471696 11315044 25561           1592         137708</span>
+<span class="co">#&gt;  4 2020-10-08 NY      470104 11177336 25555           1836         143975</span>
+<span class="co">#&gt;  5 2020-10-07 NY      468268 11033361 25545           1360         106886</span>
+<span class="co">#&gt;  6 2020-10-06 NY      466908 10926475 25536           1393          94966</span>
+<span class="co">#&gt;  7 2020-10-05 NY      465515 10831509 25527            933          75471</span>
+<span class="co">#&gt;  8 2020-10-04 NY      464582 10756038 25519           1222         109107</span>
+<span class="co">#&gt;  9 2020-10-03 NY      463360 10646931 25505           1731         132536</span>
+<span class="co">#&gt; 10 2020-10-02 NY      461629 10514395 25497           1598         117895</span>
+<span class="co">#&gt; # … with 212 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span>
 </pre></div>
 </div>
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state" class="section level3">
@@ -356,7 +356,7 @@
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="kw">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 11,949 x 5</span>
+<span class="co">#&gt; # A tibble: 12,224 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -369,7 +369,7 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 11,939 more rows</span>
+<span class="co">#&gt; # … with 12,214 more rows</span>
 </pre></div>
 </div>
 <div id="county-level-table" class="section level3">
@@ -377,7 +377,7 @@
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="kw">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 602,511 x 6</span>
+<span class="co">#&gt; # A tibble: 618,721 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -390,7 +390,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 602,501 more rows</span>
+<span class="co">#&gt; # … with 618,711 more rows</span>
 </pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
