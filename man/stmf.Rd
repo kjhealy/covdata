@@ -5,7 +5,7 @@
 \alias{stmf}
 \title{Short Term Mortality Fluctuations (STMF) data series}
 \format{
-A tibble with 450,945 rows and 17 variables:
+A tibble with 459,150 rows and 17 variables:
 \describe{
 \item{\code{country_code}}{Mortality database country code}
 \item{\code{cname}}{character Country name}
@@ -74,6 +74,7 @@ Countries and years covered in the dataset:\tabular{llllllllllllllllllllllllllll
    Sweden \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Switzerland \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    United States \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   NA \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
 }
 
 
@@ -81,7 +82,7 @@ Variables
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab stmf \cr
-   Number of rows \tab 450945 \cr
+   Number of rows \tab 459150 \cr
    Number of columns \tab 17 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -95,17 +96,17 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-09-27 \tab 2011-05-01 \tab 1599 \cr
+   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-10-04 \tab 2011-07-03 \tab 1600 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   country_code \tab 0 \tab 1.00 \tab 3 \tab 7 \tab 0 \tab 33 \tab 0 \cr
-   cname \tab 0 \tab 1.00 \tab 5 \tab 18 \tab 0 \tab 33 \tab 0 \cr
-   iso2 \tab 28935 \tab 0.94 \tab 2 \tab 2 \tab 0 \tab 30 \tab 0 \cr
-   continent \tab 48675 \tab 0.89 \tab 4 \tab 13 \tab 0 \tab 3 \tab 0 \cr
-   iso3 \tab 48675 \tab 0.89 \tab 3 \tab 3 \tab 0 \tab 28 \tab 0 \cr
+   country_code \tab 0 \tab 1.00 \tab 3 \tab 7 \tab 0 \tab 34 \tab 0 \cr
+   cname \tab 7605 \tab 0.98 \tab 5 \tab 18 \tab 0 \tab 33 \tab 0 \cr
+   iso2 \tab 36585 \tab 0.92 \tab 2 \tab 2 \tab 0 \tab 30 \tab 0 \cr
+   continent \tab 56340 \tab 0.88 \tab 4 \tab 13 \tab 0 \tab 3 \tab 0 \cr
+   iso3 \tab 56340 \tab 0.88 \tab 3 \tab 3 \tab 0 \tab 28 \tab 0 \cr
    sex \tab 0 \tab 1.00 \tab 1 \tab 1 \tab 0 \tab 3 \tab 0 \cr
    age_group \tab 0 \tab 1.00 \tab 3 \tab 5 \tab 0 \tab 5 \tab 0 \cr
 }
@@ -113,14 +114,14 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   year \tab 0 \tab 1 \tab 2010.26 \tab 6.37 \tab 1990 \tab 2005.00 \tab 2011.00 \tab 2016.00 \tab 2020.00 \tab ▁▃▆▇▇ \cr
-   week \tab 0 \tab 1 \tab 26.19 \tab 14.95 \tab 1 \tab 13.00 \tab 26.00 \tab 39.00 \tab 52.00 \tab ▇▇▇▇▇ \cr
-   split \tab 0 \tab 1 \tab 0.07 \tab 0.25 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
-   split_sex \tab 0 \tab 1 \tab 0.01 \tab 0.12 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
+   year \tab 0 \tab 1 \tab 2010.35 \tab 6.37 \tab 1990 \tab 2005.00 \tab 2011.00 \tab 2016.00 \tab 2020.00 \tab ▁▃▆▇▇ \cr
+   week \tab 0 \tab 1 \tab 26.20 \tab 14.94 \tab 1 \tab 13.00 \tab 26.00 \tab 39.00 \tab 52.00 \tab ▇▇▇▇▇ \cr
+   split \tab 0 \tab 1 \tab 0.08 \tab 0.27 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
+   split_sex \tab 0 \tab 1 \tab 0.01 \tab 0.09 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
    forecast \tab 0 \tab 1 \tab 0.12 \tab 0.33 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
-   death_count \tab 0 \tab 1 \tab 593.11 \tab 1630.26 \tab 0 \tab 33.85 \tab 145.00 \tab 376.00 \tab 24947.62 \tab ▇▁▁▁▁ \cr
+   death_count \tab 0 \tab 1 \tab 584.45 \tab 1618.04 \tab 0 \tab 34.00 \tab 142.00 \tab 368.00 \tab 24946.36 \tab ▇▁▁▁▁ \cr
    death_rate \tab 0 \tab 1 \tab 0.05 \tab 0.07 \tab 0 \tab 0.00 \tab 0.02 \tab 0.07 \tab 0.58 \tab ▇▂▁▁▁ \cr
-   deaths_total \tab 0 \tab 1 \tab 2965.53 \tab 6696.16 \tab 2 \tab 445.00 \tab 912.00 \tab 2123.00 \tab 78751.00 \tab ▇▁▁▁▁ \cr
+   deaths_total \tab 0 \tab 1 \tab 2922.26 \tab 6648.66 \tab 2 \tab 436.00 \tab 896.00 \tab 2066.00 \tab 78760.00 \tab ▇▁▁▁▁ \cr
    rate_total \tab 0 \tab 1 \tab 0.01 \tab 0.00 \tab 0 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.02 \tab ▁▇▅▁▁ \cr
 }
 }

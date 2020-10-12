@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Tuesday, October  6, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Sunday, October 11, 2020}
 \format{
-A tibble with 8,568 rows and 5 columns
+A tibble with 8,736 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -28,7 +28,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_ethnicity \cr
-   Number of rows \tab 8568 \cr
+   Number of rows \tab 8736 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -42,7 +42,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-10-04 \tab 2020-07-08 \tab 51 \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-10-07 \tab 2020-07-10 \tab 52 \cr
 }
 
 
@@ -55,8 +55,8 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 2002 \tab 0.77 \tab 24006.55 \tab 48368.22 \tab 0 \tab 2568.75 \tab 9007.5 \tab 25623.5 \tab 717983 \tab ▇▁▁▁▁ \cr
-   deaths \tab 2174 \tab 0.75 \tab 973.80 \tab 2210.09 \tab 0 \tab 40.00 \tab 142.0 \tab 742.0 \tab 18872 \tab ▇▁▁▁▁ \cr
+   cases \tab 2030 \tab 0.77 \tab 24542.21 \tab 49454.76 \tab 0 \tab 2648.75 \tab 9191.5 \tab 25964.75 \tab 729645 \tab ▇▁▁▁▁ \cr
+   deaths \tab 2198 \tab 0.75 \tab 983.75 \tab 2224.66 \tab 0 \tab 40.00 \tab 143.0 \tab 749.75 \tab 18899 \tab ▇▁▁▁▁ \cr
 }
 
 

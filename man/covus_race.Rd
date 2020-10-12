@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Tuesday, October  6, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Sunday, October 11, 2020}
 \format{
-A tibble with 25,704 rows and 5 columns
+A tibble with 26,208 rows and 5 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -28,7 +28,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_race \cr
-   Number of rows \tab 25704 \cr
+   Number of rows \tab 26208 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -42,7 +42,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-10-04 \tab 2020-07-08 \tab 51 \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-10-07 \tab 2020-07-10 \tab 52 \cr
 }
 
 
@@ -55,8 +55,8 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 9313 \tab 0.64 \tab 10886.61 \tab 35950.24 \tab 0 \tab 258 \tab 1588 \tab 8147.5 \tab 717983 \tab ▇▁▁▁▁ \cr
-   deaths \tab 10887 \tab 0.58 \tab 432.72 \tab 1109.05 \tab 0 \tab 8 \tab 45 \tab 279.0 \tab 8916 \tab ▇▁▁▁▁ \cr
+   cases \tab 9460 \tab 0.64 \tab 11103.99 \tab 36548.09 \tab 0 \tab 263 \tab 1609 \tab 8345.5 \tab 729645 \tab ▇▁▁▁▁ \cr
+   deaths \tab 11049 \tab 0.58 \tab 436.61 \tab 1117.31 \tab 0 \tab 8 \tab 45 \tab 281.0 \tab 8916 \tab ▇▁▁▁▁ \cr
 }
 
 
