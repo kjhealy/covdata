@@ -820,9 +820,57 @@ nytexcess <- get_nyt_data(fname = "excess-deaths/deaths",
 ### CDC Data
 ### --------------------------------------------------------------------------------------
 
+# lc_names <- function(x) {
+#   if(is.null(names(x))) {
+#
+#   } else {
+#     colnames(x) <- tolower(colnames(x))
+#     return(x)
+#   }
+# }
+
+
+# my_lch <- function ()
+# {
+#
+#   p <- cdccovidview:::app_params()
+#   p <- map(p, lc_names)
+#
+#     catch <- p$catchments[, c("networkid", "name", "area", "catchmentid")]
+#   age_grp <- p$ages[, c("label", "ageid")]
+#   seas <- p$seasons[, "seasonid", drop = FALSE]
+#   colnames(seas) <- "ID"
+#   .get_one <- function(net_id = 1, cat_id = 22) {
+#     body <- unclass(jsonlite::toJSON(list(AppVersion = jsonlite::unbox("Public"),
+#                                           networkid = jsonlite::unbox(as.integer(net_id)),
+#                                           catchmentid = jsonlite::unbox(as.integer(cat_id)),
+#                                           seasons = seas, agegroups = data.frame(ID = 1:9L))))
+#     headers <- c(`Content-Type` = "application/json;charset=UTF-8")
+#     res <- httr::POST(url = "https://gis.cdc.gov/grasp/covid19_3_api/PostPhase03DownloadData",
+#                       httr::add_headers(.headers = headers), .CDCCOVIDVIEW_UA,
+#                       body = body)
+#     httr::stop_for_status(res)
+#     if (has_bom(res)) {
+#       out <- sans_bom(res)
+#     }
+#     else {
+#       out <- httr::content(res, as = "text")
+#     }
+#     out <- jsonlite::fromJSON(out)
+#     out <- as_tibble(out$datadownload)
+#     colnames(out) <- gsub("-", "_", colnames(out))
+#     out
+#   }
+#   res <- lapply(1:nrow(catch), function(.idx) {
+#     .get_one(net_id = catch$networkid[.idx], cat_id = catch$catchmentid[.idx])
+#   })
+#   out <- do.call(rbind.data.frame, res)
+#   as_tibble(out)
+# }
+
 ## Get CDC Surveillance Data
 ## Courtesy of Bob Rudis's cdccovidview package
-cdc_hospitalizations <- cdccovidview::laboratory_confirmed_hospitalizations()
+## cdc_hospitalizations <- cdccovidview::laboratory_confirmed_hospitalizations()
 
 ## cdc_death_counts <- cdccovidview::provisional_death_counts()
 cdc_death_counts <- my_pdc()
@@ -1093,7 +1141,7 @@ uspop <- read_csv(here("data-raw/data/PEP_2018_PEPSR6H_with_ann.csv")) %>%
 usethis::use_data(apple_mobility, overwrite = TRUE, compress = "xz")
 
 ## CDC surveillance
-usethis::use_data(cdc_hospitalizations, overwrite = TRUE, compress = "xz")
+## usethis::use_data(cdc_hospitalizations, overwrite = TRUE, compress = "xz")
 usethis::use_data(cdc_deaths_by_week, overwrite = TRUE, compress = "xz")
 usethis::use_data(cdc_deaths_by_age, overwrite = TRUE, compress = "xz")
 usethis::use_data(cdc_deaths_by_sex, overwrite = TRUE, compress = "xz")

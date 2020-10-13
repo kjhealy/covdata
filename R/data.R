@@ -228,37 +228,6 @@
 #' @references For further details on these data see \url{https://github.com/nytimes/covid-19-data/tree/master/excess-deaths}
 "nytexcess"
 
-#' @title CDC Laboratory Confirmed COVID-19-Associated Hospitalization in the US
-#' @description Courtesy of Bob Rudis's cdccovidview package
-#' @format A data frame with `r fmt_nr(cdc_hospitalizations)` rows and `r fmt_nc(cdc_hospitalizations)` variables:
-#' \describe{
-#'   \item{\code{catchment}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{network}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{year}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{mmwr_year}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{mmwr_week}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{age_category}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{cumulative_rate}}{double COLUMN_DESCRIPTION}
-#'   \item{\code{weekly_rate}}{double COLUMN_DESCRIPTION}
-#'}
-#' @details
-#' ```{r, results = "asis", echo = FALSE}
-#' skimr::skim(cdc_hospitalizations)
-#' ```
-#'
-#' The U.S. Centers for Disease Control provides weekly
-#' summary and interpretation of key indicators that have been adapted
-#' to track the COVID-19 pandemic in the United States. Data is
-#' retrieved using the cdccovidview package from both COVIDView
-#' (<https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>)
-#' and COVID-NET
-#' (<https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html>).
-#' @source Courtesy of Bob Rudis's cdccovidview package
-#' @references <https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html>
-#' @author Kieran Healy
-"cdc_hospitalizations"
-
-
 #' @title CDC Provisional death counts by week
 #' @description Provisional Death Counts for Coronavirus Disease (COVID-19)
 #' @format A data frame with `r fmt_nr(cdc_deaths_by_week)` rows and `r fmt_nc(cdc_deaths_by_week)` variables:

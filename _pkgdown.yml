@@ -22,7 +22,6 @@ reference:
       - cdc_deaths_by_sex
       - cdc_deaths_by_state
       - cdc_deaths_by_week
-      - cdc_hospitalizations
       - nssp_covid_er_nat
       - nssp_covid_er_reg
   - title: "COVID Tracking Project"

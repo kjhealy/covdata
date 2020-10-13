@@ -97,12 +97,12 @@ test_that("nytexcess conforms to spec", {
   expect_equal(colnames(nytexcess), nytexcess_colnames)
 })
 
-## cdc_hospitalizations
-test_that("cdc_hospitalizations conforms to spec", {
-  cdc_hospitalizations_colnames <- c("catchment", "network", "year", "mmwr_year",
-                                     "mmwr_week", "age_category", "cumulative_rate", "weekly_rate")
-  expect_equal(colnames(cdc_hospitalizations), cdc_hospitalizations_colnames)
-})
+# ## cdc_hospitalizations
+# test_that("cdc_hospitalizations conforms to spec", {
+#   cdc_hospitalizations_colnames <- c("catchment", "network", "year", "mmwr_year",
+#                                      "mmwr_week", "age_category", "cumulative_rate", "weekly_rate")
+#   expect_equal(colnames(cdc_hospitalizations), cdc_hospitalizations_colnames)
+# })
 
 ## cdc_deaths_by_week
 test_that("cdc_deaths_by_week conforms to spec", {
