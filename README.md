@@ -50,7 +50,7 @@ There are two ways to install the `covdata` package.
 You can install covdata from [GitHub](https://github.com/kjhealy/covdata) with:
 
 ``` r
-remotes::install_github("kjhealy/covdata")
+remotes::install_github("kjhealy/covdata@main")
 ```
 
 ### Installation using `drat`
