@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 data for the USA, current as of Sunday, October 11, 2020 — covus • covdata</title>
+<title>COVID-19 data for the USA, current as of Tuesday, October 13, 2020 — covus • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 data for the USA, current as of Sunday, October 11, 2020 — covus" />
+<meta property="og:title" content="COVID-19 data for the USA, current as of Tuesday, October 13, 2020 — covus" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.5</span>
       </span>
     </div>
 
@@ -138,7 +138,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 data for the USA, current as of Sunday, October 11, 2020</h1>
+    <h1>COVID-19 data for the USA, current as of Tuesday, October 13, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus.Rd</code></div>
     </div>
@@ -152,7 +152,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 372,630 rows and 7 columns</p><dl>
+    <p>A tibble with 374,310 rows and 7 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>Two letter State abbreviation (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -171,7 +171,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>covus</td></tr>
-<tr><td>Number of rows</td><td>372630</td></tr>
+<tr><td>Number of rows</td><td>374310</td></tr>
 <tr><td>Number of columns</td><td>7</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -186,25 +186,25 @@
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-10-11</td><td>2020-06-23</td><td>264</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-22</td><td>2020-10-12</td><td>2020-06-23</td><td>265</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>state</td><td>0</td><td>1.0</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
-<tr><td>fips</td><td>0</td><td>1.0</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
-<tr><td>data_quality_grade</td><td>35550</td><td>0.9</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
-<tr><td>measure</td><td>0</td><td>1.0</td><td>5</td><td>30</td><td>0</td><td>30</td><td>0</td></tr>
-<tr><td>measure_label</td><td>0</td><td>1.0</td><td>6</td><td>54</td><td>0</td><td>30</td><td>0</td></tr>
+<tr><td>state</td><td>0</td><td>1.00</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
+<tr><td>fips</td><td>0</td><td>1.00</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
+<tr><td>data_quality_grade</td><td>35550</td><td>0.91</td><td>1</td><td>2</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td>measure</td><td>0</td><td>1.00</td><td>5</td><td>30</td><td>0</td><td>30</td><td>0</td></tr>
+<tr><td>measure_label</td><td>0</td><td>1.00</td><td>6</td><td>54</td><td>0</td><td>30</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>count</td><td>249267</td><td>0.33</td><td>183044.8</td><td>730733.3</td><td>0</td><td>284</td><td>3566</td><td>62030</td><td>16047004</td><td>▇▁▁▁▁</td></tr>
+<tr><td>count</td><td>250241</td><td>0.33</td><td>184435.9</td><td>736382.8</td><td>0</td><td>286</td><td>3583</td><td>62502</td><td>16191341</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
