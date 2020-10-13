@@ -103,12 +103,6 @@ skimr::skim(cdc_deaths_by_state)
 skimr::skim(cdc_deaths_by_week)
 ```
 
-### Hospitalization
-
-```{r}
-skimr::skim(cdc_hospitalizations)
-```
-
 ### National ER Visits
 
 ```{r}
