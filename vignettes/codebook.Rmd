@@ -156,13 +156,6 @@ skimr::skim(apple_mobility)
 ```
 
 
-## Policy data from the [CoronaNet Project](https://coronanet-project.org)
-
-```{r}
-skimr::skim(coronanet)
-```
-
-
 ## Other Tables
 
 ### Country Codes
