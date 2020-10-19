@@ -28,9 +28,6 @@
     <loc>https://kjhealy.github.io/covdata/reference/cdc_deaths_by_week.html</loc>
   </url>
   <url>
-    <loc>https://kjhealy.github.io/covdata/reference/coronanet.html</loc>
-  </url>
-  <url>
     <loc>https://kjhealy.github.io/covdata/reference/countries.html</loc>
   </url>
   <url>
@@ -107,9 +104,6 @@
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/articles/codebook.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/coronanet-data.html</loc>
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/articles/covdata.html</loc>

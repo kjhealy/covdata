@@ -3,14 +3,13 @@ pkgdown: 1.6.1.9000
 pkgdown_sha: e1e46f2e13c7efdb17bc4eae40bc3779c2b0b517
 articles:
   codebook: codebook.html
-  coronanet-data: coronanet-data.html
   covdata: covdata.html
   ecdc-data: ecdc-data.html
   excess-mortality: excess-mortality.html
   mobility-data: mobility-data.html
   new-york-times: new-york-times.html
   us-data: us-data.html
-last_built: 2020-10-13T21:05Z
+last_built: 2020-10-19T13:57Z
 urls:
   reference: https://kjhealy.github.io/covdata/reference
   article: https://kjhealy.github.io/covdata/articles
