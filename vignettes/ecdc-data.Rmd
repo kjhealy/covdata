@@ -98,14 +98,15 @@ covnat %>%
 
 covnat %>%
   mutate(cname = recode(cname, `United States` = "USA",
+                        `Bolivia, Plurinational State of` = "Bolivia",
                         `Iran, Islamic Republic of` = "Iran",
                         `Korea, Republic of` = "South Korea",
                         `United Kingdom` = "UK"),
-         cgroup = case_when(iso3 %in% focus_cn ~ iso3, 
+         cgroup = case_when(iso3 %in% focus_on ~ iso3, 
                             TRUE ~ "ZZOTHER")) %>%
   mutate(cases7 = slider::slide_dbl((deaths/pop)*1e6, mean, .before = 7, .after = 0, na.rm = TRUE),
          deaths7 = slider::slide_dbl((deaths/pop)*1e6, mean, .before = 7, .after = 0, na.rm = TRUE)) %>%
-  filter(iso3 %in% focus_cn) %>%
+  filter(iso3 %in% focus_on) %>%
   ggplot(mapping = aes(x = date, y = deaths7)) + 
   geom_line(size = 0.5) + 
 #  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
@@ -119,4 +120,4 @@ covnat %>%
 
 ```
 
-Note the odd effect of Spain's decision to change how it's reporting deaths.
+Note the effects of reporting issues in various countries.
