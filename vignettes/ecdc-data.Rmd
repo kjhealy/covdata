@@ -30,7 +30,7 @@ covnat
 
 ### Plot national cases over time, highlighting specific countries of interest
 
-```{r ecdc-example, fig.height=5, fig.width=8, dpi=100}
+```{r ecdc-example, fig.height=9, fig.width=16, dpi=100}
 ## Libraries for the graphs
 library(ggrepel)
 
@@ -41,19 +41,29 @@ library(ggrepel)
 
 
 ## Countries to highlight
-focus_cn <- c("CHN", "DEU", "GBR", "USA", "IRN", "JPN",
-              "KOR", "ITA", "FRA", "ESP", "CHE", "TUR")
+focus_on <- covnat %>%
+  filter(cu_cases > 99, pop > 1e7) %>%
+  mutate(rate = cu_cases / pop) %>% 
+  summarize(mean_rate = mean(rate, na.rm = TRUE)) %>% 
+  slice_max(n = 20, order_by = mean_rate) %>% 
+  pull(iso3)
 
 ## Colors
 cgroup_cols <- c("#195F90FF", "#D76500FF", "#238023FF", "#AB1F20FF", "#7747A3FF", 
-                 "#70453CFF", "#D73EA8FF", "#666666FF", "#96971BFF", "#1298A6FF", "#6F9BD6FF", 
-                 "#FF952DFF", "gray70")
+                 "#70453CFF", "#D73EA8FF", "#666666FF", "#96971BFF", "#1298A6FF", 
+                 "#6F9BD6FF", "#FF952DFF", "#195F90FF", "#D76500FF", "#238023FF",
+                 "#70453CFF", "#D73EA8FF", "#666666FF", "#96971BFF", "#1298A6FF",
+                 "gray70")
 
 covnat %>%
-  filter(cu_cases > 99) %>%
+  filter(cu_cases > 99, pop > 1e7) %>%
+  mutate(rate = cu_cases / pop) %>% 
   mutate(days_elapsed = date - min(date),
         end_label = ifelse(date == max(date), cname, NA),
         end_label = recode(end_label, `United States` = "USA",
+                           `Bolivia, Plurinational State of` = "Bolivia",
+                           `Russian Federation` = "Russia",
+                           `Dominican Republic` = "Dominican Rep.",
                             `Iran, Islamic Republic of` = "Iran",
                             `Korea, Republic of` = "South Korea",
                             `United Kingdom` = "UK"),
@@ -61,25 +71,22 @@ covnat %>%
                         `Iran, Islamic Republic of` = "Iran",
                         `Korea, Republic of` = "South Korea",
                         `United Kingdom` = "UK"),
-         end_label = case_when(iso3 %in% focus_cn ~ end_label,
+         end_label = case_when(iso3 %in% focus_on ~ end_label,
                                TRUE ~ NA_character_), 
-         cgroup = case_when(iso3 %in% focus_cn ~ iso3, 
+         cgroup = case_when(iso3 %in% focus_on ~ iso3, 
                             TRUE ~ "ZZOTHER")) %>%
-  ggplot(mapping = aes(x = days_elapsed, y = cu_cases, 
+  ggplot(mapping = aes(x = days_elapsed, y = cu_cases / pop, 
          color = cgroup, label = end_label, 
          group = cname)) + 
   geom_line(size = 0.5) + 
   geom_text_repel(nudge_x = 0.75,
                   segment.color = NA) + 
   guides(color = FALSE) + 
-  scale_color_manual(values = cgroup_cols) +
-  scale_y_continuous(labels = scales::comma_format(accuracy = 1), 
-                     breaks = 2^seq(4, 20, 1),
-                     trans = "log2") + 
+  scale_color_manual(values = cgroup_cols) + 
   labs(x = "Days Since 100th Confirmed Case", 
-       y = "Cumulative Number of Reported Cases (log2 scale)", 
-       title = "Cumulative Reported Cases of COVID-19, Selected Countries", 
-       subtitle = paste("ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       y = "Cumulative reported Cases per capita", 
+       title = "Cumulative Reported Cases of COVID-19 per capita", 
+       subtitle = paste("Selected Countries with >1m population. ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 
