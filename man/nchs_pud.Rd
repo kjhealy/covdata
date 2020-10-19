@@ -37,18 +37,10 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 3 \cr
    character \tab 8 \cr
+   Date \tab 3 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   cdc_report_dt \tab 0 \tab 1.00 \tab 2020-01-01 \tab 2020-09-15 \tab 2020-07-04 \tab 255 \cr
-   pos_spec_dt \tab 2957494 \tab 0.34 \tab 2020-01-01 \tab 2020-09-28 \tab 2020-05-30 \tab 236 \cr
-   onset_dt \tab 2113224 \tab 0.53 \tab 2020-01-01 \tab 2020-09-29 \tab 2020-06-24 \tab 273 \cr
 }
 
 
@@ -62,6 +54,14 @@ Table: Data summary\tabular{ll}{
    icu_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
    death_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
    medcond_yn \tab 0 \tab 1 \tab 2 \tab 7 \tab 0 \tab 4 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   cdc_report_dt \tab 0 \tab 1.00 \tab 2020-01-01 \tab 2020-09-15 \tab 2020-07-04 \tab 255 \cr
+   pos_spec_dt \tab 2957494 \tab 0.34 \tab 2020-01-01 \tab 2020-09-28 \tab 2020-05-30 \tab 236 \cr
+   onset_dt \tab 2113224 \tab 0.53 \tab 2020-01-01 \tab 2020-09-29 \tab 2020-06-24 \tab 273 \cr
 }
 
 

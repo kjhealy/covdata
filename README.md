@@ -10,7 +10,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Tuesday, October 13, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Monday, October 19, 2020. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -31,10 +31,6 @@
 
 - Data from [Apple](http://apple.com/covid19) on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.
 - Data from [Google](https://www.google.com/covid19/mobility/data_documentation.html) on relative trends in mobility was previously included with this package but is now available in [covmobility](https://kjhealy.github.io/covmobility).
-
-### Policy data
-
-- Data on policy interventions from the [CoronaNet Project](https://coronanet-project.org), providing event-based tracking of governmental policy responses to COVID-19. 
 
 ## Caveat Emptor
 
@@ -96,12 +92,12 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ```r
 library(tidyverse) # Optional but strongly recommended
-#> ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 #> ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-#> ✓ tibble  3.0.3     ✓ dplyr   1.0.2
+#> ✓ tibble  3.0.4     ✓ dplyr   1.0.2
 #> ✓ tidyr   1.1.2     ✓ stringr 1.4.0
 #> ✓ readr   1.3.1     ✓ forcats 0.5.0
-#> ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> x dplyr::filter()  masks stats::filter()
 #> x purrr::is_null() masks testthat::is_null()
 #> x dplyr::lag()     masks stats::lag()
@@ -117,7 +113,7 @@ library(covdata)
 #>     %nin%
 
 covnat
-#> # A tibble: 48,252 x 8
+#> # A tibble: 48,670 x 8
 #> # Groups:   iso3 [209]
 #>    date       cname       iso3  cases deaths       pop cu_cases cu_deaths
 #>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
@@ -131,14 +127,14 @@ covnat
 #>  8 2019-12-31 Belarus     BLR       0      0   9452409        0         0
 #>  9 2019-12-31 Belgium     BEL       0      0  11455519        0         0
 #> 10 2019-12-31 Brazil      BRA       0      0 211049519        0         0
-#> # … with 48,242 more rows
+#> # … with 48,660 more rows
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 272 x 8
+#> # A tibble: 273 x 8
 #>    geo_type region transportation_… alternative_name sub_region country
 #>    <chr>    <chr>  <chr>            <chr>            <chr>      <chr>  
 #>  1 city     New Y… walking          NYC              New York   United…
@@ -151,7 +147,7 @@ apple_mobility %>%
 #>  8 city     New Y… walking          NYC              New York   United…
 #>  9 city     New Y… walking          NYC              New York   United…
 #> 10 city     New Y… walking          NYC              New York   United…
-#> # … with 262 more rows, and 2 more variables: date <date>, score <dbl>
+#> # … with 263 more rows, and 2 more variables: date <date>, score <dbl>
 ```
 
 

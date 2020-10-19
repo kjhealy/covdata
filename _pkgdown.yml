@@ -52,10 +52,6 @@ reference:
       - nytcovstate
       - nytexcess
       - nytcovus
-  - title: "Policy Data"
-    desc: Cross-national Data from the Coronanet project.
-    contents:
-      - coronanet
   - title: "Other"
     desc: Other useful tables
     contents:
@@ -84,7 +80,6 @@ articles:
   - us-data
   - mobility-data
   - new-york-times
-  - coronanet-data
 
 navbar:
   right:

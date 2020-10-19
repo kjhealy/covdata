@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytexcess}
 \alias{nytexcess}
-\title{NYT Excess Mortality Estimates, current as of Tuesday, October 13, 2020}
+\title{NYT Excess Mortality Estimates, current as of Monday, October 19, 2020}
 \format{
-A tibble with 6,712 rows and 12 columns
+A tibble with 5,749 rows and 12 columns
 \describe{
 \item{\code{country}}{character Country Name}
 \item{\code{placename}}{character Place Name}
@@ -34,42 +34,42 @@ All-cause mortality is widely used by demographers and other researchers to unde
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytexcess \cr
-   Number of rows \tab 6712 \cr
+   Number of rows \tab 5749 \cr
    Number of columns \tab 12 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 2 \cr
    character \tab 5 \cr
+   Date \tab 2 \cr
    numeric \tab 5 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   start_date \tab 1327 \tab 0.8 \tab 2010-01-09 \tab 2020-06-08 \tab 2017-11-13 \tab 1336 \cr
-   end_date \tab 1327 \tab 0.8 \tab 2010-01-15 \tab 2020-06-14 \tab 2017-11-19 \tab 1336 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   country \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 32 \tab 0 \cr
+   placename \tab 5359 \tab 0.07 \tab 5 \tab 8 \tab 0 \tab 5 \tab 0 \cr
+   frequency \tab 0 \tab 1.00 \tab 6 \tab 7 \tab 0 \tab 2 \tab 0 \cr
+   year \tab 0 \tab 1.00 \tab 4 \tab 17 \tab 0 \tab 14 \tab 0 \cr
+   baseline \tab 4914 \tab 0.15 \tab 20 \tab 25 \tab 0 \tab 7 \tab 0 \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   country \tab 0 \tab 1.0 \tab 4 \tab 14 \tab 0 \tab 28 \tab 0 \cr
-   placename \tab 4013 \tab 0.4 \tab 4 \tab 14 \tab 0 \tab 28 \tab 0 \cr
-   frequency \tab 0 \tab 1.0 \tab 6 \tab 7 \tab 0 \tab 2 \tab 0 \cr
-   year \tab 0 \tab 1.0 \tab 4 \tab 17 \tab 0 \tab 14 \tab 0 \cr
-   baseline \tab 6063 \tab 0.1 \tab 2 \tab 27 \tab 0 \tab 10 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   start_date \tab 620 \tab 0.89 \tab 2010-01-09 \tab 2020-09-21 \tab 2017-12-04 \tab 1141 \cr
+   end_date \tab 620 \tab 0.89 \tab 2010-01-15 \tab 2020-09-27 \tab 2017-12-10 \tab 1141 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   month \tab 0 \tab 1.00 \tab 6.19 \tab 3.38 \tab 1 \tab 3 \tab 6.0 \tab 9 \tab 12 \tab ▇▆▅▅▆ \cr
-   week \tab 1177 \tab 0.82 \tab 24.83 \tab 14.49 \tab 2 \tab 12 \tab 23.0 \tab 37 \tab 52 \tab ▇▇▆▆▅ \cr
-   deaths \tab 0 \tab 1.00 \tab 5121.71 \tab 7796.71 \tab 48 \tab 986 \tab 1718.5 \tab 8225 \tab 80623 \tab ▇▁▁▁▁ \cr
-   expected_deaths \tab 6091 \tab 0.09 \tab 5709.37 \tab 10323.20 \tab 67 \tab 1011 \tab 1573.0 \tab 7085 \tab 60617 \tab ▇▁▁▁▁ \cr
-   excess_deaths \tab 6091 \tab 0.09 \tab 688.60 \tab 2538.18 \tab -4047 \tab -99 \tab 8.0 \tab 410 \tab 26351 \tab ▇▁▁▁▁ \cr
+   month \tab 0 \tab 1.00 \tab 6.31 \tab 3.26 \tab 1 \tab 4 \tab 6 \tab 9 \tab 12 \tab ▇▆▆▆▇ \cr
+   week \tab 570 \tab 0.90 \tab 25.35 \tab 14.06 \tab 2 \tab 13 \tab 25 \tab 37 \tab 52 \tab ▇▇▇▆▅ \cr
+   deaths \tab 0 \tab 1.00 \tab 6539.49 \tab 9519.74 \tab 455 \tab 1243 \tab 2284 \tab 10132 \tab 82867 \tab ▇▁▁▁▁ \cr
+   expected_deaths \tab 4914 \tab 0.15 \tab 8304.73 \tab 12600.93 \tab 563 \tab 1375 \tab 2486 \tab 10336 \tab 61646 \tab ▇▁▁▁▁ \cr
+   excess_deaths \tab 4914 \tab 0.15 \tab 1103.43 \tab 3270.77 \tab -4047 \tab -74 \tab 31 \tab 514 \tab 27802 \tab ▇▁▁▁▁ \cr
 }
 
 

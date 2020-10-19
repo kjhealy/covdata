@@ -1113,10 +1113,10 @@ stmf <- left_join(stmf, md_ccodes) %>%
 ### --------------------------------------------------------------------------------------
 ### Get Coronanet policy data
 ### --------------------------------------------------------------------------------------
-coronanet_raw <- get_corona_tscs()
-
-coronanet <- coronanet_raw %>%
-  rename(iso3 = iso_a3, iso2 = iso_a2)
+# coronanet_raw <- get_corona_tscs()
+#
+# coronanet <- coronanet_raw %>%
+#   rename(iso3 = iso_a3, iso2 = iso_a2)
 
 ### --------------------------------------------------------------------------------------
 ### US Census Population Estimates for States
@@ -1157,7 +1157,7 @@ usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wdc, overwrite = TRUE, compress = "xz")
 
 ## CoronaNet
-usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
+## usethis::use_data(coronanet, overwrite = TRUE, compress = "xz")
 
 ## COVID Tracking Project
 usethis::use_data(covus, overwrite = TRUE, compress = "xz")

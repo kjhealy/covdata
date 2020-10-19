@@ -5,7 +5,7 @@
 \alias{stmf}
 \title{Short Term Mortality Fluctuations (STMF) data series}
 \format{
-A tibble with 459,150 rows and 17 variables:
+A tibble with 463,605 rows and 17 variables:
 \describe{
 \item{\code{country_code}}{Mortality database country code}
 \item{\code{cname}}{character Country name}
@@ -44,6 +44,7 @@ Countries and years covered in the dataset:\tabular{llllllllllllllllllllllllllll
    Austria \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Belgium \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Bulgaria \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
+   Chile \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Croatia \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Czech Republic \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
    Denmark \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab - \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \tab Y \cr
@@ -82,46 +83,46 @@ Variables
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab stmf \cr
-   Number of rows \tab 459150 \cr
+   Number of rows \tab 463605 \cr
    Number of columns \tab 17 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 7 \cr
+   Date \tab 1 \cr
    numeric \tab 9 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-10-04 \tab 2011-07-03 \tab 1600 \cr
-}
-
-
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   country_code \tab 0 \tab 1.00 \tab 3 \tab 7 \tab 0 \tab 34 \tab 0 \cr
-   cname \tab 7605 \tab 0.98 \tab 5 \tab 18 \tab 0 \tab 33 \tab 0 \cr
-   iso2 \tab 36585 \tab 0.92 \tab 2 \tab 2 \tab 0 \tab 30 \tab 0 \cr
-   continent \tab 56340 \tab 0.88 \tab 4 \tab 13 \tab 0 \tab 3 \tab 0 \cr
-   iso3 \tab 56340 \tab 0.88 \tab 3 \tab 3 \tab 0 \tab 28 \tab 0 \cr
+   country_code \tab 0 \tab 1.00 \tab 3 \tab 7 \tab 0 \tab 35 \tab 0 \cr
+   cname \tab 7605 \tab 0.98 \tab 5 \tab 18 \tab 0 \tab 34 \tab 0 \cr
+   iso2 \tab 36675 \tab 0.92 \tab 2 \tab 2 \tab 0 \tab 31 \tab 0 \cr
+   continent \tab 56520 \tab 0.88 \tab 4 \tab 13 \tab 0 \tab 4 \tab 0 \cr
+   iso3 \tab 56520 \tab 0.88 \tab 3 \tab 3 \tab 0 \tab 29 \tab 0 \cr
    sex \tab 0 \tab 1.00 \tab 1 \tab 1 \tab 0 \tab 3 \tab 0 \cr
    age_group \tab 0 \tab 1.00 \tab 3 \tab 5 \tab 0 \tab 5 \tab 0 \cr
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-10-11 \tab 2011-08-07 \tab 1601 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   year \tab 0 \tab 1 \tab 2010.35 \tab 6.37 \tab 1990 \tab 2005.00 \tab 2011.00 \tab 2016.00 \tab 2020.00 \tab ▁▃▆▇▇ \cr
-   week \tab 0 \tab 1 \tab 26.20 \tab 14.94 \tab 1 \tab 13.00 \tab 26.00 \tab 39.00 \tab 52.00 \tab ▇▇▇▇▇ \cr
+   year \tab 0 \tab 1 \tab 2010.43 \tab 6.39 \tab 1990 \tab 2005.00 \tab 2011.00 \tab 2016.00 \tab 2020.00 \tab ▁▃▆▇▇ \cr
+   week \tab 0 \tab 1 \tab 26.21 \tab 14.93 \tab 1 \tab 13.00 \tab 26.00 \tab 39.00 \tab 52.00 \tab ▇▇▇▇▇ \cr
    split \tab 0 \tab 1 \tab 0.08 \tab 0.27 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
    split_sex \tab 0 \tab 1 \tab 0.01 \tab 0.09 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
-   forecast \tab 0 \tab 1 \tab 0.12 \tab 0.33 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
-   death_count \tab 0 \tab 1 \tab 584.45 \tab 1618.04 \tab 0 \tab 34.00 \tab 142.00 \tab 368.00 \tab 24946.36 \tab ▇▁▁▁▁ \cr
+   forecast \tab 0 \tab 1 \tab 0.13 \tab 0.33 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
+   death_count \tab 0 \tab 1 \tab 582.03 \tab 1612.10 \tab 0 \tab 34.00 \tab 143.00 \tab 368.00 \tab 24948.04 \tab ▇▁▁▁▁ \cr
    death_rate \tab 0 \tab 1 \tab 0.05 \tab 0.07 \tab 0 \tab 0.00 \tab 0.02 \tab 0.07 \tab 0.58 \tab ▇▂▁▁▁ \cr
-   deaths_total \tab 0 \tab 1 \tab 2922.26 \tab 6648.66 \tab 2 \tab 436.00 \tab 896.00 \tab 2066.00 \tab 78760.00 \tab ▇▁▁▁▁ \cr
+   deaths_total \tab 0 \tab 1 \tab 2910.17 \tab 6625.05 \tab 2 \tab 438.00 \tab 902.00 \tab 2054.00 \tab 78769.00 \tab ▇▁▁▁▁ \cr
    rate_total \tab 0 \tab 1 \tab 0.01 \tab 0.00 \tab 0 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.02 \tab ▁▇▅▁▁ \cr
 }
 }
