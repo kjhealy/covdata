@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
       </span>
     </div>
 
@@ -91,7 +91,8 @@
 
       
 
-      </header><script src="ecdc-data_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="ecdc-data_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="ecdc-data_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="ecdc-data_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>European Centers for Disease Control Data</h1>
@@ -130,8 +131,8 @@
 <a href="#national-level-case-and-mortality-data-from-the-european-centers-for-disease-control-" class="anchor"></a>National level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">covnat</span>
-<span class="co">#&gt; # A tibble: 49,928 x 8</span>
-<span class="co">#&gt; # Groups:   iso3 [210]</span>
+<span class="co">#&gt; # A tibble: 51,197 x 8</span>
+<span class="co">#&gt; # Groups:   iso3 [211]</span>
 <span class="co">#&gt;    date       cname       iso3  cases deaths       pop cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2019-12-31 Afghanistan AFG       0      0  38041757        0         0</span>
@@ -144,7 +145,7 @@
 <span class="co">#&gt;  8 2019-12-31 Belarus     BLR       0      0   9452409        0         0</span>
 <span class="co">#&gt;  9 2019-12-31 Belgium     BEL       0      0  11455519        0         0</span>
 <span class="co">#&gt; 10 2019-12-31 Brazil      BRA       0      0 211049519        0         0</span>
-<span class="co">#&gt; # … with 49,918 more rows</span>
+<span class="co">#&gt; # … with 51,187 more rows</span>
 </pre></div>
 <div id="plot-national-cases-over-time-highlighting-specific-countries-of-interest" class="section level3">
 <h3 class="hasAnchor">
@@ -210,7 +211,7 @@
        caption = <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span>) <span class="op">+</span>
   <span class="fu">theme_minimal</span>()
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Removed 18379 rows containing missing values (geom_text_repel).</span>
+<span class="co">#&gt; Warning: Removed 18918 rows containing missing values (geom_text_repel).</span>
 </pre></div>
 <p><img src="ecdc-data_files/figure-html/ecdc-example-1.png" width="1600"></p>
 </div>

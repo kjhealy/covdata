@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
       </span>
     </div>
 
@@ -91,7 +91,8 @@
 
       
 
-      </header><script src="new-york-times_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="new-york-times_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="new-york-times_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="new-york-times_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>New York Times Data</h1>
@@ -136,7 +137,7 @@
 <a href="#u-s--national-table" class="anchor"></a>U.S. National Table</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">nytcovus</span>
-<span class="co">#&gt; # A tibble: 271 x 3</span>
+<span class="co">#&gt; # A tibble: 278 x 3</span>
 <span class="co">#&gt;    date       cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21     1      0</span>
@@ -149,7 +150,7 @@
 <span class="co">#&gt;  8 2020-01-28     5      0</span>
 <span class="co">#&gt;  9 2020-01-29     5      0</span>
 <span class="co">#&gt; 10 2020-01-30     6      0</span>
-<span class="co">#&gt; # … with 261 more rows</span>
+<span class="co">#&gt; # … with 268 more rows</span>
 </pre></div>
 </div>
 <div id="u-s--state-table" class="section level3">
@@ -157,7 +158,7 @@
 <a href="#u-s--state-table" class="anchor"></a>U.S. State Table</h3>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 12,609 x 5</span>
+<span class="co">#&gt; # A tibble: 12,994 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -170,7 +171,7 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 12,599 more rows</span>
+<span class="co">#&gt; # … with 12,984 more rows</span>
 </pre></div>
 </div>
 <div id="u-s--county-table" class="section level3">
@@ -178,7 +179,7 @@
 <a href="#u-s--county-table" class="anchor"></a>U.S. County Table</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="kw">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 641,431 x 6</span>
+<span class="co">#&gt; # A tibble: 664,147 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -191,7 +192,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 641,421 more rows</span>
+<span class="co">#&gt; # … with 664,137 more rows</span>
 </pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
