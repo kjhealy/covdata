@@ -3,9 +3,9 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Monday, October 19, 2020}
+\title{International COVID-19 cases and deaths, current as of Sunday, October 25, 2020}
 \format{
-A tibble with 49,928 rows and 8 columns
+A tibble with 51,197 rows and 8 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{cname}{Name of country (character)}
@@ -30,7 +30,7 @@ A dataset containing national-level ECDC data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab dplyr::ungroup(covnat) \cr
-   Number of rows \tab 49928 \cr
+   Number of rows \tab 51197 \cr
    Number of columns \tab 8 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -44,24 +44,24 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-10-19 \tab 2020-06-22 \tab 294 \cr
+   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-10-25 \tab 2020-06-25 \tab 300 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   cname \tab 0 \tab 1 \tab 4 \tab 42 \tab 0 \tab 210 \tab 0 \cr
-   iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 210 \tab 0 \cr
+   cname \tab 0 \tab 1 \tab 4 \tab 42 \tab 0 \tab 211 \tab 0 \cr
+   iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 211 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 803.28 \tab 4734.98 \tab -8261 \tab 0 \tab 11 \tab 182.0 \tab 97894 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 22.32 \tab 125.70 \tab -1918 \tab 0 \tab 0 \tab 3.0 \tab 4928 \tab ▁▇▁▁▁ \cr
-   pop \tab 0 \tab 1 \tab 42091609.25 \tab 155915906.35 \tab 815 \tab 1324820 \tab 8082359 \tab 28608715.0 \tab 1433783692 \tab ▇▁▁▁▁ \cr
-   cu_cases \tab 0 \tab 1 \tab 62782.37 \tab 394142.54 \tab 0 \tab 75 \tab 1263 \tab 13711.5 \tab 8154595 \tab ▇▁▁▁▁ \cr
-   cu_deaths \tab 0 \tab 1 \tab 2341.17 \tab 12325.54 \tab 0 \tab 1 \tab 25 \tab 284.0 \tab 219674 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 835.15 \tab 4822.57 \tab -8261 \tab 0 \tab 12 \tab 190 \tab 97894 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 22.49 \tab 125.15 \tab -1918 \tab 0 \tab 0 \tab 3 \tab 4928 \tab ▁▇▁▁▁ \cr
+   pop \tab 9 \tab 1 \tab 41954543.67 \tab 155572048.06 \tab 815 \tab 1324820 \tab 8082359 \tab 28608715 \tab 1433783692 \tab ▇▁▁▁▁ \cr
+   cu_cases \tab 0 \tab 1 \tab 66098.44 \tab 413402.24 \tab 0 \tab 79 \tab 1332 \tab 14669 \tab 8576725 \tab ▇▁▁▁▁ \cr
+   cu_deaths \tab 0 \tab 1 \tab 2416.14 \tab 12657.57 \tab 0 \tab 1 \tab 26 \tab 301 \tab 224899 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

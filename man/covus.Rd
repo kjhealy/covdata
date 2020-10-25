@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Monday, October 19, 2020}
+\title{COVID-19 data for the USA, current as of Sunday, October 25, 2020}
 \format{
-A tibble with 384,630 rows and 7 columns
+A tibble with 394,710 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,7 +29,7 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 384630 \cr
+   Number of rows \tab 394710 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -43,7 +43,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-10-18 \tab 2020-06-26 \tab 271 \cr
+   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-10-24 \tab 2020-06-29 \tab 277 \cr
 }
 
 
@@ -51,7 +51,7 @@ Table: Data summary\tabular{ll}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    state \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
    fips \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
-   data_quality_grade \tab 35790 \tab 0.91 \tab 1 \tab 2 \tab 0 \tab 6 \tab 0 \cr
+   data_quality_grade \tab 35790 \tab 0.91 \tab 1 \tab 5 \tab 0 \tab 7 \tab 0 \cr
    measure \tab 0 \tab 1.00 \tab 5 \tab 30 \tab 0 \tab 30 \tab 0 \cr
    measure_label \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 30 \tab 0 \cr
 }
@@ -59,7 +59,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 255661 \tab 0.34 \tab 192588 \tab 768873.1 \tab 0 \tab 296 \tab 3791 \tab 66327 \tab 16892062 \tab ▇▁▁▁▁ \cr
+   count \tab 261417 \tab 0.34 \tab 201235.7 \tab 803814.6 \tab 0 \tab 305 \tab 3963 \tab 68908 \tab 17609179 \tab ▇▁▁▁▁ \cr
 }
 
 

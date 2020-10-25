@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Monday, October 19, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Sunday, October 25, 2020}
 \format{
 A tibble with 26,991 rows and 5 columns
 \describe{
@@ -42,7 +42,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-15 \tab 2020-10-18 \tab 2020-07-19 \tab 54 \cr
+   date \tab 0 \tab 1 \tab 2020-04-19 \tab 2020-10-21 \tab 2020-07-22 \tab 54 \cr
 }
 
 
@@ -55,8 +55,8 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 9376 \tab 0.65 \tab 11893.76 \tab 38557.57 \tab 0 \tab 286 \tab 1752 \tab 9046.00 \tab 774274 \tab ▇▁▁▁▁ \cr
-   deaths \tab 10949 \tab 0.59 \tab 450.50 \tab 1146.03 \tab 0 \tab 9 \tab 47 \tab 289.75 \tab 9464 \tab ▇▁▁▁▁ \cr
+   cases \tab 9217 \tab 0.66 \tab 12241.03 \tab 39363.63 \tab 0 \tab 296.25 \tab 1832 \tab 9420.00 \tab 789304 \tab ▇▁▁▁▁ \cr
+   deaths \tab 10767 \tab 0.60 \tab 457.54 \tab 1160.30 \tab 0 \tab 9.00 \tab 48 \tab 296.25 \tab 10114 \tab ▇▁▁▁▁ \cr
 }
 
 
