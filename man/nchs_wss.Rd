@@ -36,19 +36,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 9 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 3 \cr
    character \tab 2 \cr
+   Date \tab 3 \cr
    numeric \tab 4 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2020-10-21 \tab 2020-10-21 \tab 2020-10-21 \tab 1 \cr
-   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
-   end_week \tab 0 \tab 1 \tab 2020-10-17 \tab 2020-10-17 \tab 2020-10-17 \tab 1 \cr
 }
 
 
@@ -59,12 +51,20 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-11-04 \tab 2020-11-04 \tab 2020-11-04 \tab 1 \cr
+   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-10-31 \tab 2020-10-31 \tab 2020-10-31 \tab 1 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   deaths \tab 58 \tab 0.81 \tab 1716.33 \tab 8064.29 \tab 0.0 \tab 34.25 \tab 153.50 \tab 1054.00 \tab 108311.0 \tab ▇▁▁▁▁ \cr
-   dist_pct \tab 58 \tab 0.81 \tab 20.51 \tab 25.70 \tab 0.0 \tab 1.70 \tab 7.05 \tab 30.82 \tab 95.7 \tab ▇▂▁▁▁ \cr
-   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 24.63 \tab 0.1 \tab 1.80 \tab 4.40 \tab 16.75 \tab 93.0 \tab ▇▁▁▁▁ \cr
-   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 22.24 \tab 0.1 \tab 2.08 \tab 5.40 \tab 22.65 \tab 91.0 \tab ▇▁▁▁▁ \cr
+   deaths \tab 56 \tab 0.81 \tab 1779.74 \tab 8456.49 \tab 0.0 \tab 36.00 \tab 157.0 \tab 1245.50 \tab 114995 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 56 \tab 0.81 \tab 20.35 \tab 25.90 \tab 0.0 \tab 1.60 \tab 6.9 \tab 30.25 \tab 95 \tab ▇▁▁▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 24.63 \tab 0.1 \tab 1.80 \tab 4.4 \tab 16.75 \tab 93 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 16.67 \tab 22.27 \tab 0.1 \tab 2.08 \tab 5.4 \tab 22.50 \tab 91 \tab ▇▁▁▁▁ \cr
 }
 
 
