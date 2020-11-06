@@ -54,7 +54,6 @@ While using `install_github()` works just fine, it would be nicer to be able to 
 
 First, install `drat`:
 
-
 ```r
 if (!require("drat")) {
     install.packages("drat")
@@ -82,6 +81,7 @@ To ensure that the `covdata` repository is always available, you can add the fol
 ```r
 drat::addRepo("kjhealy")
 ```
+
 
 With that in place you'll be able to do `install.packages("covdata")` or `update.packages("covdata")` and have everything work as you'd expect. 
 
