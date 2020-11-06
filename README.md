@@ -68,7 +68,7 @@ Then use `drat` to tell R about the repository where `covdata` is hosted:
 drat::addRepo("kjhealy")
 ```
 
-You can now install `covdata`:
+You can now install `covdata` in the usual way:
 
 
 ```r
