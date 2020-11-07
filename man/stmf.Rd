@@ -88,17 +88,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 17 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 7 \cr
+   Date \tab 1 \cr
    numeric \tab 9 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-11-01 \tab 2011-10-09 \tab 1604 \cr
 }
 
 
@@ -114,6 +108,12 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-11-01 \tab 2011-10-09 \tab 1604 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
    year \tab 0 \tab 1 \tab 2010.54 \tab 6.38 \tab 1990 \tab 2005.00 \tab 2011.00 \tab 2016.00 \tab 2020.00 \tab ▁▃▆▇▇ \cr
@@ -121,10 +121,10 @@ Table: Data summary\tabular{ll}{
    split \tab 0 \tab 1 \tab 0.10 \tab 0.30 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
    split_sex \tab 0 \tab 1 \tab 0.01 \tab 0.09 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
    forecast \tab 0 \tab 1 \tab 0.12 \tab 0.32 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
-   death_count \tab 0 \tab 1 \tab 584.28 \tab 1599.73 \tab 0 \tab 35.00 \tab 146.00 \tab 385.00 \tab 24931.77 \tab ▇▁▁▁▁ \cr
+   death_count \tab 0 \tab 1 \tab 584.26 \tab 1599.74 \tab 0 \tab 35.00 \tab 146.00 \tab 385.00 \tab 24931.77 \tab ▇▁▁▁▁ \cr
    death_rate \tab 0 \tab 1 \tab 0.05 \tab 0.06 \tab 0 \tab 0.00 \tab 0.02 \tab 0.07 \tab 0.57 \tab ▇▂▁▁▁ \cr
-   deaths_total \tab 0 \tab 1 \tab 2921.41 \tab 6571.40 \tab 2 \tab 444.00 \tab 919.00 \tab 2235.00 \tab 78796.00 \tab ▇▁▁▁▁ \cr
-   rate_total \tab 0 \tab 1 \tab 0.01 \tab 0.00 \tab 0 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.03 \tab ▁▇▃▁▁ \cr
+   deaths_total \tab 0 \tab 1 \tab 2921.28 \tab 6571.45 \tab 2 \tab 444.00 \tab 919.00 \tab 2235.00 \tab 78796.00 \tab ▇▁▁▁▁ \cr
+   rate_total \tab 0 \tab 1 \tab 0.01 \tab 0.00 \tab 0 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.02 \tab ▁▇▃▁▁ \cr
 }
 }
 \references{

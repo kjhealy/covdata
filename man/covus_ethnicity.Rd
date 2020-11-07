@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, November  5, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Friday, November  6, 2020}
 \format{
 A tibble with 10,080 rows and 5 columns
 \describe{
@@ -32,17 +32,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-11-04 \tab 2020-07-24 \tab 60 \cr
 }
 
 
@@ -53,10 +47,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-11-04 \tab 2020-07-24 \tab 60 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 2244 \tab 0.78 \tab 29389.14 \tab 59440.96 \tab 0 \tab 3138.75 \tab 10854.5 \tab 31245.0 \tab 875166 \tab ▇▁▁▁▁ \cr
-   deaths \tab 2390 \tab 0.76 \tab 1065.35 \tab 2359.68 \tab 0 \tab 44.00 \tab 159.0 \tab 831.5 \tab 22517 \tab ▇▁▁▁▁ \cr
+   cases \tab 2244 \tab 0.78 \tab 29389.38 \tab 59441.16 \tab 0 \tab 3138.75 \tab 10854.5 \tab 31245.0 \tab 875166 \tab ▇▁▁▁▁ \cr
+   deaths \tab 2390 \tab 0.76 \tab 1065.36 \tab 2359.70 \tab 0 \tab 44.00 \tab 159.0 \tab 831.5 \tab 22517 \tab ▇▁▁▁▁ \cr
 }
 
 
