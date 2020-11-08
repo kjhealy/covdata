@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Friday, November  6, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Sunday, November  8, 2020}
 \format{
 A tibble with 30,240 rows and 5 columns
 \describe{

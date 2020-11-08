@@ -5,7 +5,7 @@
 \alias{apple_mobility}
 \title{Apple Mobility Data}
 \format{
-A data frame with 1,397,918 rows and 8 variables:
+A data frame with 1,402,609 rows and 8 variables:
 \describe{
 \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
 \item{\code{region}}{character Name of geographical unit.}
@@ -30,7 +30,7 @@ Data from Apple Maps on relative changes in mobility in various cities and count
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab apple_mobility \cr
-   Number of rows \tab 1397918 \cr
+   Number of rows \tab 1402609 \cr
    Number of columns \tab 8 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -47,21 +47,21 @@ Table: Data summary\tabular{ll}{
    geo_type \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 4 \tab 0 \cr
    region \tab 0 \tab 1.00 \tab 4 \tab 48 \tab 0 \tab 2325 \tab 0 \cr
    transportation_type \tab 0 \tab 1.00 \tab 7 \tab 7 \tab 0 \tab 3 \tab 0 \cr
-   alternative_name \tab 1086806 \tab 0.22 \tab 2 \tab 85 \tab 0 \tab 519 \tab 0 \cr
-   sub_region \tab 405876 \tab 0.71 \tab 4 \tab 33 \tab 0 \tab 162 \tab 0 \cr
-   country \tab 45594 \tab 0.97 \tab 5 \tab 20 \tab 0 \tab 47 \tab 0 \cr
+   alternative_name \tab 1090453 \tab 0.22 \tab 2 \tab 85 \tab 0 \tab 519 \tab 0 \cr
+   sub_region \tab 407238 \tab 0.71 \tab 4 \tab 33 \tab 0 \tab 162 \tab 0 \cr
+   country \tab 45747 \tab 0.97 \tab 5 \tab 20 \tab 0 \tab 47 \tab 0 \cr
 }
 
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2020-11-05 \tab 2020-06-09 \tab 298 \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2020-11-06 \tab 2020-06-10 \tab 299 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   score \tab 18794 \tab 0.99 \tab 124.5 \tab 67.7 \tab 0.44 \tab 84.74 \tab 115.08 \tab 153.15 \tab 2148.12 \tab ▇▁▁▁▁ \cr
+   score \tab 18833 \tab 0.99 \tab 124.54 \tab 67.65 \tab 0.44 \tab 84.79 \tab 115.16 \tab 153.24 \tab 2148.12 \tab ▇▁▁▁▁ \cr
 }
 
 
