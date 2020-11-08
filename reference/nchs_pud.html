@@ -72,13 +72,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
 <li>
@@ -144,12 +150,12 @@
     <p>Deidentified patient-level data reported to U.S. states and autonomous reporting entities, including New York City and the District of Columbia (D.C.), as well as U.S. territories and states.</p>
     </div>
 
-    <pre class="usage"><span class='kw'>nchs_pud</span></pre>
+    <pre class="usage"><span class='va'>nchs_pud</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 4,481,062 rows and 11 variables:</p><dl>
+    <p>A tibble with 5,760,066 rows and 11 variables:</p><dl>
 <dt><code>cdc_report_dt</code></dt><dd><p>date Initial case report date to CDC</p></dd>
 <dt><code>pos_spec_dt</code></dt><dd><p>date Date of first positive specimen collection</p></dd>
 <dt><code>onset_dt</code></dt><dd><p>date Symptom onset date, if symptomatic</p></dd>
@@ -172,23 +178,14 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nchs_pud</td></tr>
-<tr><td>Number of rows</td><td>4481062</td></tr>
+<tr><td>Number of rows</td><td>5760066</td></tr>
 <tr><td>Number of columns</td><td>11</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>3</td></tr>
 <tr><td>character</td><td>8</td></tr>
+<tr><td>Date</td><td>3</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>cdc_report_dt</td><td>0</td><td>1.00</td><td>2020-01-01</td><td>2020-09-15</td><td>2020-07-04</td><td>255</td></tr>
-<tr><td>pos_spec_dt</td><td>2957494</td><td>0.34</td><td>2020-01-01</td><td>2020-09-28</td><td>2020-05-30</td><td>236</td></tr>
-<tr><td>onset_dt</td><td>2113224</td><td>0.53</td><td>2020-01-01</td><td>2020-09-29</td><td>2020-06-24</td><td>273</td></tr>
 </table>
 
 
@@ -196,13 +193,22 @@
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
 <tr><td>current_status</td><td>0</td><td>1</td><td>8</td><td>9</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>sex</td><td>12</td><td>1</td><td>4</td><td>7</td><td>0</td><td>5</td><td>0</td></tr>
-<tr><td>age_group</td><td>93</td><td>1</td><td>6</td><td>8</td><td>0</td><td>10</td><td>0</td></tr>
-<tr><td>race_ethnicity</td><td>12</td><td>1</td><td>7</td><td>28</td><td>0</td><td>8</td><td>0</td></tr>
+<tr><td>sex</td><td>15</td><td>1</td><td>4</td><td>7</td><td>0</td><td>5</td><td>0</td></tr>
+<tr><td>age_group</td><td>92</td><td>1</td><td>6</td><td>8</td><td>0</td><td>10</td><td>0</td></tr>
+<tr><td>race_ethnicity</td><td>10</td><td>1</td><td>7</td><td>28</td><td>0</td><td>8</td><td>0</td></tr>
 <tr><td>hosp_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>icu_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>death_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>medcond_yn</td><td>0</td><td>1</td><td>2</td><td>7</td><td>0</td><td>4</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>cdc_report_dt</td><td>0</td><td>1.00</td><td>2020-01-01</td><td>2020-10-16</td><td>2020-07-22</td><td>286</td></tr>
+<tr><td>pos_spec_dt</td><td>3855354</td><td>0.33</td><td>2020-01-01</td><td>2020-10-28</td><td>2020-06-25</td><td>269</td></tr>
+<tr><td>onset_dt</td><td>2694659</td><td>0.53</td><td>2020-01-01</td><td>2020-10-30</td><td>2020-07-09</td><td>304</td></tr>
 </table>
 
 
@@ -232,7 +238,7 @@ To prevent release of data that could be used to identify persons, data cells ar
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

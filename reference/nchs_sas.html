@@ -72,13 +72,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
 <li>
@@ -144,7 +150,7 @@
     <p>Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.</p>
     </div>
 
-    <pre class="usage"><span class='kw'>nchs_sas</span></pre>
+    <pre class="usage"><span class='va'>nchs_sas</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -177,20 +183,11 @@
 <tr><td>Number of columns</td><td>12</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>3</td></tr>
 <tr><td>character</td><td>3</td></tr>
+<tr><td>Date</td><td>3</td></tr>
 <tr><td>numeric</td><td>6</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>data_as_of</td><td>0</td><td>1</td><td>2020-10-21</td><td>2020-10-21</td><td>2020-10-21</td><td>1</td></tr>
-<tr><td>start_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-02-01</td><td>2020-02-01</td><td>1</td></tr>
-<tr><td>end_week</td><td>0</td><td>1</td><td>2020-10-17</td><td>2020-10-17</td><td>2020-10-17</td><td>1</td></tr>
 </table>
 
 
@@ -204,14 +201,23 @@
 
 
 
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2020-11-04</td><td>2020-11-04</td><td>2020-11-04</td><td>1</td></tr>
+<tr><td>start_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-02-01</td><td>2020-02-01</td><td>1</td></tr>
+<tr><td>end_week</td><td>0</td><td>1</td><td>2020-10-31</td><td>2020-10-31</td><td>2020-10-31</td><td>1</td></tr>
+</table>
+
+
+
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>covid_19_deaths</td><td>404</td><td>0.85</td><td>703.51</td><td>6115.61</td><td>0</td><td>0</td><td>0.0</td><td>111.0</td><td>207882</td><td>▇▁▁▁▁</td></tr>
-<tr><td>total_deaths</td><td>181</td><td>0.93</td><td>7150.77</td><td>62947.55</td><td>0</td><td>0</td><td>180.5</td><td>1762.0</td><td>2270323</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_deaths</td><td>476</td><td>0.82</td><td>747.55</td><td>6351.69</td><td>0</td><td>0</td><td>10.0</td><td>168.0</td><td>213029</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_and_covid_19_deaths</td><td>379</td><td>0.86</td><td>317.20</td><td>2768.27</td><td>0</td><td>0</td><td>0.0</td><td>46.0</td><td>94396</td><td>▇▁▁▁▁</td></tr>
-<tr><td>influenza_deaths</td><td>769</td><td>0.71</td><td>27.53</td><td>214.55</td><td>0</td><td>0</td><td>0.0</td><td>10.0</td><td>6734</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>490</td><td>0.82</td><td>1171.63</td><td>9932.99</td><td>0</td><td>0</td><td>15.0</td><td>251.5</td><td>332245</td><td>▇▁▁▁▁</td></tr>
+<tr><td>covid_19_deaths</td><td>399</td><td>0.85</td><td>733.49</td><td>6384.27</td><td>0</td><td>0</td><td>0</td><td>118.0</td><td>217348</td><td>▇▁▁▁▁</td></tr>
+<tr><td>total_deaths</td><td>180</td><td>0.93</td><td>7513.26</td><td>66143.26</td><td>0</td><td>0</td><td>188</td><td>1851.0</td><td>2386184</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_deaths</td><td>475</td><td>0.82</td><td>781.44</td><td>6641.59</td><td>0</td><td>0</td><td>11</td><td>177.5</td><td>222821</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_and_covid_19_deaths</td><td>377</td><td>0.86</td><td>331.76</td><td>2897.48</td><td>0</td><td>0</td><td>0</td><td>49.0</td><td>98881</td><td>▇▁▁▁▁</td></tr>
+<tr><td>influenza_deaths</td><td>770</td><td>0.71</td><td>27.67</td><td>215.55</td><td>0</td><td>0</td><td>0</td><td>10.0</td><td>6764</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>484</td><td>0.82</td><td>1220.10</td><td>10359.30</td><td>0</td><td>0</td><td>16</td><td>266.0</td><td>347041</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -243,7 +249,7 @@ been suppressed in accordance with NHCS confidentiality standards.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

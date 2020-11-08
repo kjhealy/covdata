@@ -31,12 +31,18 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+<li>
+  <a href="../index.html">
+    <span class="fas fa fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
 <li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
@@ -105,14 +111,14 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kjhealy/covdata">covdata</a></span>)
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata">covdata</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     uspop</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span>)
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.2     ✔ purrr   0.3.4</span>
 <span class="co">#&gt; ✔ tibble  3.0.4     ✔ dplyr   1.0.2</span>
@@ -120,8 +126,7 @@
 <span class="co">#&gt; ✔ readr   1.4.0     ✔ forcats 0.5.0</span>
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
-<span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
-</pre></div>
+<span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <div id="u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times" class="section level2">
 <h2 class="hasAnchor">
 <a href="#u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>U.S. National, State- and County-Level (Cumulative) Data from the <em>New York Times</em>
@@ -135,9 +140,9 @@
 <div id="u-s--national-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#u-s--national-table" class="anchor"></a>U.S. National Table</h3>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw">nytcovus</span>
-<span class="co">#&gt; # A tibble: 280 x 3</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nytcovus</span>
+<span class="co">#&gt; # A tibble: 292 x 3</span>
 <span class="co">#&gt;    date       cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21     1      0</span>
@@ -150,15 +155,14 @@
 <span class="co">#&gt;  8 2020-01-28     5      0</span>
 <span class="co">#&gt;  9 2020-01-29     5      0</span>
 <span class="co">#&gt; 10 2020-01-30     6      0</span>
-<span class="co">#&gt; # … with 270 more rows</span>
-</pre></div>
+<span class="co">#&gt; # … with 282 more rows</span></code></pre></div>
 </div>
 <div id="u-s--state-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#u-s--state-table" class="anchor"></a>U.S. State Table</h3>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 13,104 x 5</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nytcovstate</span>
+<span class="co">#&gt; # A tibble: 13,764 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -171,15 +175,14 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 13,094 more rows</span>
-</pre></div>
+<span class="co">#&gt; # … with 13,754 more rows</span></code></pre></div>
 </div>
 <div id="u-s--county-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#u-s--county-table" class="anchor"></a>U.S. County Table</h3>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="kw">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 670,636 x 6</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nytcovcounty</span>
+<span class="co">#&gt; # A tibble: 709,561 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -192,30 +195,28 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 670,626 more rows</span>
-</pre></div>
+<span class="co">#&gt; # … with 709,551 more rows</span></code></pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county.</h3>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">nytcovcounty</span> <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(uniq_name = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="kw">county</span>, <span class="kw">state</span>)) <span class="op">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
-  <span class="fu">group_by</span>(<span class="kw">uniq_name</span>) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(days_elapsed = <span class="kw">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="kw">date</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">days_elapsed</span>, y = <span class="kw">cases</span>, group = <span class="kw">uniq_name</span>)) <span class="op">+</span> 
-  <span class="fu">geom_line</span>(size = <span class="fl">0.25</span>, color = <span class="st">"gray20"</span>) <span class="op">+</span> 
-  <span class="fu">scale_y_log10</span>(labels = <span class="kw">scales</span>::<span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span>()) <span class="op">+</span> 
-  <span class="fu">guides</span>(color = <span class="fl">FALSE</span>) <span class="op">+</span> 
-  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">state</span>, ncol = <span class="fl">5</span>) <span class="op">+</span> 
-  <span class="fu">labs</span>(title = <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
-       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">nytcovcounty</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       x = <span class="st">"Days since first case"</span>, y = <span class="st">"Count of Cases (log 10 scale)"</span>, 
-       caption = <span class="st">"Data: The New York Times | Graph: @kjhealy"</span>) <span class="op">+</span> 
-  <span class="fu">theme_minimal</span>()
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nytcovcounty</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>uniq_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">county</span>, <span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">uniq_name</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_log10</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">nytcovcounty</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
+       x <span class="op">=</span> <span class="st">"Days since first case"</span>, y <span class="op">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>, 
+       caption <span class="op">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
-</pre></div>
+<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
 <p><img src="new-york-times_files/figure-html/nytplot-1.png" width="1200"></p>
 </div>
 </div>
@@ -353,7 +354,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

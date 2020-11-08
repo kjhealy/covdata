@@ -31,12 +31,18 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+<li>
+  <a href="../index.html">
+    <span class="fas fa fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
 <li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
@@ -108,8 +114,8 @@
 <div id="load-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#load-the-data" class="anchor"></a>Load the Data</h2>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span>)
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.2     ✔ purrr   0.3.4</span>
 <span class="co">#&gt; ✔ tibble  3.0.4     ✔ dplyr   1.0.2</span>
@@ -118,14 +124,13 @@
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kjhealy/covdata">covdata</a></span>)
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata">covdata</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     uspop</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://github.com/slowkow/ggrepel">ggrepel</a></span>)
-</pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://github.com/slowkow/ggrepel">ggrepel</a></span><span class="op">)</span></code></pre></div>
 <p>Data for the United States come from a variety of sources:</p>
 <ul>
 <li>State-level case and mortality data for the United States from the <a href="https://covidtracking.com">COVID Tracking Project</a>.</li>
@@ -137,211 +142,204 @@
 <div id="covid-tracking-project-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw">covus</span>
-<span class="co">#&gt; # A tibble: 399,120 x 7</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">covus</span>
+<span class="co">#&gt; # A tibble: 419,970 x 7</span>
 <span class="co">#&gt;    date       state fips  data_quality_gra… measure       count measure_label   </span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           </span>
-<span class="co">#&gt;  1 2020-10-26 AK    02    A                 positive      14413 Positive Tests  </span>
-<span class="co">#&gt;  2 2020-10-26 AK    02    A                 probable_ca…     NA Probable Cases  </span>
-<span class="co">#&gt;  3 2020-10-26 AK    02    A                 negative     556431 Negative Tests  </span>
-<span class="co">#&gt;  4 2020-10-26 AK    02    A                 pending          NA Pending Tests   </span>
-<span class="co">#&gt;  5 2020-10-26 AK    02    A                 hospitalize…     50 Currently Hospi…</span>
-<span class="co">#&gt;  6 2020-10-26 AK    02    A                 hospitalize…     NA Cumulative Hosp…</span>
-<span class="co">#&gt;  7 2020-10-26 AK    02    A                 in_icu_curr…     NA Currently in ICU</span>
-<span class="co">#&gt;  8 2020-10-26 AK    02    A                 in_icu_cumu…     NA Cumulative in I…</span>
-<span class="co">#&gt;  9 2020-10-26 AK    02    A                 on_ventilat…      9 Currently on Ve…</span>
-<span class="co">#&gt; 10 2020-10-26 AK    02    A                 on_ventilat…     NA Cumulative on V…</span>
-<span class="co">#&gt; # … with 399,110 more rows</span>
-</pre></div>
+<span class="co">#&gt;  1 2020-11-07 AK    02    A                 positive      19306 Positive Tests  </span>
+<span class="co">#&gt;  2 2020-11-07 AK    02    A                 probable_ca…     NA Probable Cases  </span>
+<span class="co">#&gt;  3 2020-11-07 AK    02    A                 negative     728589 Negative Tests  </span>
+<span class="co">#&gt;  4 2020-11-07 AK    02    A                 pending          NA Pending Tests   </span>
+<span class="co">#&gt;  5 2020-11-07 AK    02    A                 hospitalize…    105 Currently Hospi…</span>
+<span class="co">#&gt;  6 2020-11-07 AK    02    A                 hospitalize…     NA Cumulative Hosp…</span>
+<span class="co">#&gt;  7 2020-11-07 AK    02    A                 in_icu_curr…     NA Currently in ICU</span>
+<span class="co">#&gt;  8 2020-11-07 AK    02    A                 in_icu_cumu…     NA Cumulative in I…</span>
+<span class="co">#&gt;  9 2020-11-07 AK    02    A                 on_ventilat…      8 Currently on Ve…</span>
+<span class="co">#&gt; 10 2020-11-07 AK    02    A                 on_ventilat…     NA Cumulative on V…</span>
+<span class="co">#&gt; # … with 419,960 more rows</span></code></pre></div>
 <div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="anchor"></a>Draw a log-linear graph of cumulative reported US cases.</h3>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="co">## Which n states are leading the count of positive cases or deaths?</span>
-<span class="kw">top_n_states</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">data</span>, <span class="kw">n</span> = <span class="fl">5</span>, <span class="kw">measure</span> = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"death"</span>)) {
-  <span class="kw">meas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span>(<span class="kw">measure</span>)
-  <span class="kw">data</span> <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="kw">state</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="kw">meas</span>, <span class="kw">date</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">date</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">drop_na</span>() <span class="op">%&gt;%</span>
-  <span class="fu">ungroup</span>() <span class="op">%&gt;%</span>
-  <span class="fu">top_n</span>(<span class="kw">n</span>, wt = <span class="kw">count</span>) <span class="op">%&gt;%</span>
-  <span class="fu">pull</span>(<span class="kw">state</span>)
-}
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Which n states are leading the count of positive cases or deaths?</span>
+<span class="va">top_n_states</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">n</span> <span class="op">=</span> <span class="fl">5</span>, <span class="va">measure</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"positive"</span>, <span class="st">"death"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">meas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span>
+  <span class="va">data</span> <span class="op">%&gt;%</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="va">meas</span>, <span class="va">date</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">drop_na</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">top_n</span><span class="op">(</span><span class="va">n</span>, wt <span class="op">=</span> <span class="va">count</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">state</span><span class="op">)</span>
+<span class="op">}</span>
 
-<span class="kw">state_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gray70"</span>, <span class="st">"#195F90FF"</span>, <span class="st">"#D76500FF"</span>, <span class="st">"#238023FF"</span>, <span class="st">"#AB1F20FF"</span>, <span class="st">"#7747A3FF"</span>, 
+<span class="va">state_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gray70"</span>, <span class="st">"#195F90FF"</span>, <span class="st">"#D76500FF"</span>, <span class="st">"#238023FF"</span>, <span class="st">"#AB1F20FF"</span>, <span class="st">"#7747A3FF"</span>, 
                 <span class="st">"#70453CFF"</span>, <span class="st">"#D73EA8FF"</span>, <span class="st">"#666666FF"</span>, <span class="st">"#96971BFF"</span>, <span class="st">"#1298A6FF"</span>, <span class="st">"#6F9BD6FF"</span>, 
                 <span class="st">"#FF952DFF"</span>, <span class="st">"#66CF51FF"</span>, <span class="st">"#FF4945FF"</span>, <span class="st">"#A07DBAFF"</span>, <span class="st">"#AC7368FF"</span>, <span class="st">"#EF69A2FF"</span>, 
-                <span class="st">"#9F9F9FFF"</span>, <span class="st">"#CACA56FF"</span>, <span class="st">"#61C3D5FF"</span>)
+                <span class="st">"#9F9F9FFF"</span>, <span class="st">"#CACA56FF"</span>, <span class="st">"#61C3D5FF"</span><span class="op">)</span>
 
-<span class="kw">covus</span> <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="kw">state</span>) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(core = <span class="fu">case_when</span>(<span class="kw">state</span> <span class="op">%nin%</span> <span class="fu">top_n_states</span>(<span class="kw">covus</span>) <span class="op">~</span> <span class="st">""</span>,
-                          <span class="fl">TRUE</span> <span class="op">~</span> <span class="kw">state</span>),
-         end_label = <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="kw">date</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">date</span>), <span class="kw">core</span>, <span class="fl">NA</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">arrange</span>(<span class="kw">date</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"positive"</span>, <span class="kw">date</span> <span class="op">&gt;</span> <span class="st">"2020-03-09"</span>) <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">count</span>, group = <span class="kw">state</span>, color = <span class="kw">core</span>, label = <span class="kw">end_label</span>)) <span class="op">+</span> 
-  <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>) <span class="op">+</span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/ggrepel/man/geom_text_repel.html">geom_text_repel</a></span>(segment.color = <span class="fl">NA</span>, nudge_x = <span class="fl">0.2</span>, nudge_y = <span class="fl">0.1</span>) <span class="op">+</span> 
-  <span class="fu">scale_color_manual</span>(values = <span class="kw">state_cols</span>) <span class="op">+</span> 
-  <span class="fu">scale_x_date</span>(date_breaks = <span class="st">"1 week"</span>, date_labels = <span class="st">"%b %e"</span> ) <span class="op">+</span> 
-  <span class="fu">scale_y_continuous</span>(trans = <span class="st">"log2"</span>,
-                     labels = <span class="kw">scales</span>::<span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span>(accuracy = <span class="fl">1</span>),
-                     breaks = <span class="fl">2</span><span class="op">^</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">1</span>, <span class="fl">20</span>, <span class="fl">1</span>))) <span class="op">+</span>
-  <span class="fu">guides</span>(color = <span class="fl">FALSE</span>) <span class="op">+</span> 
-  <span class="fu">labs</span>(title = <span class="st">"COVID-19 Cumulative Recorded Cases by US State"</span>,
-       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covus</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       x = <span class="st">"Date"</span>, y = <span class="st">"Count of Cases (log 2 scale)"</span>, 
-       caption = <span class="st">"Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy"</span>) <span class="op">+</span> 
-  <span class="fu">theme_minimal</span>()
+<span class="va">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>core <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span><span class="va">state</span> <span class="op">%nin%</span> <span class="fu">top_n_states</span><span class="op">(</span><span class="va">covus</span><span class="op">)</span> <span class="op">~</span> <span class="st">""</span>,
+                          <span class="cn">TRUE</span> <span class="op">~</span> <span class="va">state</span><span class="op">)</span>,
+         end_label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">date</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span>, <span class="va">core</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">arrange</span><span class="op">(</span><span class="va">date</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="st">"positive"</span>, <span class="va">date</span> <span class="op">&gt;</span> <span class="st">"2020-03-09"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="va">count</span>, group <span class="op">=</span> <span class="va">state</span>, color <span class="op">=</span> <span class="va">core</span>, label <span class="op">=</span> <span class="va">end_label</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://rdrr.io/pkg/ggrepel/man/geom_text_repel.html">geom_text_repel</a></span><span class="op">(</span>segment.color <span class="op">=</span> <span class="cn">NA</span>, nudge_x <span class="op">=</span> <span class="fl">0.2</span>, nudge_y <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_color_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="va">state_cols</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 week"</span>, date_labels <span class="op">=</span> <span class="st">"%b %e"</span> <span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span><span class="op">(</span>trans <span class="op">=</span> <span class="st">"log2"</span>,
+                     labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
+                     breaks <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">20</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US State"</span>,
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covus</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
+       x <span class="op">=</span> <span class="st">"Date"</span>, y <span class="op">=</span> <span class="st">"Count of Cases (log 2 scale)"</span>, 
+       caption <span class="op">=</span> <span class="st">"Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 17 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 12850 rows containing missing values (geom_text_repel).</span>
-</pre></div>
+<span class="co">#&gt; Warning: Removed 13522 rows containing missing values (geom_text_repel).</span></code></pre></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
 <div id="calculating-daily-counts" class="section level3">
 <h3 class="hasAnchor">
 <a href="#calculating-daily-counts" class="anchor"></a>Calculating daily counts</h3>
 <p>The COVID Tracking Project reports <em>cumulative</em> counts for key measures such as positive tests and deaths. For example, for New York State:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">measures</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"positive"</span>, <span class="st">"negative"</span>, <span class="st">"death"</span><span class="op">)</span>
 
-<span class="kw">measures</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"positive"</span>, <span class="st">"negative"</span>, <span class="st">"death"</span>)
-
-<span class="kw">covus</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">%in%</span> <span class="kw">measures</span>, <span class="kw">state</span> <span class="op">==</span> <span class="st">"NY"</span>) <span class="op">%&gt;%</span>
-  <span class="fu">select</span>(<span class="kw">date</span>, <span class="kw">state</span>, <span class="kw">measure</span>, <span class="kw">count</span>) <span class="op">%&gt;%</span>
-  <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>)
-<span class="co">#&gt; # A tibble: 237 x 5</span>
+<span class="va">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">%in%</span> <span class="va">measures</span>, <span class="va">state</span> <span class="op">==</span> <span class="st">"NY"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span><span class="op">(</span><span class="va">date</span>, <span class="va">state</span>, <span class="va">measure</span>, <span class="va">count</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">measure</span>, values_from <span class="op">=</span> <span class="va">count</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 249 x 5</span>
 <span class="co">#&gt;    date       state positive negative death</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-10-26 NY      496655 13337585 25742</span>
-<span class="co">#&gt;  2 2020-10-25 NY      495464 13256659 25730</span>
-<span class="co">#&gt;  3 2020-10-24 NY      493832 13137461 25718</span>
-<span class="co">#&gt;  4 2020-10-23 NY      491771 12982582 25705</span>
-<span class="co">#&gt;  5 2020-10-22 NY      490134 12842711 25694</span>
-<span class="co">#&gt;  6 2020-10-21 NY      488506 12708998 25679</span>
-<span class="co">#&gt;  7 2020-10-20 NY      486480 12586235 25672</span>
-<span class="co">#&gt;  8 2020-10-19 NY      485279 12496896 25659</span>
-<span class="co">#&gt;  9 2020-10-18 NY      484281 12415885 25644</span>
-<span class="co">#&gt; 10 2020-10-17 NY      482891 12288512 25637</span>
-<span class="co">#&gt; # … with 227 more rows</span>
-</pre></div>
+<span class="co">#&gt;  1 2020-11-07 NY      525608 14993564 25928</span>
+<span class="co">#&gt;  2 2020-11-06 NY      522021 14833860 25910</span>
+<span class="co">#&gt;  3 2020-11-05 NY      518812 14676364 25892</span>
+<span class="co">#&gt;  4 2020-11-04 NY      515815 14518342 25868</span>
+<span class="co">#&gt;  5 2020-11-03 NY      513689 14386934 25853</span>
+<span class="co">#&gt;  6 2020-11-02 NY      511368 14261386 25838</span>
+<span class="co">#&gt;  7 2020-11-01 NY      509735 14166918 25824</span>
+<span class="co">#&gt;  8 2020-10-31 NY      507480 14020238 25807</span>
+<span class="co">#&gt;  9 2020-10-30 NY      505431 13885325 25804</span>
+<span class="co">#&gt; 10 2020-10-29 NY      503176 13740695 25792</span>
+<span class="co">#&gt; # … with 239 more rows</span></code></pre></div>
 <p>To calculate <em>daily</em> counts from these cumulative measures, use <code><a href="https://rdrr.io/r/stats/lag.html">lag()</a></code>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-
-<span class="kw">covus</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">%in%</span> <span class="kw">measures</span>, <span class="kw">state</span> <span class="op">==</span> <span class="st">"NY"</span>) <span class="op">%&gt;%</span>
-  <span class="fu">select</span>(<span class="kw">date</span>, <span class="kw">state</span>, <span class="kw">measure</span>, <span class="kw">count</span>) <span class="op">%&gt;%</span>
-  <span class="fu">pivot_wider</span>(names_from = <span class="kw">measure</span>, values_from = <span class="kw">count</span>) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="kw">positive</span><span class="op">:</span><span class="kw">death</span>, <span class="op">~</span><span class="kw">.x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>(<span class="kw">.x</span>, order_by = <span class="kw">date</span>), 
-                .names = <span class="st">"daily_{col}"</span>))
-<span class="co">#&gt; # A tibble: 237 x 8</span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">%in%</span> <span class="va">measures</span>, <span class="va">state</span> <span class="op">==</span> <span class="st">"NY"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span><span class="op">(</span><span class="va">date</span>, <span class="va">state</span>, <span class="va">measure</span>, <span class="va">count</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">measure</span>, values_from <span class="op">=</span> <span class="va">count</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span><span class="va">positive</span><span class="op">:</span><span class="va">death</span>, <span class="op">~</span><span class="va">.x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">.x</span>, order_by <span class="op">=</span> <span class="va">date</span><span class="op">)</span>, 
+                .names <span class="op">=</span> <span class="st">"daily_{col}"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 249 x 8</span>
 <span class="co">#&gt;    date       state positive negative death daily_positive daily_negative</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-10-26 NY      496655 13337585 25742           1191          80926</span>
-<span class="co">#&gt;  2 2020-10-25 NY      495464 13256659 25730           1632         119198</span>
-<span class="co">#&gt;  3 2020-10-24 NY      493832 13137461 25718           2061         154879</span>
-<span class="co">#&gt;  4 2020-10-23 NY      491771 12982582 25705           1637         139871</span>
-<span class="co">#&gt;  5 2020-10-22 NY      490134 12842711 25694           1628         133713</span>
-<span class="co">#&gt;  6 2020-10-21 NY      488506 12708998 25679           2026         122763</span>
-<span class="co">#&gt;  7 2020-10-20 NY      486480 12586235 25672           1201          89339</span>
-<span class="co">#&gt;  8 2020-10-19 NY      485279 12496896 25659            998          81011</span>
-<span class="co">#&gt;  9 2020-10-18 NY      484281 12415885 25644           1390         127373</span>
-<span class="co">#&gt; 10 2020-10-17 NY      482891 12288512 25637           1784         158188</span>
-<span class="co">#&gt; # … with 227 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span>
-</pre></div>
+<span class="co">#&gt;  1 2020-11-07 NY      525608 14993564 25928           3587         159704</span>
+<span class="co">#&gt;  2 2020-11-06 NY      522021 14833860 25910           3209         157496</span>
+<span class="co">#&gt;  3 2020-11-05 NY      518812 14676364 25892           2997         158022</span>
+<span class="co">#&gt;  4 2020-11-04 NY      515815 14518342 25868           2126         131408</span>
+<span class="co">#&gt;  5 2020-11-03 NY      513689 14386934 25853           2321         125548</span>
+<span class="co">#&gt;  6 2020-11-02 NY      511368 14261386 25838           1633          94468</span>
+<span class="co">#&gt;  7 2020-11-01 NY      509735 14166918 25824           2255         146680</span>
+<span class="co">#&gt;  8 2020-10-31 NY      507480 14020238 25807           2049         134913</span>
+<span class="co">#&gt;  9 2020-10-30 NY      505431 13885325 25804           2255         144630</span>
+<span class="co">#&gt; 10 2020-10-29 NY      503176 13740695 25792           2499         165854</span>
+<span class="co">#&gt; # … with 239 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span></code></pre></div>
 </div>
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state" class="anchor"></a>Draw a graph of the weekly rolling average death rate, by state</h3>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-
-<span class="kw">state_pops</span> <span class="op">&lt;-</span> <span class="kw">uspop</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">sex_id</span> <span class="op">==</span> <span class="st">"totsex"</span>, <span class="kw">hisp_id</span> <span class="op">==</span> <span class="st">"tothisp"</span>) <span class="op">%&gt;%</span>
-  <span class="fu">select</span>(<span class="kw">state_abbr</span>, <span class="kw">statefips</span>, <span class="kw">pop</span>, <span class="kw">state</span>) <span class="op">%&gt;%</span>
-  <span class="fu">rename</span>(name = <span class="kw">state</span>, 
-         state = <span class="kw">state_abbr</span>, fips = <span class="kw">statefips</span>) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(state = <span class="fu"><a href="https://rdrr.io/r/base/replace.html">replace</a></span>(<span class="kw">state</span>, <span class="kw">fips</span> <span class="op">==</span> <span class="st">"11"</span>, <span class="st">"DC"</span>))
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">state_pops</span> <span class="op">&lt;-</span> <span class="va">uspop</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">sex_id</span> <span class="op">==</span> <span class="st">"totsex"</span>, <span class="va">hisp_id</span> <span class="op">==</span> <span class="st">"tothisp"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span><span class="op">(</span><span class="va">state_abbr</span>, <span class="va">statefips</span>, <span class="va">pop</span>, <span class="va">state</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">rename</span><span class="op">(</span>name <span class="op">=</span> <span class="va">state</span>, 
+         state <span class="op">=</span> <span class="va">state_abbr</span>, fips <span class="op">=</span> <span class="va">statefips</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>state <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/replace.html">replace</a></span><span class="op">(</span><span class="va">state</span>, <span class="va">fips</span> <span class="op">==</span> <span class="st">"11"</span>, <span class="st">"DC"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co">## Using a convenience function to do something similar</span>
 <span class="co">## to the lambda version above</span>
-<span class="kw">get_daily_count</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">count</span>, <span class="kw">date</span>){
-  <span class="kw">count</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>(<span class="kw">count</span>, order_by = <span class="kw">date</span>)
-}
+<span class="va">get_daily_count</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">count</span>, <span class="va">date</span><span class="op">)</span><span class="op">{</span>
+  <span class="va">count</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">count</span>, order_by <span class="op">=</span> <span class="va">date</span><span class="op">)</span>
+<span class="op">}</span>
 
 
-<span class="kw">covus</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"death"</span>, <span class="kw">state</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="kw">state_pops</span><span class="op">$</span><span class="kw">state</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="kw">state</span>) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(
-    deaths_daily = <span class="fu">get_daily_count</span>(<span class="kw">count</span>, <span class="kw">date</span>), 
-    deaths7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>(<span class="kw">deaths_daily</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">left_join</span>(<span class="kw">state_pops</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">date</span> <span class="op">&gt;</span> <span class="kw">lubridate</span>::<span class="fu"><a href="http://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span>(<span class="st">"2020-03-15"</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span>(mapping = <span class="fu">aes</span>(x = <span class="kw">date</span>, y = (<span class="kw">deaths7</span><span class="op">/</span><span class="kw">pop</span>)<span class="op">*</span><span class="fl">1e5</span>)) <span class="op">+</span> 
-  <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>) <span class="op">+</span> 
-  <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span>(accuracy = <span class="fl">1</span>)) <span class="op">+</span> 
-  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">name</span>, ncol = <span class="fl">4</span>) <span class="op">+</span>
-  <span class="fu">labs</span>(x = <span class="st">"Date"</span>, 
-       y = <span class="st">"Deaths per 100,000 Population (Seven Day Rolling Average)"</span>, 
-       title = <span class="st">"Average Death Rate from COVID-19: US States and Washington, DC"</span>, 
-       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"COVID Tracking Project data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covnat</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)), 
-       caption = <span class="st">"Kieran Healy @kjhealy / Data: https://www.covidtracking.com/"</span>) <span class="op">+</span>
-  <span class="fu">theme_minimal</span>()
-<span class="co">#&gt; Joining, by = c("state", "fips")</span>
-</pre></div>
+<span class="va">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="st">"death"</span>, <span class="va">state</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">state_pops</span><span class="op">$</span><span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>
+    deaths_daily <span class="op">=</span> <span class="fu">get_daily_count</span><span class="op">(</span><span class="va">count</span>, <span class="va">date</span><span class="op">)</span>, 
+    deaths7 <span class="op">=</span> <span class="fu">slider</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span><span class="op">(</span><span class="va">deaths_daily</span>, <span class="va">mean</span>, .before <span class="op">=</span> <span class="fl">7</span>, .after <span class="op">=</span> <span class="fl">0</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">left_join</span><span class="op">(</span><span class="va">state_pops</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&gt;</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span><span class="op">(</span><span class="st">"2020-03-15"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="op">(</span><span class="va">deaths7</span><span class="op">/</span><span class="va">pop</span><span class="op">)</span><span class="op">*</span><span class="fl">1e5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">name</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Date"</span>, 
+       y <span class="op">=</span> <span class="st">"Deaths per 100,000 Population (Seven Day Rolling Average)"</span>, 
+       title <span class="op">=</span> <span class="st">"Average Death Rate from COVID-19: US States and Washington, DC"</span>, 
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"COVID Tracking Project data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covnat</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>, 
+       caption <span class="op">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.covidtracking.com/"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Joining, by = c("state", "fips")</span></code></pre></div>
 <p><img src="us-data_files/figure-html/rolling-state-1.png" width="800"></p>
 </div>
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state-with-free-y-axes-in-the-panels" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state-with-free-y-axes-in-the-panels" class="anchor"></a>Draw a graph of the weekly rolling average death rate, by state, with free y-axes in the panels</h3>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-
-<span class="kw">covus</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"death"</span>, <span class="kw">state</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="kw">state_pops</span><span class="op">$</span><span class="kw">state</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="kw">state</span>) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(
-    deaths_daily = <span class="fu">get_daily_count</span>(<span class="kw">count</span>, <span class="kw">date</span>), 
-    deaths7 = <span class="kw">slider</span>::<span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span>(<span class="kw">deaths_daily</span>, <span class="kw">mean</span>, .before = <span class="fl">7</span>, .after = <span class="fl">0</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">left_join</span>(<span class="kw">state_pops</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">date</span> <span class="op">&gt;</span> <span class="kw">lubridate</span>::<span class="fu"><a href="http://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span>(<span class="st">"2020-03-15"</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span>(mapping = <span class="fu">aes</span>(x = <span class="kw">date</span>, y = (<span class="kw">deaths7</span><span class="op">/</span><span class="kw">pop</span>)<span class="op">*</span><span class="fl">1e5</span>)) <span class="op">+</span> 
-  <span class="fu">geom_line</span>(size = <span class="fl">0.5</span>) <span class="op">+</span> 
-  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">name</span>, ncol = <span class="fl">4</span>, scales = <span class="st">"free_y"</span>) <span class="op">+</span>
-  <span class="fu">labs</span>(x = <span class="st">"Date"</span>, 
-       y = <span class="st">"Deaths per 100,000 Population (Seven Day Rolling Average)"</span>, 
-       title = <span class="st">"Average Death Rate from COVID-19: US States and Washington, DC. Free scales."</span>, 
-       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"COVID Tracking Project data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covnat</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)), 
-       caption = <span class="st">"Kieran Healy @kjhealy / Data: https://www.covidtracking.com/"</span>) <span class="op">+</span>
-  <span class="fu">theme_minimal</span>()
-<span class="co">#&gt; Joining, by = c("state", "fips")</span>
-</pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="st">"death"</span>, <span class="va">state</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">state_pops</span><span class="op">$</span><span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>
+    deaths_daily <span class="op">=</span> <span class="fu">get_daily_count</span><span class="op">(</span><span class="va">count</span>, <span class="va">date</span><span class="op">)</span>, 
+    deaths7 <span class="op">=</span> <span class="fu">slider</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html">slide_dbl</a></span><span class="op">(</span><span class="va">deaths_daily</span>, <span class="va">mean</span>, .before <span class="op">=</span> <span class="fl">7</span>, .after <span class="op">=</span> <span class="fl">0</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">left_join</span><span class="op">(</span><span class="va">state_pops</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&gt;</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span><span class="op">(</span><span class="st">"2020-03-15"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="op">(</span><span class="va">deaths7</span><span class="op">/</span><span class="va">pop</span><span class="op">)</span><span class="op">*</span><span class="fl">1e5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">name</span>, ncol <span class="op">=</span> <span class="fl">4</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Date"</span>, 
+       y <span class="op">=</span> <span class="st">"Deaths per 100,000 Population (Seven Day Rolling Average)"</span>, 
+       title <span class="op">=</span> <span class="st">"Average Death Rate from COVID-19: US States and Washington, DC. Free scales."</span>, 
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"COVID Tracking Project data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covnat</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>, 
+       caption <span class="op">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.covidtracking.com/"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Joining, by = c("state", "fips")</span></code></pre></div>
 <p><img src="us-data_files/figure-html/rolling-state-free-1.png" width="800"></p>
 </div>
 <div id="draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-graph-of-cumulative-reported-us-deaths-aggregated-to-the-national-level" class="anchor"></a>Draw a graph of cumulative reported US deaths, aggregated to the national level</h3>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="kw">covus</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw">measure</span> <span class="op">==</span> <span class="st">"death"</span>) <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span>(<span class="kw">date</span>) <span class="op">%&gt;%</span>
-  <span class="fu">summarize</span>(count = <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="kw">count</span>, na.rm = <span class="fl">TRUE</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">date</span>, y = <span class="kw">count</span>)) <span class="op">+</span> 
-  <span class="fu">geom_line</span>(size = <span class="fl">0.75</span>) <span class="op">+</span> 
-  <span class="fu">scale_x_date</span>(date_breaks = <span class="st">"2 weeks"</span>, date_labels = <span class="st">"%b %e"</span> ) <span class="op">+</span> 
-  <span class="fu">scale_y_continuous</span>(labels = <span class="kw">scales</span>::<span class="kw"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks = <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">250000</span>, <span class="fl">50000</span>)) <span class="op">+</span> 
-  <span class="fu">labs</span>(title = <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
-       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">covus</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>), <span class="st">"Recorded counts underestimate total mortality."</span>),
-       x = <span class="st">"Date"</span>, y = <span class="st">"Count of Deaths"</span>, 
-       caption = <span class="st">"Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy"</span>) <span class="op">+</span> 
-  <span class="fu">theme_minimal</span>()
-<span class="co">#&gt; `summarise()` ungrouping output (override with `.groups` argument)</span>
-</pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">covus</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="st">"death"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">date</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">summarize</span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"2 weeks"</span>, date_labels <span class="op">=</span> <span class="st">"%b %e"</span> <span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">250000</span>, <span class="fl">50000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covus</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span>, <span class="st">"Recorded counts underestimate total mortality."</span><span class="op">)</span>,
+       x <span class="op">=</span> <span class="st">"Date"</span>, y <span class="op">=</span> <span class="st">"Count of Deaths"</span>, 
+       caption <span class="op">=</span> <span class="st">"Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; `summarise()` ungrouping output (override with `.groups` argument)</span></code></pre></div>
 <p><img src="us-data_files/figure-html/us-example-2-1.png" width="1000"></p>
 </div>
 </div>
@@ -352,9 +350,9 @@
 <div id="state-level-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="kw">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 13,104 x 5</span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nytcovstate</span>
+<span class="co">#&gt; # A tibble: 13,764 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -367,15 +365,14 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 13,094 more rows</span>
-</pre></div>
+<span class="co">#&gt; # … with 13,754 more rows</span></code></pre></div>
 </div>
 <div id="county-level-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="kw">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 670,636 x 6</span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nytcovcounty</span>
+<span class="co">#&gt; # A tibble: 709,561 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -388,30 +385,28 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 670,626 more rows</span>
-</pre></div>
+<span class="co">#&gt; # … with 709,551 more rows</span></code></pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county.</h3>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="kw">nytcovcounty</span> <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(uniq_name = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="kw">county</span>, <span class="kw">state</span>)) <span class="op">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
-  <span class="fu">group_by</span>(<span class="kw">uniq_name</span>) <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span>(days_elapsed = <span class="kw">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="kw">date</span>)) <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x = <span class="kw">days_elapsed</span>, y = <span class="kw">cases</span>, group = <span class="kw">uniq_name</span>)) <span class="op">+</span> 
-  <span class="fu">geom_line</span>(size = <span class="fl">0.25</span>, color = <span class="st">"gray20"</span>) <span class="op">+</span> 
-  <span class="fu">scale_y_log10</span>(labels = <span class="kw">scales</span>::<span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span>()) <span class="op">+</span> 
-  <span class="fu">guides</span>(color = <span class="fl">FALSE</span>) <span class="op">+</span> 
-  <span class="fu">facet_wrap</span>(<span class="op">~</span> <span class="kw">state</span>, ncol = <span class="fl">5</span>) <span class="op">+</span> 
-  <span class="fu">labs</span>(title = <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
-       subtitle = <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="kw">nytcovcounty</span><span class="op">$</span><span class="kw">date</span>), <span class="st">"%A, %B %e, %Y"</span>)),
-       x = <span class="st">"Days since first case"</span>, y = <span class="st">"Count of Cases (log 10 scale)"</span>, 
-       caption = <span class="st">"Data: The New York Times | Graph: @kjhealy"</span>) <span class="op">+</span> 
-  <span class="fu">theme_minimal</span>()
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nytcovcounty</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>uniq_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">county</span>, <span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">uniq_name</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_log10</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">nytcovcounty</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
+       x <span class="op">=</span> <span class="st">"Days since first case"</span>, y <span class="op">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>, 
+       caption <span class="op">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
-</pre></div>
+<span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
 <p><img src="us-data_files/figure-html/nytplot-1.png" width="1200"></p>
 </div>
 </div>
@@ -432,7 +427,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for the US, current as of Tuesday, October 27, 2020 — nytcovus • covdata</title>
+<title>NYT COVID-19 data for the US, current as of Sunday, November  8, 2020 — nytcovus • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for the US, current as of Tuesday, October 27, 2020 — nytcovus" />
+<meta property="og:title" content="NYT COVID-19 data for the US, current as of Sunday, November  8, 2020 — nytcovus" />
 <meta property="og:description" content="A dataset containing US national-level data on COVID-19, collected by the New York Times." />
 
 
@@ -72,13 +72,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
 <li>
@@ -135,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for the US, current as of Tuesday, October 27, 2020</h1>
+    <h1>NYT COVID-19 data for the US, current as of Sunday, November  8, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovus.Rd</code></div>
     </div>
@@ -144,12 +150,12 @@
     <p>A dataset containing US national-level data on COVID-19, collected by the New York Times.</p>
     </div>
 
-    <pre class="usage"><span class='kw'>nytcovus</span></pre>
+    <pre class="usage"><span class='va'>nytcovus</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 280 rows and 3 columns</p><dl>
+    <p>A tibble with 292 rows and 3 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>cases</dt><dd><p>Cumulative N  reported cases</p></dd>
 <dt>deaths</dt><dd><p>Cumulative N reported deaths</p></dd>
@@ -165,7 +171,7 @@ For details on the methods and limitations see <a href='https://github.com/nytim
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytcovus</td></tr>
-<tr><td>Number of rows</td><td>280</td></tr>
+<tr><td>Number of rows</td><td>292</td></tr>
 <tr><td>Number of columns</td><td>3</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -179,15 +185,15 @@ For details on the methods and limitations see <a href='https://github.com/nytim
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-10-26</td><td>2020-06-08</td><td>280</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-11-07</td><td>2020-06-14</td><td>292</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>2918676.8</td><td>2777892.60</td><td>1</td><td>182334.5</td><td>1981044</td><td>5465995.2</td><td>8776923</td><td>▇▃▂▂▂</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>101012.1</td><td>78120.05</td><td>0</td><td>4070.0</td><td>111659</td><td>170786.2</td><td>225692</td><td>▇▂▅▃▅</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>3183428.6</td><td>3007387.99</td><td>1</td><td>269346.50</td><td>2116516</td><td>5850158.5</td><td>9957051</td><td>▇▂▂▂▂</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>106388.2</td><td>80797.61</td><td>0</td><td>7584.25</td><td>115992</td><td>179884.5</td><td>237567</td><td>▇▂▅▅▅</td></tr>
 </table>
 
 
@@ -207,7 +213,7 @@ For details on the methods and limitations see <a href='https://github.com/nytim
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

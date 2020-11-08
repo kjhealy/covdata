@@ -1,6 +1,6 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1.9000
-pkgdown_sha: e1e46f2e13c7efdb17bc4eae40bc3779c2b0b517
+pkgdown: 1.6.1
+pkgdown_sha: ~
 articles:
   codebook: codebook.html
   covdata: covdata.html
@@ -9,7 +9,7 @@ articles:
   mobility-data: mobility-data.html
   new-york-times: new-york-times.html
   us-data: us-data.html
-last_built: 2020-10-27T21:43Z
+last_built: 2020-11-08T18:56Z
 urls:
   reference: https://kjhealy.github.io/covdata/reference
   article: https://kjhealy.github.io/covdata/articles
