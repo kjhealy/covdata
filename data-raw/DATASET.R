@@ -1190,7 +1190,7 @@ usethis::use_data(uspop, overwrite = TRUE, compress = "xz")
 document()
 
 system("Rscript -e 'knitr::knit(\"README.Rmd\")'")
-system("sed -i '' '1,4d' README.md")
+system("sed -i '' '1,3d' README.md")
 
 
 test()
