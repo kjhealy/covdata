@@ -19,6 +19,7 @@ URL: https://github.com/kjhealy/covdata
 BugReports: https://github.com/kjhealy/covdata/issues
 Imports: dplyr, magrittr, tidyr
 Suggests: 
+    drat,
     ggforce,
     ggrepel,
     lubridate,
