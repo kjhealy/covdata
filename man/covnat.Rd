@@ -3,9 +3,9 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Sunday, November  8, 2020}
+\title{International COVID-19 cases and deaths, current as of Thursday, November 12, 2020}
 \format{
-A tibble with 54,162 rows and 8 columns
+A tibble with 55,019 rows and 8 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{cname}{Name of country (character)}
@@ -30,38 +30,38 @@ A dataset containing national-level ECDC data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab dplyr::ungroup(covnat) \cr
-   Number of rows \tab 54162 \cr
+   Number of rows \tab 55019 \cr
    Number of columns \tab 8 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 2 \cr
    Date \tab 1 \cr
+   character \tab 2 \cr
    numeric \tab 5 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   cname \tab 0 \tab 1 \tab 4 \tab 42 \tab 0 \tab 212 \tab 0 \cr
-   iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 212 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-11-12 \tab 2020-07-04 \tab 318 \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-11-08 \tab 2020-07-02 \tab 314 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   cname \tab 0 \tab 1 \tab 4 \tab 42 \tab 0 \tab 213 \tab 0 \cr
+   iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 213 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 922.13 \tab 5142.16 \tab -8261 \tab 0 \tab 13 \tab 212.0 \tab 130623 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 23.08 \tab 124.36 \tab -1918 \tab 0 \tab 0 \tab 3.0 \tab 4928 \tab ▁▇▁▁▁ \cr
-   pop \tab 23 \tab 1 \tab 41651087.55 \tab 154814372.57 \tab 815 \tab 1324820 \tab 7813207 \tab 28608715.0 \tab 1433783692 \tab ▇▁▁▁▁ \cr
-   cu_cases \tab 0 \tab 1 \tab 74487.23 \tab 459785.72 \tab 0 \tab 92 \tab 1518 \tab 16701.5 \tab 9860958 \tab ▇▁▁▁▁ \cr
-   cu_deaths \tab 0 \tab 1 \tab 2594.19 \tab 13424.13 \tab 0 \tab 1 \tab 31 \tab 333.0 \tab 237113 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 947.72 \tab 5284.97 \tab -8261 \tab 0 \tab 13 \tab 218 \tab 147274 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 23.35 \tab 124.62 \tab -1918 \tab 0 \tab 0 \tab 3 \tab 4928 \tab ▁▇▁▁▁ \cr
+   pop \tab 27 \tab 1 \tab 41581130.95 \tab 154601988.26 \tab 815 \tab 1324820 \tab 7813207 \tab 28608715 \tab 1433783692 \tab ▇▁▁▁▁ \cr
+   cu_cases \tab 0 \tab 1 \tab 77056.45 \tab 473717.88 \tab 0 \tab 95 \tab 1573 \tab 17250 \tab 10401132 \tab ▇▁▁▁▁ \cr
+   cu_deaths \tab 0 \tab 1 \tab 2646.14 \tab 13641.98 \tab 0 \tab 1 \tab 32 \tab 345 \tab 241800 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

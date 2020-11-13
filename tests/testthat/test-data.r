@@ -59,13 +59,13 @@ test_that("covus conforms to spec", {
 
 
 test_that("covus_race conforms to spec", {
-  covus_race_colnames <- c("date", "state", "group", "cases", "deaths")
+  covus_race_colnames <- c("date", "state", "group", "cases", "deaths", "hosp")
   expect_equal(colnames(covus_race), covus_race_colnames)
 
 })
 
 test_that("covus_ethnicity conforms to spec", {
-  covus_ethnicity_colnames <- c("date", "state", "group", "cases", "deaths")
+  covus_ethnicity_colnames <- c("date", "state", "group", "cases", "deaths", "hosp")
   expect_equal(colnames(covus_ethnicity), covus_ethnicity_colnames)
 
 })
@@ -207,7 +207,7 @@ test_that("nchs_wss conforms to spec", {
   expect_equal(colnames(nchs_wss), nchs_wss_colnames)
 
   nchs_wss_groups <- c("Non-Hispanic White", "Non-Hispanic Black or African American", "Non-Hispanic American Indian or Alaska Native",
-                       "Non-Hispanic Asian", "Hispanic or Latino", "Other")
+                       "Non-Hispanic Asian", "Hispanic or Latino", "Other", "Non-Hispanic Native Hawaiian or Other Pacific Islander")
   expect_equal(unique(nchs_wss$group), nchs_wss_groups)
 })
 

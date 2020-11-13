@@ -727,20 +727,33 @@ covus_race_all <- covus_race_raw %>%
   deaths_unknown = col_integer(),
   deaths_ethnicity_hispanic = col_integer(),
   deaths_ethnicity_non_hispanic = col_integer(),
-  deaths_ethnicity_unknown = col_integer())) %>%
+  deaths_ethnicity_unknown = col_integer(),
+  hosp_total = col_integer(),
+  hosp_white = col_integer(),
+  hosp_black = col_integer(),
+  hosp_latin_x = col_integer(),
+  hosp_asian = col_integer(),
+  hosp_aian = col_integer(),
+  hosp_nhpi = col_integer(),
+  hosp_multiracial = col_integer(),
+  hosp_other = col_integer(),
+  hosp_unknown = col_integer(),
+  hosp_ethnicity_hispanic = col_integer(),
+  hosp_ethnicity_non_hispanic = col_integer(),
+  hosp_ethnicity_unknown = col_integer())) %>%
   rename(cases_latinx = cases_latin_x,
-         deaths_latinx = deaths_latin_x)
-
+         deaths_latinx = deaths_latin_x,
+         hosp_latinx = hosp_latin_x)
 
 covus_race_tots <- covus_race_all %>%
-  select(date, state, cases_total, deaths_total)
+  select(date, state, cases_total, hosp_total, deaths_total)
 
 covus_ethnicity <- covus_race_all %>%
   select(date, state, contains("_ethnicity_") & !contains("total")) %>%
   pivot_longer(
-    cols = cases_ethnicity_hispanic:deaths_ethnicity_unknown,
+    cols = cases_ethnicity_hispanic:hosp_ethnicity_unknown,
     names_to = c("measure", "group"),
-    names_pattern = "(cases|deaths)_ethnicity_(.*)",
+    names_pattern = "(cases|deaths|hosp)_ethnicity_(.*)",
     values_to = "count"
   ) %>%
   pivot_wider(
@@ -751,9 +764,9 @@ covus_ethnicity <- covus_race_all %>%
 covus_race <- covus_race_all %>%
   select(date, state, !contains("_ethnicity_") & !contains("total")) %>%
   pivot_longer(
-    cols = cases_white:deaths_unknown,
+    cols = cases_white:hosp_unknown,
     names_to = c("measure", "group"),
-    names_pattern = "(cases|deaths)_(.*)",
+    names_pattern = "(cases|deaths|hosp)_(.*)",
     values_to = "count"
   ) %>%
   pivot_wider(
@@ -923,7 +936,7 @@ nchs_wss_raw <- get_nchs_data(sname = "WSS",
 
 nchs_wss <- nchs_wss_raw %>%
   select(-Footnote) %>%
-  pivot_longer(`Non-Hispanic White`:`Other`,
+  pivot_longer(`Non-Hispanic White`:`Non-Hispanic Native Hawaiian or Other Pacific Islander`,
                names_to = "group") %>%
   pivot_wider(names_from = Indicator) %>%
   janitor::clean_names() %>%

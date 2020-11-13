@@ -86,6 +86,7 @@
 #'   \item{\code{group}}{character Racial group}
 #'   \item{\code{cases}}{integer Total cases, count}
 #'   \item{\code{deaths}}{integer Total deaths, count}
+#'   \item{\code{hosp}}{integer Total hospitalizations, count}
 #'}
 #' @details
 #' ```{r, results = "asis", echo = FALSE}
@@ -113,6 +114,7 @@
 #'   \item{\code{group}}{character Ethnic group}
 #'   \item{\code{cases}}{integer Total cases, count}
 #'   \item{\code{deaths}}{integer Total deaths, count}
+#'   \item{\code{hosp}}{integer Total hospitalizations, count}
 #'}
 #' @details
 #' ```{r, results = "asis", echo = FALSE}
