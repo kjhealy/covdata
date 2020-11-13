@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 case and death counts for the USA by race and state current as of Sunday, November  8, 2020 — covus_race • covdata</title>
+<title>COVID-19 case and death counts for the USA by race and state current as of Thursday, November 12, 2020 — covus_race • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 case and death counts for the USA by race and state current as of Sunday, November  8, 2020 — covus_race" />
+<meta property="og:title" content="COVID-19 case and death counts for the USA by race and state current as of Thursday, November 12, 2020 — covus_race" />
 <meta property="og:description" content="The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States.
 It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research." />
 
@@ -73,7 +73,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.92</span>
       </span>
     </div>
 
@@ -142,7 +142,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 case and death counts for the USA by race and state current as of Sunday, November  8, 2020</h1>
+    <h1>COVID-19 case and death counts for the USA by race and state current as of Thursday, November 12, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus_race.Rd</code></div>
     </div>
@@ -157,12 +157,13 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 30,240 rows and 5 columns</p><dl>
+    <p>A tibble with 31,248 rows and 6 columns</p><dl>
 <dt><code>date</code></dt><dd><p>date Data reported as of this date</p></dd>
 <dt><code>state</code></dt><dd><p>character State</p></dd>
 <dt><code>group</code></dt><dd><p>character Racial group</p></dd>
 <dt><code>cases</code></dt><dd><p>integer Total cases, count</p></dd>
 <dt><code>deaths</code></dt><dd><p>integer Total deaths, count</p></dd>
+<dt><code>hosp</code></dt><dd><p>integer Total hospitalizations, count</p></dd>
 
 </dl>
 
@@ -174,15 +175,22 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>covus_race</td></tr>
-<tr><td>Number of rows</td><td>30240</td></tr>
-<tr><td>Number of columns</td><td>5</td></tr>
+<tr><td>Number of rows</td><td>31248</td></tr>
+<tr><td>Number of columns</td><td>6</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>character</td><td>2</td></tr>
 <tr><td>Date</td><td>1</td></tr>
-<tr><td>numeric</td><td>2</td></tr>
+<tr><td>character</td><td>2</td></tr>
+<tr><td>numeric</td><td>3</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-04-12</td><td>2020-11-11</td><td>2020-07-27</td><td>62</td></tr>
 </table>
 
 
@@ -195,17 +203,11 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 
 
 
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-04-12</td><td>2020-11-04</td><td>2020-07-24</td><td>60</td></tr>
-</table>
-
-
-
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>10635</td><td>0.65</td><td>12959.26</td><td>41557.46</td><td>0</td><td>307</td><td>1874</td><td>9809</td><td>875166</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>12347</td><td>0.59</td><td>469.13</td><td>1190.75</td><td>0</td><td>9</td><td>48</td><td>303</td><td>10213</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>10925</td><td>0.65</td><td>13496.43</td><td>43014.14</td><td>0</td><td>317</td><td>1938</td><td>10272</td><td>933047</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>12669</td><td>0.59</td><td>477.61</td><td>1209.65</td><td>0</td><td>9</td><td>49</td><td>308</td><td>10287</td><td>▇▁▁▁▁</td></tr>
+<tr><td>hosp</td><td>31191</td><td>0.00</td><td>1893.58</td><td>3914.08</td><td>0</td><td>63</td><td>315</td><td>1711</td><td>21449</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 

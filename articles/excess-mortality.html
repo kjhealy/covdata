@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.92</span>
       </span>
     </div>
 
@@ -174,7 +174,7 @@
 <a href="#nchs-mortality-counts-and-estimates" class="anchor"></a>NCHS Mortality Counts and Estimates</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span>
-<span class="co">#&gt; # A tibble: 260,127 x 7</span>
+<span class="co">#&gt; # A tibble: 260,937 x 7</span>
 <span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed           n cause   </span>
 <span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   </span>
 <span class="co">#&gt;  1 Alabama       2014     1 2014-01-04       All Cause              355 All Cau…</span>
@@ -187,7 +187,7 @@
 <span class="co">#&gt;  8 Alabama       2014     1 2014-01-04       Malignant neoplasms…    60 Cancer  </span>
 <span class="co">#&gt;  9 Alabama       2014     1 2014-01-04       Natural Cause          327 Natural…</span>
 <span class="co">#&gt; 10 Alabama       2014     1 2014-01-04       Nephritis, nephroti…    NA Kidney …</span>
-<span class="co">#&gt; # … with 260,117 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 260,927 more rows</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">jurisdiction</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -234,22 +234,6 @@
 <span class="co">#&gt; 10 Israel  &lt;NA&gt;      weekly    2020-03-09 2020-03-15 2020      3    11    963</span>
 <span class="co">#&gt; # … with 5,739 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span>
 <span class="co">#&gt; #   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">nytexcess</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">placename</span> <span class="op">==</span> <span class="st">"New York City"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span>, <span class="va">week</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">mutate</span><span class="op">(</span>yr_ind <span class="op">=</span> <span class="va">year</span> <span class="op">%in%</span> <span class="fl">2020</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">week</span>, y <span class="op">=</span> <span class="va">deaths</span>, color <span class="op">=</span> <span class="va">yr_ind</span>, group <span class="op">=</span> <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_color_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gray70"</span>, <span class="st">"red"</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"2017-2019"</span>, <span class="st">"2020"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Week of the Year"</span>, 
-       y <span class="op">=</span> <span class="st">"Total Deaths"</span>, 
-       color <span class="op">=</span> <span class="st">"Year"</span>,
-       title <span class="op">=</span> <span class="st">"Weekly recorded deaths in New York City, 2017-2020"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></code></pre></div>
-<p><img src="excess-mortality_files/figure-html/nytexcessplot-1.png" width="1200"></p>
 </div>
   </div>
 

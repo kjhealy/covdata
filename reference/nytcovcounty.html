@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for US counties, current as of Sunday, November  8, 2020 — nytcovcounty • covdata</title>
+<title>NYT COVID-19 data for US counties, current as of Thursday, November 12, 2020 — nytcovcounty • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for US counties, current as of Sunday, November  8, 2020 — nytcovcounty" />
+<meta property="og:title" content="NYT COVID-19 data for US counties, current as of Thursday, November 12, 2020 — nytcovcounty" />
 <meta property="og:description" content="A dataset containing US county-level data on COVID-19, collected by the New York Times." />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.92</span>
       </span>
     </div>
 
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for US counties, current as of Sunday, November  8, 2020</h1>
+    <h1>NYT COVID-19 data for US counties, current as of Thursday, November 12, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovcounty.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 709,561 rows and 6 columns</p><dl>
+    <p>A tibble with 722,537 rows and 6 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>county</dt><dd><p>County name (character)</p></dd>
 <dt>state</dt><dd><p>State name (character)</p></dd>
@@ -183,15 +183,22 @@ For county data, note in particular:</p><ul>
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytcovcounty</td></tr>
-<tr><td>Number of rows</td><td>709561</td></tr>
+<tr><td>Number of rows</td><td>722537</td></tr>
 <tr><td>Number of columns</td><td>6</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>character</td><td>3</td></tr>
 <tr><td>Date</td><td>1</td></tr>
+<tr><td>character</td><td>3</td></tr>
 <tr><td>numeric</td><td>2</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-11-11</td><td>2020-07-23</td><td>296</td></tr>
 </table>
 
 
@@ -200,22 +207,15 @@ For county data, note in particular:</p><ul>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
 <tr><td>county</td><td>0</td><td>1.00</td><td>3</td><td>33</td><td>0</td><td>1927</td><td>0</td></tr>
 <tr><td>state</td><td>0</td><td>1.00</td><td>4</td><td>24</td><td>0</td><td>55</td><td>0</td></tr>
-<tr><td>fips</td><td>6777</td><td>0.99</td><td>5</td><td>5</td><td>0</td><td>3215</td><td>0</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-11-07</td><td>2020-07-21</td><td>292</td></tr>
+<tr><td>fips</td><td>6893</td><td>0.99</td><td>5</td><td>5</td><td>0</td><td>3215</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>1310.05</td><td>7340.20</td><td>0</td><td>23</td><td>129</td><td>594</td><td>320048</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>43.68</td><td>425.65</td><td>0</td><td>0</td><td>2</td><td>13</td><td>24060</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>1343.37</td><td>7457.65</td><td>0</td><td>24</td><td>135</td><td>615</td><td>328042</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>44.22</td><td>427.11</td><td>0</td><td>0</td><td>2</td><td>14</td><td>24096</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
