@@ -936,7 +936,7 @@ nchs_wss_raw <- get_nchs_data(sname = "WSS",
 
 nchs_wss <- nchs_wss_raw %>%
   select(-Footnote) %>%
-  pivot_longer(`Non-Hispanic White`:`Non-Hispanic Native Hawaiian or Other Pacific Islander`,
+  pivot_longer(`Non-Hispanic White`:Other,
                names_to = "group") %>%
   pivot_wider(names_from = Indicator) %>%
   janitor::clean_names() %>%

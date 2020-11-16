@@ -207,7 +207,8 @@ test_that("nchs_wss conforms to spec", {
   expect_equal(colnames(nchs_wss), nchs_wss_colnames)
 
   nchs_wss_groups <- c("Non-Hispanic White", "Non-Hispanic Black or African American", "Non-Hispanic American Indian or Alaska Native",
-                       "Non-Hispanic Asian", "Hispanic or Latino", "Other", "Non-Hispanic Native Hawaiian or Other Pacific Islander")
+                       "Non-Hispanic Asian", "Non-Hispanic Native Hawaiian or Other Pacific Islander", "Hispanic or Latino",
+                       "Other")
   expect_equal(unique(nchs_wss$group), nchs_wss_groups)
 })
 

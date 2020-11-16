@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovstate}
 \alias{nytcovstate}
-\title{NYT COVID-19 data for the US states, current as of Thursday, November 12, 2020}
+\title{NYT COVID-19 data for the US states, current as of Monday, November 16, 2020}
 \format{
-A tibble with 13,984 rows and 5 columns
+A tibble with 14,204 rows and 5 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{State name (character)}
@@ -28,7 +28,7 @@ A dataset containing US state-level data on COVID-19, collected by the New York 
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovstate \cr
-   Number of rows \tab 13984 \cr
+   Number of rows \tab 14204 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -42,7 +42,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-11-11 \tab 2020-07-07 \tab 296 \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2020-11-15 \tab 2020-07-09 \tab 300 \cr
 }
 
 
@@ -55,8 +55,8 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 69410.57 \tab 130419.74 \tab 1 \tab 2519.5 \tab 19336 \tab 80499.5 \tab 1050992 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 2290.06 \tab 4764.66 \tab 0 \tab 57.0 \tab 509 \tab 2258.5 \tab 33398 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 71401.30 \tab 133470.95 \tab 1 \tab 2614.25 \tab 20098 \tab 83184.00 \tab 1089993 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 2323.49 \tab 4798.11 \tab 0 \tab 58.00 \tab 523 \tab 2320.25 \tab 33508 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, November 12, 2020}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Monday, November 16, 2020}
 \format{
-A tibble with 10,416 rows and 6 columns
+A tibble with 10,584 rows and 6 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -29,7 +29,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_ethnicity \cr
-   Number of rows \tab 10416 \cr
+   Number of rows \tab 10584 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -43,7 +43,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-11-11 \tab 2020-07-27 \tab 62 \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-11-15 \tab 2020-07-29 \tab 63 \cr
 }
 
 
@@ -56,9 +56,9 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 2296 \tab 0.78 \tab 30826.35 \tab 62342.79 \tab 0 \tab 3251.00 \tab 11245 \tab 32624.0 \tab 933047 \tab ▇▁▁▁▁ \cr
-   deaths \tab 2438 \tab 0.77 \tab 1086.42 \tab 2394.65 \tab 0 \tab 45.00 \tab 163 \tab 850.0 \tab 22629 \tab ▇▁▁▁▁ \cr
-   hosp \tab 10392 \tab 0.00 \tab 4496.83 \tab 7571.46 \tab 12 \tab 414.25 \tab 1617 \tab 4245.5 \tab 33974 \tab ▇▂▁▁▁ \cr
+   cases \tab 2322 \tab 0.78 \tab 31608.41 \tab 63917.41 \tab 0 \tab 3316.25 \tab 11447 \tab 33437.00 \tab 967733 \tab ▇▁▁▁▁ \cr
+   deaths \tab 2462 \tab 0.77 \tab 1097.19 \tab 2412.30 \tab 0 \tab 45.00 \tab 166 \tab 860.00 \tab 22694 \tab ▇▁▁▁▁ \cr
+   hosp \tab 8380 \tab 0.21 \tab 3051.37 \tab 5541.43 \tab 0 \tab 300.25 \tab 1007 \tab 2684.75 \tab 41099 \tab ▇▁▁▁▁ \cr
 }
 
 

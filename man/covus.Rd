@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Thursday, November 12, 2020}
+\title{COVID-19 data for the USA, current as of Monday, November 16, 2020}
 \format{
-A tibble with 428,370 rows and 7 columns
+A tibble with 433,410 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,7 +29,7 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 428370 \cr
+   Number of rows \tab 433410 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -43,7 +43,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-11-12 \tab 2020-07-08 \tab 296 \cr
+   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-11-15 \tab 2020-07-10 \tab 299 \cr
 }
 
 
@@ -59,7 +59,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 278632 \tab 0.35 \tab 236502.4 \tab 937356.4 \tab 0 \tab 341 \tab 4815.5 \tab 81584.5 \tab 20342072 \tab ▇▁▁▁▁ \cr
+   count \tab 281265 \tab 0.35 \tab 241080 \tab 956620.2 \tab 0 \tab 348 \tab 4929 \tab 83213 \tab 20866785 \tab ▇▁▁▁▁ \cr
 }
 
 

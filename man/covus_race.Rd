@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Thursday, November 12, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Monday, November 16, 2020}
 \format{
-A tibble with 31,248 rows and 6 columns
+A tibble with 31,752 rows and 6 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -29,7 +29,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_race \cr
-   Number of rows \tab 31248 \cr
+   Number of rows \tab 31752 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -43,7 +43,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-11-11 \tab 2020-07-27 \tab 62 \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-11-15 \tab 2020-07-29 \tab 63 \cr
 }
 
 
@@ -56,9 +56,9 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 10925 \tab 0.65 \tab 13496.43 \tab 43014.14 \tab 0 \tab 317 \tab 1938 \tab 10272 \tab 933047 \tab ▇▁▁▁▁ \cr
-   deaths \tab 12669 \tab 0.59 \tab 477.61 \tab 1209.65 \tab 0 \tab 9 \tab 49 \tab 308 \tab 10287 \tab ▇▁▁▁▁ \cr
-   hosp \tab 31191 \tab 0.00 \tab 1893.58 \tab 3914.08 \tab 0 \tab 63 \tab 315 \tab 1711 \tab 21449 \tab ▇▁▁▁▁ \cr
+   cases \tab 11070 \tab 0.65 \tab 13791.82 \tab 43824.04 \tab 0 \tab 324 \tab 1981 \tab 10517 \tab 967733 \tab ▇▁▁▁▁ \cr
+   deaths \tab 12830 \tab 0.60 \tab 481.97 \tab 1219.32 \tab 0 \tab 9 \tab 49 \tab 311 \tab 10547 \tab ▇▁▁▁▁ \cr
+   hosp \tab 26428 \tab 0.17 \tab 1272.09 \tab 2994.89 \tab 0 \tab 49 \tab 225 \tab 1136 \tab 41099 \tab ▇▁▁▁▁ \cr
 }
 
 
