@@ -5,7 +5,7 @@
 \alias{nchs_wss}
 \title{Provisional Death Counts for Coronavirus Disease (COVID-19): Weekly State-Specific Data Updates}
 \format{
-A tibble with 350 rows and 9 variables:
+A tibble with 357 rows and 9 variables:
 \describe{
 \item{\code{data_as_of}}{date Date of analysis}
 \item{\code{start_week}}{date Start date of coverage}
@@ -32,7 +32,7 @@ In this release, counts of deaths are provided by the race and Hispanic origin o
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_wss \cr
-   Number of rows \tab 350 \cr
+   Number of rows \tab 357 \cr
    Number of columns \tab 9 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -46,25 +46,25 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2020-11-12 \tab 2020-11-12 \tab 2020-11-12 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2020-11-25 \tab 2020-11-25 \tab 2020-11-25 \tab 1 \cr
    start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
-   end_week \tab 0 \tab 1 \tab 2020-11-07 \tab 2020-11-07 \tab 2020-11-07 \tab 1 \cr
+   end_week \tab 0 \tab 1 \tab 2020-11-21 \tab 2020-11-21 \tab 2020-11-21 \tab 1 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 50 \tab 0 \cr
+   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 51 \tab 0 \cr
    group \tab 0 \tab 1 \tab 5 \tab 54 \tab 0 \tab 7 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   deaths \tab 77 \tab 0.78 \tab 1638.88 \tab 8299.92 \tab 0 \tab 23.0 \tab 117.0 \tab 871.00 \tab 119863.0 \tab ▇▁▁▁▁ \cr
-   dist_pct \tab 77 \tab 0.78 \tab 18.19 \tab 25.40 \tab 0 \tab 0.9 \tab 4.5 \tab 24.90 \tab 95.1 \tab ▇▁▁▁▁ \cr
-   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 14.28 \tab 23.51 \tab 0 \tab 0.9 \tab 3.2 \tab 12.78 \tab 93.0 \tab ▇▁▁▁▁ \cr
-   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 14.29 \tab 21.38 \tab 0 \tab 0.7 \tab 4.0 \tab 17.42 \tab 91.0 \tab ▇▁▁▁▁ \cr
+   deaths \tab 77 \tab 0.78 \tab 1714.07 \tab 8899.23 \tab 0 \tab 22.00 \tab 121.0 \tab 876.25 \tab 131665.0 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 77 \tab 0.78 \tab 18.10 \tab 25.74 \tab 0 \tab 0.98 \tab 4.2 \tab 25.00 \tab 95.1 \tab ▇▁▁▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 14.28 \tab 23.62 \tab 0 \tab 0.90 \tab 3.1 \tab 12.70 \tab 93.0 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 14.28 \tab 21.58 \tab 0 \tab 0.70 \tab 3.8 \tab 16.40 \tab 91.2 \tab ▇▁▁▁▁ \cr
 }
 
 
