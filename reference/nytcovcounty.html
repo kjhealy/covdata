@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for US counties, current as of Monday, November 16, 2020 — nytcovcounty • covdata</title>
+<title>NYT COVID-19 data for US counties, current as of Wednesday, November 25, 2020 — nytcovcounty • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for US counties, current as of Monday, November 16, 2020 — nytcovcounty" />
+<meta property="og:title" content="NYT COVID-19 data for US counties, current as of Wednesday, November 25, 2020 — nytcovcounty" />
 <meta property="og:description" content="A dataset containing US county-level data on COVID-19, collected by the New York Times." />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.93</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.94</span>
       </span>
     </div>
 
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for US counties, current as of Monday, November 16, 2020</h1>
+    <h1>NYT COVID-19 data for US counties, current as of Wednesday, November 25, 2020</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovcounty.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 735,516 rows and 6 columns</p><dl>
+    <p>A tibble with 764,735 rows and 6 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>county</dt><dd><p>County name (character)</p></dd>
 <dt>state</dt><dd><p>State name (character)</p></dd>
@@ -183,7 +183,7 @@ For county data, note in particular:</p><ul>
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytcovcounty</td></tr>
-<tr><td>Number of rows</td><td>735516</td></tr>
+<tr><td>Number of rows</td><td>764735</td></tr>
 <tr><td>Number of columns</td><td>6</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -198,24 +198,24 @@ For county data, note in particular:</p><ul>
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-11-15</td><td>2020-07-25</td><td>300</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2020-11-24</td><td>2020-07-29</td><td>309</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>county</td><td>0</td><td>1.00</td><td>3</td><td>33</td><td>0</td><td>1928</td><td>0</td></tr>
+<tr><td>county</td><td>0</td><td>1.00</td><td>3</td><td>33</td><td>0</td><td>1929</td><td>0</td></tr>
 <tr><td>state</td><td>0</td><td>1.00</td><td>4</td><td>24</td><td>0</td><td>55</td><td>0</td></tr>
-<tr><td>fips</td><td>7009</td><td>0.99</td><td>5</td><td>5</td><td>0</td><td>3216</td><td>0</td></tr>
+<tr><td>fips</td><td>7276</td><td>0.99</td><td>5</td><td>5</td><td>0</td><td>3217</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>1378.88</td><td>7584.15</td><td>0</td><td>24</td><td>141</td><td>639</td><td>339640</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>44.77</td><td>428.55</td><td>0</td><td>0</td><td>2</td><td>14</td><td>24124</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>1467.14</td><td>7908.32</td><td>0</td><td>26</td><td>155</td><td>696</td><td>374231</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>46.03</td><td>431.80</td><td>0</td><td>0</td><td>2</td><td>15</td><td>24220</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
