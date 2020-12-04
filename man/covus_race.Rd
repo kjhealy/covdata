@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Wednesday, November 25, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Friday, December  4, 2020}
 \format{
-A tibble with 32,760 rows and 6 columns
+A tibble with 34,272 rows and 6 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -29,7 +29,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_race \cr
-   Number of rows \tab 32760 \cr
+   Number of rows \tab 34272 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -43,7 +43,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-11-22 \tab 2020-08-02 \tab 65 \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-12-02 \tab 2020-08-07 \tab 68 \cr
 }
 
 
@@ -56,9 +56,9 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 11361 \tab 0.65 \tab 14431.06 \tab 45600.57 \tab 0 \tab 336.5 \tab 2069 \tab 11058.00 \tab 1040023 \tab ▇▁▁▁▁ \cr
-   deaths \tab 13150 \tab 0.60 \tab 490.89 \tab 1238.96 \tab 0 \tab 9.0 \tab 50 \tab 318.00 \tab 10969 \tab ▇▁▁▁▁ \cr
-   hosp \tab 27134 \tab 0.17 \tab 1325.53 \tab 3136.86 \tab 0 \tab 49.0 \tab 232 \tab 1172.25 \tab 41099 \tab ▇▁▁▁▁ \cr
+   cases \tab 11799 \tab 0.66 \tab 15507.12 \tab 48689.99 \tab 0 \tab 353 \tab 2216 \tab 11763 \tab 1145649 \tab ▇▁▁▁▁ \cr
+   deaths \tab 13627 \tab 0.60 \tab 505.12 \tab 1270.19 \tab 0 \tab 9 \tab 52 \tab 329 \tab 11352 \tab ▇▁▁▁▁ \cr
+   hosp \tab 28193 \tab 0.18 \tab 1404.51 \tab 3325.84 \tab 0 \tab 50 \tab 248 \tab 1249 \tab 41099 \tab ▇▁▁▁▁ \cr
 }
 
 

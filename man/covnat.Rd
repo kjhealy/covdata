@@ -3,9 +3,9 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Wednesday, November 25, 2020}
+\title{International COVID-19 cases and deaths, current as of Friday, December  4, 2020}
 \format{
-A tibble with 57,789 rows and 8 columns
+A tibble with 59,706 rows and 8 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{cname}{Name of country (character)}
@@ -30,7 +30,7 @@ A dataset containing national-level ECDC data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab dplyr::ungroup(covnat) \cr
-   Number of rows \tab 57789 \cr
+   Number of rows \tab 59706 \cr
    Number of columns \tab 8 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -44,7 +44,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-11-25 \tab 2020-07-11 \tab 331 \cr
+   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-12-04 \tab 2020-07-15 \tab 340 \cr
 }
 
 
@@ -57,11 +57,11 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 1036.17 \tab 5880.43 \tab -8261 \tab 0 \tab 14 \tab 239 \tab 196117 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 24.40 \tab 126.13 \tab -1918 \tab 0 \tab 0 \tab 4 \tab 4928 \tab ▁▇▁▁▁ \cr
-   pop \tab 40 \tab 1 \tab 41323008.00 \tab 153963241.44 \tab 815 \tab 1324820 \tab 7813207 \tab 28608715 \tab 1433783692 \tab ▇▁▁▁▁ \cr
-   cu_cases \tab 0 \tab 1 \tab 86061.05 \tab 523494.24 \tab 0 \tab 107 \tab 1799 \tab 19907 \tab 12591165 \tab ▇▁▁▁▁ \cr
-   cu_deaths \tab 0 \tab 1 \tab 2823.48 \tab 14378.26 \tab 0 \tab 1 \tab 35 \tab 389 \tab 259925 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 1090.52 \tab 6245.86 \tab -8261 \tab 0 \tab 15 \tab 254 \tab 214747 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 25.25 \tab 128.35 \tab -1918 \tab 0 \tab 0 \tab 4 \tab 4928 \tab ▁▇▁▁▁ \cr
+   pop \tab 49 \tab 1 \tab 41158532.76 \tab 153554874.75 \tab 815 \tab 1324820 \tab 7813207 \tab 28608715 \tab 1433783692 \tab ▇▁▁▁▁ \cr
+   cu_cases \tab 0 \tab 1 \tab 92758.58 \tab 561470.63 \tab 0 \tab 117 \tab 1924 \tab 21847 \tab 14139703 \tab ▇▁▁▁▁ \cr
+   cu_deaths \tab 0 \tab 1 \tab 2953.42 \tab 14912.81 \tab 0 \tab 1 \tab 39 \tab 423 \tab 276316 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

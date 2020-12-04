@@ -79,7 +79,7 @@ get_uscovid_data <- function(url = "https://api.covidtracking.com/v1/",
 }
 
 ## This URL will yield a file named "RACE Data Entry - CRDT.csv"
-get_uscovid_race_data <- function(url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_xmYt4ACPDZCDJcY12kCiMiH0ODyx3E1ZvgOHB8ae1tRcjXbs_yWBOA4j4uoCEADVfC1PS2jYO68B/pub?gid=43720681&single=true&output=csv",
+get_uscovid_race_data <- function(url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8SzaERcKJOD_EzrtCDK1dX1zkoMochlA9iHoHg_RSw3V8bkpfk1mpw4pfL5RdtSOyx_oScsUtyXyk/pub?gid=43720681&single=true&output=csv",
                              date = lubridate::today(),
                              ext = "csv",
                              dest = "data-raw/data",
