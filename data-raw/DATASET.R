@@ -728,6 +728,19 @@ covus_race_all <- covus_race_raw %>%
   deaths_ethnicity_hispanic = col_integer(),
   deaths_ethnicity_non_hispanic = col_integer(),
   deaths_ethnicity_unknown = col_integer(),
+  tests_total = col_integer(),
+  tests_white = col_integer(),
+  tests_black = col_integer(),
+  tests_latin_x = col_integer(),
+  tests_asian = col_integer(),
+  tests_aian = col_integer(),
+  tests_nhpi = col_integer(),
+  tests_multiracial = col_integer(),
+  tests_other = col_integer(),
+  tests_unknown = col_integer(),
+  tests_ethnicity_hispanic = col_integer(),
+  tests_ethnicity_non_hispanic = col_integer(),
+  tests_ethnicity_unknown = col_integer(),
   hosp_total = col_integer(),
   hosp_white = col_integer(),
   hosp_black = col_integer(),
@@ -743,17 +756,18 @@ covus_race_all <- covus_race_raw %>%
   hosp_ethnicity_unknown = col_integer())) %>%
   rename(cases_latinx = cases_latin_x,
          deaths_latinx = deaths_latin_x,
-         hosp_latinx = hosp_latin_x)
+         hosp_latinx = hosp_latin_x,
+         tests_latinx = tests_latin_x)
 
 covus_race_tots <- covus_race_all %>%
-  select(date, state, cases_total, hosp_total, deaths_total)
+  select(date, state, cases_total, tests_total, hosp_total, deaths_total)
 
 covus_ethnicity <- covus_race_all %>%
   select(date, state, contains("_ethnicity_") & !contains("total")) %>%
   pivot_longer(
-    cols = cases_ethnicity_hispanic:hosp_ethnicity_unknown,
+    cols = cases_ethnicity_hispanic:tests_ethnicity_unknown,
     names_to = c("measure", "group"),
-    names_pattern = "(cases|deaths|hosp)_ethnicity_(.*)",
+    names_pattern = "(cases|deaths|hosp|tests)_ethnicity_(.*)",
     values_to = "count"
   ) %>%
   pivot_wider(
@@ -764,9 +778,9 @@ covus_ethnicity <- covus_race_all %>%
 covus_race <- covus_race_all %>%
   select(date, state, !contains("_ethnicity_") & !contains("total")) %>%
   pivot_longer(
-    cols = cases_white:hosp_unknown,
+    cols = cases_white:tests_unknown,
     names_to = c("measure", "group"),
-    names_pattern = "(cases|deaths|hosp)_(.*)",
+    names_pattern = "(cases|deaths|hosp|tests)_(.*)",
     values_to = "count"
   ) %>%
   pivot_wider(

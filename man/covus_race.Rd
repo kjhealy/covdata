@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Friday, December  4, 2020}
+\title{COVID-19 case and death counts for the USA by race and state current as of Sunday, December 13, 2020}
 \format{
-A tibble with 34,272 rows and 6 columns
+A tibble with 34,641 rows and 7 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -29,13 +29,13 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_race \cr
-   Number of rows \tab 34272 \cr
-   Number of columns \tab 6 \cr
+   Number of rows \tab 34641 \cr
+   Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
    Date \tab 1 \cr
    character \tab 2 \cr
-   numeric \tab 3 \cr
+   numeric \tab 4 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
@@ -43,7 +43,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2020-12-02 \tab 2020-08-07 \tab 68 \cr
+   date \tab 0 \tab 1 \tab 2020-04-15 \tab 2020-12-09 \tab 2020-08-12 \tab 69 \cr
 }
 
 
@@ -56,9 +56,10 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 11799 \tab 0.66 \tab 15507.12 \tab 48689.99 \tab 0 \tab 353 \tab 2216 \tab 11763 \tab 1145649 \tab ▇▁▁▁▁ \cr
-   deaths \tab 13627 \tab 0.60 \tab 505.12 \tab 1270.19 \tab 0 \tab 9 \tab 52 \tab 329 \tab 11352 \tab ▇▁▁▁▁ \cr
-   hosp \tab 28193 \tab 0.18 \tab 1404.51 \tab 3325.84 \tab 0 \tab 50 \tab 248 \tab 1249 \tab 41099 \tab ▇▁▁▁▁ \cr
+   cases \tab 11644 \tab 0.66 \tab 16440.79 \tab 51313.03 \tab 0 \tab 375 \tab 2349 \tab 12485.0 \tab 1227912 \tab ▇▁▁▁▁ \cr
+   deaths \tab 13429 \tab 0.61 \tab 517.81 \tab 1296.47 \tab 0 \tab 9 \tab 53 \tab 339.0 \tab 11786 \tab ▇▁▁▁▁ \cr
+   hosp \tab 28262 \tab 0.18 \tab 1453.98 \tab 3437.65 \tab -227 \tab 51 \tab 254 \tab 1306.5 \tab 41099 \tab ▇▁▁▁▁ \cr
+   tests \tab 30876 \tab 0.11 \tab 121291.56 \tab 405697.67 \tab 0 \tab 465 \tab 8409 \tab 71105.0 \tab 5285250 \tab ▇▁▁▁▁ \cr
 }
 
 

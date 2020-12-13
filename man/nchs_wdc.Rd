@@ -5,7 +5,7 @@
 \alias{nchs_wdc}
 \title{Weekly Counts of Deaths by State and Select Causes 2014-2020}
 \format{
-A data frame with 263,382 rows and 7 variables:
+A data frame with 264,222 rows and 7 variables:
 \describe{
 \item{\code{jurisdiction}}{character Jurisdiction of Occurrence}
 \item{\code{year}}{double MMWR Year}

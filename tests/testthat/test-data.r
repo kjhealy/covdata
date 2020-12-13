@@ -59,13 +59,13 @@ test_that("covus conforms to spec", {
 
 
 test_that("covus_race conforms to spec", {
-  covus_race_colnames <- c("date", "state", "group", "cases", "deaths", "hosp")
+  covus_race_colnames <- c("date", "state", "group", "cases", "deaths", "hosp", "tests")
   expect_equal(colnames(covus_race), covus_race_colnames)
 
 })
 
 test_that("covus_ethnicity conforms to spec", {
-  covus_ethnicity_colnames <- c("date", "state", "group", "cases", "deaths", "hosp")
+  covus_ethnicity_colnames <- c("date", "state", "group", "cases", "deaths", "hosp", "tests")
   expect_equal(colnames(covus_ethnicity), covus_ethnicity_colnames)
 
 })
