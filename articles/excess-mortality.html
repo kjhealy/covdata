@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.95</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.96</span>
       </span>
     </div>
 
@@ -136,7 +136,7 @@
 </blockquote>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">stmf</span>
-<span class="co">#&gt; # A tibble: 496,365 x 17</span>
+<span class="co">#&gt; # A tibble: 497,100 x 17</span>
 <span class="co">#&gt;    country_code cname iso2  continent iso3   year  week sex   split split_sex</span>
 <span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 AUS2         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;   2015     1 m         1         0</span>
@@ -149,7 +149,7 @@
 <span class="co">#&gt;  8 AUS2         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;   2015     1 f         1         0</span>
 <span class="co">#&gt;  9 AUS2         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;   2015     1 f         1         0</span>
 <span class="co">#&gt; 10 AUS2         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;   2015     1 f         1         0</span>
-<span class="co">#&gt; # … with 496,355 more rows, and 7 more variables: forecast &lt;dbl&gt;,</span>
+<span class="co">#&gt; # … with 497,090 more rows, and 7 more variables: forecast &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   approx_date &lt;date&gt;, age_group &lt;chr&gt;, death_count &lt;dbl&gt;, death_rate &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   deaths_total &lt;dbl&gt;, rate_total &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -174,7 +174,7 @@
 <a href="#nchs-mortality-counts-and-estimates" class="anchor"></a>NCHS Mortality Counts and Estimates</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span>
-<span class="co">#&gt; # A tibble: 263,382 x 7</span>
+<span class="co">#&gt; # A tibble: 264,222 x 7</span>
 <span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed           n cause   </span>
 <span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   </span>
 <span class="co">#&gt;  1 Alabama       2014     1 2014-01-04       All Cause              355 All Cau…</span>
@@ -187,7 +187,7 @@
 <span class="co">#&gt;  8 Alabama       2014     1 2014-01-04       Malignant neoplasms…    60 Cancer  </span>
 <span class="co">#&gt;  9 Alabama       2014     1 2014-01-04       Natural Cause          327 Natural…</span>
 <span class="co">#&gt; 10 Alabama       2014     1 2014-01-04       Nephritis, nephroti…    NA Kidney …</span>
-<span class="co">#&gt; # … with 263,372 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 264,212 more rows</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">jurisdiction</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
