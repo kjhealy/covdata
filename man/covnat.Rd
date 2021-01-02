@@ -3,7 +3,7 @@
 \docType{data}
 \name{covnat}
 \alias{covnat}
-\title{International COVID-19 cases and deaths, current as of Sunday, December 13, 2020}
+\title{International COVID-19 cases and deaths, current as of Saturday, January  2, 2021}
 \format{
 A tibble with 61,623 rows and 8 columns
 \describe{
@@ -34,17 +34,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 8 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 2 \cr
+   Date \tab 1 \cr
    numeric \tab 5 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-12-13 \tab 2020-07-20 \tab 349 \cr
 }
 
 
@@ -52,6 +46,12 @@ Table: Data summary\tabular{ll}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    cname \tab 0 \tab 1 \tab 4 \tab 42 \tab 0 \tab 213 \tab 0 \cr
    iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 213 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2019-12-31 \tab 2020-12-13 \tab 2020-07-20 \tab 349 \cr
 }
 
 

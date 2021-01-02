@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Sunday, December 13, 2020}
+\title{COVID-19 data for the USA, current as of Saturday, January  2, 2021}
 \format{
-A tibble with 479,070 rows and 7 columns
+A tibble with 512,970 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,21 +29,15 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 479070 \cr
+   Number of rows \tab 512970 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 5 \cr
+   Date \tab 1 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-22 \tab 2020-12-12 \tab 2020-07-23 \tab 326 \cr
 }
 
 
@@ -51,15 +45,21 @@ Table: Data summary\tabular{ll}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    state \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
    fips \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
-   data_quality_grade \tab 37830 \tab 0.92 \tab 1 \tab 5 \tab 0 \tab 7 \tab 0 \cr
+   data_quality_grade \tab 38130 \tab 0.93 \tab 1 \tab 5 \tab 0 \tab 7 \tab 0 \cr
    measure \tab 0 \tab 1.00 \tab 5 \tab 30 \tab 0 \tab 30 \tab 0 \cr
    measure_label \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 30 \tab 0 \cr
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-01-01 \tab 2020-08-02 \tab 355 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 305627 \tab 0.36 \tab 288011.7 \tab 1153840 \tab 0 \tab 396 \tab 5795 \tab 97636.5 \tab 26886130 \tab ▇▁▁▁▁ \cr
+   count \tab 324823 \tab 0.37 \tab 329583.3 \tab 1334107 \tab 0 \tab 434 \tab 6356 \tab 110506 \tab 33058311 \tab ▇▁▁▁▁ \cr
 }
 
 

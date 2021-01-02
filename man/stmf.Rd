@@ -5,7 +5,7 @@
 \alias{stmf}
 \title{Short Term Mortality Fluctuations (STMF) data series}
 \format{
-A tibble with 497,100 rows and 17 variables:
+A tibble with 498,345 rows and 17 variables:
 \describe{
 \item{\code{country_code}}{Mortality database country code}
 \item{\code{cname}}{character Country name}
@@ -85,47 +85,47 @@ Variables
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab stmf \cr
-   Number of rows \tab 497100 \cr
+   Number of rows \tab 498345 \cr
    Number of columns \tab 17 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 7 \cr
+   Date \tab 1 \cr
    numeric \tab 9 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-12-06 \tab 2011-11-13 \tab 1609 \cr
-}
-
-
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    country_code \tab 0 \tab 1.00 \tab 3 \tab 7 \tab 0 \tab 38 \tab 0 \cr
-   cname \tab 12150 \tab 0.98 \tab 5 \tab 25 \tab 0 \tab 36 \tab 0 \cr
-   iso2 \tab 41595 \tab 0.92 \tab 2 \tab 2 \tab 0 \tab 33 \tab 0 \cr
-   continent \tab 61695 \tab 0.88 \tab 4 \tab 13 \tab 0 \tab 4 \tab 0 \cr
-   iso3 \tab 61695 \tab 0.88 \tab 3 \tab 3 \tab 0 \tab 31 \tab 0 \cr
+   cname \tab 12315 \tab 0.98 \tab 5 \tab 25 \tab 0 \tab 36 \tab 0 \cr
+   iso2 \tab 41865 \tab 0.92 \tab 2 \tab 2 \tab 0 \tab 33 \tab 0 \cr
+   continent \tab 62040 \tab 0.88 \tab 4 \tab 13 \tab 0 \tab 4 \tab 0 \cr
+   iso3 \tab 62040 \tab 0.88 \tab 3 \tab 3 \tab 0 \tab 31 \tab 0 \cr
    sex \tab 0 \tab 1.00 \tab 1 \tab 1 \tab 0 \tab 3 \tab 0 \cr
    age_group \tab 0 \tab 1.00 \tab 3 \tab 5 \tab 0 \tab 5 \tab 0 \cr
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   approx_date \tab 0 \tab 1 \tab 1990-01-07 \tab 2020-12-20 \tab 2011-11-27 \tab 1611 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   year \tab 0 \tab 1 \tab 2010.63 \tab 6.40 \tab 1990 \tab 2006.00 \tab 2011.00 \tab 2016.00 \tab 2020.00 \tab ▁▃▆▆▇ \cr
-   week \tab 0 \tab 1 \tab 26.34 \tab 14.94 \tab 1 \tab 13.00 \tab 26.00 \tab 39.00 \tab 52.00 \tab ▇▇▇▇▇ \cr
+   year \tab 0 \tab 1 \tab 2010.66 \tab 6.41 \tab 1990 \tab 2006.00 \tab 2011.00 \tab 2016.00 \tab 2020.00 \tab ▁▃▆▆▇ \cr
+   week \tab 0 \tab 1 \tab 26.40 \tab 14.96 \tab 1 \tab 13.00 \tab 26.00 \tab 39.00 \tab 52.00 \tab ▇▇▇▇▇ \cr
    split \tab 0 \tab 1 \tab 0.10 \tab 0.30 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
    split_sex \tab 0 \tab 1 \tab 0.01 \tab 0.09 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
-   forecast \tab 0 \tab 1 \tab 0.12 \tab 0.32 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
-   death_count \tab 0 \tab 1 \tab 576.39 \tab 1568.80 \tab 0 \tab 37.00 \tab 152.00 \tab 400.00 \tab 24931.77 \tab ▇▁▁▁▁ \cr
+   forecast \tab 0 \tab 1 \tab 0.12 \tab 0.33 \tab 0 \tab 0.00 \tab 0.00 \tab 0.00 \tab 1.00 \tab ▇▁▁▁▁ \cr
+   death_count \tab 0 \tab 1 \tab 577.99 \tab 1572.00 \tab 0 \tab 37.00 \tab 153.00 \tab 401.00 \tab 24931.77 \tab ▇▁▁▁▁ \cr
    death_rate \tab 0 \tab 1 \tab 0.05 \tab 0.06 \tab 0 \tab 0.00 \tab 0.02 \tab 0.07 \tab 0.57 \tab ▇▂▁▁▁ \cr
-   deaths_total \tab 0 \tab 1 \tab 2881.97 \tab 6436.63 \tab 2 \tab 456.00 \tab 953.00 \tab 2282.00 \tab 78832.00 \tab ▇▁▁▁▁ \cr
-   rate_total \tab 0 \tab 1 \tab 0.01 \tab 0.00 \tab 0 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.04 \tab ▃▇▁▁▁ \cr
+   deaths_total \tab 0 \tab 1 \tab 2889.97 \tab 6450.11 \tab 2 \tab 456.00 \tab 953.00 \tab 2286.00 \tab 78991.00 \tab ▇▁▁▁▁ \cr
+   rate_total \tab 0 \tab 1 \tab 0.01 \tab 0.00 \tab 0 \tab 0.01 \tab 0.01 \tab 0.01 \tab 0.04 \tab ▅▇▁▁▁ \cr
 }
 }
 \references{
