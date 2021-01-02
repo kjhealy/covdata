@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 case and death counts for the USA by race and state current as of Sunday, December 13, 2020 — covus_race • covdata</title>
+<title>COVID-19 case and death counts for the USA by race and state current as of Saturday, January  2, 2021 — covus_race • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 case and death counts for the USA by race and state current as of Sunday, December 13, 2020 — covus_race" />
+<meta property="og:title" content="COVID-19 case and death counts for the USA by race and state current as of Saturday, January  2, 2021 — covus_race" />
 <meta property="og:description" content="The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States.
 It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research." />
 
@@ -73,7 +73,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.96</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.97</span>
       </span>
     </div>
 
@@ -81,7 +81,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -125,7 +125,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/kjhealy/covdata">
-    <span class="fa fa-github"></span>
+    <span class="fas fa-github"></span>
      
   </a>
 </li>
@@ -142,7 +142,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 case and death counts for the USA by race and state current as of Sunday, December 13, 2020</h1>
+    <h1>COVID-19 case and death counts for the USA by race and state current as of Saturday, January  2, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus_race.Rd</code></div>
     </div>
@@ -157,7 +157,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 34,641 rows and 7 columns</p><dl>
+    <p>A tibble with 38,304 rows and 7 columns</p><dl>
 <dt><code>date</code></dt><dd><p>date Data reported as of this date</p></dd>
 <dt><code>state</code></dt><dd><p>character State</p></dd>
 <dt><code>group</code></dt><dd><p>character Racial group</p></dd>
@@ -175,22 +175,15 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>covus_race</td></tr>
-<tr><td>Number of rows</td><td>34641</td></tr>
+<tr><td>Number of rows</td><td>38304</td></tr>
 <tr><td>Number of columns</td><td>7</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>2</td></tr>
+<tr><td>Date</td><td>1</td></tr>
 <tr><td>numeric</td><td>4</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-04-15</td><td>2020-12-09</td><td>2020-08-12</td><td>69</td></tr>
 </table>
 
 
@@ -203,12 +196,19 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 
 
 
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-04-12</td><td>2020-12-30</td><td>2020-08-21</td><td>76</td></tr>
+</table>
+
+
+
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>11644</td><td>0.66</td><td>16440.79</td><td>51313.03</td><td>0</td><td>375</td><td>2349</td><td>12485.0</td><td>1227912</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>13429</td><td>0.61</td><td>517.81</td><td>1296.47</td><td>0</td><td>9</td><td>53</td><td>339.0</td><td>11786</td><td>▇▁▁▁▁</td></tr>
-<tr><td>hosp</td><td>28262</td><td>0.18</td><td>1453.98</td><td>3437.65</td><td>-227</td><td>51</td><td>254</td><td>1306.5</td><td>41099</td><td>▇▁▁▁▁</td></tr>
-<tr><td>tests</td><td>30876</td><td>0.11</td><td>121291.56</td><td>405697.67</td><td>0</td><td>465</td><td>8409</td><td>71105.0</td><td>5285250</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>12976</td><td>0.66</td><td>19189.56</td><td>61238.50</td><td>0</td><td>410.75</td><td>2613</td><td>14222.25</td><td>1678097</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>14878</td><td>0.61</td><td>551.67</td><td>1379.17</td><td>0</td><td>10.00</td><td>56</td><td>359.00</td><td>13480</td><td>▇▁▁▁▁</td></tr>
+<tr><td>hosp</td><td>30967</td><td>0.19</td><td>1603.36</td><td>3738.39</td><td>-227</td><td>56.00</td><td>279</td><td>1434.00</td><td>41099</td><td>▇▁▁▁▁</td></tr>
+<tr><td>tests</td><td>34227</td><td>0.11</td><td>141287.45</td><td>480312.25</td><td>0</td><td>595.00</td><td>10103</td><td>82283.00</td><td>6182439</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 

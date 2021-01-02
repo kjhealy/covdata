@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.96</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.97</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -83,7 +83,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/kjhealy/covdata">
-    <span class="fa fa-github"></span>
+    <span class="fas fa-github"></span>
      
   </a>
 </li>
@@ -97,8 +97,7 @@
 
       
 
-      </header><script src="mobility-data_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="mobility-data_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="mobility-data_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="mobility-data_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Mobility Data from Apple</h1>
@@ -117,7 +116,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</span>
-<span class="co">#&gt; ✔ ggplot2 3.3.2     ✔ purrr   0.3.4</span>
+<span class="co">#&gt; ✔ ggplot2 3.3.3     ✔ purrr   0.3.4</span>
 <span class="co">#&gt; ✔ tibble  3.0.4     ✔ dplyr   1.0.2</span>
 <span class="co">#&gt; ✔ tidyr   1.1.2     ✔ stringr 1.4.0</span>
 <span class="co">#&gt; ✔ readr   1.4.0     ✔ forcats 0.5.0</span>
@@ -138,7 +137,7 @@
 <p>Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">apple_mobility</span>
-<span class="co">#&gt; # A tibble: 1,566,794 x 8</span>
+<span class="co">#&gt; # A tibble: 1,665,305 x 8</span>
 <span class="co">#&gt;    geo_type region transportation_… alternative_name sub_region country</span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
@@ -151,7 +150,7 @@
 <span class="co">#&gt;  8 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt;  9 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt; 10 country… Alban… driving          &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
-<span class="co">#&gt; # … with 1,566,784 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt; # … with 1,665,295 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vec_brks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span><span class="op">)</span>
 <span class="va">vec_labs</span> <span class="op">&lt;-</span> <span class="va">vec_brks</span> <span class="op">+</span> <span class="fl">100</span></code></pre></div>
