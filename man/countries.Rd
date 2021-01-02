@@ -5,7 +5,7 @@
 \alias{countries}
 \title{Country Names and ISO codes}
 \format{
-A data frame with 219 rows and 4 variables:
+A data frame with 213 rows and 4 variables:
 \describe{
 \item{\code{cname}}{character Country name}
 \item{\code{iso3}}{character ISO 3 designation}
@@ -23,7 +23,7 @@ Convenience table of country names and their abbreviated names
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab dplyr::ungroup(countries) \cr
-   Number of rows \tab 219 \cr
+   Number of rows \tab 213 \cr
    Number of columns \tab 4 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr

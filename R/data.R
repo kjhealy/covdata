@@ -464,12 +464,16 @@
 #'   \item{\code{rate_total}}{double Crude death rate.}
 #'
 #'}
-#' @details For further details on the construction of this dataset see the codebook at \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}.
-#' For the original input data files in standardized form, see \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
+#' @details For further details on the construction of this dataset see the
+#'   codebook at \url{https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf}.
+#'   For the original input data files in standardized form, see
+#'   \url{https://www.mortality.org/Public/STMF/Inputs/STMFinput.zip}.
 #'
 #' Countries and years covered in the dataset:
 #'
-#' `r knitr::kable(stmf_country_years(stmf))`
+#' ```{r, echo = FALSE}
+#' knitr::kable(stmf_country_years(stmf))
+#' ```
 #'
 #' Variables
 #' ```{r, results = "asis", echo = FALSE}

@@ -36,17 +36,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 10 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 1 \cr
    Date \tab 3 \cr
+   character \tab 1 \cr
    numeric \tab 6 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   sex \tab 0 \tab 1 \tab 4 \tab 7 \tab 0 \tab 3 \tab 0 \cr
 }
 
 
@@ -55,6 +49,12 @@ Table: Data summary\tabular{ll}{
    data_as_of \tab 0 \tab 1 \tab 2020-04-30 \tab 2020-04-30 \tab 2020-04-30 \tab 1 \cr
    start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
    end_week \tab 0 \tab 1 \tab 2020-04-25 \tab 2020-04-25 \tab 2020-04-25 \tab 1 \cr
+}
+
+
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   sex \tab 0 \tab 1 \tab 4 \tab 7 \tab 0 \tab 3 \tab 0 \cr
 }
 
 

@@ -33,11 +33,17 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 5 \cr
    Date \tab 1 \cr
+   character \tab 5 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-01-01 \tab 2020-08-02 \tab 355 \cr
 }
 
 
@@ -51,15 +57,9 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-01-01 \tab 2020-08-02 \tab 355 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 324823 \tab 0.37 \tab 329583.3 \tab 1334107 \tab 0 \tab 434 \tab 6356 \tab 110506 \tab 33058311 \tab ▇▁▁▁▁ \cr
+   count \tab 324824 \tab 0.37 \tab 329582.9 \tab 1334110 \tab 0 \tab 434 \tab 6355.5 \tab 110505.5 \tab 33058311 \tab ▇▁▁▁▁ \cr
 }
 
 

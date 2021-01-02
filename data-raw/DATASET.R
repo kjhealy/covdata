@@ -624,7 +624,8 @@ covnat ## Data object
 countries <- covnat %>%
   distinct(cname, iso3) %>%
   left_join(cname_table) %>%
-  left_join(continents)
+  left_join(continents) %>%
+  distinct(cname, iso3, iso2, continent)
 
 
 
@@ -1117,7 +1118,9 @@ stmf <- get_stmf(skip = 2) %>%
   rename(death_count = d, death_rate = r) %>%
   mutate(approx_date = paste0(year, "-", "W", stringr::str_pad(week, width = 2, pad = "0"), "-", "7"),
          approx_date = ISOweek::ISOweek2date(approx_date)) %>%
-  select(country_code:sex, split:forecast, approx_date, approx_date, age_group:death_rate, deaths_total, rate_total)
+  select(country_code:sex, split:forecast, approx_date, approx_date, age_group:death_rate, deaths_total, rate_total) %>%
+  mutate(country_code = replace(country_code, country_code == "AUS2", "AUS"),
+         country_code = replace(country_code, country_code == "NZL_NP", "NZL"))
 
 
 md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
@@ -1135,7 +1138,6 @@ md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
 
 stmf <- left_join(stmf, md_ccodes) %>%
   select(country_code, cname:iso3, everything())
-
 
 ### --------------------------------------------------------------------------------------
 ### Get Coronanet policy data
