@@ -1,3 +1,6 @@
+# covdata 0.6
+*Breaking change*: Remobved `nchs_wdc` due to its size. Plan is to provide more functions for the user to grab this and other data directly.
+
 # covdata 0.5.2
 
 *Breaking change*: The `google_mobility` dataset is getting pretty big, causing longer load times and also installation failures in some settings, e.g. on RStudio Cloud instances. I have relocated it from this package to the new [covmobility package](https://kjhealy.github.io/covmobility). `covmobility` also contains the `apple_mobility` dataset. For now, `apple_mobility` is still in `covdata` as before, though this may change.

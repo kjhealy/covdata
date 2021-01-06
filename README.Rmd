@@ -30,7 +30,6 @@ knitr::opts_chunk$set(
 - National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).  
 - State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com). 
 - State-level and county-level case and mortality data for the United States from the [_New York Times_](https://github.com/nytimes/covid-19-data).
-- Deidentified patient-level data from the CDC's [COVID-19 Case Surveillance Public Use Dataset](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf). 
 
 ### All-cause mortality and excess mortality data
 

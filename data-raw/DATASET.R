@@ -972,38 +972,38 @@ nchs_wss <- nchs_wss_raw %>%
     wt_dist_pop_pct = "d"
   ))
 
-cspud_style <-  "%Y/%m/%d"
-
-cspud_colspec <- cols(
-  cdc_report_dt = col_date(format = cspud_style),
-  pos_spec_dt = col_date(format = cspud_style),
-  onset_dt = col_date(format = cspud_style),
-  current_status = "c",
-  sex = "c",
-  age_group = "c",
-  `Race and ethnicity (combined)` = "c",
-  hosp_yn = "c",
-  icu_yn = "c",
-  medcond_yn = "c"
-)
-
-nchs_cspud_raw <- get_nchs_data(sname = "CSPUD",
-                                clean_names = "y",
-                                save_file = "n",
-                                cols = cspud_colspec)
-
-nchs_pud <- nchs_cspud_raw %>%
-  mutate(current_status = recode(current_status,
-                                 "Laboratory-confirmed case" = "Confirmed", "Probable Case" = "Probable"),
-         age_group = stringr::str_replace(age_group, "Years", "yrs"),
-         age_group = stringr::str_replace_all(age_group, " ", ""),
-         race_and_ethnicity_combined = stringr::str_replace(race_and_ethnicity_combined,
-                                                            "American Indian/Alaska Native",
-                                                            "AI/AN"),
-         race_and_ethnicity_combined = stringr::str_replace(race_and_ethnicity_combined,
-                                                            "Native Hawaiian/Other Pacific Islander",
-                                                            "NH/PI")) %>%
-  rename(race_ethnicity = race_and_ethnicity_combined)
+# cspud_style <-  "%Y/%m/%d"
+#
+# cspud_colspec <- cols(
+#   cdc_report_dt = col_date(format = cspud_style),
+#   pos_spec_dt = col_date(format = cspud_style),
+#   onset_dt = col_date(format = cspud_style),
+#   current_status = "c",
+#   sex = "c",
+#   age_group = "c",
+#   `Race and ethnicity (combined)` = "c",
+#   hosp_yn = "c",
+#   icu_yn = "c",
+#   medcond_yn = "c"
+# )
+#
+# nchs_cspud_raw <- get_nchs_data(sname = "CSPUD",
+#                                 clean_names = "y",
+#                                 save_file = "n",
+#                                 cols = cspud_colspec)
+#
+# nchs_pud <- nchs_cspud_raw %>%
+#   mutate(current_status = recode(current_status,
+#                                  "Laboratory-confirmed case" = "Confirmed", "Probable Case" = "Probable"),
+#          age_group = stringr::str_replace(age_group, "Years", "yrs"),
+#          age_group = stringr::str_replace_all(age_group, " ", ""),
+#          race_and_ethnicity_combined = stringr::str_replace(race_and_ethnicity_combined,
+#                                                             "American Indian/Alaska Native",
+#                                                             "AI/AN"),
+#          race_and_ethnicity_combined = stringr::str_replace(race_and_ethnicity_combined,
+#                                                             "Native Hawaiian/Other Pacific Islander",
+#                                                             "NH/PI")) %>%
+#   rename(race_ethnicity = race_and_ethnicity_combined)
 
 wdc_style <-  "%Y-%m-%d"
 
@@ -1053,7 +1053,7 @@ nchs_wdc1920_raw <- get_nchs_data(sname = "WDC1920",
 nchs_wdc1920 <- nchs_wdc1920_raw %>%
   pivot_longer(`All Cause`:`COVID-19 (U071, Underlying Cause of Death)`, names_to = "cause_detailed", values_to = "n") %>%
   janitor::clean_names() %>%
-  mutate(week_ending_date = lubridate::mdy(week_ending_date)) %>%
+  mutate(week_ending_date = lubridate::ymd(week_ending_date)) %>%
   rename(jurisdiction = jurisdiction_of_occurrence,
          year = mmwr_year,
          week = mmwr_week) %>%
@@ -1182,7 +1182,7 @@ usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 ## NCHS
 usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
-usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
+# usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wdc, overwrite = TRUE, compress = "xz")
 
 ## CoronaNet

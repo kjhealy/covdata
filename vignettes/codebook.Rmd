@@ -129,13 +129,6 @@ skimr::skim(nchs_sas)
 skimr::skim(nchs_wss)
 ```
 
-### Deidentified patient-level data from the CDC COVID-19 case surveillance system database
-
-```{r}
-skimr::skim(nchs_pud)
-```
-
-
 ## Cross-national short-term mortality fluctuations data from the [Human Mortality Database](https://www.mortality.org)
 
 ```{r}
