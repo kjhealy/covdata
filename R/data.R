@@ -549,8 +549,8 @@
 #' @format A tibble with `r fmt_nr(nchs_sas)` rows and `r fmt_nc(nchs_sas)` variables:
 #' \describe{
 #'   \item{\code{data_as_of}}{date Date of data release}
-#'   \item{\code{start_week}}{date First week-ending date of data period}
-#'   \item{\code{end_week}}{date Last week-ending date of data period}
+#'   \item{\code{start_date}}{date First date of data period}
+#'   \item{\code{end_date}}{date Last date of data period}
 #'   \item{\code{state}}{character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, *and New York City*, separate from New York state.}
 #'   \item{\code{sex}}{character Sex}
 #'   \item{\code{age_group}}{character Age group}
