@@ -92,13 +92,13 @@ covnat %>%
 
 ```
 
-### New Cases per Capita
+### Deaths per Capita
 
 ```{r rolling, fig.height=6, fig.width=11, dpi=100}
 
 covnat %>%
   filter(iso3 %in% focus_on) %>%
-  ggplot(mapping = aes(x = date, y = deaths)) + 
+  ggplot(mapping = aes(x = date, y = (deaths/pop)*1e6)) + 
   geom_line(size = 0.5) + 
 #  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
   facet_wrap(~ cname) +
