@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT Excess Mortality Estimates, current as of Wednesday, January  6, 2021 — nytexcess • covdata</title>
+<title>NYT Excess Mortality Estimates, current as of Monday, January 25, 2021 — nytexcess • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT Excess Mortality Estimates, current as of Wednesday, January  6, 2021 — nytexcess" />
+<meta property="og:title" content="NYT Excess Mortality Estimates, current as of Monday, January 25, 2021 — nytexcess" />
 <meta property="og:description" content="All-cause mortality is widely used by demographers and other researchers to understand the full impact of deadly events, including epidemics, wars and natural disasters. The totals in this data include deaths from Covid-19 as well as those from other causes, likely including people who could not be treated or did not seek treatment for other conditions." />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1</span>
       </span>
     </div>
 
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT Excess Mortality Estimates, current as of Wednesday, January  6, 2021</h1>
+    <h1>NYT Excess Mortality Estimates, current as of Monday, January 25, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytexcess.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 5,749 rows and 12 columns</p><dl>
+    <p>A tibble with 7,258 rows and 12 columns</p><dl>
 <dt><code>country</code></dt><dd><p>character Country Name</p></dd>
 <dt><code>placename</code></dt><dd><p>character Place Name</p></dd>
 <dt><code>frequency</code></dt><dd><p>character Reporting period. Weekly or monthly, depending on how the data is recorded.</p></dd>
@@ -179,7 +179,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytexcess</td></tr>
-<tr><td>Number of rows</td><td>5749</td></tr>
+<tr><td>Number of rows</td><td>7258</td></tr>
 <tr><td>Number of columns</td><td>12</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -194,30 +194,30 @@
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>start_date</td><td>620</td><td>0.89</td><td>2010-01-09</td><td>2020-09-21</td><td>2017-12-04</td><td>1141</td></tr>
-<tr><td>end_date</td><td>620</td><td>0.89</td><td>2010-01-15</td><td>2020-09-27</td><td>2017-12-10</td><td>1141</td></tr>
+<tr><td>start_date</td><td>768</td><td>0.89</td><td>2010-01-09</td><td>2020-12-23</td><td>2018-02-05</td><td>1267</td></tr>
+<tr><td>end_date</td><td>768</td><td>0.89</td><td>2010-01-15</td><td>2020-12-29</td><td>2018-02-11</td><td>1267</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>country</td><td>0</td><td>1.00</td><td>4</td><td>14</td><td>0</td><td>32</td><td>0</td></tr>
-<tr><td>placename</td><td>5359</td><td>0.07</td><td>5</td><td>8</td><td>0</td><td>5</td><td>0</td></tr>
+<tr><td>country</td><td>0</td><td>1.00</td><td>4</td><td>14</td><td>0</td><td>35</td><td>0</td></tr>
+<tr><td>placename</td><td>6883</td><td>0.05</td><td>6</td><td>8</td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>frequency</td><td>0</td><td>1.00</td><td>6</td><td>7</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>year</td><td>0</td><td>1.00</td><td>4</td><td>17</td><td>0</td><td>14</td><td>0</td></tr>
-<tr><td>baseline</td><td>4914</td><td>0.15</td><td>20</td><td>25</td><td>0</td><td>7</td><td>0</td></tr>
+<tr><td>year</td><td>0</td><td>1.00</td><td>4</td><td>17</td><td>0</td><td>15</td><td>0</td></tr>
+<tr><td>baseline</td><td>5990</td><td>0.17</td><td>20</td><td>25</td><td>0</td><td>7</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>month</td><td>0</td><td>1.00</td><td>6.31</td><td>3.26</td><td>1</td><td>4</td><td>6</td><td>9</td><td>12</td><td>▇▆▆▆▇</td></tr>
-<tr><td>week</td><td>570</td><td>0.90</td><td>25.35</td><td>14.06</td><td>2</td><td>13</td><td>25</td><td>37</td><td>52</td><td>▇▇▇▆▅</td></tr>
-<tr><td>deaths</td><td>0</td><td>1.00</td><td>6539.49</td><td>9519.74</td><td>455</td><td>1243</td><td>2284</td><td>10132</td><td>82867</td><td>▇▁▁▁▁</td></tr>
-<tr><td>expected_deaths</td><td>4914</td><td>0.15</td><td>8304.73</td><td>12600.93</td><td>563</td><td>1375</td><td>2486</td><td>10336</td><td>61646</td><td>▇▁▁▁▁</td></tr>
-<tr><td>excess_deaths</td><td>4914</td><td>0.15</td><td>1103.43</td><td>3270.77</td><td>-4047</td><td>-74</td><td>31</td><td>514</td><td>27802</td><td>▇▁▁▁▁</td></tr>
+<tr><td>month</td><td>0</td><td>1.00</td><td>6.60</td><td>3.36</td><td>1</td><td>4.00</td><td>7.0</td><td>9.0</td><td>12</td><td>▇▆▆▆▇</td></tr>
+<tr><td>week</td><td>666</td><td>0.91</td><td>26.77</td><td>14.58</td><td>2</td><td>14.00</td><td>27.0</td><td>39.0</td><td>52</td><td>▇▇▇▇▇</td></tr>
+<tr><td>deaths</td><td>0</td><td>1.00</td><td>7968.24</td><td>14334.14</td><td>455</td><td>1460.00</td><td>2395.5</td><td>10486.0</td><td>141292</td><td>▇▁▁▁▁</td></tr>
+<tr><td>expected_deaths</td><td>5990</td><td>0.17</td><td>9237.09</td><td>15850.00</td><td>548</td><td>1443.00</td><td>2423.0</td><td>10771.5</td><td>139343</td><td>▇▁▁▁▁</td></tr>
+<tr><td>excess_deaths</td><td>5990</td><td>0.17</td><td>1195.43</td><td>3242.72</td><td>-6721</td><td>-42.25</td><td>76.5</td><td>926.0</td><td>30400</td><td>▇▂▁▁▁</td></tr>
 </table>
 
 
