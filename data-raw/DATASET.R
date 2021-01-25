@@ -611,8 +611,10 @@ anti_join(covid, cname_table) %>%
   distinct()
 
 covnat <- covid %>%
-  select(date, cname, iso3, cases, deaths, pop_data2019) %>%
-  rename(pop = pop_data2019) %>%
+  select(date, cname, iso3, cases_weekly, deaths_weekly, pop_data2019) %>%
+  rename(pop = pop_data2019,
+         cases = cases_weekly,
+         deaths = deaths_weekly) %>%
   drop_na(iso3) %>%
   group_by(iso3) %>%
   arrange(date) %>%
@@ -706,7 +708,7 @@ covus_race_all <- covus_race_raw %>%
   cases_total = col_integer(),
   cases_white = col_integer(),
   cases_black = col_integer(),
-  cases_latin_x = col_integer(),
+  cases_latinx = col_integer(),
   cases_asian = col_integer(),
   cases_aian = col_integer(),
   cases_nhpi = col_integer(),
@@ -719,7 +721,7 @@ covus_race_all <- covus_race_raw %>%
   deaths_total = col_integer(),
   deaths_white = col_integer(),
   deaths_black = col_integer(),
-  deaths_latin_x = col_integer(),
+  deaths_latinx = col_integer(),
   deaths_asian = col_integer(),
   deaths_aian = col_integer(),
   deaths_nhpi = col_integer(),
@@ -732,7 +734,7 @@ covus_race_all <- covus_race_raw %>%
   tests_total = col_integer(),
   tests_white = col_integer(),
   tests_black = col_integer(),
-  tests_latin_x = col_integer(),
+  tests_latinx = col_integer(),
   tests_asian = col_integer(),
   tests_aian = col_integer(),
   tests_nhpi = col_integer(),
@@ -745,7 +747,7 @@ covus_race_all <- covus_race_raw %>%
   hosp_total = col_integer(),
   hosp_white = col_integer(),
   hosp_black = col_integer(),
-  hosp_latin_x = col_integer(),
+  hosp_latinx = col_integer(),
   hosp_asian = col_integer(),
   hosp_aian = col_integer(),
   hosp_nhpi = col_integer(),
@@ -754,11 +756,7 @@ covus_race_all <- covus_race_raw %>%
   hosp_unknown = col_integer(),
   hosp_ethnicity_hispanic = col_integer(),
   hosp_ethnicity_non_hispanic = col_integer(),
-  hosp_ethnicity_unknown = col_integer())) %>%
-  rename(cases_latinx = cases_latin_x,
-         deaths_latinx = deaths_latin_x,
-         hosp_latinx = hosp_latin_x,
-         tests_latinx = tests_latin_x)
+  hosp_ethnicity_unknown = col_integer()))
 
 covus_race_tots <- covus_race_all %>%
   select(date, state, cases_total, tests_total, hosp_total, deaths_total)
@@ -790,7 +788,7 @@ covus_race <- covus_race_all %>%
   )
 
 
-covus_race_tots
+covus_race
 
 covus_ethnicity %>%
   group_by(state) %>%
@@ -1127,17 +1125,22 @@ md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
   left_join(countries, by = c("country_code" = "iso3")) %>%
   mutate(cname = replace(cname, country_code == "DEUTNP", "Germany"),
          iso2 = replace(iso2, country_code == "DEUTNP", "DE"),
+         continent = replace(continent, country_code == "DEU", "Europe"),
          cname = replace(cname, country_code == "FRATNP", "France"),
          iso2 = replace(iso2, country_code == "FRATNP", "FR"),
+         continent = replace(continent, country_code == "FRA", "Europe"),
          cname = replace(cname, country_code == "GBRTENW", "England and Wales"),
          cname = replace(cname, country_code == "GBR_SCO", "Scotland"),
-         cname = replace(cname, country_code == "GBR_NIR", "Northern Ireland")
+         cname = replace(cname, country_code == "GBR_NIR", "Northern Ireland"),
+         continent = replace(continent, country_code %in% c("GBRTENW", "GBR_SCO", "GBR_NIR"), "Europe")
          ) %>%
   left_join(countries)
 
 
 stmf <- left_join(stmf, md_ccodes) %>%
-  select(country_code, cname:iso3, everything())
+  select(country_code, cname:iso3, everything()) %>%
+  mutate(iso3 = replace(iso3, iso2 == "DE", "DEU"),
+         iso3 = replace(iso3, iso2 == "FR", "FRA"))
 
 ### --------------------------------------------------------------------------------------
 ### Get Coronanet policy data

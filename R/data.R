@@ -20,18 +20,18 @@
 
 #' International COVID-19 cases and deaths, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
 #'
-#' A dataset containing national-level ECDC data on COVID-19
+#' A dataset containing weekly national-level ECDC data on COVID-19
 #'
 #' @format A tibble with `r fmt_nr(covnat)` rows and `r fmt_nc(covnat)` columns
 #' \describe{
 #'   \item{date}{date in YYYY-MM-DD format}
 #'   \item{cname}{Name of country (character)}
 #'   \item{iso3}{ISO3 country code (character)}
-#'   \item{cases}{N reported COVID-19 cases on this date}
-#'   \item{deaths}{N reported COVID-19 deaths on this date}
+#'   \item{cases}{N reported COVID-19 cases for this week}
+#'   \item{deaths}{N reported COVID-19 deaths for this week}
 #'   \item{pop}{Country population in 2019}
-#'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this date}
-#'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this date}
+#'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this week}
+#'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this week}
 #' }
 #' @details
 #' ```{r, results = "asis", echo = FALSE}
@@ -582,8 +582,8 @@
 #' @format A tibble with `r fmt_nr(nchs_wss)` rows and `r fmt_nc(nchs_wss)` variables:
 #' \describe{
 #'   \item{\code{data_as_of}}{date Date of analysis}
-#'   \item{\code{start_week}}{date Start date of coverage}
-#'   \item{\code{end_week}}{date End date of coverage}
+#'   \item{\code{start_date}}{date Start date of coverage}
+#'   \item{\code{end_date}}{date End date of coverage}
 #'   \item{\code{state}}{character Geographical unit. One of: the United States, a U.S. State, the District of Columbia, or New York City. New York state measures *do not* include New York City }
 #'   \item{\code{group}}{character Population group}
 #'   \item{\code{deaths}}{integer Count of deaths}

@@ -5,11 +5,11 @@
 \alias{nchs_wss}
 \title{Provisional Death Counts for Coronavirus Disease (COVID-19): Weekly State-Specific Data Updates}
 \format{
-A tibble with 364 rows and 9 variables:
+A tibble with 371 rows and 9 variables:
 \describe{
 \item{\code{data_as_of}}{date Date of analysis}
-\item{\code{start_week}}{date Start date of coverage}
-\item{\code{end_week}}{date End date of coverage}
+\item{\code{start_date}}{date Start date of coverage}
+\item{\code{end_date}}{date End date of coverage}
 \item{\code{state}}{character Geographical unit. One of: the United States, a U.S. State, the District of Columbia, or New York City. New York state measures \emph{do not} include New York City }
 \item{\code{group}}{character Population group}
 \item{\code{deaths}}{integer Count of deaths}
@@ -32,12 +32,12 @@ In this release, counts of deaths are provided by the race and Hispanic origin o
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_wss \cr
-   Number of rows \tab 364 \cr
+   Number of rows \tab 371 \cr
    Number of columns \tab 9 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 3 \cr
-   character \tab 2 \cr
+   Date \tab 1 \cr
+   character \tab 4 \cr
    numeric \tab 4 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
@@ -46,25 +46,25 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2020-12-30 \tab 2020-12-30 \tab 2020-12-30 \tab 1 \cr
-   start_week \tab 0 \tab 1 \tab 2020-02-01 \tab 2020-02-01 \tab 2020-02-01 \tab 1 \cr
-   end_week \tab 0 \tab 1 \tab 2020-12-26 \tab 2020-12-26 \tab 2020-12-26 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-01-21 \tab 2021-01-21 \tab 2021-01-21 \tab 1 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 52 \tab 0 \cr
+   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 1 \tab 0 \cr
+   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 1 \tab 0 \cr
+   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 53 \tab 0 \cr
    group \tab 0 \tab 1 \tab 5 \tab 54 \tab 0 \tab 7 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   deaths \tab 81 \tab 0.78 \tab 2130.49 \tab 11573.89 \tab 0 \tab 29.00 \tab 153.00 \tab 1093.50 \tab 177636.0 \tab ▇▁▁▁▁ \cr
-   dist_pct \tab 81 \tab 0.78 \tab 18.28 \tab 26.56 \tab 0 \tab 0.90 \tab 3.90 \tab 25.50 \tab 96.4 \tab ▇▁▁▁▁ \cr
-   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 14.28 \tab 23.54 \tab 0 \tab 0.90 \tab 3.30 \tab 12.72 \tab 93.0 \tab ▇▁▁▁▁ \cr
-   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 14.28 \tab 21.62 \tab 0 \tab 0.78 \tab 3.85 \tab 15.65 \tab 91.6 \tab ▇▁▁▁▁ \cr
+   deaths \tab 80 \tab 0.78 \tab 2384.62 \tab 13337.18 \tab 0 \tab 31.00 \tab 158.0 \tab 1181.0 \tab 209501.0 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 80 \tab 0.78 \tab 18.11 \tab 27.01 \tab 0 \tab 0.80 \tab 3.7 \tab 23.8 \tab 97.4 \tab ▇▁▁▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.00 \tab 14.28 \tab 23.73 \tab 0 \tab 0.90 \tab 3.1 \tab 12.6 \tab 93.0 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.00 \tab 14.28 \tab 21.87 \tab 0 \tab 0.75 \tab 3.8 \tab 15.4 \tab 91.6 \tab ▇▁▁▁▁ \cr
 }
 
 

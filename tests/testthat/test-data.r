@@ -203,7 +203,7 @@ test_that("nchs_sas conforms to spec", {
 
 ## nchs_wss
 test_that("nchs_wss conforms to spec", {
-  nchs_wss_colnames <- c("data_as_of", "start_week", "end_week", "state", "group", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
+  nchs_wss_colnames <- c("data_as_of", "start_date", "end_date", "state", "group", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
   expect_equal(colnames(nchs_wss), nchs_wss_colnames)
 
   nchs_wss_groups <- c("Non-Hispanic White", "Non-Hispanic Black or African American", "Non-Hispanic American Indian or Alaska Native",

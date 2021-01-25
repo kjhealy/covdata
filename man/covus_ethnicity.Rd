@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Wednesday, January  6, 2021}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Monday, January 25, 2021}
 \format{
 A tibble with 12,936 rows and 7 columns
 \describe{

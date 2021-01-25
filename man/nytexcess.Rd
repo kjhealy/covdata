@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytexcess}
 \alias{nytexcess}
-\title{NYT Excess Mortality Estimates, current as of Wednesday, January  6, 2021}
+\title{NYT Excess Mortality Estimates, current as of Monday, January 25, 2021}
 \format{
-A tibble with 5,749 rows and 12 columns
+A tibble with 7,258 rows and 12 columns
 \describe{
 \item{\code{country}}{character Country Name}
 \item{\code{placename}}{character Place Name}
@@ -34,7 +34,7 @@ All-cause mortality is widely used by demographers and other researchers to unde
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytexcess \cr
-   Number of rows \tab 5749 \cr
+   Number of rows \tab 7258 \cr
    Number of columns \tab 12 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -48,28 +48,28 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   start_date \tab 620 \tab 0.89 \tab 2010-01-09 \tab 2020-09-21 \tab 2017-12-04 \tab 1141 \cr
-   end_date \tab 620 \tab 0.89 \tab 2010-01-15 \tab 2020-09-27 \tab 2017-12-10 \tab 1141 \cr
+   start_date \tab 768 \tab 0.89 \tab 2010-01-09 \tab 2020-12-23 \tab 2018-02-05 \tab 1267 \cr
+   end_date \tab 768 \tab 0.89 \tab 2010-01-15 \tab 2020-12-29 \tab 2018-02-11 \tab 1267 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   country \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 32 \tab 0 \cr
-   placename \tab 5359 \tab 0.07 \tab 5 \tab 8 \tab 0 \tab 5 \tab 0 \cr
+   country \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 35 \tab 0 \cr
+   placename \tab 6883 \tab 0.05 \tab 6 \tab 8 \tab 0 \tab 4 \tab 0 \cr
    frequency \tab 0 \tab 1.00 \tab 6 \tab 7 \tab 0 \tab 2 \tab 0 \cr
-   year \tab 0 \tab 1.00 \tab 4 \tab 17 \tab 0 \tab 14 \tab 0 \cr
-   baseline \tab 4914 \tab 0.15 \tab 20 \tab 25 \tab 0 \tab 7 \tab 0 \cr
+   year \tab 0 \tab 1.00 \tab 4 \tab 17 \tab 0 \tab 15 \tab 0 \cr
+   baseline \tab 5990 \tab 0.17 \tab 20 \tab 25 \tab 0 \tab 7 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   month \tab 0 \tab 1.00 \tab 6.31 \tab 3.26 \tab 1 \tab 4 \tab 6 \tab 9 \tab 12 \tab ▇▆▆▆▇ \cr
-   week \tab 570 \tab 0.90 \tab 25.35 \tab 14.06 \tab 2 \tab 13 \tab 25 \tab 37 \tab 52 \tab ▇▇▇▆▅ \cr
-   deaths \tab 0 \tab 1.00 \tab 6539.49 \tab 9519.74 \tab 455 \tab 1243 \tab 2284 \tab 10132 \tab 82867 \tab ▇▁▁▁▁ \cr
-   expected_deaths \tab 4914 \tab 0.15 \tab 8304.73 \tab 12600.93 \tab 563 \tab 1375 \tab 2486 \tab 10336 \tab 61646 \tab ▇▁▁▁▁ \cr
-   excess_deaths \tab 4914 \tab 0.15 \tab 1103.43 \tab 3270.77 \tab -4047 \tab -74 \tab 31 \tab 514 \tab 27802 \tab ▇▁▁▁▁ \cr
+   month \tab 0 \tab 1.00 \tab 6.60 \tab 3.36 \tab 1 \tab 4.00 \tab 7.0 \tab 9.0 \tab 12 \tab ▇▆▆▆▇ \cr
+   week \tab 666 \tab 0.91 \tab 26.77 \tab 14.58 \tab 2 \tab 14.00 \tab 27.0 \tab 39.0 \tab 52 \tab ▇▇▇▇▇ \cr
+   deaths \tab 0 \tab 1.00 \tab 7968.24 \tab 14334.14 \tab 455 \tab 1460.00 \tab 2395.5 \tab 10486.0 \tab 141292 \tab ▇▁▁▁▁ \cr
+   expected_deaths \tab 5990 \tab 0.17 \tab 9237.09 \tab 15850.00 \tab 548 \tab 1443.00 \tab 2423.0 \tab 10771.5 \tab 139343 \tab ▇▁▁▁▁ \cr
+   excess_deaths \tab 5990 \tab 0.17 \tab 1195.43 \tab 3242.72 \tab -6721 \tab -42.25 \tab 76.5 \tab 926.0 \tab 30400 \tab ▇▂▁▁▁ \cr
 }
 
 
