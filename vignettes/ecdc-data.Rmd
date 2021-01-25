@@ -103,7 +103,7 @@ covnat %>%
 #  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
   facet_wrap(~ cname) +
   labs(x = "Date", 
-       y = "Deaths per Million Population (Seven Day Rolling Average)", 
+       y = "Deaths per Million Population", 
        title = "Deaths from COVID-19, Selected Countries", 
        subtitle = paste("ECDC weekly data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
