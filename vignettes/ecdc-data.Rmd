@@ -92,29 +92,20 @@ covnat %>%
 
 ```
 
-### Rolling Average of New Cases per Capita
+### New Cases per Capita
 
-```{r rolling, fig.height=6, fig.width=9, dpi=100}
+```{r rolling, fig.height=6, fig.width=11, dpi=100}
 
 covnat %>%
-  mutate(cname = recode(cname, `United States` = "USA",
-                        `Bolivia, Plurinational State of` = "Bolivia",
-                        `Iran, Islamic Republic of` = "Iran",
-                        `Korea, Republic of` = "South Korea",
-                        `United Kingdom` = "UK"),
-         cgroup = case_when(iso3 %in% focus_on ~ iso3, 
-                            TRUE ~ "ZZOTHER")) %>%
-  mutate(cases7 = slider::slide_dbl((deaths/pop)*1e6, mean, .before = 7, .after = 0, na.rm = TRUE),
-         deaths7 = slider::slide_dbl((deaths/pop)*1e6, mean, .before = 7, .after = 0, na.rm = TRUE)) %>%
   filter(iso3 %in% focus_on) %>%
-  ggplot(mapping = aes(x = date, y = deaths7)) + 
+  ggplot(mapping = aes(x = date, y = deaths)) + 
   geom_line(size = 0.5) + 
 #  scale_y_continuous(labels = scales::comma_format(accuracy = 1)) + 
   facet_wrap(~ cname) +
   labs(x = "Date", 
        y = "Deaths per Million Population (Seven Day Rolling Average)", 
        title = "Deaths from COVID-19, Selected Countries", 
-       subtitle = paste("ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       subtitle = paste("ECDC weekly data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 
