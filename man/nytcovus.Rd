@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovus}
 \alias{nytcovus}
-\title{NYT COVID-19 data for the US, current as of Monday, January 25, 2021}
+\title{NYT COVID-19 data for the US, current as of Monday, February  1, 2021}
 \format{
-A tibble with 370 rows and 3 columns
+A tibble with 377 rows and 3 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{cases}{Cumulative N  reported cases}
@@ -26,7 +26,7 @@ A dataset containing US national-level data on COVID-19, collected by the New Yo
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovus \cr
-   Number of rows \tab 370 \cr
+   Number of rows \tab 377 \cr
    Number of columns \tab 3 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -39,14 +39,14 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-01-24 \tab 2020-07-23 \tab 370 \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-01-31 \tab 2020-07-27 \tab 377 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 6153192.7 \tab 6683946.6 \tab 1 \tab 847780.00 \tab 4086798 \tab 8623916 \tab 25177522 \tab ▇▃▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 150278.3 \tab 114038.7 \tab 0 \tab 47601.25 \tab 144856 \tab 224603 \tab 419207 \tab ▇▆▇▃▂ \cr
+   cases \tab 0 \tab 1 \tab 6517877.3 \tab 7133970.7 \tab 1 \tab 909853 \tab 4303735 \tab 9024915 \tab 26216741 \tab ▇▃▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 155515.3 \tab 119235.8 \tab 0 \tab 51360 \tab 148449 \tab 228701 \tab 441296 \tab ▇▇▇▂▂ \cr
 }
 }
 \keyword{datasets}
