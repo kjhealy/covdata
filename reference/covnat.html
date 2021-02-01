@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>International COVID-19 cases and deaths, current as of Monday, January 25, 2021 — covnat • covdata</title>
+<title>International COVID-19 cases and deaths, current as of Monday, February  1, 2021 — covnat • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="International COVID-19 cases and deaths, current as of Monday, January 25, 2021 — covnat" />
+<meta property="og:title" content="International COVID-19 cases and deaths, current as of Monday, February  1, 2021 — covnat" />
 <meta property="og:description" content="A dataset containing weekly national-level ECDC data on COVID-19" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.2</span>
       </span>
     </div>
 
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>International COVID-19 cases and deaths, current as of Monday, January 25, 2021</h1>
+    <h1>International COVID-19 cases and deaths, current as of Monday, February  1, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covnat.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 9,996 rows and 8 columns</p><dl>
+    <p>A tibble with 10,210 rows and 8 columns</p><dl>
 <dt>date</dt><dd><p>date in YYYY-MM-DD format</p></dd>
 <dt>cname</dt><dd><p>Name of country (character)</p></dd>
 <dt>iso3</dt><dd><p>ISO3 country code (character)</p></dd>
@@ -175,7 +175,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>dplyr::ungroup(covnat)</td></tr>
-<tr><td>Number of rows</td><td>9996</td></tr>
+<tr><td>Number of rows</td><td>10210</td></tr>
 <tr><td>Number of columns</td><td>8</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -190,7 +190,7 @@
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-06</td><td>2021-01-18</td><td>2020-08-10</td><td>55</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-06</td><td>2021-01-25</td><td>2020-08-10</td><td>56</td></tr>
 </table>
 
 
@@ -205,11 +205,11 @@
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>9462.00</td><td>57444.24</td><td>-3864</td><td>8</td><td>174.0</td><td>2444.00</td><td>1782792</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>203.75</td><td>958.49</td><td>-875</td><td>0</td><td>2.0</td><td>39.00</td><td>23169</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pop</td><td>14</td><td>1</td><td>40336379.56</td><td>151270905.98</td><td>815</td><td>1293120</td><td>7169456.0</td><td>28515829.00</td><td>1433783692</td><td>▇▁▁▁▁</td></tr>
-<tr><td>cu_cases</td><td>0</td><td>1</td><td>134684.16</td><td>819042.26</td><td>0</td><td>169</td><td>2736.5</td><td>34881.75</td><td>23938288</td><td>▇▁▁▁▁</td></tr>
-<tr><td>cu_deaths</td><td>0</td><td>1</td><td>3742.15</td><td>18367.41</td><td>0</td><td>2</td><td>53.0</td><td>613.00</td><td>397611</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>9767.60</td><td>58732.07</td><td>-3864</td><td>8</td><td>184.0</td><td>2530.50</td><td>1782792</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>209.37</td><td>991.05</td><td>-875</td><td>0</td><td>2.0</td><td>40.00</td><td>23518</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pop</td><td>15</td><td>1</td><td>40246012.66</td><td>151049839.66</td><td>815</td><td>1293120</td><td>7169456.0</td><td>28515829.00</td><td>1433783692</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_cases</td><td>0</td><td>1</td><td>142973.31</td><td>864463.00</td><td>0</td><td>179</td><td>2921.5</td><td>37416.25</td><td>25297071</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_deaths</td><td>0</td><td>1</td><td>3873.27</td><td>18988.83</td><td>0</td><td>2</td><td>56.0</td><td>639.00</td><td>421129</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
