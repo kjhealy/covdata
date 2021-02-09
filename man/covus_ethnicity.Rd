@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Monday, February  1, 2021}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Tuesday, February  9, 2021}
 \format{
-A tibble with 14,280 rows and 7 columns
+A tibble with 14,616 rows and 7 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -29,7 +29,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_ethnicity \cr
-   Number of rows \tab 14280 \cr
+   Number of rows \tab 14616 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -43,7 +43,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2021-01-31 \tab 2020-09-06 \tab 85 \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2021-02-07 \tab 2020-09-09 \tab 87 \cr
 }
 
 
@@ -56,10 +56,10 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 2850 \tab 0.80 \tab 58482.52 \tab 129576.41 \tab 0 \tab 4817.75 \tab 18182 \tab 57841.25 \tab 2298217 \tab ▇▁▁▁▁ \cr
-   deaths \tab 2954 \tab 0.79 \tab 1429.82 \tab 2998.78 \tab -1 \tab 58.00 \tab 249 \tab 1201.75 \tab 29040 \tab ▇▁▁▁▁ \cr
-   hosp \tab 10637 \tab 0.26 \tab 4436.86 \tab 7755.05 \tab 0 \tab 474.50 \tab 1422 \tab 4016.50 \tab 49862 \tab ▇▁▁▁▁ \cr
-   tests \tab 12564 \tab 0.12 \tab 458250.81 \tab 1051491.89 \tab 0 \tab 20721.25 \tab 125063 \tab 387608.75 \tab 7572945 \tab ▇▁▁▁▁ \cr
+   cases \tab 2896 \tab 0.80 \tab 61526.64 \tab 137539.96 \tab 0 \tab 4950.0 \tab 18962.5 \tab 60293.75 \tab 2420118 \tab ▇▁▁▁▁ \cr
+   deaths \tab 2992 \tab 0.80 \tab 1471.36 \tab 3085.51 \tab -1 \tab 59.0 \tab 256.0 \tab 1244.25 \tab 29921 \tab ▇▁▁▁▁ \cr
+   hosp \tab 10845 \tab 0.26 \tab 4562.86 \tab 7958.59 \tab 0 \tab 490.5 \tab 1463.0 \tab 4144.50 \tab 51497 \tab ▇▁▁▁▁ \cr
+   tests \tab 12933 \tab 0.12 \tab 523317.71 \tab 1272420.24 \tab 0 \tab 28833.5 \tab 150001.0 \tab 416648.00 \tab 17967279 \tab ▇▁▁▁▁ \cr
 }
 
 
