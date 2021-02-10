@@ -429,12 +429,12 @@ nchs_tables <- tribble(
   "Weekly State Specific Updates", "WSS", "pj7m-y5uh",
   "COVID-19 Case Surveillance Public Use Data", "CSPUD", "vbim-akqf",
   "Weekly counts of death by jurisdiction and cause of death", "WDC", "u6jv-9ijr",
-  "Weekly counts 2014-2018", "WDC1418", "3yf8-kanr",
-  "Weekly counts 2019-2020", "WDC1920", "muzy-jte6"
+  "Weekly counts 2014-2019", "WDC1419", "3yf8-kanr",
+  "Weekly counts 2020-2021", "WDC2021", "muzy-jte6"
 )
 
 get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
-                             sname = c("SAS", "WSS", "CSPUD", "WDC", "WDC1418", "WDC1920"),
+                             sname = c("SAS", "WSS", "CSPUD", "WDC", "WDC1419", "WDC2021"),
                              fname = "-",
                              date = lubridate::today(),
                              ext = "csv",
@@ -1029,11 +1029,11 @@ wdc_colspec <- cols(
 #                           cols = wdc_colspec)
 
 
-nchs_wdc1418_raw <- get_nchs_data(sname = "WDC1418",
+nchs_wdc1419_raw <- get_nchs_data(sname = "WDC1419",
                           clean_names = "n",
                           save_file = "n")
 
-nchs_wdc1418 <- nchs_wdc1418_raw %>%
+nchs_wdc1419 <- nchs_wdc1419_raw %>%
   pivot_longer(`All  Cause`:`Cerebrovascular diseases (I60-I69)`, names_to = "cause_detailed", values_to = "n") %>%
   janitor::clean_names() %>%
   mutate(week_ending_date = lubridate::mdy(week_ending_date)) %>%
@@ -1044,11 +1044,11 @@ nchs_wdc1418 <- nchs_wdc1418_raw %>%
   mutate(cause_detailed = stringr::str_squish(cause_detailed))
 
 
-nchs_wdc1920_raw <- get_nchs_data(sname = "WDC1920",
+nchs_WDC2021_raw <- get_nchs_data(sname = "WDC2021",
                               clean_names = "n",
                               save_file = "n")
 
-nchs_wdc1920 <- nchs_wdc1920_raw %>%
+nchs_WDC2021 <- nchs_WDC2021_raw %>%
   pivot_longer(`All Cause`:`COVID-19 (U071, Underlying Cause of Death)`, names_to = "cause_detailed", values_to = "n") %>%
   janitor::clean_names() %>%
   mutate(week_ending_date = lubridate::ymd(week_ending_date)) %>%
@@ -1059,7 +1059,7 @@ nchs_wdc1920 <- nchs_wdc1920_raw %>%
   mutate(cause_detailed = stringr::str_squish(cause_detailed))
 
 ## New NCHS WDC
-nchs_wdc <- bind_rows(nchs_wdc1418, nchs_wdc1920) %>%
+nchs_wdc <- bind_rows(nchs_wdc1419, nchs_WDC2021) %>%
     arrange(jurisdiction, year, week, week_ending_date, cause_detailed) %>%
     mutate(cause = case_when(
       cause_detailed == "All Cause"                                                                                        ~ "All Cause",
