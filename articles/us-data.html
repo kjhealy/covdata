@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.4</span>
       </span>
     </div>
 
@@ -143,20 +143,20 @@
 <a href="#covid-tracking-project-data" class="anchor"></a>COVID Tracking Project data</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">covus</span>
-<span class="co">#&gt; # A tibble: 577,830 x 7</span>
+<span class="co">#&gt; # A tibble: 581,190 x 7</span>
 <span class="co">#&gt;    date       state fips  data_quality_gra… measure       count measure_label   </span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           </span>
-<span class="co">#&gt;  1 2021-02-08 AK    02    A                 positive      53694 Positive Tests  </span>
-<span class="co">#&gt;  2 2021-02-08 AK    02    A                 probable_cas…    NA Probable Cases  </span>
-<span class="co">#&gt;  3 2021-02-08 AK    02    A                 negative         NA Negative Tests  </span>
-<span class="co">#&gt;  4 2021-02-08 AK    02    A                 pending          NA Pending Tests   </span>
-<span class="co">#&gt;  5 2021-02-08 AK    02    A                 hospitalized…    39 Currently Hospi…</span>
-<span class="co">#&gt;  6 2021-02-08 AK    02    A                 hospitalized…  1219 Cumulative Hosp…</span>
-<span class="co">#&gt;  7 2021-02-08 AK    02    A                 in_icu_curre…    NA Currently in ICU</span>
-<span class="co">#&gt;  8 2021-02-08 AK    02    A                 in_icu_cumul…    NA Cumulative in I…</span>
-<span class="co">#&gt;  9 2021-02-08 AK    02    A                 on_ventilato…     9 Currently on Ve…</span>
-<span class="co">#&gt; 10 2021-02-08 AK    02    A                 on_ventilato…    NA Cumulative on V…</span>
-<span class="co">#&gt; # … with 577,820 more rows</span></code></pre></div>
+<span class="co">#&gt;  1 2021-02-10 AK    02    A                 positive      53991 Positive Tests  </span>
+<span class="co">#&gt;  2 2021-02-10 AK    02    A                 probable_cas…    NA Probable Cases  </span>
+<span class="co">#&gt;  3 2021-02-10 AK    02    A                 negative         NA Negative Tests  </span>
+<span class="co">#&gt;  4 2021-02-10 AK    02    A                 pending          NA Pending Tests   </span>
+<span class="co">#&gt;  5 2021-02-10 AK    02    A                 hospitalized…    34 Currently Hospi…</span>
+<span class="co">#&gt;  6 2021-02-10 AK    02    A                 hospitalized…  1224 Cumulative Hosp…</span>
+<span class="co">#&gt;  7 2021-02-10 AK    02    A                 in_icu_curre…    NA Currently in ICU</span>
+<span class="co">#&gt;  8 2021-02-10 AK    02    A                 in_icu_cumul…    NA Cumulative in I…</span>
+<span class="co">#&gt;  9 2021-02-10 AK    02    A                 on_ventilato…     6 Currently on Ve…</span>
+<span class="co">#&gt; 10 2021-02-10 AK    02    A                 on_ventilato…    NA Cumulative on V…</span>
+<span class="co">#&gt; # … with 581,180 more rows</span></code></pre></div>
 <div id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases-" class="anchor"></a>Draw a log-linear graph of cumulative reported US cases.</h3>
@@ -189,10 +189,10 @@
   <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://rdrr.io/pkg/ggrepel/man/geom_text_repel.html">geom_text_repel</a></span><span class="op">(</span>segment.color <span class="op">=</span> <span class="cn">NA</span>, nudge_x <span class="op">=</span> <span class="fl">0.2</span>, nudge_y <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">scale_color_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="va">state_cols</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 week"</span>, date_labels <span class="op">=</span> <span class="st">"%b %e"</span> <span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span> <span class="st">"%b"</span> <span class="op">)</span> <span class="op">+</span> 
   <span class="fu">scale_y_continuous</span><span class="op">(</span>trans <span class="op">=</span> <span class="st">"log2"</span>,
                      labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
-                     breaks <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">20</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+                     breaks <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">22</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US State"</span>,
        subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covus</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
@@ -203,7 +203,7 @@
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 <span class="co">#&gt; Warning: Removed 24 row(s) containing missing values (geom_path).</span>
-<span class="co">#&gt; Warning: Removed 18730 rows containing missing values (geom_text_repel).</span></code></pre></div>
+<span class="co">#&gt; Warning: Removed 18842 rows containing missing values (geom_text_repel).</span></code></pre></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
 <div id="calculating-daily-counts" class="section level3">
@@ -218,20 +218,20 @@
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">%in%</span> <span class="va">measures</span>, <span class="va">state</span> <span class="op">==</span> <span class="st">"NY"</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">select</span><span class="op">(</span><span class="va">date</span>, <span class="va">state</span>, <span class="va">measure</span>, <span class="va">count</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">measure</span>, values_from <span class="op">=</span> <span class="va">count</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 344 x 5</span>
+<span class="co">#&gt; # A tibble: 346 x 5</span>
 <span class="co">#&gt;    date       state positive negative death</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2021-02-08 NY     1479220       NA 36339</span>
-<span class="co">#&gt;  2 2021-02-07 NY     1470772       NA 36224</span>
-<span class="co">#&gt;  3 2021-02-06 NY     1460747       NA 36079</span>
-<span class="co">#&gt;  4 2021-02-05 NY     1449495       NA 35920</span>
-<span class="co">#&gt;  5 2021-02-04 NY     1440718       NA 35767</span>
-<span class="co">#&gt;  6 2021-02-03 NY     1433304       NA 35631</span>
-<span class="co">#&gt;  7 2021-02-02 NY     1427379       NA 35466</span>
-<span class="co">#&gt;  8 2021-02-01 NY     1419164       NA 35319</span>
-<span class="co">#&gt;  9 2021-01-31 NY     1410656       NA 35178</span>
-<span class="co">#&gt; 10 2021-01-30 NY     1399863       NA 35036</span>
-<span class="co">#&gt; # … with 334 more rows</span></code></pre></div>
+<span class="co">#&gt;  1 2021-02-10 NY     1494187       NA 36619</span>
+<span class="co">#&gt;  2 2021-02-09 NY     1487086       NA 36481</span>
+<span class="co">#&gt;  3 2021-02-08 NY     1479220       NA 36339</span>
+<span class="co">#&gt;  4 2021-02-07 NY     1470772       NA 36224</span>
+<span class="co">#&gt;  5 2021-02-06 NY     1460747       NA 36079</span>
+<span class="co">#&gt;  6 2021-02-05 NY     1449495       NA 35920</span>
+<span class="co">#&gt;  7 2021-02-04 NY     1440718       NA 35767</span>
+<span class="co">#&gt;  8 2021-02-03 NY     1433304       NA 35631</span>
+<span class="co">#&gt;  9 2021-02-02 NY     1427379       NA 35466</span>
+<span class="co">#&gt; 10 2021-02-01 NY     1419164       NA 35319</span>
+<span class="co">#&gt; # … with 336 more rows</span></code></pre></div>
 <p>To calculate <em>daily</em> counts from these cumulative measures, use <code><a href="https://rdrr.io/r/stats/lag.html">lag()</a></code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
@@ -241,20 +241,20 @@
   <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">measure</span>, values_from <span class="op">=</span> <span class="va">count</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span><span class="va">positive</span><span class="op">:</span><span class="va">death</span>, <span class="op">~</span><span class="va">.x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">.x</span>, order_by <span class="op">=</span> <span class="va">date</span><span class="op">)</span>, 
                 .names <span class="op">=</span> <span class="st">"daily_{col}"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 344 x 8</span>
+<span class="co">#&gt; # A tibble: 346 x 8</span>
 <span class="co">#&gt;    date       state positive negative death daily_positive daily_negative</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2021-02-08 NY     1479220       NA 36339           8448             NA</span>
-<span class="co">#&gt;  2 2021-02-07 NY     1470772       NA 36224          10025             NA</span>
-<span class="co">#&gt;  3 2021-02-06 NY     1460747       NA 36079          11252             NA</span>
-<span class="co">#&gt;  4 2021-02-05 NY     1449495       NA 35920           8777             NA</span>
-<span class="co">#&gt;  5 2021-02-04 NY     1440718       NA 35767           7414             NA</span>
-<span class="co">#&gt;  6 2021-02-03 NY     1433304       NA 35631           5925             NA</span>
-<span class="co">#&gt;  7 2021-02-02 NY     1427379       NA 35466           8215             NA</span>
-<span class="co">#&gt;  8 2021-02-01 NY     1419164       NA 35319           8508             NA</span>
-<span class="co">#&gt;  9 2021-01-31 NY     1410656       NA 35178          10793             NA</span>
-<span class="co">#&gt; 10 2021-01-30 NY     1399863       NA 35036          12804             NA</span>
-<span class="co">#&gt; # … with 334 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt;  1 2021-02-10 NY     1494187       NA 36619           7101             NA</span>
+<span class="co">#&gt;  2 2021-02-09 NY     1487086       NA 36481           7866             NA</span>
+<span class="co">#&gt;  3 2021-02-08 NY     1479220       NA 36339           8448             NA</span>
+<span class="co">#&gt;  4 2021-02-07 NY     1470772       NA 36224          10025             NA</span>
+<span class="co">#&gt;  5 2021-02-06 NY     1460747       NA 36079          11252             NA</span>
+<span class="co">#&gt;  6 2021-02-05 NY     1449495       NA 35920           8777             NA</span>
+<span class="co">#&gt;  7 2021-02-04 NY     1440718       NA 35767           7414             NA</span>
+<span class="co">#&gt;  8 2021-02-03 NY     1433304       NA 35631           5925             NA</span>
+<span class="co">#&gt;  9 2021-02-02 NY     1427379       NA 35466           8215             NA</span>
+<span class="co">#&gt; 10 2021-02-01 NY     1419164       NA 35319           8508             NA</span>
+<span class="co">#&gt; # … with 336 more rows, and 1 more variable: daily_death &lt;dbl&gt;</span></code></pre></div>
 </div>
 <div id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state" class="section level3">
 <h3 class="hasAnchor">
@@ -331,8 +331,8 @@
   <span class="fu">summarize</span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"2 weeks"</span>, date_labels <span class="op">=</span> <span class="st">"%b %e"</span> <span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">250000</span>, <span class="fl">50000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"3 months"</span>, date_labels <span class="op">=</span> <span class="st">"%b %Y"</span> <span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">450000</span>, <span class="fl">50000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
        subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covus</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span>, <span class="st">"Recorded counts underestimate total mortality."</span><span class="op">)</span>,
        x <span class="op">=</span> <span class="st">"Date"</span>, y <span class="op">=</span> <span class="st">"Count of Deaths"</span>, 
@@ -350,7 +350,7 @@
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 18,879 x 5</span>
+<span class="co">#&gt; # A tibble: 18,989 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -363,14 +363,14 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 18,869 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 18,979 more rows</span></code></pre></div>
 </div>
 <div id="county-level-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 1,011,395 x 6</span>
+<span class="co">#&gt; # A tibble: 1,017,828 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -383,7 +383,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 1,011,385 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 1,017,818 more rows</span></code></pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
 <h3 class="hasAnchor">
