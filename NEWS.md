@@ -1,5 +1,5 @@
 # covdata 0.6
-*Breaking change*: Remobved `nchs_wdc` due to its size. Plan is to provide more functions for the user to grab this and other data directly.
+*Breaking change*: Removed individual-level NCHS data due to its large size. The plan is to provide more functions for the user to grab this and other data directly.
 
 # covdata 0.5.2
 
