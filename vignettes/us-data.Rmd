@@ -67,10 +67,10 @@ covus %>%
   geom_line(size = 0.5) + 
   geom_text_repel(segment.color = NA, nudge_x = 0.2, nudge_y = 0.1) + 
   scale_color_manual(values = state_cols) + 
-  scale_x_date(date_breaks = "1 week", date_labels = "%b %e" ) + 
+  scale_x_date(date_breaks = "1 month", date_labels = "%b" ) + 
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
-                     breaks = 2^c(seq(1, 20, 1))) +
+                     breaks = 2^c(seq(1, 22, 1))) +
   guides(color = FALSE) + 
   labs(title = "COVID-19 Cumulative Recorded Cases by US State",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y")),
@@ -183,8 +183,8 @@ covus %>%
   summarize(count = sum(count, na.rm = TRUE)) %>%
   ggplot(aes(x = date, y = count)) + 
   geom_line(size = 0.75) + 
-  scale_x_date(date_breaks = "2 weeks", date_labels = "%b %e" ) + 
-  scale_y_continuous(labels = scales::comma, breaks = seq(0, 250000, 50000)) + 
+  scale_x_date(date_breaks = "3 months", date_labels = "%b %Y" ) + 
+  scale_y_continuous(labels = scales::comma, breaks = seq(0, 450000, 50000)) + 
   labs(title = "COVID-19 Cumulative Recorded Deaths in the United States",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y"), "Recorded counts underestimate total mortality."),
        x = "Date", y = "Count of Deaths", 

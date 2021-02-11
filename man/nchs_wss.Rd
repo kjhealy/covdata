@@ -46,7 +46,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-02-03 \tab 2021-02-03 \tab 2021-02-03 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-02-10 \tab 2021-02-10 \tab 2021-02-10 \tab 1 \cr
 }
 
 
@@ -61,10 +61,10 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   deaths \tab 75 \tab 0.8 \tab 2846.07 \tab 16226.84 \tab 0 \tab 36.00 \tab 176.0 \tab 1360.25 \tab 258341.0 \tab ▇▁▁▁▁ \cr
-   dist_pct \tab 75 \tab 0.8 \tab 17.82 \tab 27.09 \tab 0 \tab 0.88 \tab 3.7 \tab 22.25 \tab 96.8 \tab ▇▁▁▁▁ \cr
-   uw_dist_pop_pct \tab 0 \tab 1.0 \tab 14.28 \tab 23.73 \tab 0 \tab 0.90 \tab 3.1 \tab 12.60 \tab 93.0 \tab ▇▁▁▁▁ \cr
-   wt_dist_pop_pct \tab 0 \tab 1.0 \tab 14.28 \tab 21.90 \tab 0 \tab 0.75 \tab 3.8 \tab 15.40 \tab 91.7 \tab ▇▁▁▁▁ \cr
+   deaths \tab 74 \tab 0.8 \tab 2982.81 \tab 17053.75 \tab 0 \tab 40.00 \tab 181.0 \tab 1379.0 \tab 272068.0 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 74 \tab 0.8 \tab 17.77 \tab 27.09 \tab 0 \tab 0.80 \tab 3.7 \tab 21.3 \tab 96.9 \tab ▇▁▁▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.0 \tab 14.28 \tab 23.73 \tab 0 \tab 0.90 \tab 3.1 \tab 12.6 \tab 93.0 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.0 \tab 14.29 \tab 21.90 \tab 0 \tab 0.75 \tab 3.8 \tab 15.4 \tab 91.7 \tab ▇▁▁▁▁ \cr
 }
 
 

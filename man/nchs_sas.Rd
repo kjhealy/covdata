@@ -48,7 +48,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-02-03 \tab 2021-02-03 \tab 2021-02-03 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-02-10 \tab 2021-02-10 \tab 2021-02-10 \tab 1 \cr
 }
 
 
@@ -64,12 +64,12 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 359 \tab 0.87 \tab 1386.05 \tab 12265.82 \tab 0 \tab 0 \tab 0 \tab 250.75 \tab 421378 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 170 \tab 0.94 \tab 10976.29 \tab 97149.39 \tab 0 \tab 0 \tab 263 \tab 2638.50 \tab 3509397 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 477 \tab 0.82 \tab 1309.68 \tab 11185.61 \tab 0 \tab 0 \tab 17 \tab 303.00 \tab 374722 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 337 \tab 0.87 \tab 652.74 \tab 5793.99 \tab 0 \tab 0 \tab 0 \tab 116.00 \tab 199396 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 768 \tab 0.71 \tab 36.52 \tab 279.68 \tab 0 \tab 0 \tab 0 \tab 13.00 \tab 8808 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 447 \tab 0.83 \tab 2076.06 \tab 17902.59 \tab 0 \tab 0 \tab 22 \tab 455.50 \tab 604353 \tab ▇▁▁▁▁ \cr
+   covid_19_deaths \tab 360 \tab 0.86 \tab 1458.25 \tab 12901.42 \tab 0 \tab 0 \tab 0 \tab 262.00 \tab 443107 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 173 \tab 0.93 \tab 11234.69 \tab 99381.67 \tab 0 \tab 0 \tab 269 \tab 2700.50 \tab 3587923 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 484 \tab 0.82 \tab 1364.73 \tab 11638.89 \tab 0 \tab 0 \tab 18 \tab 316.00 \tab 389232 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 340 \tab 0.87 \tab 691.05 \tab 6131.53 \tab 0 \tab 0 \tab 0 \tab 122.00 \tab 210828 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 768 \tab 0.71 \tab 36.66 \tab 280.81 \tab 0 \tab 0 \tab 0 \tab 13.00 \tab 8844 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 449 \tab 0.83 \tab 2163.21 \tab 18647.46 \tab 0 \tab 0 \tab 23 \tab 473.25 \tab 629180 \tab ▇▁▁▁▁ \cr
 }
 
 
