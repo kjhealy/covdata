@@ -25,7 +25,7 @@ library(tidyverse)
 ## National level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en).
 
 ```{r}
-covnat
+covnat_weekly
 ```
 
 ### Plot national cases over time, highlighting specific countries of interest
@@ -41,9 +41,10 @@ library(ggrepel)
 
 
 ## Countries to highlight
-focus_on <- covnat %>%
+focus_on <- covnat_weekly %>%
   filter(cu_cases > 99, pop > 1e7) %>%
   mutate(rate = cu_cases / pop) %>% 
+  group_by(iso3) %>% 
   summarize(mean_rate = mean(rate, na.rm = TRUE)) %>% 
   slice_max(n = 20, order_by = mean_rate) %>% 
   pull(iso3)
@@ -55,7 +56,7 @@ cgroup_cols <- c("#195F90FF", "#D76500FF", "#238023FF", "#AB1F20FF", "#7747A3FF"
                  "#70453CFF", "#D73EA8FF", "#666666FF", "#96971BFF", "#1298A6FF",
                  "gray70")
 
-covnat %>%
+covnat_weekly %>%
   filter(cu_cases > 99, pop > 1e7) %>%
   mutate(rate = cu_cases / pop) %>% 
   mutate(days_elapsed = date - min(date),
@@ -96,7 +97,7 @@ covnat %>%
 
 ```{r rolling, fig.height=6, fig.width=11, dpi=100}
 
-covnat %>%
+covnat_weekly %>%
   filter(iso3 %in% focus_on) %>%
   ggplot(mapping = aes(x = date, y = (deaths/pop)*1e6)) + 
   geom_line(size = 0.5) + 
