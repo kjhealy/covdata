@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CDC provisional death counts by sex — cdc_deaths_by_sex • covdata</title>
+<title>Weekly International COVID-19 cases and deaths, current as of Thursday, February 18, 2021 — covnat_weekly • covdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="CDC provisional death counts by sex — cdc_deaths_by_sex" />
-<meta property="og:description" content="Provisional Death Counts for Coronavirus Disease (COVID-19)" />
+<meta property="og:title" content="Weekly International COVID-19 cases and deaths, current as of Thursday, February 18, 2021 — covnat_weekly" />
+<meta property="og:description" content="A dataset containing weekly national-level ECDC data on COVID-19" />
 
 
 
@@ -141,49 +141,50 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>CDC provisional death counts by sex</h1>
+    <h1>Weekly International COVID-19 cases and deaths, current as of Thursday, February 18, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>cdc_deaths_by_sex.Rd</code></div>
+    <div class="hidden name"><code>covnat_weekly.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Provisional Death Counts for Coronavirus Disease (COVID-19)</p>
+    <p>A dataset containing weekly national-level ECDC data on COVID-19</p>
     </div>
 
-    <pre class="usage"><span class='va'>cdc_deaths_by_sex</span></pre>
+    <pre class="usage"><span class='va'>covnat_weekly</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 3 rows and 10 variables:</p><dl>
-<dt><code>data_as_of</code></dt><dd><p>date Date most recently updated</p></dd>
-<dt><code>sex</code></dt><dd><p>character Sex</p></dd>
-<dt><code>start_week</code></dt><dd><p>date Beginning week</p></dd>
-<dt><code>end_week</code></dt><dd><p>date Ending week</p></dd>
-<dt><code>covid_deaths</code></dt><dd><p>integer COVID deaths</p></dd>
-<dt><code>total_deaths</code></dt><dd><p>integer Total deaths</p></dd>
-<dt><code>percent_expected_deaths</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
-<dt><code>pneumonia_deaths</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
-<dt><code>pneumonia_and_covid_deaths</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
-<dt><code>all_influenza_deaths_j09_j11</code></dt><dd><p>integer COLUMN_DESCRIPTION</p></dd>
+    <p>A tibble with 11,157 rows and 11 columns</p><dl>
+<dt>date</dt><dd><p>date in YYYY-MM-DD format</p></dd>
+<dt>year_week</dt><dd><p>Year and week of reporting (character, YYYY-WW)</p></dd>
+<dt>cname</dt><dd><p>Name of country (character)</p></dd>
+<dt>pop</dt><dd><p>Country population from Eurostat or UN data</p></dd>
+<dt>iso3</dt><dd><p>ISO3 country code (character)</p></dd>
+<dt>cases</dt><dd><p>N reported COVID-19 cases for this week</p></dd>
+<dt>deaths</dt><dd><p>N reported COVID-19 deaths for this week</p></dd>
+<dt>cu_cases</dt><dd><p>Cumulative N reported COVID-19 cases up to and including this week</p></dd>
+<dt>cu_deaths</dt><dd><p>Cumulative N reported COVID-19 deaths up to and including this week</p></dd>
+<dt>r14_cases</dt><dd><p>14-day notification rate of reported COVID-19 cases per 100,000 population</p></dd>
+<dt>r14_deaths</dt><dd><p>14-day notification rate of reported COVID-19 cases per 100,000 population</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Courtesy of Bob Rudis's cdccovidview package</p>
+    <p><a href='http://ecdc.europa.eu/'>http://ecdc.europa.eu/</a></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
-<tr><td>Name</td><td>cdc_deaths_by_sex</td></tr>
-<tr><td>Number of rows</td><td>3</td></tr>
-<tr><td>Number of columns</td><td>10</td></tr>
+<tr><td>Name</td><td>dplyr::ungroup(covnat_wee...</td></tr>
+<tr><td>Number of rows</td><td>11157</td></tr>
+<tr><td>Number of columns</td><td>11</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>character</td><td>1</td></tr>
-<tr><td>Date</td><td>3</td></tr>
-<tr><td>numeric</td><td>6</td></tr>
+<tr><td>character</td><td>3</td></tr>
+<tr><td>Date</td><td>1</td></tr>
+<tr><td>numeric</td><td>7</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
 </table>
@@ -192,45 +193,32 @@
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>sex</td><td>0</td><td>1</td><td>4</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>year_week</td><td>0</td><td>1.00</td><td>7</td><td>7</td><td>0</td><td>59</td><td>0</td></tr>
+<tr><td>cname</td><td>0</td><td>1.00</td><td>4</td><td>33</td><td>0</td><td>219</td><td>0</td></tr>
+<tr><td>iso3</td><td>354</td><td>0.97</td><td>3</td><td>3</td><td>0</td><td>213</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>data_as_of</td><td>0</td><td>1</td><td>2020-04-30</td><td>2020-04-30</td><td>2020-04-30</td><td>1</td></tr>
-<tr><td>start_week</td><td>0</td><td>1</td><td>2020-02-01</td><td>2020-02-01</td><td>2020-02-01</td><td>1</td></tr>
-<tr><td>end_week</td><td>0</td><td>1</td><td>2020-04-25</td><td>2020-04-25</td><td>2020-04-25</td><td>1</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2019-12-30</td><td>2021-02-08</td><td>2020-08-17</td><td>59</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>covid_deaths</td><td>0</td><td>1</td><td>11507.33</td><td>10231.40</td><td>1.00</td><td>7470.50</td><td>14940.00</td><td>17260.50</td><td>19581.00</td><td>▇▁▁▇▇</td></tr>
-<tr><td>total_deaths</td><td>0</td><td>1</td><td>237795.00</td><td>206241.06</td><td>25.00</td><td>172555.00</td><td>345085.00</td><td>356680.00</td><td>368275.00</td><td>▃▁▁▁▇</td></tr>
-<tr><td>percent_expected_deaths</td><td>0</td><td>1</td><td>0.97</td><td>0.00</td><td>0.97</td><td>0.97</td><td>0.97</td><td>0.97</td><td>0.97</td><td>▁▁▇▁▁</td></tr>
-<tr><td>pneumonia_deaths</td><td>0</td><td>1</td><td>20908.33</td><td>18248.40</td><td>1.00</td><td>14545.00</td><td>29089.00</td><td>31362.00</td><td>33635.00</td><td>▃▁▁▁▇</td></tr>
-<tr><td>pneumonia_and_covid_deaths</td><td>0</td><td>1</td><td>5100.33</td><td>4559.67</td><td>1.00</td><td>3258.00</td><td>6515.00</td><td>7650.00</td><td>8785.00</td><td>▇▁▁▇▇</td></tr>
-<tr><td>all_influenza_deaths_j09_j11</td><td>0</td><td>1</td><td>1940.33</td><td>1682.21</td><td>0.00</td><td>1416.00</td><td>2832.00</td><td>2910.50</td><td>2989.00</td><td>▃▁▁▁▇</td></tr>
+<tr><td>pop</td><td>0</td><td>1.00</td><td>82630200.95</td><td>379479072.41</td><td>809.00</td><td>1318442.00</td><td>8606033.00</td><td>3.2366e+07</td><td>4.498460e+09</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1.00</td><td>21462.99</td><td>128919.66</td><td>-17182.00</td><td>10.00</td><td>231.00</td><td>3.2400e+03</td><td>2.699838e+06</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1.00</td><td>477.63</td><td>2658.06</td><td>-875.00</td><td>0.00</td><td>3.00</td><td>5.2000e+01</td><td>4.827700e+04</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_cases</td><td>0</td><td>1.00</td><td>344335.08</td><td>2206999.17</td><td>0.00</td><td>222.00</td><td>3792.00</td><td>5.1848e+04</td><td>4.893384e+07</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_deaths</td><td>0</td><td>1.00</td><td>9179.44</td><td>52753.35</td><td>0.00</td><td>2.00</td><td>67.00</td><td>9.0900e+02</td><td>1.152349e+06</td><td>▇▁▁▁▁</td></tr>
+<tr><td>r14_cases</td><td>219</td><td>0.98</td><td>86.92</td><td>200.95</td><td>-130.01</td><td>0.98</td><td>9.12</td><td>7.5420e+01</td><td>4.345370e+03</td><td>▇▁▁▁▁</td></tr>
+<tr><td>r14_deaths</td><td>219</td><td>0.98</td><td>15.38</td><td>41.64</td><td>-67.13</td><td>0.00</td><td>0.90</td><td>1.0680e+01</td><td>1.395030e+03</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
-
-<p>The U.S. Centers for Disease Control provides weekly
-summary and interpretation of key indicators that have been adapted
-to track the COVID-19 pandemic in the United States. Data is
-retrieved using the cdccovidview package from both COVIDView
-(<a href='https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html'>https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a>)
-and COVID-NET
-(<a href='https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html'>https://gis.cdc.gov/grasp/COVIDNet/COVID19_3.html</a>). Please see the indicated reference for all the caveats and precise meanings for each field.</p>
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p><a href='https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&amp;bom=true&amp;format=true'>https://data.cdc.gov/api/views/hc4f-j6nb/rows.csv?accessType=DOWNLOAD&amp;bom=true&amp;format=true</a></p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>Kieran Healy</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

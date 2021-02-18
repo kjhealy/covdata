@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, February 11, 2021 — covus_ethnicity • covdata</title>
+<title>COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, February 18, 2021 — covus_ethnicity • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, February 11, 2021 — covus_ethnicity" />
+<meta property="og:title" content="COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, February 18, 2021 — covus_ethnicity" />
 <meta property="og:description" content="The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States.
 It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research." />
 
@@ -73,7 +73,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7</span>
       </span>
     </div>
 
@@ -142,7 +142,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, February 11, 2021</h1>
+    <h1>COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Thursday, February 18, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covus_ethnicity.Rd</code></div>
     </div>
@@ -157,7 +157,7 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 14,784 rows and 7 columns</p><dl>
+    <p>A tibble with 15,120 rows and 7 columns</p><dl>
 <dt><code>date</code></dt><dd><p>date Data reported as of this date</p></dd>
 <dt><code>state</code></dt><dd><p>character State</p></dd>
 <dt><code>group</code></dt><dd><p>character Ethnic group</p></dd>
@@ -175,22 +175,15 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>covus_ethnicity</td></tr>
-<tr><td>Number of rows</td><td>14784</td></tr>
+<tr><td>Number of rows</td><td>15120</td></tr>
 <tr><td>Number of columns</td><td>7</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>2</td></tr>
+<tr><td>Date</td><td>1</td></tr>
 <tr><td>numeric</td><td>4</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-04-12</td><td>2021-02-10</td><td>2020-09-11</td><td>88</td></tr>
 </table>
 
 
@@ -203,12 +196,19 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 
 
 
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-04-12</td><td>2021-02-17</td><td>2020-09-14</td><td>90</td></tr>
+</table>
+
+
+
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>2919</td><td>0.80</td><td>63094.32</td><td>141491.87</td><td>0</td><td>5024.00</td><td>19283</td><td>61733.0</td><td>2453829</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>3011</td><td>0.80</td><td>1492.56</td><td>3129.98</td><td>-1</td><td>59.00</td><td>261</td><td>1261.0</td><td>30267</td><td>▇▁▁▁▁</td></tr>
-<tr><td>hosp</td><td>10949</td><td>0.26</td><td>4624.71</td><td>8059.10</td><td>0</td><td>495.50</td><td>1471</td><td>4202.0</td><td>52097</td><td>▇▁▁▁▁</td></tr>
-<tr><td>tests</td><td>13074</td><td>0.12</td><td>558868.96</td><td>1430209.86</td><td>0</td><td>29045.25</td><td>153585</td><td>423112.2</td><td>18842958</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>2965</td><td>0.80</td><td>66086.09</td><td>148969.12</td><td>0</td><td>5189.5</td><td>20144</td><td>64579.5</td><td>2505656</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>3049</td><td>0.80</td><td>1536.12</td><td>3224.22</td><td>-1</td><td>61.0</td><td>271</td><td>1301.0</td><td>30994</td><td>▇▁▁▁▁</td></tr>
+<tr><td>hosp</td><td>11157</td><td>0.26</td><td>4745.65</td><td>8258.16</td><td>0</td><td>514.0</td><td>1500</td><td>4355.0</td><td>53396</td><td>▇▁▁▁▁</td></tr>
+<tr><td>tests</td><td>13356</td><td>0.12</td><td>628835.76</td><td>1705534.00</td><td>0</td><td>31814.5</td><td>158754</td><td>442768.5</td><td>19701161</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 

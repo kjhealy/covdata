@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7</span>
       </span>
     </div>
 
@@ -134,22 +134,22 @@
 <h2 class="hasAnchor">
 <a href="#national-level-case-and-mortality-data-from-the-european-centers-for-disease-control-" class="anchor"></a>National level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">covnat</span>
-<span class="co">#&gt; # A tibble: 10,638 x 8</span>
-<span class="co">#&gt; # Groups:   iso3 [214]</span>
-<span class="co">#&gt;    date       cname       iso3  cases deaths       pop cu_cases cu_deaths</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-01-06 Afghanistan AFG       0      0  38041757        0         0</span>
-<span class="co">#&gt;  2 2020-01-06 Algeria     DZA       0      0  43053054        0         0</span>
-<span class="co">#&gt;  3 2020-01-06 Armenia     ARM       0      0   2957728        0         0</span>
-<span class="co">#&gt;  4 2020-01-06 Australia   AUS       0      0  25203200        0         0</span>
-<span class="co">#&gt;  5 2020-01-06 Austria     AUT       0      0   8858775        0         0</span>
-<span class="co">#&gt;  6 2020-01-06 Azerbaijan  AZE       0      0  10047719        0         0</span>
-<span class="co">#&gt;  7 2020-01-06 Bahrain     BHR       0      0   1641164        0         0</span>
-<span class="co">#&gt;  8 2020-01-06 Belarus     BLR       0      0   9452409        0         0</span>
-<span class="co">#&gt;  9 2020-01-06 Belgium     BEL       0      0  11455519        0         0</span>
-<span class="co">#&gt; 10 2020-01-06 Brazil      BRA       0      0 211049519        0         0</span>
-<span class="co">#&gt; # … with 10,628 more rows</span></code></pre></div>
+<code class="sourceCode R"><span class="va">covnat_weekly</span>
+<span class="co">#&gt; # A tibble: 11,157 x 11</span>
+<span class="co">#&gt;    date       year_week cname iso3     pop cases deaths cu_cases cu_deaths</span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2019-12-30 2020-01   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  2 2020-01-06 2020-02   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  3 2020-01-13 2020-03   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  4 2020-01-20 2020-04   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  5 2020-01-27 2020-05   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  6 2020-02-03 2020-06   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  7 2020-02-10 2020-07   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  8 2020-02-17 2020-08   Afgh… AFG   3.89e7     0      0        0         0</span>
+<span class="co">#&gt;  9 2020-02-24 2020-09   Afgh… AFG   3.89e7     1      0        1         0</span>
+<span class="co">#&gt; 10 2020-03-02 2020-10   Afgh… AFG   3.89e7     3      0        4         0</span>
+<span class="co">#&gt; # … with 11,147 more rows, and 2 more variables: r14_cases &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   r14_deaths &lt;dbl&gt;</span></code></pre></div>
 <div id="plot-national-cases-over-time-highlighting-specific-countries-of-interest" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plot-national-cases-over-time-highlighting-specific-countries-of-interest" class="anchor"></a>Plot national cases over time, highlighting specific countries of interest</h3>
@@ -164,9 +164,10 @@
 
 
 <span class="co">## Countries to highlight</span>
-<span class="va">focus_on</span> <span class="op">&lt;-</span> <span class="va">covnat</span> <span class="op">%&gt;%</span>
+<span class="va">focus_on</span> <span class="op">&lt;-</span> <span class="va">covnat_weekly</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">cu_cases</span> <span class="op">&gt;</span> <span class="fl">99</span>, <span class="va">pop</span> <span class="op">&gt;</span> <span class="fl">1e7</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">mutate</span><span class="op">(</span>rate <span class="op">=</span> <span class="va">cu_cases</span> <span class="op">/</span> <span class="va">pop</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">iso3</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">summarize</span><span class="op">(</span>mean_rate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">rate</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">slice_max</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span>, order_by <span class="op">=</span> <span class="va">mean_rate</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">pull</span><span class="op">(</span><span class="va">iso3</span><span class="op">)</span>
@@ -178,7 +179,7 @@
                  <span class="st">"#70453CFF"</span>, <span class="st">"#D73EA8FF"</span>, <span class="st">"#666666FF"</span>, <span class="st">"#96971BFF"</span>, <span class="st">"#1298A6FF"</span>,
                  <span class="st">"gray70"</span><span class="op">)</span>
 
-<span class="va">covnat</span> <span class="op">%&gt;%</span>
+<span class="va">covnat_weekly</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">cu_cases</span> <span class="op">&gt;</span> <span class="fl">99</span>, <span class="va">pop</span> <span class="op">&gt;</span> <span class="fl">1e7</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">mutate</span><span class="op">(</span>rate <span class="op">=</span> <span class="va">cu_cases</span> <span class="op">/</span> <span class="va">pop</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">mutate</span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span>,
@@ -209,11 +210,11 @@
   <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Days Since 100th Confirmed Case"</span>, 
        y <span class="op">=</span> <span class="st">"Cumulative reported Cases per capita"</span>, 
        title <span class="op">=</span> <span class="st">"Cumulative Reported Cases of COVID-19 per capita"</span>, 
-       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Selected Countries with &gt;1m population. ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covnat</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>, 
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Selected Countries with &gt;1m population. ECDC data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covnat_weekly</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>, 
        caption <span class="op">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
-<span class="co">#&gt; Warning: Removed 4088 rows containing missing values (geom_text_repel).</span></code></pre></div>
+<span class="co">#&gt; Warning: Removed 4488 rows containing missing values (geom_text_repel).</span></code></pre></div>
 <p><img src="ecdc-data_files/figure-html/ecdc-example-1.png" width="1600"></p>
 </div>
 <div id="deaths-per-capita" class="section level3">
@@ -221,7 +222,7 @@
 <a href="#deaths-per-capita" class="anchor"></a>Deaths per Capita</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">covnat</span> <span class="op">%&gt;%</span>
+<span class="va">covnat_weekly</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">iso3</span> <span class="op">%in%</span> <span class="va">focus_on</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="op">(</span><span class="va">deaths</span><span class="op">/</span><span class="va">pop</span><span class="op">)</span><span class="op">*</span><span class="fl">1e6</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> 
@@ -230,7 +231,7 @@
   <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Date"</span>, 
        y <span class="op">=</span> <span class="st">"Deaths per Million Population"</span>, 
        title <span class="op">=</span> <span class="st">"Deaths from COVID-19, Selected Countries"</span>, 
-       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"ECDC weekly data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covnat</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>, 
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"ECDC weekly data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covnat_weekly</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>, 
        caption <span class="op">=</span> <span class="st">"Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="ecdc-data_files/figure-html/rolling-1.png" width="1100"></p>

@@ -31,7 +31,10 @@
     <loc>https://kjhealy.github.io/covdata/reference/countries.html</loc>
   </url>
   <url>
-    <loc>https://kjhealy.github.io/covdata/reference/covnat.html</loc>
+    <loc>https://kjhealy.github.io/covdata/reference/covnat_daily.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/reference/covnat_weekly.html</loc>
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/reference/covus.html</loc>
