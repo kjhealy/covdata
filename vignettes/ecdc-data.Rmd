@@ -87,7 +87,7 @@ covnat_weekly %>%
   labs(x = "Days Since 100th Confirmed Case", 
        y = "Cumulative reported Cases per capita", 
        title = "Cumulative Reported Cases of COVID-19 per capita", 
-       subtitle = paste("Selected Countries with >1m population. ECDC data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       subtitle = paste("Selected Countries with >1m population. ECDC data as of", format(max(covnat_weekly$date), "%A, %B %e, %Y")), 
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 
@@ -106,7 +106,7 @@ covnat_weekly %>%
   labs(x = "Date", 
        y = "Deaths per Million Population", 
        title = "Deaths from COVID-19, Selected Countries", 
-       subtitle = paste("ECDC weekly data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       subtitle = paste("ECDC weekly data as of", format(max(covnat_weekly$date), "%A, %B %e, %Y")), 
        caption = "Kieran Healy @kjhealy / Data: https://www.ecdc.europa.eu/") +
   theme_minimal()
 

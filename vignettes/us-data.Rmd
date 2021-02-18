@@ -142,7 +142,7 @@ covus %>%
   labs(x = "Date", 
        y = "Deaths per 100,000 Population (Seven Day Rolling Average)", 
        title = "Average Death Rate from COVID-19: US States and Washington, DC", 
-       subtitle = paste("COVID Tracking Project data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       subtitle = paste("COVID Tracking Project data as of", format(max(covus$date), "%A, %B %e, %Y")), 
        caption = "Kieran Healy @kjhealy / Data: https://www.covidtracking.com/") +
   theme_minimal()
 
@@ -167,7 +167,7 @@ covus %>%
   labs(x = "Date", 
        y = "Deaths per 100,000 Population (Seven Day Rolling Average)", 
        title = "Average Death Rate from COVID-19: US States and Washington, DC. Free scales.", 
-       subtitle = paste("COVID Tracking Project data as of", format(max(covnat$date), "%A, %B %e, %Y")), 
+       subtitle = paste("COVID Tracking Project data as of", format(max(covus$date), "%A, %B %e, %Y")), 
        caption = "Kieran Healy @kjhealy / Data: https://www.covidtracking.com/") +
   theme_minimal()
 
