@@ -42,17 +42,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 3 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-02-17 \tab 2020-09-10 \tab 394 \cr
 }
 
 
@@ -61,6 +55,12 @@ Table: Data summary\tabular{ll}{
    county \tab 0 \tab 1.00 \tab 3 \tab 35 \tab 0 \tab 1930 \tab 0 \cr
    state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 55 \tab 0 \cr
    fips \tab 9586 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3218 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-02-17 \tab 2020-09-10 \tab 394 \cr
 }
 
 
