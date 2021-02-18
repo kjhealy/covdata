@@ -5,7 +5,7 @@
 \alias{apple_mobility}
 \title{Apple Mobility Data}
 \format{
-A data frame with 1,848,254 rows and 8 variables:
+A data frame with 1,885,782 rows and 8 variables:
 \describe{
 \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
 \item{\code{region}}{character Name of geographical unit.}
@@ -30,21 +30,15 @@ Data from Apple Maps on relative changes in mobility in various cities and count
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab apple_mobility \cr
-   Number of rows \tab 1848254 \cr
+   Number of rows \tab 1885782 \cr
    Number of columns \tab 8 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 6 \cr
+   Date \tab 1 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-02-09 \tab 2020-07-27 \tab 394 \cr
 }
 
 
@@ -53,15 +47,21 @@ Table: Data summary\tabular{ll}{
    geo_type \tab 0 \tab 1.00 \tab 4 \tab 14 \tab 0 \tab 4 \tab 0 \cr
    region \tab 0 \tab 1.00 \tab 4 \tab 48 \tab 0 \tab 2325 \tab 0 \cr
    transportation_type \tab 0 \tab 1.00 \tab 7 \tab 7 \tab 0 \tab 3 \tab 0 \cr
-   alternative_name \tab 1436918 \tab 0.22 \tab 2 \tab 85 \tab 0 \tab 519 \tab 0 \cr
-   sub_region \tab 536628 \tab 0.71 \tab 4 \tab 33 \tab 0 \tab 162 \tab 0 \cr
-   country \tab 60282 \tab 0.97 \tab 5 \tab 20 \tab 0 \tab 47 \tab 0 \cr
+   alternative_name \tab 1466094 \tab 0.22 \tab 2 \tab 85 \tab 0 \tab 519 \tab 0 \cr
+   sub_region \tab 547524 \tab 0.71 \tab 4 \tab 33 \tab 0 \tab 162 \tab 0 \cr
+   country \tab 61506 \tab 0.97 \tab 5 \tab 20 \tab 0 \tab 47 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-02-17 \tab 2020-07-31 \tab 402 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   score \tab 22538 \tab 0.99 \tab 120.49 \tab 62.76 \tab 0.44 \tab 84.05 \tab 112.73 \tab 146.53 \tab 2148.12 \tab ▇▁▁▁▁ \cr
+   score \tab 22850 \tab 0.99 \tab 120.16 \tab 62.44 \tab 0.44 \tab 83.89 \tab 112.49 \tab 146.03 \tab 2148.12 \tab ▇▁▁▁▁ \cr
 }
 
 

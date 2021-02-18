@@ -22,7 +22,7 @@ ifelse(!dir.exists(here("data-raw/data")),
 ### --------------------------------------------------------------------------------------
 
 ## Download today's CSV file, saving it to data/ and also read it in
-get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/casedistribution/csv",
+get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/csv",
                          date = lubridate::today(),
                          writedate = lubridate::today(),
                          fname = "ecdc-cumulative-",
@@ -578,21 +578,21 @@ continents <- tribble(
 ### Get ECDC data
 ### --------------------------------------------------------------------------------------
 
-covid_raw <- get_ecdc_csv(save = "n")
 
-covid_raw
+### 1. Daily covid cases by country. ECDC stopped reporting this in Dec 2020.
+covid_daily_raw <- get_ecdc_csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv", save = "n")
 
-covid <- covid_raw %>%
+covid_daily <- covid_daily_raw %>%
   mutate(date = lubridate::dmy(date_rep),
          iso2 = geo_id)
 
 ## merge in the iso country names
-covid <- left_join(covid, cname_table)
+covid_daily <- left_join(covid_daily, cname_table)
 
 ## A few ECDC country codes are non-iso, notably the UK
-anti_join(covid, cname_table) %>%
-  select(geo_id, countries_and_territories, iso2, iso3, cname) %>%
-  distinct()
+# anti_join(covid_daily, cname_table) %>%
+#   select(geo_id, countries_and_territories, iso2, iso3, cname) %>%
+#   distinct()
 
 ## A small crosswalk file that we'll coalesce into the missing values
 ## We need to specify the na explicity because the xwalk file has Namibia
@@ -600,35 +600,55 @@ anti_join(covid, cname_table) %>%
 cname_xwalk <- read_csv("data-raw/data/ecdc_to_iso2_xwalk.csv",
                         na = "")
 
-cname_xwalk
-
-covid <- coalesce_join(covid, cname_xwalk,
+covid_daily <- coalesce_join(covid_daily, cname_xwalk,
                        by = "geo_id", join = dplyr::left_join)
 
 ## Take a look again
-anti_join(covid, cname_table) %>%
+anti_join(covid_daily, cname_table) %>%
   select(geo_id, countries_and_territories, iso2, iso3, cname) %>%
   distinct()
 
-covnat <- covid %>%
-  select(date, cname, iso3, cases_weekly, deaths_weekly, pop_data2019) %>%
-  rename(pop = pop_data2019,
-         cases = cases_weekly,
-         deaths = deaths_weekly) %>%
+covnat_daily <- covid_daily %>%
+  select(date, cname, iso3, cases, deaths, pop_data2019) %>%
+  rename(pop = pop_data2019) %>%
   drop_na(iso3) %>%
   group_by(iso3) %>%
   arrange(date) %>%
   mutate(cu_cases = cumsum(cases),
          cu_deaths = cumsum(deaths))
 
-covnat ## Data object
+covnat_daily ## Data object
 
-countries <- covnat %>%
+countries <- covnat_daily %>%
   distinct(cname, iso3) %>%
   left_join(cname_table) %>%
   left_join(continents) %>%
   distinct(cname, iso3, iso2, continent)
 
+
+### 2. Covid national weekly cases and deaths
+covid_weekly_raw <- get_ecdc_csv("https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/csv", save_file = "n")
+
+covid_weekly <- covid_weekly_raw %>%
+  mutate(isoweek = stringr::str_replace(year_week, "-", "-W"),
+         isoweek = stringr::str_replace(isoweek, "(W\\d{2})", "\\1-1"),
+         date = ISOweek::ISOweek2date(isoweek))
+
+covnat_weekly <- covid_weekly %>%
+  rename(cname = country,
+         iso3 = country_code,
+         pop = population) %>%
+  left_join(countries) %>%
+  select(date, year_week, cname, iso3, indicator,
+         weekly_count, cumulative_count, rate_14_day, pop) %>%
+  pivot_wider(names_from = indicator,
+              values_from = c(weekly_count, cumulative_count, rate_14_day)) %>%
+  rename(cases = weekly_count_cases,
+         deaths = weekly_count_deaths,
+         cu_cases = cumulative_count_cases,
+         cu_deaths = cumulative_count_deaths,
+         r14_cases = rate_14_day_cases,
+         r14_deaths = rate_14_day_deaths)
 
 
 ### --------------------------------------------------------------------------------------
@@ -1101,7 +1121,7 @@ apple_mobility <- get_apple_data() %>%
 ### Get mortality.org data
 ### --------------------------------------------------------------------------------------
 
-stmf <- get_stmf(skip = 2) %>%
+stmf_raw <- get_stmf(skip = 2) %>%
   rename(deaths_total = d_total, rate_total = r_total) %>%
   select(country_code:sex, deaths_total, rate_total, split:forecast, everything()) %>%
   pivot_longer(
@@ -1121,7 +1141,7 @@ stmf <- get_stmf(skip = 2) %>%
          country_code = replace(country_code, country_code == "NZL_NP", "NZL"))
 
 
-md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
+md_ccodes <- tibble(country_code = unique(stmf_raw$country_code)) %>%
   left_join(countries, by = c("country_code" = "iso3")) %>%
   mutate(cname = replace(cname, country_code == "DEUTNP", "Germany"),
          iso2 = replace(iso2, country_code == "DEUTNP", "DE"),
@@ -1137,7 +1157,7 @@ md_ccodes <- tibble(country_code = unique(stmf$country_code)) %>%
   left_join(countries)
 
 
-stmf <- left_join(stmf, md_ccodes) %>%
+stmf <- left_join(stmf_raw, md_ccodes) %>%
   select(country_code, cname:iso3, everything()) %>%
   mutate(iso3 = replace(iso3, iso2 == "DE", "DEU"),
          iso3 = replace(iso3, iso2 == "FR", "FRA"))
@@ -1201,7 +1221,8 @@ usethis::use_data(covus_ethnicity, overwrite = TRUE, compress = "xz")
 usethis::use_data(countries, overwrite = TRUE, compress = "xz")
 
 ## ECDC
-usethis::use_data(covnat, overwrite = TRUE, compress = "xz")
+usethis::use_data(covnat_daily, overwrite = TRUE, compress = "xz")
+usethis::use_data(covnat_weekly, overwrite = TRUE, compress = "xz")
 
 ## Mortality.org
 usethis::use_data(stmf, overwrite = TRUE, compress = "xz")

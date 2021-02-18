@@ -18,28 +18,57 @@
 #' @references ISO 2: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2} ISO 3: \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3}
 "countries"
 
-#' International COVID-19 cases and deaths, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
+#' Daily international COVID-19 cases and deaths for 2020
 #'
-#' A dataset containing weekly national-level ECDC data on COVID-19
+#' A dataset containing daily national-level ECDC data on COVID-19. Archived as of December 14th 2020.
+#' ECDC switched to a weekly reporting schedule for the COVID-19 situation worldwide and in the EU/EEA and the UK on 17 December 2020. Daily updates have been discontinued from 14 December 2020.
 #'
-#' @format A tibble with `r fmt_nr(covnat)` rows and `r fmt_nc(covnat)` columns
+#' @format A tibble with `r fmt_nr(covnat_daily)` rows and `r fmt_nc(covnat_daily)` columns
 #' \describe{
 #'   \item{date}{date in YYYY-MM-DD format}
 #'   \item{cname}{Name of country (character)}
 #'   \item{iso3}{ISO3 country code (character)}
-#'   \item{cases}{N reported COVID-19 cases for this week}
-#'   \item{deaths}{N reported COVID-19 deaths for this week}
-#'   \item{pop}{Country population in 2019}
-#'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this week}
-#'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this week}
+#'   \item{cases}{N reported COVID-19 cases for this day}
+#'   \item{deaths}{N reported COVID-19 deaths for this day}
+#'   \item{pop}{Country population from Eurostat or UN data}
+#'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this day}
+#'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this day}
 #' }
 #' @details
 #' ```{r, results = "asis", echo = FALSE}
-#' skimr::skim(dplyr::ungroup(covnat))
+#' skimr::skim(dplyr::ungroup(covnat_daily))
+#' ```
+#'
+#' @source \url{https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide}
+"covnat_daily"
+
+
+#' Weekly International COVID-19 cases and deaths, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
+#'
+#' A dataset containing weekly national-level ECDC data on COVID-19
+#'
+#' @format A tibble with `r fmt_nr(covnat_weekly)` rows and `r fmt_nc(covnat_weekly)` columns
+#' \describe{
+#'   \item{date}{date in YYYY-MM-DD format}
+#'   \item{year_week}{Year and week of reporting (character, YYYY-WW)}
+#'   \item{cname}{Name of country (character)}
+#'   \item{pop}{Country population from Eurostat or UN data}
+#'   \item{iso3}{ISO3 country code (character)}
+#'   \item{cases}{N reported COVID-19 cases for this week}
+#'   \item{deaths}{N reported COVID-19 deaths for this week}
+#'   \item{cu_cases}{Cumulative N reported COVID-19 cases up to and including this week}
+#'   \item{cu_deaths}{Cumulative N reported COVID-19 deaths up to and including this week}
+#'   \item{r14_cases}{14-day notification rate of reported COVID-19 cases per 100,000 population}
+#'   \item{r14_deaths}{14-day notification rate of reported COVID-19 cases per 100,000 population}
+#' }
+#' @details
+#' ```{r, results = "asis", echo = FALSE}
+#' skimr::skim(dplyr::ungroup(covnat_weekly))
 #' ```
 #'
 #' @source \url{http://ecdc.europa.eu/}
-"covnat"
+"covnat_weekly"
+
 
 #' COVID-19 data for the USA, current as of `r format(Sys.Date(), "%A, %B %e, %Y")`
 #'

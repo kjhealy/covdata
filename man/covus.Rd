@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Thursday, February 11, 2021}
+\title{COVID-19 data for the USA, current as of Thursday, February 18, 2021}
 \format{
-A tibble with 581,190 rows and 7 columns
+A tibble with 592,950 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,37 +29,43 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 581190 \cr
+   Number of rows \tab 592950 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
+   character \tab 4 \cr
    Date \tab 1 \cr
-   character \tab 5 \cr
+   logical \tab 1 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-02-10 \tab 2020-08-22 \tab 395 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   state \tab 0 \tab 1 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
+   fips \tab 0 \tab 1 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
+   measure \tab 0 \tab 1 \tab 5 \tab 30 \tab 0 \tab 30 \tab 0 \cr
+   measure_label \tab 0 \tab 1 \tab 6 \tab 54 \tab 0 \tab 30 \tab 0 \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   state \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
-   fips \tab 0 \tab 1.00 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
-   data_quality_grade \tab 39180 \tab 0.93 \tab 1 \tab 5 \tab 0 \tab 8 \tab 0 \cr
-   measure \tab 0 \tab 1.00 \tab 5 \tab 30 \tab 0 \tab 30 \tab 0 \cr
-   measure_label \tab 0 \tab 1.00 \tab 6 \tab 54 \tab 0 \tab 30 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-02-17 \tab 2020-08-25 \tab 402 \cr
+}
+
+
+\strong{Variable type: logical}\tabular{lrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab count \cr
+   data_quality_grade \tab 592950 \tab 0 \tab NaN \tab : \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 366015 \tab 0.37 \tab 361111 \tab 1466556 \tab 0 \tab 481 \tab 7295 \tab 125761 \tab 44770601 \tab ▇▁▁▁▁ \cr
+   count \tab 373243 \tab 0.37 \tab 375802.7 \tab 1528880 \tab 0 \tab 487 \tab 7510 \tab 130575.5 \tab 46384932 \tab ▇▁▁▁▁ \cr
 }
 
 

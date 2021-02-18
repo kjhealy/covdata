@@ -33,7 +33,8 @@ reference:
   - title: "ECDC Data"
     desc: Cross-national Data from the European Centers for Disease Control.
     contents:
-      - covnat
+      - covnat_daily
+      - covnat_weekly
   - title: "Human Mortality Database Data"
     desc: Short-Term Mortality Fluctuations Data from the HMD.
     contents:

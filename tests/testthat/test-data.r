@@ -10,11 +10,18 @@ test_that("countries conforms to spec", {
 })
 
 
-## covnat
-test_that("covnat conforms to spec", {
-  covnat_colnames <- c("date", "cname", "iso3", "cases", "deaths", "pop",  "cu_cases",  "cu_deaths")
-  expect_equal(colnames(covnat), covnat_colnames)
+## covnat_daily
+test_that("covnat_daily conforms to spec", {
+  covnat_daily_colnames <- c("date", "cname", "iso3", "cases", "deaths", "pop",  "cu_cases",  "cu_deaths")
+  expect_equal(colnames(covnat_daily), covnat_daily_colnames)
 })
+
+## covnat_weekly
+test_that("covnat_weekly conforms to spec", {
+  covnat_weekly_colnames <- c("date", "year_week", "cname", "iso3", "pop", "cases", "deaths", "cu_cases",  "cu_deaths", "r14_cases", "r14_deaths")
+  expect_equal(colnames(covnat_weekly), covnat_weekly_colnames)
+})
+
 
 
 ## covus

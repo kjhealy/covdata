@@ -38,17 +38,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 12 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 5 \cr
+   Date \tab 1 \cr
    numeric \tab 6 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-02-10 \tab 2021-02-10 \tab 2021-02-10 \tab 1 \cr
 }
 
 
@@ -62,14 +56,20 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-02-17 \tab 2021-02-17 \tab 2021-02-17 \tab 1 \cr
+}
+
+
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 360 \tab 0.86 \tab 1458.25 \tab 12901.42 \tab 0 \tab 0 \tab 0 \tab 262.00 \tab 443107 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 173 \tab 0.93 \tab 11234.69 \tab 99381.67 \tab 0 \tab 0 \tab 269 \tab 2700.50 \tab 3587923 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 484 \tab 0.82 \tab 1364.73 \tab 11638.89 \tab 0 \tab 0 \tab 18 \tab 316.00 \tab 389232 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 340 \tab 0.87 \tab 691.05 \tab 6131.53 \tab 0 \tab 0 \tab 0 \tab 122.00 \tab 210828 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 768 \tab 0.71 \tab 36.66 \tab 280.81 \tab 0 \tab 0 \tab 0 \tab 13.00 \tab 8844 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 449 \tab 0.83 \tab 2163.21 \tab 18647.46 \tab 0 \tab 0 \tab 23 \tab 473.25 \tab 629180 \tab ▇▁▁▁▁ \cr
+   covid_19_deaths \tab 360 \tab 0.86 \tab 1515.16 \tab 13402.00 \tab 0 \tab 0 \tab 1 \tab 274.0 \tab 460234 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 177 \tab 0.93 \tab 11475.72 \tab 101426.37 \tab 0 \tab 0 \tab 277 \tab 2753.5 \tab 3658769 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 476 \tab 0.82 \tab 1402.06 \tab 11978.99 \tab 0 \tab 0 \tab 18 \tab 321.0 \tab 401250 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 339 \tab 0.87 \tab 721.01 \tab 6398.73 \tab 0 \tab 0 \tab 0 \tab 127.5 \tab 219974 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 768 \tab 0.71 \tab 36.79 \tab 281.80 \tab 0 \tab 0 \tab 0 \tab 13.0 \tab 8875 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 445 \tab 0.83 \tab 2228.48 \tab 19225.88 \tab 0 \tab 0 \tab 24 \tab 492.5 \tab 649194 \tab ▇▁▁▁▁ \cr
 }
 
 

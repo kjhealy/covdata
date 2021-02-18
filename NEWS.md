@@ -1,3 +1,7 @@
+# covdata 0.7
+- *Breaking change*: `covnat`, the ECDC daily dataset, has been renamed to `covnat_daily`. Daily data reporting by the ECDC was discontinued on December 14th 2020 and so this table will no longer be updated.
+- A new dataset, `covnat_weekly` has been added. This is the ECDC's replacement dataset. It gives weekly national data from the beginning of the pandemic to the present.
+
 # covdata 0.6
 *Breaking change*: Removed individual-level NCHS data due to its large size. The plan is to provide more functions for the user to grab this and other data directly.
 

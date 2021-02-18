@@ -103,7 +103,7 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 library(tidyverse) # Optional but strongly recommended
 library(covdata)
 
-covnat
+covnat_weekly
 ```
 
 ```{r}

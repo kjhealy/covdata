@@ -11,7 +11,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Thursday, February 11, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Thursday, February 18, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -116,29 +116,15 @@ library(covdata)
 #> 
 #>     %nin%
 
-covnat
-#> # A tibble: 10,424 x 8
-#> # Groups:   iso3 [214]
-#>    date       cname       iso3  cases deaths       pop cu_cases cu_deaths
-#>    <date>     <chr>       <chr> <dbl>  <dbl>     <dbl>    <dbl>     <dbl>
-#>  1 2020-01-06 Afghanistan AFG       0      0  38041757        0         0
-#>  2 2020-01-06 Algeria     DZA       0      0  43053054        0         0
-#>  3 2020-01-06 Armenia     ARM       0      0   2957728        0         0
-#>  4 2020-01-06 Australia   AUS       0      0  25203200        0         0
-#>  5 2020-01-06 Austria     AUT       0      0   8858775        0         0
-#>  6 2020-01-06 Azerbaijan  AZE       0      0  10047719        0         0
-#>  7 2020-01-06 Bahrain     BHR       0      0   1641164        0         0
-#>  8 2020-01-06 Belarus     BLR       0      0   9452409        0         0
-#>  9 2020-01-06 Belgium     BEL       0      0  11455519        0         0
-#> 10 2020-01-06 Brazil      BRA       0      0 211049519        0         0
-#> # … with 10,414 more rows
+covnat_weekly
+#> Error in eval(expr, envir, enclos): object 'covnat_weekly' not found
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 392 x 8
+#> # A tibble: 394 x 8
 #>    geo_type region transportation_… alternative_name sub_region country
 #>    <chr>    <chr>  <chr>            <chr>            <chr>      <chr>  
 #>  1 city     New Y… walking          NYC              New York   United…
@@ -151,7 +137,7 @@ apple_mobility %>%
 #>  8 city     New Y… walking          NYC              New York   United…
 #>  9 city     New Y… walking          NYC              New York   United…
 #> 10 city     New Y… walking          NYC              New York   United…
-#> # … with 382 more rows, and 2 more variables: date <date>, score <dbl>
+#> # … with 384 more rows, and 2 more variables: date <date>, score <dbl>
 ```
 
 

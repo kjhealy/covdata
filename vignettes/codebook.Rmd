@@ -24,11 +24,22 @@ This vignette provides an overview of the contents of each table of data in the 
 
 ## National-level case and mortality data from the [European Centers for Disease Control](https://www.ecdc.europa.eu/en)
 
+### Daily case and mortality data runs until December 14th 2020 and was subsequently discontinued.
+
 ```{r}
-covnat %>%
+covnat_daily %>%
   dplyr::ungroup() %>%
   skimr::skim()
 ```
+
+### Weekly case and mortality data
+
+```{r}
+covnat_weekly %>%
+  dplyr::ungroup() %>%
+  skimr::skim()
+```
+
 
 
 ## State-level case and mortality data for the United States from the [COVID Tracking Project](https://covidtracking.com)
