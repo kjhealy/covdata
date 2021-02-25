@@ -582,7 +582,7 @@
 #'   \item{\code{end_date}}{date Last date of data period}
 #'   \item{\code{group}}{character Unit of time observation: whether data in this row are measured By month, By total, or By year}
 #'   \item{\code{year}}{integer Year of observation}
-#'   \item{\code}{month}}{integer Month of observation}
+#'   \item{\code{month}}{integer Month of observation}
 #'   \item{\code{state}}{character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, *and New York City*, separate from New York state.}
 #'   \item{\code{sex}}{character Sex}
 #'   \item{\code{age_group}}{character Age group}
@@ -603,13 +603,9 @@
 #' between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
 #' This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
 #' been suppressed in accordance with NHCS confidentiality standards. As of September 2, 2020, this data file includes the following
-#' age groups in addition to the age groups that are routinely included: 0-17, 18-29, 30-49, and 50-64.
-#' The new age groups are consistent with categories used across CDC COVID-19 surveillance pages.
-#' When analyzing the file, the user should make sure to select only the desired age groups.
-#' Summing across all age categories provided will result in double counting deaths from certain age groups.
-#' Similarly, the state variable includes the United States as a whole, and New York City counted separately from the rest of New York State.
-#' The temporal unit of observation also varies, with totals given by year, by month, and overall. It is necessary to first filter the data by
-#' desired time unit, region, and age group to ensure there is no double-counting in subsequent calculations.
+#' age groups in addition to the age groups that are routinely included: 0-17, 18-29, 30-49, and 50-64. The new age groups are consistent with categories used across CDC COVID-19 surveillance pages. When analyzing the file, the user should make sure to select only the desired age groups.
+#' Summing across all age categories provided will result in double counting deaths from certain age groups. Similarly, the state variable includes the United States as a whole, and New York City counted separately from the rest of New York State.
+#' The temporal unit of observation also varies, with totals given by year, by month, and overall. It is necessary to first filter the data by desired time unit, region, and age group to ensure there is no double-counting in subsequent calculations.
 #'
 #' @author Kieran Healy
 #' @source National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}
