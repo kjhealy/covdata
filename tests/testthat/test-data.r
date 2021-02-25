@@ -41,6 +41,7 @@ test_that("covus conforms to spec", {
                            "on_ventilator_cumulative",
                            "recovered",
                            "death",
+                           "hospitalized_discharged",
                            "total_tests_viral",
                            "positive_tests_viral",
                            "negative_tests_viral",
@@ -201,7 +202,7 @@ test_that("uspop conforms to spec", {
 
 ## nchs_sas
 test_that("nchs_sas conforms to spec", {
-  nchs_sas_colnames <- c("data_as_of", "start_date", "end_date", "state", "sex", "age_group", "covid_19_deaths",
+  nchs_sas_colnames <- c("data_as_of", "start_date", "end_date", "group", "year", "month", "state", "sex", "age_group", "covid_19_deaths",
                      "total_deaths", "pneumonia_deaths", "pneumonia_and_covid_19_deaths", "influenza_deaths",
                      "pneumonia_influenza_or_covid_19_deaths")
   expect_equal(colnames(nchs_sas), nchs_sas_colnames)

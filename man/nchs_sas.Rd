@@ -5,11 +5,14 @@
 \alias{nchs_sas}
 \title{Provisional COVID-19 Death Counts by Sex, Age, and State}
 \format{
-A tibble with 2,661 rows and 12 variables:
+A tibble with 46,818 rows and 15 variables:
 \describe{
 \item{\code{data_as_of}}{date Date of data release}
 \item{\code{start_date}}{date First date of data period}
 \item{\code{end_date}}{date Last date of data period}
+\item{\code{group}}{character Unit of time observation: whether data in this row are measured By month, By total, or By year}
+\item{\code{year}}{integer Year of observation}
+\item{\code}{month}{integer Month of observation}
 \item{\code{state}}{character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, \emph{and New York City}, separate from New York state.}
 \item{\code{sex}}{character Sex}
 \item{\code{age_group}}{character Age group}
@@ -28,48 +31,51 @@ National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Provisional
 nchs_sas
 }
 \description{
-Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.
+Deaths involving coronavirus disease (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.
 }
 \details{
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_sas \cr
-   Number of rows \tab 2661 \cr
-   Number of columns \tab 12 \cr
+   Number of rows \tab 46818 \cr
+   Number of columns \tab 15 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 5 \cr
    Date \tab 1 \cr
-   numeric \tab 6 \cr
+   character \tab 6 \cr
+   numeric \tab 8 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 1 \tab 0 \cr
-   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 1 \tab 0 \cr
-   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
-   sex \tab 0 \tab 1 \tab 4 \tab 9 \tab 0 \tab 4 \tab 0 \cr
-   age_group \tab 0 \tab 1 \tab 8 \tab 17 \tab 0 \tab 16 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-02-24 \tab 2021-02-24 \tab 2021-02-24 \tab 1 \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-02-17 \tab 2021-02-17 \tab 2021-02-17 \tab 1 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 14 \tab 0 \cr
+   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 14 \tab 0 \cr
+   group \tab 0 \tab 1 \tab 7 \tab 8 \tab 0 \tab 3 \tab 0 \cr
+   state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
+   sex \tab 0 \tab 1 \tab 4 \tab 9 \tab 0 \tab 3 \tab 0 \cr
+   age_group \tab 0 \tab 1 \tab 8 \tab 17 \tab 0 \tab 17 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 360 \tab 0.86 \tab 1515.16 \tab 13402.00 \tab 0 \tab 0 \tab 1 \tab 274.0 \tab 460234 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 177 \tab 0.93 \tab 11475.72 \tab 101426.37 \tab 0 \tab 0 \tab 277 \tab 2753.5 \tab 3658769 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 476 \tab 0.82 \tab 1402.06 \tab 11978.99 \tab 0 \tab 0 \tab 18 \tab 321.0 \tab 401250 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 339 \tab 0.87 \tab 721.01 \tab 6398.73 \tab 0 \tab 0 \tab 0 \tab 127.5 \tab 219974 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 768 \tab 0.71 \tab 36.79 \tab 281.80 \tab 0 \tab 0 \tab 0 \tab 13.0 \tab 8875 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 445 \tab 0.83 \tab 2228.48 \tab 19225.88 \tab 0 \tab 0 \tab 24 \tab 492.5 \tab 649194 \tab ▇▁▁▁▁ \cr
+   year \tab 2754 \tab 0.94 \tab 2020.19 \tab 0.39 \tab 2020 \tab 2020 \tab 2020.0 \tab 2020 \tab 2021 \tab ▇▁▁▁▂ \cr
+   month \tab 8262 \tab 0.82 \tab 5.79 \tab 3.65 \tab 1 \tab 2 \tab 5.5 \tab 9 \tab 12 \tab ▇▃▃▃▅ \cr
+   covid_19_deaths \tab 10769 \tab 0.77 \tab 348.65 \tab 4739.19 \tab 0 \tab 0 \tab 0.0 \tab 58 \tab 478912 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 7105 \tab 0.85 \tab 2558.46 \tab 35837.91 \tab 0 \tab 40 \tab 148.0 \tab 674 \tab 3741316 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 14087 \tab 0.70 \tab 335.09 \tab 4335.91 \tab 0 \tab 0 \tab 16.0 \tab 81 \tab 414677 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 10519 \tab 0.78 \tab 166.78 \tab 2264.61 \tab 0 \tab 0 \tab 0.0 \tab 26 \tab 229982 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 9331 \tab 0.80 \tab 6.12 \tab 94.91 \tab 0 \tab 0 \tab 0.0 \tab 0 \tab 8904 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 13820 \tab 0.70 \tab 536.50 \tab 6973.42 \tab 0 \tab 0 \tab 24.0 \tab 123 \tab 671310 \tab ▇▁▁▁▁ \cr
 }
 
 
@@ -77,7 +83,14 @@ Number of deaths reported in this table are the total number of deaths received 
 and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
 between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
 This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
-been suppressed in accordance with NHCS confidentiality standards.
+been suppressed in accordance with NHCS confidentiality standards. As of September 2, 2020, this data file includes the following
+age groups in addition to the age groups that are routinely included: 0-17, 18-29, 30-49, and 50-64.
+The new age groups are consistent with categories used across CDC COVID-19 surveillance pages.
+When analyzing the file, the user should make sure to select only the desired age groups.
+Summing across all age categories provided will result in double counting deaths from certain age groups.
+Similarly, the state variable includes the United States as a whole, and New York City counted separately from the rest of New York State.
+The temporal unit of observation also varies, with totals given by year, by month, and overall. It is necessary to first filter the data by
+desired time unit, region, and age group to ensure there is no double-counting in subsequent calculations.
 }
 \references{
 \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}

@@ -681,9 +681,11 @@ covus_measure_labels <- tribble(
   "death_probable", "Deaths Probable",
   "hospitalized_cumulative", "Cumulative Hospitalized",
   "hospitalized_currently",   "Currently Hospitalized",
+  "hospitalized_discharged", "Total Discharged from Hospital",
   "in_icu_cumulative",        "Cumulative in ICU",
   "in_icu_currently",         "Currently in ICU",
   "negative", "Negative Tests",
+  "negative_tests_antibody", "Total number of negative antibody tests",
   "negative_tests_viral", "Total number of negative PCR tests",
   "on_ventilator_cumulative", "Cumulative on Ventilator",
   "on_ventilator_currently",  "Currently on Ventilator",
@@ -703,7 +705,6 @@ covus_measure_labels <- tribble(
   "positive_tests_people_antibody", "Positive Antibody Tests (People)",
   "negative_tests_people_antibody", "Negative Antibody Tests (People)",
   "total_tests_people_antigen", "Total Antigen Tests (People)",
-  "negative_tests_people_antigen", "Negative Antigen Tests (People)",
   "positive_tests_people_antigen",  "Positive Antigen Tests (People)",
   "total_tests_antigen", "Total Antigen Tests",
   "positive_tests_antigen", "Positive Antigen Tests"
@@ -711,9 +712,6 @@ covus_measure_labels <- tribble(
 
 covus <- covus %>%
   left_join(covus_measure_labels)
-
-
-covus ## Data object
 
 
 ### COVID Tracking Project Race Data

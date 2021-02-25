@@ -574,12 +574,15 @@
 "uspop"
 
 #' @title Provisional COVID-19 Death Counts by Sex, Age, and State
-#' @description Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.
+#' @description Deaths involving coronavirus disease (COVID-19), pneumonia, and influenza reported to NCHS by sex and age group and state.
 #' @format A tibble with `r fmt_nr(nchs_sas)` rows and `r fmt_nc(nchs_sas)` variables:
 #' \describe{
 #'   \item{\code{data_as_of}}{date Date of data release}
 #'   \item{\code{start_date}}{date First date of data period}
 #'   \item{\code{end_date}}{date Last date of data period}
+#'   \item{\code{group}}{character Unit of time observation: whether data in this row are measured By month, By total, or By year}
+#'   \item{\code{year}}{integer Year of observation}
+#'   \item{\code}{month}{integer Month of observation}
 #'   \item{\code{state}}{character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, *and New York City*, separate from New York state.}
 #'   \item{\code{sex}}{character Sex}
 #'   \item{\code{age_group}}{character Age group}
@@ -599,7 +602,15 @@
 #' and do not represent all deaths that occurred in that period. Data during this period are incomplete because of the lag in time
 #' between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
 #' This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
-#' been suppressed in accordance with NHCS confidentiality standards.
+#' been suppressed in accordance with NHCS confidentiality standards. As of September 2, 2020, this data file includes the following
+#' age groups in addition to the age groups that are routinely included: 0-17, 18-29, 30-49, and 50-64.
+#' The new age groups are consistent with categories used across CDC COVID-19 surveillance pages.
+#' When analyzing the file, the user should make sure to select only the desired age groups.
+#' Summing across all age categories provided will result in double counting deaths from certain age groups.
+#' Similarly, the state variable includes the United States as a whole, and New York City counted separately from the rest of New York State.
+#' The temporal unit of observation also varies, with totals given by year, by month, and overall. It is necessary to first filter the data by
+#' desired time unit, region, and age group to ensure there is no double-counting in subsequent calculations.
+#'
 #' @author Kieran Healy
 #' @source National Center for Health Statistics \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}
 #' @references \url{https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku}
@@ -656,6 +667,7 @@
 #' @details For 2014-2019, death counts in this dataset were derived from the National Vital Statistics System database that provides the most timely access to the data. Therefore, counts may differ slightly from final data due to differences in processing, recoding, and imputation. For 2019-2021, the dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death.
 #' Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis, and do not represent all deaths that occurred in that period. Data for 2020 and 2021 are provisional and may be incomplete because of the lag in time between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. Causes of death included in this dataset are tabulated by underlying cause of death ICD-10 codes. COVID-19 deaths by underlying cause and multiple cause of death are also included.
 #' @author Kieran Healy
-#' @source 2014-2019: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr}. 2020-2021: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6}
+#' @source 2014-2019: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr}.
+#' 2020-2021: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6}
 #' @references
 "nchs_wdc"

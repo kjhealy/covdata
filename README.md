@@ -11,7 +11,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Thursday, February 18, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Wednesday, February 24, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -117,14 +117,28 @@ library(covdata)
 #>     %nin%
 
 covnat_weekly
-#> Error in eval(expr, envir, enclos): object 'covnat_weekly' not found
+#> # A tibble: 11,157 x 11
+#>    date       year_week cname iso3     pop cases deaths cu_cases cu_deaths
+#>    <date>     <chr>     <chr> <chr>  <dbl> <dbl>  <dbl>    <dbl>     <dbl>
+#>  1 2019-12-30 2020-01   Afgh… AFG   3.89e7     0      0        0         0
+#>  2 2020-01-06 2020-02   Afgh… AFG   3.89e7     0      0        0         0
+#>  3 2020-01-13 2020-03   Afgh… AFG   3.89e7     0      0        0         0
+#>  4 2020-01-20 2020-04   Afgh… AFG   3.89e7     0      0        0         0
+#>  5 2020-01-27 2020-05   Afgh… AFG   3.89e7     0      0        0         0
+#>  6 2020-02-03 2020-06   Afgh… AFG   3.89e7     0      0        0         0
+#>  7 2020-02-10 2020-07   Afgh… AFG   3.89e7     0      0        0         0
+#>  8 2020-02-17 2020-08   Afgh… AFG   3.89e7     0      0        0         0
+#>  9 2020-02-24 2020-09   Afgh… AFG   3.89e7     1      0        1         0
+#> 10 2020-03-02 2020-10   Afgh… AFG   3.89e7     3      0        4         0
+#> # … with 11,147 more rows, and 2 more variables: r14_cases <dbl>,
+#> #   r14_deaths <dbl>
 ```
 
 
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 394 x 8
+#> # A tibble: 402 x 8
 #>    geo_type region transportation_… alternative_name sub_region country
 #>    <chr>    <chr>  <chr>            <chr>            <chr>      <chr>  
 #>  1 city     New Y… walking          NYC              New York   United…
@@ -137,7 +151,7 @@ apple_mobility %>%
 #>  8 city     New Y… walking          NYC              New York   United…
 #>  9 city     New Y… walking          NYC              New York   United…
 #> 10 city     New Y… walking          NYC              New York   United…
-#> # … with 384 more rows, and 2 more variables: date <date>, score <dbl>
+#> # … with 392 more rows, and 2 more variables: date <date>, score <dbl>
 ```
 
 
@@ -148,8 +162,8 @@ covus %>%
          state == "NJ")
 #> # A tibble: 1 x 7
 #>   date       state fips  data_quality_grade measure   count measure_label 
-#>   <date>     <chr> <chr> <chr>              <chr>     <dbl> <chr>         
-#> 1 2020-04-27 NJ    34    A                  positive 111188 Positive Tests
+#>   <date>     <chr> <chr> <lgl>              <chr>     <dbl> <chr>         
+#> 1 2020-04-27 NJ    34    NA                 positive 111188 Positive Tests
 ```
 
 

@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Thursday, February 18, 2021}
+\title{COVID-19 data for the USA, current as of Wednesday, February 24, 2021}
 \format{
-A tibble with 592,950 rows and 7 columns
+A tibble with 643,456 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,12 +29,12 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 592950 \cr
+   Number of rows \tab 643456 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 4 \cr
    Date \tab 1 \cr
+   character \tab 4 \cr
    logical \tab 1 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
@@ -42,30 +42,30 @@ Table: Data summary\tabular{ll}{
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-02-23 \tab 2020-08-28 \tab 408 \cr
+}
+
+
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    state \tab 0 \tab 1 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
    fips \tab 0 \tab 1 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
-   measure \tab 0 \tab 1 \tab 5 \tab 30 \tab 0 \tab 30 \tab 0 \cr
-   measure_label \tab 0 \tab 1 \tab 6 \tab 54 \tab 0 \tab 30 \tab 0 \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-02-17 \tab 2020-08-25 \tab 402 \cr
+   measure \tab 0 \tab 1 \tab 5 \tab 30 \tab 0 \tab 31 \tab 0 \cr
+   measure_label \tab 0 \tab 1 \tab 6 \tab 54 \tab 0 \tab 32 \tab 0 \cr
 }
 
 
 \strong{Variable type: logical}\tabular{lrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab count \cr
-   data_quality_grade \tab 592950 \tab 0 \tab NaN \tab : \cr
+   data_quality_grade \tab 643456 \tab 0 \tab NaN \tab : \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 373243 \tab 0.37 \tab 375802.7 \tab 1528880 \tab 0 \tab 487 \tab 7510 \tab 130575.5 \tab 46384932 \tab ▇▁▁▁▁ \cr
+   count \tab 417395 \tab 0.35 \tab 385553.4 \tab 1573788 \tab 0 \tab 508 \tab 8014 \tab 135007 \tab 47513367 \tab ▇▁▁▁▁ \cr
 }
 
 
@@ -83,6 +83,7 @@ The measures tracked by the COVID tracking project are as follows:\tabular{ll}{
    on_ventilator_cumulative \tab Cumulative on Ventilator \cr
    recovered \tab Recovered \cr
    death \tab Deaths \cr
+   hospitalized_discharged \tab Total Discharged from Hospital \cr
    total_tests_viral \tab Total number of PCR tests performed \cr
    positive_tests_viral \tab Total number of positive PCR tests \cr
    negative_tests_viral \tab Total number of negative PCR tests \cr
@@ -93,6 +94,7 @@ The measures tracked by the COVID tracking project are as follows:\tabular{ll}{
    total_tests_people_viral \tab Total PCR Tests (People) \cr
    total_tests_antibody \tab Total Antibody Tests \cr
    positive_tests_antibody \tab Positive Antibody Tests \cr
+   negative_tests_antibody \tab Total number of negative antibody tests \cr
    negative_tests_antibody \tab Negative Antibody Tests \cr
    total_tests_people_antibody \tab Total Antibody Tests (People) \cr
    positive_tests_people_antibody \tab Positive Antibody Tests (People) \cr

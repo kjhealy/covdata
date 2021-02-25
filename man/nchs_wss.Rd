@@ -36,11 +36,17 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 9 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 4 \cr
    Date \tab 1 \cr
+   character \tab 4 \cr
    numeric \tab 4 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-02-24 \tab 2021-02-24 \tab 2021-02-24 \tab 1 \cr
 }
 
 
@@ -53,18 +59,12 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-02-17 \tab 2021-02-17 \tab 2021-02-17 \tab 1 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   deaths \tab 75 \tab 0.8 \tab 3108.59 \tab 17730.41 \tab 0 \tab 41.75 \tab 191.0 \tab 1433.75 \tab 282195.0 \tab ▇▁▁▁▁ \cr
-   dist_pct \tab 75 \tab 0.8 \tab 17.84 \tab 27.13 \tab 0 \tab 0.80 \tab 3.7 \tab 21.80 \tab 97.1 \tab ▇▁▁▁▁ \cr
-   uw_dist_pop_pct \tab 0 \tab 1.0 \tab 14.28 \tab 23.73 \tab 0 \tab 0.90 \tab 3.1 \tab 12.60 \tab 93.0 \tab ▇▁▁▁▁ \cr
-   wt_dist_pop_pct \tab 0 \tab 1.0 \tab 14.29 \tab 21.90 \tab 0 \tab 0.75 \tab 3.8 \tab 15.40 \tab 91.7 \tab ▇▁▁▁▁ \cr
+   deaths \tab 73 \tab 0.8 \tab 3213.63 \tab 18401.56 \tab 0 \tab 41.25 \tab 189.50 \tab 1493.0 \tab 293868.0 \tab ▇▁▁▁▁ \cr
+   dist_pct \tab 73 \tab 0.8 \tab 17.72 \tab 27.10 \tab 0 \tab 0.80 \tab 3.65 \tab 20.8 \tab 97.1 \tab ▇▁▁▁▁ \cr
+   uw_dist_pop_pct \tab 0 \tab 1.0 \tab 14.28 \tab 23.73 \tab 0 \tab 0.90 \tab 3.10 \tab 12.6 \tab 93.0 \tab ▇▁▁▁▁ \cr
+   wt_dist_pop_pct \tab 0 \tab 1.0 \tab 14.29 \tab 21.91 \tab 0 \tab 0.75 \tab 3.80 \tab 15.4 \tab 91.8 \tab ▇▁▁▁▁ \cr
 }
 
 

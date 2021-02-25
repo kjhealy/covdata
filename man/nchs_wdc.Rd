@@ -5,7 +5,7 @@
 \alias{nchs_wdc}
 \title{Weekly Counts of Deaths by State and Select Causes 2014-2021}
 \format{
-A data frame with 266,706 rows and 7 variables:
+A data frame with 267,516 rows and 7 variables:
 \describe{
 \item{\code{jurisdiction}}{character Jurisdiction of Occurrence}
 \item{\code{year}}{double MMWR Year}
@@ -17,7 +17,8 @@ A data frame with 266,706 rows and 7 variables:
 }
 }
 \source{
-2014-2019: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr}. 2020-2021: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6}
+2014-2019: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr}.
+2020-2021: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6}
 }
 \usage{
 nchs_wdc
