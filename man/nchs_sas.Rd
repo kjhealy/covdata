@@ -12,7 +12,7 @@ A tibble with 46,818 rows and 15 variables:
 \item{\code{end_date}}{date Last date of data period}
 \item{\code{group}}{character Unit of time observation: whether data in this row are measured By month, By total, or By year}
 \item{\code{year}}{integer Year of observation}
-\item{\code}{month}{integer Month of observation}
+\item{\code}{month}}{integer Month of observation}
 \item{\code{state}}{character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, \emph{and New York City}, separate from New York state.}
 \item{\code{sex}}{character Sex}
 \item{\code{age_group}}{character Age group}
@@ -41,17 +41,11 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 15 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 6 \cr
+   Date \tab 1 \cr
    numeric \tab 8 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-02-24 \tab 2021-02-24 \tab 2021-02-24 \tab 1 \cr
 }
 
 
@@ -63,6 +57,12 @@ Table: Data summary\tabular{ll}{
    state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
    sex \tab 0 \tab 1 \tab 4 \tab 9 \tab 0 \tab 3 \tab 0 \cr
    age_group \tab 0 \tab 1 \tab 8 \tab 17 \tab 0 \tab 17 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-02-24 \tab 2021-02-24 \tab 2021-02-24 \tab 1 \cr
 }
 
 

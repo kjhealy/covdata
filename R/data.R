@@ -582,7 +582,7 @@
 #'   \item{\code{end_date}}{date Last date of data period}
 #'   \item{\code{group}}{character Unit of time observation: whether data in this row are measured By month, By total, or By year}
 #'   \item{\code{year}}{integer Year of observation}
-#'   \item{\code}{month}{integer Month of observation}
+#'   \item{\code}{month}}{integer Month of observation}
 #'   \item{\code{state}}{character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, *and New York City*, separate from New York state.}
 #'   \item{\code{sex}}{character Sex}
 #'   \item{\code{age_group}}{character Age group}
