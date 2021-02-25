@@ -161,19 +161,17 @@
 <dt><code>end_date</code></dt><dd><p>date Last date of data period</p></dd>
 <dt><code>group</code></dt><dd><p>character Unit of time observation: whether data in this row are measured By month, By total, or By year</p></dd>
 <dt><code>year</code></dt><dd><p>integer Year of observation</p></dd>
-<dt></dt><dd><p>month</p></dd>integer Month of observation
-<dt><code>state</code></dt><dd><p>character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, <em>and New York City</em>, separate from New York state.</p></dd>
-<dt><code>sex</code></dt><dd><p>character Sex</p></dd>
-<dt><code>age_group</code></dt><dd><p>character Age group</p></dd>
-<dt><code>covid_19_deaths</code></dt><dd><p>integer Deaths involving COVID-19 (ICD-code U07.1)</p></dd>
-<dt><code>total_deaths</code></dt><dd><p>integer Deaths from all causes of death</p></dd>
-<dt><code>pneumonia_deaths</code></dt><dd><p>integer Pneumonia Deaths (ICD-10 codes J12.0-J18.9)</p></dd>
-<dt><code>pneumonia_and_covid_19_deaths</code></dt><dd><p>integer Deaths with Pneumonia and COVID-19 (ICD-10 codes J12.0-J18.9 and U07.1)</p></dd>
-<dt><code>influenza_deaths</code></dt><dd><p>integer Influenza Deaths (ICD-10 codes J09-J11)</p></dd>
-<dt><code>pneumonia_influenza_or_covid_19_deaths</code></dt><dd><p>integer Deaths with Pneumonia, Influenza, or COVID-19 (ICD-10 codes U07.1 or J09-J18.9)</p></dd>
-
-</dl>
-
+<dt></dt><dd><p>month</p></dd>
+</dl><p>integer Month of observation
+<code>state</code>character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, <em>and New York City</em>, separate from New York state.
+<code>sex</code>character Sex
+<code>age_group</code>character Age group
+<code>covid_19_deaths</code>integer Deaths involving COVID-19 (ICD-code U07.1)
+<code>total_deaths</code>integer Deaths from all causes of death
+<code>pneumonia_deaths</code>integer Pneumonia Deaths (ICD-10 codes J12.0-J18.9)
+<code>pneumonia_and_covid_19_deaths</code>integer Deaths with Pneumonia and COVID-19 (ICD-10 codes J12.0-J18.9 and U07.1)
+<code>influenza_deaths</code>integer Influenza Deaths (ICD-10 codes J09-J11)
+<code>pneumonia_influenza_or_covid_19_deaths</code>integer Deaths with Pneumonia, Influenza, or COVID-19 (ICD-10 codes U07.1 or J09-J18.9)</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>National Center for Health Statistics <a href='https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku'>https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku</a></p>
@@ -186,18 +184,11 @@
 <tr><td>Number of columns</td><td>15</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>6</td></tr>
+<tr><td>Date</td><td>1</td></tr>
 <tr><td>numeric</td><td>8</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-02-24</td><td>2021-02-24</td><td>2021-02-24</td><td>1</td></tr>
 </table>
 
 
@@ -210,6 +201,13 @@
 <tr><td>state</td><td>0</td><td>1</td><td>4</td><td>20</td><td>0</td><td>54</td><td>0</td></tr>
 <tr><td>sex</td><td>0</td><td>1</td><td>4</td><td>9</td><td>0</td><td>3</td><td>0</td></tr>
 <tr><td>age_group</td><td>0</td><td>1</td><td>8</td><td>17</td><td>0</td><td>17</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-02-24</td><td>2021-02-24</td><td>2021-02-24</td><td>1</td></tr>
 </table>
 
 
