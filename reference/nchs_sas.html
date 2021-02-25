@@ -161,17 +161,19 @@
 <dt><code>end_date</code></dt><dd><p>date Last date of data period</p></dd>
 <dt><code>group</code></dt><dd><p>character Unit of time observation: whether data in this row are measured By month, By total, or By year</p></dd>
 <dt><code>year</code></dt><dd><p>integer Year of observation</p></dd>
-<dt></dt><dd><p>month</p></dd>
-</dl><p>integer Month of observation
-<code>state</code>character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, <em>and New York City</em>, separate from New York state.
-<code>sex</code>character Sex
-<code>age_group</code>character Age group
-<code>covid_19_deaths</code>integer Deaths involving COVID-19 (ICD-code U07.1)
-<code>total_deaths</code>integer Deaths from all causes of death
-<code>pneumonia_deaths</code>integer Pneumonia Deaths (ICD-10 codes J12.0-J18.9)
-<code>pneumonia_and_covid_19_deaths</code>integer Deaths with Pneumonia and COVID-19 (ICD-10 codes J12.0-J18.9 and U07.1)
-<code>influenza_deaths</code>integer Influenza Deaths (ICD-10 codes J09-J11)
-<code>pneumonia_influenza_or_covid_19_deaths</code>integer Deaths with Pneumonia, Influenza, or COVID-19 (ICD-10 codes U07.1 or J09-J18.9)</p>
+<dt><code>month</code></dt><dd><p>integer Month of observation</p></dd>
+<dt><code>state</code></dt><dd><p>character Jurisdiction of occurrence. One of: United States total, a US State, District of Columbia, <em>and New York City</em>, separate from New York state.</p></dd>
+<dt><code>sex</code></dt><dd><p>character Sex</p></dd>
+<dt><code>age_group</code></dt><dd><p>character Age group</p></dd>
+<dt><code>covid_19_deaths</code></dt><dd><p>integer Deaths involving COVID-19 (ICD-code U07.1)</p></dd>
+<dt><code>total_deaths</code></dt><dd><p>integer Deaths from all causes of death</p></dd>
+<dt><code>pneumonia_deaths</code></dt><dd><p>integer Pneumonia Deaths (ICD-10 codes J12.0-J18.9)</p></dd>
+<dt><code>pneumonia_and_covid_19_deaths</code></dt><dd><p>integer Deaths with Pneumonia and COVID-19 (ICD-10 codes J12.0-J18.9 and U07.1)</p></dd>
+<dt><code>influenza_deaths</code></dt><dd><p>integer Influenza Deaths (ICD-10 codes J09-J11)</p></dd>
+<dt><code>pneumonia_influenza_or_covid_19_deaths</code></dt><dd><p>integer Deaths with Pneumonia, Influenza, or COVID-19 (ICD-10 codes U07.1 or J09-J18.9)</p></dd>
+
+</dl>
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>National Center for Health Statistics <a href='https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku'>https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku</a></p>
@@ -231,13 +233,9 @@ and do not represent all deaths that occurred in that period. Data during this p
 between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes.
 This delay can range from 1 week to 8 weeks or more. Missing values may indicate that a category has between 1 and 9 observed cases and have
 been suppressed in accordance with NHCS confidentiality standards. As of September 2, 2020, this data file includes the following
-age groups in addition to the age groups that are routinely included: 0-17, 18-29, 30-49, and 50-64.
-The new age groups are consistent with categories used across CDC COVID-19 surveillance pages.
-When analyzing the file, the user should make sure to select only the desired age groups.
-Summing across all age categories provided will result in double counting deaths from certain age groups.
-Similarly, the state variable includes the United States as a whole, and New York City counted separately from the rest of New York State.
-The temporal unit of observation also varies, with totals given by year, by month, and overall. It is necessary to first filter the data by
-desired time unit, region, and age group to ensure there is no double-counting in subsequent calculations.</p>
+age groups in addition to the age groups that are routinely included: 0-17, 18-29, 30-49, and 50-64. The new age groups are consistent with categories used across CDC COVID-19 surveillance pages. When analyzing the file, the user should make sure to select only the desired age groups.
+Summing across all age categories provided will result in double counting deaths from certain age groups. Similarly, the state variable includes the United States as a whole, and New York City counted separately from the rest of New York State.
+The temporal unit of observation also varies, with totals given by year, by month, and overall. It is necessary to first filter the data by desired time unit, region, and age group to ensure there is no double-counting in subsequent calculations.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p><a href='https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku'>https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku</a></p>
