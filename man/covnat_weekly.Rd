@@ -3,7 +3,7 @@
 \docType{data}
 \name{covnat_weekly}
 \alias{covnat_weekly}
-\title{Weekly International COVID-19 cases and deaths, current as of Wednesday, February 24, 2021}
+\title{Weekly International COVID-19 cases and deaths, current as of Wednesday, March  3, 2021}
 \format{
 A tibble with 11,426 rows and 11 columns
 \describe{
@@ -37,11 +37,17 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 3 \cr
    Date \tab 1 \cr
+   character \tab 3 \cr
    numeric \tab 7 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2019-12-30 \tab 2021-02-15 \tab 2020-08-17 \tab 60 \cr
 }
 
 
@@ -50,12 +56,6 @@ Table: Data summary\tabular{ll}{
    year_week \tab 0 \tab 1.00 \tab 7 \tab 7 \tab 0 \tab 60 \tab 0 \cr
    cname \tab 0 \tab 1.00 \tab 4 \tab 33 \tab 0 \tab 220 \tab 0 \cr
    iso3 \tab 360 \tab 0.97 \tab 3 \tab 3 \tab 0 \tab 214 \tab 0 \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2019-12-30 \tab 2021-02-15 \tab 2020-08-17 \tab 60 \cr
 }
 
 

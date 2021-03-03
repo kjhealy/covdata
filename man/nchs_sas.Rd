@@ -41,11 +41,18 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 15 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 6 \cr
    Date \tab 1 \cr
-   numeric \tab 8 \cr
+   character \tab 6 \cr
+   logical \tab 2 \cr
+   numeric \tab 6 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-03-03 \tab 2021-03-03 \tab 2021-03-03 \tab 1 \cr
 }
 
 
@@ -60,22 +67,21 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-02-24 \tab 2021-02-24 \tab 2021-02-24 \tab 1 \cr
+\strong{Variable type: logical}\tabular{lrrrl}{
+   skim_variable \tab n_missing \tab complete_rate \tab mean \tab count \cr
+   year \tab 46818 \tab 0.00 \tab NaN \tab : \cr
+   month \tab 41310 \tab 0.12 \tab 1 \tab TRU: 5508 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   year \tab 2754 \tab 0.94 \tab 2020.19 \tab 0.39 \tab 2020 \tab 2020 \tab 2020.0 \tab 2020 \tab 2021 \tab ▇▁▁▁▂ \cr
-   month \tab 8262 \tab 0.82 \tab 5.79 \tab 3.65 \tab 1 \tab 2 \tab 5.5 \tab 9 \tab 12 \tab ▇▃▃▃▅ \cr
-   covid_19_deaths \tab 10769 \tab 0.77 \tab 348.65 \tab 4739.19 \tab 0 \tab 0 \tab 0.0 \tab 58 \tab 478912 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 7105 \tab 0.85 \tab 2558.46 \tab 35837.91 \tab 0 \tab 40 \tab 148.0 \tab 674 \tab 3741316 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 14087 \tab 0.70 \tab 335.09 \tab 4335.91 \tab 0 \tab 0 \tab 16.0 \tab 81 \tab 414677 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 10519 \tab 0.78 \tab 166.78 \tab 2264.61 \tab 0 \tab 0 \tab 0.0 \tab 26 \tab 229982 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 9331 \tab 0.80 \tab 6.12 \tab 94.91 \tab 0 \tab 0 \tab 0.0 \tab 0 \tab 8904 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 13820 \tab 0.70 \tab 536.50 \tab 6973.42 \tab 0 \tab 0 \tab 24.0 \tab 123 \tab 671310 \tab ▇▁▁▁▁ \cr
+   covid_19_deaths \tab 10778 \tab 0.77 \tab 360.12 \tab 4855.61 \tab 0 \tab 0 \tab 0 \tab 61 \tab 494235 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 6921 \tab 0.85 \tab 2600.88 \tab 36236.24 \tab 0 \tab 41 \tab 153 \tab 693 \tab 3820859 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 14111 \tab 0.70 \tab 345.02 \tab 4425.44 \tab 0 \tab 0 \tab 17 \tab 84 \tab 426454 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 10482 \tab 0.78 \tab 172.82 \tab 2328.95 \tab 0 \tab 0 \tab 0 \tab 27 \tab 238349 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 9385 \tab 0.80 \tab 6.15 \tab 95.14 \tab 0 \tab 0 \tab 0 \tab 0 \tab 8934 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 13836 \tab 0.70 \tab 551.97 \tab 7115.64 \tab 0 \tab 0 \tab 25 \tab 128 \tab 690062 \tab ▇▁▁▁▁ \cr
 }
 
 

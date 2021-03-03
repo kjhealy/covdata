@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus_ethnicity}
 \alias{covus_ethnicity}
-\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Wednesday, February 24, 2021}
+\title{COVID-19 case and death counts for the USA by Hispanic/Non-Hispanic ethnicity and state current as of Wednesday, March  3, 2021}
 \format{
-A tibble with 15,288 rows and 7 columns
+A tibble with 15,624 rows and 7 columns
 \describe{
 \item{\code{date}}{date Data reported as of this date}
 \item{\code{state}}{character State}
@@ -29,15 +29,21 @@ It’s a collaboration between the COVID Tracking Project and the Boston Univers
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus_ethnicity \cr
-   Number of rows \tab 15288 \cr
+   Number of rows \tab 15624 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 2 \cr
    Date \tab 1 \cr
+   character \tab 2 \cr
    numeric \tab 4 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2021-02-28 \tab 2020-09-20 \tab 93 \cr
 }
 
 
@@ -48,18 +54,12 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-04-12 \tab 2021-02-21 \tab 2020-09-16 \tab 91 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 2988 \tab 0.80 \tab 67573.28 \tab 152584.79 \tab 0 \tab 5255.50 \tab 20475.0 \tab 65955.00 \tab 2522694 \tab ▇▁▁▁▁ \cr
-   deaths \tab 3068 \tab 0.80 \tab 1558.01 \tab 3271.52 \tab -1 \tab 61.00 \tab 274.0 \tab 1327.00 \tab 31419 \tab ▇▁▁▁▁ \cr
-   hosp \tab 11258 \tab 0.26 \tab 4814.88 \tab 8376.85 \tab 0 \tab 519.25 \tab 1515.5 \tab 4511.75 \tab 54079 \tab ▇▁▁▁▁ \cr
-   tests \tab 13497 \tab 0.12 \tab 663094.55 \tab 1827820.74 \tab 0 \tab 32925.50 \tab 162024.0 \tab 448532.50 \tab 19980812 \tab ▇▁▁▁▁ \cr
+   cases \tab 3034 \tab 0.81 \tab 70498.07 \tab 159547.68 \tab 0 \tab 5400.25 \tab 21163 \tab 68480.00 \tab 2576965 \tab ▇▁▁▁▁ \cr
+   deaths \tab 3106 \tab 0.80 \tab 1601.84 \tab 3366.66 \tab -1 \tab 62.00 \tab 282 \tab 1362.75 \tab 31991 \tab ▇▁▁▁▁ \cr
+   hosp \tab 11460 \tab 0.27 \tab 4949.59 \tab 8607.85 \tab 0 \tab 545.50 \tab 1539 \tab 4769.50 \tab 55252 \tab ▇▁▁▁▁ \cr
+   tests \tab 13989 \tab 0.10 \tab 821925.37 \tab 2163630.69 \tab 0 \tab 58433.50 \tab 216891 \tab 514964.50 \tab 20821161 \tab ▇▁▁▁▁ \cr
 }
 
 

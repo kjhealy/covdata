@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovstate}
 \alias{nytcovstate}
-\title{NYT COVID-19 data for the US states, current as of Wednesday, February 24, 2021}
+\title{NYT COVID-19 data for the US states, current as of Wednesday, March  3, 2021}
 \format{
-A tibble with 19,704 rows and 5 columns
+A tibble with 20,089 rows and 5 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{State name (character)}
@@ -28,15 +28,21 @@ A dataset containing US state-level data on COVID-19, collected by the New York 
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovstate \cr
-   Number of rows \tab 19704 \cr
+   Number of rows \tab 20089 \cr
    Number of columns \tab 5 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 2 \cr
    Date \tab 1 \cr
+   character \tab 2 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-03-02 \tab 2020-09-01 \tab 407 \cr
 }
 
 
@@ -47,16 +53,10 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-02-23 \tab 2020-08-28 \tab 400 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1 \tab 156739.2 \tab 309429.11 \tab 1 \tab 6000.25 \tab 45175.0 \tab 169018 \tab 3542706 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1 \tab 3531.9 \tab 6413.84 \tab 0 \tab 129.00 \tab 978.5 \tab 4029 \tab 49869 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1 \tab 163686.38 \tab 322981.68 \tab 1 \tab 6277 \tab 47147 \tab 176124 \tab 3577497 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1 \tab 3642.37 \tab 6597.76 \tab 0 \tab 132 \tab 1016 \tab 4181 \tab 52774 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}
