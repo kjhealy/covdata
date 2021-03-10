@@ -36,29 +36,25 @@ vec_labs <- vec_brks + 100
 ```
 
 ```{r apple-example-1, fig.height=8, fig.width=8, dpi=150, results='hold'}
-apple_cities <- apple_mobility %>% 
-  filter(geo_type == "city", transportation_type == "driving") %>%
-  mutate(over_under = score < 100, 
-         score = score - 100) 
 
-for(i in 1:5){
-  print(
-  ggplot(data = apple_cities,
-         mapping = aes(x = date, y = score, 
+apple_mobility %>% 
+  filter(geo_type == "city", transportation_type == "driving", 
+         region %in% c("New York City", "Paris", "Istanbul", "Auckland", "Mexico City")) %>%
+  mutate(over_under = score < 100, 
+         score = score - 100) %>% 
+  ggplot(mapping = aes(x = date, y = score, 
                        group = region, color = over_under)) + 
   geom_hline(yintercept = 0, color = "gray40") + 
   geom_col() + 
   scale_y_continuous(breaks = vec_brks, labels = vec_labs) + 
   scale_color_manual(values = c("firebrick", "steelblue")) +
-  facet_wrap_paginate(~ region, nrow = 5, ncol = 6, page = i) + 
+  facet_wrap(~ region, ncol = 1) + 
   guides(color = FALSE) + 
   labs(x = "Date", y = "Relative Mobility", title = "Relative Trends in Apple Maps Usage for Driving, Selected Cities", 
                               subtitle = "Data are indexed to 100 for each city's usage on January 13th 2020", 
        caption = "Data: Apple. Graph: @kjhealy") + 
   theme_minimal()
-  )
   
-}  
 ```
 
 

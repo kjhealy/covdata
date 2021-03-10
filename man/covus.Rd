@@ -3,9 +3,9 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Wednesday, March  3, 2021}
+\title{COVID-19 data for the USA, current as of Wednesday, March 10, 2021}
 \format{
-A tibble with 656,000 rows and 7 columns
+A tibble with 664,960 rows and 7 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{state}{Two letter State abbreviation (character)}
@@ -29,7 +29,7 @@ A dataset containing US state-level data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab covus \cr
-   Number of rows \tab 656000 \cr
+   Number of rows \tab 664960 \cr
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -44,7 +44,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-03-02 \tab 2020-08-31 \tab 415 \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-03-07 \tab 2020-09-03 \tab 420 \cr
 }
 
 
@@ -59,13 +59,13 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: logical}\tabular{lrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab count \cr
-   data_quality_grade \tab 656000 \tab 0 \tab NaN \tab : \cr
+   data_quality_grade \tab 664960 \tab 0 \tab NaN \tab : \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 425026 \tab 0.35 \tab 395899.5 \tab 1629150 \tab 0 \tab 524 \tab 8330 \tab 139016.5 \tab 48897190 \tab ▇▁▁▁▁ \cr
+   count \tab 432199 \tab 0.35 \tab 384508 \tab 1631202 \tab 0 \tab 516 \tab 8096 \tab 131979 \tab 49646014 \tab ▇▁▁▁▁ \cr
 }
 
 
