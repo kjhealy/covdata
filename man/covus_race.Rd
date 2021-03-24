@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus_race}
 \alias{covus_race}
-\title{COVID-19 case and death counts for the USA by race and state current as of Wednesday, March 10, 2021}
+\title{COVID-19 case and death counts for the USA by race and state current as of Wednesday, March 24, 2021}
 \format{
 A tibble with 47,880 rows and 7 columns
 \describe{
@@ -56,10 +56,10 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 15732 \tab 0.67 \tab 30252.28 \tab 103245.70 \tab 0 \tab 567 \tab 3653 \tab 20984.5 \tab 2619476 \tab ▇▁▁▁▁ \cr
-   deaths \tab 17686 \tab 0.63 \tab 708.93 \tab 1836.84 \tab -1 \tab 12 \tab 68 \tab 440.0 \tab 24402 \tab ▇▁▁▁▁ \cr
-   hosp \tab 37253 \tab 0.22 \tab 2077.78 \tab 4654.37 \tab 0 \tab 67 \tab 345 \tab 1716.0 \tab 41099 \tab ▇▁▁▁▁ \cr
-   tests \tab 43549 \tab 0.09 \tab 349773.42 \tab 1269936.08 \tab 0 \tab 6298 \tab 36108 \tab 199214.0 \tab 18567612 \tab ▇▁▁▁▁ \cr
+   cases \tab 15684 \tab 0.67 \tab 30240.68 \tab 103176.64 \tab 0 \tab 568 \tab 3661 \tab 21026 \tab 2619476 \tab ▇▁▁▁▁ \cr
+   deaths \tab 17686 \tab 0.63 \tab 708.93 \tab 1836.84 \tab -1 \tab 12 \tab 68 \tab 440 \tab 24402 \tab ▇▁▁▁▁ \cr
+   hosp \tab 37253 \tab 0.22 \tab 2077.78 \tab 4654.37 \tab 0 \tab 67 \tab 345 \tab 1716 \tab 41099 \tab ▇▁▁▁▁ \cr
+   tests \tab 43549 \tab 0.09 \tab 349773.42 \tab 1269936.08 \tab 0 \tab 6298 \tab 36108 \tab 199214 \tab 18567612 \tab ▇▁▁▁▁ \cr
 }
 
 

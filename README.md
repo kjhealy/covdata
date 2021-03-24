@@ -11,7 +11,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Wednesday, March 10, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Wednesday, March 24, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -98,7 +98,7 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 library(tidyverse) # Optional but strongly recommended
 #> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 #> ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-#> ✓ tibble  3.0.6     ✓ dplyr   1.0.3
+#> ✓ tibble  3.1.0     ✓ dplyr   1.0.5
 #> ✓ tidyr   1.1.2     ✓ stringr 1.4.0
 #> ✓ readr   1.4.0     ✓ forcats 0.5.1
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -117,20 +117,20 @@ library(covdata)
 #>     %nin%
 
 covnat_weekly
-#> # A tibble: 11,426 x 11
-#>    date       year_week cname iso3     pop cases deaths cu_cases cu_deaths
-#>    <date>     <chr>     <chr> <chr>  <dbl> <dbl>  <dbl>    <dbl>     <dbl>
-#>  1 2019-12-30 2020-01   Afgh… AFG   3.89e7     0      0        0         0
-#>  2 2020-01-06 2020-02   Afgh… AFG   3.89e7     0      0        0         0
-#>  3 2020-01-13 2020-03   Afgh… AFG   3.89e7     0      0        0         0
-#>  4 2020-01-20 2020-04   Afgh… AFG   3.89e7     0      0        0         0
-#>  5 2020-01-27 2020-05   Afgh… AFG   3.89e7     0      0        0         0
-#>  6 2020-02-03 2020-06   Afgh… AFG   3.89e7     0      0        0         0
-#>  7 2020-02-10 2020-07   Afgh… AFG   3.89e7     0      0        0         0
-#>  8 2020-02-17 2020-08   Afgh… AFG   3.89e7     0      0        0         0
-#>  9 2020-02-24 2020-09   Afgh… AFG   3.89e7     1      0        1         0
-#> 10 2020-03-02 2020-10   Afgh… AFG   3.89e7     3      0        4         0
-#> # … with 11,416 more rows, and 2 more variables: r14_cases <dbl>,
+#> # A tibble: 11,866 x 11
+#>    date       year_week cname      iso3      pop cases deaths cu_cases cu_deaths
+#>    <date>     <chr>     <chr>      <chr>   <dbl> <dbl>  <dbl>    <dbl>     <dbl>
+#>  1 2019-12-30 2020-01   Afghanist… AFG    3.89e7     0      0        0         0
+#>  2 2020-01-06 2020-02   Afghanist… AFG    3.89e7     0      0        0         0
+#>  3 2020-01-13 2020-03   Afghanist… AFG    3.89e7     0      0        0         0
+#>  4 2020-01-20 2020-04   Afghanist… AFG    3.89e7     0      0        0         0
+#>  5 2020-01-27 2020-05   Afghanist… AFG    3.89e7     0      0        0         0
+#>  6 2020-02-03 2020-06   Afghanist… AFG    3.89e7     0      0        0         0
+#>  7 2020-02-10 2020-07   Afghanist… AFG    3.89e7     0      0        0         0
+#>  8 2020-02-17 2020-08   Afghanist… AFG    3.89e7     0      0        0         0
+#>  9 2020-02-24 2020-09   Afghanist… AFG    3.89e7     1      0        1         0
+#> 10 2020-03-02 2020-10   Afghanist… AFG    3.89e7     3      0        4         0
+#> # … with 11,856 more rows, and 2 more variables: r14_cases <dbl>,
 #> #   r14_deaths <dbl>
 ```
 
@@ -138,20 +138,20 @@ covnat_weekly
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 415 x 8
-#>    geo_type region transportation_… alternative_name sub_region country
-#>    <chr>    <chr>  <chr>            <chr>            <chr>      <chr>  
-#>  1 city     New Y… walking          NYC              New York   United…
-#>  2 city     New Y… walking          NYC              New York   United…
-#>  3 city     New Y… walking          NYC              New York   United…
-#>  4 city     New Y… walking          NYC              New York   United…
-#>  5 city     New Y… walking          NYC              New York   United…
-#>  6 city     New Y… walking          NYC              New York   United…
-#>  7 city     New Y… walking          NYC              New York   United…
-#>  8 city     New Y… walking          NYC              New York   United…
-#>  9 city     New Y… walking          NYC              New York   United…
-#> 10 city     New Y… walking          NYC              New York   United…
-#> # … with 405 more rows, and 2 more variables: date <date>, score <dbl>
+#> # A tibble: 429 x 8
+#>    geo_type region     transportation_ty… alternative_name sub_region country   
+#>    <chr>    <chr>      <chr>              <chr>            <chr>      <chr>     
+#>  1 city     New York … walking            NYC              New York   United St…
+#>  2 city     New York … walking            NYC              New York   United St…
+#>  3 city     New York … walking            NYC              New York   United St…
+#>  4 city     New York … walking            NYC              New York   United St…
+#>  5 city     New York … walking            NYC              New York   United St…
+#>  6 city     New York … walking            NYC              New York   United St…
+#>  7 city     New York … walking            NYC              New York   United St…
+#>  8 city     New York … walking            NYC              New York   United St…
+#>  9 city     New York … walking            NYC              New York   United St…
+#> 10 city     New York … walking            NYC              New York   United St…
+#> # … with 419 more rows, and 2 more variables: date <date>, score <dbl>
 ```
 
 
