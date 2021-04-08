@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovcounty}
 \alias{nytcovcounty}
-\title{NYT COVID-19 data for US counties, current as of Wednesday, March 24, 2021}
+\title{NYT COVID-19 data for US counties, current as of Thursday, April  8, 2021}
 \format{
-A tibble with 1,150,890 rows and 6 columns
+A tibble with 1,199,600 rows and 6 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{county}{County name (character)}
@@ -38,7 +38,7 @@ A dataset containing US county-level data on COVID-19, collected by the New York
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovcounty \cr
-   Number of rows \tab 1150890 \cr
+   Number of rows \tab 1199600 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -52,7 +52,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-03-23 \tab 2020-09-27 \tab 428 \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-04-07 \tab 2020-10-05 \tab 443 \cr
 }
 
 
@@ -60,14 +60,14 @@ Table: Data summary\tabular{ll}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    county \tab 0 \tab 1.00 \tab 3 \tab 35 \tab 0 \tab 1930 \tab 0 \cr
    state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 55 \tab 0 \cr
-   fips \tab 10543 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3218 \tab 0 \cr
+   fips \tab 10983 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3218 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1.00 \tab 3393.71 \tab 18068.17 \tab 0 \tab 66 \tab 442 \tab 1807 \tab 1215776 \tab ▇▁▁▁▁ \cr
-   deaths \tab 25157 \tab 0.98 \tab 74.93 \tab 525.35 \tab 0 \tab 1 \tab 8 \tab 37 \tab 30564 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1.00 \tab 3637.15 \tab 19226.73 \tab 0 \tab 72 \tab 488 \tab 1953 \tab 1223832 \tab ▇▁▁▁▁ \cr
+   deaths \tab 26327 \tab 0.98 \tab 78.95 \tab 541.38 \tab 0 \tab 1 \tab 9 \tab 39 \tab 31598 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}
