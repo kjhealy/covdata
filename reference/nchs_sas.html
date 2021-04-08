@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.6</span>
       </span>
     </div>
 
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 49,572 rows and 15 variables:</p><dl>
+    <p>A tibble with 52,326 rows and 15 variables:</p><dl>
 <dt><code>data_as_of</code></dt><dd><p>date Date of data release</p></dd>
 <dt><code>start_date</code></dt><dd><p>date First date of data period</p></dd>
 <dt><code>end_date</code></dt><dd><p>date Last date of data period</p></dd>
@@ -182,7 +182,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nchs_sas</td></tr>
-<tr><td>Number of rows</td><td>49572</td></tr>
+<tr><td>Number of rows</td><td>52326</td></tr>
 <tr><td>Number of columns</td><td>15</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -198,15 +198,15 @@
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-03-24</td><td>2021-03-24</td><td>2021-03-24</td><td>1</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-04-07</td><td>2021-04-07</td><td>2021-04-07</td><td>1</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>start_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>15</td><td>0</td></tr>
-<tr><td>end_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>15</td><td>0</td></tr>
+<tr><td>start_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>16</td><td>0</td></tr>
+<tr><td>end_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>16</td><td>0</td></tr>
 <tr><td>group</td><td>0</td><td>1</td><td>7</td><td>8</td><td>0</td><td>3</td><td>0</td></tr>
 <tr><td>state</td><td>0</td><td>1</td><td>4</td><td>20</td><td>0</td><td>54</td><td>0</td></tr>
 <tr><td>sex</td><td>0</td><td>1</td><td>4</td><td>9</td><td>0</td><td>3</td><td>0</td></tr>
@@ -217,20 +217,20 @@
 
 <p><strong>Variable type: logical</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>count</td></tr>
-<tr><td>year</td><td>49572</td><td>0.00</td><td>NaN</td><td>:</td></tr>
-<tr><td>month</td><td>44064</td><td>0.11</td><td>1</td><td>TRU: 5508</td></tr>
+<tr><td>year</td><td>52326</td><td>0.00</td><td>NaN</td><td>:</td></tr>
+<tr><td>month</td><td>46818</td><td>0.11</td><td>1</td><td>TRU: 5508</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>covid_19_deaths</td><td>11620</td><td>0.77</td><td>364.52</td><td>4970.04</td><td>0</td><td>0</td><td>0</td><td>60</td><td>526028</td><td>▇▁▁▁▁</td></tr>
-<tr><td>total_deaths</td><td>7424</td><td>0.85</td><td>2601.38</td><td>36561.75</td><td>0</td><td>41</td><td>151</td><td>687</td><td>4036007</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_deaths</td><td>14956</td><td>0.70</td><td>347.02</td><td>4503.22</td><td>0</td><td>0</td><td>16</td><td>83</td><td>453484</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_and_covid_19_deaths</td><td>11171</td><td>0.77</td><td>175.85</td><td>2401.29</td><td>0</td><td>0</td><td>0</td><td>27</td><td>255848</td><td>▇▁▁▁▁</td></tr>
-<tr><td>influenza_deaths</td><td>9610</td><td>0.81</td><td>5.80</td><td>92.45</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9004</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>14691</td><td>0.70</td><td>553.81</td><td>7227.61</td><td>0</td><td>0</td><td>24</td><td>126</td><td>731430</td><td>▇▁▁▁▁</td></tr>
+<tr><td>covid_19_deaths</td><td>11953</td><td>0.77</td><td>351.87</td><td>4922.63</td><td>0</td><td>0</td><td>0</td><td>55</td><td>539723</td><td>▇▁▁▁▁</td></tr>
+<tr><td>total_deaths</td><td>7820</td><td>0.85</td><td>2540.83</td><td>36354.32</td><td>0</td><td>35</td><td>140</td><td>655</td><td>4161167</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_deaths</td><td>15391</td><td>0.71</td><td>334.73</td><td>4457.28</td><td>0</td><td>0</td><td>14</td><td>77</td><td>466437</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_and_covid_19_deaths</td><td>11442</td><td>0.78</td><td>170.02</td><td>2383.98</td><td>0</td><td>0</td><td>0</td><td>24</td><td>263147</td><td>▇▁▁▁▁</td></tr>
+<tr><td>influenza_deaths</td><td>9712</td><td>0.81</td><td>5.45</td><td>89.71</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9037</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>15129</td><td>0.71</td><td>533.44</td><td>7145.61</td><td>0</td><td>0</td><td>21</td><td>116</td><td>750804</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 

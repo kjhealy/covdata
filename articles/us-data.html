@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.6</span>
       </span>
     </div>
 
@@ -191,7 +191,7 @@
   <span class="fu">scale_color_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="va">state_cols</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span> <span class="st">"%b"</span> <span class="op">)</span> <span class="op">+</span> 
   <span class="fu">scale_y_continuous</span><span class="op">(</span>trans <span class="op">=</span> <span class="st">"log2"</span>,
-                     labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
+                     labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html">comma_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
                      breaks <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">22</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US State"</span>,
@@ -285,7 +285,7 @@
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&gt;</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span><span class="op">(</span><span class="st">"2020-03-15"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="op">(</span><span class="va">deaths7</span><span class="op">/</span><span class="va">pop</span><span class="op">)</span><span class="op">*</span><span class="fl">1e5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number.html">comma_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html">comma_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">name</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Date"</span>, 
        y <span class="op">=</span> <span class="st">"Deaths per 100,000 Population (Seven Day Rolling Average)"</span>, 
@@ -332,7 +332,7 @@
   <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"3 months"</span>, date_labels <span class="op">=</span> <span class="st">"%b %Y"</span> <span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">500000</span>, <span class="fl">100000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_number.html">comma</a></span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">500000</span>, <span class="fl">100000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Deaths in the United States"</span>,
        subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Data as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">covus</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span>, <span class="st">"Recorded counts underestimate total mortality."</span><span class="op">)</span>,
        x <span class="op">=</span> <span class="st">"Date"</span>, y <span class="op">=</span> <span class="st">"Count of Deaths"</span>, 
@@ -350,7 +350,7 @@
 <a href="#state-level-table" class="anchor"></a>State-level table</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 21,244 x 5</span>
+<span class="co">#&gt; # A tibble: 22,069 x 5</span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
@@ -363,14 +363,14 @@
 <span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
 <span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 21,234 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 22,059 more rows</span></code></pre></div>
 </div>
 <div id="county-level-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#county-level-table" class="anchor"></a>County-level table</h3>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 1,150,890 x 6</span>
+<span class="co">#&gt; # A tibble: 1,199,600 x 6</span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
@@ -383,7 +383,7 @@
 <span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
 <span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
 <span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 1,150,880 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 1,199,590 more rows</span></code></pre></div>
 </div>
 <div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
 <h3 class="hasAnchor">
@@ -395,7 +395,7 @@
   <span class="fu">mutate</span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_y_log10</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_log10</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,

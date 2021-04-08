@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.6</span>
       </span>
     </div>
 
@@ -108,7 +108,7 @@
 <div id="about-the-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#about-the-package" class="anchor"></a>About the package</h2>
-<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Wednesday, March 24, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
+<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Thursday, April 8, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
 <p><code>covdata</code> provides the following:</p>
 <div id="covid-19-specific-case-and-mortality-data" class="section level3">
 <h3 class="hasAnchor">
@@ -207,7 +207,7 @@
 <span class="co">#&gt;     %nin%</span>
 
 <span class="va">covnat_weekly</span>
-<span class="co">#&gt; # A tibble: 11,866 x 11</span>
+<span class="co">#&gt; # A tibble: 12,086 x 11</span>
 <span class="co">#&gt;    date       year_week cname      iso3      pop cases deaths cu_cases cu_deaths</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 2019-12-30 2020-01   Afghanist… AFG    3.89e7     0      0        0         0</span>
@@ -220,12 +220,12 @@
 <span class="co">#&gt;  8 2020-02-17 2020-08   Afghanist… AFG    3.89e7     0      0        0         0</span>
 <span class="co">#&gt;  9 2020-02-24 2020-09   Afghanist… AFG    3.89e7     1      0        1         0</span>
 <span class="co">#&gt; 10 2020-03-02 2020-10   Afghanist… AFG    3.89e7     3      0        4         0</span>
-<span class="co">#&gt; # … with 11,856 more rows, and 2 more variables: r14_cases &lt;dbl&gt;,</span>
+<span class="co">#&gt; # … with 12,076 more rows, and 2 more variables: r14_cases &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   r14_deaths &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">apple_mobility</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op">==</span> <span class="st">"New York City"</span>, <span class="va">transportation_type</span> <span class="op">==</span> <span class="st">"walking"</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 429 x 8</span>
+<span class="co">#&gt; # A tibble: 436 x 8</span>
 <span class="co">#&gt;    geo_type region     transportation_ty… alternative_name sub_region country   </span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;              &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;     </span>
 <span class="co">#&gt;  1 city     New York … walking            NYC              New York   United St…</span>
@@ -238,7 +238,7 @@
 <span class="co">#&gt;  8 city     New York … walking            NYC              New York   United St…</span>
 <span class="co">#&gt;  9 city     New York … walking            NYC              New York   United St…</span>
 <span class="co">#&gt; 10 city     New York … walking            NYC              New York   United St…</span>
-<span class="co">#&gt; # … with 419 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt; # … with 426 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">covus</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="st">"positive"</span>, 
@@ -255,7 +255,7 @@
   <span class="fu">mutate</span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_line</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">scale_y_log10</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu">scale_y_log10</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
