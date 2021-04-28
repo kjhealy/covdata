@@ -73,7 +73,7 @@ In this release, counts of deaths are provided by the race and Hispanic origin o
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.7</span>
       </span>
     </div>
 
@@ -157,16 +157,19 @@ In this release, counts of deaths are provided by the race and Hispanic origin o
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 371 rows and 9 variables:</p><dl>
+    <p>A tibble with 7,049 rows and 12 variables:</p><dl>
 <dt><code>data_as_of</code></dt><dd><p>date Date of analysis</p></dd>
 <dt><code>start_date</code></dt><dd><p>date Start date of coverage</p></dd>
 <dt><code>end_date</code></dt><dd><p>date End date of coverage</p></dd>
+<dt><code>year</code></dt><dd><p>character Year. One of "2020", "2021", or "2020/2021".</p></dd>
+<dt><code>month</code></dt><dd><p>dbl Month</p></dd>
+<dt><code>obs_unit</code></dt><dd><p>character Unit of observation. One of: By Total, By Year, By Month.</p></dd>
 <dt><code>state</code></dt><dd><p>character Geographical unit. One of: the United States, a U.S. State, the District of Columbia, or New York City. New York state measures <em>do not</em> include New York City</p></dd>
-<dt><code>group</code></dt><dd><p>character Population group</p></dd>
+<dt><code>race_ethnicity</code></dt><dd><p>chr Race and ethnic group. One of: Non-Hispanic White, Non-Hispanic Black or African American, Non-Hispanic American Indian or Alaska Native, Non-Hispanic Asian, Non-Hispanic Native Hawaiian or Other Pacific Islander, Non Hispanic more than one race, Hispanic or Latino.</p></dd>
 <dt><code>deaths</code></dt><dd><p>integer Count of deaths</p></dd>
-<dt><code>dist_pct</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
-<dt><code>uw_dist_pop_pct</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
-<dt><code>wt_dist_pop_pct</code></dt><dd><p>double COLUMN_DESCRIPTION</p></dd>
+<dt><code>dist_pct</code></dt><dd><p>double Distribution of COVID-19 deaths (%): Deaths for each group as a percent of the total number of COVID-19 deaths reported.</p></dd>
+<dt><code>uw_dist_pop_pct</code></dt><dd><p>double Unweighted distribution of population (%): Population of each group as a percent of the total population.</p></dd>
+<dt><code>wt_dist_pop_pct</code></dt><dd><p>double Weighted distribution of population (%): Population of each group as percent of the total population after accounting for how the race and Hispanic origin population is distributed in relation to the geographic areas impacted by COVID-19.</p></dd>
 
 </dl>
 
@@ -178,13 +181,13 @@ In this release, counts of deaths are provided by the race and Hispanic origin o
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nchs_wss</td></tr>
-<tr><td>Number of rows</td><td>371</td></tr>
-<tr><td>Number of columns</td><td>9</td></tr>
+<tr><td>Number of rows</td><td>7049</td></tr>
+<tr><td>Number of columns</td><td>12</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
 <tr><td>Date</td><td>1</td></tr>
-<tr><td>character</td><td>4</td></tr>
-<tr><td>numeric</td><td>4</td></tr>
+<tr><td>character</td><td>6</td></tr>
+<tr><td>numeric</td><td>5</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
 </table>
@@ -193,27 +196,30 @@ In this release, counts of deaths are provided by the race and Hispanic origin o
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-04-07</td><td>2021-04-07</td><td>2021-04-07</td><td>1</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-04-28</td><td>2021-04-28</td><td>2021-04-28</td><td>1</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>start_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>end_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>start_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>16</td><td>0</td></tr>
+<tr><td>end_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>16</td><td>0</td></tr>
+<tr><td>year</td><td>0</td><td>1</td><td>4</td><td>9</td><td>0</td><td>3</td><td>0</td></tr>
+<tr><td>obs_unit</td><td>0</td><td>1</td><td>7</td><td>8</td><td>0</td><td>3</td><td>0</td></tr>
 <tr><td>state</td><td>0</td><td>1</td><td>4</td><td>20</td><td>0</td><td>53</td><td>0</td></tr>
-<tr><td>group</td><td>0</td><td>1</td><td>5</td><td>54</td><td>0</td><td>7</td><td>0</td></tr>
+<tr><td>race_ethnicity</td><td>0</td><td>1</td><td>18</td><td>54</td><td>0</td><td>7</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>deaths</td><td>65</td><td>0.82</td><td>3526.73</td><td>20366.99</td><td>0</td><td>38.25</td><td>199.00</td><td>1568.5</td><td>328239.0</td><td>▇▁▁▁▁</td></tr>
-<tr><td>dist_pct</td><td>65</td><td>0.82</td><td>17.27</td><td>26.90</td><td>0</td><td>0.80</td><td>3.35</td><td>18.6</td><td>96.7</td><td>▇▁▁▁▁</td></tr>
-<tr><td>uw_dist_pop_pct</td><td>0</td><td>1.00</td><td>14.28</td><td>23.72</td><td>0</td><td>0.90</td><td>3.10</td><td>12.6</td><td>93.0</td><td>▇▁▁▁▁</td></tr>
-<tr><td>wt_dist_pop_pct</td><td>0</td><td>1.00</td><td>14.29</td><td>21.91</td><td>0</td><td>0.75</td><td>3.80</td><td>15.4</td><td>91.7</td><td>▇▁▁▁▁</td></tr>
+<tr><td>month</td><td>1113</td><td>0.84</td><td>5.50</td><td>3.50</td><td>1</td><td>2.75</td><td>4.5</td><td>8.25</td><td>12.0</td><td>▇▃▂▂▃</td></tr>
+<tr><td>deaths</td><td>1899</td><td>0.73</td><td>646.07</td><td>6707.78</td><td>0</td><td>0.00</td><td>15.0</td><td>126.00</td><td>338429.0</td><td>▇▁▁▁▁</td></tr>
+<tr><td>dist_pct</td><td>1899</td><td>0.73</td><td>15.74</td><td>26.37</td><td>0</td><td>0.00</td><td>1.1</td><td>18.10</td><td>100.0</td><td>▇▁▁▁▁</td></tr>
+<tr><td>uw_dist_pop_pct</td><td>0</td><td>1.00</td><td>14.28</td><td>23.70</td><td>0</td><td>0.90</td><td>3.1</td><td>12.70</td><td>93.0</td><td>▇▁▁▁▁</td></tr>
+<tr><td>wt_dist_pop_pct</td><td>0</td><td>1.00</td><td>12.92</td><td>21.22</td><td>0</td><td>0.20</td><td>2.6</td><td>12.90</td><td>94.2</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -228,6 +234,15 @@ Unweighted population percentages are based on the Single-Race Population Estima
 the count of COVID deaths for each county, summing to the state-level, and then estimating the percent of the population within each racial and ethnic group.
 These weighted population distributions therefore more accurately reflect the geographic locations where COVID outbreaks are occurring.
 Jurisdictions are included in this table if more than 100 deaths were received and processed by NCHS as of the data of analysis.</p>
+<p>Race and Hispanic-origin categories are based on the 1997 Office of
+Management and Budget (OMB) standards (1,2), allowing for the presentation of
+data by single race and Hispanic origin. These race and Hispanic-origin
+groups—non-Hispanic single-race white, non-Hispanic single-race black or
+African American, non-Hispanic single-race American Indian or Alaska Native
+(AIAN), non-Hispanic single-race Asian, and non-Hispanic single-race Native
+Hawaiian and Other Pacific Islander —differ from the bridged-race categories
+shown in most reports using mortality data.</p>
+<p>New York State totals exclude New York City (provided in table separately).</p>
 <p>Missing values may indicate that a category has between 1 and 9 observed cases and have been suppressed in accordance with NHCS confidentiality standards.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
