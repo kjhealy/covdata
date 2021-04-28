@@ -1,3 +1,6 @@
+# covdata 0.7.8
+- *Breaking change*: `nchs_wss`, the table of provisional death counts in the U.S. across a variety of units of observation, has had its race and ethnicity categories updated by the NCHS. The `group` column has been renamed `race_ethnicity`. A new column `obs_unit` indicates whether the results in a given row are tabulated by Total, by Year, or by Month.  
+
 # covdata 0.7
 - *Breaking change*: `covnat`, the ECDC daily dataset, has been renamed to `covnat_daily`. Daily data reporting by the ECDC was discontinued on December 14th 2020 and so this table will no longer be updated.
 - A new dataset, `covnat_weekly` has been added. This is the ECDC's replacement dataset. It gives weekly national data from the beginning of the pandemic to the present.

@@ -52,7 +52,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-04-07 \tab 2021-04-07 \tab 2021-04-07 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-04-28 \tab 2021-04-28 \tab 2021-04-28 \tab 1 \cr
 }
 
 
@@ -76,12 +76,12 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 11953 \tab 0.77 \tab 351.87 \tab 4922.63 \tab 0 \tab 0 \tab 0 \tab 55 \tab 539723 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 7820 \tab 0.85 \tab 2540.83 \tab 36354.32 \tab 0 \tab 35 \tab 140 \tab 655 \tab 4161167 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 15391 \tab 0.71 \tab 334.73 \tab 4457.28 \tab 0 \tab 0 \tab 14 \tab 77 \tab 466437 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 11442 \tab 0.78 \tab 170.02 \tab 2383.98 \tab 0 \tab 0 \tab 0 \tab 24 \tab 263147 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 9712 \tab 0.81 \tab 5.45 \tab 89.71 \tab 0 \tab 0 \tab 0 \tab 0 \tab 9037 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 15129 \tab 0.71 \tab 533.44 \tab 7145.61 \tab 0 \tab 0 \tab 21 \tab 116 \tab 750804 \tab ▇▁▁▁▁ \cr
+   covid_19_deaths \tab 12490 \tab 0.76 \tab 368.81 \tab 5088.76 \tab 0 \tab 0 \tab 0 \tab 61 \tab 557486 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 7594 \tab 0.85 \tab 2647.67 \tab 37473.06 \tab 0 \tab 42 \tab 155 \tab 697 \tab 4355577 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 15977 \tab 0.69 \tab 353.53 \tab 4627.72 \tab 0 \tab 0 \tab 17 \tab 84 \tab 484412 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 12055 \tab 0.77 \tab 178.90 \tab 2473.15 \tab 0 \tab 0 \tab 0 \tab 28 \tab 272424 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 9899 \tab 0.81 \tab 5.50 \tab 90.12 \tab 0 \tab 0 \tab 0 \tab 0 \tab 9083 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 15637 \tab 0.70 \tab 560.47 \tab 7393.37 \tab 0 \tab 0 \tab 25 \tab 127 \tab 777296 \tab ▇▁▁▁▁ \cr
 }
 
 

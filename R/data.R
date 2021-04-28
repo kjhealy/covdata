@@ -620,12 +620,15 @@
 #'   \item{\code{data_as_of}}{date Date of analysis}
 #'   \item{\code{start_date}}{date Start date of coverage}
 #'   \item{\code{end_date}}{date End date of coverage}
+#'   \item{\code{year}}{character Year. One of "2020", "2021", or "2020/2021".}
+#'   \item{\code{month}}{dbl Month}
+#'   \item{\code{obs_unit}}{character Unit of observation. One of: By Total, By Year, By Month.}
 #'   \item{\code{state}}{character Geographical unit. One of: the United States, a U.S. State, the District of Columbia, or New York City. New York state measures *do not* include New York City }
-#'   \item{\code{group}}{character Population group}
+#'   \item{\code{race_ethnicity}}{chr Race and ethnic group. One of: Non-Hispanic White, Non-Hispanic Black or African American, Non-Hispanic American Indian or Alaska Native, Non-Hispanic Asian, Non-Hispanic Native Hawaiian or Other Pacific Islander, Non Hispanic more than one race, Hispanic or Latino.}
 #'   \item{\code{deaths}}{integer Count of deaths}
-#'   \item{\code{dist_pct}}{double COLUMN_DESCRIPTION}
-#'   \item{\code{uw_dist_pop_pct}}{double COLUMN_DESCRIPTION}
-#'   \item{\code{wt_dist_pop_pct}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{dist_pct}}{double Distribution of COVID-19 deaths (%): Deaths for each group as a percent of the total number of COVID-19 deaths reported.}
+#'   \item{\code{uw_dist_pop_pct}}{double Unweighted distribution of population (%): Population of each group as a percent of the total population.}
+#'   \item{\code{wt_dist_pop_pct}}{double Weighted distribution of population (%): Population of each group as percent of the total population after accounting for how the race and Hispanic origin population is distributed in relation to the geographic areas impacted by COVID-19.}
 #'}
 #' @details
 #' ```{r, results = "asis", echo = FALSE}
@@ -642,6 +645,17 @@
 #' the count of COVID deaths for each county, summing to the state-level, and then estimating the percent of the population within each racial and ethnic group.
 #' These weighted population distributions therefore more accurately reflect the geographic locations where COVID outbreaks are occurring.
 #' Jurisdictions are included in this table if more than 100 deaths were received and processed by NCHS as of the data of analysis.
+#'
+#' Race and Hispanic-origin categories are based on the 1997 Office of
+#' Management and Budget (OMB) standards (1,2), allowing for the presentation of
+#' data by single race and Hispanic origin. These race and Hispanic-origin
+#' groups—non-Hispanic single-race white, non-Hispanic single-race black or
+#' African American, non-Hispanic single-race American Indian or Alaska Native
+#' (AIAN), non-Hispanic single-race Asian, and non-Hispanic single-race Native
+#' Hawaiian and Other Pacific Islander —differ from the bridged-race categories
+#' shown in most reports using mortality data.
+#'
+#' New York State totals exclude New York City (provided in table separately).
 #'
 #' Missing values may indicate that a category has between 1 and 9 observed cases and have been suppressed in accordance with NHCS confidentiality standards.
 #' @author Kieran Healy

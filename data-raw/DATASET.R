@@ -967,11 +967,12 @@ nchs_wss_raw <- get_nchs_data(sname = "WSS",
 
 nchs_wss <- nchs_wss_raw %>%
   select(-Footnote) %>%
-  pivot_longer(`Non-Hispanic White`:Other,
-               names_to = "group") %>%
+  pivot_longer(`Non-Hispanic White`:`Hispanic or Latino`,
+               names_to = "race_ethnicity") %>%
   pivot_wider(names_from = Indicator) %>%
   janitor::clean_names() %>%
-  rename(deaths = count_of_covid_19_deaths,
+  rename(obs_unit = group,
+         deaths = count_of_covid_19_deaths,
          dist_pct = distribution_of_covid_19_deaths_percent,
          uw_dist_pop_pct = unweighted_distribution_of_population_percent,
          wt_dist_pop_pct = weighted_distribution_of_population_percent) %>%
@@ -1107,7 +1108,7 @@ nchs_wdc <- bind_rows(nchs_wdc1419, nchs_WDC2021) %>%
 ### --------------------------------------------------------------------------------------
 
 ## Apple Mobility Data
-apple_mobility <- get_apple_data() %>%
+apple_mobility <- get_apple_data(save_file = "y") %>%
   pivot_longer(cols = starts_with("x"), names_to = "date", values_to = "index") %>%
   mutate(
     date = stringr::str_remove(date, "x"),

@@ -211,13 +211,15 @@ test_that("nchs_sas conforms to spec", {
 
 ## nchs_wss
 test_that("nchs_wss conforms to spec", {
-  nchs_wss_colnames <- c("data_as_of", "start_date", "end_date", "state", "group", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
+  nchs_wss_colnames <- c("data_as_of", "start_date", "end_date", "year", "month", "obs_unit", "state",
+                         "race_ethnicity", "deaths", "dist_pct", "uw_dist_pop_pct", "wt_dist_pop_pct")
   expect_equal(colnames(nchs_wss), nchs_wss_colnames)
 
-  nchs_wss_groups <- c("Non-Hispanic White", "Non-Hispanic Black or African American", "Non-Hispanic American Indian or Alaska Native",
-                       "Non-Hispanic Asian", "Non-Hispanic Native Hawaiian or Other Pacific Islander", "Hispanic or Latino",
-                       "Other")
-  expect_equal(unique(nchs_wss$group), nchs_wss_groups)
+  nchs_wss_race_ethnicity <- c("Non-Hispanic White", "Non-Hispanic Black or African American",
+                               "Non-Hispanic American Indian or Alaska Native",
+                       "Non-Hispanic Asian", "Non-Hispanic Native Hawaiian or Other Pacific Islander",
+                       "Non Hispanic more than one race", "Hispanic or Latino")
+  expect_equal(unique(nchs_wss$race_ethnicity), nchs_wss_race_ethnicity)
 })
 
 
