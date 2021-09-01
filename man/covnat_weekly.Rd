@@ -3,9 +3,9 @@
 \docType{data}
 \name{covnat_weekly}
 \alias{covnat_weekly}
-\title{Weekly International COVID-19 cases and deaths, current as of Wednesday, April 28, 2021}
+\title{Weekly International COVID-19 cases and deaths, current as of Wednesday, September  1, 2021}
 \format{
-A tibble with 12,720 rows and 11 columns
+A tibble with 17,186 rows and 11 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{year_week}{Year and week of reporting (character, YYYY-WW)}
@@ -33,7 +33,7 @@ A dataset containing weekly national-level ECDC data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab dplyr::ungroup(covnat_wee... \cr
-   Number of rows \tab 12720 \cr
+   Number of rows \tab 17186 \cr
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -47,27 +47,27 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2019-12-30 \tab 2021-04-12 \tab 2020-09-14 \tab 68 \cr
+   date \tab 0 \tab 1 \tab 2019-12-30 \tab 2021-08-16 \tab 2020-11-23 \tab 86 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   year_week \tab 0 \tab 1 \tab 7 \tab 7 \tab 0 \tab 68 \tab 0 \cr
-   cname \tab 0 \tab 1 \tab 4 \tab 33 \tab 0 \tab 213 \tab 0 \cr
-   iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 213 \tab 0 \cr
+   year_week \tab 0 \tab 1.00 \tab 7 \tab 7 \tab 0 \tab 86 \tab 0 \cr
+   cname \tab 0 \tab 1.00 \tab 4 \tab 33 \tab 0 \tab 222 \tab 0 \cr
+   iso3 \tab 516 \tab 0.97 \tab 3 \tab 3 \tab 0 \tab 216 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   pop \tab 0 \tab 1.00 \tab 39883595.79 \tab 150189322.59 \tab 809.00 \tab 1160164.0 \tab 7132530.00 \tab 27691019.00 \tab 1.439324e+09 \tab ▇▁▁▁▁ \cr
-   cases \tab 0 \tab 1.00 \tab 11123.87 \tab 60620.94 \tab -28304.00 \tab 13.0 \tab 253.00 \tab 3408.75 \tab 1.782792e+06 \tab ▇▁▁▁▁ \cr
-   deaths \tab 0 \tab 1.00 \tab 237.71 \tab 1114.26 \tab -875.00 \tab 0.0 \tab 3.00 \tab 52.00 \tab 2.351800e+04 \tab ▇▁▁▁▁ \cr
-   cu_cases \tab 0 \tab 1.00 \tab 227880.18 \tab 1325540.02 \tab 0.00 \tab 318.0 \tab 4996.00 \tab 64319.25 \tab 3.167085e+07 \tab ▇▁▁▁▁ \cr
-   cu_deaths \tab 0 \tab 1.00 \tab 5587.84 \tab 27174.02 \tab 0.00 \tab 4.0 \tab 84.00 \tab 1120.00 \tab 5.672160e+05 \tab ▇▁▁▁▁ \cr
-   r14_cases \tab 213 \tab 0.98 \tab 101.09 \tab 219.95 \tab -130.01 \tab 1.2 \tab 11.38 \tab 94.33 \tab 4.345370e+03 \tab ▇▁▁▁▁ \cr
-   r14_deaths \tab 213 \tab 0.98 \tab 17.14 \tab 43.33 \tab -67.13 \tab 0.0 \tab 1.14 \tab 13.54 \tab 1.395030e+03 \tab ▇▁▁▁▁ \cr
+   pop \tab 0 \tab 1.00 \tab 77541823.62 \tab 364847546.39 \tab 809.00 \tab 1160164.00 \tab 7976985.00 \tab 31072945.00 \tab 4.498460e+09 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1.00 \tab 26832.51 \tab 150646.73 \tab -28304.00 \tab 20.00 \tab 380.00 \tab 4530.75 \tab 3.344360e+06 \tab ▇▁▁▁▁ \cr
+   deaths \tab 0 \tab 1.00 \tab 559.97 \tab 2964.17 \tab -875.00 \tab 0.00 \tab 5.00 \tab 70.00 \tab 5.049600e+04 \tab ▇▁▁▁▁ \cr
+   cu_cases \tab 0 \tab 1.00 \tab 781500.09 \tab 4638870.92 \tab 0.00 \tab 666.25 \tab 10254.50 \tab 129833.25 \tab 8.209527e+07 \tab ▇▁▁▁▁ \cr
+   cu_deaths \tab 0 \tab 1.00 \tab 18316.78 \tab 104585.06 \tab 0.00 \tab 9.00 \tab 154.00 \tab 2365.00 \tab 2.081314e+06 \tab ▇▁▁▁▁ \cr
+   r14_cases \tab 222 \tab 0.99 \tab 112.62 \tab 246.14 \tab -130.01 \tab 1.76 \tab 16.42 \tab 113.84 \tab 5.397360e+03 \tab ▇▁▁▁▁ \cr
+   r14_deaths \tab 222 \tab 0.99 \tab 18.54 \tab 44.44 \tab -67.13 \tab 0.00 \tab 1.76 \tab 16.19 \tab 1.395030e+03 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

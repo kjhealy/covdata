@@ -1,3 +1,6 @@
+# covdata 0.8
+- Data refresh
+
 # covdata 0.7.8
 - *Breaking change*: `nchs_wss`, the table of provisional death counts in the U.S. across a variety of units of observation, has had its race and ethnicity categories updated by the NCHS. The `group` column has been renamed `race_ethnicity`. A new column `obs_unit` indicates whether the results in a given row are tabulated by Total, by Year, or by Month.  
 

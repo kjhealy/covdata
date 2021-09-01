@@ -5,7 +5,7 @@
 \alias{nchs_sas}
 \title{Provisional COVID-19 Death Counts by Sex, Age, and State}
 \format{
-A tibble with 52,326 rows and 15 variables:
+A tibble with 63,342 rows and 15 variables:
 \describe{
 \item{\code{data_as_of}}{date Date of data release}
 \item{\code{start_date}}{date First date of data period}
@@ -37,14 +37,13 @@ Deaths involving coronavirus disease (COVID-19), pneumonia, and influenza report
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_sas \cr
-   Number of rows \tab 52326 \cr
+   Number of rows \tab 63342 \cr
    Number of columns \tab 15 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
    Date \tab 1 \cr
    character \tab 6 \cr
-   logical \tab 2 \cr
-   numeric \tab 6 \cr
+   numeric \tab 8 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
@@ -52,14 +51,14 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-04-28 \tab 2021-04-28 \tab 2021-04-28 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2021-09-01 \tab 2021-09-01 \tab 2021-09-01 \tab 1 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 16 \tab 0 \cr
-   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 16 \tab 0 \cr
+   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 20 \tab 0 \cr
+   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 20 \tab 0 \cr
    group \tab 0 \tab 1 \tab 7 \tab 8 \tab 0 \tab 3 \tab 0 \cr
    state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
    sex \tab 0 \tab 1 \tab 4 \tab 9 \tab 0 \tab 3 \tab 0 \cr
@@ -67,21 +66,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: logical}\tabular{lrrrl}{
-   skim_variable \tab n_missing \tab complete_rate \tab mean \tab count \cr
-   year \tab 52326 \tab 0.00 \tab NaN \tab : \cr
-   month \tab 46818 \tab 0.11 \tab 1 \tab TRU: 5508 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   covid_19_deaths \tab 12490 \tab 0.76 \tab 368.81 \tab 5088.76 \tab 0 \tab 0 \tab 0 \tab 61 \tab 557486 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 7594 \tab 0.85 \tab 2647.67 \tab 37473.06 \tab 0 \tab 42 \tab 155 \tab 697 \tab 4355577 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 15977 \tab 0.69 \tab 353.53 \tab 4627.72 \tab 0 \tab 0 \tab 17 \tab 84 \tab 484412 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 12055 \tab 0.77 \tab 178.90 \tab 2473.15 \tab 0 \tab 0 \tab 0 \tab 28 \tab 272424 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 9899 \tab 0.81 \tab 5.50 \tab 90.12 \tab 0 \tab 0 \tab 0 \tab 0 \tab 9083 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 15637 \tab 0.70 \tab 560.47 \tab 7393.37 \tab 0 \tab 0 \tab 25 \tab 127 \tab 777296 \tab ▇▁▁▁▁ \cr
+   year \tab 2754 \tab 0.96 \tab 2020.41 \tab 0.49 \tab 2020 \tab 2020 \tab 2020.0 \tab 2021 \tab 2021 \tab ▇▁▁▁▆ \cr
+   month \tab 8262 \tab 0.87 \tab 5.70 \tab 3.20 \tab 1 \tab 3 \tab 5.5 \tab 8 \tab 12 \tab ▇▅▅▃▃ \cr
+   covid_19_deaths \tab 15961 \tab 0.75 \tab 355.38 \tab 5194.55 \tab 0 \tab 0 \tab 0.0 \tab 59 \tab 633786 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 9019 \tab 0.86 \tab 2736.93 \tab 40811.54 \tab 0 \tab 44 \tab 158.0 \tab 695 \tab 5449813 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 19547 \tab 0.69 \tab 350.52 \tab 4864.68 \tab 0 \tab 0 \tab 18.0 \tab 81 \tab 575180 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 15688 \tab 0.75 \tab 176.03 \tab 2574.35 \tab 0 \tab 0 \tab 0.0 \tab 28 \tab 314527 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 10780 \tab 0.83 \tab 4.51 \tab 81.79 \tab 0 \tab 0 \tab 0.0 \tab 0 \tab 9258 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 19045 \tab 0.70 \tab 542.46 \tab 7607.89 \tab 0 \tab 0 \tab 25.0 \tab 119 \tab 902388 \tab ▇▁▁▁▁ \cr
 }
 
 
