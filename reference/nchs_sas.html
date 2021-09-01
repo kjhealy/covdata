@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
       </span>
     </div>
 
@@ -124,7 +124,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/kjhealy/covdata">
-    <span class="fas fa-github"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 52,326 rows and 15 variables:</p><dl>
+    <p>A tibble with 63,342 rows and 15 variables:</p><dl>
 <dt><code>data_as_of</code></dt><dd><p>date Date of data release</p></dd>
 <dt><code>start_date</code></dt><dd><p>date First date of data period</p></dd>
 <dt><code>end_date</code></dt><dd><p>date Last date of data period</p></dd>
@@ -182,14 +182,13 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nchs_sas</td></tr>
-<tr><td>Number of rows</td><td>52326</td></tr>
+<tr><td>Number of rows</td><td>63342</td></tr>
 <tr><td>Number of columns</td><td>15</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
 <tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>6</td></tr>
-<tr><td>logical</td><td>2</td></tr>
-<tr><td>numeric</td><td>6</td></tr>
+<tr><td>numeric</td><td>8</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
 </table>
@@ -198,15 +197,15 @@
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-04-28</td><td>2021-04-28</td><td>2021-04-28</td><td>1</td></tr>
+<tr><td>data_as_of</td><td>0</td><td>1</td><td>2021-09-01</td><td>2021-09-01</td><td>2021-09-01</td><td>1</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>start_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>16</td><td>0</td></tr>
-<tr><td>end_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>16</td><td>0</td></tr>
+<tr><td>start_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>20</td><td>0</td></tr>
+<tr><td>end_date</td><td>0</td><td>1</td><td>10</td><td>10</td><td>0</td><td>20</td><td>0</td></tr>
 <tr><td>group</td><td>0</td><td>1</td><td>7</td><td>8</td><td>0</td><td>3</td><td>0</td></tr>
 <tr><td>state</td><td>0</td><td>1</td><td>4</td><td>20</td><td>0</td><td>54</td><td>0</td></tr>
 <tr><td>sex</td><td>0</td><td>1</td><td>4</td><td>9</td><td>0</td><td>3</td><td>0</td></tr>
@@ -215,22 +214,16 @@
 
 
 
-<p><strong>Variable type: logical</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>count</td></tr>
-<tr><td>year</td><td>52326</td><td>0.00</td><td>NaN</td><td>:</td></tr>
-<tr><td>month</td><td>46818</td><td>0.11</td><td>1</td><td>TRU: 5508</td></tr>
-</table>
-
-
-
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>covid_19_deaths</td><td>12490</td><td>0.76</td><td>368.81</td><td>5088.76</td><td>0</td><td>0</td><td>0</td><td>61</td><td>557486</td><td>▇▁▁▁▁</td></tr>
-<tr><td>total_deaths</td><td>7594</td><td>0.85</td><td>2647.67</td><td>37473.06</td><td>0</td><td>42</td><td>155</td><td>697</td><td>4355577</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_deaths</td><td>15977</td><td>0.69</td><td>353.53</td><td>4627.72</td><td>0</td><td>0</td><td>17</td><td>84</td><td>484412</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_and_covid_19_deaths</td><td>12055</td><td>0.77</td><td>178.90</td><td>2473.15</td><td>0</td><td>0</td><td>0</td><td>28</td><td>272424</td><td>▇▁▁▁▁</td></tr>
-<tr><td>influenza_deaths</td><td>9899</td><td>0.81</td><td>5.50</td><td>90.12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9083</td><td>▇▁▁▁▁</td></tr>
-<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>15637</td><td>0.70</td><td>560.47</td><td>7393.37</td><td>0</td><td>0</td><td>25</td><td>127</td><td>777296</td><td>▇▁▁▁▁</td></tr>
+<tr><td>year</td><td>2754</td><td>0.96</td><td>2020.41</td><td>0.49</td><td>2020</td><td>2020</td><td>2020.0</td><td>2021</td><td>2021</td><td>▇▁▁▁▆</td></tr>
+<tr><td>month</td><td>8262</td><td>0.87</td><td>5.70</td><td>3.20</td><td>1</td><td>3</td><td>5.5</td><td>8</td><td>12</td><td>▇▅▅▃▃</td></tr>
+<tr><td>covid_19_deaths</td><td>15961</td><td>0.75</td><td>355.38</td><td>5194.55</td><td>0</td><td>0</td><td>0.0</td><td>59</td><td>633786</td><td>▇▁▁▁▁</td></tr>
+<tr><td>total_deaths</td><td>9019</td><td>0.86</td><td>2736.93</td><td>40811.54</td><td>0</td><td>44</td><td>158.0</td><td>695</td><td>5449813</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_deaths</td><td>19547</td><td>0.69</td><td>350.52</td><td>4864.68</td><td>0</td><td>0</td><td>18.0</td><td>81</td><td>575180</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_and_covid_19_deaths</td><td>15688</td><td>0.75</td><td>176.03</td><td>2574.35</td><td>0</td><td>0</td><td>0.0</td><td>28</td><td>314527</td><td>▇▁▁▁▁</td></tr>
+<tr><td>influenza_deaths</td><td>10780</td><td>0.83</td><td>4.51</td><td>81.79</td><td>0</td><td>0</td><td>0.0</td><td>0</td><td>9258</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pneumonia_influenza_or_covid_19_deaths</td><td>19045</td><td>0.70</td><td>542.46</td><td>7607.89</td><td>0</td><td>0</td><td>25.0</td><td>119</td><td>902388</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 

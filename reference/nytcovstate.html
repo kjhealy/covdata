@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for the US states, current as of Wednesday, April 28, 2021 — nytcovstate • covdata</title>
+<title>NYT COVID-19 data for the US states, current as of Wednesday, September  1, 2021 — nytcovstate • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Wednesday, April 28, 2021 — nytcovstate" />
+<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Wednesday, September  1, 2021 — nytcovstate" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19, collected by the New York Times." />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
       </span>
     </div>
 
@@ -124,7 +124,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/kjhealy/covdata">
-    <span class="fas fa-github"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for the US states, current as of Wednesday, April 28, 2021</h1>
+    <h1>NYT COVID-19 data for the US states, current as of Wednesday, September  1, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovstate.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 23,169 rows and 5 columns</p><dl>
+    <p>A tibble with 30,099 rows and 5 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>State name (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -173,7 +173,7 @@ For details on the methods and limitations see <a href='https://github.com/nytim
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytcovstate</td></tr>
-<tr><td>Number of rows</td><td>23169</td></tr>
+<tr><td>Number of rows</td><td>30099</td></tr>
 <tr><td>Number of columns</td><td>5</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -188,7 +188,7 @@ For details on the methods and limitations see <a href='https://github.com/nytim
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2021-04-27</td><td>2020-09-29</td><td>463</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2021-08-31</td><td>2020-12-01</td><td>589</td></tr>
 </table>
 
 
@@ -203,8 +203,8 @@ For details on the methods and limitations see <a href='https://github.com/nytim
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>215663.16</td><td>411626.15</td><td>1</td><td>8591</td><td>64150</td><td>247455</td><td>3736197</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>4486.76</td><td>7965.03</td><td>0</td><td>184</td><td>1357</td><td>5235</td><td>61480</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>309825.35</td><td>539602.96</td><td>1</td><td>15513</td><td>107322</td><td>388978</td><td>4449186</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>5981.84</td><td>9979.73</td><td>0</td><td>341</td><td>2018</td><td>7185</td><td>65863</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 

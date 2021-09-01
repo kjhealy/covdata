@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/kjhealy/covdata">
-    <span class="fas fa-github"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -113,10 +113,10 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
-<span class="co">#&gt; ✔ ggplot2 3.3.3     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.1.1     ✔ dplyr   1.0.5</span>
+<span class="co">#&gt; ✔ ggplot2 3.3.5     ✔ purrr   0.3.4</span>
+<span class="co">#&gt; ✔ tibble  3.1.4     ✔ dplyr   1.0.7</span>
 <span class="co">#&gt; ✔ tidyr   1.1.3     ✔ stringr 1.4.0</span>
-<span class="co">#&gt; ✔ readr   1.4.0     ✔ forcats 0.5.1</span>
+<span class="co">#&gt; ✔ readr   2.0.1     ✔ forcats 0.5.1</span>
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
@@ -135,20 +135,20 @@
 </blockquote>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">stmf</span>
-<span class="co">#&gt; # A tibble: 510,375 x 17</span>
-<span class="co">#&gt;    country_code cname    iso2  continent iso3   year  week sex   split split_sex</span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  2 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  3 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  4 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  5 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  6 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt;  7 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt;  8 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt;  9 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt; 10 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt; # … with 510,365 more rows, and 7 more variables: forecast &lt;dbl&gt;,</span>
+<span class="co">#&gt; # A tibble: 533,235 × 17</span>
+<span class="co">#&gt;    country_code cname     iso2  continent iso3   year  week sex   split split_sex</span>
+<span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 AUS          Australia AU    Oceania   AUS    2015     1 m         1         0</span>
+<span class="co">#&gt;  2 AUS          Australia AU    Oceania   AUS    2015     1 m         1         0</span>
+<span class="co">#&gt;  3 AUS          Australia AU    Oceania   AUS    2015     1 m         1         0</span>
+<span class="co">#&gt;  4 AUS          Australia AU    Oceania   AUS    2015     1 m         1         0</span>
+<span class="co">#&gt;  5 AUS          Australia AU    Oceania   AUS    2015     1 m         1         0</span>
+<span class="co">#&gt;  6 AUS          Australia AU    Oceania   AUS    2015     1 f         1         0</span>
+<span class="co">#&gt;  7 AUS          Australia AU    Oceania   AUS    2015     1 f         1         0</span>
+<span class="co">#&gt;  8 AUS          Australia AU    Oceania   AUS    2015     1 f         1         0</span>
+<span class="co">#&gt;  9 AUS          Australia AU    Oceania   AUS    2015     1 f         1         0</span>
+<span class="co">#&gt; 10 AUS          Australia AU    Oceania   AUS    2015     1 f         1         0</span>
+<span class="co">#&gt; # … with 533,225 more rows, and 7 more variables: forecast &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   approx_date &lt;date&gt;, age_group &lt;chr&gt;, death_count &lt;dbl&gt;, death_rate &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   deaths_total &lt;dbl&gt;, rate_total &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -173,7 +173,7 @@
 <a href="#nchs-mortality-counts-and-estimates" class="anchor"></a>NCHS Mortality Counts and Estimates</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span>
-<span class="co">#&gt; # A tibble: 274,806 x 7</span>
+<span class="co">#&gt; # A tibble: 289,386 × 7</span>
 <span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed           n cause   </span>
 <span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   </span>
 <span class="co">#&gt;  1 Alabama       2014     1 2014-01-04       All Cause             1057 All Cau…</span>
@@ -186,7 +186,7 @@
 <span class="co">#&gt;  8 Alabama       2014     1 2014-01-04       Malignant neoplasms…   196 Cancer  </span>
 <span class="co">#&gt;  9 Alabama       2014     1 2014-01-04       Natural Cause          992 Natural…</span>
 <span class="co">#&gt; 10 Alabama       2014     1 2014-01-04       Nephritis, nephroti…    21 Kidney …</span>
-<span class="co">#&gt; # … with 274,796 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 289,376 more rows</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">jurisdiction</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -217,7 +217,7 @@
 <p>The New York Times has begun to collate short term mortality counts in an effort to calculate excess deaths for various countries and regions.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytexcess</span>  
-<span class="co">#&gt; # A tibble: 7,258 x 12</span>
+<span class="co">#&gt; # A tibble: 7,258 × 12</span>
 <span class="co">#&gt;    country placename frequency start_date end_date   year  month  week deaths</span>
 <span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;     &lt;date&gt;     &lt;date&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;</span>
 <span class="co">#&gt;  1 Austria &lt;NA&gt;      weekly    2020-01-06 2020-01-12 2020      1     2   1702</span>

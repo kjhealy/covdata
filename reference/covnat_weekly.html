@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Weekly International COVID-19 cases and deaths, current as of Wednesday, April 28, 2021 — covnat_weekly • covdata</title>
+<title>Weekly International COVID-19 cases and deaths, current as of Wednesday, September  1, 2021 — covnat_weekly • covdata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Weekly International COVID-19 cases and deaths, current as of Wednesday, April 28, 2021 — covnat_weekly" />
+<meta property="og:title" content="Weekly International COVID-19 cases and deaths, current as of Wednesday, September  1, 2021 — covnat_weekly" />
 <meta property="og:description" content="A dataset containing weekly national-level ECDC data on COVID-19" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
       </span>
     </div>
 
@@ -124,7 +124,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/kjhealy/covdata">
-    <span class="fas fa-github"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -141,7 +141,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Weekly International COVID-19 cases and deaths, current as of Wednesday, April 28, 2021</h1>
+    <h1>Weekly International COVID-19 cases and deaths, current as of Wednesday, September  1, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>covnat_weekly.Rd</code></div>
     </div>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 12,720 rows and 11 columns</p><dl>
+    <p>A tibble with 17,186 rows and 11 columns</p><dl>
 <dt>date</dt><dd><p>date in YYYY-MM-DD format</p></dd>
 <dt>year_week</dt><dd><p>Year and week of reporting (character, YYYY-WW)</p></dd>
 <dt>cname</dt><dd><p>Name of country (character)</p></dd>
@@ -178,7 +178,7 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>dplyr::ungroup(covnat_wee...</td></tr>
-<tr><td>Number of rows</td><td>12720</td></tr>
+<tr><td>Number of rows</td><td>17186</td></tr>
 <tr><td>Number of columns</td><td>11</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
@@ -193,29 +193,29 @@
 
 <p><strong>Variable type: Date</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2019-12-30</td><td>2021-04-12</td><td>2020-09-14</td><td>68</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2019-12-30</td><td>2021-08-16</td><td>2020-11-23</td><td>86</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: character</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>year_week</td><td>0</td><td>1</td><td>7</td><td>7</td><td>0</td><td>68</td><td>0</td></tr>
-<tr><td>cname</td><td>0</td><td>1</td><td>4</td><td>33</td><td>0</td><td>213</td><td>0</td></tr>
-<tr><td>iso3</td><td>0</td><td>1</td><td>3</td><td>3</td><td>0</td><td>213</td><td>0</td></tr>
+<tr><td>year_week</td><td>0</td><td>1.00</td><td>7</td><td>7</td><td>0</td><td>86</td><td>0</td></tr>
+<tr><td>cname</td><td>0</td><td>1.00</td><td>4</td><td>33</td><td>0</td><td>222</td><td>0</td></tr>
+<tr><td>iso3</td><td>516</td><td>0.97</td><td>3</td><td>3</td><td>0</td><td>216</td><td>0</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>pop</td><td>0</td><td>1.00</td><td>39883595.79</td><td>150189322.59</td><td>809.00</td><td>1160164.0</td><td>7132530.00</td><td>27691019.00</td><td>1.439324e+09</td><td>▇▁▁▁▁</td></tr>
-<tr><td>cases</td><td>0</td><td>1.00</td><td>11123.87</td><td>60620.94</td><td>-28304.00</td><td>13.0</td><td>253.00</td><td>3408.75</td><td>1.782792e+06</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1.00</td><td>237.71</td><td>1114.26</td><td>-875.00</td><td>0.0</td><td>3.00</td><td>52.00</td><td>2.351800e+04</td><td>▇▁▁▁▁</td></tr>
-<tr><td>cu_cases</td><td>0</td><td>1.00</td><td>227880.18</td><td>1325540.02</td><td>0.00</td><td>318.0</td><td>4996.00</td><td>64319.25</td><td>3.167085e+07</td><td>▇▁▁▁▁</td></tr>
-<tr><td>cu_deaths</td><td>0</td><td>1.00</td><td>5587.84</td><td>27174.02</td><td>0.00</td><td>4.0</td><td>84.00</td><td>1120.00</td><td>5.672160e+05</td><td>▇▁▁▁▁</td></tr>
-<tr><td>r14_cases</td><td>213</td><td>0.98</td><td>101.09</td><td>219.95</td><td>-130.01</td><td>1.2</td><td>11.38</td><td>94.33</td><td>4.345370e+03</td><td>▇▁▁▁▁</td></tr>
-<tr><td>r14_deaths</td><td>213</td><td>0.98</td><td>17.14</td><td>43.33</td><td>-67.13</td><td>0.0</td><td>1.14</td><td>13.54</td><td>1.395030e+03</td><td>▇▁▁▁▁</td></tr>
+<tr><td>pop</td><td>0</td><td>1.00</td><td>77541823.62</td><td>364847546.39</td><td>809.00</td><td>1160164.00</td><td>7976985.00</td><td>31072945.00</td><td>4.498460e+09</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1.00</td><td>26832.51</td><td>150646.73</td><td>-28304.00</td><td>20.00</td><td>380.00</td><td>4530.75</td><td>3.344360e+06</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1.00</td><td>559.97</td><td>2964.17</td><td>-875.00</td><td>0.00</td><td>5.00</td><td>70.00</td><td>5.049600e+04</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_cases</td><td>0</td><td>1.00</td><td>781500.09</td><td>4638870.92</td><td>0.00</td><td>666.25</td><td>10254.50</td><td>129833.25</td><td>8.209527e+07</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cu_deaths</td><td>0</td><td>1.00</td><td>18316.78</td><td>104585.06</td><td>0.00</td><td>9.00</td><td>154.00</td><td>2365.00</td><td>2.081314e+06</td><td>▇▁▁▁▁</td></tr>
+<tr><td>r14_cases</td><td>222</td><td>0.99</td><td>112.62</td><td>246.14</td><td>-130.01</td><td>1.76</td><td>16.42</td><td>113.84</td><td>5.397360e+03</td><td>▇▁▁▁▁</td></tr>
+<tr><td>r14_deaths</td><td>222</td><td>0.99</td><td>18.54</td><td>44.44</td><td>-67.13</td><td>0.00</td><td>1.76</td><td>16.19</td><td>1.395030e+03</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
