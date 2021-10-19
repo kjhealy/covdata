@@ -6,16 +6,42 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYT COVID-19 data for the US states, current as of Wednesday, September  1, 2021 — nytcovstate • covdata</title>
+<!-- Inform modern browsers that this page supports both dark and light color schemes,
+  and the page author prefers light. -->
+<meta name="color-scheme" content="dark light">
+<script>
+  // If `prefers-color-scheme` is not supported, fall back to light mode.
+  // i.e. In this case, inject the `light` CSS before the others, with
+  // no media filter so that it will be downloaded with highest priority.
+  if (window.matchMedia("(prefers-color-scheme: dark)").media === "not all") {
+    document.documentElement.style.display = "none";
+    document.head.insertAdjacentHTML(
+      "beforeend",
+      "<link id=\"css\" rel=\"stylesheet\" href=\"https://bootswatch.com/3/flatly/bootstrap.css\" onload=\"document.documentElement.style.display = ''\">"
+    );
+  }
+</script>
+
+<title>NYT COVID-19 data for the US states, current as of Tuesday, October 19, 2021 — nytcovstate • covdata</title>
 
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- Flatly Theme - Light  -->
+<link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+
+<!-- Darkly Theme - Dark -->
+<link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
+
+<!-- preferably CSS -->
+<link rel="stylesheet" href="../preferably.css">
+<link id="css-code-light" rel="stylesheet" href="../code-color-scheme-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+<link id="css-code-dark" rel="stylesheet" href="../code-color-scheme-dark.css" media="(prefers-color-scheme: dark)">
+
 
 <!-- bootstrap-toc -->
 <link rel="stylesheet" href="../bootstrap-toc.css">
@@ -39,7 +65,7 @@
 
 
 
-<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Wednesday, September  1, 2021 — nytcovstate" />
+<meta property="og:title" content="NYT COVID-19 data for the US states, current as of Tuesday, October 19, 2021 — nytcovstate" />
 <meta property="og:description" content="A dataset containing US state-level data on COVID-19, collected by the New York Times." />
 
 
@@ -48,6 +74,9 @@
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
+
+
+
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -72,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9</span>
       </span>
     </div>
 
@@ -122,12 +151,17 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        
         <li>
   <a href="https://github.com/kjhealy/covdata">
     <span class="fa fa-github"></span>
      
   </a>
 </li>
+        
+        
+
+
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -141,7 +175,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>NYT COVID-19 data for the US states, current as of Wednesday, September  1, 2021</h1>
+    <h1>NYT COVID-19 data for the US states, current as of Tuesday, October 19, 2021</h1>
     <small class="dont-index">Source: <a href='https://github.com/kjhealy/covdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nytcovstate.Rd</code></div>
     </div>
@@ -155,7 +189,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 30,099 rows and 5 columns</p><dl>
+    <p>A tibble with 32,766 rows and 5 columns</p><dl>
 <dt>date</dt><dd><p>Date in YYYY-MM-DD format (date)</p></dd>
 <dt>state</dt><dd><p>State name (character)</p></dd>
 <dt>fips</dt><dd><p>State FIPS code (character)</p></dd>
@@ -173,12 +207,12 @@ For details on the methods and limitations see <a href='https://github.com/nytim
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>nytcovstate</td></tr>
-<tr><td>Number of rows</td><td>30099</td></tr>
+<tr><td>Number of rows</td><td>32766</td></tr>
 <tr><td>Number of columns</td><td>5</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>2</td></tr>
+<tr><td>Date</td><td>1</td></tr>
 <tr><td>numeric</td><td>2</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
@@ -186,25 +220,25 @@ For details on the methods and limitations see <a href='https://github.com/nytim
 
 
 
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2021-08-31</td><td>2020-12-01</td><td>589</td></tr>
+<p><strong>Variable type: character</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
+<tr><td>state</td><td>0</td><td>1</td><td>4</td><td>24</td><td>0</td><td>56</td><td>0</td></tr>
+<tr><td>fips</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td><td>56</td><td>0</td></tr>
 </table>
 
 
 
-<p><strong>Variable type: character</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
-<tr><td>state</td><td>0</td><td>1</td><td>4</td><td>24</td><td>0</td><td>55</td><td>0</td></tr>
-<tr><td>fips</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td><td>55</td><td>0</td></tr>
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-21</td><td>2021-10-18</td><td>2020-12-25</td><td>637</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>cases</td><td>0</td><td>1</td><td>309825.35</td><td>539602.96</td><td>1</td><td>15513</td><td>107322</td><td>388978</td><td>4449186</td><td>▇▁▁▁▁</td></tr>
-<tr><td>deaths</td><td>0</td><td>1</td><td>5981.84</td><td>9979.73</td><td>0</td><td>341</td><td>2018</td><td>7185</td><td>65863</td><td>▇▁▁▁▁</td></tr>
+<tr><td>cases</td><td>0</td><td>1</td><td>347036.17</td><td>595157.84</td><td>1</td><td>18772</td><td>119952</td><td>441693.5</td><td>4845060</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths</td><td>0</td><td>1</td><td>6499.21</td><td>10674.86</td><td>0</td><td>399</td><td>2204</td><td>7715.0</td><td>70981</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -224,7 +258,7 @@ For details on the methods and limitations see <a href='https://github.com/nytim
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
 </div>
 
       </footer>

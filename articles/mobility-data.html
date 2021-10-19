@@ -5,9 +5,26 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobility Data from Apple • covdata</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<!-- Inform modern browsers that this page supports both dark and light color schemes,
+  and the page author prefers light. --><meta name="color-scheme" content="dark light">
+<script>
+  // If `prefers-color-scheme` is not supported, fall back to light mode.
+  // i.e. In this case, inject the `light` CSS before the others, with
+  // no media filter so that it will be downloaded with highest priority.
+  if (window.matchMedia("(prefers-color-scheme: dark)").media === "not all") {
+    document.documentElement.style.display = "none";
+    document.head.insertAdjacentHTML(
+      "beforeend",
+      "<link id=\"css\" rel=\"stylesheet\" href=\"https://bootswatch.com/3/flatly/bootstrap.css\" onload=\"document.documentElement.style.display = ''\">"
+    );
+  }
+</script><title>Mobility Data from Apple • covdata</title>
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Flatly Theme - Light  --><link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+<!-- Darkly Theme - Dark --><link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
+<!-- preferably CSS --><link rel="stylesheet" href="../preferably.css">
+<link id="css-code-light" rel="stylesheet" href="../code-color-scheme-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+<link id="css-code-dark" rel="stylesheet" href="../code-color-scheme-dark.css" media="(prefers-color-scheme: dark)">
+<!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -31,7 +48,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9</span>
       </span>
     </div>
 
@@ -87,6 +104,10 @@
      
   </a>
 </li>
+        
+        
+
+
       </ul>
 </div>
 <!--/.nav-collapse -->
@@ -117,9 +138,9 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.3.5     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.1.4     ✔ dplyr   1.0.7</span>
-<span class="co">#&gt; ✔ tidyr   1.1.3     ✔ stringr 1.4.0</span>
-<span class="co">#&gt; ✔ readr   2.0.1     ✔ forcats 0.5.1</span>
+<span class="co">#&gt; ✔ tibble  3.1.5     ✔ dplyr   1.0.7</span>
+<span class="co">#&gt; ✔ tidyr   1.1.4     ✔ stringr 1.4.0</span>
+<span class="co">#&gt; ✔ readr   2.0.2     ✔ forcats 0.5.1</span>
 <span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
@@ -137,7 +158,7 @@
 <p>Apple has made aggregated data available on relative trends in use of its Maps data across a range of cities, regions, and countries. Data show relative volume of directions requests per country/region or city compared to a baseline volume on January 13th, 2020. Apple defines the day as midnight-to-midnight, Pacific time. Cities represent usage in greater metropolitan areas and are stably defined during this period. In many countries/regions and cities, relative volume has increased since January 13th, consistent with normal, seasonal usage of Apple Maps. Day of week effects are important to normalize as you use this data. Data that is sent from users’ devices to the Apple Maps service is associated with random, rotating identifiers so Apple does not have a profile of individual movements and searches. Apple Maps has no demographic information about its users, and so cannot make any statements about the representativeness of its usage against the overall population.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">apple_mobility</span>
-<span class="co">#&gt; # A tibble: 2,800,527 × 8</span>
+<span class="co">#&gt; # A tibble: 3,025,695 × 8</span>
 <span class="co">#&gt;    geo_type       region  transportation_ty… alternative_name sub_region country</span>
 <span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;              &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 country/region Albania driving            &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
@@ -150,7 +171,7 @@
 <span class="co">#&gt;  8 country/region Albania driving            &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt;  9 country/region Albania driving            &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
 <span class="co">#&gt; 10 country/region Albania driving            &lt;NA&gt;             &lt;NA&gt;       &lt;NA&gt;   </span>
-<span class="co">#&gt; # … with 2,800,517 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt; # … with 3,025,685 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vec_brks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">50</span>, <span class="fl">0</span>, <span class="fl">50</span><span class="op">)</span>
 <span class="va">vec_labs</span> <span class="op">&lt;-</span> <span class="va">vec_brks</span> <span class="op">+</span> <span class="fl">100</span></code></pre></div>
@@ -200,7 +221,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
 </div>
 
       </footer>

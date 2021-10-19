@@ -6,16 +6,42 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Inform modern browsers that this page supports both dark and light color schemes,
+  and the page author prefers light. -->
+<meta name="color-scheme" content="dark light">
+<script>
+  // If `prefers-color-scheme` is not supported, fall back to light mode.
+  // i.e. In this case, inject the `light` CSS before the others, with
+  // no media filter so that it will be downloaded with highest priority.
+  if (window.matchMedia("(prefers-color-scheme: dark)").media === "not all") {
+    document.documentElement.style.display = "none";
+    document.head.insertAdjacentHTML(
+      "beforeend",
+      "<link id=\"css\" rel=\"stylesheet\" href=\"https://bootswatch.com/3/flatly/bootstrap.css\" onload=\"document.documentElement.style.display = ''\">"
+    );
+  }
+</script>
+
 <title>Apple Mobility Data — apple_mobility • covdata</title>
 
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- Flatly Theme - Light  -->
+<link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+
+<!-- Darkly Theme - Dark -->
+<link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
+
+<!-- preferably CSS -->
+<link rel="stylesheet" href="../preferably.css">
+<link id="css-code-light" rel="stylesheet" href="../code-color-scheme-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+<link id="css-code-dark" rel="stylesheet" href="../code-color-scheme-dark.css" media="(prefers-color-scheme: dark)">
+
 
 <!-- bootstrap-toc -->
 <link rel="stylesheet" href="../bootstrap-toc.css">
@@ -49,6 +75,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
 
+
+
+
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -72,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9</span>
       </span>
     </div>
 
@@ -122,12 +151,17 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        
         <li>
   <a href="https://github.com/kjhealy/covdata">
     <span class="fa fa-github"></span>
      
   </a>
 </li>
+        
+        
+
+
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -155,7 +189,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 2,800,527 rows and 8 variables:</p><dl>
+    <p>A data frame with 3,025,695 rows and 8 variables:</p><dl>
 <dt><code>geo_type</code></dt><dd><p>character Type geographical unit. Values: city or country/region</p></dd>
 <dt><code>region</code></dt><dd><p>character Name of geographical unit.</p></dd>
 <dt><code>transportation_type</code></dt><dd><p>character Mode of transport. Values: Driving, Transit, or Walking</p></dd>
@@ -175,22 +209,15 @@
     <p>Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>apple_mobility</td></tr>
-<tr><td>Number of rows</td><td>2800527</td></tr>
+<tr><td>Number of rows</td><td>3025695</td></tr>
 <tr><td>Number of columns</td><td>8</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>6</td></tr>
+<tr><td>Date</td><td>1</td></tr>
 <tr><td>numeric</td><td>1</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>date</td><td>0</td><td>1</td><td>2020-01-13</td><td>2021-08-31</td><td>2020-11-06</td><td>597</td></tr>
 </table>
 
 
@@ -200,16 +227,23 @@
 <tr><td>geo_type</td><td>0</td><td>1.00</td><td>4</td><td>14</td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>region</td><td>0</td><td>1.00</td><td>4</td><td>48</td><td>0</td><td>2325</td><td>0</td></tr>
 <tr><td>transportation_type</td><td>0</td><td>1.00</td><td>7</td><td>7</td><td>0</td><td>3</td><td>0</td></tr>
-<tr><td>alternative_name</td><td>2177259</td><td>0.22</td><td>2</td><td>85</td><td>0</td><td>519</td><td>0</td></tr>
-<tr><td>sub_region</td><td>813114</td><td>0.71</td><td>4</td><td>33</td><td>0</td><td>162</td><td>0</td></tr>
-<tr><td>country</td><td>91341</td><td>0.97</td><td>5</td><td>20</td><td>0</td><td>47</td><td>0</td></tr>
+<tr><td>alternative_name</td><td>2352315</td><td>0.22</td><td>2</td><td>85</td><td>0</td><td>519</td><td>0</td></tr>
+<tr><td>sub_region</td><td>878490</td><td>0.71</td><td>4</td><td>33</td><td>0</td><td>162</td><td>0</td></tr>
+<tr><td>country</td><td>98685</td><td>0.97</td><td>5</td><td>20</td><td>0</td><td>47</td><td>0</td></tr>
+</table>
+
+
+
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>date</td><td>0</td><td>1</td><td>2020-01-13</td><td>2021-10-18</td><td>2020-11-30</td><td>645</td></tr>
 </table>
 
 
 
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>score</td><td>35107</td><td>0.99</td><td>132.06</td><td>70.24</td><td>0.44</td><td>90.96</td><td>122.49</td><td>160.87</td><td>3303.05</td><td>▇▁▁▁▁</td></tr>
+<tr><td>score</td><td>36979</td><td>0.99</td><td>135.21</td><td>71.71</td><td>0.44</td><td>93.06</td><td>125.66</td><td>164.6</td><td>3303.05</td><td>▇▁▁▁▁</td></tr>
 </table>
 
 
@@ -237,7 +271,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
 </div>
 
       </footer>

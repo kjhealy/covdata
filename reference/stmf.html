@@ -6,16 +6,42 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Inform modern browsers that this page supports both dark and light color schemes,
+  and the page author prefers light. -->
+<meta name="color-scheme" content="dark light">
+<script>
+  // If `prefers-color-scheme` is not supported, fall back to light mode.
+  // i.e. In this case, inject the `light` CSS before the others, with
+  // no media filter so that it will be downloaded with highest priority.
+  if (window.matchMedia("(prefers-color-scheme: dark)").media === "not all") {
+    document.documentElement.style.display = "none";
+    document.head.insertAdjacentHTML(
+      "beforeend",
+      "<link id=\"css\" rel=\"stylesheet\" href=\"https://bootswatch.com/3/flatly/bootstrap.css\" onload=\"document.documentElement.style.display = ''\">"
+    );
+  }
+</script>
+
 <title>Short Term Mortality Fluctuations (STMF) data series — stmf • covdata</title>
 
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- Flatly Theme - Light  -->
+<link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+
+<!-- Darkly Theme - Dark -->
+<link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
+
+<!-- preferably CSS -->
+<link rel="stylesheet" href="../preferably.css">
+<link id="css-code-light" rel="stylesheet" href="../code-color-scheme-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+<link id="css-code-dark" rel="stylesheet" href="../code-color-scheme-dark.css" media="(prefers-color-scheme: dark)">
+
 
 <!-- bootstrap-toc -->
 <link rel="stylesheet" href="../bootstrap-toc.css">
@@ -49,6 +75,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
 
+
+
+
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -72,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9</span>
       </span>
     </div>
 
@@ -122,12 +151,17 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        
         <li>
   <a href="https://github.com/kjhealy/covdata">
     <span class="fa fa-github"></span>
      
   </a>
 </li>
+        
+        
+
+
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -155,7 +189,7 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 533,235 rows and 17 variables:</p><dl>
+    <p>A tibble with 537,240 rows and 17 variables:</p><dl>
 <dt><code>country_code</code></dt><dd><p>Mortality database country code</p></dd>
 <dt><code>cname</code></dt><dd><p>character Country name</p></dd>
 <dt><code>iso2</code></dt><dd><p>character ISO2 country code</p></dd>
@@ -233,22 +267,15 @@ For the original input data files in standardized form, see
 Table: Data summary</p><table class='table'>
 <tr><td></td><td></td></tr>
 <tr><td>Name</td><td>stmf</td></tr>
-<tr><td>Number of rows</td><td>533235</td></tr>
+<tr><td>Number of rows</td><td>537240</td></tr>
 <tr><td>Number of columns</td><td>17</td></tr>
 <tr><td>_______________________</td><td></td></tr>
 <tr><td>Column type frequency:</td><td></td></tr>
-<tr><td>Date</td><td>1</td></tr>
 <tr><td>character</td><td>7</td></tr>
+<tr><td>Date</td><td>1</td></tr>
 <tr><td>numeric</td><td>9</td></tr>
 <tr><td>________________________</td><td></td></tr>
 <tr><td>Group variables</td><td>None</td></tr>
-</table>
-
-
-
-<p><strong>Variable type: Date</strong></p><table class='table'>
-<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
-<tr><td>approx_date</td><td>0</td><td>1</td><td>1990-01-07</td><td>2021-08-22</td><td>2012-02-26</td><td>1651</td></tr>
 </table>
 
 
@@ -257,25 +284,32 @@ Table: Data summary</p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>empty</td><td>n_unique</td><td>whitespace</td></tr>
 <tr><td>country_code</td><td>0</td><td>1.00</td><td>3</td><td>7</td><td>0</td><td>38</td><td>0</td></tr>
 <tr><td>cname</td><td>0</td><td>1.00</td><td>5</td><td>25</td><td>0</td><td>38</td><td>0</td></tr>
-<tr><td>iso2</td><td>31200</td><td>0.94</td><td>2</td><td>2</td><td>0</td><td>35</td><td>0</td></tr>
-<tr><td>continent</td><td>33795</td><td>0.94</td><td>4</td><td>13</td><td>0</td><td>5</td><td>0</td></tr>
-<tr><td>iso3</td><td>31200</td><td>0.94</td><td>3</td><td>3</td><td>0</td><td>35</td><td>0</td></tr>
+<tr><td>iso2</td><td>31515</td><td>0.94</td><td>2</td><td>2</td><td>0</td><td>35</td><td>0</td></tr>
+<tr><td>continent</td><td>34020</td><td>0.94</td><td>4</td><td>13</td><td>0</td><td>5</td><td>0</td></tr>
+<tr><td>iso3</td><td>31515</td><td>0.94</td><td>3</td><td>3</td><td>0</td><td>35</td><td>0</td></tr>
 <tr><td>sex</td><td>0</td><td>1.00</td><td>1</td><td>1</td><td>0</td><td>3</td><td>0</td></tr>
 <tr><td>age_group</td><td>0</td><td>1.00</td><td>3</td><td>5</td><td>0</td><td>5</td><td>0</td></tr>
 </table>
 
 
 
+<p><strong>Variable type: Date</strong></p><table class='table'>
+<tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>min</td><td>max</td><td>median</td><td>n_unique</td></tr>
+<tr><td>approx_date</td><td>0</td><td>1</td><td>1990-01-07</td><td>2021-10-10</td><td>2012-03-25</td><td>1658</td></tr>
+</table>
+
+
+
 <p><strong>Variable type: numeric</strong></p><table class='table'>
 <tr><td>skim_variable</td><td>n_missing</td><td>complete_rate</td><td>mean</td><td>sd</td><td>p0</td><td>p25</td><td>p50</td><td>p75</td><td>p100</td><td>hist</td></tr>
-<tr><td>year</td><td>0</td><td>1</td><td>2010.96</td><td>6.55</td><td>1990</td><td>2006.00</td><td>2012.00</td><td>2017.00</td><td>2021.00</td><td>▁▂▅▆▇</td></tr>
-<tr><td>week</td><td>0</td><td>1</td><td>26.27</td><td>15.04</td><td>1</td><td>13.00</td><td>26.00</td><td>39.00</td><td>53.00</td><td>▇▇▇▇▇</td></tr>
-<tr><td>split</td><td>0</td><td>1</td><td>0.12</td><td>0.32</td><td>0</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>▇▁▁▁▁</td></tr>
+<tr><td>year</td><td>0</td><td>1</td><td>2011.03</td><td>6.58</td><td>1990</td><td>2006.00</td><td>2012.00</td><td>2017.00</td><td>2021.00</td><td>▁▂▅▆▇</td></tr>
+<tr><td>week</td><td>0</td><td>1</td><td>26.32</td><td>15.00</td><td>1</td><td>13.00</td><td>26.00</td><td>39.00</td><td>53.00</td><td>▇▇▇▇▇</td></tr>
+<tr><td>split</td><td>0</td><td>1</td><td>0.12</td><td>0.33</td><td>0</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>▇▁▁▁▁</td></tr>
 <tr><td>split_sex</td><td>0</td><td>1</td><td>0.00</td><td>0.07</td><td>0</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>▇▁▁▁▁</td></tr>
-<tr><td>forecast</td><td>0</td><td>1</td><td>0.10</td><td>0.30</td><td>0</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>▇▁▁▁▁</td></tr>
-<tr><td>death_count</td><td>0</td><td>1</td><td>615.68</td><td>1573.08</td><td>0</td><td>39.00</td><td>158.00</td><td>441.20</td><td>26341.00</td><td>▇▁▁▁▁</td></tr>
+<tr><td>forecast</td><td>0</td><td>1</td><td>0.13</td><td>0.33</td><td>0</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>▇▁▁▁▁</td></tr>
+<tr><td>death_count</td><td>0</td><td>1</td><td>616.11</td><td>1575.16</td><td>0</td><td>39.00</td><td>158.00</td><td>442.00</td><td>26342.00</td><td>▇▁▁▁▁</td></tr>
 <tr><td>death_rate</td><td>0</td><td>1</td><td>0.05</td><td>0.06</td><td>0</td><td>0.00</td><td>0.02</td><td>0.07</td><td>0.57</td><td>▇▂▁▁▁</td></tr>
-<tr><td>deaths_total</td><td>0</td><td>1</td><td>3078.39</td><td>6422.12</td><td>2</td><td>466.00</td><td>982.00</td><td>2545.00</td><td>87251.00</td><td>▇▁▁▁▁</td></tr>
+<tr><td>deaths_total</td><td>0</td><td>1</td><td>3080.55</td><td>6433.85</td><td>2</td><td>466.00</td><td>982.00</td><td>2548.25</td><td>87302.00</td><td>▇▁▁▁▁</td></tr>
 <tr><td>rate_total</td><td>0</td><td>1</td><td>0.01</td><td>0.00</td><td>0</td><td>0.01</td><td>0.01</td><td>0.01</td><td>0.04</td><td>▅▇▁▁▁</td></tr>
 </table>
 
@@ -302,7 +336,7 @@ Table: Data summary</p><table class='table'>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
 </div>
 
       </footer>
