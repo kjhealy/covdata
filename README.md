@@ -11,7 +11,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Wednesday, April 28, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Tuesday, October 19, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -96,16 +96,18 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ```r
 library(tidyverse) # Optional but strongly recommended
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
-#> ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-#> ✓ tibble  3.1.1     ✓ dplyr   1.0.5
-#> ✓ tidyr   1.1.3     ✓ stringr 1.4.0
-#> ✓ readr   1.4.0     ✓ forcats 0.5.1
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+#> ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+#> ✓ tibble  3.1.5     ✓ dplyr   1.0.7
+#> ✓ tidyr   1.1.4     ✓ stringr 1.4.0
+#> ✓ readr   2.0.2     ✓ forcats 0.5.1
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> x dplyr::filter()  masks stats::filter()
-#> x purrr::is_null() masks testthat::is_null()
-#> x dplyr::lag()     masks stats::lag()
-#> x dplyr::matches() masks tidyr::matches(), testthat::matches()
+#> x readr::edition_get()   masks testthat::edition_get()
+#> x dplyr::filter()        masks stats::filter()
+#> x purrr::is_null()       masks testthat::is_null()
+#> x dplyr::lag()           masks stats::lag()
+#> x readr::local_edition() masks testthat::local_edition()
+#> x dplyr::matches()       masks tidyr::matches(), testthat::matches()
 library(covdata)
 #> 
 #> Attaching package: 'covdata'
@@ -117,20 +119,20 @@ library(covdata)
 #>     %nin%
 
 covnat_weekly
-#> # A tibble: 12,746 x 11
-#>    date       year_week cname      iso3      pop cases deaths cu_cases cu_deaths
-#>    <date>     <chr>     <chr>      <chr>   <dbl> <dbl>  <dbl>    <dbl>     <dbl>
-#>  1 2019-12-30 2020-01   Afghanist… AFG    3.89e7     0      0        0         0
-#>  2 2020-01-06 2020-02   Afghanist… AFG    3.89e7     0      0        0         0
-#>  3 2020-01-13 2020-03   Afghanist… AFG    3.89e7     0      0        0         0
-#>  4 2020-01-20 2020-04   Afghanist… AFG    3.89e7     0      0        0         0
-#>  5 2020-01-27 2020-05   Afghanist… AFG    3.89e7     0      0        0         0
-#>  6 2020-02-03 2020-06   Afghanist… AFG    3.89e7     0      0        0         0
-#>  7 2020-02-10 2020-07   Afghanist… AFG    3.89e7     0      0        0         0
-#>  8 2020-02-17 2020-08   Afghanist… AFG    3.89e7     0      0        0         0
-#>  9 2020-02-24 2020-09   Afghanist… AFG    3.89e7     1      0        1         0
-#> 10 2020-03-02 2020-10   Afghanist… AFG    3.89e7     3      0        4         0
-#> # … with 12,736 more rows, and 2 more variables: r14_cases <dbl>,
+#> # A tibble: 17,186 × 11
+#>    date       year_week cname       iso3       pop cases deaths cu_cases cu_deaths
+#>    <date>     <chr>     <chr>       <chr>    <dbl> <dbl>  <dbl>    <dbl>     <dbl>
+#>  1 2019-12-30 2020-01   Afghanistan AFG   38928341     0      0        0         0
+#>  2 2020-01-06 2020-02   Afghanistan AFG   38928341     0      0        0         0
+#>  3 2020-01-13 2020-03   Afghanistan AFG   38928341     0      0        0         0
+#>  4 2020-01-20 2020-04   Afghanistan AFG   38928341     0      0        0         0
+#>  5 2020-01-27 2020-05   Afghanistan AFG   38928341     0      0        0         0
+#>  6 2020-02-03 2020-06   Afghanistan AFG   38928341     0      0        0         0
+#>  7 2020-02-10 2020-07   Afghanistan AFG   38928341     0      0        0         0
+#>  8 2020-02-17 2020-08   Afghanistan AFG   38928341     0      0        0         0
+#>  9 2020-02-24 2020-09   Afghanistan AFG   38928341     1      0        1         0
+#> 10 2020-03-02 2020-10   Afghanistan AFG   38928341     3      0        4         0
+#> # … with 17,176 more rows, and 2 more variables: r14_cases <dbl>,
 #> #   r14_deaths <dbl>
 ```
 
@@ -138,20 +140,20 @@ covnat_weekly
 ```r
 apple_mobility %>%
   filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 451 x 8
-#>    geo_type region     transportation_ty… alternative_name sub_region country   
-#>    <chr>    <chr>      <chr>              <chr>            <chr>      <chr>     
-#>  1 city     New York … walking            NYC              New York   United St…
-#>  2 city     New York … walking            NYC              New York   United St…
-#>  3 city     New York … walking            NYC              New York   United St…
-#>  4 city     New York … walking            NYC              New York   United St…
-#>  5 city     New York … walking            NYC              New York   United St…
-#>  6 city     New York … walking            NYC              New York   United St…
-#>  7 city     New York … walking            NYC              New York   United St…
-#>  8 city     New York … walking            NYC              New York   United St…
-#>  9 city     New York … walking            NYC              New York   United St…
-#> 10 city     New York … walking            NYC              New York   United St…
-#> # … with 441 more rows, and 2 more variables: date <date>, score <dbl>
+#> # A tibble: 597 × 8
+#>    geo_type region        transportation_t… alternative_name sub_region country 
+#>    <chr>    <chr>         <chr>             <chr>            <chr>      <chr>   
+#>  1 city     New York City walking           NYC              New York   United …
+#>  2 city     New York City walking           NYC              New York   United …
+#>  3 city     New York City walking           NYC              New York   United …
+#>  4 city     New York City walking           NYC              New York   United …
+#>  5 city     New York City walking           NYC              New York   United …
+#>  6 city     New York City walking           NYC              New York   United …
+#>  7 city     New York City walking           NYC              New York   United …
+#>  8 city     New York City walking           NYC              New York   United …
+#>  9 city     New York City walking           NYC              New York   United …
+#> 10 city     New York City walking           NYC              New York   United …
+#> # … with 587 more rows, and 2 more variables: date <date>, score <dbl>
 ```
 
 
@@ -160,7 +162,7 @@ covus %>%
   filter(measure == "positive", 
          date == "2020-04-27", 
          state == "NJ")
-#> # A tibble: 1 x 7
+#> # A tibble: 1 × 7
 #>   date       state fips  data_quality_grade measure   count measure_label 
 #>   <date>     <chr> <chr> <lgl>              <chr>     <dbl> <chr>         
 #> 1 2020-04-27 NJ    34    NA                 positive 111188 Positive Tests
@@ -182,6 +184,8 @@ nytcovcounty %>%
        x = "Days since first case", y = "Count of Cases (log 10 scale)", 
        caption = "Data: The New York Times | Graph: @kjhealy") + 
   theme_minimal()
+#> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
+#> "none")` instead.
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```

@@ -6,8 +6,7 @@ authors:
 url: https://kjhealy.github.io/covdata
 
 template:
-  params:
-    bootswatch: cosmo
+  package: preferably
 
 reference:
   - title: "Activity Data"

@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovcounty}
 \alias{nytcovcounty}
-\title{NYT COVID-19 data for US counties, current as of Wednesday, September  1, 2021}
+\title{NYT COVID-19 data for US counties, current as of Tuesday, October 19, 2021}
 \format{
-A tibble with 1,673,662 rows and 6 columns
+A tibble with 1,829,609 rows and 6 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{county}{County name (character)}
@@ -38,36 +38,36 @@ A dataset containing US county-level data on COVID-19, collected by the New York
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovcounty \cr
-   Number of rows \tab 1673662 \cr
+   Number of rows \tab 1829609 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   Date \tab 1 \cr
    character \tab 3 \cr
+   Date \tab 1 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-08-31 \tab 2020-12-17 \tab 589 \cr
-}
-
-
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
    county \tab 0 \tab 1.00 \tab 3 \tab 35 \tab 0 \tab 1930 \tab 0 \cr
-   state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 55 \tab 0 \cr
-   fips \tab 15217 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3218 \tab 0 \cr
+   state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 56 \tab 0 \cr
+   fips \tab 16700 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3218 \tab 0 \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-10-18 \tab 2021-01-10 \tab 637 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1.00 \tab 5571.88 \tab 27044.97 \tab 0 \tab 158 \tab 920 \tab 3204 \tab 1408026 \tab ▇▁▁▁▁ \cr
-   deaths \tab 37715 \tab 0.98 \tab 110.06 \tab 658.96 \tab 0 \tab 2 \tab 18 \tab 63 \tab 33830 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1.00 \tab 6214.99 \tab 29405.09 \tab 0 \tab 194 \tab 1065 \tab 3636 \tab 1479326 \tab ▇▁▁▁▁ \cr
+   deaths \tab 41459 \tab 0.98 \tab 119.09 \tab 688.99 \tab 0 \tab 3 \tab 20 \tab 70 \tab 34460 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}
