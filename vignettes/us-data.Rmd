@@ -45,7 +45,7 @@ top_n_states <- function(data, n = 5, measure = c("positive", "death")) {
   data %>%
   group_by(state) %>%
   filter(measure == meas, date == max(date)) %>%
-  drop_na() %>%
+  drop_na(count) %>%
   ungroup() %>%
   top_n(n, wt = count) %>%
   pull(state)
@@ -71,7 +71,7 @@ covus %>%
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
                      breaks = 2^c(seq(1, 22, 1))) +
-  guides(color = FALSE) + 
+  guides(color = "none") + 
   labs(title = "COVID-19 Cumulative Recorded Cases by US State",
        subtitle = paste("Data as of", format(max(covus$date), "%A, %B %e, %Y")),
        x = "Date", y = "Count of Cases (log 2 scale)", 
@@ -85,12 +85,12 @@ The COVID Tracking Project reports _cumulative_ counts for key measures such as 
 
 ```{r nystate-ex1}
 
-measures <- c("positive", "negative", "death")
+measures <- c("positive", "death")
 
 covus %>%
   filter(measure %in% measures, state == "NY") %>%
   select(date, state, measure, count) %>%
-  pivot_wider(names_from = measure, values_from = count)
+  pivot_wider(names_from = measure, values_from = count) 
 
 ```
 
@@ -207,18 +207,22 @@ nytcovstate
 nytcovcounty
 ```
 
-### Draw a log-linear graph of cumulative US cases by county.
+### Draw a log-linear graph of cumulative cases by county in selected states.
+
+We can see that data for some counties is either not available or hasn't been correctly coded.
 
 ```{r nytplot,  fig.height=15, fig.width=8, dpi=150}
 nytcovcounty %>%
+  filter(state %in% c("New York", "North Carolina", "Texas", "Florida", "California", "Illinois")) %>% 
   mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
   group_by(uniq_name) %>%
   mutate(days_elapsed = date - min(date)) %>%
   ggplot(aes(x = days_elapsed, y = cases, group = uniq_name)) + 
   geom_line(size = 0.25, color = "gray20") + 
+  scale_x_continuous() + 
   scale_y_log10(labels = scales::label_number_si()) + 
-  guides(color = FALSE) + 
-  facet_wrap(~ state, ncol = 5) + 
+  guides(color = "none") + 
+  facet_wrap(~ state, ncol = 2) + 
   labs(title = "COVID-19 Cumulative Recorded Cases by US County",
        subtitle = paste("New York is bundled into a single area in this data.\nData as of", format(max(nytcovcounty$date), "%A, %B %e, %Y")),
        x = "Days since first case", y = "Count of Cases (log 10 scale)", 

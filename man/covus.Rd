@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Tuesday, October 19, 2021}
+\title{COVID-19 data for the USA, current as of Sunday, October 24, 2021}
 \format{
 A tibble with 664,960 rows and 7 columns
 \describe{
