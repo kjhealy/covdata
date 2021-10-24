@@ -194,7 +194,7 @@
 <a href="#nchs-mortality-counts-and-estimates" class="anchor"></a>NCHS Mortality Counts and Estimates</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span>
-<span class="co">#&gt; # A tibble: 294,246 × 7</span>
+<span class="co">#&gt; # A tibble: 295,056 × 7</span>
 <span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed           n cause   </span>
 <span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   </span>
 <span class="co">#&gt;  1 Alabama       2014     1 2014-01-04       All Cause             1057 All Cau…</span>
@@ -207,7 +207,7 @@
 <span class="co">#&gt;  8 Alabama       2014     1 2014-01-04       Malignant neoplasms…   196 Cancer  </span>
 <span class="co">#&gt;  9 Alabama       2014     1 2014-01-04       Natural Cause          992 Natural…</span>
 <span class="co">#&gt; 10 Alabama       2014     1 2014-01-04       Nephritis, nephroti…    21 Kidney …</span>
-<span class="co">#&gt; # … with 294,236 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 295,046 more rows</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">jurisdiction</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
