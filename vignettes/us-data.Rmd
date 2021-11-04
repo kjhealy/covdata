@@ -217,7 +217,7 @@ nytcovcounty %>%
   mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
   group_by(uniq_name) %>%
   mutate(days_elapsed = date - min(date)) %>%
-  ggplot(aes(x = days_elapsed, y = cases, group = uniq_name)) + 
+  ggplot(aes(x = days_elapsed, y = cases + 1, group = uniq_name)) + 
   geom_line(size = 0.25, color = "gray20") + 
   scale_x_continuous() + 
   scale_y_log10(labels = scales::label_number_si()) + 
