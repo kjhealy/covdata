@@ -158,7 +158,7 @@ apple_mobility %>%
 
 
 ```r
-covus %>% 
+covus %>%
   filter(measure == "positive", 
          date == "2020-04-27", 
          state == "NJ")

@@ -37,11 +37,12 @@ vec_labs <- vec_brks + 100
 
 ```{r apple-example-1, fig.height=8, fig.width=8, dpi=150, results='hold'}
 
-apple_mobility %>% 
+apple_mobility %>%
   filter(geo_type == "city", transportation_type == "driving", 
-         region %in% c("New York City", "Paris", "Istanbul", "Auckland", "Mexico City")) %>%
+         region %in% c("New York City", "Paris",
+                       "Istanbul", "Auckland", "Mexico City")) %>%
   mutate(over_under = score < 100, 
-         score = score - 100) %>% 
+         score = score - 100) %>%
   ggplot(mapping = aes(x = date, y = score, 
                        group = region, color = over_under)) + 
   geom_hline(yintercept = 0, color = "gray40") + 

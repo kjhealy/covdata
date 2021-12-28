@@ -60,10 +60,10 @@ nchs_wdc
 ```
 
 ```{r cdcexcessplot, fig.height=14, fig.width=8, dpi=100}
-nchs_wdc %>% 
+nchs_wdc %>%
   filter(jurisdiction %in% c("New York", "New Jersey", "Michigan", "Georgia", "California", "Alabama")) %>%
   filter(cause == "All Cause", year > 2014, year < 2021) %>%
-  group_by(jurisdiction, year, week) %>% 
+  group_by(jurisdiction, year, week) %>%
   summarize(deaths = sum(n, na.rm = TRUE)) %>%
   mutate(yr_ind = year %in% 2020) %>%
   ggplot(aes(x = week, y = deaths, color = yr_ind, group = year)) + 

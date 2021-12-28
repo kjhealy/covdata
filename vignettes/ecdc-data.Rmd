@@ -43,10 +43,10 @@ library(ggrepel)
 ## Countries to highlight
 focus_on <- covnat_weekly %>%
   filter(cu_cases > 99, pop > 1e7) %>%
-  mutate(rate = cu_cases / pop) %>% 
-  group_by(iso3) %>% 
-  summarize(mean_rate = mean(rate, na.rm = TRUE)) %>% 
-  slice_max(n = 20, order_by = mean_rate) %>% 
+  mutate(rate = cu_cases / pop) %>%
+  group_by(iso3) %>%
+  summarize(mean_rate = mean(rate, na.rm = TRUE)) %>%
+  slice_max(n = 20, order_by = mean_rate) %>%
   pull(iso3)
 
 ## Colors
@@ -58,7 +58,7 @@ cgroup_cols <- c("#195F90FF", "#D76500FF", "#238023FF", "#AB1F20FF", "#7747A3FF"
 
 covnat_weekly %>%
   filter(cu_cases > 99, pop > 1e7) %>%
-  mutate(rate = cu_cases / pop) %>% 
+  mutate(rate = cu_cases / pop) %>%
   mutate(days_elapsed = date - min(date),
         end_label = ifelse(date == max(date), cname, NA),
         end_label = recode(end_label, `United States` = "USA",

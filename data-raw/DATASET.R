@@ -13,13 +13,13 @@ ifelse(!dir.exists(here("data-raw/data")),
        dir.create(file.path("data-raw/data")),
        FALSE)
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Functions to get data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### ECDC Data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Download today's CSV file, saving it to data/ and also read it in
 get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/csv",
@@ -47,9 +47,9 @@ get_ecdc_csv <- function(url = "https://opendata.ecdc.europa.eu/covid19/national
 
 }
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### COVID Tracking Project Data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Get Daily COVID Tracking Project Data
 ## form is https://api.covidtracking.com/v1/us/daily.csv
@@ -105,9 +105,9 @@ get_uscovid_race_data <- function(url = "https://docs.google.com/spreadsheets/d/
 
 
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Google mobility data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Google
 get_google_data <- function(url = "https://www.gstatic.com/covid19/mobility/",
@@ -181,9 +181,9 @@ get_stmf <- function(url = "https://www.mortality.org/Public/STMF/Outputs",
   janitor::clean_names(read_csv(tf, ...))
 }
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### NYT Data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Get NYT data from their repo
 ## Generic NYT get
@@ -215,9 +215,9 @@ get_nyt_data <- function(url = "https://github.com/nytimes/covid-19-data/raw/mas
 }
 
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Apple Mobility Data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Get Apple data
 ## 1. Find today's URL
@@ -254,9 +254,9 @@ get_apple_data <- function(url = get_apple_target(),
   janitor::clean_names(readr::read_csv(tf))
 }
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### CoronaNet Data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## See https://github.com/saudiwin/corona_tscs
 ## and https://osf.io/preprints/socarxiv/jp4wk
@@ -332,9 +332,9 @@ get_corona_tscs <- function(url = "https://raw.githubusercontent.com/saudiwin/co
 
 }
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### CDC data custom function (cdccovidview is out of date)
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 my_pdc <-  function ()
 {
@@ -419,9 +419,9 @@ my_pdc <-  function ()
        by_state = as_tibble(by_state), by_sex = as_tibble(by_sex))
 }
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### NCHS data via the CDC
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 nchs_tables <- tribble(
   ~name, ~sname, ~locator,
@@ -469,9 +469,9 @@ get_nchs_data <- function(url = "https://data.cdc.gov/api/views",
 
 
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Data munging functions
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## A useful function from Edward Visel, which does a thing
 ## with tibbles that in the past I've done variable-by-variable
@@ -503,9 +503,9 @@ coalesce_join <- function(x, y,
   dplyr::bind_cols(joined, coalesced)[cols]
 }
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### ISO Country Codes
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## ----iso-country-codes-------------------------------------------------------------------------------------------
 ## Country codes. The ECDC does not quite use standard codes for countries
@@ -518,45 +518,51 @@ cname_table <- left_join(iso3_cnames, iso2_to_iso3)
 
 cname_table
 
-eu <- c("AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA",
-        "DEU", "GRC", "HUN", "IRL", "ITA", "LVA", "LTU", "LUX", "MLT", "NLD",
-        "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE", "GBR")
+eu <- c("AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN",
+        "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LVA", "LTU", "LUX",
+        "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE",
+        "GBR")
 
-europe <- c("ALB", "AND", "AUT", "BLR", "BEL", "BIH", "BGR", "HRV", "CYP", "CZE",
-            "DNK", "EST", "FRO", "FIN", "FRA", "DEU", "GIB", "GRC", "HUN", "ISL",
-            "IRL", "ITA", "LVA", "LIE", "LTU", "LUX", "MKD", "MLT", "MDA", "MCO",
-            "NLD", "NOR", "POL", "PRT", "ROU", "RUS", "SMR", "SRB", "SVK", "SVN",
-            "ESP", "SWE", "CHE", "UKR", "GBR", "VAT", "RSB", "IMN", "MNE", "XKV",
-            "GGY", "JEY")
+europe <- c("ALB", "AND", "AUT", "BLR", "BEL", "BIH", "BGR", "HRV",
+            "CYP", "CZE", "DNK", "EST", "FRO", "FIN", "FRA", "DEU",
+            "GIB", "GRC", "HUN", "ISL", "IRL", "ITA", "LVA", "LIE",
+            "LTU", "LUX", "MKD", "MLT", "MDA", "MCO", "NLD", "NOR",
+            "POL", "PRT", "ROU", "RUS", "SMR", "SRB", "SVK", "SVN",
+            "ESP", "SWE", "CHE", "UKR", "GBR", "VAT", "RSB", "IMN",
+            "MNE", "XKV", "GGY", "JEY")
 
-north_america <- c("AIA", "ATG", "ABW", "BHS", "BRB", "BLZ", "BMU", "VGB", "CAN", "CYM",
-                   "CRI", "CUB", "CUW", "DMA", "DOM", "SLV", "GRL", "GRD", "GLP", "GTM",
-                   "HTI", "HND", "JAM", "MTQ", "MEX", "SPM", "MSR", "ANT", "KNA", "NIC",
-                   "PAN", "PRI", "KNA", "LCA", "SPM", "VCT", "TTO", "TCA", "VIR", "USA",
-                   "SXM", "BES")
+north_america <- c("AIA", "ATG", "ABW", "BHS", "BRB", "BLZ", "BMU",
+                   "VGB", "CAN", "CYM", "CRI", "CUB", "CUW", "DMA",
+                   "DOM", "SLV", "GRL", "GRD", "GLP", "GTM", "HTI",
+                   "HND", "JAM", "MTQ", "MEX", "SPM", "MSR", "ANT",
+                   "KNA", "NIC", "PAN", "PRI", "KNA", "LCA", "SPM",
+                   "VCT", "TTO", "TCA", "VIR", "USA", "SXM", "BES")
 
-south_america <- c("ARG", "BOL", "BRA", "CHL", "COL", "ECU", "FLK", "GUF", "GUY", "PRY",
-                   "PER", "SUR", "URY", "VEN")
+south_america <- c("ARG", "BOL", "BRA", "CHL", "COL", "ECU", "FLK",
+                   "GUF", "GUY", "PRY", "PER", "SUR", "URY", "VEN")
 
 
-africa <- c("DZA", "AGO", "SHN", "BEN", "BWA", "BFA", "BDI", "CMR", "CPV", "CAF",
-            "TCD", "COM", "COG", "DJI", "EGY", "GNQ", "ERI", "ETH", "GAB", "GMB",
-            "GHA", "GNB", "GIN", "CIV", "KEN", "LSO", "LBR", "LBY", "MDG", "MWI",
-            "MLI", "MRT", "MUS", "MYT", "MAR", "MOZ", "NAM", "NER", "NGA", "STP",
-            "REU", "RWA", "STP", "SEN", "SYC", "SLE", "SOM", "ZAF", "SHN", "SDN",
-            "SWZ", "TZA", "TGO", "TUN", "UGA", "COD", "ZMB", "TZA", "ZWE", "SSD",
-            "COD", "ESH")
+africa <- c("DZA", "AGO", "SHN", "BEN", "BWA", "BFA", "BDI", "CMR",
+            "CPV", "CAF", "TCD", "COM", "COG", "DJI", "EGY", "GNQ",
+            "ERI", "ETH", "GAB", "GMB", "GHA", "GNB", "GIN", "CIV",
+            "KEN", "LSO", "LBR", "LBY", "MDG", "MWI", "MLI", "MRT",
+            "MUS", "MYT", "MAR", "MOZ", "NAM", "NER", "NGA", "STP",
+            "REU", "RWA", "STP", "SEN", "SYC", "SLE", "SOM", "ZAF",
+            "SHN", "SDN", "SWZ", "TZA", "TGO", "TUN", "UGA", "COD",
+            "ZMB", "TZA", "ZWE", "SSD", "COD", "ESH")
 
-asia <- c("AFG", "ARM", "AZE", "BHR", "BGD", "BTN", "BRN", "KHM", "CHN", "CXR",
-          "CCK", "IOT", "GEO", "HKG", "IND", "IDN", "IRN", "IRQ", "ISR", "JPN",
-          "JOR", "KAZ", "PRK", "KOR", "KWT", "KGZ", "LAO", "LBN", "MAC", "MYS",
-          "MDV", "MNG", "MMR", "NPL", "OMN", "PAK", "PHL", "QAT", "SAU", "SGP",
-          "LKA", "SYR", "TWN", "TJK", "THA", "TUR", "TKM", "ARE", "UZB", "VNM",
-          "YEM", "PSE")
+asia <- c("AFG", "ARM", "AZE", "BHR", "BGD", "BTN", "BRN", "KHM",
+          "CHN", "CXR", "CCK", "IOT", "GEO", "HKG", "IND", "IDN",
+          "IRN", "IRQ", "ISR", "JPN", "JOR", "KAZ", "PRK", "KOR",
+          "KWT", "KGZ", "LAO", "LBN", "MAC", "MYS", "MDV", "MNG",
+          "MMR", "NPL", "OMN", "PAK", "PHL", "QAT", "SAU", "SGP",
+          "LKA", "SYR", "TWN", "TJK", "THA", "TUR", "TKM", "ARE",
+          "UZB", "VNM", "YEM", "PSE")
 
-oceania <- c("ASM", "AUS", "NZL", "COK", "FJI", "PYF", "GUM", "KIR", "MNP", "MHL",
-             "FSM", "UMI", "NRU", "NCL", "NZL", "NIU", "NFK", "PLW", "PNG", "MNP",
-             "SLB", "TKL", "TON", "TUV", "VUT", "UMI", "WLF", "WSM", "TLS")
+oceania <- c("ASM", "AUS", "NZL", "COK", "FJI", "PYF", "GUM", "KIR",
+             "MNP", "MHL", "FSM", "UMI", "NRU", "NCL", "NZL", "NIU",
+             "NFK", "PLW", "PNG", "MNP", "SLB", "TKL", "TON", "TUV",
+             "VUT", "UMI", "WLF", "WSM", "TLS")
 
 
 continents <- tribble(
@@ -570,17 +576,18 @@ continents <- tribble(
 ) %>%
   unnest(cols = c("iso3"))
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Get the data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Get ECDC data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 
 ### 1. Daily covid cases by country. ECDC stopped reporting this in Dec 2020.
-covid_daily_raw <- get_ecdc_csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv", save = "n")
+ecdc_daily <- "https://opendata.ecdc.europa.eu/covid19/casedistribution/csv"
+covid_daily_raw <- get_ecdc_csv(ecdc_daily, save = "n")
 
 covid_daily <- covid_daily_raw %>%
   mutate(date = lubridate::dmy(date_rep),
@@ -627,7 +634,8 @@ countries <- covnat_daily %>%
 
 
 ### 2. Covid national weekly cases and deaths
-covid_weekly_raw <- get_ecdc_csv("https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/csv", save_file = "n")
+ecdc_weekly <- "https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/csv"
+covid_weekly_raw <- get_ecdc_csv(ecdc_weekly, save_file = "n")
 
 covid_weekly <- covid_weekly_raw %>%
   mutate(isoweek = stringr::str_replace(year_week, "-", "-W"),
@@ -651,12 +659,13 @@ covnat_weekly <- covid_weekly %>%
          r14_deaths = rate_14_day_deaths)
 
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Get US Data from the COVID Tracking Project
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## US state data
-cov_us_raw <- get_uscovid_data(url = "https://api.covidtracking.com/v1/", save_file = "n")
+cov_us_raw <- get_uscovid_data(url = "https://api.covidtracking.com/v1/",
+                               save_file = "n")
 
 ## Drop deprecated measures and unneeded variables
 drop_cols <- c("check_time_et", "commercial_score", "date_checked",
@@ -692,8 +701,10 @@ covus_measure_labels <- tribble(
   "pending",                  "Pending Tests",
   "probable_cases",           "Probable Cases",
   "positive",                 "Positive Tests",
-  "positive_cases_viral", "Total number of positive cases measured with PCR tests",
-  "positive_tests_viral", "Total number of positive PCR tests",
+  "positive_cases_viral",
+  "Total number of positive cases measured with PCR tests",
+  "positive_tests_viral",
+  "Total number of positive PCR tests",
   "recovered", "Recovered",
   "total_tests_viral", "Total number of PCR tests performed",
   "total_test_encounters_viral", "Total Test Encounters (PCR)",
@@ -831,9 +842,9 @@ covus_race  <- covus_race %>%
                         unknown = "Unknown"))
 
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### NYT Data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## NYT county data
 nytcovcounty <- get_nyt_data(fname = "us-counties")
@@ -860,9 +871,9 @@ nytexcess <- get_nyt_data(fname = "excess-deaths/deaths",
                             excess_deaths = "i",
                             baseline = "c"))
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### CDC Data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 # lc_names <- function(x) {
 #   if(is.null(names(x))) {
@@ -930,9 +941,9 @@ nssp_covid_er_nat <- cdccovidview::nssp_er_visits_national()
 nssp_covid_er_reg <- cdccovidview::nssp_er_visits_regional()
 
 
-## --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### CDC / National Center for Health Statistics
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Get NCHS breakdowns by State, via the CDC
 nchs_sas_raw <- get_nchs_data(sname = "SAS",
@@ -1105,24 +1116,26 @@ nchs_wdc <- bind_rows(nchs_wdc1419, nchs_WDC2021) %>%
 
 ## --------------------------------------------------------------------------------------
 ### Apple and Google
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Apple Mobility Data
 apple_mobility <- get_apple_data(save_file = "y") %>%
-  pivot_longer(cols = starts_with("x"), names_to = "date", values_to = "index") %>%
+  pivot_longer(cols = starts_with("x"),
+               names_to = "date", values_to = "index") %>%
   mutate(
     date = stringr::str_remove(date, "x"),
     date = stringr::str_replace_all(date, "_", "-"),
     date = as_date(date)) %>%
   rename(score = index)
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Get mortality.org data
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 stmf_raw <- get_stmf(skip = 2) %>%
   rename(deaths_total = d_total, rate_total = r_total) %>%
-  select(country_code:sex, deaths_total, rate_total, split:forecast, everything()) %>%
+  select(country_code:sex, deaths_total, rate_total,
+         split:forecast, everything()) %>%
   pivot_longer(
     cols = d0_14:r85p,
     names_to = c("measure", "age_group"),
@@ -1133,9 +1146,11 @@ stmf_raw <- get_stmf(skip = 2) %>%
   mutate(age_group = stringr::str_replace(age_group, "_", "-"),
          age_group = stringr::str_replace(age_group, "p", "+")) %>%
   rename(death_count = d, death_rate = r) %>%
-  mutate(approx_date = paste0(year, "-", "W", stringr::str_pad(week, width = 2, pad = "0"), "-", "7"),
+  mutate(approx_date = paste0(year, "-", "W",
+                              stringr::str_pad(week, width = 2, pad = "0"), "-", "7"),
          approx_date = ISOweek::ISOweek2date(approx_date)) %>%
-  select(country_code:sex, split:forecast, approx_date, approx_date, age_group:death_rate, deaths_total, rate_total) %>%
+  select(country_code:sex, split:forecast, approx_date,
+         approx_date, age_group:death_rate, deaths_total, rate_total) %>%
   mutate(country_code = replace(country_code, country_code == "AUS2", "AUS"),
          country_code = replace(country_code, country_code == "NZL_NP", "NZL"))
 
@@ -1161,17 +1176,9 @@ stmf <- left_join(stmf_raw, md_ccodes) %>%
   mutate(iso3 = replace(iso3, iso2 == "DE", "DEU"),
          iso3 = replace(iso3, iso2 == "FR", "FRA"))
 
-### --------------------------------------------------------------------------------------
-### Get Coronanet policy data
-### --------------------------------------------------------------------------------------
-# coronanet_raw <- get_corona_tscs()
-#
-# coronanet <- coronanet_raw %>%
-#   rename(iso3 = iso_a3, iso2 = iso_a2)
-
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### US Census Population Estimates for States
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 statefips <- read_csv(here("data-raw/data/state_fips_master.csv")) %>%
   select(state_name, state_abbr, region_name, division_name) %>%
@@ -1184,15 +1191,17 @@ uspop <- read_csv(here("data-raw/data/PEP_2018_PEPSR6H_with_ann.csv")) %>%
   left_join(statefips) %>%
   select(state, state_abbr, statefips, region_name, division_name, everything())
 
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 ### Write out the data objects
-### --------------------------------------------------------------------------------------
+### --------------------------------------------------
 
 ## Apple
 usethis::use_data(apple_mobility, overwrite = TRUE, compress = "xz")
 
 ## CDC surveillance
-## usethis::use_data(cdc_hospitalizations, overwrite = TRUE, compress = "xz")
+## usethis::use_data(cdc_hospitalizations,
+##                   overwrite = TRUE, compress = "xz")
+
 usethis::use_data(cdc_deaths_by_week, overwrite = TRUE, compress = "xz")
 usethis::use_data(cdc_deaths_by_age, overwrite = TRUE, compress = "xz")
 usethis::use_data(cdc_deaths_by_sex, overwrite = TRUE, compress = "xz")
@@ -1204,7 +1213,6 @@ usethis::use_data(nssp_covid_er_reg, overwrite = TRUE, compress = "xz")
 ## NCHS
 usethis::use_data(nchs_sas, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wss, overwrite = TRUE, compress = "xz")
-# usethis::use_data(nchs_pud, overwrite = TRUE, compress = "xz")
 usethis::use_data(nchs_wdc, overwrite = TRUE, compress = "xz")
 
 ## CoronaNet

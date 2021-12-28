@@ -213,7 +213,7 @@ We can see that data for some counties is either not available or hasn't been co
 
 ```{r nytplot,  fig.height=15, fig.width=8, dpi=150}
 nytcovcounty %>%
-  filter(state %in% c("New York", "North Carolina", "Texas", "Florida", "California", "Illinois")) %>% 
+  filter(state %in% c("New York", "North Carolina", "Texas", "Florida", "California", "Illinois")) %>%
   mutate(uniq_name = paste(county, state)) %>% # Can't use FIPS because of how the NYT bundled cities
   group_by(uniq_name) %>%
   mutate(days_elapsed = date - min(date)) %>%
