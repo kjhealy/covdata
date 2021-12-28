@@ -36,6 +36,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -48,18 +50,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
@@ -99,7 +95,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/kjhealy/covdata">
+  <a href="https://github.com/kjhealy/covdata" class="external-link">
     <span class="fa fa-github"></span>
      
   </a>
@@ -124,7 +120,7 @@
       <h1 data-toc-skip>New York Times Data</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/master/vignettes/new-york-times.Rmd"><code>vignettes/new-york-times.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/HEAD/vignettes/new-york-times.Rmd" class="external-link"><code>vignettes/new-york-times.Rmd</code></a></small>
       <div class="hidden name"><code>new-york-times.Rmd</code></div>
 
     </div>
@@ -132,118 +128,117 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata">covdata</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata" class="external-link">covdata</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     uspop</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
-<span class="co">#&gt; ✔ ggplot2 3.3.5     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.1.5     ✔ dplyr   1.0.7</span>
-<span class="co">#&gt; ✔ tidyr   1.1.4     ✔ stringr 1.4.0</span>
-<span class="co">#&gt; ✔ readr   2.0.2     ✔ forcats 0.5.1</span>
-<span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
-<span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
-<span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
-<div id="u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times" class="section level2">
-<h2 class="hasAnchor">
-<a href="#u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times" class="anchor"></a>U.S. National, State- and County-Level (Cumulative) Data from the <em>New York Times</em>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2</span> 3.3.5     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr  </span> 0.3.4</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble </span> 3.1.6     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr  </span> 1.0.7</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr  </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr</span> 1.4.0</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr  </span> 2.1.1     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats</span> 0.5.1</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></code></pre></div>
+<div class="section level2">
+<h2 id="u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times">U.S. National, State- and County-Level (Cumulative) Data from the <em>New York Times</em><a class="anchor" aria-label="anchor" href="#u-s--national-state--and-county-level-cumulative-data-from-the-new-york-times"></a>
 </h2>
-<p>These data tables are taken from <a href="https://github.com/nytimes/covid-19-data">the GitHub repository</a> maintained by <em>New York Times</em> staff. The information in this article mostly repeats the content of their <a href="https://github.com/nytimes/covid-19-data/blob/master/README.md">README</a> file.</p>
+<p>These data tables are taken from <a href="https://github.com/nytimes/covid-19-data" class="external-link">the GitHub repository</a> maintained by <em>New York Times</em> staff. The information in this article mostly repeats the content of their <a href="https://github.com/nytimes/covid-19-data/blob/master/README.md" class="external-link">README</a> file.</p>
 <p>The data begins with the first reported coronavirus case in Washington State on Jan. 21, 2020.</p>
 <p>Data on cumulative coronavirus cases and deaths can be found in three files, one for each of these geographic levels: U.S., states and counties.</p>
 <p>Each row of data reports cumulative counts based on our best reporting up to the moment we publish an update. We do our best to revise earlier entries in the data when we receive new information. If a county is not listed for a date, then there were zero reported confirmed cases and deaths.</p>
 <p>State and county files contain FIPS codes, a standard geographic identifier, to make it easier for an analyst to combine this data with other data sets like a map file or population data.</p>
 <p>In some cases, the geographies where cases are reported do not map to standard county boundaries. See the list of <a href="#geographic-exceptions">geographic exceptions</a> for more detail on these.</p>
-<div id="u-s--national-table" class="section level3">
-<h3 class="hasAnchor">
-<a href="#u-s--national-table" class="anchor"></a>U.S. National Table</h3>
+<div class="section level3">
+<h3 id="u-s--national-table">U.S. National Table<a class="anchor" aria-label="anchor" href="#u-s--national-table"></a>
+</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytcovus</span>
-<span class="co">#&gt; # A tibble: 642 × 3</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 642 × 3</span></span>
 <span class="co">#&gt;    date       cases deaths</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-01-21     1      0</span>
-<span class="co">#&gt;  2 2020-01-22     1      0</span>
-<span class="co">#&gt;  3 2020-01-23     1      0</span>
-<span class="co">#&gt;  4 2020-01-24     2      0</span>
-<span class="co">#&gt;  5 2020-01-25     3      0</span>
-<span class="co">#&gt;  6 2020-01-26     5      0</span>
-<span class="co">#&gt;  7 2020-01-27     5      0</span>
-<span class="co">#&gt;  8 2020-01-28     5      0</span>
-<span class="co">#&gt;  9 2020-01-29     5      0</span>
-<span class="co">#&gt; 10 2020-01-30     6      0</span>
-<span class="co">#&gt; # … with 632 more rows</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2020-01-21     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2020-01-22     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2020-01-23     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2020-01-24     2      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2020-01-25     3      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2020-01-26     5      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2020-01-27     5      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2020-01-28     5      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2020-01-29     5      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2020-01-30     6      0</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 632 more rows</span></span></code></pre></div>
 </div>
-<div id="u-s--state-table" class="section level3">
-<h3 class="hasAnchor">
-<a href="#u-s--state-table" class="anchor"></a>U.S. State Table</h3>
+<div class="section level3">
+<h3 id="u-s--state-table">U.S. State Table<a class="anchor" aria-label="anchor" href="#u-s--state-table"></a>
+</h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytcovstate</span>
-<span class="co">#&gt; # A tibble: 33,046 × 5</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 33,046 × 5</span></span>
 <span class="co">#&gt;    date       state      fips  cases deaths</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-01-21 Washington 53        1      0</span>
-<span class="co">#&gt;  2 2020-01-22 Washington 53        1      0</span>
-<span class="co">#&gt;  3 2020-01-23 Washington 53        1      0</span>
-<span class="co">#&gt;  4 2020-01-24 Illinois   17        1      0</span>
-<span class="co">#&gt;  5 2020-01-24 Washington 53        1      0</span>
-<span class="co">#&gt;  6 2020-01-25 California 06        1      0</span>
-<span class="co">#&gt;  7 2020-01-25 Illinois   17        1      0</span>
-<span class="co">#&gt;  8 2020-01-25 Washington 53        1      0</span>
-<span class="co">#&gt;  9 2020-01-26 Arizona    04        1      0</span>
-<span class="co">#&gt; 10 2020-01-26 California 06        2      0</span>
-<span class="co">#&gt; # … with 33,036 more rows</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2020-01-21 Washington 53        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2020-01-22 Washington 53        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2020-01-23 Washington 53        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2020-01-24 Illinois   17        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2020-01-24 Washington 53        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2020-01-25 California 06        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2020-01-25 Illinois   17        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2020-01-25 Washington 53        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2020-01-26 Arizona    04        1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2020-01-26 California 06        2      0</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 33,036 more rows</span></span></code></pre></div>
 </div>
-<div id="u-s--county-table" class="section level3">
-<h3 class="hasAnchor">
-<a href="#u-s--county-table" class="anchor"></a>U.S. County Table</h3>
+<div class="section level3">
+<h3 id="u-s--county-table">U.S. County Table<a class="anchor" aria-label="anchor" href="#u-s--county-table"></a>
+</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytcovcounty</span>
-<span class="co">#&gt; # A tibble: 1,845,855 × 6</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,845,855 × 6</span></span>
 <span class="co">#&gt;    date       county      state      fips  cases deaths</span>
-<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2020-01-21 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  2 2020-01-22 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  3 2020-01-23 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  4 2020-01-24 Cook        Illinois   17031     1      0</span>
-<span class="co">#&gt;  5 2020-01-24 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  6 2020-01-25 Orange      California 06059     1      0</span>
-<span class="co">#&gt;  7 2020-01-25 Cook        Illinois   17031     1      0</span>
-<span class="co">#&gt;  8 2020-01-25 Snohomish   Washington 53061     1      0</span>
-<span class="co">#&gt;  9 2020-01-26 Maricopa    Arizona    04013     1      0</span>
-<span class="co">#&gt; 10 2020-01-26 Los Angeles California 06037     1      0</span>
-<span class="co">#&gt; # … with 1,845,845 more rows</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2020-01-21 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2020-01-22 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2020-01-23 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2020-01-24 Cook        Illinois   17031     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2020-01-24 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2020-01-25 Orange      California 06059     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2020-01-25 Cook        Illinois   17031     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2020-01-25 Snohomish   Washington 53061     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2020-01-26 Maricopa    Arizona    04013     1      0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2020-01-26 Los Angeles California 06037     1      0</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 1,845,845 more rows</span></span></code></pre></div>
 </div>
-<div id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county-" class="anchor"></a>Draw a log-linear graph of cumulative US cases by county.</h3>
+<div class="section level3">
+<h3 id="draw-a-log-linear-graph-of-cumulative-us-cases-by-county-">Draw a log-linear graph of cumulative US cases by county.<a class="anchor" aria-label="anchor" href="#draw-a-log-linear-graph-of-cumulative-us-cases-by-county-"></a>
+</h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">nytcovcounty</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>uniq_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">county</span>, <span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">uniq_name</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span> <span class="op">+</span> <span class="fl">1</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
-       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">nytcovcounty</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
+<code class="sourceCode R"><span class="va">nytcovcounty</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>uniq_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">county</span>, <span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">uniq_name</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span> <span class="op">+</span> <span class="fl">1</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_log10</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number_si.html" class="external-link">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html" class="external-link">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">nytcovcounty</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
        x <span class="op">=</span> <span class="st">"Days since first case"</span>, y <span class="op">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>, 
        caption <span class="op">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =</span>
 <span class="co">#&gt; "none")` instead.</span>
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></code></pre></div>
 <p><img src="new-york-times_files/figure-html/nytplot-1.png" width="1200"></p>
 </div>
 </div>
-<div id="methodology-and-definitions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#methodology-and-definitions" class="anchor"></a>Methodology and Definitions</h2>
+<div class="section level2">
+<h2 id="methodology-and-definitions">Methodology and Definitions<a class="anchor" aria-label="anchor" href="#methodology-and-definitions"></a>
+</h2>
 <p>The data is the product of dozens of journalists working across several time zones to monitor news conferences, analyze data releases and seek clarification from public officials on how they categorize cases.</p>
 <p>It is also a response to a fragmented American public health system in which overwhelmed public servants at the state, county and territorial level have sometimes struggled to report information accurately, consistently and speedily. On several occasions, officials have corrected information hours or days after first reporting it. At times, cases have disappeared from a local government database, or officials have moved a patient first identified in one state or county to another, often with no explanation. In those instances, which have become more common as the number of cases has grown, our team has made every effort to update the data to reflect the most current, accurate information while ensuring that every known case is counted.</p>
 <p>When the information is available, we count patients where they are being treated, not necessarily where they live.</p>
@@ -256,7 +251,7 @@
 <ul>
 <li>“Probable” Cases and Deaths</li>
 </ul>
-<p>On April 5, the Council of State and Territorial Epidemiologists Centers <a href="https://int.nyt.com/data/documenthelper/6908-cste-interim-20-id-01-covid-19/85d47e89b637cd643d50/optimized/full.pdf">advised states</a> to include both confirmed cases, based on laboratory testing, and probable cases, based on specific criteria for symptoms and exposure. The Centers for Disease Control adopted these definitions and national CDC data began including confirmed and probable cases on April 14.</p>
+<p>On April 5, the Council of State and Territorial Epidemiologists Centers <a href="https://int.nyt.com/data/documenthelper/6908-cste-interim-20-id-01-covid-19/85d47e89b637cd643d50/optimized/full.pdf" class="external-link">advised states</a> to include both confirmed cases, based on laboratory testing, and probable cases, based on specific criteria for symptoms and exposure. The Centers for Disease Control adopted these definitions and national CDC data began including confirmed and probable cases on April 14.</p>
 <p>Some states and counties are starting to report these “probable” Covid-19 cases and deaths. For the time being, we are attempting to continue only counting lab-confirmed cases and deaths while we explore the possibility of switching methodologies or reporting both numbers separately.</p>
 <p>Please see the Geographic Exceptions section below for more details.</p>
 <ul>
@@ -277,9 +272,9 @@
 </ul>
 <p>Many state health departments choose to report cases separately when the patient’s county of residence is unknown or pending determination. In these instances, we record the county name as “Unknown.” As more information about these cases becomes available, the cumulative number of cases in “Unknown” counties may fluctuate.</p>
 <p>Sometimes, cases are first reported in one county and then moved to another county. As a result, the cumulative number of cases may change for a given county.</p>
-<div id="geographic-exceptions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#geographic-exceptions" class="anchor"></a>Geographic Exceptions</h3>
+<div class="section level3">
+<h3 id="geographic-exceptions">Geographic Exceptions<a class="anchor" aria-label="anchor" href="#geographic-exceptions"></a>
+</h3>
 <ul>
 <li>New York</li>
 </ul>
@@ -292,7 +287,7 @@
 <ul>
 <li>Alabama</li>
 </ul>
-<p>Alabama’s numbers for April 17th contained an <a href="https://twitter.com/ALPublicHealth/status/1251531524958289920">error</a> in reporting of lab test results that the state is working to correct. The number of deaths drops on April 23rd for an unknown reason.</p>
+<p>Alabama’s numbers for April 17th contained an <a href="https://twitter.com/ALPublicHealth/status/1251531524958289920" class="external-link">error</a> in reporting of lab test results that the state is working to correct. The number of deaths drops on April 23rd for an unknown reason.</p>
 <ul>
 <li>Kansas City, Mo.</li>
 </ul>
@@ -318,9 +313,9 @@
 </ul>
 <p>On April 21st, the territory’s health department revised their number of cases downward, saying they had been double counting some coronavirus patients in official reports, leading to a higher number of cases reported than actually confirmed.</p>
 <p>Additionally, from approximately April 12th through April 18th, the count of deaths for Puerto Rico include some probable Covid-19 related deaths that were not lab-confirmed. Starting April 19th these have been removed. We will revise the numbers for the 12th to 18th as possible.</p>
-<div id="probable-cases-and-deaths" class="section level4">
-<h4 class="hasAnchor">
-<a href="#probable-cases-and-deaths" class="anchor"></a>Probable Cases and Deaths</h4>
+<div class="section level4">
+<h4 id="probable-cases-and-deaths">Probable Cases and Deaths<a class="anchor" aria-label="anchor" href="#probable-cases-and-deaths"></a>
+</h4>
 <ul>
 <li>Colorado</li>
 </ul>
@@ -348,15 +343,15 @@
 </div>
 </div>
 </div>
-<div id="license-and-attribution" class="section level2">
-<h2 class="hasAnchor">
-<a href="#license-and-attribution" class="anchor"></a>License and Attribution</h2>
+<div class="section level2">
+<h2 id="license-and-attribution">License and Attribution<a class="anchor" aria-label="anchor" href="#license-and-attribution"></a>
+</h2>
 <p>In general, we are making this data publicly available for broad, noncommercial public use including by medical and public health researchers, policymakers, analysts and local news media.</p>
 <p>If you use this data, you must attribute it to “The New York Times” in any publication. If you would like a more expanded description of the data, you could say “Data from The New York Times, based on reports from state and local health agencies.”</p>
-<p>If you use it in an online presentation, please link to the New York Times’s U.S. tracking page at <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html">https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html</a>.</p>
+<p>If you use it in an online presentation, please link to the New York Times’s U.S. tracking page at <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html" class="external-link">https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html</a>.</p>
 <p>If you use this data, please send a note to <a href="mailto:covid-data@nytimes.com" class="email">covid-data@nytimes.com</a> to that effect.</p>
-<p>See the <a href="https://github.com/nytimes/covid-19-data/blob/master/LICENSE">LICENSE</a> for the full terms of use for this data.</p>
-<p>This license is co-extensive with the Creative Commons Attribution-NonCommercial 4.0 International license, and licensees should refer to that license (<a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode">CC BY-NC</a>) if they have questions about the scope of the license.</p>
+<p>See the <a href="https://github.com/nytimes/covid-19-data/blob/master/LICENSE" class="external-link">LICENSE</a> for the full terms of use for this data.</p>
+<p>This license is co-extensive with the Creative Commons Attribution-NonCommercial 4.0 International license, and licensees should refer to that license (<a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode" class="external-link">CC BY-NC</a>) if they have questions about the scope of the license.</p>
 </div>
   </div>
 
@@ -371,11 +366,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://kieranhealy.org">Kieran Healy</a>.</p>
+  <p>Developed by .</p>
 </div>
 
 <div class="pkgdown">
-  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> , using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
       </footer>
@@ -383,6 +378,8 @@
 
   
 
+
+  
 
   </body>
 </html>

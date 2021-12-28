@@ -36,6 +36,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -48,18 +50,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
@@ -99,7 +95,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/kjhealy/covdata">
+  <a href="https://github.com/kjhealy/covdata" class="external-link">
     <span class="fa fa-github"></span>
      
   </a>
@@ -124,7 +120,7 @@
       <h1 data-toc-skip>Excess Mortality Data</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/master/vignettes/excess-mortality.Rmd"><code>vignettes/excess-mortality.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/HEAD/vignettes/excess-mortality.Rmd" class="external-link"><code>vignettes/excess-mortality.Rmd</code></a></small>
       <div class="hidden name"><code>excess-mortality.Rmd</code></div>
 
     </div>
@@ -132,127 +128,127 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
-<span class="co">#&gt; ✔ ggplot2 3.3.5     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.1.5     ✔ dplyr   1.0.7</span>
-<span class="co">#&gt; ✔ tidyr   1.1.4     ✔ stringr 1.4.0</span>
-<span class="co">#&gt; ✔ readr   2.0.2     ✔ forcats 0.5.1</span>
-<span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
-<span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
-<span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata">covdata</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2</span> 3.3.5     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr  </span> 0.3.4</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble </span> 3.1.6     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr  </span> 1.0.7</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr  </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr</span> 1.4.0</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr  </span> 2.1.1     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats</span> 0.5.1</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata" class="external-link">covdata</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     uspop</span></code></pre></div>
-<div id="national-short-term-mortality-fluctuations" class="section level2">
-<h2 class="hasAnchor">
-<a href="#national-short-term-mortality-fluctuations" class="anchor"></a>National Short-term Mortality Fluctuations</h2>
-<p>The <a href="https://www.mortality.org">Human Mortality Database</a> provides weekly death counts and rates by age groups for a number of countries. Age groups are standardized across countries. Rate calculations are also standardized. The standardization of age categories means that weekly “counts” may not be whole numbers. See the <a href="https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf">HMD Data Note</a> for details on the data sources and calculation of rates. In particular, note the following, from p.2 of the codebook:</p>
+<div class="section level2">
+<h2 id="national-short-term-mortality-fluctuations">National Short-term Mortality Fluctuations<a class="anchor" aria-label="anchor" href="#national-short-term-mortality-fluctuations"></a>
+</h2>
+<p>The <a href="https://www.mortality.org" class="external-link">Human Mortality Database</a> provides weekly death counts and rates by age groups for a number of countries. Age groups are standardized across countries. Rate calculations are also standardized. The standardization of age categories means that weekly “counts” may not be whole numbers. See the <a href="https://www.mortality.org/Public/STMF_DOC/STMFNote.pdf" class="external-link">HMD Data Note</a> for details on the data sources and calculation of rates. In particular, note the following, from p.2 of the codebook:</p>
 <blockquote>
 <p>In general, the STMF is based on the data that are collected for the core HMD. The HMD follows certain criteria for inclusion of individual countries such as requirements for maintaining high quality statistical systems and having the completeness of registration of vital events close to 100 percent. Nevertheless, the weekly statistics has own specific which should be taken into account. 1) The data on deaths are provided by the date of registration or date of occurrence. There is no way to convert the date of registration into the date of occurrence. The exact type of the data and further details are indicated in the metadata file. 2) If the data are provided by date of registration, there could be artificial fluctuations in weekly death figures related to special events (e.g. end of the statistical period, public holidays). 3) The data for last weeks of a year as well as data for all weeks of the most recent year might be incomplete due to a delayed registration. Statistical offices may still revise these data in the course of the next update. 4) Deaths and death rates are provided by calendar week starting from Monday, Saturday or Sunday (depending on country-specific standards). Please check the country-specific documentationfor details. 5) Each year in the STMF refers to 52 weeks, each week has 7 days. In some cases, the first week of a year may include several days from the previous year or the last week of a year may include days (and, respectively, deaths) of the next year. In particular, it means that a statistical year in the STMF is equal to the statistical year in annual country-specific statistics. The data in the STMF are presented without any corrections. The original data are notadjusted for death undercounts or smoothed. All known country-specific quality issues are documented in the country- specific metadata file.</p>
 </blockquote>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">stmf</span>
-<span class="co">#&gt; # A tibble: 537,240 × 17</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 537,240 × 17</span></span>
 <span class="co">#&gt;    country_code cname    iso2  continent iso3   year  week sex   split split_sex</span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  2 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  3 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  4 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  5 AUS          Austral… AU    Oceania   AUS    2015     1 m         1         0</span>
-<span class="co">#&gt;  6 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt;  7 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt;  8 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt;  9 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt; 10 AUS          Austral… AU    Oceania   AUS    2015     1 f         1         0</span>
-<span class="co">#&gt; # … with 537,230 more rows, and 7 more variables: forecast &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   approx_date &lt;date&gt;, age_group &lt;chr&gt;, death_count &lt;dbl&gt;, death_rate &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   deaths_total &lt;dbl&gt;, rate_total &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 m         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 m         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 m         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 m         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 m         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 f         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 f         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 f         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 f         1         0</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AUS          Austral… AU    Oceania   AUS    <span style="text-decoration: underline;">2</span>015     1 f         1         0</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 537,230 more rows, and 7 more variables: forecast &lt;dbl&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   approx_date &lt;date&gt;, age_group &lt;chr&gt;, death_count &lt;dbl&gt;, death_rate &lt;dbl&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   deaths_total &lt;dbl&gt;, rate_total &lt;dbl&gt;</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">stmf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">sex</span> <span class="op">==</span> <span class="st">"b"</span>, <span class="va">country_code</span> <span class="op">==</span> <span class="st">"BEL"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">week</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>yr_ind <span class="op">=</span> <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">week</span>, y <span class="op">=</span> <span class="va">deaths_total</span>, color <span class="op">=</span> <span class="va">yr_ind</span>, group <span class="op">=</span> <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gray70"</span>, <span class="st">"red"</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"2000-2019"</span>, <span class="st">"2020"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Week of the Year"</span>, 
+<code class="sourceCode R"><span class="va">stmf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">sex</span> <span class="op">==</span> <span class="st">"b"</span>, <span class="va">country_code</span> <span class="op">==</span> <span class="st">"BEL"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">week</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>yr_ind <span class="op">=</span> <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">week</span>, y <span class="op">=</span> <span class="va">deaths_total</span>, color <span class="op">=</span> <span class="va">yr_ind</span>, group <span class="op">=</span> <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gray70"</span>, <span class="st">"red"</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2000-2019"</span>, <span class="st">"2020"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Week of the Year"</span>, 
        y <span class="op">=</span> <span class="st">"Total Deaths"</span>, 
        color <span class="op">=</span> <span class="st">"Year"</span>,
        title <span class="op">=</span> <span class="st">"Weekly recorded deaths in Belgium, 2000-2020"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></code></pre></div>
 <p><img src="excess-mortality_files/figure-html/stmf-figure-1.png" width="1200"></p>
 </div>
-<div id="nchs-mortality-counts-and-estimates" class="section level2">
-<h2 class="hasAnchor">
-<a href="#nchs-mortality-counts-and-estimates" class="anchor"></a>NCHS Mortality Counts and Estimates</h2>
+<div class="section level2">
+<h2 id="nchs-mortality-counts-and-estimates">NCHS Mortality Counts and Estimates<a class="anchor" aria-label="anchor" href="#nchs-mortality-counts-and-estimates"></a>
+</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nchs_wdc</span>
-<span class="co">#&gt; # A tibble: 295,056 × 7</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 295,056 × 7</span></span>
 <span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed           n cause   </span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   </span>
-<span class="co">#&gt;  1 Alabama       2014     1 2014-01-04       All Cause             1057 All Cau…</span>
-<span class="co">#&gt;  2 Alabama       2014     1 2014-01-04       Alzheimer disease (…    38 Alzheim…</span>
-<span class="co">#&gt;  3 Alabama       2014     1 2014-01-04       Cerebrovascular dis…    51 Cerebro…</span>
-<span class="co">#&gt;  4 Alabama       2014     1 2014-01-04       Chronic lower respi…    66 Chronic…</span>
-<span class="co">#&gt;  5 Alabama       2014     1 2014-01-04       Diabetes mellitus (…    29 Diabetes</span>
-<span class="co">#&gt;  6 Alabama       2014     1 2014-01-04       Diseases of heart (…   264 Disease…</span>
-<span class="co">#&gt;  7 Alabama       2014     1 2014-01-04       Influenza and pneum…    38 Influen…</span>
-<span class="co">#&gt;  8 Alabama       2014     1 2014-01-04       Malignant neoplasms…   196 Cancer  </span>
-<span class="co">#&gt;  9 Alabama       2014     1 2014-01-04       Natural Cause          992 Natural…</span>
-<span class="co">#&gt; 10 Alabama       2014     1 2014-01-04       Nephritis, nephroti…    21 Kidney …</span>
-<span class="co">#&gt; # … with 295,046 more rows</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       All Cause             <span style="text-decoration: underline;">1</span>057 All Cau…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Alzheimer disease (…    38 Alzheim…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Cerebrovascular dis…    51 Cerebro…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Chronic lower respi…    66 Chronic…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Diabetes mellitus (…    29 Diabetes</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Diseases of heart (…   264 Disease…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Influenza and pneum…    38 Influen…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Malignant neoplasms…   196 Cancer  </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Natural Cause          992 Natural…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Nephritis, nephroti…    21 Kidney …</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 295,046 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">nchs_wdc</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">jurisdiction</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">cause</span> <span class="op">==</span> <span class="st">"All Cause"</span>, <span class="va">year</span> <span class="op">&gt;</span> <span class="fl">2014</span>, <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2021</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">jurisdiction</span>, <span class="va">year</span>, <span class="va">week</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>deaths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>yr_ind <span class="op">=</span> <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">week</span>, y <span class="op">=</span> <span class="va">deaths</span>, color <span class="op">=</span> <span class="va">yr_ind</span>, group <span class="op">=</span> <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gray70"</span>, <span class="st">"red"</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"2015-2019"</span>, <span class="st">"2020"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_number.html">comma</a></span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">jurisdiction</span>, scales <span class="op">=</span> <span class="st">"free_y"</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Week of the Year"</span>, 
+<code class="sourceCode R"><span class="va">nchs_wdc</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">jurisdiction</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">cause</span> <span class="op">==</span> <span class="st">"All Cause"</span>, <span class="va">year</span> <span class="op">&gt;</span> <span class="fl">2014</span>, <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2021</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">jurisdiction</span>, <span class="va">year</span>, <span class="va">week</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span>deaths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">n</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>yr_ind <span class="op">=</span> <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">week</span>, y <span class="op">=</span> <span class="va">deaths</span>, color <span class="op">=</span> <span class="va">yr_ind</span>, group <span class="op">=</span> <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gray70"</span>, <span class="st">"red"</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2015-2019"</span>, <span class="st">"2020"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_number.html" class="external-link">comma</a></span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">jurisdiction</span>, scales <span class="op">=</span> <span class="st">"free_y"</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Week of the Year"</span>, 
        y <span class="op">=</span> <span class="st">"Total Deaths"</span>, 
        color <span class="op">=</span> <span class="st">"Years"</span>,
        title <span class="op">=</span> <span class="st">"Weekly recorded deaths from all causes"</span>, 
        subtitle <span class="op">=</span> <span class="st">"2020 data are for Weeks 1 to 35. Raw Counts, each state has its own y-axis scale."</span>, 
        caption <span class="op">=</span> <span class="st">"Graph: @kjhealy Data: CDC"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span>
 <span class="co">#&gt; `summarise()` has grouped output by 'jurisdiction', 'year'. You can override using the `.groups` argument.</span></code></pre></div>
 <p><img src="excess-mortality_files/figure-html/cdcexcessplot-1.png" width="800"></p>
 </div>
-<div id="new-york-times-excess-death-calculations" class="section level2">
-<h2 class="hasAnchor">
-<a href="#new-york-times-excess-death-calculations" class="anchor"></a>New York Times Excess Death Calculations</h2>
+<div class="section level2">
+<h2 id="new-york-times-excess-death-calculations">New York Times Excess Death Calculations<a class="anchor" aria-label="anchor" href="#new-york-times-excess-death-calculations"></a>
+</h2>
 <p>The New York Times has begun to collate short term mortality counts in an effort to calculate excess deaths for various countries and regions.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nytexcess</span>  
-<span class="co">#&gt; # A tibble: 7,258 × 12</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 7,258 × 12</span></span>
 <span class="co">#&gt;    country placename frequency start_date end_date   year  month  week deaths</span>
-<span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;     &lt;date&gt;     &lt;date&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;</span>
-<span class="co">#&gt;  1 Austria &lt;NA&gt;      weekly    2020-01-06 2020-01-12 2020      1     2   1702</span>
-<span class="co">#&gt;  2 Austria &lt;NA&gt;      weekly    2020-01-13 2020-01-19 2020      1     3   1797</span>
-<span class="co">#&gt;  3 Austria &lt;NA&gt;      weekly    2020-01-20 2020-01-26 2020      1     4   1779</span>
-<span class="co">#&gt;  4 Austria &lt;NA&gt;      weekly    2020-01-27 2020-02-02 2020      2     5   1947</span>
-<span class="co">#&gt;  5 Austria &lt;NA&gt;      weekly    2020-02-03 2020-02-09 2020      2     6   1681</span>
-<span class="co">#&gt;  6 Austria &lt;NA&gt;      weekly    2020-02-10 2020-02-16 2020      2     7   1721</span>
-<span class="co">#&gt;  7 Austria &lt;NA&gt;      weekly    2020-02-17 2020-02-23 2020      2     8   1718</span>
-<span class="co">#&gt;  8 Austria &lt;NA&gt;      weekly    2020-02-24 2020-03-01 2020      3     9   1768</span>
-<span class="co">#&gt;  9 Austria &lt;NA&gt;      weekly    2020-03-02 2020-03-08 2020      3    10   1744</span>
-<span class="co">#&gt; 10 Austria &lt;NA&gt;      weekly    2020-03-09 2020-03-15 2020      3    11   1718</span>
-<span class="co">#&gt; # … with 7,248 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span>
-<span class="co">#&gt; #   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-01-06 2020-01-12 2020      1     2   <span style="text-decoration: underline;">1</span>702</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-01-13 2020-01-19 2020      1     3   <span style="text-decoration: underline;">1</span>797</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-01-20 2020-01-26 2020      1     4   <span style="text-decoration: underline;">1</span>779</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-01-27 2020-02-02 2020      2     5   <span style="text-decoration: underline;">1</span>947</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-02-03 2020-02-09 2020      2     6   <span style="text-decoration: underline;">1</span>681</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-02-10 2020-02-16 2020      2     7   <span style="text-decoration: underline;">1</span>721</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-02-17 2020-02-23 2020      2     8   <span style="text-decoration: underline;">1</span>718</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-02-24 2020-03-01 2020      3     9   <span style="text-decoration: underline;">1</span>768</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-03-02 2020-03-08 2020      3    10   <span style="text-decoration: underline;">1</span>744</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-03-09 2020-03-15 2020      3    11   <span style="text-decoration: underline;">1</span>718</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 7,248 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span></span></code></pre></div>
 </div>
   </div>
 
@@ -267,11 +263,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://kieranhealy.org">Kieran Healy</a>.</p>
+  <p>Developed by .</p>
 </div>
 
 <div class="pkgdown">
-  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> , using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
       </footer>
@@ -279,6 +275,8 @@
 
   
 
+
+  
 
   </body>
 </html>

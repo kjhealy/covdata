@@ -36,6 +36,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -48,18 +50,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/covdata.html">Get started</a>
 </li>
@@ -99,7 +95,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/kjhealy/covdata">
+  <a href="https://github.com/kjhealy/covdata" class="external-link">
     <span class="fa fa-github"></span>
      
   </a>
@@ -124,28 +120,28 @@
       <h1 data-toc-skip>Get Started with covdata</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/master/vignettes/covdata.Rmd"><code>vignettes/covdata.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/kjhealy/covdata/blob/HEAD/vignettes/covdata.Rmd" class="external-link"><code>vignettes/covdata.Rmd</code></a></small>
       <div class="hidden name"><code>covdata.Rmd</code></div>
 
     </div>
 
     
     
-<div id="loading-the-package" class="section level2">
-<h2 class="hasAnchor">
-<a href="#loading-the-package" class="anchor"></a>Loading the Package</h2>
+<div class="section level2">
+<h2 id="loading-the-package">Loading the Package<a class="anchor" aria-label="anchor" href="#loading-the-package"></a>
+</h2>
 <p>The <code>covdata</code> package aims to make data related to the COVID-19 pandemic easily accessible to users of R. Once the package is installed, load it in the usual way:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> 
-<span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
-<span class="co">#&gt; ✔ ggplot2 3.3.5     ✔ purrr   0.3.4</span>
-<span class="co">#&gt; ✔ tibble  3.1.5     ✔ dplyr   1.0.7</span>
-<span class="co">#&gt; ✔ tidyr   1.1.4     ✔ stringr 1.4.0</span>
-<span class="co">#&gt; ✔ readr   2.0.2     ✔ forcats 0.5.1</span>
-<span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
-<span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
-<span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata">covdata</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span> 
+<span class="co">#&gt; ── <span style="font-weight: bold;">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2</span> 3.3.5     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr  </span> 0.3.4</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble </span> 3.1.6     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr  </span> 1.0.7</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr  </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr</span> 1.4.0</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr  </span> 2.1.1     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats</span> 0.5.1</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata" class="external-link">covdata</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
@@ -153,9 +149,9 @@
 <span class="co">#&gt;     uspop</span></code></pre></div>
 <p>Loading the package makes a variety of datasets available for use. Because the data are in tibbles, the use of the <code>tidyverse</code> suite of packages is strongly recommended, though it is not required. If use the data objects as dataframes (i.e., without loading the <code>tidyverse</code> packages) you will need to re-encode some variables, most importantly <code>date</code> and <code>date-time</code> columns, for them to behave as expected.</p>
 </div>
-<div id="exploring-the-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#exploring-the-data" class="anchor"></a>Exploring the Data</h2>
+<div class="section level2">
+<h2 id="exploring-the-data">Exploring the Data<a class="anchor" aria-label="anchor" href="#exploring-the-data"></a>
+</h2>
 <p>Individual datasets are documented on their help pages. The documentation includes details on properly citing the source of the data and, in some cases, the terms of use under which it is provided. The vignettes in the package provide a brief overview of several of the datasets. These include:</p>
 <ul>
 <li>For the ECDC COVID-specific data: <code><a href="../articles/ecdc-data.html">vignette("ecdc-data")</a></code>
@@ -172,17 +168,17 @@
 </li>
 </ul>
 </div>
-<div id="caveat-emptor" class="section level2">
-<h2 class="hasAnchor">
-<a href="#caveat-emptor" class="anchor"></a>Caveat Emptor</h2>
+<div class="section level2">
+<h2 id="caveat-emptor">Caveat Emptor<a class="anchor" aria-label="anchor" href="#caveat-emptor"></a>
+</h2>
 <p>The data are provided as-is. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. Follow the links above, and see the vignettes in the package. The collection and effective reporting of case and mortality data by national governments has technical and political aspects influenced by, amongst other things, the varying capacity of states to test, track and measure events in a timely fashion, the varying definitions, criteria, and methods employed by states in registering cases and deaths, and the role of politics in the exercise of capacity and the reporting of unflattering news. Researchers should take care to familiarize themselves with these issues prior to making strong claims based on these data.</p>
 </div>
-<div id="other-data-sources" class="section level2">
-<h2 class="hasAnchor">
-<a href="#other-data-sources" class="anchor"></a>Other Data Sources</h2>
+<div class="section level2">
+<h2 id="other-data-sources">Other Data Sources<a class="anchor" aria-label="anchor" href="#other-data-sources"></a>
+</h2>
 <ul>
 <li>
-<a href="https://familyinequality.wordpress.com">Philip Cohen</a> has released several datasets and code for STATA users. These can be found <a href="https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/">at his website</a>.</li>
+<a href="https://familyinequality.wordpress.com" class="external-link">Philip Cohen</a> has released several datasets and code for STATA users. These can be found <a href="https://familyinequality.wordpress.com/2020/04/27/covid-19-code-data-codebooks-figures/" class="external-link">at his website</a>.</li>
 </ul>
 </div>
   </div>
@@ -198,11 +194,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://kieranhealy.org">Kieran Healy</a>.</p>
+  <p>Developed by .</p>
 </div>
 
 <div class="pkgdown">
-  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> , using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
       </footer>
@@ -210,6 +206,8 @@
 
   
 
+
+  
 
   </body>
 </html>

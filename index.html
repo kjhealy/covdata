@@ -36,6 +36,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -48,18 +50,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="articles/covdata.html">Get started</a>
 </li>
@@ -99,7 +95,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/kjhealy/covdata">
+  <a href="https://github.com/kjhealy/covdata" class="external-link">
     <span class="fa fa-github"></span>
      
   </a>
@@ -120,93 +116,92 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="covdata-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#covdata-" class="anchor"></a>covdata <img src="reference/figures/hex-covdata.png" align="right" width="240">
+<div class="section level1">
+<div class="page-header"><h1 id="covdata-">covdata <img src="reference/figures/hex-covdata.png" align="right" width="240"><a class="anchor" aria-label="anchor" href="#covdata-"></a>
 </h1></div>
 <!-- badges: start -->
 
-<div id="about-the-package" class="section level2">
-<h2 class="hasAnchor">
-<a href="#about-the-package" class="anchor"></a>About the package</h2>
-<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Sunday, October 24, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
+<div class="section level2">
+<h2 id="about-the-package">About the package<a class="anchor" aria-label="anchor" href="#about-the-package"></a>
+</h2>
+<p><code>covdata</code> is a data package for R that collects and bundles datasets related to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" class="external-link">the COVID-19 pandemic</a> from a variety of sources. The data are current as of Sunday, October 24, 2021. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to <a href="https://tibble.tidyverse.org" class="external-link">tibbles</a> and transformation into <a href="https://en.wikipedia.org/wiki/Wide_and_narrow_data" class="external-link">narrow</a>- or <a href="https://en.wikipedia.org/wiki/Tidy_data" class="external-link">tidy</a> form. Occasionally some additional variables have been added (mostly <a href="https://en.wikipedia.org/wiki/ISO_3166-1" class="external-link">ISO country codes</a>) to facilitate comparison across the datasets or their integration with other sources.</p>
 <p><code>covdata</code> provides the following:</p>
-<div id="covid-19-specific-case-and-mortality-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#covid-19-specific-case-and-mortality-data" class="anchor"></a>COVID-19 specific case and mortality data</h3>
+<div class="section level3">
+<h3 id="covid-19-specific-case-and-mortality-data">COVID-19 specific case and mortality data<a class="anchor" aria-label="anchor" href="#covid-19-specific-case-and-mortality-data"></a>
+</h3>
 <ul>
-<li>National-level case and mortality data from the <a href="https://www.ecdc.europa.eu/en">European Centers for Disease Control</a>.<br>
+<li>National-level case and mortality data from the <a href="https://www.ecdc.europa.eu/en" class="external-link">European Centers for Disease Control</a>.<br>
 </li>
-<li>State-level case and mortality data for the United States from the <a href="https://covidtracking.com">COVID Tracking Project</a>.</li>
-<li>State-level and county-level case and mortality data for the United States from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.</li>
+<li>State-level case and mortality data for the United States from the <a href="https://covidtracking.com" class="external-link">COVID Tracking Project</a>.</li>
+<li>State-level and county-level case and mortality data for the United States from the <a href="https://github.com/nytimes/covid-19-data" class="external-link"><em>New York Times</em></a>.</li>
 </ul>
 </div>
-<div id="all-cause-mortality-and-excess-mortality-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#all-cause-mortality-and-excess-mortality-data" class="anchor"></a>All-cause mortality and excess mortality data</h3>
+<div class="section level3">
+<h3 id="all-cause-mortality-and-excess-mortality-data">All-cause mortality and excess mortality data<a class="anchor" aria-label="anchor" href="#all-cause-mortality-and-excess-mortality-data"></a>
+</h3>
 <ul>
-<li>National-level short-term mortality fluctuations data from the <a href="https://www.mortality.org">Human Mortality Database</a>.</li>
-<li>National-level all-cause and excess mortality estimates from the <a href="https://github.com/nytimes/covid-19-data"><em>New York Times</em></a>.<br>
+<li>National-level short-term mortality fluctuations data from the <a href="https://www.mortality.org" class="external-link">Human Mortality Database</a>.</li>
+<li>National-level all-cause and excess mortality estimates from the <a href="https://github.com/nytimes/covid-19-data" class="external-link"><em>New York Times</em></a>.<br>
 </li>
-<li>U.S. state-level excess mortality estimates from the <a href="https://data.cdc.gov/browse?category=NCHS">National Center for Health Statistics</a>
+<li>U.S. state-level excess mortality estimates from the <a href="https://data.cdc.gov/browse?category=NCHS" class="external-link">National Center for Health Statistics</a>
 </li>
 </ul>
 </div>
-<div id="mobility-and-activity-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#mobility-and-activity-data" class="anchor"></a>Mobility and activity data</h3>
+<div class="section level3">
+<h3 id="mobility-and-activity-data">Mobility and activity data<a class="anchor" aria-label="anchor" href="#mobility-and-activity-data"></a>
+</h3>
 <ul>
-<li>Data from <a href="http://apple.com/covid19">Apple</a> on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.</li>
-<li>Data from <a href="https://www.google.com/covid19/mobility/data_documentation.html">Google</a> on relative trends in mobility was previously included with this package but is now available in <a href="https://kjhealy.github.io/covmobility">covmobility</a>.</li>
+<li>Data from <a href="http://apple.com/covid19" class="external-link">Apple</a> on relative trends in mobility in cities and countries since mid-January of 2020, based on usage of their Maps application.</li>
+<li>Data from <a href="https://www.google.com/covid19/mobility/data_documentation.html" class="external-link">Google</a> on relative trends in mobility was previously included with this package but is now available in <a href="https://kjhealy.github.io/covmobility" class="external-link">covmobility</a>.</li>
 </ul>
 </div>
 </div>
-<div id="caveat-emptor" class="section level2">
-<h2 class="hasAnchor">
-<a href="#caveat-emptor" class="anchor"></a>Caveat Emptor</h2>
+<div class="section level2">
+<h2 id="caveat-emptor">Caveat Emptor<a class="anchor" aria-label="anchor" href="#caveat-emptor"></a>
+</h2>
 <p><strong>The data are provided as-is</strong>. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. Follow the links above, and see the vignettes in the package. The collection and effective reporting of case and mortality data by national governments has technical and political aspects influenced by, amongst other things, the varying capacity of states to test, track and measure events in a timely fashion, the varying definitions, criteria, and methods employed by states in registering cases and deaths, and the role of politics in the exercise of capacity and the reporting of unflattering news. Researchers should take care to familiarize themselves with these issues prior to making strong claims based on these data.</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>There are two ways to install the <code>covdata</code> package.</p>
-<div id="install-direct-from-github" class="section level3">
-<h3 class="hasAnchor">
-<a href="#install-direct-from-github" class="anchor"></a>Install direct from GitHub</h3>
-<p>You can install covdata from <a href="https://github.com/kjhealy/covdata">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"kjhealy/covdata@main"</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="installation-using-drat" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation-using-drat" class="anchor"></a>Installation using <code>drat</code>
+<div class="section level3">
+<h3 id="install-direct-from-github">Install direct from GitHub<a class="anchor" aria-label="anchor" href="#install-direct-from-github"></a>
 </h3>
-<p>While using <code>install_github()</code> works just fine, it would be nicer to be able to just type <code>install.packages("covdata")</code> or <code>update.packages("covdata")</code> in the ordinary way. We can do this using Dirk Eddelbuettel’s <a href="http://eddelbuettel.github.io/drat/DratForPackageUsers.html">drat</a> package. Drat provides a convenient way to make R aware of package repositories other than CRAN.</p>
+<p>You can install covdata from <a href="https://github.com/kjhealy/covdata" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"kjhealy/covdata@main"</span><span class="op">)</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="installation-using-drat">Installation using <code>drat</code>
+<a class="anchor" aria-label="anchor" href="#installation-using-drat"></a>
+</h3>
+<p>While using <code>install_github()</code> works just fine, it would be nicer to be able to just type <code>install.packages("covdata")</code> or <code>update.packages("covdata")</code> in the ordinary way. We can do this using Dirk Eddelbuettel’s <a href="http://eddelbuettel.github.io/drat/DratForPackageUsers.html" class="external-link">drat</a> package. Drat provides a convenient way to make R aware of package repositories other than CRAN.</p>
 <p>First, install <code>drat</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://github.com/eddelbuettel/drat">"drat"</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"drat"</span><span class="op">)</span>
-    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/eddelbuettel/drat">"drat"</a></span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://github.com/eddelbuettel/drat" class="external-link">"drat"</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"drat"</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/eddelbuettel/drat" class="external-link">"drat"</a></span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>Then use <code>drat</code> to tell R about the repository where <code>covdata</code> is hosted:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">drat</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/drat/man/addRepo.html">addRepo</a></span><span class="op">(</span><span class="st">"kjhealy"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">drat</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/drat/man/addRepo.html" class="external-link">addRepo</a></span><span class="op">(</span><span class="st">"kjhealy"</span><span class="op">)</span></code></pre></div>
 <p>You can now install <code>covdata</code> in the usual way:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"covdata"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"covdata"</span><span class="op">)</span></code></pre></div>
 <p>To ensure that the <code>covdata</code> repository is always available, you can add the following line to your <code>.Rprofile</code> or <code>.Rprofile.site</code> file:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">drat</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/drat/man/addRepo.html">addRepo</a></span><span class="op">(</span><span class="st">"kjhealy"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">drat</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/drat/man/addRepo.html" class="external-link">addRepo</a></span><span class="op">(</span><span class="st">"kjhealy"</span><span class="op">)</span></code></pre></div>
 <p>With that in place you’ll be able to do <code>install.packages("covdata")</code> or <code>update.packages("covdata")</code> and have everything work as you’d expect.</p>
 <p>Note that my drat repository only contains data packages that are not on CRAN, so you will never be in danger of grabbing the wrong version of any other package.</p>
 </div>
 </div>
-<div id="loading-the-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#loading-the-data" class="anchor"></a>Loading the Data</h2>
+<div class="section level2">
+<h2 id="loading-the-data">Loading the Data<a class="anchor" aria-label="anchor" href="#loading-the-data"></a>
+</h2>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># Optional but strongly recommended</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span> <span class="co"># Optional but strongly recommended</span>
 <span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
 <span class="co">#&gt; ✓ ggplot2 3.3.5     ✓ purrr   0.3.4</span>
 <span class="co">#&gt; ✓ tibble  3.1.5     ✓ dplyr   1.0.7</span>
@@ -219,7 +214,7 @@
 <span class="co">#&gt; x dplyr::lag()           masks stats::lag()</span>
 <span class="co">#&gt; x readr::local_edition() masks testthat::local_edition()</span>
 <span class="co">#&gt; x dplyr::matches()       masks tidyr::matches(), testthat::matches()</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata">covdata</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata" class="external-link">covdata</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'covdata'</span>
 <span class="co">#&gt; The following object is masked from 'package:datasets':</span>
@@ -246,8 +241,8 @@
 <span class="co">#&gt; # … with 17,176 more rows, and 2 more variables: r14_cases &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   r14_deaths &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">apple_mobility</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op">==</span> <span class="st">"New York City"</span>, <span class="va">transportation_type</span> <span class="op">==</span> <span class="st">"walking"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">apple_mobility</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op">==</span> <span class="st">"New York City"</span>, <span class="va">transportation_type</span> <span class="op">==</span> <span class="st">"walking"</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 597 × 8</span>
 <span class="co">#&gt;    geo_type region        transportation_t… alternative_name sub_region country </span>
 <span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;             &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt;   </span>
@@ -263,8 +258,8 @@
 <span class="co">#&gt; 10 city     New York City walking           NYC              New York   United …</span>
 <span class="co">#&gt; # … with 587 more rows, and 2 more variables: date &lt;date&gt;, score &lt;dbl&gt;</span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">covus</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="st">"positive"</span>, 
+<code class="sourceCode R"><span class="va">covus</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">measure</span> <span class="op">==</span> <span class="st">"positive"</span>, 
          <span class="va">date</span> <span class="op">==</span> <span class="st">"2020-04-27"</span>, 
          <span class="va">state</span> <span class="op">==</span> <span class="st">"NJ"</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 1 × 7</span>
@@ -272,37 +267,37 @@
 <span class="co">#&gt;   &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;lgl&gt;              &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         </span>
 <span class="co">#&gt; 1 2020-04-27 NJ    34    NA                 positive 111188 Positive Tests</span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">nytcovcounty</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>uniq_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">county</span>, <span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">uniq_name</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number_si.html">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
-       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">nytcovcounty</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
+<code class="sourceCode R"><span class="va">nytcovcounty</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>uniq_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">county</span>, <span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="co"># Can't use FIPS because of how the NYT bundled cities</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">uniq_name</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>days_elapsed <span class="op">=</span> <span class="va">date</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">days_elapsed</span>, y <span class="op">=</span> <span class="va">cases</span>, group <span class="op">=</span> <span class="va">uniq_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">0.25</span>, color <span class="op">=</span> <span class="st">"gray20"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_log10</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number_si.html" class="external-link">label_number_si</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">state</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"COVID-19 Cumulative Recorded Cases by US County"</span>,
+       subtitle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"New York is bundled into a single area in this data.\nData as of"</span>, <span class="fu"><a href="https://rdrr.io/r/base/format.html" class="external-link">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">nytcovcounty</span><span class="op">$</span><span class="va">date</span><span class="op">)</span>, <span class="st">"%A, %B %e, %Y"</span><span class="op">)</span><span class="op">)</span>,
        x <span class="op">=</span> <span class="st">"Days since first case"</span>, y <span class="op">=</span> <span class="st">"Count of Cases (log 10 scale)"</span>, 
        caption <span class="op">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =</span>
 <span class="co">#&gt; "none")` instead.</span>
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span>
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
 <p><img src="reference/figures/README-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%"></p>
 </div>
-<div id="documentation-and-summary-codebook" class="section level2">
-<h2 class="hasAnchor">
-<a href="#documentation-and-summary-codebook" class="anchor"></a>Documentation and Summary Codebook</h2>
+<div class="section level2">
+<h2 id="documentation-and-summary-codebook">Documentation and Summary Codebook<a class="anchor" aria-label="anchor" href="#documentation-and-summary-codebook"></a>
+</h2>
 <p>To learn more about the different datasets available, consult the vignettes or, equivalently, <a href="https://kjhealy.github.io/covdata/articles/covdata.html">the package website</a>. For a codebook-like summary of the variables in each table, see the <a href="https://kjhealy.github.io/covdata/articles/codebook.html">Codebook vignette</a></p>
 </div>
-<div id="citing-the-covdata-package" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citing-the-covdata-package" class="anchor"></a>Citing the <code>covdata</code> package</h2>
+<div class="section level2">
+<h2 id="citing-the-covdata-package">Citing the <code>covdata</code> package<a class="anchor" aria-label="anchor" href="#citing-the-covdata-package"></a>
+</h2>
 <p>To cite the package use the following:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span><span class="st">"covdata"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"covdata"</span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite the package `covdata` in publications use:</span>
 <span class="co">#&gt; </span>
@@ -319,58 +314,61 @@
 <span class="co">#&gt;     url = {http://kjhealy.github.io/covdata},</span>
 <span class="co">#&gt;   }</span></code></pre></div>
 <p>Please be sure to also cite the specific data sources, as described in the documentation for each dataset.</p>
-<p>Mask icon in hex logo by <a href="https://www.flaticon.com/authors/freepik">Freepik</a>.</p>
+<p>Mask icon in hex logo by <a href="https://www.flaticon.com/authors/freepik" class="external-link">Freepik</a>.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/kjhealy/covdata/">https://​github.com/​kjhealy/​covdata/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/kjhealy/covdata/issues">https://​github.com/​kjhealy/​covdata/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
-</ul>
-</div>
-<div class="citation">
-<h2>Citation</h2>
-<ul class="list-unstyled">
-<li><a href="authors.html">Citing covdata</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>
-<a href="http://kieranhealy.org">Kieran Healy</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0001-9114-981X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="https://github.com/kjhealy/covdata/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/kjhealy/covdata/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/kjhealy/covdata/actions"><img src="https://github.com/kjhealy/covdata/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing covdata</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>
+<a href="http://kieranhealy.org" class="external-link">Kieran Healy</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0001-9114-981X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/kjhealy/covdata/actions" class="external-link"><img src="https://github.com/kjhealy/covdata/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://kieranhealy.org">Kieran Healy</a>.</p>
+  <p>Developed by .</p>
 </div>
 
 <div class="pkgdown">
-  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
+  <p>Made with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> , using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
       </footer>
@@ -378,6 +376,8 @@
 
   
 
+
+  
 
   </body>
 </html>

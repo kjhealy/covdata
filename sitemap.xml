@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kjhealy.github.io/covdata/404.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/codebook.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/covdata.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/ecdc-data.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/excess-mortality.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/mobility-data.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/new-york-times.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/articles/us-data.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/authors.html</loc>
+  </url>
+  <url>
     <loc>https://kjhealy.github.io/covdata/index.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/news/index.html</loc>
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/reference/MMWRweek2Date.html</loc>
@@ -50,6 +89,9 @@
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/reference/fmt_nr.html</loc>
+  </url>
+  <url>
+    <loc>https://kjhealy.github.io/covdata/reference/index.html</loc>
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/reference/mmwr_week_to_date.html</loc>
@@ -101,26 +143,5 @@
   </url>
   <url>
     <loc>https://kjhealy.github.io/covdata/reference/uspop.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/codebook.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/covdata.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/ecdc-data.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/excess-mortality.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/mobility-data.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/new-york-times.html</loc>
-  </url>
-  <url>
-    <loc>https://kjhealy.github.io/covdata/articles/us-data.html</loc>
   </url>
 </urlset>
