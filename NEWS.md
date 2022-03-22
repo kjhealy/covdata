@@ -1,3 +1,6 @@
+# covdata 0.9.2
+- Data refresh
+
 # covdata 0.8
 - Data refresh
 

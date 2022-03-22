@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovcounty}
 \alias{nytcovcounty}
-\title{NYT COVID-19 data for US counties, current as of Sunday, October 24, 2021}
+\title{NYT COVID-19 data for US counties, current as of Tuesday, March 22, 2022}
 \format{
-A tibble with 1,845,855 rows and 6 columns
+A tibble with 2,330,288 rows and 6 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{county}{County name (character)}
@@ -38,7 +38,7 @@ A dataset containing US county-level data on COVID-19, collected by the New York
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovcounty \cr
-   Number of rows \tab 1845855 \cr
+   Number of rows \tab 2330288 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -52,22 +52,22 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   county \tab 0 \tab 1.00 \tab 3 \tab 35 \tab 0 \tab 1930 \tab 0 \cr
+   county \tab 0 \tab 1.00 \tab 3 \tab 35 \tab 0 \tab 1931 \tab 0 \cr
    state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 56 \tab 0 \cr
-   fips \tab 16856 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3218 \tab 0 \cr
+   fips \tab 21746 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3219 \tab 0 \cr
 }
 
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2021-10-23 \tab 2021-01-12 \tab 642 \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2022-03-21 \tab 2021-03-28 \tab 791 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1.00 \tab 6282.94 \tab 29644.95 \tab 0 \tab 198 \tab 1081 \tab 3680 \tab 1484896 \tab ▇▁▁▁▁ \cr
-   deaths \tab 41849 \tab 0.98 \tab 120.08 \tab 692.06 \tab 0 \tab 3 \tab 21 \tab 70 \tab 34502 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1.00 \tab 8940.71 \tab 42204.84 \tab 0 \tab 331 \tab 1576 \tab 5231 \tab 2826127 \tab ▇▁▁▁▁ \cr
+   deaths \tab 53471 \tab 0.98 \tab 150.60 \tab 785.44 \tab 0 \tab 5 \tab 30 \tab 93 \tab 40022 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

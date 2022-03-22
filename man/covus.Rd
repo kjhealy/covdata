@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Sunday, October 24, 2021}
+\title{COVID-19 data for the USA, current as of Tuesday, March 22, 2022}
 \format{
 A tibble with 664,960 rows and 7 columns
 \describe{
@@ -65,7 +65,7 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   count \tab 434334 \tab 0.35 \tab 387381.6 \tab 1638404 \tab 0 \tab 497 \tab 7770 \tab 134185.8 \tab 49646014 \tab ▇▁▁▁▁ \cr
+   count \tab 434365 \tab 0.35 \tab 387436.8 \tab 1638507 \tab 0 \tab 498 \tab 7782 \tab 134223 \tab 49646014 \tab ▇▁▁▁▁ \cr
 }
 
 

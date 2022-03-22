@@ -5,7 +5,7 @@
 \alias{nchs_sas}
 \title{Provisional COVID-19 Death Counts by Sex, Age, and State}
 \format{
-A tibble with 68,850 rows and 15 variables:
+A tibble with 85,374 rows and 15 variables:
 \describe{
 \item{\code{data_as_of}}{date Date of data release}
 \item{\code{start_date}}{date First date of data period}
@@ -37,7 +37,7 @@ Deaths involving coronavirus disease (COVID-19), pneumonia, and influenza report
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_sas \cr
-   Number of rows \tab 68850 \cr
+   Number of rows \tab 85374 \cr
    Number of columns \tab 15 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -51,8 +51,8 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 22 \tab 0 \cr
-   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 22 \tab 0 \cr
+   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 27 \tab 0 \cr
+   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 27 \tab 0 \cr
    group \tab 0 \tab 1 \tab 7 \tab 8 \tab 0 \tab 3 \tab 0 \cr
    state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
    sex \tab 0 \tab 1 \tab 4 \tab 9 \tab 0 \tab 3 \tab 0 \cr
@@ -62,20 +62,20 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2021-10-20 \tab 2021-10-20 \tab 2021-10-20 \tab 1 \cr
+   data_as_of \tab 0 \tab 1 \tab 2022-03-16 \tab 2022-03-16 \tab 2022-03-16 \tab 1 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   year \tab 2754 \tab 0.96 \tab 2020.46 \tab 0.50 \tab 2020 \tab 2020 \tab 2020 \tab 2021 \tab 2021 \tab ▇▁▁▁▇ \cr
-   month \tab 8262 \tab 0.88 \tab 6.05 \tab 3.24 \tab 1 \tab 3 \tab 6 \tab 9 \tab 12 \tab ▇▅▅▅▅ \cr
-   covid_19_deaths \tab 17426 \tab 0.75 \tab 378.18 \tab 5630.70 \tab 0 \tab 0 \tab 10 \tab 64 \tab 723880 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 10078 \tab 0.85 \tab 2755.89 \tab 42362.22 \tab 0 \tab 42 \tab 154 \tab 683 \tab 5928410 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 21071 \tab 0.69 \tab 365.54 \tab 5210.91 \tab 0 \tab 0 \tab 18 \tab 83 \tab 649389 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 17202 \tab 0.75 \tab 193.10 \tab 2881.39 \tab 0 \tab 0 \tab 0 \tab 31 \tab 369136 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 11185 \tab 0.84 \tab 4.16 \tab 78.59 \tab 0 \tab 0 \tab 0 \tab 0 \tab 9372 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 20481 \tab 0.70 \tab 561.74 \tab 8077.07 \tab 0 \tab 0 \tab 26 \tab 122 \tab 1012160 \tab ▇▁▁▁▁ \cr
+   year \tab 2754 \tab 0.97 \tab 2020.70 \tab 0.69 \tab 2020 \tab 2020 \tab 2021 \tab 2021 \tab 2022 \tab ▇▁▇▁▂ \cr
+   month \tab 11016 \tab 0.87 \tab 6.00 \tab 3.56 \tab 1 \tab 3 \tab 6 \tab 9 \tab 12 \tab ▇▃▃▃▅ \cr
+   covid_19_deaths \tab 21441 \tab 0.75 \tab 409.04 \tab 6470.59 \tab 0 \tab 0 \tab 12 \tab 77 \tab 967044 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 12424 \tab 0.85 \tab 2790.26 \tab 46372.88 \tab 0 \tab 42 \tab 154 \tab 681 \tab 7451652 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 25425 \tab 0.70 \tab 382.21 \tab 5875.05 \tab 0 \tab 0 \tab 19 \tab 88 \tab 848894 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 21238 \tab 0.75 \tab 212.42 \tab 3378.14 \tab 0 \tab 0 \tab 0 \tab 38 \tab 501202 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 14370 \tab 0.83 \tab 3.75 \tab 75.73 \tab 0 \tab 0 \tab 0 \tab 0 \tab 10618 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 24576 \tab 0.71 \tab 587.19 \tab 9066.19 \tab 0 \tab 0 \tab 28 \tab 132 \tab 1323785 \tab ▇▁▁▁▁ \cr
 }
 
 
