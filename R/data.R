@@ -519,13 +519,12 @@
 #' @description Data from Apple Maps on relative changes in mobility in various cities and countries.
 #' @format A data frame with `r fmt_nr(apple_mobility)` rows and `r fmt_nc(apple_mobility)` variables:
 #' \describe{
-#'   \item{\code{geo_type}}{character Type geographical unit. Values: city or country/region}
-#'   \item{\code{region}}{character Name of geographical unit.}
-#'   \item{\code{transportation_type}}{character Mode of transport. Values: Driving, Transit, or Walking}
-#'   \item{\code{alternative_name}}{character Name of `region` in local language}
-#'   \item{\code{sub_region}}{character Subregion}
 #'   \item{\code{country}}{character Country name (not provided for all countries)}
-#'   \item{\code{date}}{double Date in yyyy-mm-dddd format}
+#'   \item{\code{sub_region}}{character Subregion names}
+#'   \item{\code{subregion_and_city}}{character Subregion and city names}
+#'   \item{\code{geo_type}}{character Type geographical unit. Values: city, country/region, sub-region}
+#'   \item{\code{transportation_type}}{character Mode of transport. Values: driving, transit, or walking}
+#'   \item{\code{date}}{double Date in yyyy-mm-dd format}
 #'   \item{\code{score}}{double Activity score. Indexed to 100 on the first date of observation for a given mode of transport.}
 #'}
 #' @details
@@ -679,5 +678,4 @@
 #' @author Kieran Healy
 #' @source 2014-2019: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/3yf8-kanr}.
 #' 2020-2021: \url{https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6}
-#' @references
 "nchs_wdc"

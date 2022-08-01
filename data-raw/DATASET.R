@@ -157,7 +157,7 @@ get_google_data <- function(url = "https://www.gstatic.com/covid19/mobility/",
 ###  mortality.org Short Term Mortality Fluctuations data
 ###  --------------------------------------------------------------------------------------
 
-get_stmf <- function(url = "https://www.mortality.org/Public/STMF/Outputs",
+get_stmf <- function(url = "https://www.mortality.org/File/GetDocument/Public/STMF/Outputs",
                      fname = "stmf",
                      date = lubridate::today(),
                      ext = "csv",
@@ -1118,15 +1118,23 @@ nchs_wdc <- bind_rows(nchs_wdc1419, nchs_WDC2021) %>%
 ### Apple and Google
 ### --------------------------------------------------
 
-## Apple Mobility Data
-apple_mobility <- get_apple_data(save_file = "y") %>%
-  pivot_longer(cols = starts_with("x"),
-               names_to = "date", values_to = "index") %>%
-  mutate(
-    date = stringr::str_remove(date, "x"),
-    date = stringr::str_replace_all(date, "_", "-"),
-    date = as_date(date)) %>%
-  rename(score = index)
+## Apple Mobility Data ended April 2022
+# apple_mobility <- get_apple_data(save_file = "y") %>%
+#   pivot_longer(cols = starts_with("x"),
+#                names_to = "date", values_to = "index") %>%
+#   mutate(
+#     date = stringr::str_remove(date, "x"),
+#     date = stringr::str_replace_all(date, "_", "-"),
+#     date = as_date(date)) %>%
+#   rename(score = index)
+
+apple_mobility <- read_csv("data-raw/data/apple_mobility_report_final.csv") |>
+  janitor::clean_names() |>
+    pivot_longer(cols = driving:walking,
+                 names_to = "transportation_type", values_to = "score") |>
+  mutate(score = score + 100) |>
+  arrange(country, transportation_type)
+
 
 ### --------------------------------------------------
 ### Get mortality.org data

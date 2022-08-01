@@ -11,7 +11,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Tuesday, March 22, 2022. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Monday, August  1, 2022. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -35,7 +35,7 @@
 ## Caveat Emptor
 
 **The data are provided as-is**. More information about collection methods, scope, limits, and possible sources of error in the data can be found in the documentation provided by their respective sources. Follow the links above, and see the vignettes in the package. The collection and effective reporting of case and mortality data by national governments has technical and political aspects influenced by, amongst other things, the varying capacity of states to test, track and measure events in a timely fashion, the varying definitions, criteria, and methods employed by states in registering cases and deaths, and the role of politics in the exercise of capacity and the reporting of unflattering news. Researchers should take care to familiarize themselves with these issues prior to making strong claims based on these data.
-
+    
 ## Installation
 
 There are two ways to install the `covdata` package. 
@@ -96,64 +96,60 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ```r
 library(tidyverse) # Optional but strongly recommended
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-#> ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-#> ✓ tibble  3.1.6     ✓ dplyr   1.0.8
-#> ✓ tidyr   1.2.0     ✓ stringr 1.4.0
-#> ✓ readr   2.1.2     ✓ forcats 0.5.1
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+#> ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+#> ✔ tibble  3.1.8     ✔ dplyr   1.0.9
+#> ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+#> ✔ readr   2.1.2     ✔ forcats 0.5.1
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> x readr::edition_get()   masks testthat::edition_get()
-#> x dplyr::filter()        masks stats::filter()
-#> x purrr::is_null()       masks testthat::is_null()
-#> x dplyr::lag()           masks stats::lag()
-#> x readr::local_edition() masks testthat::local_edition()
-#> x dplyr::matches()       masks tidyr::matches(), testthat::matches()
+#> ✖ dplyr::filter() masks stats::filter()
+#> ✖ dplyr::lag()    masks stats::lag()
 library(covdata)
 #> 
 #> Attaching package: 'covdata'
+#> 
 #> The following object is masked from 'package:datasets':
 #> 
 #>     uspop
-#> The following object is masked from 'package:kjhutils':
-#> 
-#>     %nin%
 
 covnat_weekly
-#> # A tibble: 18,740 × 11
-#>    date       year_week cname       iso3     pop cases deaths cu_cases cu_deaths
-#>    <date>     <chr>     <chr>       <chr>  <dbl> <dbl>  <dbl>    <dbl>     <dbl>
-#>  1 2019-12-30 2020-01   Afghanistan AFG   3.89e7     0      0        0         0
-#>  2 2020-01-06 2020-02   Afghanistan AFG   3.89e7     0      0        0         0
-#>  3 2020-01-13 2020-03   Afghanistan AFG   3.89e7     0      0        0         0
-#>  4 2020-01-20 2020-04   Afghanistan AFG   3.89e7     0      0        0         0
-#>  5 2020-01-27 2020-05   Afghanistan AFG   3.89e7     0      0        0         0
-#>  6 2020-02-03 2020-06   Afghanistan AFG   3.89e7     0      0        0         0
-#>  7 2020-02-10 2020-07   Afghanistan AFG   3.89e7     0      0        0         0
-#>  8 2020-02-17 2020-08   Afghanistan AFG   3.89e7     0      0        0         0
-#>  9 2020-02-24 2020-09   Afghanistan AFG   3.89e7     1      0        1         0
-#> 10 2020-03-02 2020-10   Afghanistan AFG   3.89e7     3      0        4         0
-#> # … with 18,730 more rows, and 2 more variables: r14_cases <dbl>,
-#> #   r14_deaths <dbl>
+#> # A tibble: 4,020 × 11
+#>    date       year_week cname  iso3     pop cases deaths cu_ca…¹ cu_de…² r14_c…³
+#>    <date>     <chr>     <chr>  <chr>  <dbl> <dbl>  <dbl>   <dbl>   <dbl>   <dbl>
+#>  1 2019-12-30 2020-01   Austr… AUT   8.93e6     0      0       0       0  NA    
+#>  2 2020-01-06 2020-02   Austr… AUT   8.93e6     0      0       0       0   0    
+#>  3 2020-01-13 2020-03   Austr… AUT   8.93e6     0      0       0       0   0    
+#>  4 2020-01-20 2020-04   Austr… AUT   8.93e6     0      0       0       0   0    
+#>  5 2020-01-27 2020-05   Austr… AUT   8.93e6     0      0       0       0   0    
+#>  6 2020-02-03 2020-06   Austr… AUT   8.93e6     0      0       0       0   0    
+#>  7 2020-02-10 2020-07   Austr… AUT   8.93e6     0      0       0       0   0    
+#>  8 2020-02-17 2020-08   Austr… AUT   8.93e6     0      0       0       0   0    
+#>  9 2020-02-24 2020-09   Austr… AUT   8.93e6    12      0      12       0   0.134
+#> 10 2020-03-02 2020-10   Austr… AUT   8.93e6   114      0     126       0   1.41 
+#> # … with 4,010 more rows, 1 more variable: r14_deaths <dbl>, and abbreviated
+#> #   variable names ¹​cu_cases, ²​cu_deaths, ³​r14_cases
+#> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 
 ```r
 apple_mobility %>%
-  filter(region == "New York City", transportation_type == "walking")
-#> # A tibble: 645 × 8
-#>    geo_type region        transportation_ty… alternative_name sub_region country
-#>    <chr>    <chr>         <chr>              <chr>            <chr>      <chr>  
-#>  1 city     New York City walking            NYC              New York   United…
-#>  2 city     New York City walking            NYC              New York   United…
-#>  3 city     New York City walking            NYC              New York   United…
-#>  4 city     New York City walking            NYC              New York   United…
-#>  5 city     New York City walking            NYC              New York   United…
-#>  6 city     New York City walking            NYC              New York   United…
-#>  7 city     New York City walking            NYC              New York   United…
-#>  8 city     New York City walking            NYC              New York   United…
-#>  9 city     New York City walking            NYC              New York   United…
-#> 10 city     New York City walking            NYC              New York   United…
-#> # … with 635 more rows, and 2 more variables: date <date>, score <dbl>
+  filter(subregion_and_city == "New York City", transportation_type == "walking")
+#> # A tibble: 817 × 7
+#>    country       sub_region subregion_and_city geo_type date       trans…¹ score
+#>    <chr>         <chr>      <chr>              <chr>    <date>     <chr>   <dbl>
+#>  1 United States New York   New York City      city     2020-01-13 walking 100  
+#>  2 United States New York   New York City      city     2020-01-14 walking  96.1
+#>  3 United States New York   New York City      city     2020-01-15 walking 106. 
+#>  4 United States New York   New York City      city     2020-01-16 walking 102. 
+#>  5 United States New York   New York City      city     2020-01-17 walking 117. 
+#>  6 United States New York   New York City      city     2020-01-18 walking 115. 
+#>  7 United States New York   New York City      city     2020-01-19 walking 110. 
+#>  8 United States New York   New York City      city     2020-01-20 walking  88.6
+#>  9 United States New York   New York City      city     2020-01-21 walking  91.1
+#> 10 United States New York   New York City      city     2020-01-22 walking  98.5
+#> # … with 807 more rows, and abbreviated variable name ¹​transportation_type
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 
@@ -184,6 +180,10 @@ nytcovcounty %>%
        x = "Days since first case", y = "Count of Cases (log 10 scale)", 
        caption = "Data: The New York Times | Graph: @kjhealy") + 
   theme_minimal()
+#> Warning: `label_number_si()` was deprecated in scales 1.2.0.
+#> Please use the `scale_cut` argument of `label_number()` instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 #> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
 #> "none")` instead.
 #> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.

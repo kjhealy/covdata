@@ -3,7 +3,7 @@
 \docType{data}
 \name{covus}
 \alias{covus}
-\title{COVID-19 data for the USA, current as of Tuesday, March 22, 2022}
+\title{COVID-19 data for the USA, current as of Monday, August  1, 2022}
 \format{
 A tibble with 664,960 rows and 7 columns
 \describe{
@@ -33,12 +33,18 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 7 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 4 \cr
    Date \tab 1 \cr
+   character \tab 4 \cr
    logical \tab 1 \cr
    numeric \tab 1 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-03-07 \tab 2020-09-03 \tab 420 \cr
 }
 
 
@@ -48,12 +54,6 @@ Table: Data summary\tabular{ll}{
    fips \tab 0 \tab 1 \tab 2 \tab 2 \tab 0 \tab 56 \tab 0 \cr
    measure \tab 0 \tab 1 \tab 5 \tab 30 \tab 0 \tab 31 \tab 0 \cr
    measure_label \tab 0 \tab 1 \tab 6 \tab 54 \tab 0 \tab 32 \tab 0 \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-13 \tab 2021-03-07 \tab 2020-09-03 \tab 420 \cr
 }
 
 

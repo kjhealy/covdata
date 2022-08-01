@@ -1,3 +1,9 @@
+# covdata 1.0
+- Data refresh
+- Fixes for fetching
+- Apple mobility data is now frozen (Apple stopped releasing mobility data on April 14th, 2022)
+- *Breaking change*: The `apple_mobility` data object's layout has changed and it is now more compact. See docs for new variable names.
+
 # covdata 0.9.2
 - Data refresh
 

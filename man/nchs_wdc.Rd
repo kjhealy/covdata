@@ -5,7 +5,7 @@
 \alias{nchs_wdc}
 \title{Weekly Counts of Deaths by State and Select Causes 2014-2021}
 \format{
-A data frame with 312,066 rows and 7 variables:
+A data frame with 327,456 rows and 7 variables:
 \describe{
 \item{\code{jurisdiction}}{character Jurisdiction of Occurrence}
 \item{\code{year}}{double MMWR Year}
@@ -29,9 +29,6 @@ Final counts of deaths by the week the deaths occurred, by state of occurrence, 
 \details{
 For 2014-2019, death counts in this dataset were derived from the National Vital Statistics System database that provides the most timely access to the data. Therefore, counts may differ slightly from final data due to differences in processing, recoding, and imputation. For 2019-2021, the dataset also includes weekly provisional counts of death for COVID-19, coded to ICD-10 code U07.1 as an underlying or multiple cause of death.
 Number of deaths reported in this table are the total number of deaths received and coded as of the date of analysis, and do not represent all deaths that occurred in that period. Data for 2020 and 2021 are provisional and may be incomplete because of the lag in time between when the death occurred and when the death certificate is completed, submitted to NCHS and processed for reporting purposes. Causes of death included in this dataset are tabulated by underlying cause of death ICD-10 codes. COVID-19 deaths by underlying cause and multiple cause of death are also included.
-}
-\references{
-
 }
 \author{
 Kieran Healy

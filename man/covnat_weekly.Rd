@@ -3,9 +3,9 @@
 \docType{data}
 \name{covnat_weekly}
 \alias{covnat_weekly}
-\title{Weekly International COVID-19 cases and deaths, current as of Tuesday, March 22, 2022}
+\title{Weekly International COVID-19 cases and deaths, current as of Monday, August  1, 2022}
 \format{
-A tibble with 23,583 rows and 11 columns
+A tibble with 4,020 rows and 11 columns
 \describe{
 \item{date}{date in YYYY-MM-DD format}
 \item{year_week}{Year and week of reporting (character, YYYY-WW)}
@@ -33,41 +33,41 @@ A dataset containing weekly national-level ECDC data on COVID-19
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab dplyr::ungroup(covnat_wee... \cr
-   Number of rows \tab 23583 \cr
+   Number of rows \tab 4020 \cr
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 3 \cr
    Date \tab 1 \cr
+   character \tab 3 \cr
    numeric \tab 7 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   year_week \tab 0 \tab 1.00 \tab 7 \tab 7 \tab 0 \tab 115 \tab 0 \cr
-   cname \tab 0 \tab 1.00 \tab 4 \tab 33 \tab 0 \tab 226 \tab 0 \cr
-   iso3 \tab 686 \tab 0.97 \tab 3 \tab 3 \tab 0 \tab 220 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2019-12-30 \tab 2022-07-18 \tab 2021-04-08 \tab 134 \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2019-12-30 \tab 2022-03-07 \tab 2021-03-01 \tab 115 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   year_week \tab 0 \tab 1 \tab 7 \tab 7 \tab 0 \tab 134 \tab 0 \cr
+   cname \tab 0 \tab 1 \tab 5 \tab 13 \tab 0 \tab 30 \tab 0 \cr
+   iso3 \tab 0 \tab 1 \tab 3 \tab 3 \tab 0 \tab 30 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   pop \tab 0 \tab 1.00 \tab 75607486.77 \tab 360051944.95 \tab 809.00 \tab 896444.00 \tab 7132530.00 \tab 29825968.00 \tab 4.498460e+09 \tab ▇▁▁▁▁ \cr
-   cases \tab 193 \tab 0.99 \tab 43162.81 \tab 310312.43 \tab -3864.00 \tab 35.00 \tab 567.00 \tab 6080.25 \tab 1.146193e+07 \tab ▇▁▁▁▁ \cr
-   deaths \tab 193 \tab 0.99 \tab 556.49 \tab 2876.38 \tab -2334.00 \tab 0.00 \tab 7.00 \tab 82.00 \tab 5.049600e+04 \tab ▇▁▁▁▁ \cr
-   cu_cases \tab 0 \tab 1.00 \tab 1364783.70 \tab 8021746.94 \tab 0.00 \tab 1550.50 \tab 20577.00 \tab 246468.50 \tab 1.839442e+08 \tab ▇▁▁▁▁ \cr
-   cu_deaths \tab 0 \tab 1.00 \tab 27160.75 \tab 147801.57 \tab 0.00 \tab 22.00 \tab 318.00 \tab 4399.50 \tab 2.667857e+06 \tab ▇▁▁▁▁ \cr
-   r14_cases \tab 421 \tab 0.98 \tab 236.98 \tab 735.79 \tab -1.06 \tab 2.43 \tab 26.32 \tab 175.96 \tab 2.039497e+04 \tab ▇▁▁▁▁ \cr
-   r14_deaths \tab 421 \tab 0.98 \tab 21.18 \tab 46.68 \tab -67.13 \tab 0.00 \tab 2.71 \tab 21.38 \tab 1.395030e+03 \tab ▇▁▁▁▁ \cr
+   pop \tab 0 \tab 1.00 \tab 15100599.30 \tab 21212299.89 \tab 39055 \tab 2108977.00 \tab 6378296.50 \tab 11566041.00 \tab 83155031.00 \tab ▇▁▁▁▁ \cr
+   cases \tab 1 \tab 1.00 \tab 39733.12 \tab 137395.23 \tab 0 \tab 586.00 \tab 4316.00 \tab 23601.50 \tab 2486551.00 \tab ▇▁▁▁▁ \cr
+   deaths \tab 1 \tab 1.00 \tab 281.97 \tab 669.46 \tab 0 \tab 4.00 \tab 37.00 \tab 224.00 \tab 6208.00 \tab ▇▁▁▁▁ \cr
+   cu_cases \tab 8 \tab 1.00 \tab 1392712.83 \tab 3506801.41 \tab 0 \tab 13334.50 \tab 221047.00 \tab 1157053.50 \tab 33576269.00 \tab ▇▁▁▁▁ \cr
+   cu_deaths \tab 8 \tab 1.00 \tab 18874.03 \tab 34136.00 \tab 0 \tab 265.00 \tab 4089.50 \tab 19110.25 \tab 172554.00 \tab ▇▁▁▁▁ \cr
+   r14_cases \tab 32 \tab 0.99 \tab 578.69 \tab 1143.40 \tab 0 \tab 28.47 \tab 180.38 \tab 560.60 \tab 13728.65 \tab ▇▁▁▁▁ \cr
+   r14_deaths \tab 32 \tab 0.99 \tab 37.39 \tab 55.73 \tab 0 \tab 2.61 \tab 13.54 \tab 48.62 \tab 435.28 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}

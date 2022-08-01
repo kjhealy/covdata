@@ -5,7 +5,7 @@
 \alias{nchs_sas}
 \title{Provisional COVID-19 Death Counts by Sex, Age, and State}
 \format{
-A tibble with 85,374 rows and 15 variables:
+A tibble with 96,390 rows and 15 variables:
 \describe{
 \item{\code{data_as_of}}{date Date of data release}
 \item{\code{start_date}}{date First date of data period}
@@ -37,22 +37,28 @@ Deaths involving coronavirus disease (COVID-19), pneumonia, and influenza report
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nchs_sas \cr
-   Number of rows \tab 85374 \cr
+   Number of rows \tab 96390 \cr
    Number of columns \tab 15 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 6 \cr
    Date \tab 1 \cr
+   character \tab 6 \cr
    numeric \tab 8 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   data_as_of \tab 0 \tab 1 \tab 2022-07-27 \tab 2022-07-27 \tab 2022-07-27 \tab 1 \cr
+}
+
+
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 27 \tab 0 \cr
-   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 27 \tab 0 \cr
+   start_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 31 \tab 0 \cr
+   end_date \tab 0 \tab 1 \tab 10 \tab 10 \tab 0 \tab 31 \tab 0 \cr
    group \tab 0 \tab 1 \tab 7 \tab 8 \tab 0 \tab 3 \tab 0 \cr
    state \tab 0 \tab 1 \tab 4 \tab 20 \tab 0 \tab 54 \tab 0 \cr
    sex \tab 0 \tab 1 \tab 4 \tab 9 \tab 0 \tab 3 \tab 0 \cr
@@ -60,22 +66,16 @@ Table: Data summary\tabular{ll}{
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   data_as_of \tab 0 \tab 1 \tab 2022-03-16 \tab 2022-03-16 \tab 2022-03-16 \tab 1 \cr
-}
-
-
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   year \tab 2754 \tab 0.97 \tab 2020.70 \tab 0.69 \tab 2020 \tab 2020 \tab 2021 \tab 2021 \tab 2022 \tab ▇▁▇▁▂ \cr
-   month \tab 11016 \tab 0.87 \tab 6.00 \tab 3.56 \tab 1 \tab 3 \tab 6 \tab 9 \tab 12 \tab ▇▃▃▃▅ \cr
-   covid_19_deaths \tab 21441 \tab 0.75 \tab 409.04 \tab 6470.59 \tab 0 \tab 0 \tab 12 \tab 77 \tab 967044 \tab ▇▁▁▁▁ \cr
-   total_deaths \tab 12424 \tab 0.85 \tab 2790.26 \tab 46372.88 \tab 0 \tab 42 \tab 154 \tab 681 \tab 7451652 \tab ▇▁▁▁▁ \cr
-   pneumonia_deaths \tab 25425 \tab 0.70 \tab 382.21 \tab 5875.05 \tab 0 \tab 0 \tab 19 \tab 88 \tab 848894 \tab ▇▁▁▁▁ \cr
-   pneumonia_and_covid_19_deaths \tab 21238 \tab 0.75 \tab 212.42 \tab 3378.14 \tab 0 \tab 0 \tab 0 \tab 38 \tab 501202 \tab ▇▁▁▁▁ \cr
-   influenza_deaths \tab 14370 \tab 0.83 \tab 3.75 \tab 75.73 \tab 0 \tab 0 \tab 0 \tab 0 \tab 10618 \tab ▇▁▁▁▁ \cr
-   pneumonia_influenza_or_covid_19_deaths \tab 24576 \tab 0.71 \tab 587.19 \tab 9066.19 \tab 0 \tab 0 \tab 28 \tab 132 \tab 1323785 \tab ▇▁▁▁▁ \cr
+   year \tab 2754 \tab 0.97 \tab 2020.85 \tab 0.77 \tab 2020 \tab 2020 \tab 2021 \tab 2021 \tab 2022 \tab ▇▁▇▁▅ \cr
+   month \tab 11016 \tab 0.89 \tab 5.94 \tab 3.35 \tab 1 \tab 3 \tab 6 \tab 9 \tab 12 \tab ▇▅▅▃▅ \cr
+   covid_19_deaths \tab 25409 \tab 0.74 \tab 388.87 \tab 6419.87 \tab 0 \tab 0 \tab 12 \tab 70 \tab 1021194 \tab ▇▁▁▁▁ \cr
+   total_deaths \tab 14010 \tab 0.85 \tab 2841.46 \tab 48926.28 \tab 0 \tab 43 \tab 157 \tab 685 \tab 8570183 \tab ▇▁▁▁▁ \cr
+   pneumonia_deaths \tab 29533 \tab 0.69 \tab 374.42 \tab 5979.35 \tab 0 \tab 0 \tab 19 \tab 85 \tab 927760 \tab ▇▁▁▁▁ \cr
+   pneumonia_and_covid_19_deaths \tab 24826 \tab 0.74 \tab 199.07 \tab 3317.89 \tab 0 \tab 0 \tab 0 \tab 34 \tab 524434 \tab ▇▁▁▁▁ \cr
+   influenza_deaths \tab 17319 \tab 0.82 \tab 3.80 \tab 77.95 \tab 0 \tab 0 \tab 0 \tab 0 \tab 12096 \tab ▇▁▁▁▁ \cr
+   pneumonia_influenza_or_covid_19_deaths \tab 28784 \tab 0.70 \tab 572.19 \tab 9181.05 \tab 0 \tab 0 \tab 27 \tab 126 \tab 1434850 \tab ▇▁▁▁▁ \cr
 }
 
 

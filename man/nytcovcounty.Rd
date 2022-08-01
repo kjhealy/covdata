@@ -3,9 +3,9 @@
 \docType{data}
 \name{nytcovcounty}
 \alias{nytcovcounty}
-\title{NYT COVID-19 data for US counties, current as of Tuesday, March 22, 2022}
+\title{NYT COVID-19 data for US counties, current as of Monday, August  1, 2022}
 \format{
-A tibble with 2,330,288 rows and 6 columns
+A tibble with 2,502,832 rows and 6 columns
 \describe{
 \item{date}{Date in YYYY-MM-DD format (date)}
 \item{county}{County name (character)}
@@ -38,36 +38,36 @@ A dataset containing US county-level data on COVID-19, collected by the New York
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nytcovcounty \cr
-   Number of rows \tab 2330288 \cr
+   Number of rows \tab 2502832 \cr
    Number of columns \tab 6 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 3 \cr
    Date \tab 1 \cr
+   character \tab 3 \cr
    numeric \tab 2 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
 }
 
 
-\strong{Variable type: character}\tabular{lrrrrrrr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   county \tab 0 \tab 1.00 \tab 3 \tab 35 \tab 0 \tab 1931 \tab 0 \cr
-   state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 56 \tab 0 \cr
-   fips \tab 21746 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3219 \tab 0 \cr
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2022-05-13 \tab 2021-04-23 \tab 844 \cr
 }
 
 
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   date \tab 0 \tab 1 \tab 2020-01-21 \tab 2022-03-21 \tab 2021-03-28 \tab 791 \cr
+\strong{Variable type: character}\tabular{lrrrrrrr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
+   county \tab 0 \tab 1.00 \tab 3 \tab 35 \tab 0 \tab 1932 \tab 0 \cr
+   state \tab 0 \tab 1.00 \tab 4 \tab 24 \tab 0 \tab 56 \tab 0 \cr
+   fips \tab 23678 \tab 0.99 \tab 5 \tab 5 \tab 0 \tab 3220 \tab 0 \cr
 }
 
 
 \strong{Variable type: numeric}\tabular{lrrrrrrrrrl}{
    skim_variable \tab n_missing \tab complete_rate \tab mean \tab sd \tab p0 \tab p25 \tab p50 \tab p75 \tab p100 \tab hist \cr
-   cases \tab 0 \tab 1.00 \tab 8940.71 \tab 42204.84 \tab 0 \tab 331 \tab 1576 \tab 5231 \tab 2826127 \tab ▇▁▁▁▁ \cr
-   deaths \tab 53471 \tab 0.98 \tab 150.60 \tab 785.44 \tab 0 \tab 5 \tab 30 \tab 93 \tab 40022 \tab ▇▁▁▁▁ \cr
+   cases \tab 0 \tab 1.00 \tab 10033.80 \tab 47525.22 \tab 0 \tab 382 \tab 1773 \tab 5884 \tab 2908425 \tab ▇▁▁▁▁ \cr
+   deaths \tab 57605 \tab 0.98 \tab 161.61 \tab 820.33 \tab 0 \tab 6 \tab 33 \tab 101 \tab 40267 \tab ▇▁▁▁▁ \cr
 }
 }
 \keyword{datasets}
