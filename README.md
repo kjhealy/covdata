@@ -11,7 +11,7 @@
 
 ## About the package
 
-`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Monday, August  1, 2022. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
+`covdata` is a data package for R that collects and bundles datasets related to [the COVID-19 pandemic](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) from a variety of sources. The data are current as of Sunday, January 22, 2023. Minimal post-processing of the data has been done in comparison to the original sources, beyond conversion to [tibbles](https://tibble.tidyverse.org) and transformation into [narrow](https://en.wikipedia.org/wiki/Wide_and_narrow_data)- or [tidy](https://en.wikipedia.org/wiki/Tidy_data) form. Occasionally some additional variables have been added (mostly [ISO country codes](https://en.wikipedia.org/wiki/ISO_3166-1)) to facilitate comparison across the datasets or their integration with other sources. 
 
 `covdata` provides the following: 
 
@@ -96,12 +96,12 @@ Note that my drat repository only contains data packages that are not on CRAN, s
 
 ```r
 library(tidyverse) # Optional but strongly recommended
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-#> ✔ tibble  3.1.8     ✔ dplyr   1.0.9
-#> ✔ tidyr   1.2.0     ✔ stringr 1.4.0
-#> ✔ readr   2.1.2     ✔ forcats 0.5.1
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Attaching packages ──────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──
+#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
+#> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+#> ✔ readr   2.1.3      ✔ forcats 0.5.2 
+#> ── Conflicts ─────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 library(covdata)
@@ -128,7 +128,6 @@ covnat_weekly
 #> 10 2020-03-02 2020-10   Austr… AUT   8.93e6   114      0     126       0   1.41 
 #> # … with 4,010 more rows, 1 more variable: r14_deaths <dbl>, and abbreviated
 #> #   variable names ¹​cu_cases, ²​cu_deaths, ³​r14_cases
-#> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 
@@ -149,7 +148,6 @@ apple_mobility %>%
 #>  9 United States New York   New York City      city     2020-01-21 walking  91.1
 #> 10 United States New York   New York City      city     2020-01-22 walking  98.5
 #> # … with 807 more rows, and abbreviated variable name ¹​transportation_type
-#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 
@@ -180,17 +178,18 @@ nytcovcounty %>%
        x = "Days since first case", y = "Count of Cases (log 10 scale)", 
        caption = "Data: The New York Times | Graph: @kjhealy") + 
   theme_minimal()
+#> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+#> ℹ Please use `linewidth` instead.
 #> Warning: `label_number_si()` was deprecated in scales 1.2.0.
-#> Please use the `scale_cut` argument of `label_number()` instead.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
-#> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
-#> "none")` instead.
-#> Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.
+#> ℹ Please use the `scale_cut` argument of `label_number()` instead.
+#> Warning: The `<scale>` argument of `guides()` cannot be `FALSE`. Use "none"
+#> instead as of ggplot2 3.3.4.
+#> Don't know how to automatically pick scale for object of type <difftime>.
+#> Defaulting to continuous.
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="man/figures/README-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%" />
+<img src="man/figures/README-plot-1.png" alt="plot of chunk plot" width="100%" />
 
 
 ## Documentation and Summary Codebook 

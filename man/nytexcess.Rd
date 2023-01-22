@@ -3,7 +3,7 @@
 \docType{data}
 \name{nytexcess}
 \alias{nytexcess}
-\title{NYT Excess Mortality Estimates, current as of Monday, August  1, 2022}
+\title{NYT Excess Mortality Estimates, current as of Sunday, January 22, 2023}
 \format{
 A tibble with 7,258 rows and 12 columns
 \describe{
