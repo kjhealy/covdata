@@ -49,7 +49,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.01</span>
       </span>
     </div>
 
@@ -132,10 +132,10 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2</span> 3.3.6     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr  </span> 0.3.4</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble </span> 3.1.8     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr  </span> 1.0.9</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr  </span> 1.2.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr</span> 1.4.0</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr  </span> 2.1.2     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats</span> 0.5.1</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2</span> 3.4.0      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr  </span> 1.0.1 </span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble </span> 3.1.8      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr  </span> 1.0.10</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr  </span> 1.2.1      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr</span> 1.5.0 </span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr  </span> 2.1.3      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats</span> 0.5.2 </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></span>
@@ -173,8 +173,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2021-03-07 AK    02    <span style="color: #BB0000;">NA</span>                 in_icu_cumulative        <span style="color: #BB0000;">NA</span> Cumula…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2021-03-07 AK    02    <span style="color: #BB0000;">NA</span>                 on_ventilator_curren…     2 Curren…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2021-03-07 AK    02    <span style="color: #BB0000;">NA</span>                 on_ventilator_cumula…    <span style="color: #BB0000;">NA</span> Cumula…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 664,950 more rows, and abbreviated variable name ¹​measure_label</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 664,950 more rows, and abbreviated variable name ¹​measure_label</span></span></span></code></pre></div>
 <div class="section level3">
 <h3 id="draw-a-log-linear-graph-of-cumulative-reported-us-cases-">Draw a log-linear graph of cumulative reported US cases.<a class="anchor" aria-label="anchor" href="#draw-a-log-linear-graph-of-cumulative-reported-us-cases-"></a>
 </h3>
@@ -217,10 +216,13 @@
 <span>       x <span class="op">=</span> <span class="st">"Date"</span>, y <span class="op">=</span> <span class="st">"Count of Cases (log 2 scale)"</span>, </span>
 <span>       caption <span class="op">=</span> <span class="st">"Data: COVID Tracking Project, http://covidtracking.com | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `linewidth` instead.</span></span>
 <span><span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></span>
 <span><span class="co">#&gt; Transformation introduced infinite values in continuous y-axis</span></span>
-<span><span class="co">#&gt; Warning: Removed 22 row(s) containing missing values (geom_path).</span></span>
-<span><span class="co">#&gt; Warning: Removed 20242 rows containing missing values (geom_text_repel).</span></span></code></pre></div>
+<span><span class="co">#&gt; Warning: Removed 22 rows containing missing values (`geom_line()`).</span></span>
+<span><span class="co">#&gt; Warning: Removed 20242 rows containing missing values</span></span>
+<span><span class="co">#&gt; (`geom_text_repel()`).</span></span></code></pre></div>
 <p><img src="us-data_files/figure-html/us-example-1.png" width="1200"></p>
 </div>
 <div class="section level3">
@@ -248,8 +250,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2021-02-28 NY     1<span style="text-decoration: underline;">630</span>445 <span style="text-decoration: underline;">38</span>497</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2021-02-27 NY     1<span style="text-decoration: underline;">622</span>865 <span style="text-decoration: underline;">38</span>407</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2021-02-26 NY     1<span style="text-decoration: underline;">614</span>724 <span style="text-decoration: underline;">38</span>321</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 361 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 361 more rows</span></span></span></code></pre></div>
 <p>To calculate <em>daily</em> counts from these cumulative measures, use <code>lag()</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -272,8 +273,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2021-02-28 NY     1<span style="text-decoration: underline;">630</span>445 <span style="text-decoration: underline;">38</span>497           <span style="text-decoration: underline;">7</span>580          90</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2021-02-27 NY     1<span style="text-decoration: underline;">622</span>865 <span style="text-decoration: underline;">38</span>407           <span style="text-decoration: underline;">8</span>141          86</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2021-02-26 NY     1<span style="text-decoration: underline;">614</span>724 <span style="text-decoration: underline;">38</span>321           <span style="text-decoration: underline;">8</span>204          94</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 361 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 361 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state">Draw a graph of the weekly rolling average death rate, by state<a class="anchor" aria-label="anchor" href="#draw-a-graph-of-the-weekly-rolling-average-death-rate-by-state"></a>
@@ -299,7 +299,7 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    deaths_daily <span class="op">=</span> <span class="fu">get_daily_count</span><span class="op">(</span><span class="va">count</span>, <span class="va">date</span><span class="op">)</span>, </span>
-<span>    deaths7 <span class="op">=</span> <span class="fu">slider</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html" class="external-link">slide_dbl</a></span><span class="op">(</span><span class="va">deaths_daily</span>, <span class="va">mean</span>, .before <span class="op">=</span> <span class="fl">7</span>, .after <span class="op">=</span> <span class="fl">0</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    deaths7 <span class="op">=</span> <span class="fu">slider</span><span class="fu">::</span><span class="fu"><a href="https://slider.r-lib.org/reference/slide.html" class="external-link">slide_dbl</a></span><span class="op">(</span><span class="va">deaths_daily</span>, <span class="va">mean</span>, .before <span class="op">=</span> <span class="fl">7</span>, .after <span class="op">=</span> <span class="fl">0</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">state_pops</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&gt;</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">ymd</a></span><span class="op">(</span><span class="st">"2020-03-15"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="op">(</span><span class="va">deaths7</span><span class="op">/</span><span class="va">pop</span><span class="op">)</span><span class="op">*</span><span class="fl">1e5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -325,7 +325,7 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    deaths_daily <span class="op">=</span> <span class="fu">get_daily_count</span><span class="op">(</span><span class="va">count</span>, <span class="va">date</span><span class="op">)</span>, </span>
-<span>    deaths7 <span class="op">=</span> <span class="fu">slider</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/slider/man/slide.html" class="external-link">slide_dbl</a></span><span class="op">(</span><span class="va">deaths_daily</span>, <span class="va">mean</span>, .before <span class="op">=</span> <span class="fl">7</span>, .after <span class="op">=</span> <span class="fl">0</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    deaths7 <span class="op">=</span> <span class="fu">slider</span><span class="fu">::</span><span class="fu"><a href="https://slider.r-lib.org/reference/slide.html" class="external-link">slide_dbl</a></span><span class="op">(</span><span class="va">deaths_daily</span>, <span class="va">mean</span>, .before <span class="op">=</span> <span class="fl">7</span>, .after <span class="op">=</span> <span class="fl">0</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">state_pops</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&gt;</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">ymd</a></span><span class="op">(</span><span class="st">"2020-03-15"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="op">(</span><span class="va">deaths7</span><span class="op">/</span><span class="va">pop</span><span class="op">)</span><span class="op">*</span><span class="fl">1e5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -368,7 +368,7 @@
 </h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nytcovstate</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 48,782 × 5</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 58,526 × 5</span></span></span>
 <span><span class="co">#&gt;    date       state      fips  cases deaths</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2020-01-21 Washington 53        1      0</span></span>
@@ -381,8 +381,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2020-01-25 Washington 53        1      0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2020-01-26 Arizona    04        1      0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2020-01-26 California 06        2      0</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 48,772 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 58,516 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="county-level-table">County-level table<a class="anchor" aria-label="anchor" href="#county-level-table"></a>
@@ -402,8 +401,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2020-01-25 Snohomish   Washington 53061     1      0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2020-01-26 Maricopa    Arizona    04013     1      0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2020-01-26 Los Angeles California 06037     1      0</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 2,502,822 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 2,502,822 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="draw-a-log-linear-graph-of-cumulative-cases-by-county-in-selected-states-">Draw a log-linear graph of cumulative cases by county in selected states.<a class="anchor" aria-label="anchor" href="#draw-a-log-linear-graph-of-cumulative-cases-by-county-in-selected-states-"></a>
@@ -427,9 +425,7 @@
 <span>       caption <span class="op">=</span> <span class="st">"Data: The New York Times | Graph: @kjhealy"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: `label_number_si()` was deprecated in scales 1.2.0.</span></span>
-<span><span class="co">#&gt; Please use the `scale_cut` argument of `label_number()` instead.</span></span>
-<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
-<span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use the `scale_cut` argument of `label_number()` instead.</span></span></code></pre></div>
 <p><img src="us-data_files/figure-html/nytplot-1.png" width="1200"></p>
 </div>
 </div>
@@ -452,7 +448,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 

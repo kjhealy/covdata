@@ -49,7 +49,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.01</span>
       </span>
     </div>
 
@@ -129,10 +129,10 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2</span> 3.3.6     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr  </span> 0.3.4</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble </span> 3.1.8     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr  </span> 1.0.9</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr  </span> 1.2.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr</span> 1.4.0</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr  </span> 2.1.2     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats</span> 0.5.1</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2</span> 3.4.0      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr  </span> 1.0.1 </span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble </span> 3.1.8      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr  </span> 1.0.10</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr  </span> 1.2.1      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr</span> 1.5.0 </span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr  </span> 2.1.3      <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats</span> 0.5.2 </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></span>
@@ -152,7 +152,7 @@
 </blockquote>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">stmf</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 568,170 × 17</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 580,395 × 17</span></span></span>
 <span><span class="co">#&gt;    country_c…¹ cname iso2  conti…² iso3   year  week sex   split split…³ forec…⁴</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AUS         Aust… AU    Oceania AUS    <span style="text-decoration: underline;">2</span>015     1 m         1       0       0</span></span>
@@ -165,11 +165,10 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AUS         Aust… AU    Oceania AUS    <span style="text-decoration: underline;">2</span>015     1 f         1       0       0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AUS         Aust… AU    Oceania AUS    <span style="text-decoration: underline;">2</span>015     1 f         1       0       0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AUS         Aust… AU    Oceania AUS    <span style="text-decoration: underline;">2</span>015     1 f         1       0       0</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 568,160 more rows, 6 more variables: approx_date &lt;date&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 580,385 more rows, 6 more variables: approx_date &lt;date&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   age_group &lt;chr&gt;, death_count &lt;dbl&gt;, death_rate &lt;dbl&gt;, deaths_total &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   rate_total &lt;dbl&gt;, and abbreviated variable names ¹​country_code, ²​continent,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   ³​split_sex, ⁴​forecast</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;">#   ³​split_sex, ⁴​forecast</span></span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">stmf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">sex</span> <span class="op">==</span> <span class="st">"b"</span>, <span class="va">country_code</span> <span class="op">==</span> <span class="st">"BEL"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -184,7 +183,9 @@
 <span>       color <span class="op">=</span> <span class="st">"Year"</span>,</span>
 <span>       title <span class="op">=</span> <span class="st">"Weekly recorded deaths in Belgium, 2000-2020"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `linewidth` instead.</span></span></code></pre></div>
 <p><img src="excess-mortality_files/figure-html/stmf-figure-1.png" width="1200"></p>
 </div>
 <div class="section level2">
@@ -192,7 +193,7 @@
 </h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nchs_wdc</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 327,456 × 7</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 347,706 × 7</span></span></span>
 <span><span class="co">#&gt;    jurisdiction  year  week week_ending_date cause_detailed              n cause</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       All Cause                <span style="text-decoration: underline;">1</span>057 All …</span></span>
@@ -205,8 +206,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Malignant neoplasms (C…   196 Canc…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Natural Cause             992 Natu…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Alabama       <span style="text-decoration: underline;">2</span>014     1 2014-01-04       Nephritis, nephrotic s…    21 Kidn…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 327,446 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 347,696 more rows</span></span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nchs_wdc</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">jurisdiction</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"New York"</span>, <span class="st">"New Jersey"</span>, <span class="st">"Michigan"</span>, <span class="st">"Georgia"</span>, <span class="st">"California"</span>, <span class="st">"Alabama"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -252,8 +252,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-03-02 2020-03-08 2020      3    10   <span style="text-decoration: underline;">1</span>744</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Austria <span style="color: #BB0000;">NA</span>        weekly    2020-03-09 2020-03-15 2020      3    11   <span style="text-decoration: underline;">1</span>718</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 7,248 more rows, and 3 more variables: expected_deaths &lt;int&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;">#   excess_deaths &lt;int&gt;, baseline &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
   </div>
 
@@ -274,7 +273,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
